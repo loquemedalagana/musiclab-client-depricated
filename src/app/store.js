@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+
+const initialState = {};
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    preloadedState: initialState,
+    devTools: process.env.NODE_ENV !== 'production',
   },
 });
