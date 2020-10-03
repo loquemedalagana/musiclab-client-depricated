@@ -23,6 +23,8 @@ import {
     CardBody,
     CustomInput,
     CardFooter,
+    Header,
+    HeaderLinks,
 } from '../../components/components';
 import {loginSignupUpdateStyles} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
@@ -38,6 +40,14 @@ export const Login = (props) => {
     const { ...rest } = props;
 
     return (
+        <>
+            <Header
+                absolute
+                color="transparent"
+                brand="Jeon Inhyuk's official fan page"
+                rightLinks={<HeaderLinks />}
+                {...rest}
+            />
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyles().root)}>
             <div className={classes.container}>
             <GridContainer justify="center">
@@ -60,21 +70,6 @@ export const Login = (props) => {
                     </CardHeader>
                     <p className={classes.divider}>Or Be Classical</p>
                     <CardBody>
-                        <CustomInput
-                        labelText="First Name..."
-                        id="first"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            type: "text",
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <People className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            )
-                        }}
-                        />
                         <CustomInput
                         labelText="Email..."
                         id="email"
@@ -119,11 +114,12 @@ export const Login = (props) => {
             </div>
             <Footer whiteFont />
         </div>
+        </>
     )
 }
 
 Login.propTypes = {
-    prop: PropTypes
+    props: PropTypes
 }
 
 const mapStateToProps = (state) => ({
