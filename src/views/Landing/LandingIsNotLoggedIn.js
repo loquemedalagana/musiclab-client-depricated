@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 
 export const LandingIsNotLoggedIn = (props) => {
 
-    
+
     return (
         <div>
-            
+            hello landing
         </div>
     )
 }

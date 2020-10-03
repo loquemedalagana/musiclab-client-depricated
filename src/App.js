@@ -1,7 +1,7 @@
 import React from 'react';
 import store from './app/store';
 import { Provider } from 'react-redux';
-import { Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from './routes/routes';
 
 import Landing from './views/Landing/LandingIsNotLoggedIn'
@@ -11,7 +11,6 @@ function App() {
 
   return (
     <Provider store = {store}>
-      <h1>hello world</h1>
       <Router>
         <Switch>
           <Route exact path = '/' component = {Landing} />
