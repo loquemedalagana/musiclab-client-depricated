@@ -3,7 +3,9 @@ import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-export const LandingIsNotLoggedIn = () => {
+export const LandingIsNotLoggedIn = (props) => {
+
+    
     return (
         <div>
             
@@ -12,7 +14,7 @@ export const LandingIsNotLoggedIn = () => {
 }
 
 LandingIsNotLoggedIn.propTypes = {
-    prop: PropTypes
+    props: PropTypes
 }
 
 const mapStateToProps = (state) => ({

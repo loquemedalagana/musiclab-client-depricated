@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { Router, Route, Switch } from "react-router-dom";
 import Routes from './routes/routes';
 
+import Landing from './views/Landing/LandingIsNotLoggedIn'
+
 function App() {
   //load and store user state
 
@@ -12,7 +14,7 @@ function App() {
       <h1>hello world</h1>
       <Router>
         <Switch>
-          <Route exact path = '/' component = {null} />
+          <Route exact path = '/' component = {Landing} />
           <Route component = {Routes} /> 
         </Switch>
       </Router>
