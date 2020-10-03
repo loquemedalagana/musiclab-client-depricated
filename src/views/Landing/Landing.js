@@ -11,12 +11,9 @@ import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 const useStyles = makeStyles(styles);
 
 export const Landing = (props) => {
-    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-    setTimeout(() => {
-      setCardAnimation("");
-    }, 700);
     const classes = useStyles();
-    const { ...rest } = props;
+
+    //로그인 안 되어있으면 Redirect 해주기
 
     return (
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyles().root)}>
