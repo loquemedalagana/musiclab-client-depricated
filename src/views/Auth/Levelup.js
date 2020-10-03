@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-export const Signup = () => {
+export const Levelup = () => {
     return (
         <div>
             
@@ -10,7 +10,7 @@ export const Signup = () => {
     )
 }
 
-Signup.propTypes = {
+Levelup.propTypes = {
     props: PropTypes
 }
 
@@ -22,4 +22,4 @@ const mapDispatchToProps = {
     
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup)
+export default connect(mapStateToProps, mapDispatchToProps)(Levelup)
