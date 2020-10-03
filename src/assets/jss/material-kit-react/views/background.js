@@ -8,6 +8,7 @@ export const loginSignupUpdateStyles = makeStyles(theme => ({
         backgroundImage: "url(" + mobileBackgroundImg + ")",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        margin: '0',
 
         [theme.breakpoints.up('md')]: {
             backgroundImage: 'url(' + desktopBackgroundImg + ')',
