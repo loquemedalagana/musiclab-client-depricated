@@ -13,7 +13,7 @@ const useStyles = makeStyles(styles);
 export const Landing = (props) => {
     const classes = useStyles();
 
-    //로그인 안 되어있으면 Redirect 해주기
+    
 
     return (
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyles().root)}>
