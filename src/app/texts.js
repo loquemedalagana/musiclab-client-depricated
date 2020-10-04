@@ -1,0 +1,2 @@
+export const appTitle = `Jeon Inhyuk's official fan page`;
+export const appDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis molestie a iaculis at erat. Odio ut enim blandit volutpat maecenas volutpat blandit aliquam.`;

@@ -6,7 +6,6 @@ import clsx from 'clsx';
 
 import {InputAdornment, IconButton} from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import {
@@ -26,8 +25,9 @@ import {
     Header,
     HeaderLinks,
 } from '../../components/components';
-import {loginSignupUpdateStyles} from '../../assets/jss/material-kit-react/views/background';
+import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
+import {appTitle} from '../../app/texts';
 
 const useStyles = makeStyles(styles);
 
@@ -44,11 +44,11 @@ export const Login = (props) => {
             <Header
                 absolute
                 color="transparent"
-                brand="Jeon Inhyuk's official fan page"
+                brand={appTitle}
                 rightLinks={<HeaderLinks />}
                 {...rest}
             />
-        <div className={clsx(classes.pageHeader, loginSignupUpdateStyles().root)}>
+        <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={4}>

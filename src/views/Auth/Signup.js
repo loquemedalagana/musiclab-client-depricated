@@ -26,7 +26,7 @@ import {
     Header,
     HeaderLinks,
 } from '../../components/components';
-import {loginSignupUpdateStyles} from '../../assets/jss/material-kit-react/views/background';
+import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
 const useStyles = makeStyles(styles);
@@ -48,7 +48,7 @@ export const Signup= (props) => {
                 rightLinks={<HeaderLinks />}
                 {...rest}
             />
-        <div className={clsx(classes.pageHeader, loginSignupUpdateStyles().root)}>
+        <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={4}>

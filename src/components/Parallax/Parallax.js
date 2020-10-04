@@ -1,13 +1,12 @@
 import React from "react";
-// nodejs library that concatenates classes
 import classNames from "classnames";
-// nodejs library to set properties for components
 import PropTypes from "prop-types";
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import styles from "../../assets/jss/material-kit-react/components/parallaxStyle.js";
+import bigImg from '../../assets/images/background2.jpg';
+import smallImg from '../../assets/images/background3.jpg';
 
 const useStyles = makeStyles(styles);
 
@@ -35,7 +34,7 @@ export default function Parallax(props) {
     var windowScrollTop = window.pageYOffset / 3;
     setTransform("translate3d(0," + windowScrollTop + "px,0)");
   };
-  const { filter, className, children, style, image, small } = props;
+  const { filter, className, children, style, small } = props;
   const classes = useStyles();
   const parallaxClasses = classNames({
     [classes.parallax]: true,
@@ -43,6 +42,9 @@ export default function Parallax(props) {
     [classes.small]: small,
     [className]: className !== undefined
   });
+
+  const image = small ? smallImg : bigImg;
+
   return (
     <div
       className={parallaxClasses}
