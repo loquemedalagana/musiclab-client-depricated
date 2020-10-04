@@ -47,13 +47,17 @@ export const Landing = (props) => {
             }}
             {...rest}
         />
-        <Parallax filter >
+        <Parallax >
             <div className={clsx(classes.container)}>
                 <GridContainer>
-                    <GridItem xs={12} sm={12} md={6}>
-                    <h1 className={classes.title}>{appTitle}</h1>
-                    <h4>{appDescription}</h4>
-                    </GridItem>
+                <GridItem xs={12} sm={12} md={6}>
+                    <div className={classes.brand}>
+                        <h1 className={classes.title}>{appTitle}</h1>
+                        <h3 className={classes.subtitle}>
+                            {appDescription}
+                        </h3>
+                    </div>
+                </GridItem>
                 </GridContainer>
             </div>
         </Parallax>
@@ -63,7 +67,7 @@ export const Landing = (props) => {
                 {testText}
             </div>
         </div>
-        <Footer whiteFont />
+        <Footer />
         </>
     )
 }

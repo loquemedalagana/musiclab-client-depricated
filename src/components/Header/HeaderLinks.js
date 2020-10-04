@@ -1,15 +1,14 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
 // react components for routing our app without refresh
 import { Link, withRouter } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import {List, ListItem, Tooltip, IconButton} from "@material-ui/core";
+import {List, ListItem, Tooltip, IconButton, Badge} from "@material-ui/core";
 
 // @material-ui/icons
-import { Apps, SupervisorAccount } from "@material-ui/icons";
+import { Apps, SupervisorAccount, ExitToApp, Forum, Notifications, AccountCircle } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
@@ -54,7 +53,21 @@ const HeaderLinks = (props) => {
           <SupervisorAccount className={classes.icons} /> Admin
         </Button>
       </ListItem>
-
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id="mypage"
+          title="mypage"
+          placement={window.innerWidth > 959 ? "top" : "left"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <IconButton
+            color="transparent"
+            className={classes.navLink}
+          >
+            <AccountCircle />
+          </IconButton>
+        </Tooltip>
+      </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
           id="notifications"
@@ -66,7 +79,9 @@ const HeaderLinks = (props) => {
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-twitter"} />
+          <Badge badgeContent={12} color="secondary">
+            <Notifications />
+          </Badge>
           </IconButton>
         </Tooltip>
       </ListItem>
@@ -81,7 +96,9 @@ const HeaderLinks = (props) => {
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-facebook"} />
+          <Badge badgeContent={7} color="secondary">
+            <Forum />
+          </Badge>            
           </IconButton>
         </Tooltip>
       </ListItem>
@@ -96,7 +113,7 @@ const HeaderLinks = (props) => {
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + " fab fa-instagram"} />
+            <ExitToApp />
           </IconButton>
         </Tooltip>
       </ListItem>
