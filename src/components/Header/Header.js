@@ -3,6 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
+import { withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -18,7 +19,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerStyle.j
 
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+function Header(props) {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
@@ -53,14 +54,14 @@ export default function Header(props) {
         .classList.remove(classes[changeColorOnScroll.color]);
     }
   };
-  const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
+  const { color, rightLinks, leftLinks, brand, fixed, absolute, history } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = <Button className={classes.title} onClick={() => history.push('/')}>{brand}</Button>;
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -147,5 +148,8 @@ Header.propTypes = {
       "rose",
       "dark"
     ]).isRequired
-  })
+  }),
+  history: PropTypes.object,
 };
+
+export default withRouter(Header);
