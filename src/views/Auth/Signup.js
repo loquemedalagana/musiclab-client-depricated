@@ -28,7 +28,7 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-
+import {appTitle} from '../../app/texts';
 const useStyles = makeStyles(styles);
 
 export const Signup= (props) => {
@@ -44,14 +44,14 @@ export const Signup= (props) => {
             <Header
                 absolute
                 color="transparent"
-                brand="Jeon Inhyuk's official fan page"
+                brand={appTitle}
                 rightLinks={<HeaderLinks />}
                 {...rest}
             />
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem xs={12} sm={12} md={6} lg={5}>
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
                     <CardHeader color="primary" className={classes.cardHeader}>
