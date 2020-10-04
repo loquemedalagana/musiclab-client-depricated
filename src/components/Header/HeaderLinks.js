@@ -1,18 +1,15 @@
 /*eslint-disable*/
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import Tooltip from "@material-ui/core/Tooltip";
+import {List, ListItem, Tooltip, IconButton} from "@material-ui/core";
 
 // @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, SupervisorAccount } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
@@ -22,14 +19,14 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+const HeaderLinks = (props) => {
   const classes = useStyles();
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="Components"
+          buttonText="View"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
@@ -37,84 +34,74 @@ export default function HeaderLinks(props) {
           buttonIcon={Apps}
           dropdownList={[
             <Link to="/" className={classes.dropdownLink}>
-              All components
+              Latest
             </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>
+            <Link to="/" className={classes.dropdownLink}>
+              Hot
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              From Yada
+            </Link>,
           ]}
         />
       </ListItem>
+
       <ListItem className={classes.listItem}>
-        <Button
-          href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+        <Button          
           color="transparent"
-          target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
+          <SupervisorAccount className={classes.icons} /> Admin
         </Button>
       </ListItem>
+
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
         <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
+          id="notifications"
+          title="notifications"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Button
-            href="https://twitter.com/CreativeTim?ref=creativetim"
-            target="_blank"
+          <IconButton
             color="transparent"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button>
+          </IconButton>
         </Tooltip>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
+          id="private-messages"
+          title="private messages"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Button
+          <IconButton
             color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
-            target="_blank"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button>
+          </IconButton>
         </Tooltip>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
+          id="logout"
+          title="logout"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          <Button
+          <IconButton
             color="transparent"
-            href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-            target="_blank"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-instagram"} />
-          </Button>
+          </IconButton>
         </Tooltip>
       </ListItem>
     </List>
   );
 }
+
+export default withRouter(HeaderLinks);
