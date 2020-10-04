@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment} from "@material-ui/core";
+import {InputAdornment, FormHelperText} from "@material-ui/core";
 import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
@@ -22,6 +22,7 @@ import {
     CardFooter,
     Header,
     HeaderLinks,
+    DateTimePicker,
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
@@ -63,21 +64,24 @@ export const Levelup = (props) => {
                     </CardHeader>
                     <p className={classes.divider}>실명과 생년월일은 운영진들한테만 공개됩니다.</p>
                     <CardBody className={alignment}>
-                        <CustomInput
+                    <GridItem xs={12} sm={12} md={12}  >
+
+                    <CustomInput
                         labelText="Your family name..."
                         id="last"
                         formControlProps={{
-                            fullWidth: false
+                            fullWidth: true,
                         }}
                         inputProps={{
                             type: "text",
                         }}
-                        />
-                        <CustomInput
+                    />
+
+                    <CustomInput
                         labelText="Your given name..."
                         id="first"
                         formControlProps={{
-                            fullWidth: false
+                            fullWidth: true,
                         }}
                         inputProps={{
                             type: "text",
@@ -88,6 +92,14 @@ export const Levelup = (props) => {
                             )
                         }}
                         />
+                        
+                        <DateTimePicker 
+                            title = "Your birthday"
+                            inputProps = {{
+                                placeholder: 'Pick your birthday!'
+                            }}
+                        />
+
                         {/*글자 카운트 해주기*/}
                         <CustomInput
                         labelText="Your favorite song..."
@@ -105,6 +117,10 @@ export const Levelup = (props) => {
                             )
                         }}
                         />
+                        <FormHelperText style = {{textAlign: 'right'}}>
+                            {"자기소개는 최대 200자까지입니다."}
+                        </FormHelperText>
+
                         <CustomInput
                         labelText="Password"
                         id="pass"
@@ -121,22 +137,25 @@ export const Levelup = (props) => {
                             autoComplete: "off"
                         }}
                         />
-                    <CustomInput
-                        labelText="Confirm Password"
-                        id="confirmpass"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            type: "password",
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <VpnKeyIcon className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            ),
-                            autoComplete: "off"
-                        }}
+                        <CustomInput
+                            labelText="Confirm Password"
+                            id="confirmpass"
+                            formControlProps={{
+                                fullWidth: true
+                            }}
+                            inputProps={{
+                                type: "password",
+                                endAdornment: (
+                                <InputAdornment position="end">
+                                    <VpnKeyIcon className={classes.inputIconsColor} />
+                                </InputAdornment>
+                                ),
+                                autoComplete: "off"
+                            }}
                         />
+
+                    </GridItem>
+
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg">

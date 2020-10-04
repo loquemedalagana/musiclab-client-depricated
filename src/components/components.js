@@ -20,10 +20,11 @@ import CustomLinearProgress from './CustomLinearProgress/CustomLinearProgress';
 import CustomTabs from './CustomTabs/CustomTabs';
 
 import InfoArea from './InfoArea/InfoArea';
+import DateTimePicker from './DateTimePicker/DateTimePicker'
 
 export {
     Header, HeaderLinks, Footer, GridContainer,
     GridItem, Button, Card, CardBody, CardHeader, CardFooter,
     CustomInput, CustomDropdown, Parallax, NavPills, Pagination,
-    CustomLinearProgress, CustomTabs, InfoArea,
+    CustomLinearProgress, CustomTabs, InfoArea, DateTimePicker,
 }
