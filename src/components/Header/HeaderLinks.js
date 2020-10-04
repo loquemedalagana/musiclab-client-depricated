@@ -61,7 +61,6 @@ const HeaderLinks = (props) => {
           classes={{ tooltip: classes.tooltip }}
         >
           <IconButton
-            color="transparent"
             className={classes.navLink}
           >
             <AccountCircle />
@@ -76,7 +75,6 @@ const HeaderLinks = (props) => {
           classes={{ tooltip: classes.tooltip }}
         >
           <IconButton
-            color="transparent"
             className={classes.navLink}
           >
           <Badge badgeContent={12} color="secondary">
@@ -93,7 +91,6 @@ const HeaderLinks = (props) => {
           classes={{ tooltip: classes.tooltip }}
         >
           <IconButton
-            color="transparent"
             className={classes.navLink}
           >
           <Badge badgeContent={7} color="secondary">
@@ -110,7 +107,6 @@ const HeaderLinks = (props) => {
           classes={{ tooltip: classes.tooltip }}
         >
           <IconButton
-            color="transparent"
             className={classes.navLink}
           >
             <ExitToApp />

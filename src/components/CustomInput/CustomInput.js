@@ -24,7 +24,7 @@ export default function CustomInput(props) {
     error,
     white,
     inputRootCustomClasses,
-    success
+    success,
   } = props;
 
   const labelClasses = classNames({

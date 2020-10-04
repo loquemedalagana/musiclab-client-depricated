@@ -150,7 +150,7 @@ export const Signup= (props) => {
 }
 
 Signup.propTypes = {
-    props: PropTypes
+    props: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

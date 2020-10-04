@@ -119,7 +119,7 @@ export const Login = (props) => {
 }
 
 Login.propTypes = {
-    props: PropTypes
+    props: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

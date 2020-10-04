@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import {InputAdornment} from "@material-ui/core";
 import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
 
 import {
@@ -26,6 +27,10 @@ import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 import {appTitle, levelupHelperText} from '../../app/texts';
 const useStyles = makeStyles(styles);
+
+const alignment = {
+    justifyContent: 'space-between',
+}
 
 export const Levelup = (props) => {
     const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
@@ -51,18 +56,28 @@ export const Levelup = (props) => {
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
                     <CardHeader color="primary" className={classes.cardHeader}>
-                        <h4>Sign up with</h4>
+                        <h4>Your personal info</h4>
                         <div className={classes.socialLine}>
                             <p>{levelupHelperText}</p>
                         </div>
                     </CardHeader>
                     <p className={classes.divider}>실명과 생년월일은 운영진들한테만 공개됩니다.</p>
-                    <CardBody>
+                    <CardBody className={alignment}>
                         <CustomInput
-                        labelText="Your nickname..."
+                        labelText="Your family name..."
+                        id="last"
+                        formControlProps={{
+                            fullWidth: false
+                        }}
+                        inputProps={{
+                            type: "text",
+                        }}
+                        />
+                        <CustomInput
+                        labelText="Your given name..."
                         id="first"
                         formControlProps={{
-                            fullWidth: true
+                            fullWidth: false
                         }}
                         inputProps={{
                             type: "text",
@@ -73,8 +88,23 @@ export const Levelup = (props) => {
                             )
                         }}
                         />
-
-
+                        {/*글자 카운트 해주기*/}
+                        <CustomInput
+                        labelText="Your favorite song..."
+                        id="description"
+                        formControlProps={{
+                            fullWidth: true
+                        }}
+                        inputProps={{
+                            type: "text",
+                            multiline: true,
+                            endAdornment: (
+                            <InputAdornment position="end">
+                                <MusicNoteIcon className={classes.inputIconsColor} />
+                            </InputAdornment>
+                            )
+                        }}
+                        />
                         <CustomInput
                         labelText="Password"
                         id="pass"
@@ -125,7 +155,7 @@ export const Levelup = (props) => {
 }
 
 Levelup.propTypes = {
-    props: PropTypes
+    props: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

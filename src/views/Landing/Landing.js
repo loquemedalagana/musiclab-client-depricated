@@ -73,7 +73,7 @@ export const Landing = (props) => {
 }
 
 Landing.propTypes = {
-    props: PropTypes
+    props: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({
