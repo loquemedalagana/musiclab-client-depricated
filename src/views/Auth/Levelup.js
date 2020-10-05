@@ -93,16 +93,16 @@ export const Levelup = (props) => {
                         <br/> <br/>
 
                         <FormControl className={classes.formControl} required fullWidth>
-                        <InputLabel id="select-gender">Gender(성별)</InputLabel>
-                        <Select
-                            labelId="select-gender"
-                            id="simple-select"
-                            value="male"
-                            onChange={ null }
-                        >
-                            <MenuItem value="male">Male(남성)</MenuItem>
-                            <MenuItem value="female">Female(여성)</MenuItem>
-                        </Select>
+                            <InputLabel id="select-gender">Gender(성별)</InputLabel>
+                            <Select
+                                labelId="select-gender"
+                                id="simple-select"
+                                value="male"
+                                onChange={ null }
+                            >
+                                <MenuItem value="male">Male(남성)</MenuItem>
+                                <MenuItem value="female">Female(여성)</MenuItem>
+                            </Select>
 
                         </FormControl>
                         <br/> <br/>
