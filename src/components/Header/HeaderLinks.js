@@ -44,14 +44,24 @@ const HeaderLinks = (props) => {
           ]}
         />
       </ListItem>
-
       <ListItem className={classes.listItem}>
-        <Button          
-          color="transparent"
-          className={classes.navLink}
-        >
-          <SupervisorAccount className={classes.icons} /> Admin
-        </Button>
+        <CustomDropdown
+          noLiPadding
+          buttonText="Admin"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={SupervisorAccount}
+          dropdownList={[
+            <Link to="/" className={classes.dropdownLink}>
+              User List
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              Dashboard
+            </Link>,
+          ]}
+        />
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
