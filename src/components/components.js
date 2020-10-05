@@ -20,11 +20,22 @@ import CustomLinearProgress from './CustomLinearProgress/CustomLinearProgress';
 import CustomTabs from './CustomTabs/CustomTabs';
 
 import InfoArea from './InfoArea/InfoArea';
-import DateTimePicker from './DateTimePicker/DateTimePicker'
+import DateTimePicker from './DateTimePicker/DateTimePicker';
+
+import DangerText from './Typography/Danger';
+import InfoText from './Typography/Info';
+import MutedText from './Typography/Muted';
+import PrimaryText from './Typography/Primary';
+import QuoteText from './Typography/Quote';
+import SmallText from './Typography/Small';
+import SucessText from './Typography/Success';
+import WarningText from './Typography/Warning';
 
 export {
     Header, HeaderLinks, Footer, GridContainer,
     GridItem, Button, Card, CardBody, CardHeader, CardFooter,
     CustomInput, CustomDropdown, Parallax, NavPills, Pagination,
     CustomLinearProgress, CustomTabs, InfoArea, DateTimePicker,
+    DangerText, InfoText, MutedText, PrimaryText, QuoteText,
+    SmallText, SucessText, WarningText,
 }
