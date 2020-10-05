@@ -60,12 +60,7 @@ export const Levelup = (props) => {
                 <GridItem xs={12} sm={12} md={6} lg={5} >
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
-                    <CardHeader color="primary" className={classes.cardHeader}>
-                        <h4>Your personal info</h4>
-                        <div className={classes.socialLine}>
-                            <p>{levelupHelperText}</p>
-                        </div>
-                    </CardHeader>
+
                     <p className={classes.divider}>실명과 생년월일은 운영진들한테만 공개됩니다.</p>
                     <CardBody className={alignment}>
                     <GridItem xs={12} sm={12} md={12}  >
