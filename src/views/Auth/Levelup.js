@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, FormHelperText} from "@material-ui/core";
+import {
+    InputAdornment, FormHelperText,
+    FormControl, InputLabel, Select,
+    MenuItem,
+} from "@material-ui/core";
 import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
@@ -25,7 +29,7 @@ import {
     DateTimePicker,
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
-import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
+import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
 import {appTitle, levelupHelperText} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
@@ -92,7 +96,22 @@ export const Levelup = (props) => {
                             )
                         }}
                         />
-                        
+                    <br/> <br/>
+
+                    <FormControl className={classes.formControl} required fullWidth>
+                    <InputLabel id="select-gender">Gender(성별)</InputLabel>
+                    <Select
+                        labelId="select-gender"
+                        id="simple-select"
+                        value="male"
+                        onChange={ null }
+                    >
+                        <MenuItem value="male">Male(남성)</MenuItem>
+                        <MenuItem value="female">Female(여성)</MenuItem>
+                    </Select>
+
+                    </FormControl>
+                    <br/> <br/>
                         <DateTimePicker 
                             title = "Your birthday"
                             inputProps = {{

@@ -19,8 +19,6 @@ export const loginSignupUpdateStyle = makeStyles(theme => ({
 export const mainParallaxStyle = makeStyles(theme => ({
     root: {
         backgroundImage: "url(" + mobileBackgroundImg + ")",
-        backgroundPosition: "center",
-
         [theme.breakpoints.up('md')]: {
             backgroundImage: 'url(' + desktopBackgroundImg + ')',
             backgroundPosition: 'right',
@@ -31,6 +29,5 @@ export const mainParallaxStyle = makeStyles(theme => ({
 export const profileParallaxStyle = makeStyles(theme => ({
     root: {
         backgroundImage: "url(" + upperBackgroundImg + ")",
-        backgroundPosition: "center",
     }
 }));

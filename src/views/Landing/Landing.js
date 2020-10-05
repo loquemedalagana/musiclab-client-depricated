@@ -16,9 +16,9 @@ import {
 
     GridContainer,
     GridItem,
-
-
 } from '../../components/components';
+
+import {mainParallaxStyle} from '../../assets/jss/material-kit-react/views/background';
 
 import {appTitle, appDescription} from '../../utils/texts';
 import styles from '../../assets/jss/material-kit-react/views/landingStyle';
@@ -47,9 +47,9 @@ export const Landing = (props) => {
             }}
             {...rest}
         />
-        <Parallax >
+        <Parallax className={mainParallaxStyle().root}>
             <div className={clsx(classes.container)}>
-                <GridContainer>
+                <GridContainer type = "parallax">
                 <GridItem xs={12} sm={12} md={6}>
                     <div className={classes.brand}>
                         <h1 className={classes.title}>{appTitle}</h1>

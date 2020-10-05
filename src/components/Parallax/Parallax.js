@@ -5,8 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import styles from "../../assets/jss/material-kit-react/components/parallaxStyle.js";
-import bigImg from '../../assets/images/background2.jpg';
-import smallImg from '../../assets/images/background3.jpg';
 
 const useStyles = makeStyles(styles);
 
@@ -43,14 +41,11 @@ export default function Parallax(props) {
     [className]: className !== undefined
   });
 
-  const image = small ? smallImg : bigImg;
-
   return (
     <div
       className={parallaxClasses}
       style={{
         ...style,
-        backgroundImage: "url(" + image + ")",
         transform: transform
       }}
     >
