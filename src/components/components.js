@@ -10,6 +10,7 @@ import CardBody from "./Card/CardBody.js";
 import CardHeader from "./Card/CardHeader.js";
 import CardFooter from "./Card/CardFooter.js";
 import CustomInput from "./CustomInput/CustomInput.js";
+import CustomSelectInput from './CustomInput/CustomSelectInput';
 import CustomDropdown from './CustomDropdown/CustomDropdown';
 
 import Parallax from './Parallax/Parallax';
@@ -34,7 +35,7 @@ import WarningText from './Typography/Warning';
 export {
     Header, HeaderLinks, Footer, GridContainer,
     GridItem, Button, Card, CardBody, CardHeader, CardFooter,
-    CustomInput, CustomDropdown, Parallax, NavPills, Pagination,
+    CustomInput, CustomSelectInput, CustomDropdown, Parallax, NavPills, Pagination,
     CustomLinearProgress, CustomTabs, InfoArea, DateTimePicker,
     DangerText, InfoText, MutedText, PrimaryText, QuoteText,
     SmallText, SucessText, WarningText,

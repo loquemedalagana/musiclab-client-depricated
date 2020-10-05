@@ -5,15 +5,15 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
+import {
+    FormControl, InputLabel, Select, MenuItem
+} from "@material-ui/core";
 
 import styles from "../../assets/jss/material-kit-react/components/customInputStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function CustomInput(props) {
+export default function CustomSelectInput(props) {
     const classes = useStyles();
     const {
         formControlProps,
@@ -26,6 +26,7 @@ export default function CustomInput(props) {
         inputRootCustomClasses,
         success,
         onChange,
+        menuItemList,
     } = props;
 
     const labelClasses = classNames({
@@ -65,22 +66,33 @@ export default function CustomInput(props) {
             {labelText}
             </InputLabel>
         ) : null}
-        <Input
+
+        <Select
             classes={{
-            input: inputClasses,
-            root: marginTop,
-            disabled: classes.disabled,
-            underline: underlineClasses
+                input: inputClasses,
+                root: marginTop,
+                disabled: classes.disabled,
+                underline: underlineClasses
             }}
+            labelId={id}
             id={id}
             onChange={onChange}
             {...inputProps}
-        />
+        >   
+        {
+            menuItemList.map(({key, value}) => (
+                <MenuItem key = {key} value={key}>{
+                    value
+                }</MenuItem>
+            ))
+        }
+
+        </Select>
         </FormControl>
     );
 }
 
-CustomInput.propTypes = {
+CustomSelectInput.propTypes = {
     labelText: PropTypes.node,
     labelProps: PropTypes.object,
     id: PropTypes.string,
@@ -91,22 +103,5 @@ CustomInput.propTypes = {
     success: PropTypes.bool,
     white: PropTypes.bool,
     onChange: PropTypes.func,
+    menuItemList: PropTypes.array,
 };
-
-/**
-
-                        <FormControl className={classes.formControl} required fullWidth>
-                            <InputLabel id="select-gender">Gender(성별)</InputLabel>
-                            <Select
-                                labelId="select-gender"
-                                id="simple-select"
-                                value="male"
-                                onChange={ null }
-                            >
-                                <MenuItem value="male">Male(남성)</MenuItem>
-                                <MenuItem value="female">Female(여성)</MenuItem>
-                            </Select>
-
-                        </FormControl>
-
- */
