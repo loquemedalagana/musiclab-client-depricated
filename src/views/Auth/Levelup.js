@@ -19,7 +19,6 @@ import {
     GridContainer,
     GridItem,
     Card,
-    CardHeader,
     Button,
     CardBody,
     CustomInput,
@@ -56,104 +55,88 @@ export const Levelup = (props) => {
             />
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
-            <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={6} lg={5} >
-                <Card className={classes[cardAnimaton]}>
-                    <form className={classes.form}>
+                <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
+                    <GridItem xs={12} sm={12} md={6} lg={5} >
+                    <Card className={classes[cardAnimaton]}>
+                        <form className={classes.form}>
 
-                    <p className={classes.divider}>실명과 생년월일은 운영진들한테만 공개됩니다.</p>
-                    <CardBody className={alignment}>
-                    <GridItem xs={12} sm={12} md={12}  >
+                        <p className={classes.divider}>실명과 생년월일은 운영진들한테만 공개됩니다.</p>
+                        <CardBody className={alignment}>
+                        <GridItem xs={12} sm={12} md={12}  >
 
-                    <CustomInput
-                        labelText="Your family name..."
-                        id="last"
-                        formControlProps={{
-                            fullWidth: true,
-                        }}
-                        inputProps={{
-                            type: "text",
-                        }}
-                    />
-
-                    <CustomInput
-                        labelText="Your given name..."
-                        id="first"
-                        formControlProps={{
-                            fullWidth: true,
-                        }}
-                        inputProps={{
-                            type: "text",
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <People className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            )
-                        }}
-                        />
-                    <br/> <br/>
-
-                    <FormControl className={classes.formControl} required fullWidth>
-                    <InputLabel id="select-gender">Gender(성별)</InputLabel>
-                    <Select
-                        labelId="select-gender"
-                        id="simple-select"
-                        value="male"
-                        onChange={ null }
-                    >
-                        <MenuItem value="male">Male(남성)</MenuItem>
-                        <MenuItem value="female">Female(여성)</MenuItem>
-                    </Select>
-
-                    </FormControl>
-                    <br/> <br/>
-                        <DateTimePicker 
-                            title = "Your birthday"
-                            inputProps = {{
-                                placeholder: 'Pick your birthday!'
+                        <CustomInput
+                            labelText="Your family name..."
+                            id="last"
+                            formControlProps={{
+                                fullWidth: true,
+                            }}
+                            inputProps={{
+                                type: "text",
                             }}
                         />
 
-                        {/*글자 카운트 해주기*/}
                         <CustomInput
-                        labelText="Your favorite song..."
-                        id="description"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            type: "text",
-                            multiline: true,
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <MusicNoteIcon className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            )
-                        }}
-                        />
-                        <FormHelperText style = {{textAlign: 'right'}}>
-                            {"자기소개는 최대 200자까지입니다."}
-                        </FormHelperText>
+                            labelText="Your given name..."
+                            id="first"
+                            formControlProps={{
+                                fullWidth: true,
+                            }}
+                            inputProps={{
+                                type: "text",
+                                endAdornment: (
+                                <InputAdornment position="end">
+                                    <People className={classes.inputIconsColor} />
+                                </InputAdornment>
+                                )
+                            }}
+                            />
+                        <br/> <br/>
 
-                        <CustomInput
-                        labelText="Password"
-                        id="pass"
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            type: "password",
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <VpnKeyIcon className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            ),
-                            autoComplete: "off"
-                        }}
-                        />
-                        <CustomInput
-                            labelText="Confirm Password"
-                            id="confirmpass"
+                        <FormControl className={classes.formControl} required fullWidth>
+                        <InputLabel id="select-gender">Gender(성별)</InputLabel>
+                        <Select
+                            labelId="select-gender"
+                            id="simple-select"
+                            value="male"
+                            onChange={ null }
+                        >
+                            <MenuItem value="male">Male(남성)</MenuItem>
+                            <MenuItem value="female">Female(여성)</MenuItem>
+                        </Select>
+
+                        </FormControl>
+                        <br/> <br/>
+                            <DateTimePicker 
+                                title = "Your birthday"
+                                inputProps = {{
+                                    placeholder: 'Pick your birthday!'
+                                }}
+                            />
+
+                            {/*글자 카운트 해주기*/}
+                            <CustomInput
+                            labelText="Your favorite song..."
+                            id="description"
+                            formControlProps={{
+                                fullWidth: true
+                            }}
+                            inputProps={{
+                                type: "text",
+                                multiline: true,
+                                endAdornment: (
+                                <InputAdornment position="end">
+                                    <MusicNoteIcon className={classes.inputIconsColor} />
+                                </InputAdornment>
+                                )
+                            }}
+                            />
+                            <FormHelperText style = {{textAlign: 'right'}}>
+                                {"자기소개는 최대 200자까지입니다."}
+                            </FormHelperText>
+
+                            <CustomInput
+                            labelText="Password"
+                            id="pass"
                             formControlProps={{
                                 fullWidth: true
                             }}
@@ -166,20 +149,36 @@ export const Levelup = (props) => {
                                 ),
                                 autoComplete: "off"
                             }}
-                        />
+                            />
+                            <CustomInput
+                                labelText="Confirm Password"
+                                id="confirmpass"
+                                formControlProps={{
+                                    fullWidth: true
+                                }}
+                                inputProps={{
+                                    type: "password",
+                                    endAdornment: (
+                                    <InputAdornment position="end">
+                                        <VpnKeyIcon className={classes.inputIconsColor} />
+                                    </InputAdornment>
+                                    ),
+                                    autoComplete: "off"
+                                }}
+                            />
 
+                        </GridItem>
+
+                        </CardBody>
+                        <CardFooter className={classes.cardFooter}>
+                            <Button simple color="primary" size="lg">
+                            Submit
+                            </Button>
+                        </CardFooter>
+                        </form>
+                    </Card>
                     </GridItem>
-
-                    </CardBody>
-                    <CardFooter className={classes.cardFooter}>
-                        <Button simple color="primary" size="lg">
-                        Submit
-                        </Button>
-                    </CardFooter>
-                    </form>
-                </Card>
-                </GridItem>
-            </GridContainer>
+                </GridContainer>
             </div>
             <Footer whiteFont />
         </div>

@@ -50,7 +50,7 @@ export const Login = (props) => {
             />
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
-            <GridContainer justify="center">
+            <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                 <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>

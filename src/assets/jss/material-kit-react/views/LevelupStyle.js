@@ -18,6 +18,7 @@ const LoginSignupStyle = {
         height: "auto",
         display: "inherit",
         position: "relative",
+        flexDirection: 'row',
         margin: "0",
         padding: "0",
         border: "0",
