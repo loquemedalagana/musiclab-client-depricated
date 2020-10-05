@@ -27,7 +27,7 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-import {appTitle} from '../../app/texts';
+import {appTitle} from '../../utils/texts';
 
 const useStyles = makeStyles(styles);
 

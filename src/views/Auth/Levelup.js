@@ -26,7 +26,7 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-import {appTitle, levelupHelperText} from '../../app/texts';
+import {appTitle, levelupHelperText} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
 const alignment = {

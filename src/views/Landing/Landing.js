@@ -20,7 +20,7 @@ import {
 
 } from '../../components/components';
 
-import {appTitle, appDescription} from '../../app/texts';
+import {appTitle, appDescription} from '../../utils/texts';
 import styles from '../../assets/jss/material-kit-react/views/landingStyle';
 
 const dashboardRoutes = [];
