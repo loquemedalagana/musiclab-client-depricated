@@ -1,4 +1,4 @@
-import { container, primaryColor } from "../../material-kit-react.js";
+import { container } from "../../material-kit-react.js";
 
 const footerStyle = {
   block: {
@@ -29,7 +29,7 @@ const footerStyle = {
     position: "relative"
   },
   a: {
-    color: primaryColor,
+    color: '#7579e7',
     textDecoration: "none",
     backgroundColor: "transparent"
   },
