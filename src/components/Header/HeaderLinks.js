@@ -5,7 +5,9 @@ import { Link, withRouter } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import {List, ListItem, Tooltip, IconButton, Badge} from "@material-ui/core";
+import {
+  List, ListItem, Tooltip, IconButton, Badge, 
+} from "@material-ui/core";
 
 // @material-ui/icons
 import { Apps, SupervisorAccount, ExitToApp, Forum, Notifications, AccountCircle } from "@material-ui/icons";
@@ -17,6 +19,17 @@ import Button from "../CustomButtons/Button.js";
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
+
+const notificationCnt = 0, chatCnt = 7;
+
+const UserIcon = props => {
+  const {notificationcnt} = props;
+  return (
+    <Badge badgeContent={notificationCnt} color = 'secondary'>
+      <AccountCircle />
+    </Badge>
+  )
+}
 
 const HeaderLinks = (props) => {
   const classes = useStyles();
@@ -64,64 +77,38 @@ const HeaderLinks = (props) => {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
-          id="mypage"
-          title="mypage"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <IconButton
-            className={classes.navLink}
-          >
-            <AccountCircle />
-          </IconButton>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="notifications"
-          title="notifications"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <IconButton
-            className={classes.navLink}
-          >
-          <Badge badgeContent={12} color="secondary">
-            <Notifications />
-          </Badge>
-          </IconButton>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="private-messages"
-          title="private messages"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <IconButton
-            className={classes.navLink}
-          >
-          <Badge badgeContent={7} color="secondary">
-            <Forum />
-          </Badge>            
-          </IconButton>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="logout"
-          title="logout"
-          placement={window.innerWidth > 959 ? "top" : "left"}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <IconButton
-            className={classes.navLink}
-          >
-            <ExitToApp />
-          </IconButton>
-        </Tooltip>
+        <CustomDropdown
+          noLiPadding
+          buttonText="mypage"
+          badgeContent={notificationCnt+chatCnt}
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={AccountCircle}
+          dropdownList={[
+            <Link to="/" className={classes.dropdownLink}>
+              My Profile
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              <Badge badgeContent={notificationCnt} variant='dot' color="secondary">
+                <Notifications />
+              </Badge>
+              Notifications
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              <Badge badgeContent={chatCnt} variant='dot' color="secondary">
+                <Forum />
+                
+              </Badge>
+              Private Messages              
+            </Link>,
+            <Link to="/" className={classes.dropdownLink}>
+              <ExitToApp />
+              Logout              
+            </Link>
+          ]}
+        />
       </ListItem>
     </List>
   );
