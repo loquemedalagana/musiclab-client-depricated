@@ -87,12 +87,18 @@ export default function CustomDropdown(props) {
           {...buttonProps}
           onClick={handleClick}
         >
-          {<Badge badgeContent={badgeContent} color='secondary'>
-            {icon}
-          </Badge>}
-          
+        {<Badge 
+          badgeContent={badgeContent} color='secondary'
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+        >
+          {icon}          
           {buttonText !== undefined ? buttonText : null}
-          {caret ? <b className={caretClasses} /> : null}
+                  
+        </Badge>}
+        {caret ? <b className={caretClasses} /> : null}
         </Button>
       </div>
       <Popper

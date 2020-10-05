@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import {
-  List, ListItem, Tooltip, IconButton, Badge, 
+  List, ListItem, Badge, 
 } from "@material-ui/core";
 
 // @material-ui/icons
@@ -15,21 +15,10 @@ import { Apps, SupervisorAccount, ExitToApp, Forum, Notifications, AccountCircle
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import Button from "../CustomButtons/Button.js";
-
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
-
 const useStyles = makeStyles(styles);
 
 const notificationCnt = 0, chatCnt = 7;
-
-const UserIcon = props => {
-  const {notificationcnt} = props;
-  return (
-    <Badge badgeContent={notificationCnt} color = 'secondary'>
-      <AccountCircle />
-    </Badge>
-  )
-}
 
 const HeaderLinks = (props) => {
   const classes = useStyles();
@@ -45,15 +34,15 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              Latest
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+              New
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('hot')} className={classes.dropdownLink}>
               Hot
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('from yada')} className={classes.dropdownLink}>
               From Yada
-            </Link>,
+            </Button>,
           ]}
         />
       </ListItem>
@@ -67,12 +56,12 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={SupervisorAccount}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>console.log('user list')} className={classes.dropdownLink}>
               User List
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('dashboard')} className={classes.dropdownLink}>
               Dashboard
-            </Link>,
+            </Button>,
           ]}
         />
       </ListItem>
@@ -87,26 +76,42 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={AccountCircle}
           dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>console.log('my profile')} className={classes.dropdownLink}>
+              <AccountCircle/>
               My Profile
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
-              <Badge badgeContent={notificationCnt} variant='dot' color="secondary">
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('notifications')} className={classes.dropdownLink}>
+              <Badge 
+                badgeContent={notificationCnt} 
+                variant='dot' 
+                color="secondary"
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+              >
                 <Notifications />
               </Badge>
               Notifications
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
-              <Badge badgeContent={chatCnt} variant='dot' color="secondary">
-                <Forum />
-                
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('private msg')} className={classes.dropdownLink}>
+              <Badge 
+                badgeContent={chatCnt} 
+                variant='dot' 
+                color="secondary"
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+              >
+                <Forum />                
               </Badge>
               Private Messages              
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('logout')} className={classes.dropdownLink}>
               <ExitToApp />
               Logout              
-            </Link>
+            </Button>
           ]}
         />
       </ListItem>
