@@ -43,7 +43,7 @@ export const Landing = (props) => {
             fixed
             changeColorOnScroll={{
             height: 400,
-            color: "white"
+            color: "info"
             }}
             {...rest}
         />
