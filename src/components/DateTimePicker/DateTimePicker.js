@@ -27,8 +27,6 @@ export default function DateTimePicker(props){
     const {
         title, 
         inputProps,
-        value,
-        onChange,
     } = props;
     const classes = useStyles();
     return (
@@ -39,9 +37,9 @@ export default function DateTimePicker(props){
         <br />
         <FormControl fullWidth>
             <Datetime
-            inputProps={inputProps}
-            value={value}
-            onChange={onChange}
+            dateFormat={true}
+            timeFormat={false}
+            {...inputProps}
             />
         </FormControl>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -29,7 +29,7 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
-import {appTitle, levelupHelperText} from '../../utils/texts';
+import {appTitle} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
 const alignment = {
@@ -37,12 +37,52 @@ const alignment = {
 }
 
 export const Levelup = (props) => {
-    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+    const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
     }, 700);
     const classes = useStyles();
     const { ...rest } = props;
+
+    const [isChecked, setIsChecked] = useState(false);
+    const [inputs, setInputs] = useState({
+        givenName: '',
+        familyName: '',
+        description: '',
+
+        password: '',
+        confirmPassword: '',
+    });
+
+    const {
+        givenName,
+        familyName,
+        description,
+
+        password,
+        confirmPassword,
+    } = inputs;
+
+    const [gender, setGender] = useState('');
+    const [birthday, setBirthday] = useState(new Date('2000-01-01'));
+
+    const onInputHandler = event => {
+        const {name, value} = event.currentTarget;
+        setInputs({
+            ...inputs,
+            [name]: value
+        })
+    }
+
+    const handleGenderChange = (event) => {
+        setGender(event.target.value);
+    };
+
+    const handleDateChange = (date) => {
+        setBirthday(date);
+    };
+
+    console.log(gender, birthday);
 
     return (
         <>
@@ -72,6 +112,9 @@ export const Levelup = (props) => {
                             }}
                             inputProps={{
                                 type: "text",
+                                value: familyName,
+                                name: "familyName",
+                                onChange: onInputHandler,
                             }}
                         />
 
@@ -83,6 +126,9 @@ export const Levelup = (props) => {
                             }}
                             inputProps={{
                                 type: "text",
+                                value: givenName,
+                                name: "givenName",
+                                onChange: onInputHandler,
                                 endAdornment: (
                                 <InputAdornment position="end">
                                     <People className={classes.inputIconsColor} />
@@ -97,8 +143,8 @@ export const Levelup = (props) => {
                             <Select
                                 labelId="select-gender"
                                 id="simple-select"
-                                value="male"
-                                onChange={ null }
+                                value={gender}
+                                onChange={handleGenderChange}
                             >
                                 <MenuItem value="male">Male(남성)</MenuItem>
                                 <MenuItem value="female">Female(여성)</MenuItem>
@@ -112,7 +158,9 @@ export const Levelup = (props) => {
                             <DateTimePicker 
                                 title = "Your birthday"
                                 inputProps = {{
-                                    placeholder: 'Pick your birthday!'
+                                    placeholder: 'Pick your birthday!',
+                                    value: {birthday},
+                                    onChange: {handleDateChange}
                                 }}
                             />
 
@@ -126,6 +174,9 @@ export const Levelup = (props) => {
                             inputProps={{
                                 type: "text",
                                 multiline: true,
+                                name: "description",
+                                value: description,
+                                onChange: onInputHandler,
                                 endAdornment: (
                                 <InputAdornment position="end">
                                     <MusicNoteIcon className={classes.inputIconsColor} />
@@ -145,6 +196,9 @@ export const Levelup = (props) => {
                             }}
                             inputProps={{
                                 type: "password",
+                                name: "password",
+                                value: password,
+                                onChange: onInputHandler,
                                 endAdornment: (
                                 <InputAdornment position="end">
                                     <VpnKeyIcon className={classes.inputIconsColor} />
@@ -161,6 +215,9 @@ export const Levelup = (props) => {
                                 }}
                                 inputProps={{
                                     type: "password",
+                                    name: "confirmPassword",
+                                    value: confirmPassword,
+                                    onChange: onInputHandler,
                                     endAdornment: (
                                     <InputAdornment position="end">
                                         <VpnKeyIcon className={classes.inputIconsColor} />

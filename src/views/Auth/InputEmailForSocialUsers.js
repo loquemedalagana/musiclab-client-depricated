@@ -50,8 +50,6 @@ export const InputEmailForSocialUsers = (props) => {
             [name]: value
         })
     }
-    
-    console.log(email);
 
     return (
         <>
