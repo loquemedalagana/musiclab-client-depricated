@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Login from '../views/Auth/Login';
 import Signup from '../views/Auth/Signup';
 import Levelup from '../views/Auth/Levelup';
+import InputEmail from '../views/Auth/InputEmailForSocialUsers';
 
 export default props => (
     <>
@@ -11,6 +12,7 @@ export default props => (
             <Route exact path = '/login' component = {Login} />
             <Route exact path = '/Signup' component = {Signup} />
             <Route exact path = '/levelup' component = {Levelup} />
+            <Route exact path = '/social' component = {InputEmail} />
         </Switch>
     </>
 );

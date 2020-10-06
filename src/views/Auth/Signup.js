@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -32,12 +32,35 @@ import {appTitle} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
 export const Signup= (props) => {
-    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+    const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
     }, 700);
     const classes = useStyles();
     const { ...rest } = props;
+
+    const [isChecked, setIsChecked] = useState(false);
+    const [inputs, setInputs] = useState({
+        email: '',
+        displayName: '',
+        password: '',
+        confirmPassword: '',
+    });
+
+    const {
+        email,
+        displayName,
+        password,
+        confirmPassword,
+    } = inputs;
+
+    const onInputHandler = event => {
+        const {name, value} = event.currentTarget;
+        setInputs({
+            ...inputs,
+            [name]: value
+        })
+    }
 
     return (
         <>
@@ -78,6 +101,9 @@ export const Signup= (props) => {
                         }}
                         inputProps={{
                             type: "text",
+                            name: "displayName",
+                            value: displayName,
+                            onChange: onInputHandler,
                             endAdornment: (
                             <InputAdornment position="end">
                                 <People className={classes.inputIconsColor} />
@@ -93,6 +119,9 @@ export const Signup= (props) => {
                         }}
                         inputProps={{
                             type: "email",
+                            name: "email",
+                            value: email,
+                            onChange: onInputHandler,
                             endAdornment: (
                             <InputAdornment position="end">
                                 <Email className={classes.inputIconsColor} />
@@ -108,6 +137,9 @@ export const Signup= (props) => {
                         }}
                         inputProps={{
                             type: "password",
+                            name: "password",
+                            value: password,
+                            onChange: onInputHandler,
                             endAdornment: (
                             <InputAdornment position="end">
                                 <VpnKeyIcon className={classes.inputIconsColor} />
@@ -124,6 +156,9 @@ export const Signup= (props) => {
                         }}
                         inputProps={{
                             type: "password",
+                            name: "confirmPassword",
+                            value: confirmPassword,
+                            onChange: onInputHandler,
                             endAdornment: (
                             <InputAdornment position="end">
                                 <VpnKeyIcon className={classes.inputIconsColor} />

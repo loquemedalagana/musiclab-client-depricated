@@ -46,7 +46,7 @@ export default function Footer(props) {
                 className={classes.block}
                 target="_blank"
               >
-                Tech Blog
+                Blog
               </a>
             </ListItem>
           </List>
