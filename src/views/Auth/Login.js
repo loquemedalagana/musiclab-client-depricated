@@ -31,6 +31,8 @@ import {appTitle} from '../../utils/texts';
 
 const useStyles = makeStyles(styles);
 
+//https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
+
 export const Login = (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
