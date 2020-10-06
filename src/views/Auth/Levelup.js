@@ -79,11 +79,8 @@ export const Levelup = (props) => {
     };
 
     const handleDateChange = (date) => {
-        console.log(date);
-        setBirthday(date);
+        setBirthday(date._d);
     };
-
-    console.log(gender, birthday);
 
     return (
         <>
