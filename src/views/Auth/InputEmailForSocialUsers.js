@@ -1,6 +1,6 @@
 //for social users
 //put email for auth
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,12 +30,28 @@ const useStyles = makeStyles(styles);
 const inputhelper = `반드시 유효한 메일주소를 입력해주세요.`
 
 export const InputEmailForSocialUsers = (props) => {
-    const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+    const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
     }, 700);
     const classes = useStyles();
     const { ...rest } = props;
+
+    const [inputs, setInputs] = useState({
+        email: '',
+    })
+
+    const { email } = inputs;
+
+    const onInputHandler = event => {
+        const {name, value} = event.currentTarget;
+        setInputs({
+            ...inputs,
+            [name]: value
+        })
+    }
+    
+    console.log(email);
 
     return (
         <>
@@ -65,6 +81,9 @@ export const InputEmailForSocialUsers = (props) => {
                         }}
                         inputProps={{
                             type: "email",
+                            name: "email",
+                            value: email,
+                            onChange: onInputHandler,
                             endAdornment: (
                             <InputAdornment position="end">
                                 <Email className={classes.inputIconsColor} />

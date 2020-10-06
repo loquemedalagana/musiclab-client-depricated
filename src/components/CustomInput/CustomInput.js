@@ -25,8 +25,6 @@ export default function CustomInput(props) {
     white,
     inputRootCustomClasses,
     success,
-    onChange,
-    value,
   } = props;
 
   const labelClasses = classNames({
@@ -74,7 +72,6 @@ export default function CustomInput(props) {
           underline: underlineClasses
         }}
         id={id}
-        onChange={onChange}
         {...inputProps}
       />
     </FormControl>
