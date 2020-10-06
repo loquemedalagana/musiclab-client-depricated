@@ -184,8 +184,8 @@ export const Levelup = (props) => {
                                 )
                             }}
                             />
-                            <FormHelperText style = {{textAlign: 'right'}}>
-                                {"자기소개는 최대 200자까지입니다."}
+                            <FormHelperText style = {{textAlign: 'right'}} error={description.length >= 200 ? true: false}>
+                            {description.length >= 200 ? "자기소개는 최대 200자까지입니다." : description.length}
                             </FormHelperText>
 
                             <CustomInput
