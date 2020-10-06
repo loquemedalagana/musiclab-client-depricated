@@ -64,7 +64,7 @@ export const Levelup = (props) => {
     } = inputs;
 
     const [gender, setGender] = useState('');
-    const [birthday, setBirthday] = useState(new Date('1999-03-01')); //야다 데뷔일로 바꾸기
+    const [birthday, setBirthday] = useState(new Date('1999-03-03')); //야다 데뷔일로 바꾸기
 
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
@@ -79,6 +79,7 @@ export const Levelup = (props) => {
     };
 
     const handleDateChange = (date) => {
+        console.log(date);
         setBirthday(date);
     };
 
