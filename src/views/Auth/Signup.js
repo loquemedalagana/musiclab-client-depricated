@@ -176,21 +176,22 @@ export const Signup= (props) => {
                         }
                     >
                     <FormControlLabel
-                    control={
-                        <Checkbox
-                        tabIndex={-1}
-                        value = {isChecked}
-                        onClick={() => isChecked ? setIsChecked(false) : setIsChecked(true)}
-                        checkedIcon={<Check className={classes.checkedIcon} />}
-                        icon={<Check className={classes.uncheckedIcon} />}
-                        classes={{
-                            checked: classes.checked,
-                            root: classes.checkRoot
-                        }}
-                        />
-                    }
-                    classes={{ label: classes.label }}
-                    label="please if your email is valid or no"
+                        control={
+                            <Checkbox
+                            tabIndex={-1}
+                            value = {isChecked}
+                            onClick={() => isChecked ? setIsChecked(false) : setIsChecked(true)}
+                            checkedIcon={<Check className={classes.checkedIcon} />}
+                            icon={<Check className={classes.uncheckedIcon} />}
+                            classes={{
+                                checked: classes.checked,
+                                root: classes.checkRoot
+                            }}
+                            />
+                        }
+                        className={classes.formControl}
+                        classes={{ label: classes.label }}
+                        label="please if your email is valid or no"
                     />
                 </div>
 
