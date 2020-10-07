@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, IconButton} from "@material-ui/core";
+import {InputAdornment, IconButton, FormControlLabel, Checkbox} from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import Check from "@material-ui/icons/Check";
 
 import {
     FacebookIcon, KakaoIcon, GoogleIcon
@@ -168,6 +169,31 @@ export const Signup= (props) => {
                         }}
                         />
                     </CardBody>
+                    
+                    <div
+                        className={
+                        classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
+                        }
+                    >
+                    <FormControlLabel
+                    control={
+                        <Checkbox
+                        tabIndex={-1}
+                        value = {isChecked}
+                        onClick={() => isChecked ? setIsChecked(false) : setIsChecked(true)}
+                        checkedIcon={<Check className={classes.checkedIcon} />}
+                        icon={<Check className={classes.uncheckedIcon} />}
+                        classes={{
+                            checked: classes.checked,
+                            root: classes.checkRoot
+                        }}
+                        />
+                    }
+                    classes={{ label: classes.label }}
+                    label="please if your email is valid or no"
+                    />
+                </div>
+
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg">
                         Join us
