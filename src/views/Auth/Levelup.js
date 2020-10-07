@@ -7,11 +7,11 @@ import clsx from 'clsx';
 import {
     InputAdornment, FormHelperText,
     FormControl, InputLabel, Select,
-    MenuItem,
+    MenuItem, FormControlLabel, Checkbox
 } from "@material-ui/core";
-import People from "@material-ui/icons/People";
-import VpnKeyIcon from '@material-ui/icons/VpnKey';
-import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import {
+    People, VpnKey as VpnKeyIcon, MusicNote as MusicNoteIcon, Check,
+} from "@material-ui/icons";
 
 
 import {
@@ -29,7 +29,7 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
-import {appTitle} from '../../utils/texts';
+import {appTitle, checkAgreeLevelup} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
 const alignment = {
@@ -224,6 +224,27 @@ export const Levelup = (props) => {
                                     autoComplete: "off"
                                 }}
                             />
+
+                    <div className={classes.checkboxAndRadio}>
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                            tabIndex={-1}
+                            value = {isChecked}
+                            onClick={() => isChecked ? setIsChecked(false) : setIsChecked(true)}
+                            checkedIcon={<Check className={classes.checkedIcon} />}
+                            icon={<Check className={classes.uncheckedIcon} />}
+                            classes={{
+                                checked: classes.checked,
+                                root: classes.checkRoot
+                            }}
+                            />
+                        }
+                        className={classes.formControl}
+                        classes={{ label: classes.label }}
+                        label={checkAgreeLevelup}
+                    />
+                    </div>
 
                         </GridItem>
 

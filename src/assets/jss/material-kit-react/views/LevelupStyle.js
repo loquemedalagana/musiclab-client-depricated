@@ -1,4 +1,5 @@
 import { container } from '../../material-kit-react';
+import customInputStyle from '../../material-kit-react/components/customInputStyle';
 import customCheckboxRadioSwitch from "../components/customCheckboxRadioSwitch.js";
 
 const LoginSignupStyle = {
@@ -90,7 +91,8 @@ const LoginSignupStyle = {
     inputIconsColor: {
         color: "#495057"
     },
-    ...customCheckboxRadioSwitch
+    ...customCheckboxRadioSwitch,
+    ...customInputStyle
 };
 
 export default LoginSignupStyle;
