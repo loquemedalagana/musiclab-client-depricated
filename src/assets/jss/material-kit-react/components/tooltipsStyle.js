@@ -26,4 +26,5 @@ const tooltipsStyle = {
   }
 };
 
+
 export default tooltipsStyle;

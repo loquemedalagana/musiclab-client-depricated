@@ -3,11 +3,11 @@ import {
   dangerColor,
   roseColor,
   grayColor
-} from "../material-kit-react.js";
+} from "../../material-kit-react.js";
 
 const customCheckboxRadioSwitch = {
   checkRoot: {
-    padding: "12px",
+    padding: "12px 12px 12px 0px",
     "&:hover": {
       backgroundColor: "unset"
     }
@@ -61,7 +61,7 @@ const customCheckboxRadioSwitch = {
   label: {
     cursor: "pointer",
     paddingLeft: "0",
-    color: "rgba(0, 0, 0, 0.26)",
+    color: "rgba(0, 0, 0, 0.45)",
     fontSize: "14px",
     lineHeight: "1.428571429",
     fontWeight: "400",

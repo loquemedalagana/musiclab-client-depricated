@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment} from "@material-ui/core";
-import Email from "@material-ui/icons/Email";
+import {InputAdornment, FormControlLabel, Checkbox} from "@material-ui/core";
+import {Email, Check} from "@material-ui/icons";
 
 import {
     Footer,
@@ -24,7 +24,7 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-import {appTitle} from '../../utils/texts';
+import {appTitle, checkIsValidEmail} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
 const inputhelper = `반드시 유효한 메일주소를 입력해주세요.`
@@ -39,7 +39,8 @@ export const InputEmailForSocialUsers = (props) => {
 
     const [inputs, setInputs] = useState({
         email: '',
-    })
+    });
+    const [isChecked, setIsChecked] = useState(false);
 
     const { email } = inputs;
 
@@ -89,6 +90,31 @@ export const InputEmailForSocialUsers = (props) => {
                             )
                         }}
                         />
+
+                    <div
+                        className={
+                        classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
+                        }
+                    >
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                            tabIndex={-1}
+                            value = {isChecked}
+                            onClick={() => isChecked ? setIsChecked(false) : setIsChecked(true)}
+                            checkedIcon={<Check className={classes.checkedIcon} />}
+                            icon={<Check className={classes.uncheckedIcon} />}
+                            classes={{
+                                checked: classes.checked,
+                                root: classes.checkRoot
+                            }}
+                            />
+                        }
+                        className={classes.formControl}
+                        classes={{ label: classes.label }}
+                        label={checkIsValidEmail}
+                    />
+                    </div>
 
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>

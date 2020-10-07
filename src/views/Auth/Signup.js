@@ -29,7 +29,8 @@ import {
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-import {appTitle} from '../../utils/texts';
+
+import {appTitle, checkIsValidEmail} from '../../utils/texts';
 const useStyles = makeStyles(styles);
 
 export const Signup= (props) => {
@@ -168,8 +169,7 @@ export const Signup= (props) => {
                             autoComplete: "off"
                         }}
                         />
-                    </CardBody>
-                    
+
                     <div
                         className={
                         classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
@@ -191,9 +191,11 @@ export const Signup= (props) => {
                         }
                         className={classes.formControl}
                         classes={{ label: classes.label }}
-                        label="please if your email is valid or no"
+                        label={checkIsValidEmail}
                     />
-                </div>
+                    </div>
+
+                    </CardBody>
 
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg">
