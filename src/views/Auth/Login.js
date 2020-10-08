@@ -49,7 +49,7 @@ export const Login = (props) => {
     const [inputs, setInputs] = useState({
         email: '',
         password: '',
-    })
+    });
 
     const { email, password } = inputs;
 
@@ -63,10 +63,17 @@ export const Login = (props) => {
 
     const onSubmitHandler = event => {
         event.preventDefault();
+        let ok = true;
+        if(!email) {
+            ok=false;
+            setAlertMsg('이메일을 입력해주세요', 'error');
+        }
+        if(!password){
+            ok=false;
+            setAlertMsg('비밀번호를 입력해주세요', 'error');
+        }
 
-        if(!email) setAlertMsg('이메일을 입력해주세요', 'error');
-        if(!password) setAlertMsg('비밀번호를 입력해주세요', 'error');
-
+        console.log(ok);
         //loginUser({ email, password });
     }
 
