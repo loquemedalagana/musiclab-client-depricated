@@ -25,6 +25,8 @@ import {
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 import {appTitle, checkIsValidEmail} from '../../utils/texts';
+import {checkValidEmail} from '../../utils/checkStringPatterns';
+import {setAlertMsg} from '../../app/store/alert';
 const useStyles = makeStyles(styles);
 
 const inputhelper = `반드시 유효한 메일주소를 입력해주세요.`
@@ -35,7 +37,10 @@ export const InputEmailForSocialUsers = (props) => {
         setCardAnimation("");
     }, 700);
     const classes = useStyles();
-    const { ...rest } = props;
+    const { 
+        setAlertMsg,
+        ...rest 
+    } = props;
 
     const [inputs, setInputs] = useState({
         email: '',
@@ -50,6 +55,28 @@ export const InputEmailForSocialUsers = (props) => {
             ...inputs,
             [name]: value
         })
+    }
+
+    
+    const onSubmitHandler = event => {
+        event.preventDefault();
+        let ok = true;
+        if(!email) {
+            ok=false;
+            setAlertMsg('이메일을 입력해주세요', 'error');
+        }
+        else if (!checkValidEmail(email)){
+            ok=false;
+            setAlertMsg('올바른 형식으로 입력해주세요. 해당 메일로 인증코드가 갑니다.', 'error');
+        }
+
+        if(!isChecked){
+            ok=false;
+            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
+        }
+
+        console.log(ok);
+        
     }
 
     return (
@@ -118,7 +145,7 @@ export const InputEmailForSocialUsers = (props) => {
 
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                        <Button simple color="primary" size="lg">
+                        <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                         Get started
                         </Button>
                     </CardFooter>
@@ -134,15 +161,13 @@ export const InputEmailForSocialUsers = (props) => {
 }
 
 InputEmailForSocialUsers.propTypes = {
-    props: PropTypes.object
+    props: PropTypes.object,
+    setAlertMsg: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(InputEmailForSocialUsers)
+export default connect(mapStateToProps, {setAlertMsg})(InputEmailForSocialUsers)
