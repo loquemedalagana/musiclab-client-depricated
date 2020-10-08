@@ -32,6 +32,12 @@ import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
 import {appTitle, checkAgreeLevelup} from '../../utils/texts';
 import {setAlertMsg} from '../../app/store/alert';
 
+import {
+    checkSpace,
+    checkNumber,
+    checkSpecialChar
+} from '../../utils/checkStringPatterns';
+
 const useStyles = makeStyles(styles);
 
 const alignment = {
@@ -95,10 +101,17 @@ export const Levelup = (props) => {
         if(!givenName) {
             ok=false;
             setAlertMsg('이름을 입력해주세요', 'error');
+        } else if (checkSpace(givenName) || checkNumber(givenName) || checkSpecialChar(givenName)) {
+            ok=false;
+            setAlertMsg('이름에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error');
         }
+
         if(!familyName){
             ok=false;
             setAlertMsg('성을 입력해주세요', 'error');
+        } else if (checkSpace(familyName) || checkNumber(familyName) || checkSpecialChar(familyName)) {
+            ok=false;
+            setAlertMsg('성에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error');
         }
 
         if(!gender){
@@ -120,14 +133,19 @@ export const Levelup = (props) => {
             })
         }
 
+        //if you are local user
         if(!password || !confirmPassword){
             ok=false;
             setAlertMsg('비밀번호를 입력해주세요', 'error');
-        }
-
-        if(password && password !== confirmPassword && confirmPassword){
+        } else if(password && password !== confirmPassword && confirmPassword){
             ok=false;
             setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error');
+        } else if (checkSpace(password) || checkSpace(confirmPassword)){
+            ok=false;
+            setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error');
+        } else if (password.length < 8){
+            ok=false;
+            setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error');
         }
 
         if(!isChecked){
