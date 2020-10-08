@@ -12,7 +12,10 @@ const slice = createSlice({
             state.push(action.payload);
         },
         removeAlert: (state, action) => {
-            state.filter(alert => alert.id !== action.payload);
+            const removeIdx = state.map(element => element.id)
+            .indexOf(action.payload.id);
+            state.splice(removeIdx, 1);
+            //state.filter(alert => alert.id !== action.payload.id);
         }
     },
 });
