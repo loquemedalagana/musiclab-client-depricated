@@ -1,4 +1,4 @@
-export const appTitle = `Jeon Inhyuk's official fan cafe`;
+export const appTitle = `Jeon Inhyuk's music surprise`;
 export const appDescription = `#Yada #JeonInhyuk #vocal #guitar #composition`;
 
 export const checkIsValidEmail = `입력하신 이메일 주소로 인증코드가 갑니다. 정확히 입력하셨는지 다시한번 확인해주세요.`;

@@ -1,12 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import alert from './alert';
 import user from './user';
 
+const reducer = combineReducers({
+  alert,
+  user,
+})
+
 const store = configureStore({
-  reducer: {
-    alert,
-    user,
-  },
+  reducer,
   devTools: process.env.NODE_ENV !== 'production',
 });
 

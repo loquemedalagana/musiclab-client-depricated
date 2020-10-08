@@ -1,14 +1,20 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+//initial user (token)
+//login, logout, update,
+//email auth
+
 const slice = createSlice({
     name: 'user',
     initialState: {
-        username: 'JeonInhyuk',
-
+        data: {
+            username: 'Jeon Inhyuk',
+        },
+        loading: true,
     },
     reducers: {
 
     },
 });
 
-export default slice;
+export default slice.reducer;
