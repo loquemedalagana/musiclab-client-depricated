@@ -9,7 +9,7 @@ const slice = createSlice({
     initialState: [],
     reducers: {
         setAlert: (state, action) => {
-            
+            state.push(action.payload);
         },
         removeAlert: (state, action) => {
             state.filter(alert => alert.id !== action.payload);
@@ -23,10 +23,9 @@ export default slice.reducer;
 //how to set dispatch?
 const {setAlert, removeAlert} = slice.actions;
 
-export const setAlertMsg = (message, alertType, timeout = 5000) => async dispatch => {
-    try {
-        
-    } catch (error) {
-        
-    }
+export const setAlertMsg = (message, alertType, timeout = 5000) => dispatch => {
+    const id = uuidv4();
+    dispatch(setAlert({message, alertType, id}));
+
+    setTimeout(() => dispatch(removeAlert({id})), timeout);
 }

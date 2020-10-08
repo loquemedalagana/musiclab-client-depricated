@@ -29,6 +29,8 @@ import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 import {appTitle} from '../../utils/texts';
 
+import {setAlertMsg} from '../../app/store/alert';
+
 const useStyles = makeStyles(styles);
 
 //https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
@@ -39,7 +41,10 @@ export const Login = (props) => {
         setCardAnimation("");
     }, 700);
     const classes = useStyles();
-    const { ...rest } = props;
+    const { 
+        setAlertMsg,
+        ...rest 
+    } = props;
 
     const [inputs, setInputs] = useState({
         email: '',
@@ -54,6 +59,15 @@ export const Login = (props) => {
             ...inputs,
             [name]: value
         })
+    }
+
+    const onSubmitHandler = event => {
+        event.preventDefault();
+
+        if(!email) setAlertMsg('이메일을 입력해주세요', 'error');
+        if(!password) setAlertMsg('비밀번호를 입력해주세요', 'error');
+
+        //loginUser({ email, password });
     }
 
     return (
@@ -126,7 +140,7 @@ export const Login = (props) => {
                         />
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
-                        <Button simple color="primary" size="lg">
+                        <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                         Get started
                         </Button>
                     </CardFooter>
@@ -143,14 +157,11 @@ export const Login = (props) => {
 
 Login.propTypes = {
     props: PropTypes.object,
+    setAlertMsg: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, {setAlertMsg})(Login)
