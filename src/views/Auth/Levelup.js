@@ -30,6 +30,8 @@ import {
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
 import {appTitle, checkAgreeLevelup} from '../../utils/texts';
+import {setAlertMsg} from '../../app/store/alert';
+
 const useStyles = makeStyles(styles);
 
 const alignment = {
@@ -42,7 +44,10 @@ export const Levelup = (props) => {
         setCardAnimation("");
     }, 700);
     const classes = useStyles();
-    const { ...rest } = props;
+    const {
+        setAlertMsg, 
+        ...rest 
+    } = props;
 
     const [isChecked, setIsChecked] = useState(false);
     const [inputs, setInputs] = useState({
@@ -65,6 +70,7 @@ export const Levelup = (props) => {
 
     const [gender, setGender] = useState('');
     const [birthday, setBirthday] = useState(new Date('1999-03-03')); //야다 데뷔일로 바꾸기
+    const [birthdayChanged, setBirthdayChanged] = useState(false);
 
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
@@ -79,8 +85,58 @@ export const Levelup = (props) => {
     };
 
     const handleDateChange = (date) => {
+        setBirthdayChanged(true);
         setBirthday(date._d);
     };
+
+    const onSubmitHandler = event => {
+        event.preventDefault();
+        let ok = true;
+        if(!givenName) {
+            ok=false;
+            setAlertMsg('이름을 입력해주세요', 'error');
+        }
+        if(!familyName){
+            ok=false;
+            setAlertMsg('성을 입력해주세요', 'error');
+        }
+
+        if(!gender){
+            ok=false;
+            setAlertMsg('성별을 입력해주세요', 'error');
+        }
+
+        if(!birthdayChanged){
+            ok=false;
+            setAlertMsg('생년월일을 입력해주세요', 'error');
+        }
+
+        if(!description){  
+            ok=false;
+            setAlertMsg('야다 노래 중 가장 좋아하는 곡에 대해 설명해주세요', 'error');
+        } else if (description.length > 200){
+            setInputs({
+                description: description.substr(0, 200)
+            })
+        }
+
+        if(!password || !confirmPassword){
+            ok=false;
+            setAlertMsg('비밀번호를 입력해주세요', 'error');
+        }
+
+        if(password && password !== confirmPassword && confirmPassword){
+            ok=false;
+            setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error');
+        }
+
+        if(!isChecked){
+            ok=false;
+            setAlertMsg('유의사항을 읽은 후 체크해주세요', 'error');
+        }
+
+        console.log(ok);
+    }
 
     return (
         <>
@@ -250,7 +306,7 @@ export const Levelup = (props) => {
 
                         </CardBody>
                         <CardFooter className={classes.cardFooter}>
-                            <Button simple color="primary" size="lg">
+                            <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                             Submit
                             </Button>
                         </CardFooter>
@@ -267,17 +323,14 @@ export const Levelup = (props) => {
 
 Levelup.propTypes = {
     props: PropTypes.object,
+    setAlertMsg: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Levelup);
+export default connect(mapStateToProps, {setAlertMsg})(Levelup);
 
 /*
 리덕스 추가되면 메인페이지로 이동
