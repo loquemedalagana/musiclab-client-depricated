@@ -9,7 +9,7 @@ const slice = createSlice({
     initialState: [],
     reducers: {
         setAlert: (state, action) => {
-
+            
         },
         removeAlert: (state, action) => {
             state.filter(alert => alert.id !== action.payload);

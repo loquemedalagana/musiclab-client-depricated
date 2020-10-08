@@ -1,6 +1,7 @@
 {
-  "name": "client-new-ver",
+  "name": "music-surprise-by-inhyuk-client",
   "version": "0.1.0",
+  "author": "jeoninhyuk",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
