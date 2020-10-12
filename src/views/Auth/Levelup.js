@@ -223,6 +223,7 @@ export const Levelup = (props) => {
                                 fullWidth: true,
                             }}                                
                             inputProps={{
+                                varient: 'filled',
                                 value: gender,
                                 onChange: handleGenderChange
                             }}                      
@@ -236,7 +237,7 @@ export const Levelup = (props) => {
                                 }}
                                 labelText = "Your birthday(생년월일)"
                                 inputProps = {{
-                                    varient: 'filled',
+                                    
                                     placeholder: 'Pick your birthday!',
                                     value: birthday,
                                     onChange: handleDateChange

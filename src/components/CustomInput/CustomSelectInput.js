@@ -6,7 +6,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import {
-    FormControl, InputLabel, Select, MenuItem
+    FormControl, InputLabel, NativeSelect
 } from "@material-ui/core";
 
 import styles from "../../assets/jss/material-kit-react/components/customInputStyle.js";
@@ -66,26 +66,26 @@ export default function CustomSelectInput(props) {
             </InputLabel>
         ) : null}
 
-        <Select
+        <NativeSelect
             classes={{
                 select: inputClasses,
                 root: marginTop,
                 disabled: classes.disabled,
                 filled: underlineClasses
             }}
-            labelId={id}
             id={id}
+            className={underlineClasses}
             {...inputProps}
         >   
         {
             menuItemList.map(({key, value}) => (
-                <MenuItem key = {key} value={key}>{
+                <option key = {key} value={value}>{
                     value
-                }</MenuItem>
+                }</option>
             ))
         }
 
-        </Select>
+        </NativeSelect>
         </FormControl>
     );
 }
