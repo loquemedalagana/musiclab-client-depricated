@@ -7,8 +7,8 @@ const LoginSignupStyle = {
         ...container,
         zIndex: "2",
         position: "relative",
-        paddingTop: "20vh",
-        color: "#FFFFFF",
+        paddingTop: "10vh",
+        color: "linear-gradient(to bottom, rgba(255, 255, 255) 45%, rgba(255, 255, 255, .5)), linear-gradient(to right,  rgba(255, 163, 208, .3), transparent), linear-gradient(to left, rgba(0, 255, 255, .3) 45%, transparent)",
         paddingBottom: "200px"
     },
     cardHidden: {

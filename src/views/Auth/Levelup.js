@@ -188,6 +188,11 @@ export const Levelup = (props) => {
                                 value: familyName,
                                 name: "familyName",
                                 onChange: onInputHandler,
+                                endAdornment: (
+                                <InputAdornment position="end">
+                                    <People className={classes.inputIconsColor} />
+                                </InputAdornment>
+                                )
                             }}
                         />
 
