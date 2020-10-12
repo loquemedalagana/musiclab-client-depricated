@@ -26,9 +26,9 @@ export default slice.reducer;
 //how to set dispatch?
 const {setAlert, removeAlert} = slice.actions;
 
-export const setAlertMsg = (message, alertType, timeout = 5000) => dispatch => {
+export const setAlertMsg = (message, alertType, name, timeout = 5000) => dispatch => {
     const id = uuidv4();
-    dispatch(setAlert({message, alertType, id}));
+    dispatch(setAlert({message, alertType, name, id}));
 
     setTimeout(() => dispatch(removeAlert({id})), timeout);
 }

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, IconButton} from "@material-ui/core";
+import {InputAdornment, IconButton, FormHelperText} from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
@@ -43,6 +43,7 @@ export const Login = (props) => {
     const classes = useStyles();
     const { 
         setAlertMsg,
+        alerts,
         ...rest 
     } = props;
 
@@ -66,11 +67,11 @@ export const Login = (props) => {
         let ok = true;
         if(!email) {
             ok=false;
-            setAlertMsg('이메일을 입력해주세요', 'error');
+            setAlertMsg('이메일을 입력해주세요', 'error', 'email');
         }
         if(!password){
             ok=false;
-            setAlertMsg('비밀번호를 입력해주세요', 'error');
+            setAlertMsg('비밀번호를 입력해주세요', 'error', 'password');
         }
 
         console.log(ok);
@@ -126,6 +127,15 @@ export const Login = (props) => {
                             )
                         }}
                         />
+                        {alerts.map(({message, name, id}) => (name==='email') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}
                         <CustomInput
                         labelText="Password"
                         id="pass"
@@ -145,6 +155,15 @@ export const Login = (props) => {
                             autoComplete: "off"
                         }}
                         />
+                        {alerts.map(({message, name, id}) => (name==='password') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
@@ -165,10 +184,11 @@ export const Login = (props) => {
 Login.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
+    alerts: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({
-    
+    alerts: state.alert,
 })
 
 export default connect(mapStateToProps, {setAlertMsg})(Login)
