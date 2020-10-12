@@ -83,7 +83,7 @@ export const Levelup = (props) => {
         const {name, value} = event.currentTarget;
         setInputs({
             ...inputs,
-            [name]: value
+            [name]: (name === 'description' && value.length > 200) ? value.substr(0, 200) : value,
         })
     }
 
@@ -101,37 +101,36 @@ export const Levelup = (props) => {
         let ok = true;
         if(!givenName) {
             ok=false;
-            setAlertMsg('이름을 입력해주세요', 'error');
+            setAlertMsg('이름을 입력해주세요', 'error', 'givenname');
         } else if (checkSpace(givenName) || checkNumber(givenName) || checkSpecialChar(givenName)) {
             ok=false;
-            setAlertMsg('이름에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error');
+            setAlertMsg('이름에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error', 'givenname');
         }
 
         if(!familyName){
             ok=false;
-            setAlertMsg('성을 입력해주세요', 'error');
+            setAlertMsg('성을 입력해주세요', 'error', 'familyname');
         } else if (checkSpace(familyName) || checkNumber(familyName) || checkSpecialChar(familyName)) {
             ok=false;
-            setAlertMsg('성에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error');
+            setAlertMsg('성에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error', 'familyname');
         }
 
         if(!gender){
             ok=false;
-            setAlertMsg('성별을 입력해주세요', 'error');
+            setAlertMsg('성별을 입력해주세요', 'error', 'gender');
         }
 
         if(!birthdayChanged){
             ok=false;
-            setAlertMsg('생년월일을 입력해주세요', 'error');
+            setAlertMsg('생년월일을 입력해주세요', 'error', 'birthday');
         }
 
         if(!description){  
             ok=false;
-            setAlertMsg('야다 노래 중 가장 좋아하는 곡에 대해 설명해주세요', 'error');
+            setAlertMsg('야다 노래 중 가장 좋아하는 곡에 대해 설명해주세요', 'error', 'description');
         } else if (description.length > 200){
-            setInputs({
-                description: description.substr(0, 200)
-            })
+            ok=false;
+            setAlertMsg('자기소개는 200자를 넘어가면 안됩니다.', 'error', 'description');
         }
 
         //if you are local user
