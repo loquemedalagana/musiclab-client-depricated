@@ -35,10 +35,10 @@ export default function DateTimePicker(props){
     if (formControlProps !== undefined) {
         formControlClasses = classNames(
             formControlProps.className,
-            classes.selectFormControal
+            classes.formControlWithText
         );
     } else {
-        formControlClasses = classes.selectFormControal;
+        formControlClasses = classes.formControlWithText;
     }
 
     return (

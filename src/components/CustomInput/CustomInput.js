@@ -16,6 +16,7 @@ const useStyles = makeStyles(styles);
 export default function CustomInput(props) {
   const classes = useStyles();
   const {
+    formHelperText,
     formControlProps,
     labelText,
     id,
@@ -46,14 +47,32 @@ export default function CustomInput(props) {
   });
   var formControlClasses;
   if (formControlProps !== undefined) {
-    formControlClasses = classNames(
-      formControlProps.className,
-      classes.formControl
-    );
+    if(formHelperText !== undefined){
+      formControlClasses = classNames(
+        formControlProps.className,
+        classes.formControlWithText
+      );
+    } else {
+      formControlClasses = classNames(
+        formControlProps.className,
+        classes.formControl
+      );
+    }
+
   } else {
-    formControlClasses = classes.formControl;
+    formControlClasses = (formHelperText !== undefined) ? classes.formControlWithText : classes.formControl;
   }
   return (
+    <>
+    {formHelperText !== undefined ? (
+      <InputLabel
+            className={classes.labelRoot + " " + labelClasses}
+            htmlFor={id}
+            {...labelProps}
+            >
+            {formHelperText}
+            </InputLabel>
+    ) : null}
     <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
         <InputLabel
@@ -75,6 +94,7 @@ export default function CustomInput(props) {
         {...inputProps}
       />
     </FormControl>
+    </>
   );
 }
 

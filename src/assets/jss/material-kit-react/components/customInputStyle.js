@@ -64,9 +64,8 @@ const customInputStyle = {
       color: "#495057"
     }
   },
-  selectFormControal: {
+  formControlWithText: {
     margin: "0 0 17px 0",
-    paddingTop: "15px",
     position: "relative",
     "& svg,& .fab,& .far,& .fal,& .fas,& .material-icons": {
       color: "#495057"

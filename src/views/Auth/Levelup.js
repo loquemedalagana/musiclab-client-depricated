@@ -6,7 +6,6 @@ import clsx from 'clsx';
 
 import {
     InputAdornment, FormHelperText,
-    InputLabel, 
     FormControlLabel, Checkbox
 } from "@material-ui/core";
 import {
@@ -243,10 +242,9 @@ export const Levelup = (props) => {
                                     onChange: handleDateChange
                                 }}
                             />
-                        <br/> <br/>
-                            <InputLabel id="description">{descriptionHelperText}</InputLabel>
+                        <br/> <br/>                            
                             <CustomInput
-                            labelText="Your favorite song..."
+                            formHelperText={descriptionHelperText}
                             id="description"
                             formControlProps={{
                                 fullWidth: true
