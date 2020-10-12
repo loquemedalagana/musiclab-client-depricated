@@ -68,10 +68,10 @@ export default function CustomSelectInput(props) {
 
         <Select
             classes={{
-                input: inputClasses,
+                select: inputClasses,
                 root: marginTop,
                 disabled: classes.disabled,
-                underline: underlineClasses
+                filled: underlineClasses
             }}
             labelId={id}
             id={id}

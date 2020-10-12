@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import classNames from "classnames";
 // react component plugin for creating a beautiful datetime dropdown picker
 import Datetime from "react-datetime";
 // material-ui components
@@ -8,47 +9,70 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 // @material-ui/icons
 // core components
-
-const styles = {
-    label: {
-        cursor: "pointer",
-        paddingLeft: "0",
-        color: "rgba(0, 0, 0, 0.26)",
-        fontSize: "14px",
-        lineHeight: "1.428571429",
-        fontWeight: "400",
-        display: "inline-flex"
-    },
-};
+import styles from "../../assets/jss/material-kit-react/components/customInputStyle.js";
 
 const useStyles = makeStyles(styles);
 
 export default function DateTimePicker(props){
     const {
-        title, 
+        formControlProps,
+        id,
+        success,
+        error,
+        labelText,
+
         inputProps,
+        labelProps,
     } = props;
     const classes = useStyles();
+
+    const labelClasses = classNames({
+        [" " + classes.labelRootError]: error,
+        [" " + classes.labelRootSuccess]: success && !error
+    });
+
+    var formControlClasses;
+    if (formControlProps !== undefined) {
+        formControlClasses = classNames(
+            formControlProps.className,
+            classes.selectFormControal
+        );
+    } else {
+        formControlClasses = classes.selectFormControal;
+    }
+
     return (
-        <div>
-        <InputLabel className={classes.label}>
-            {title}
-        </InputLabel>
-        <br />
-        <FormControl fullWidth>
+        <>
+        {labelText !== undefined ? (
+            <InputLabel
+            className={classes.labelRoot + " " + labelClasses}
+            htmlFor={id}
+            {...labelProps}
+            >
+            {labelText}
+            </InputLabel>
+        ) : null}
+        <FormControl {...formControlProps} className={formControlClasses}>
             <Datetime
             dateFormat={true}
             timeFormat={false}
             {...inputProps}
             />
         </FormControl>
-        </div>
+        </>
     );
 }
 
 DateTimePicker.propTypes = {
+    labelText: PropTypes.node,
+    labelProps: PropTypes.object,
+    id: PropTypes.string,
     inputProps: PropTypes.object,
-    title: PropTypes.string,
+    formControlProps: PropTypes.object,
+    inputRootCustomClasses: PropTypes.string,
+    error: PropTypes.bool,
+    success: PropTypes.bool,
+    white: PropTypes.bool,
     onChange: PropTypes.func,
 }
 

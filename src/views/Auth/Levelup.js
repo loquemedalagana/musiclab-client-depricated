@@ -226,8 +226,12 @@ export const Levelup = (props) => {
 
                         <br/> <br/>
                             <DateTimePicker 
-                                title = "Your birthday(생년월일)"
+                                formControlProps={{
+                                    fullWidth: true,
+                                }}
+                                labelText = "Your birthday(생년월일)"
                                 inputProps = {{
+                                    varient: 'filled',
                                     placeholder: 'Pick your birthday!',
                                     value: birthday,
                                     onChange: handleDateChange
