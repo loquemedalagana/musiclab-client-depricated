@@ -4,7 +4,13 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, IconButton, FormControlLabel, Checkbox} from "@material-ui/core";
+import {
+    InputAdornment, 
+    IconButton, 
+    FormControlLabel, 
+    Checkbox,
+    FormHelperText
+} from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
@@ -49,6 +55,7 @@ export const Signup= (props) => {
     const classes = useStyles();
     const { 
         setAlertMsg,
+        alerts,
         ...rest 
     } = props;
 
@@ -59,6 +66,13 @@ export const Signup= (props) => {
         password: '',
         confirmPassword: '',
     });
+
+    const [nicknameErr, setNicknameErr] = useState(false);
+    const [nicknameSuccess, setNicknameSuccess] = useState(false);
+    const [emailErr, setEmailErr] = useState(false);
+    const [emailSuccess, setEmailSuccess] = useState(false);
+    const [passwordErr, setPasswordErr] = useState(false);
+    const [passwordSuccess, setPasswordSuccess] = useState(false);
 
     const {
         email,
@@ -80,39 +94,64 @@ export const Signup= (props) => {
         let ok = true;
         if(!email) {
             ok=false;
-            setAlertMsg('이메일을 입력해주세요', 'error');
+            setAlertMsg('이메일을 입력해주세요', 'error', 'email');
+            setEmailSuccess(false);
+            setEmailErr(true);
         }
         else if (!checkValidEmail(email)){
             ok=false;
-            setAlertMsg('올바른 형식으로 입력해주세요. 해당 메일로 인증코드가 갑니다.', 'error');
+            setAlertMsg('올바른 형식으로 입력해주세요.', 'error', 'email');
+            setEmailSuccess(false);
+            setEmailErr(true);
+        } else {
+            setEmailSuccess(true);
+            setEmailErr(false);
         }
 
         if(!displayName){
             ok=false;
-            setAlertMsg('닉네임을 입력해주세요', 'error');
+            setAlertMsg('닉네임을 입력해주세요', 'error', 'nickname');
+            setNicknameErr(true);
+            setNicknameSuccess(false);
         } else if (checkSpecialChar(displayName) || checkNumber(displayName) || checkSpace(displayName)){
             ok=false;
-            setAlertMsg('닉네임에 숫자, 공백, 특수문자는 들어갈 수 없습니다.', 'error');
+            setAlertMsg('닉네임에 숫자, 공백, 특수문자는 들어갈 수 없습니다.', 'error', 'nickname');
+            setNicknameErr(true);
+            setNicknameSuccess(false);
+        } else {
+            setNicknameErr(false);
+            setNicknameSuccess(true);
         }
 
         if(!password || !confirmPassword){
             ok=false;
-            setAlertMsg('비밀번호를 입력해주세요', 'error');
+            setAlertMsg('비밀번호를 입력해주세요', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
         } else if(password && password !== confirmPassword && confirmPassword){
             ok=false;
-            setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error');
+            setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
         } else if (checkSpace(password) || checkSpace(confirmPassword)){
             ok=false;
-            setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error');
+            setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
         } else if (password.length < 8){
             ok=false;
-            setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error');
+            setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
+        } else {
+            setPasswordErr(false);
+            setPasswordSuccess(true);
         }
 
 
         if(!isChecked){
             ok=false;
-            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
+            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error', 'general');
         }
 
         console.log(ok);
@@ -153,6 +192,8 @@ export const Signup= (props) => {
                         <CustomInput
                         labelText="Your nickname..."
                         id="first"
+                        error={nicknameErr}
+                        success={nicknameSuccess}
                         formControlProps={{
                             fullWidth: true
                         }}
@@ -168,9 +209,21 @@ export const Signup= (props) => {
                             )
                         }}
                         />
+                        {alerts.map(({message, name, id}) => (name==='nickname') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}
+
                         <CustomInput
                         labelText="Email..."
                         id="email"
+                        error={emailErr}
+                        success={emailSuccess}
                         formControlProps={{
                             fullWidth: true
                         }}
@@ -186,9 +239,20 @@ export const Signup= (props) => {
                             )
                         }}
                         />
+                        {alerts.map(({message, name, id}) => (name==='email') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}                        
                         <CustomInput
                         labelText="Password"
                         id="pass"
+                        error={passwordErr}
+                        success={passwordSuccess}                        
                         formControlProps={{
                             fullWidth: true
                         }}
@@ -205,12 +269,23 @@ export const Signup= (props) => {
                             autoComplete: "off"
                         }}
                         />
+                        {alerts.map(({message, name, id}) => (name==='password') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}                        
                     <CustomInput
                         labelText="Confirm Password"
                         id="confirmpass"
                         formControlProps={{
                             fullWidth: true
                         }}
+                        error={passwordErr}
+                        success={passwordSuccess}                        
                         inputProps={{
                             type: "password",
                             name: "confirmPassword",
@@ -274,7 +349,7 @@ Signup.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    
+    alerts: state.alert,
 })
 
 export default connect(mapStateToProps, {setAlertMsg})(Signup)

@@ -51,7 +51,8 @@ export const Levelup = (props) => {
     }, 700);
     const classes = useStyles();
     const {
-        setAlertMsg, 
+        setAlertMsg,
+        alerts, 
         ...rest 
     } = props;
 
@@ -345,7 +346,7 @@ Levelup.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    
+    alerts: state.alert,
 })
 
 export default connect(mapStateToProps, {setAlertMsg})(Levelup);

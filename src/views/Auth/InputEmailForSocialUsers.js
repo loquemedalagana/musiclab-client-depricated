@@ -6,7 +6,12 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, FormControlLabel, Checkbox} from "@material-ui/core";
+import {
+    InputAdornment, 
+    FormControlLabel, 
+    Checkbox, 
+    FormHelperText
+} from "@material-ui/core";
 import {Email, Check} from "@material-ui/icons";
 
 import {
@@ -39,12 +44,16 @@ export const InputEmailForSocialUsers = (props) => {
     const classes = useStyles();
     const { 
         setAlertMsg,
+        alerts,
         ...rest 
     } = props;
 
     const [inputs, setInputs] = useState({
         email: '',
     });
+    const [emailErr, setEmailErr] = useState(false);
+    const [emailSuccess, setEmailSuccess] = useState(false);
+
     const [isChecked, setIsChecked] = useState(false);
 
     const { email } = inputs;
@@ -63,16 +72,20 @@ export const InputEmailForSocialUsers = (props) => {
         let ok = true;
         if(!email) {
             ok=false;
-            setAlertMsg('이메일을 입력해주세요', 'error');
+            setAlertMsg('이메일을 입력해주세요', 'error', 'email');
+            setEmailErr(true);
+            setEmailSuccess(false);
         }
         else if (!checkValidEmail(email)){
             ok=false;
-            setAlertMsg('올바른 형식으로 입력해주세요. 해당 메일로 인증코드가 갑니다.', 'error');
+            setAlertMsg('올바른 형식으로 입력해주세요.', 'error', 'email');
+            setEmailErr(true);
+            setEmailSuccess(false);
         }
 
         if(!isChecked){
             ok=false;
-            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
+            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error', 'general');
         }
 
         console.log(ok);
@@ -102,6 +115,8 @@ export const InputEmailForSocialUsers = (props) => {
                         <CustomInput
                         labelText="Email..."
                         id="email"
+                        error={emailErr}
+                        success={emailSuccess}
                         formControlProps={{
                             fullWidth: true
                         }}
@@ -117,7 +132,15 @@ export const InputEmailForSocialUsers = (props) => {
                             )
                         }}
                         />
-
+                        {alerts.map(({message, name, id}) => (name==='email') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}
                     <div
                         className={
                         classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
@@ -166,7 +189,7 @@ InputEmailForSocialUsers.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    
+    alerts: state.alert,
 })
 
 
