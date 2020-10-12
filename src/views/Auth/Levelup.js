@@ -227,7 +227,7 @@ export const Levelup = (props) => {
                                 value: gender,
                                 onChange: handleGenderChange
                             }}                      
-                            menuItemList={[{key: 1, value: 'Male(남성)'}, {key: 2, value: 'female(여성)'}]}
+                            menuItemList={[{key: 1, value: 'male', label: 'Male(남성)'}, {key: 2, value: 'female', label: 'Female(여성)'}]}
                         />
 
                         <br/> <br/>
