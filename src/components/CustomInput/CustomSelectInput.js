@@ -25,7 +25,6 @@ export default function CustomSelectInput(props) {
         white,
         inputRootCustomClasses,
         success,
-        onChange,
         menuItemList,
     } = props;
 
@@ -76,7 +75,6 @@ export default function CustomSelectInput(props) {
             }}
             labelId={id}
             id={id}
-            onChange={onChange}
             {...inputProps}
         >   
         {

@@ -6,8 +6,8 @@ import clsx from 'clsx';
 
 import {
     InputAdornment, FormHelperText,
-    FormControl, InputLabel, Select,
-    MenuItem, FormControlLabel, Checkbox
+    InputLabel, 
+    FormControlLabel, Checkbox
 } from "@material-ui/core";
 import {
     People, VpnKey as VpnKeyIcon, MusicNote as MusicNoteIcon, Check,
@@ -26,10 +26,11 @@ import {
     Header,
     HeaderLinks,
     DateTimePicker,
+    CustomSelectInput
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
-import {appTitle, checkAgreeLevelup} from '../../utils/texts';
+import {appTitle, checkAgreeLevelup, descriptionHelperText} from '../../utils/texts';
 import {setAlertMsg} from '../../app/store/alert';
 
 import {
@@ -136,21 +137,21 @@ export const Levelup = (props) => {
         //if you are local user
         if(!password || !confirmPassword){
             ok=false;
-            setAlertMsg('비밀번호를 입력해주세요', 'error');
+            setAlertMsg('비밀번호를 입력해주세요', 'error', 'password');
         } else if(password && password !== confirmPassword && confirmPassword){
             ok=false;
-            setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error');
+            setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error', 'password');
         } else if (checkSpace(password) || checkSpace(confirmPassword)){
             ok=false;
-            setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error');
+            setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error', 'password');
         } else if (password.length < 8){
             ok=false;
-            setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error');
+            setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error', 'password');
         }
 
         if(!isChecked){
             ok=false;
-            setAlertMsg('유의사항을 읽은 후 체크해주세요', 'error');
+            setAlertMsg('유의사항을 읽은 후 체크해주세요', 'error', 'general');
         }
 
         console.log(ok);
@@ -177,7 +178,7 @@ export const Levelup = (props) => {
                         <GridItem xs={12} sm={12} md={12}  >
 
                         <CustomInput
-                            labelText="Your family name..."
+                            labelText="Family name(성)"
                             id="last"
                             formControlProps={{
                                 fullWidth: true,
@@ -191,7 +192,7 @@ export const Levelup = (props) => {
                         />
 
                         <CustomInput
-                            labelText="Your given name..."
+                            labelText="Given name(이름)"
                             id="first"
                             formControlProps={{
                                 fullWidth: true,
@@ -207,36 +208,33 @@ export const Levelup = (props) => {
                                 </InputAdornment>
                                 )
                             }}
-                            />
-                        <br/> <br/>
-
-                        <FormControl className={classes.formControl} required fullWidth>
-                            <InputLabel id="select-gender">Gender(성별)</InputLabel>
-                            <Select
-                                labelId="select-gender"
-                                id="simple-select"
-                                value={gender}
-                                onChange={handleGenderChange}
-                            >
-                                <MenuItem value="male">Male(남성)</MenuItem>
-                                <MenuItem value="female">Female(여성)</MenuItem>
-                            </Select>
-
-                        </FormControl>
+                        />
                         
-
+                        <CustomSelectInput 
+                            labelText="Gender(성별)"
+                            labelId="select-gender"
+                            id="simple-select"
+                            formControlProps={{
+                                fullWidth: true,
+                            }}                                
+                            inputProps={{
+                                value: gender,
+                                onChange: handleGenderChange
+                            }}                      
+                            menuItemList={[{key: 1, value: 'Male(남성)'}, {key: 2, value: 'female(여성)'}]}
+                        />
 
                         <br/> <br/>
                             <DateTimePicker 
-                                title = "Your birthday"
+                                title = "Your birthday(생년월일)"
                                 inputProps = {{
                                     placeholder: 'Pick your birthday!',
                                     value: birthday,
                                     onChange: handleDateChange
                                 }}
                             />
-
-                            {/*글자 카운트 해주기*/}
+                        <br/> <br/>
+                            <InputLabel id="description">{descriptionHelperText}</InputLabel>
                             <CustomInput
                             labelText="Your favorite song..."
                             id="description"
