@@ -4,20 +4,15 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, IconButton, FormHelperText} from "@material-ui/core";
+import {InputAdornment, FormHelperText} from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
-
-import {
-    FacebookIcon, KakaoIcon, GoogleIcon
-} from '../../assets/customIcons/SocialIcons/SocialIcons';
 
 import {
     Footer,
     GridContainer,
     GridItem,
     Card,
-    CardHeader,
     Button,
     CardBody,
     CustomInput,
@@ -30,6 +25,8 @@ import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 import {appTitle} from '../../utils/texts';
 
 import {setAlertMsg} from '../../app/store/alert';
+
+import SocialLogin from './SocialLogin';
 
 const useStyles = makeStyles(styles);
 
@@ -110,20 +107,7 @@ export const Login = (props) => {
                 <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
-                    <CardHeader color="primary" className={classes.cardHeader}>
-                        <h4>Login with</h4>
-                        <div className={classes.socialLine}>
-                            <IconButton size='small'>
-                                <KakaoIcon />
-                            </IconButton>
-                            <IconButton size='small'>
-                                <GoogleIcon />
-                            </IconButton>
-                            <IconButton size='small'>
-                                <FacebookIcon />
-                            </IconButton>
-                        </div>
-                    </CardHeader>
+                    <SocialLogin color = 'primary' classes={classes} />
                     <p className={classes.divider}>Or Be Classical</p>
                     <CardBody>
                         <CustomInput

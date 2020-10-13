@@ -6,7 +6,6 @@ import clsx from 'clsx';
 
 import {
     InputAdornment, 
-    IconButton, 
     FormControlLabel, 
     Checkbox,
     FormHelperText
@@ -16,16 +15,12 @@ import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Check from "@material-ui/icons/Check";
 
-import {
-    FacebookIcon, KakaoIcon, GoogleIcon
-} from '../../assets/customIcons/SocialIcons/SocialIcons';
 
 import {
     Footer,
     GridContainer,
     GridItem,
     Card,
-    CardHeader,
     Button,
     CardBody,
     CustomInput,
@@ -44,13 +39,9 @@ import {
     checkSpecialChar
 } from '../../utils/checkStringPatterns';
 import {setAlertMsg} from '../../app/store/alert';
+import SocialLogin from './SocialLogin';
 
 const useStyles = makeStyles(styles);
-
-const SocialLoginURL = process.env.REACT_APP_SERVERURL + '/api/users';
-const KakaoLoginURL = SocialLoginURL + '/kakao';
-const GoogleLoginURL = SocialLoginURL + '/google';
-const FacebookLoginURL = SocialLoginURL + '/facebook';
 
 export const Signup= (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
@@ -63,16 +54,6 @@ export const Signup= (props) => {
         alerts,
         ...rest 
     } = props;
-
-    const GoogleLogin = () => {
-        window.location.assign(GoogleLoginURL);
-    }
-    const KakaoLogin = () => {
-        window.location.assign(KakaoLoginURL);
-    }
-    const FacebookLogin = () => {
-        window.location.assign(FacebookLoginURL);
-    }
 
     const [isChecked, setIsChecked] = useState(false);
     const [inputs, setInputs] = useState({
@@ -188,20 +169,7 @@ export const Signup= (props) => {
                 <GridItem xs={12} sm={12} md={5} lg={4}>
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
-                    <CardHeader color="primary" className={classes.cardHeader}>
-                        <h4>Sign up with</h4>
-                        <div className={classes.socialLine}>
-                            <IconButton size='small' onClick={KakaoLogin}>
-                                <KakaoIcon />
-                            </IconButton>
-                            <IconButton size='small' onClick={GoogleLogin}>
-                                <GoogleIcon />
-                            </IconButton>
-                            <IconButton size='small' onClick={FacebookLogin}>
-                                <FacebookIcon />
-                            </IconButton>
-                        </div>
-                    </CardHeader>
+                    <SocialLogin color = 'primary' classes={classes} />
                     <p className={classes.divider}>Or Be Classical</p>
                     <CardBody>
                         <CustomInput
