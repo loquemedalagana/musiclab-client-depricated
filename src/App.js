@@ -6,14 +6,34 @@ import Routes from './routes/routes';
 
 import "./assets/scss/material-kit-react.scss?v=1.9.0";
 
-import Landing from './views/Landing/Landing'
+import Landing from './views/Landing/Landing';
 
-function App() {
+import {
+  Header,
+  HeaderLinks, //loggedin or not loggedin
+//  Footer,
+} from './components/components';
+
+import {appTitle} from './utils/texts';
+
+function App(props) {
   //load and store user state
+  const { ...rest } = props;
 
   return (
     <Provider store = {store}>
       <Router>
+        <Header
+            color="transparent"
+            brand={appTitle}
+            rightLinks={<HeaderLinks />}
+            fixed
+            changeColorOnScroll={{
+            height: 400,
+            color: "info"
+            }}
+            {...rest}
+        />
         <Switch>
           <Route exact path = '/' component = {Landing} />
           <Route component = {Routes} /> 

@@ -24,12 +24,10 @@ import {
     CardBody,
     CustomInput,
     CardFooter,
-    Header,
-    HeaderLinks,
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-import {appTitle, checkIsValidEmail} from '../../utils/texts';
+import {checkIsValidEmail} from '../../utils/texts';
 import {checkValidEmail} from '../../utils/checkStringPatterns';
 import {setAlertMsg} from '../../app/store/alert';
 const useStyles = makeStyles(styles);
@@ -45,7 +43,7 @@ export const InputEmailForSocialUsers = (props) => {
     const { 
         setAlertMsg,
         alerts,
-        ...rest 
+//        ...rest 
     } = props;
 
     const [inputs, setInputs] = useState({
@@ -94,13 +92,6 @@ export const InputEmailForSocialUsers = (props) => {
 
     return (
         <>
-            <Header
-                absolute
-                color="transparent"
-                brand={appTitle}
-                rightLinks={<HeaderLinks />}
-                {...rest}
-            />
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>

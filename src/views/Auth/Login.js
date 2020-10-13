@@ -17,12 +17,9 @@ import {
     CardBody,
     CustomInput,
     CardFooter,
-    Header,
-    HeaderLinks,
 } from '../../components/components';
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-import {appTitle} from '../../utils/texts';
 
 import {setAlertMsg} from '../../app/store/alert';
 
@@ -41,7 +38,7 @@ export const Login = (props) => {
     const { 
         setAlertMsg,
         alerts,
-        ...rest 
+//        ...rest 
     } = props;
 
     const [inputs, setInputs] = useState({
@@ -94,13 +91,6 @@ export const Login = (props) => {
 
     return (
         <>
-            <Header
-                absolute
-                color="transparent"
-                brand={appTitle}
-                rightLinks={<HeaderLinks />}
-                {...rest}
-            />
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
