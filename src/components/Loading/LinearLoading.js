@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import clsx from 'clsx';
+import { makeStyles } from "@material-ui/core/styles";
 import CustomLinearProgress from '../CustomLinearProgress/CustomLinearProgress';
 
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
@@ -7,17 +8,17 @@ import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
 const useStyles = makeStyles(styles);
 
-const linearStyle = makeStyles({
-    root: {
-        width: '100%',
-    },
-});
+// const linearStyle = makeStyles({
+//     root: {
+//         width: '100%',
+//     },
+// });
 
 const Loading = () => {
     const classes = useStyles();
-    const [progress, setProgress] = React.useState(0);
+    const [progress, setProgress] = useState(0);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setInterval(() => {
             setProgress((oldProgress) => {
             if (oldProgress === 100) {

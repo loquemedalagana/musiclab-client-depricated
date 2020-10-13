@@ -10,7 +10,14 @@ import {
 } from "@material-ui/core";
 
 // @material-ui/icons
-import { Apps, SupervisorAccount, ExitToApp, Forum, Notifications, AccountCircle } from "@material-ui/icons";
+import { 
+  Apps, 
+  SupervisorAccount, 
+  ExitToApp, 
+  Forum, 
+  Notifications, 
+  AccountCircle 
+} from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";

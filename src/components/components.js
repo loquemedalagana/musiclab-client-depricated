@@ -1,5 +1,7 @@
 import Header from "./Header/Header.js";
 import HeaderLinks from "./Header/HeaderLinks.js";
+import HeaderLinksNotLoggedIn from './Header/HeaderLinksNotLoggedIn';
+
 import Footer from "./Footer/Footer.js";
 import GridContainer from "./Grid/GridContainer.js";
 import GridItem from "./Grid/GridItem.js";
@@ -18,6 +20,9 @@ import NavPills from './NavPills/NavPills';
 import Pagination from './Pagination/Pagination';
 
 import CustomLinearProgress from './CustomLinearProgress/CustomLinearProgress';
+import CircularLoading from './Loading/CircularLoading';
+import LinearLoading from './Loading/LinearLoading';
+
 import CustomTabs from './CustomTabs/CustomTabs';
 
 import InfoArea from './InfoArea/InfoArea';
@@ -39,4 +44,5 @@ export {
     CustomLinearProgress, CustomTabs, InfoArea, DateTimePicker,
     DangerText, InfoText, MutedText, PrimaryText, QuoteText,
     SmallText, SucessText, WarningText,
+    HeaderLinksNotLoggedIn, LinearLoading, CircularLoading,
 }
