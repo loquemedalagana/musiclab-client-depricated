@@ -68,6 +68,8 @@ export default function Footer(props) {
   );
 }
 
+//about => button
+
 Footer.propTypes = {
   whiteFont: PropTypes.bool
 };

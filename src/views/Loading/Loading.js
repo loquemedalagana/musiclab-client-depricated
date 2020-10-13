@@ -2,12 +2,13 @@ import React from 'react';
 import clsx from 'clsx';
 
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
-import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
+import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
 const useStyles = makeStyles(styles);
 
-function NotFound() {
+const Loading = () => {
     const classes = useStyles();
+    
     return (
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             
@@ -15,4 +16,4 @@ function NotFound() {
     )
 }
 
-export default NotFound
+export default Loading;
