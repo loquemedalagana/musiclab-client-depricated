@@ -52,14 +52,14 @@ export default function Footer(props) {
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made {" "}
+          &copy; {1900 + new Date().getYear()} , developed {" "}
           <Favorite className={classes.icon} /> by{" "}
           <a
             href="https://github.com/loquemedalagana"
             className={aClasses}
             target="_blank"
           >
-            Seongwon Kim
+            Mrs. Liberty
           </a>{" "}
           for a better world.
         </div>

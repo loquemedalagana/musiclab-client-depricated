@@ -20,7 +20,7 @@ import {
 
 import {mainParallaxStyle} from '../../assets/jss/material-kit-react/views/background';
 
-import {appTitle, appDescription} from '../../utils/texts';
+import {appTitle, appDescription, appShortTitle} from '../../utils/texts';
 import styles from '../../assets/jss/material-kit-react/views/landingStyle';
 
 const dashboardRoutes = [];
@@ -52,7 +52,7 @@ export const Landing = (props) => {
                 <GridContainer type = "parallax">
                 <GridItem xs={12} sm={12} md={6}>
                     <div className={classes.brand}>
-                        <h1 className={classes.title}>{appTitle}</h1>
+                        <h1 className={classes.title}>{appShortTitle}</h1>
                         <h3 className={classes.subtitle}>
                             {appDescription}
                         </h3>

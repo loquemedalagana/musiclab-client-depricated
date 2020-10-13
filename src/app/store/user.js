@@ -14,7 +14,7 @@ const slice = createSlice({
         loading: true,
     },
     reducers: {
-
+        
     },
 });
 
