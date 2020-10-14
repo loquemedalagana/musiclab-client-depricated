@@ -76,6 +76,20 @@ export const Levelup = (props) => {
     const [birthday, setBirthday] = useState(new Date('1999-03-03')); //야다 데뷔일로 바꾸기
     const [birthdayChanged, setBirthdayChanged] = useState(false);
 
+    const [familyNameErr, setFamilyNameErr] = useState(false);
+    const [familyNameSuccess, setFamilyNameSuccess] = useState(false);
+    const [givenNameErr, setGivenNameErr] = useState(false);
+    const [givenNameSuccess, setGivenNameSuccess] = useState(false);
+
+    const [birthdayErr, setBirthdayErr] = useState(false);
+
+    const [genderErr, setGenderErr] = useState(false);
+    const [genderSuccess, setGenderSuccess] = useState(false);
+
+    const [descriptionErr, setDescriptionErr] = useState(false);
+    const [descriptionSuccess, setDescriptionSuccess] = useState(false);
+
+
     const [passwordErr, setPasswordErr] = useState(false);
     const [passwordSuccess, setPasswordSuccess] = useState(false);
 
@@ -89,10 +103,13 @@ export const Levelup = (props) => {
 
     const handleGenderChange = (event) => {
         setGender(event.target.value);
+        setGenderErr(false);
+        setGenderSuccess(true);
     };
 
     const handleDateChange = (date) => {
         setBirthdayChanged(true);
+        setBirthdayErr(false);
         setBirthday(date._d);
     };
 
@@ -102,35 +119,59 @@ export const Levelup = (props) => {
         if(!givenName) {
             ok=false;
             setAlertMsg('이름을 입력해주세요', 'error', 'givenname');
+            setGivenNameErr(true);
+            setGivenNameSuccess(false);
         } else if (checkSpace(givenName) || checkNumber(givenName) || checkSpecialChar(givenName)) {
             ok=false;
             setAlertMsg('이름에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error', 'givenname');
+            setGivenNameErr(true);
+            setGivenNameSuccess(false);
+        } else {
+            setGivenNameErr(false);
+            setGivenNameSuccess(true);
         }
 
         if(!familyName){
             ok=false;
             setAlertMsg('성을 입력해주세요', 'error', 'familyname');
+            setFamilyNameErr(true);
+            setFamilyNameSuccess(false);
         } else if (checkSpace(familyName) || checkNumber(familyName) || checkSpecialChar(familyName)) {
             ok=false;
             setAlertMsg('성에 공백, 숫자, 특수문자가 들어갈 수 없습니다.', 'error', 'familyname');
+            setFamilyNameErr(true);
+            setFamilyNameSuccess(false);
+        } else {
+            setFamilyNameErr(false);
+            setFamilyNameSuccess(true);
         }
 
         if(!gender){
             ok=false;
             setAlertMsg('성별을 입력해주세요', 'error', 'gender');
-        }
+            setGenderErr(true);
+            setGenderSuccess(false);
+        } 
 
         if(!birthdayChanged){
             ok=false;
+            setBirthdayErr(true);
             setAlertMsg('생년월일을 입력해주세요', 'error', 'birthday');
-        }
+        } 
 
         if(!description){  
             ok=false;
             setAlertMsg('야다 노래 중 가장 좋아하는 곡에 대해 설명해주세요', 'error', 'description');
+            setDescriptionErr(true);
+            setDescriptionSuccess(false);
         } else if (description.length > 200){
             ok=false;
             setAlertMsg('자기소개는 200자를 넘어가면 안됩니다.', 'error', 'description');
+            setDescriptionErr(true);
+            setDescriptionSuccess(false);
+        } else {
+            setDescriptionErr(false);
+            setDescriptionSuccess(true);
         }
 
         //if you are local user
@@ -186,6 +227,8 @@ export const Levelup = (props) => {
                             formControlProps={{
                                 fullWidth: true,
                             }}
+                            success = {familyNameSuccess}
+                            error={familyNameErr}
                             inputProps={{
                                 type: "text",
                                 value: familyName,
@@ -205,6 +248,8 @@ export const Levelup = (props) => {
                             formControlProps={{
                                 fullWidth: true,
                             }}
+                            success = {givenNameSuccess}
+                            error = {givenNameErr}
                             inputProps={{
                                 type: "text",
                                 value: givenName,
@@ -222,6 +267,8 @@ export const Levelup = (props) => {
                             labelText="Gender(성별)"
                             labelId="select-gender"
                             id="simple-select"
+                            success = {genderSuccess}
+                            error = {genderErr}
                             formControlProps={{
                                 fullWidth: true,
                             }}                                
@@ -238,6 +285,8 @@ export const Levelup = (props) => {
                                 formControlProps={{
                                     fullWidth: true,
                                 }}
+                                success = {birthdayChanged}
+                                error = {birthdayErr}
                                 labelText = "Your birthday(생년월일)"
                                 inputProps = {{
                                     
@@ -253,6 +302,8 @@ export const Levelup = (props) => {
                             formControlProps={{
                                 fullWidth: true
                             }}
+                            success = {descriptionSuccess}
+                            error = {descriptionErr}
                             inputProps={{
                                 type: "text",
                                 multiline: true,
