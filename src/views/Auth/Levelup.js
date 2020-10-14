@@ -12,7 +12,6 @@ import {
     People, VpnKey as VpnKeyIcon, MusicNote as MusicNoteIcon, Check,
 } from "@material-ui/icons";
 
-
 import {
     Footer,
     GridContainer,
@@ -77,6 +76,9 @@ export const Levelup = (props) => {
     const [birthday, setBirthday] = useState(new Date('1999-03-03')); //야다 데뷔일로 바꾸기
     const [birthdayChanged, setBirthdayChanged] = useState(false);
 
+    const [passwordErr, setPasswordErr] = useState(false);
+    const [passwordSuccess, setPasswordSuccess] = useState(false);
+
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
         setInputs({
@@ -135,15 +137,26 @@ export const Levelup = (props) => {
         if(!password || !confirmPassword){
             ok=false;
             setAlertMsg('비밀번호를 입력해주세요', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);        
         } else if(password && password !== confirmPassword && confirmPassword){
             ok=false;
             setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
         } else if (checkSpace(password) || checkSpace(confirmPassword)){
             ok=false;
             setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
         } else if (password.length < 8){
             ok=false;
             setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error', 'password');
+            setPasswordErr(true);
+            setPasswordSuccess(false);
+        } else {
+            setPasswordErr(false);
+            setPasswordSuccess(true);            
         }
 
         if(!isChecked){
@@ -260,6 +273,8 @@ export const Levelup = (props) => {
                             <CustomInput
                             labelText="Password"
                             id="pass"
+                            error={passwordErr}
+                            success={passwordSuccess}                              
                             formControlProps={{
                                 fullWidth: true
                             }}
@@ -276,9 +291,20 @@ export const Levelup = (props) => {
                                 autoComplete: "off"
                             }}
                             />
+                        {alerts.map(({message, name, id}) => (name==='password') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}                             
                             <CustomInput
                                 labelText="Confirm Password"
                                 id="confirmpass"
+                                error={passwordErr}
+                                success={passwordSuccess}                                  
                                 formControlProps={{
                                     fullWidth: true
                                 }}
