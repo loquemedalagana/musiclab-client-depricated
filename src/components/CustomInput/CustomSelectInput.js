@@ -76,7 +76,8 @@ export default function CustomSelectInput(props) {
             id={id}
             className={underlineClasses}
             {...inputProps}
-        >   
+        >
+        <option value=""></option>
         {
             menuItemList.map(({key, value, label}) => (
                 <option key = {key} value={value}>{
