@@ -166,7 +166,7 @@ export const Levelup = (props) => {
             setDescriptionSuccess(false);
         } else if (description.length > 200){
             ok=false;
-            setAlertMsg('자기소개는 200자를 넘어가면 안됩니다.', 'error', 'description');
+//            setAlertMsg('자기소개는 200자를 넘어가면 안됩니다.', 'error', 'description');
             setDescriptionErr(true);
             setDescriptionSuccess(false);
         } else {
@@ -350,7 +350,7 @@ export const Levelup = (props) => {
                                 )
                             }}
                             />
-                            <FormHelperText style = {{textAlign: 'right'}} error={description.length >= 200 ? true: false}>
+                            <FormHelperText style = {{textAlign: 'right'}} error={description.length >= 200 || descriptionErr ? true: false}>
                             {description.length >= 200 ? "자기소개는 최대 200자까지입니다." : description.length}
                             </FormHelperText>
 
