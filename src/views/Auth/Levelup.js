@@ -241,7 +241,15 @@ export const Levelup = (props) => {
                                 )
                             }}
                         />
-
+                        {alerts.map(({message, name, id}) => (name==='familyname') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}  
                         <CustomInput
                             labelText="Given name(이름)"
                             id="first"
@@ -262,7 +270,15 @@ export const Levelup = (props) => {
                                 )
                             }}
                         />
-                        
+                        {alerts.map(({message, name, id}) => (name==='givenname') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}                          
                         <CustomSelectInput 
                             labelText="Gender(성별)"
                             labelId="select-gender"
@@ -279,7 +295,15 @@ export const Levelup = (props) => {
                             }}                      
                             menuItemList={[{key: 1, value: 'male', label: 'Male(남성)'}, {key: 2, value: 'female', label: 'Female(여성)'}]}
                         />
-
+                        {alerts.map(({message, name, id}) => (name==='gender') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}  
                         <br/> <br/>
                             <DateTimePicker 
                                 formControlProps={{
@@ -295,6 +319,15 @@ export const Levelup = (props) => {
                                     onChange: handleDateChange
                                 }}
                             />
+                        {alerts.map(({message, name, id}) => (name==='birthday') && (
+                            <FormHelperText 
+                            key = {id}
+                            style = {{textAlign: 'right'}} 
+                            error
+                            >
+                            {message}
+                            </FormHelperText>
+                        ))}                              
                         <br/> <br/>                            
                             <CustomInput
                             formHelperText={descriptionHelperText}
