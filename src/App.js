@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from './routes/routes';
 import "./assets/scss/material-kit-react.scss?v=1.9.0";
 
+import loadUser from './app/store/auth';
+
 import Landing from './views/Landing/Landing';
 
 import {
@@ -19,6 +21,8 @@ import {appTitle} from './utils/texts';
 function App(props) {
   //load and store user state
   const { ...rest } = props;
+
+
 
   return (
     <Provider store = {store}>
