@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -153,8 +154,9 @@ export const Signup= (props) => {
         
     }
 
+    if(isAuth) return <Redirect to = '/' />
+
     return (
-        <>
         <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
@@ -314,14 +316,14 @@ export const Signup= (props) => {
             </div>
             <Footer whiteFont />
         </div>
-        </>
     )
 }
 
 Signup.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
-    alerts: PropTypes.array
+    alerts: PropTypes.array,
+    isAuth: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({

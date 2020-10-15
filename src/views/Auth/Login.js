@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -38,6 +39,7 @@ export const Login = (props) => {
     const { 
         setAlertMsg,
         alerts,
+        isAuth,
 //        ...rest 
     } = props;
 
@@ -88,6 +90,8 @@ export const Login = (props) => {
         console.log(ok);
         //loginUser({ email, password });
     }
+
+    if(isAuth) return <Redirect to = '/' />
 
     return (
         <>
@@ -180,10 +184,12 @@ Login.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
     alerts: PropTypes.array,
+    isAuth: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
+    isAuth: state.auth.auth,
 })
 
 export default connect(mapStateToProps, {setAlertMsg})(Login)
