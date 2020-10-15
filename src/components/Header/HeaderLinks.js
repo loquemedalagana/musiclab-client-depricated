@@ -36,9 +36,13 @@ const HeaderLinks = (props) => {
   const classes = useStyles();
   const {
     logoutUser,
+    isAuth,
     isAdmin,
     isMember,
   } = props;
+
+  if(!isAuth) return <Redirect to = '/' />;
+
   return (
     <List className={classes.list}>
       {isMember && (
@@ -170,8 +174,8 @@ HeaderLinks.propTypes = {
 
 const mapStateToProps = (state) => ({
   isAuth: state.auth.auth,
-  isMember: state.auth.userData.points >= 0,
-  isAdmin: state.auth.userData.isadmin,
+  isMember: state.auth.auth === true ? (state.auth.userData && state.auth.userData.points >= 0) : false,
+  isAdmin: state.auth.auth === true ? (state.auth.userData && state.auth.userData.isadmin) : false,
 })
 
 
