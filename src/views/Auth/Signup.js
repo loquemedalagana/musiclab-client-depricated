@@ -50,6 +50,7 @@ export const Signup= (props) => {
     const { 
         setAlertMsg,
         alerts,
+        isAuth,
 //        ...rest 
     } = props;
 
@@ -319,11 +320,13 @@ export const Signup= (props) => {
 
 Signup.propTypes = {
     props: PropTypes.object,
-    setAlertMsg: PropTypes.func
+    setAlertMsg: PropTypes.func,
+    alerts: PropTypes.array
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
+    isAuth: state.auth.auth,
 })
 
 export default connect(mapStateToProps, {setAlertMsg})(Signup)

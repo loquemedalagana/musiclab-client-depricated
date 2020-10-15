@@ -7,10 +7,11 @@ import "./assets/scss/material-kit-react.scss?v=1.9.0";
 import {fetchUser, authSelector} from './app/store/auth';
 
 import Landing from './views/Landing/Landing';
+import LinearLoading from './components/Loading/LinearLoading';
 
 import {
   Header,
-  //HeaderLinks, //loggedin or not loggedin
+  HeaderLinks, //loggedin or not loggedin
   HeaderLinksNotLoggedIn,
 //  Footer,
 } from './components/components';
@@ -25,7 +26,6 @@ function App(props) {
   const state = useSelector(authSelector);
   const {
     loading,
-    userData,
     auth,
   } = state;
 
@@ -33,12 +33,14 @@ function App(props) {
     dispatch(fetchUser());
   }, [dispatch]);
 
+  if(loading) return <LinearLoading />
+
   return (  
       <Router>
         <Header
             color="transparent"
             brand={appTitle}
-            rightLinks={<HeaderLinksNotLoggedIn />}
+            rightLinks={auth ? <HeaderLinks /> : <HeaderLinksNotLoggedIn />}
             fixed
             changeColorOnScroll={{
             height: 400,
