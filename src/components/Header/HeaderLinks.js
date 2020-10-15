@@ -36,10 +36,13 @@ const HeaderLinks = (props) => {
   const classes = useStyles();
   const {
     logoutUser,
+    isAdmin,
+    isMember,
   } = props;
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
+      {isMember && (
+        <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="View"
@@ -61,7 +64,10 @@ const HeaderLinks = (props) => {
           ]}
         />
       </ListItem>
-      <ListItem className={classes.listItem}>
+      )}
+
+      { isAdmin && (
+        <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText="Admin"
@@ -79,7 +85,8 @@ const HeaderLinks = (props) => {
             </Button>,
           ]}
         />
-      </ListItem>
+        </ListItem>
+      )}
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
@@ -156,10 +163,15 @@ const HeaderLinks = (props) => {
 
 HeaderLinks.propTypes = {
   logoutUser: PropTypes.func,
+  isAuth: PropTypes.bool,
+  isMember: PropTypes.bool,
+  isAdmin: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
   isAuth: state.auth.auth,
+  isMember: state.auth.userData.points >= 0,
+  isAdmin: state.auth.userData.isadmin,
 })
 
 

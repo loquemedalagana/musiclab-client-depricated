@@ -30,8 +30,7 @@ const slice = createSlice({
             state.loading = false;
             state.auth = false;
         },
-        login: (state, {payload}) => {
-            state.userData = payload;
+        login: (state) => {
             state.loading = false;
             state.auth = true;
         },
