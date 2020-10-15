@@ -202,7 +202,7 @@ export const Levelup = (props) => {
 
         if(!isChecked){
             ok=false;
-            setAlertMsg('유의사항을 읽은 후 체크해주세요', 'error', 'general');
+            setAlertMsg('유의사항을 읽은 후 체크해주세요', 'error');
         }
 
         console.log(ok);

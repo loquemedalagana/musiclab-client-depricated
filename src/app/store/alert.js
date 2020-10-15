@@ -8,10 +8,10 @@ const slice = createSlice({
     name: 'alert',
     initialState: [],
     reducers: {
-        set: (state, action) => {
+        setAlert: (state, action) => {
             state.push(action.payload);
         },
-        remove: (state, action) => {
+        removeAlert: (state, action) => {
             const removeIdx = state.map(element => element.id)
             .indexOf(action.payload.id);
             state.splice(removeIdx, 1);
@@ -23,11 +23,11 @@ export default slice.reducer;
 
 //actions
 //how to set dispatch?
-const {set, remove} = slice.actions;
+const {setAlert, removeAlert} = slice.actions;
 
 export const setAlertMsg = (message, alertType, name, timeout = 5000) => dispatch => {
     const id = uuidv4();
-    dispatch(set({message, alertType, name, id}));
+    dispatch(setAlert({message, alertType, name, id}));
 
-    setTimeout(() => dispatch(remove({id})), timeout);
+    setTimeout(() => dispatch(removeAlert({id})), timeout);
 }

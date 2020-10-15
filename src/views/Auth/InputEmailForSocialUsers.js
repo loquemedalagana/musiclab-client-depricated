@@ -83,7 +83,7 @@ export const InputEmailForSocialUsers = (props) => {
 
         if(!isChecked){
             ok=false;
-            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error', 'general');
+            setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
         }
 
         console.log(ok);
