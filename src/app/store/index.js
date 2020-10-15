@@ -13,6 +13,7 @@ const reducer = combineReducers({
 
 const store = configureStore({
   reducer,
+//  middleware: [thunk],
   devTools: process.env.NODE_ENV !== 'production',
 });
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import store from './app/store';
-import { Provider } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from './routes/routes';
 import "./assets/scss/material-kit-react.scss?v=1.9.0";
 
-import loadUser from './app/store/auth';
+import {fetchUser, authSelector} from './app/store/auth';
 
 import Landing from './views/Landing/Landing';
 
@@ -22,10 +21,19 @@ function App(props) {
   //load and store user state
   const { ...rest } = props;
 
+  const dispatch = useDispatch();
+  const state = useSelector(authSelector);
+  const {
+    loading,
+    userData,
+    auth,
+  } = state;
 
+  React.useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
 
-  return (
-    <Provider store = {store}>
+  return (  
       <Router>
         <Header
             color="transparent"
@@ -43,7 +51,6 @@ function App(props) {
           <Route component = {Routes} /> 
         </Switch>
       </Router>
-    </Provider>
   );
 }
 
