@@ -74,8 +74,8 @@ export const fetchUser = () => async dispatch => {
 //login user
 export const loginUser = dataToSubmit => async dispatch => {
     try {
-        const response = await api.post(`/users/login`, dataToSubmit);
-        dispatch(login(response.data));
+        await api.post(`/users/login`, dataToSubmit);
+        dispatch(login());
         dispatch(fetchUser());
     } catch (err) {
         const errors = err.response.data.errors;
