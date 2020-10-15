@@ -1,5 +1,8 @@
 /*eslint-disable*/
 import React from "react";
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // react components for routing our app without refresh
 import { withRouter } from "react-router-dom";
 
@@ -19,6 +22,8 @@ import {
   AccountCircle 
 } from "@material-ui/icons";
 
+import {logoutUser} from '../../app/store/auth';
+
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import Button from "../CustomButtons/Button.js";
@@ -29,6 +34,9 @@ const notificationCnt = 0, chatCnt = 7;
 
 const HeaderLinks = (props) => {
   const classes = useStyles();
+  const {
+    logoutUser,
+  } = props;
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
@@ -115,7 +123,10 @@ const HeaderLinks = (props) => {
               </Badge>
               Private Messages              
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('logout')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>{
+              logoutUser();
+              return <Redirect to = '/' />;
+            }} className={classes.dropdownLink}>
               <ExitToApp />
               Logout              
             </Button>
@@ -143,4 +154,13 @@ const HeaderLinks = (props) => {
   );
 }
 
-export default withRouter(HeaderLinks);
+HeaderLinks.propTypes = {
+  logoutUser: PropTypes.func,
+}
+
+const mapStateToProps = (state) => ({
+  isAuth: state.auth.auth,
+})
+
+
+export default withRouter(connect(mapStateToProps, {logoutUser})(HeaderLinks));

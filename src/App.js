@@ -35,6 +35,8 @@ function App(props) {
 
   if(loading) return <LinearLoading />
 
+  console.log(state);
+
   return (  
       <Router>
         <Header

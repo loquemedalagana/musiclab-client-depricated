@@ -22,6 +22,7 @@ import {
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
+import {loginUser} from '../../app/store/auth';
 import {setAlertMsg} from '../../app/store/alert';
 
 import SocialLogin from './SocialLogin';
@@ -40,6 +41,7 @@ export const Login = (props) => {
         setAlertMsg,
         alerts,
         isAuth,
+        loginUser,
 //        ...rest 
     } = props;
 
@@ -88,7 +90,10 @@ export const Login = (props) => {
         }
 
         console.log(ok);
-        //loginUser({ email, password });
+
+        if(ok) {
+            loginUser({ email, password });
+        }
     }
 
     if(isAuth) return <Redirect to = '/' />
@@ -185,6 +190,7 @@ Login.propTypes = {
     setAlertMsg: PropTypes.func,
     alerts: PropTypes.array,
     isAuth: PropTypes.bool,
+    loginUser: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
@@ -192,4 +198,4 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.auth,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(Login)
+export default connect(mapStateToProps, {setAlertMsg, loginUser})(Login)
