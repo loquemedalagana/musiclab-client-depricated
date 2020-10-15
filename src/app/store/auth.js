@@ -21,7 +21,6 @@ const slice = createSlice({
             state.loading = true;
         },
         loadUserSuccess: (state, {payload}) => {
-            console.log(payload);
             state.loading = false; 
             state.userData = payload;
             state.auth = true;
@@ -66,7 +65,7 @@ export const fetchUser = () => async dispatch => {
     dispatch(loadUser());
     try {
         const response = await api.get(`/users/auth`);
-        dispatch(response.data);
+        dispatch(loadUserSuccess(response.data));
     } catch (err) {
         dispatch(loadUserFail());
     }
