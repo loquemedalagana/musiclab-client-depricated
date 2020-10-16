@@ -35,6 +35,7 @@ const notificationCnt = 0, chatCnt = 7;
 const HeaderLinks = (props) => {
   const classes = useStyles();
   const {
+    setMobileOpen,
     logoutUser,
     isAuth,
     isAdmin,
@@ -104,7 +105,10 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={AccountCircle}
           dropdownList={[
-            <Button color = "transparent" onClick={()=> history.push(`/profiles/${userId}`)} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=> {
+              history.push(`/profiles/${userId}`);
+              setMobileOpen(false);
+            }} className={classes.dropdownLink}>
               <AccountCircle/>
               My Profile
             </Button>,
@@ -168,6 +172,7 @@ const HeaderLinks = (props) => {
 }
 
 HeaderLinks.propTypes = {
+  setMobileOpen: PropTypes.func,
   history: PropTypes.object,
   logoutUser: PropTypes.func,
   userId: PropTypes.string,

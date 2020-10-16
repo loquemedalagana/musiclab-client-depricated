@@ -17,6 +17,7 @@ const useStyles = makeStyles(styles);
 const HeaderLinksNotLoggedIn = (props) => {
     const {
         history,
+        setMobileOpen,
     } = props;
     const classes = useStyles();
     return (
@@ -25,7 +26,10 @@ const HeaderLinksNotLoggedIn = (props) => {
             <Button 
                 color='transparent'
                 className={classes.navLink}
-                onClick={() => history.push('/login')}
+                onClick={() => {
+                    history.push('/login');
+                    setMobileOpen(false);
+                }}
             >
                 Login
             </Button>
@@ -34,7 +38,10 @@ const HeaderLinksNotLoggedIn = (props) => {
             <Button 
                 color='transparent'
                 className={classes.navLink}
-                onClick={() => history.push('/signup')}
+                onClick={() => {
+                    history.push('/signup');
+                    setMobileOpen(false);
+                }}
             >
                 Sign up
             </Button>
@@ -58,6 +65,11 @@ const HeaderLinksNotLoggedIn = (props) => {
         </ListItem>        
         </List>
     );
+}
+
+HeaderLinksNotLoggedIn.propTypes = {
+    setMobileOpen: PropTypes.func,
+    history: PropTypes.object,
 }
 
 export default withRouter(HeaderLinksNotLoggedIn);

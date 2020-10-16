@@ -21,7 +21,10 @@ const useStyles = makeStyles(styles);
 
 function Header(props) {
   const classes = useStyles();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const {
+    mobileOpen,
+    setMobileOpen
+  } = props;
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -113,6 +116,8 @@ Header.defaultProp = {
 };
 
 Header.propTypes = {
+  mobileOpen: PropTypes.bool,
+  setMobileOpen: PropTypes.func,
   color: PropTypes.oneOf([
     "primary",
     "info",

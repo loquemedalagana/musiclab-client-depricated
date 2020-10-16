@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from './routes/routes';
@@ -22,6 +22,8 @@ function App(props) {
   //load and store user state
   const { ...rest } = props;
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   const dispatch = useDispatch();
   const state = useSelector(authSelector);
   const {
@@ -29,7 +31,7 @@ function App(props) {
     auth,
   } = state;
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch(fetchUser());
   }, [dispatch]);
 
@@ -40,12 +42,22 @@ function App(props) {
         <Header
             color="transparent"
             brand={appTitle}
-            rightLinks={auth ? <HeaderLinks /> : <HeaderLinksNotLoggedIn />}
+            rightLinks={auth ? 
+              <HeaderLinks
+                mobileOpen={mobileOpen}
+                setMobileOpen={setMobileOpen}
+              /> : 
+              <HeaderLinksNotLoggedIn 
+                mobileOpen={mobileOpen}
+                setMobileOpen={setMobileOpen}
+              />}
             fixed
             changeColorOnScroll={{
             height: 400,
             color: "info"
             }}
+            mobileOpen={mobileOpen}
+            setMobileOpen={setMobileOpen}
             {...rest}
         />
         <Switch>
