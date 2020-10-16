@@ -8,7 +8,6 @@ const LoginSignupStyle = {
         zIndex: "2",
         position: "relative",
         paddingTop: "10vh",
-        color: "linear-gradient(to bottom, rgba(255, 255, 255) 45%, rgba(255, 255, 255, .5)), linear-gradient(to right,  rgba(255, 163, 208, .3), transparent), linear-gradient(to left, rgba(0, 255, 255, .3) 45%, transparent)",
         paddingBottom: "200px"
     },
     cardHidden: {
@@ -40,40 +39,13 @@ const LoginSignupStyle = {
             content: '""'
         },
         "& footer li a,& footer li a:hover,& footer li a:active": {
-            color: "#FFFFFF"
+            
         },
         "& footer": {
             position: "absolute",
             bottom: "0",
             width: "100%"
         },
-
-    },
-    form: {
-        margin: "0"
-    },
-    cardHeader: {
-        width: "auto",
-        textAlign: "center",
-        marginLeft: "20px",
-        marginRight: "20px",
-        marginTop: "-40px",
-        padding: "20px 0",
-        marginBottom: "15px"
-    },
-    divider: {
-        marginTop: "30px",
-        marginBottom: "0px",
-        textAlign: "center"
-    },
-    cardFooter: {
-        paddingTop: "0rem",
-        border: "0",
-        borderRadius: "6px",
-        justifyContent: "center !important"
-    },
-    inputIconsColor: {
-        color: "#495057"
     },
     brand: {
         color: "#1a1a2e",

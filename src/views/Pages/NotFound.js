@@ -3,14 +3,12 @@ import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
 import {
     Footer,
-    Card,
     GridContainer,
     GridItem,
-
 } from '../../components/components';
 
 import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
-import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
+import styles from '../../assets/jss/material-kit-react/views/NotfoundStyle';
 
 const useStyles = makeStyles(styles);
 
@@ -18,7 +16,7 @@ function NotFound() {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
-    }, 700);
+    }, 800);
     const classes = useStyles();
 
     return (
@@ -26,9 +24,12 @@ function NotFound() {
             <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={6} lg={5} >
-                        <Card className={classes[cardAnimaton]}>
-                            <h1>404 not found</h1>
-                        </Card>
+                        <div className={clsx(classes[cardAnimaton], classes.brand)}>
+                            <h1 className={classes.title}>404 Not Found</h1>
+                            <h3 className={classes.subtitle}>
+                                Music Sseolprise by Inhyuk
+                            </h3>
+                        </div>
                     </GridItem>
                 </GridContainer>
             </div>
