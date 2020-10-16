@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Loading from '../views/Pages/Loading/Loading';
+import Loading from '../components/Loading/LinearLoading';
 
 const MemberRoute = ({
     component: Component,

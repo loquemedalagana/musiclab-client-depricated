@@ -39,6 +39,8 @@ const HeaderLinks = (props) => {
     isAuth,
     isAdmin,
     isMember,
+    history,
+    userId,
   } = props;
 
   if(!isAuth) return <Redirect to = '/' />;
@@ -102,7 +104,7 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={AccountCircle}
           dropdownList={[
-            <Button color = "transparent" onClick={()=>console.log('my profile')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=> history.push(`/profiles/${userId}`)} className={classes.dropdownLink}>
               <AccountCircle/>
               My Profile
             </Button>,
@@ -166,7 +168,9 @@ const HeaderLinks = (props) => {
 }
 
 HeaderLinks.propTypes = {
+  history: PropTypes.object,
   logoutUser: PropTypes.func,
+  userId: PropTypes.string,
   isAuth: PropTypes.bool,
   isMember: PropTypes.bool,
   isAdmin: PropTypes.bool,
@@ -174,6 +178,7 @@ HeaderLinks.propTypes = {
 
 const mapStateToProps = (state) => ({
   isAuth: state.auth.auth,
+  userId: state.auth.userData ? state.auth.userData._id : undefined,
   isMember: state.auth.auth === true ? (state.auth.userData && state.auth.userData.points >= 0) : false,
   isAdmin: state.auth.auth === true ? (state.auth.userData && state.auth.userData.isadmin) : false,
 })

@@ -1,4 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
+//import useSWR from 'swr';
+
 
 const slice = createSlice({
     name: 'profile',

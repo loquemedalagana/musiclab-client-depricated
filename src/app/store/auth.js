@@ -2,9 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import api from '../api';
 import {setAlertMsg} from './alert';
 
-
-//https://www.softkraft.co/how-to-setup-redux-with-redux-toolkit/
-
 const slice = createSlice({
     name: 'auth',
     initialState: {
@@ -29,10 +26,6 @@ const slice = createSlice({
             state.userData = null;
             state.loading = false;
             state.auth = false;
-        },
-        login: (state) => {
-            state.loading = false;
-            state.auth = true;
         },
         loginFail: (state) => {
             state.loading = false;
@@ -72,16 +65,13 @@ export const fetchUser = () => async dispatch => {
 
 //login user
 export const loginUser = dataToSubmit => async dispatch => {
-    try {
-        await api.post(`/users/login`, dataToSubmit);
-        dispatch(login());
-        dispatch(fetchUser());
-    } catch (err) {
-        const errors = err.response.data.errors;
-        if (errors) {
-            errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
-        }
+    const response = await api.post(`/users/login`, dataToSubmit);
+    if (response.data.errors){
+        const errors = response.data.errors;
+        errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
         dispatch(loginFail());
+    } else {
+        dispatch(fetchUser());
     }
 }
 
@@ -94,5 +84,4 @@ export const logoutUser = () => async dispatch => {
 }
 
 //update profile and tags
-
-//https://post.naver.com/viewer/postView.nhn?volumeNo=29438367&memberNo=10070839
+//https://medium.com/dev-genius/async-api-fetching-with-redux-toolkit-2020-8623ff9da267
