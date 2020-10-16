@@ -1,5 +1,7 @@
 /*eslint-disable*/
 import React from "react";
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // react components for routing our app without refresh
 import { withRouter } from "react-router-dom";
 

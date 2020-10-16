@@ -45,7 +45,7 @@ const Profile = (props) => {
     const classes = useStyles();
     const { 
         history,
-//        ...rest 
+        curUserId,
     } = props;
 
     const imageClasses = classNames(
@@ -56,9 +56,8 @@ const Profile = (props) => {
 
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
-
     return (
-        <div>
+        <>
         <Parallax small filter className={profileParallaxStyle().root} />
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div>
@@ -216,17 +215,18 @@ const Profile = (props) => {
             </div>
         </div>
         <Footer />
-        </div>
+        </>
     );
 }
 
 Profile.propTypes = {
     props: PropTypes.object,
     history: PropTypes.object,
+    curUserId: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({
-    
+    curUserId: state.auth.userData ? state.auth.userData._id : undefined,
 });
 
 export default withRouter(connect(mapStateToProps)(Profile));

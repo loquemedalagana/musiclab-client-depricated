@@ -11,11 +11,24 @@ const slice = createSlice({
         likeTargetUser: false,
     },
     reducers: {
-        
+        fetchProfile: (state, {payload}) => {
+            state.loading = false;
+            state.targetUserData = payload.userData;
+            state.likeTargetUser = payload.likeTargetUser;
+        },
+        fetchProfileFail: (state) => {
+            state.loading = false;
+            state.targetUserData = null;
+        }
     },
 });
 
 export default slice.reducer;
+
+export const {
+    fetchProfile,
+    fetchProfileFail,
+} = slice.actions;
 
 //get user profile (my or target)
 
