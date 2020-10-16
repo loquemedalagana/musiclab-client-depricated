@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 //import useSWR from 'swr';
-
+//https://sergiodxa.com/articles/type-states-client-side-app
 
 const slice = createSlice({
     name: 'profile',
