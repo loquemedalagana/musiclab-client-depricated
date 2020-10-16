@@ -26,7 +26,7 @@ const LoginSignupStyle = {
         alignItems: "center",
 
         "&:before": {
-            background: "linear-gradient(60deg, rgba(215, 137, 215, 0.4),rgba(163, 216, 244, 0.5))"
+            background: "linear-gradient(-140deg, rgba(255, 137, 215, 0.3),rgba(163, 216, 244, 0.5))"
         },
         "&:before,&:after": {
             position: "absolute",
@@ -48,7 +48,7 @@ const LoginSignupStyle = {
         },
     },
     brand: {
-        color: "#1a1a2e",
+        color: "rgba(26, 26, 46, )",
         textAlign: "left"
     },
     title: {

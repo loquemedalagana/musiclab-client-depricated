@@ -29,6 +29,9 @@ function NotFound() {
                             <h3 className={classes.subtitle}>
                                 Music Sseolprise by Inhyuk
                             </h3>
+                            <h3 className={classes.subtitle}>
+                                원조 자작돌, 야다 전인혁의 뮤직 썰!프라이즈
+                            </h3>
                         </div>
                     </GridItem>
                 </GridContainer>
