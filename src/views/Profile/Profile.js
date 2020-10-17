@@ -25,7 +25,9 @@ import {
     CircularLoading,
 } from '../../components/components';
 
-import profile from "./temp/faces/christian.jpg";
+import NotFound from '../Pages/NotFound';
+
+import defaultImg from '../../assets/images/dolphin_profile.png';
 
 import studio1 from "./temp/examples/studio-1.jpg";
 import studio2 from "./temp/examples/studio-2.jpg";
@@ -45,6 +47,14 @@ const useStyles = makeStyles(styles);
 
 const Profile = (props) => {
     const classes = useStyles();
+    const imageClasses = classNames(
+        classes.imgRaised,
+        classes.imgRoundedCircle,
+        classes.imgFluid
+    );
+
+    const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+
     const { 
         match,
 //        history,
@@ -58,32 +68,23 @@ const Profile = (props) => {
 
     console.log(data, error);
 
-    
-
-    const imageClasses = classNames(
-        classes.imgRaised,
-        classes.imgRoundedCircle,
-        classes.imgFluid
-    );
-
-    const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+    if(error)  return <NotFound />;
 
     return (
         <>
-        <Parallax small filter className={profileParallaxStyle().root} />
-        
+        <Parallax small filter className={profileParallaxStyle().root} />        
         <div className={classNames(classes.main, classes.mainRaised)}>
-            <div>
-            <div className={classes.container}>
+            {targetUserLoading ? <CircularLoading /> :
+                <div className={classes.container}>
                 <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={6}>
                     <div className={classes.profile}>
                     <div>
-                        <img src={profile} alt="..." className={imageClasses} />
+                        <img src={data.userData.image ? data.userData.image : defaultImg} alt="..." className={imageClasses} />
                     </div>
                     <div className={classes.name}>
-                        <h3 className={classes.title}>Christian Louboutin</h3>
-                        <h6>DESIGNER</h6>
+                        <h3 className={classes.title}>{data.userData.displayName}</h3>
+                        <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
                         <Button justIcon link className={classes.margin5}>
                         <i className={"fab fa-instagram"} />
                         </Button>
@@ -102,10 +103,7 @@ const Profile = (props) => {
                 </GridContainer>
                 <div className={classes.description}>
                 <p>
-                    An artist of considerable range, Chet Faker — the name taken by
-                    Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                    and records all of his own music, giving it a warm, intimate
-                    feel with a solid groove structure.{" "}
+                    {data.userData.description}{" "}
                 </p>
                 </div>
                 <GridContainer justify="center">
@@ -224,8 +222,8 @@ const Profile = (props) => {
                     />
                 </GridItem>
                 </GridContainer>
-            </div>
-            </div>
+            </div>            
+            }            
         </div>
         <Footer />
         </>
