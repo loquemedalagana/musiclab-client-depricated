@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
+import fetcher from '../../app/fetcher';
+import useSWR from 'swr';
 // nodejs library that concatenates classes
 import classNames from "classnames";
 import {withRouter} from 'react-router-dom';
@@ -9,10 +11,9 @@ import PropTypes from 'prop-types';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import Camera from "@material-ui/icons/Camera";
-import Palette from "@material-ui/icons/Palette";
-import Favorite from "@material-ui/icons/Favorite";
-// core components
+import {
+    Camera, Palette, Favorite,
+} from '@material-ui/icons';
 
 import {
     Footer,
@@ -21,6 +22,7 @@ import {
     GridItem,
     NavPills,
     Parallax,
+    CircularLoading,
 } from '../../components/components';
 
 import profile from "./temp/faces/christian.jpg";
@@ -44,9 +46,19 @@ const useStyles = makeStyles(styles);
 const Profile = (props) => {
     const classes = useStyles();
     const { 
-        history,
+        match,
+//        history,
         curUserId,
     } = props;
+    const targetUserId = match.params.userid;
+    const isSame = curUserId === targetUserId;
+
+    const {data, error} = useSWR(`/api/profiles/${targetUserId}`, fetcher);
+    const targetUserLoading = !data && !error;
+
+    console.log(data, error);
+
+    
 
     const imageClasses = classNames(
         classes.imgRaised,
@@ -59,6 +71,7 @@ const Profile = (props) => {
     return (
         <>
         <Parallax small filter className={profileParallaxStyle().root} />
+        
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div>
             <div className={classes.container}>
@@ -221,6 +234,7 @@ const Profile = (props) => {
 
 Profile.propTypes = {
     props: PropTypes.object,
+    match: PropTypes.object,
     history: PropTypes.object,
     curUserId: PropTypes.string,
 }
