@@ -9,6 +9,8 @@ import Levelup from '../views/Auth/Levelup';
 import InputEmail from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';
+
+import ProfileUpdate from '../views/Profile/Update';
 import NotFound from '../views/Pages/NotFound';
 
 export default props => (
@@ -20,6 +22,7 @@ export default props => (
             <Route exact path = '/social' component = {InputEmail} />
 
             <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
+            <MemberRoute exact path = '/modify/profile' component = { ProfileUpdate } />
 
             <Route component = {NotFound} />
         </Switch>
