@@ -3,7 +3,7 @@ import mobileBackgroundImg from '../../../images/background2.jpg';
 import desktopBackgroundImg from '../../../images/background1.jpg';
 import upperBackgroundImg from '../../../images/background3.jpg';
 
-export const loginSignupUpdateStyle = makeStyles(theme => ({
+export const defaultBgStyle = makeStyles(theme => ({
     root: {
         backgroundImage: "url(" + mobileBackgroundImg + ")",
         backgroundSize: "cover",
@@ -26,8 +26,8 @@ export const mainParallaxStyle = makeStyles(theme => ({
     }
 }));
 
-export const profileParallaxStyle = makeStyles(theme => ({
+export const smallParallaxStyle = imgURL => ({
     root: {
-        backgroundImage: "url(" + upperBackgroundImg + ")",
+        backgroundImage: imgURL ? "url(" + imgURL + ")" : "url(" + upperBackgroundImg + ")",
     }
-}));
+});

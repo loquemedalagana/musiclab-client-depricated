@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
 import CustomLinearProgress from '../CustomLinearProgress/CustomLinearProgress';
 
-import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
+import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
 const useStyles = makeStyles(styles);
@@ -35,7 +35,7 @@ const Loading = () => {
     }, []);
 
     return (
-        <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
+        <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <CustomLinearProgress
                 variant="determinate"
                 color="info"

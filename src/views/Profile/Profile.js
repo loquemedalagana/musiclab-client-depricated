@@ -41,7 +41,7 @@ import work4 from "./temp/examples/mariya-georgieva.jpg";
 import work5 from "./temp/examples/clem-onojegaw.jpg";
 
 import styles from "../../assets/jss/material-kit-react/views/ProfileStyle";
-import { profileParallaxStyle } from '../../assets/jss/material-kit-react/views/background';
+import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/background';
 import { getDateKor } from '../../utils/functions';
 
 const useStyles = makeStyles(styles);
@@ -69,6 +69,7 @@ const Profile = (props) => {
 
     const {data, error} = useSWR(`/api/profiles/${targetUserId}`, fetcher);
     const targetUserLoading = !data && !error;
+    const thumbnail = data ? (data.userData.thumbnail ? data.userData.thumbnail : undefined) : undefined;
 
     console.log(data, error);
 
@@ -76,7 +77,7 @@ const Profile = (props) => {
 
     return !error ? (
         <>
-        <Parallax small filter className={profileParallaxStyle().root} />        
+        <Parallax small filter style={thumbnail ? smallParallaxStyle(thumbnail).root : smallParallaxStyle().root} />        
         <div className={classNames(classes.main, classes.mainRaised)}>
             {targetUserLoading ? <CircularLoading /> :
                 <div className={classes.container}>

@@ -24,7 +24,7 @@ import {
     DateTimePicker,
     CustomSelectInput
 } from '../../components/components';
-import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
+import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
 import {checkAgreeLevelup, descriptionHelperText} from '../../utils/texts';
 import {setAlertMsg} from '../../app/store/alert';
@@ -210,7 +210,7 @@ export const Levelup = (props) => {
 
     return (
         <>
-        <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
+        <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={6} lg={5} >

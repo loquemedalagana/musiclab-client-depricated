@@ -7,7 +7,7 @@ import {
     GridItem,
 } from '../../components/components';
 
-import {loginSignupUpdateStyle} from '../../assets/jss/material-kit-react/views/background';
+import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/NotfoundStyle';
 
 const useStyles = makeStyles(styles);
@@ -20,7 +20,7 @@ function NotFound() {
     const classes = useStyles();
 
     return (
-        <div className={clsx(classes.pageHeader, loginSignupUpdateStyle().root)}>
+        <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={6} lg={5} >
