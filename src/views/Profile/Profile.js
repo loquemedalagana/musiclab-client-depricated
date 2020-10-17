@@ -42,8 +42,11 @@ import work5 from "./temp/examples/clem-onojegaw.jpg";
 
 import styles from "../../assets/jss/material-kit-react/views/ProfileStyle";
 import { profileParallaxStyle } from '../../assets/jss/material-kit-react/views/background';
+import { getDateKor } from '../../utils/functions';
 
 const useStyles = makeStyles(styles);
+
+//test user id 5f3d26926b0ee109c1220711  5f4f674082d649d4258f2fa7   5f49fdc87a0c7a58a4f88367
 
 const Profile = (props) => {
     const classes = useStyles();
@@ -57,6 +60,7 @@ const Profile = (props) => {
 
     const { 
         match,
+        isAdmin,
 //        history,
         curUserId,
     } = props;
@@ -70,7 +74,7 @@ const Profile = (props) => {
 
     if(error)  return <NotFound />;
 
-    return (
+    return !error ? (
         <>
         <Parallax small filter className={profileParallaxStyle().root} />        
         <div className={classNames(classes.main, classes.mainRaised)}>
@@ -84,7 +88,12 @@ const Profile = (props) => {
                     </div>
                     <div className={classes.name}>
                         <h3 className={classes.title}>{data.userData.displayName}</h3>
-                        <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
+                        {(isAdmin || isSame ) ? (
+                            <>
+                            <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
+                            <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
+                            </>
+                        ) : <h6>  </h6>}
                         <Button justIcon link className={classes.margin5}>
                         <i className={"fab fa-instagram"} />
                         </Button>
@@ -227,7 +236,7 @@ const Profile = (props) => {
         </div>
         <Footer />
         </>
-    );
+    ) : <NotFound />;
 }
 
 Profile.propTypes = {
@@ -235,10 +244,12 @@ Profile.propTypes = {
     match: PropTypes.object,
     history: PropTypes.object,
     curUserId: PropTypes.string,
+    isAdmin: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
     curUserId: state.auth.userData ? state.auth.userData._id : undefined,
+    isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 });
 
 export default withRouter(connect(mapStateToProps)(Profile));
