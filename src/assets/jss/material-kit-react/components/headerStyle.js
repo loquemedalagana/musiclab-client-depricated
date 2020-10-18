@@ -53,6 +53,7 @@ const headerStyle = {
   },
   title: {
     ...defaultFont,
+    fontFamily: "Chilanka",
     lineHeight: "30px",
     fontSize: "18px",
     borderRadius: "3px",

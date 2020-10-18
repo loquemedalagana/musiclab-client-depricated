@@ -44,7 +44,7 @@ const card = {
 };
 
 const defaultFont = {
-    fontFamily: "Jua",
+    fontFamily: "Chilanka Comfortaa Jua",
     fontWeight: "300",
     lineHeight: "1.5em",
 };

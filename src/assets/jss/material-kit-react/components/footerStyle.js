@@ -4,6 +4,7 @@ const footerStyle = {
   block: {
     color: "inherit",
     padding: "0.9375rem",
+//    fontFamily: "Comfortaa",
     fontWeight: "500",
     fontSize: "12px",
     textTransform: "uppercase",
@@ -17,6 +18,7 @@ const footerStyle = {
     display: "block"
   },
   right: {
+//    fontFamily: "Comfortaa",
     padding: "15px 0",
     margin: "0",
     float: "right!important"
