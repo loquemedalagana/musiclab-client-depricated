@@ -1,3 +1,6 @@
+## font file
+_misc.scss 파일 수정하기
+
 ## counter slice example
 
 ``` javascript

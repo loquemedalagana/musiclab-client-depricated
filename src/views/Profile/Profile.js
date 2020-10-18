@@ -4,7 +4,7 @@ import fetcher from '../../app/fetcher';
 import useSWR from 'swr';
 // nodejs library that concatenates classes
 import classNames from "classnames";
-import {withRouter} from 'react-router-dom';
+import {withRouter, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 //import clsx from 'clsx';
 
@@ -22,6 +22,7 @@ import {
     GridItem,
     NavPills,
     Parallax,
+    LinearLoading,
     CircularLoading,
 } from '../../components/components';
 
@@ -73,13 +74,13 @@ const Profile = (props) => {
 
     console.log(data, error);
 
-    if(error)  return <NotFound />;
+    if(targetUserLoading) return <LinearLoading />
+    if(error)  return <Redirect to = "/notfound" />;
 
     return !error ? (
         <>
         <Parallax small filter style={thumbnail ? smallParallaxStyle(thumbnail).root : smallParallaxStyle().root} />        
         <div className={classNames(classes.main, classes.mainRaised)}>
-            {targetUserLoading ? <CircularLoading /> :
                 <div className={classes.container}>
                 <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={6}>
@@ -233,7 +234,7 @@ const Profile = (props) => {
                 </GridItem>
                 </GridContainer>
             </div>            
-            }            
+        
         </div>
         <Footer />
         </>
