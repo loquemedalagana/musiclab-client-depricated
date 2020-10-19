@@ -32,6 +32,7 @@ const slice = createSlice({
             state.auth = false;
         },
         logout: (state) => {
+            state.auth = false;
             state.loading = false;
             state.userData = null;
             state.socketId = null;
