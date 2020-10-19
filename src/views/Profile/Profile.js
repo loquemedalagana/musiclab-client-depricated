@@ -96,16 +96,35 @@ const Profile = (props) => {
                             <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
                             </>
                         ) : <h6>  </h6>}
-                        <Button justIcon link className={classes.margin5}>
+                        <Button 
+                            href={data.userData.social && data.userData.social.instagram} 
+                            color={data.userData.social && data.userData.social.instagram && "primary"}
+                            justIcon className={classes.margin5}
+                        >
                         <i className={"fab fa-instagram"} />
                         </Button>
-                        <Button justIcon link className={classes.margin5}>
+                        <Button 
+                            href={data.userData.social && data.userData.social.facebook} 
+                            color={data.userData.social && data.userData.social.facebook && "primary"}
+                            target="_blank"
+                            justIcon className={classes.margin5}
+                        >
                         <i className={"fab fa-facebook"} />
                         </Button>
-                        <Button justIcon link className={classes.margin5}>
+                        <Button 
+                            href={data.userData.social && data.userData.social.youtube} 
+                            color={data.userData.social && data.userData.social.youtube && "primary"}
+                            target="_blank"
+                            justIcon className={classes.margin5}
+                        >
                         <i className={"fab fa-youtube"} />
                         </Button>
-                        <Button justIcon link className={classes.margin5}>
+                        <Button 
+                            href={data.userData.social && data.userData.social.twitter} 
+                            color={data.userData.social && data.userData.social.twitter && "primary"}
+                            target="_blank"
+                            justIcon className={classes.margin5}
+                        >
                         <i className={"fab fa-twitter"} />
                         </Button>
                     </div>
