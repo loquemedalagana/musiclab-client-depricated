@@ -17,7 +17,7 @@ export default {
         marginBottom: "20px",
         fontSize: "14px",
 
-        borderRadius: "13px",
+        borderRadius: "10px",
         maxWidth: "100%",
         minWidth: "40%",
         boxShadow:
