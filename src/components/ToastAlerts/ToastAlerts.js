@@ -4,16 +4,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import {
     Snackbar,
-    //Slide
+    Slide
 } from "@material-ui/core";
-import MuiAlert from '@material-ui/lab/Alert';
+import Alert from '@material-ui/lab/Alert';
 
 import styles from "../../assets/jss/material-kit-react/components/toastAlertStyle";
 const useStyles = makeStyles(styles);
 
-const Alert = (props) => {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
+const Transition = props => <Slide {...props} direction="left" />;
 
 const Toast = props => {
     const classes = useStyles();
@@ -27,12 +25,14 @@ const Toast = props => {
         <Snackbar 
             open
             anchorOrigin={{
-                horizontal: 'left',
+                horizontal: 'right',
                 vertical: 'top'
             }}
+            TransitionComponent={Transition}
         >
             <Alert 
                 severity = {alertType}
+                variant="filled"
                 classes={{
                     root: classes.root + " " + classes[alertType],
                     icon: classes.message,

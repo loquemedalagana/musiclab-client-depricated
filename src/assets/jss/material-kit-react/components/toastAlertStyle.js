@@ -17,9 +17,9 @@ export default {
         marginBottom: "20px",
         fontSize: "14px",
 
-        borderRadius: "0px",
+        borderRadius: "13px",
         maxWidth: "100%",
-        minWidth: "auto",
+        minWidth: "40%",
         boxShadow:
             "0 12px 20px -10px rgba(255, 255, 255, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 255, 255, 0.2)"
     },
