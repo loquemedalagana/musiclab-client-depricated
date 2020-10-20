@@ -17,7 +17,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const About = props => {
+const NotAvailable = props => {
     const classes = useStyles();
     const {
         open,
@@ -56,8 +56,10 @@ const About = props => {
                     id="classic-modal-slide-description"
                     className={classes.modalBody}
             >
+                <>
+                <h5>준비중입니다!!</h5>
                 <p>
-                    Far far away, behind the word mountains, far from the
+                    글자크기 시험중 Far far away, behind the word mountains, far from the
                     countries Vokalia and Consonantia, there live the blind
                     texts. Separated they live in Bookmarksgrove right at the
                     coast of the Semantics, a large language ocean. A small
@@ -69,9 +71,10 @@ const About = props => {
                     day however a small line of blind text by the name of
                     Lorem Ipsum decided to leave for the far World of Grammar.
                 </p>
+                </>
             </DialogContent>
         </Dialog>
     )
 }
 
-export default About
+export default NotAvailable
