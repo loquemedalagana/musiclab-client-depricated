@@ -1,4 +1,5 @@
 import {
+    defaultFont,
     primaryBoxShadow,
     infoBoxShadow,
     successBoxShadow,
@@ -9,13 +10,13 @@ import {
 
 export default {
     root: {
+        ...defaultFont,
         position: "relative",
         padding: "20px 15px",
         lineHeight: "20px",
         marginBottom: "20px",
         fontSize: "14px",
-        backgroundColor: "white",
-        color: "#555555",
+
         borderRadius: "0px",
         maxWidth: "100%",
         minWidth: "auto",

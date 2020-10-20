@@ -1,32 +1,18 @@
 import React from 'react';
-import clsx from 'clsx';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
-    Check,
-    Warning,
-    NotificationImportant,
-    ErrorOutline,
-} from "@material-ui/icons";
+    Snackbar,
+    //Slide
+} from "@material-ui/core";
+import MuiAlert from '@material-ui/lab/Alert';
 
 import styles from "../../assets/jss/material-kit-react/components/toastAlertStyle";
 const useStyles = makeStyles(styles);
 
-const getIcon = type => {
-    switch(type){
-        case 'success':
-            return <Check />;
-        case 'error':
-        case 'danger':
-            return <ErrorOutline />;
-        case 'info':
-            return <NotificationImportant />;
-        case 'warning':
-            return <Warning />;
-        default:
-            return null;
-    }
+const Alert = (props) => {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 const Toast = props => {
@@ -36,19 +22,26 @@ const Toast = props => {
         message
     } = props;
 
-    const alertIcon = getIcon(alertType);
 
     return (
-        <div
-            style={{
-                flexDirection: 'row',
-                zIndex: '20'
+        <Snackbar 
+            open
+            anchorOrigin={{
+                horizontal: 'left',
+                vertical: 'top'
             }}
-            className = {clsx(classes[alertType])} 
-            variant='filled'
+        >
+            <Alert 
+                severity = {alertType}
+                classes={{
+                    root: classes.root + " " + classes[alertType],
+                    icon: classes.message,
+                    message: classes.message 
+                }}
             >
-            <h4>{message}</h4>
-        </div>
+                {message}
+            </Alert>
+        </Snackbar>
     )
 }
 
