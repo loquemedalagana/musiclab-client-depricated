@@ -37,6 +37,10 @@ import SmallText from './Typography/Small';
 import SucessText from './Typography/Success';
 import WarningText from './Typography/Warning';
 
+import ToastAlerts from './ToastAlerts/ToastAlerts';
+import SnackbarContent from './Snackbar/SnackbarContent';
+import Clearfix from './Clearfix/Clearfix';
+
 export {
     Header, HeaderLinks, Footer, GridContainer,
     GridItem, Button, Card, CardBody, CardHeader, CardFooter,
@@ -45,4 +49,5 @@ export {
     DangerText, InfoText, MutedText, PrimaryText, QuoteText,
     SmallText, SucessText, WarningText,
     HeaderLinksNotLoggedIn, LinearLoading, CircularLoading,
+    ToastAlerts, SnackbarContent, Clearfix,
 }

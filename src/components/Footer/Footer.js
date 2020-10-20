@@ -31,7 +31,7 @@ export default function Footer(props) {
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
-            <ListItem className={classes.inlineBlock}>
+            <ListItem button className={classes.inlineBlock}>
               <a
                 href=""
                 className={classes.block}
@@ -40,7 +40,7 @@ export default function Footer(props) {
                 About
               </a>
             </ListItem>
-            <ListItem className={classes.inlineBlock}>
+            <ListItem button className={classes.inlineBlock}>
               <a
                 href=""
                 className={classes.block}
