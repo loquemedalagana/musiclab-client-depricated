@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -8,6 +9,9 @@ import {
     NotificationImportant,
     ErrorOutline,
 } from "@material-ui/icons";
+
+import styles from "../../assets/jss/material-kit-react/components/toastAlertStyle";
+const useStyles = makeStyles(styles);
 
 const getIcon = type => {
     switch(type){
@@ -25,22 +29,38 @@ const getIcon = type => {
     }
 }
 
-const ToastAlerts = ({alerts}) => (
-    alerts !== null &&
-    alerts.length > 0 &&
-    alerts.map(alert => (
-        <div 
+const Toast = props => {
+    const classes = useStyles();
+    const  {
+        alertType,
+        message
+    } = props;
+
+    const alertIcon = getIcon(alertType);
+
+    return (
+        <div
             style={{
                 flexDirection: 'row',
                 zIndex: '20'
             }}
-            key={alert.id} 
-            severity = {alert.alertType} 
-            className = {null} 
+            className = {clsx(classes[alertType])} 
             variant='filled'
-        >
-            <h4>{alert.message}</h4>
+            >
+            <h4>{message}</h4>
         </div>
+    )
+}
+
+const ToastAlerts = ({alerts}) => (
+    alerts !== null &&
+    alerts.length > 0 &&
+    alerts.map(alert => (
+        <Toast 
+            key={alert.id}
+            message = {alert.message}
+            alertType={alert.alertType}
+        />
     ))
 )
 

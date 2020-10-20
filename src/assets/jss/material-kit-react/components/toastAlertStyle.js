@@ -9,7 +9,6 @@ import {
 
 export default {
     root: {
-        ...defaultFont,
         position: "relative",
         padding: "20px 15px",
         lineHeight: "20px",
@@ -38,7 +37,7 @@ export default {
         color: "#ffffff",
         ...warningBoxShadow
     },
-    danger: {
+    error: {
         backgroundColor: "#f55a4e",
         color: "#ffffff",
         ...dangerBoxShadow
