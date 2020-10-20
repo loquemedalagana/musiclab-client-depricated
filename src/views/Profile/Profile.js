@@ -23,7 +23,7 @@ import {
     NavPills,
     Parallax,
     LinearLoading,
-    CircularLoading,
+//    CircularLoading,
 } from '../../components/components';
 
 import NotFound from '../Pages/NotFound';

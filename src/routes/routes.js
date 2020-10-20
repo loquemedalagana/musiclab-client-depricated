@@ -13,8 +13,11 @@ import Profile from '../views/Profile/Profile';
 import ProfileUpdate from '../views/Profile/Update';
 import NotFound from '../views/Pages/NotFound';
 
+import ToastAlert from '../components/ToastAlerts/ToastAlerts';
+
 export default props => (
     <>
+        <ToastAlert />
         <Switch>
             <Route exact path = '/login' component = {Login} />
             <Route exact path = '/Signup' component = {Signup} />
