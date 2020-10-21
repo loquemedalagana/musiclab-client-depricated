@@ -66,13 +66,16 @@ export const fetchUser = () => async dispatch => {
 
 //login user
 export const loginUser = dataToSubmit => async dispatch => {
-    const response = await api.post(`/users/login`, dataToSubmit);
-    if (response.data.errors){
-        const errors = response.data.errors;
-        errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
-        dispatch(loginFail());
-    } else {
+    
+    try {
+        const response = await api.post(`/users/login`, dataToSubmit);
         dispatch(fetchUser());
+    } catch (err) {
+        const errors = err.response.data.errors;
+        if (errors) {
+            errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
+        }
+        dispatch(loginFail());
     }
 }
 

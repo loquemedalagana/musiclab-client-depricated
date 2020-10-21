@@ -51,9 +51,7 @@ export const Login = (props) => {
     });
 
     const [emailErr, setEmailErr] = useState(false);
-    const [emailSuccess, setEmailSuccess] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
-    const [passwordSuccess, setPasswordSuccess] = useState(false);
 
     const { email, password } = inputs;
 
@@ -72,21 +70,17 @@ export const Login = (props) => {
             ok=false;
             setAlertMsg('이메일을 입력해주세요', 'error', 'email');
             setEmailErr(true);
-            setEmailSuccess(false);
         }
         else {
             setEmailErr(false);
-            setEmailSuccess(true);
         }
         if(!password){
             ok=false;
             setAlertMsg('비밀번호를 입력해주세요', 'error', 'password');
             setPasswordErr(true);
-            setPasswordSuccess(false);
         }
         else {
             setPasswordErr(false);
-            setPasswordSuccess(true);
         }
 
         console.log(ok);
@@ -113,7 +107,6 @@ export const Login = (props) => {
                         labelText="Email..."
                         id="email"
                         error = {emailErr}
-                        success = {emailSuccess}
                         formControlProps={{
                             fullWidth: true
                         }}
@@ -142,7 +135,6 @@ export const Login = (props) => {
                         labelText="Password"
                         id="pass"
                         error={passwordErr}
-                        success={passwordSuccess}
                         formControlProps={{
                             fullWidth: true
                         }}
