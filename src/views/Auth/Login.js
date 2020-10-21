@@ -22,6 +22,7 @@ import {
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
+import Loading from '../../components/Loading/LinearLoading';
 import {loginUser} from '../../app/store/auth';
 import {setAlertMsg} from '../../app/store/alert';
 
@@ -30,6 +31,8 @@ import SocialLogin from './SocialLogin';
 const useStyles = makeStyles(styles);
 
 //https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
+
+//https://www.debuggr.io/react-update-unmounted-component/
 
 export const Login = (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
@@ -42,7 +45,7 @@ export const Login = (props) => {
         alerts,
         isAuth,
         loginUser,
-//        ...rest 
+        loading
     } = props;
 
     const [inputs, setInputs] = useState({
@@ -83,13 +86,12 @@ export const Login = (props) => {
             setPasswordErr(false);
         }
 
-        console.log(ok);
-
         if(ok) {
             loginUser({ email, password });
         }
     }
 
+    if(loading) return <Loading />
     if(isAuth) return <Redirect to = '/' />
 
     return (
@@ -183,11 +185,13 @@ Login.propTypes = {
     alerts: PropTypes.array,
     isAuth: PropTypes.bool,
     loginUser: PropTypes.func,
+    loading: PropTypes.bool
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
     isAuth: state.auth.auth,
+    loading: state.auth.loading
 })
 
 export default connect(mapStateToProps, {setAlertMsg, loginUser})(Login)

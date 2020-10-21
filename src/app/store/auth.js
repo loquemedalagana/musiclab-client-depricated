@@ -27,13 +27,17 @@ const slice = createSlice({
             state.loading = false;
             state.auth = false;
         },
+        loginSuccess: state => {
+            state.loading = true;
+            state.auth = true;
+        },
         loginFail: (state) => {
             state.loading = false;
             state.auth = false;
         },
         logout: (state) => {
             state.auth = false;
-            state.loading = false;
+            state.loading = true;
             state.userData = null;
             state.socketId = null;
         }
@@ -44,7 +48,7 @@ export const {
     loadUser,
     loadUserSuccess,
     loadUserFail,
-    login,
+    loginSuccess,
     loginFail,
     logout,
 } = slice.actions;
@@ -68,7 +72,8 @@ export const fetchUser = () => async dispatch => {
 export const loginUser = dataToSubmit => async dispatch => {
     
     try {
-        const response = await api.post(`/users/login`, dataToSubmit);
+        await api.post(`/users/login`, dataToSubmit);
+        dispatch(loginSuccess());
         dispatch(fetchUser());
     } catch (err) {
         const errors = err.response.data.errors;

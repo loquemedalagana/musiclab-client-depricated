@@ -47,6 +47,7 @@ import { getDateKor } from '../../utils/functions';
 
 const useStyles = makeStyles(styles);
 
+//https://stackoverflow.com/questions/58924617/componentwillreceiveprops-has-been-renamed
 //test user id 5f3d26926b0ee109c1220711  5f4f674082d649d4258f2fa7   5f49fdc87a0c7a58a4f88367
 
 const Profile = (props) => {
