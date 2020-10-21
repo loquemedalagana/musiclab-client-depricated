@@ -29,7 +29,7 @@ const slice = createSlice({
         },
         loginSuccess: state => {
             state.loading = true;
-            state.auth = true;
+            //state.auth = true;
         },
         loginFail: (state) => {
             state.loading = false;

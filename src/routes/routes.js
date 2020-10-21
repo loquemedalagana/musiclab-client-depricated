@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 
+import IsNotLoggedInRoute from './IsNotLoggedInRoute'
 import MemberRoute from './MemberRoute';
 import NonMemberRoute from './NonMemberRoute'
 
@@ -22,8 +23,8 @@ export default props => (
     <>
         <ToastAlert />
         <Switch>
-            <Route exact path = '/login' component = {Login} />
-            <Route exact path = '/Signup' component = {Signup} />
+            <IsNotLoggedInRoute exact path = '/login' component = {Login} />
+            <IsNotLoggedInRoute exact path = '/Signup' component = {Signup} />
             <NonMemberRoute exact path = '/levelup' component = {Levelup} />
             <NonMemberRoute exact path = '/social' component = {InputEmailForSocialUsers} />
 
