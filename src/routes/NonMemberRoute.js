@@ -26,7 +26,7 @@ const NonMemberRoute = ({
     />
 );
 
-MemberRoute.propTypes = {
+NonMemberRoute.propTypes = {
     user: PropTypes.object.isRequired
 };
 
