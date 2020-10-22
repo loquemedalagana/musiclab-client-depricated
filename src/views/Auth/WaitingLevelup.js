@@ -10,7 +10,7 @@ import {
 } from '../../components/components';
 
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
-import styles from '../../assets/jss/material-kit-react/views/NotfoundStyle';
+import styles from '../../assets/jss/material-kit-react/views/WaitingLevelupStyle';
 
 const useStyles = makeStyles(styles);
 
@@ -28,10 +28,11 @@ const WaitingLevelup = props => {
                     <GridItem xs={12} sm={12} md={6} lg={5} >
                         <div className={clsx(classes[cardAnimaton], classes.brand)}>
                             <h1 className={classes.title}>레벨업 대기중...</h1>
-                            <h3 className={classes.subtitle}>
+                            <p className={classes.subtitle}>이메일 인증코드 재전송을 원하시나요?</p>
+                            <h3 className={classes.content}>
                                 Music Sseolprise by Inhyuk
                             </h3>
-                            <h3 className={classes.subtitle}>
+                            <h3 className={classes.content}>
                                 원조 자작돌, 야다 전인혁의 뮤직 썰!프라이즈
                             </h3>
                         </div>

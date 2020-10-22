@@ -58,6 +58,12 @@ export default {
         position: "relative"
     },
     subtitle: {
+        fontSize: "1.89rem",
+        fontWeight: "600",
+        maxWidth: "500px",
+        margin: "10px 0 0"
+    },
+    content: {
         fontSize: "1.313rem",
         maxWidth: "500px",
         margin: "10px 0 0"
