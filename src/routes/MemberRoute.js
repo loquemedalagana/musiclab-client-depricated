@@ -20,7 +20,7 @@ const MemberRoute = ({
                 <Component {...props} /> :
                     ((user.userData.snsId && !user.userData.email) ? 
                         <Redirect to = '/emailregister' /> :
-                        <Redirect to = '/' />
+                        <Redirect to = '/waitinglevelup' />
                     )
                 ) : (
                 <Redirect to = '/login' />

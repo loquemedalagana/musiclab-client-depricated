@@ -26,6 +26,7 @@ function NotFound() {
                     <GridItem xs={12} sm={12} md={6} lg={5} >
                         <div className={clsx(classes[cardAnimaton], classes.brand)}>
                             <h1 className={classes.title}>404 Not Found</h1>
+                            <h2 className={classes.title}>존재하지 않는 페이지입니다.</h2>
                             <h3 className={classes.subtitle}>
                                 Music Sseolprise by Inhyuk
                             </h3>

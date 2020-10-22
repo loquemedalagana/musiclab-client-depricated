@@ -9,7 +9,7 @@ import NonMemberRouteWithoutEmail from './NonMemberWithoutEmail';
 import Login from '../views/Auth/Login';
 import Signup from '../views/Auth/Signup';
 import Levelup from '../views/Auth/Levelup';
-import WaitingLevelup from '../views/Pages/WaitingLevelup';
+import WaitingLevelup from '../views/Auth/WaitingLevelup';
 import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';

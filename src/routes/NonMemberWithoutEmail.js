@@ -17,7 +17,10 @@ const NonMemberRoute = ({
                 <Loading />
             ) : user.auth ? (
                 (user.userData.snsId && !user.userData.email && user.userData.points < 0) ?
-                <Component {...props} /> : <Redirect to = '/' />
+                <Component {...props} /> : (user.userData.points < 0 ?
+                    <Redirect to = '/waitinglevelup' />
+                    : <Redirect to = '/' />
+                )
                 ) : (
                 <Redirect to = '/login' />
             )
