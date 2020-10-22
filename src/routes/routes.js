@@ -9,11 +9,12 @@ import NonMemberRouteWithoutEmail from './NonMemberWithoutEmail';
 import Login from '../views/Auth/Login';
 import Signup from '../views/Auth/Signup';
 import Levelup from '../views/Auth/Levelup';
+import WaitingLevelup from '../views/Pages/WaitingLevelup';
 import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';
 
-import ProfileUpdate from '../views/Profile/Update';
+import ProfileUpdate from '../views/Profile/Update'; //not made yet
 import NotFound from '../views/Pages/NotFound';
 
 import ToastAlert from '../components/ToastAlerts/ToastAlerts';
@@ -27,6 +28,7 @@ export default props => (
             <IsNotLoggedInRoute exact path = '/login' component = {Login} />
             <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
             <NonMemberRoute exact path = '/levelup' component = {Levelup} />
+            <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
             <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
 
             <MemberRoute exact path = '/profiles/:userid' component = { Profile } />

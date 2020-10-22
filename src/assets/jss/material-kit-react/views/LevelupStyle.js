@@ -2,7 +2,7 @@ import { container } from '../../material-kit-react';
 import customInputStyle from '../../material-kit-react/components/customInputStyle';
 import customCheckboxRadioSwitch from "../components/customCheckboxRadioSwitch.js";
 
-const LoginSignupStyle = {
+export default {
     container: {
         ...container,
         zIndex: "2",
@@ -93,5 +93,3 @@ const LoginSignupStyle = {
     ...customCheckboxRadioSwitch,
     ...customInputStyle
 };
-
-export default LoginSignupStyle;
