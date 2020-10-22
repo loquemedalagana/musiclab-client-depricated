@@ -16,9 +16,12 @@ const NonMemberRoute = ({
             user.loading ? (
                 <Loading />
             ) : user.auth ? (
-                user.userData.points < 0 ? 
-                <Component {...props} /> :
-                    <Redirect to = '/' />
+                    user.userData.points < 0 ? 
+                    ((user.userData.snsId && !user.userData.email) ? 
+                        <Redirect to = '/emailregister' /> : 
+                        <Component {...props} />
+                        ) :
+                        <Redirect to = '/' />
                 ) : (
                 <Redirect to = '/login' />
             )

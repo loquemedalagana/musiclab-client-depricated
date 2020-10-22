@@ -18,7 +18,10 @@ const MemberRoute = ({
             ) : user.auth ? (
                 user.userData.points >= 0 ? 
                 <Component {...props} /> :
-                    <Redirect to = '/' />
+                    ((user.userData.snsId && !user.userData.email) ? 
+                        <Redirect to = '/emailregister' /> :
+                        <Redirect to = '/' />
+                    )
                 ) : (
                 <Redirect to = '/login' />
             )

@@ -1,6 +1,7 @@
 //for social users
 //put email for auth
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -43,7 +44,8 @@ export const InputEmailForSocialUsers = (props) => {
     const { 
         setAlertMsg,
         alerts,
-//        ...rest 
+        isRegisteredEmail,
+        isNotLoggedin,
     } = props;
 
     const [inputs, setInputs] = useState({
@@ -85,13 +87,13 @@ export const InputEmailForSocialUsers = (props) => {
             ok=false;
             setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
         }
-
         console.log(ok);
         
     }
 
+    if(isRegisteredEmail || isNotLoggedin) return <Redirect to = "/" />
+
     return (
-        <>
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
@@ -170,17 +172,20 @@ export const InputEmailForSocialUsers = (props) => {
             </div>
             <Footer whiteFont />
         </div>
-        </>
     )
 }
 
 InputEmailForSocialUsers.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
+    isRegisteredEmail: PropTypes.bool,
+    isNotLoggedin: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
+    isNotLoggedin: !state.auth.auth,
+    isRegisteredEmail: state.auth.userData && state.auth.userData.email,
 })
 
 

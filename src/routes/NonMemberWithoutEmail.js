@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import Loading from '../components/Loading/LinearLoading';
 
-const IsNotLoggedInRoute = ({
+const NonMemberRoute = ({
     component: Component,
     user,
     ...rest
@@ -15,24 +15,22 @@ const IsNotLoggedInRoute = ({
         render={props =>
             user.loading ? (
                 <Loading />
-            ) : !user.auth ? (
-                <Component {...props} />
+            ) : user.auth ? (
+                (user.userData.snsId && !user.userData.email && user.userData.points < 0) ?
+                <Component {...props} /> : <Redirect to = '/' />
                 ) : (
-                    (user.userData.snsId && !user.userData.email && user.userData.points < 0) ? 
-                    <Redirect to = '/emailregister' /> : 
-                    <Redirect to = '/' />
+                <Redirect to = '/login' />
             )
         }
     />
 );
 
-
-IsNotLoggedInRoute.propTypes = {
+NonMemberRoute.propTypes = {
     user: PropTypes.object.isRequired
 };
 
-const mapStateToProps = state => ({
-    user: state.auth
-});
+const mapStateToProps = (state) => ({
+    user: state.auth,
+})
 
-export default connect(mapStateToProps)(IsNotLoggedInRoute);
+export default connect(mapStateToProps)(NonMemberRoute)
