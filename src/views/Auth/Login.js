@@ -32,8 +32,6 @@ const useStyles = makeStyles(styles);
 
 //https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
 
-//https://www.debuggr.io/react-update-unmounted-component/
-
 export const Login = (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
@@ -162,7 +160,18 @@ export const Login = (props) => {
                             {message}
                             </FormHelperText>
                         ))}
+
+                        <p 
+                        className={classes.formControlWithText}
+                        style={{
+                            textAlign: 'right',
+                        }}
+                        >
+                            Did you forget password?
+                        </p>
                     </CardBody>
+
+
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                         Get started
