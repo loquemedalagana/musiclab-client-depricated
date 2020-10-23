@@ -3,11 +3,13 @@ import api from '../api';
 import {setAlertMsg} from './alert';
 import { fetchUser } from './auth';
 
+//expired 여부 기록하기
 const slice = createSlice({
     name: 'userValidation',
     initialState: {
         changed: false,
-
+        token: null,
+        expired: true,
     },
     reducers: {
         signupSuccess: (state) => {

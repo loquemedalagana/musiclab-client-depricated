@@ -29,7 +29,7 @@ export default props => (
         <Switch>
             <IsNotLoggedInRoute exact path = '/login' component = {Login} />
             <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
-            <Route exact path = '/levelup/:name?' component = {Levelup} />
+            <Route exact path = '/levelup/:auth?' component = {Levelup} />
             <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
             <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
 

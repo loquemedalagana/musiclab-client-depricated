@@ -57,19 +57,8 @@ const NotAvailable = props => {
                     className={classes.modalBody}
             >
                 <>
-                <h5>준비중입니다!!</h5>
                 <p>
-                    글자크기 시험중 Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean. A small
-                    river named Duden flows by their place and supplies it
-                    with the necessary regelialia. It is a paradisematic
-                    country, in which roasted parts of sentences fly into your
-                    mouth. Even the all-powerful Pointing has no control about
-                    the blind texts it is an almost unorthographic life One
-                    day however a small line of blind text by the name of
-                    Lorem Ipsum decided to leave for the far World of Grammar.
+                    지금 준비중인 페이지입니다. 빠른 시일 내에 오픈하겠습니다!
                 </p>
                 </>
             </DialogContent>
