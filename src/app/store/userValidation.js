@@ -39,10 +39,11 @@ export const {
 
 export default slice.reducer;
 
+// 임시용 /users/register/emailauth?userid=${_id}&email=${email}
 export const sendEmailAuthCode = dataToSubmit => async dispatch => {
     try {
         const {_id, email} = dataToSubmit;
-        const response = await api.get(`/users/register/emailauth?userid=${_id}&email=${email}`);
+        const response = await api.get(`/users/register/sendemailauthcode`);
         console.log(response.data); //success message
     } catch (err) {
         const errors = err.response.data.errors;
