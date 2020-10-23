@@ -13,6 +13,8 @@ import {
     People, VpnKey as VpnKeyIcon, MusicNote as MusicNoteIcon, Check,
 } from "@material-ui/icons";
 
+import Notfound from '../Pages/NotFound';
+
 import {
     Footer,
     GridContainer,
@@ -42,6 +44,9 @@ const alignment = {
     justifyContent: 'space-between',
 }
 
+//http://localhost:3000/levelup/auth?token=djlksjdlasjlkd (example)
+//if expired, notfound 로딩
+
 export const Levelup = (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
@@ -59,6 +64,7 @@ export const Levelup = (props) => {
         ignoreQueryPrefix: true
     });
     console.log(query);
+    console.log(Object.keys(query).length === 0);
 
     const [isChecked, setIsChecked] = useState(false);
     const [inputs, setInputs] = useState({
@@ -215,8 +221,9 @@ export const Levelup = (props) => {
         console.log(ok);
     }
 
+    if(Object.keys(query).length === 0) return <Notfound />;
+
     return (
-        <>
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
@@ -449,7 +456,6 @@ export const Levelup = (props) => {
             </div>
             <Footer whiteFont />
         </div>
-        </>
     )
 }
 

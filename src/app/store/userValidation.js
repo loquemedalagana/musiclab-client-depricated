@@ -41,7 +41,8 @@ export default slice.reducer;
 
 export const sendEmailAuthCode = dataToSubmit => async dispatch => {
     try {
-        const response = await api.get(`/users/register/sendemailauthcode`, dataToSubmit);
+        const {_id, email} = dataToSubmit;
+        const response = await api.get(`/users/register/emailauth?userid=${_id}&email=${email}`);
         console.log(response.data); //success message
     } catch (err) {
         const errors = err.response.data.errors;
