@@ -9,11 +9,11 @@ import {
 } from '../../components/components';
 
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
-import styles from '../../assets/jss/material-kit-react/views/NotfoundStyle';
+import styles from '../../assets/jss/material-kit-react/views/UpdateProfileStyle';
 
 const useStyles = makeStyles(styles);
 
-export const Update = () => {
+const UpdateProfile = () => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
@@ -26,7 +26,9 @@ export const Update = () => {
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={6} lg={5} >
                         <div className={clsx(classes[cardAnimaton], classes.brand)}>
-                            
+                            <h1 className={classes.title}>
+                                Edit profile
+                            </h1>
                             <h3 className={classes.subtitle}>
                                 Music Sseolprise by Inhyuk
                             </h3>
@@ -50,4 +52,4 @@ const mapDispatchToProps = {
     
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Update)
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateProfile)

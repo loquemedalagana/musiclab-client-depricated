@@ -14,7 +14,7 @@ import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';
 
-import ProfileUpdate from '../views/Profile/Update'; //not made yet
+import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
 import NotFound from '../views/Pages/NotFound';
 
 import ToastAlert from '../components/ToastAlerts/ToastAlerts';
@@ -32,7 +32,7 @@ export default props => (
             <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
 
             <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
-            <MemberRoute exact path = '/modify/profile' component = { ProfileUpdate } />
+            <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
 
             <Route component = {NotFound} />
         </Switch>

@@ -28,6 +28,10 @@ const WaitingLevelup = props => {
                     <GridItem xs={12} sm={12} md={6} lg={5} >
                         <div className={clsx(classes[cardAnimaton], classes.brand)}>
                             <h1 className={classes.title}>레벨업 대기중...</h1>
+                            <p className={classes.content}>
+                                이메일 인증코드를 통해 개인정보를 입력해주세요
+                            </p>
+
                             <p className={classes.subtitle}>이메일 인증코드 재전송을 원하시나요?</p>
                             <h3 className={classes.content}>
                                 Music Sseolprise by Inhyuk
