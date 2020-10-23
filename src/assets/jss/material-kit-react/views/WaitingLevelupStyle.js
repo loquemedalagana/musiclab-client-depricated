@@ -58,6 +58,7 @@ export default {
         position: "relative"
     },
     subtitle: {
+        fontFamily: "Poor Story",
         fontSize: "1.89rem",
         fontWeight: "600",
         maxWidth: "500px",

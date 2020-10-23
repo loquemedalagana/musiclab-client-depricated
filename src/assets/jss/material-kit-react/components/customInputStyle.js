@@ -65,6 +65,8 @@ const customInputStyle = {
     }
   },
   formControlWithText: {
+    fontFamily: 'Poor Story',
+    //font color will be added
     margin: "0 0 17px 0",
     position: "relative",
     "& svg,& .fab,& .far,& .fal,& .fas,& .material-icons": {

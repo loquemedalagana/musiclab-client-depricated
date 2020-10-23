@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import clsx from 'clsx';
 import { connect } from 'react-redux';
+import { Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import {
     Footer,
@@ -32,7 +33,10 @@ const WaitingLevelup = props => {
                                 이메일 인증코드를 통해 개인정보를 입력해주세요
                             </p>
 
-                            <p className={classes.subtitle}>이메일 인증코드 재전송을 원하시나요?</p>
+                            <Link component='button' className={classes.subtitle}>
+                            이메일 인증코드 재전송을 원하시나요?
+                            </Link>
+
                             <h3 className={classes.content}>
                                 Music Sseolprise by Inhyuk
                             </h3>

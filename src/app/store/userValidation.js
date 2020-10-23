@@ -16,7 +16,7 @@ const slice = createSlice({
         signupFail: (state) => {
             state.loading = true;
         },
-
+        
     },
 });
 
@@ -43,3 +43,10 @@ export const signupUser = dataToSubmit => async dispatch => {
     }
 }
 
+export const emailRegister = dataToSubmit => async dispatch => {
+    try {
+        
+    } catch (err) {
+        
+    }
+}
