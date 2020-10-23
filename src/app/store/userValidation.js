@@ -6,17 +6,28 @@ import { fetchUser } from './auth';
 const slice = createSlice({
     name: 'userValidation',
     initialState: {
-        loading: true,
+        changed: false,
 
     },
     reducers: {
         signupSuccess: (state) => {
-            state.loading = true;
+            state.changed = true;
         },
         signupFail: (state) => {
-            state.loading = true;
+            state.changed = true;
         },
-        
+        sendAuthCodeSuccess: (state) => {
+            state.changed = true;
+        },
+        sendAuthCodeFail: (state) => {
+            state.changed = true;
+        },
+        levelupSucess: (state) => {
+            state.changed = true;
+        },
+        levelupFail: (state) => {
+            state.changed = true;
+        }
     },
 });
 
@@ -28,7 +39,19 @@ export const {
 
 export default slice.reducer;
 
-//
+export const sendEmailAuthCode = dataToSubmit => async dispatch => {
+    try {
+        const response = await api.get(`/users/register/sendemailauthcode`, dataToSubmit);
+        console.log(response.data); //success message
+    } catch (err) {
+        const errors = err.response.data.errors;
+        if (errors) {
+            errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
+        }
+
+    }
+}
+
 export const signupUser = dataToSubmit => async dispatch => {
     try {
         await api.post(`/users/register`, dataToSubmit);
@@ -45,8 +68,14 @@ export const signupUser = dataToSubmit => async dispatch => {
 
 export const emailRegister = dataToSubmit => async dispatch => {
     try {
-        
+        await api.post(`/users/register`, dataToSubmit);
+        dispatch(signupSuccess());
+        dispatch(fetchUser());
     } catch (err) {
-        
+        const errors = err.response.data.errors;
+        if (errors) {
+            errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
+        }
+        dispatch(signupFail());
     }
 }

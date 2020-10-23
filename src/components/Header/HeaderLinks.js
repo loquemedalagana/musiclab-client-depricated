@@ -67,7 +67,7 @@ const HeaderLinks = (props) => {
               Hot
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('from yada')} className={classes.dropdownLink}>
-              From Yada
+              From Yada Jeon Inhyuk
             </Button>,
           ]}
         />
