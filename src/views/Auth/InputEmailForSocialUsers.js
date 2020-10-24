@@ -30,6 +30,7 @@ import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/backgrou
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 import {checkIsValidEmail} from '../../utils/texts';
 import {checkValidEmail} from '../../utils/checkStringPatterns';
+import { emailRegister } from '../../app/store/userValidation';
 import {setAlertMsg} from '../../app/store/alert';
 const useStyles = makeStyles(styles);
 

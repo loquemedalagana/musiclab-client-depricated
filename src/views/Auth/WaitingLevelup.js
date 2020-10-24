@@ -1,5 +1,6 @@
 //이메일 인증 대기페이지
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { connect } from 'react-redux';
 import { Link } from "@material-ui/core";
@@ -10,8 +11,11 @@ import {
     GridItem,
 } from '../../components/components';
 
+import { sendEmailAuthCode } from '../../app/store/userValidation';
+
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/WaitingLevelupStyle';
+import { checkPropTypes } from 'prop-types';
 
 const useStyles = makeStyles(styles);
 
@@ -21,6 +25,10 @@ const WaitingLevelup = props => {
         setCardAnimation("");
     }, 800);
     const classes = useStyles();
+
+    const {
+        sendEmailAuthCode,
+    } = props;
 
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
@@ -53,11 +61,7 @@ const WaitingLevelup = props => {
 }
 
 const mapStateToProps = (state) => ({
-    
-})
+    sendEmailAuthCode: PropTypes.func,
+});
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(WaitingLevelup)
+export default connect(mapStateToProps, {sendEmailAuthCode})(WaitingLevelup)

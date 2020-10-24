@@ -16,6 +16,7 @@ import People from "@material-ui/icons/People";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import Check from "@material-ui/icons/Check";
 
+import { signupUser } from '../../app/store/userValidation';
 
 import {
     Footer,
@@ -52,6 +53,7 @@ export const Signup= (props) => {
         setAlertMsg,
         alerts,
         isAuth,
+        signupUser,
 //        ...rest 
     } = props;
 
@@ -304,6 +306,7 @@ export const Signup= (props) => {
 Signup.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
+    signupUser: PropTypes.func,
     alerts: PropTypes.array,
     isAuth: PropTypes.bool,
 }
@@ -313,4 +316,4 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.auth,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(Signup)
+export default connect(mapStateToProps, {setAlertMsg, signupUser})(Signup)

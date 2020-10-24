@@ -22,6 +22,7 @@ import ToastAlert from '../components/ToastAlerts/ToastAlerts';
 //https://velog.io/@ksh4820/ErrorNote-Warning-Cant-perform-a-React-state-update-on-an-unmounted-component.-This-is-a-no-op-but-it-indicates-a-memory-leak-in-your-application.-To-fix-cancel-all-subscriptions-and-asynchronous-tasks-in-a-useEffect-cleanup-function
 
 //aaa.com/member/active?token=abcdefg1234
+// ~.com/levelup/?token=ABCDE
 
 export default props => (
     <>
