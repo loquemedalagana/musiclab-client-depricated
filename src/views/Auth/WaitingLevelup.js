@@ -12,10 +12,10 @@ import {
 } from '../../components/components';
 
 import { sendEmailAuthCode } from '../../app/store/userValidation';
+//import {setAlertMsg} from '../../app/store/alert';
 
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/WaitingLevelupStyle';
-import { checkPropTypes } from 'prop-types';
 
 const useStyles = makeStyles(styles);
 
@@ -27,6 +27,7 @@ const WaitingLevelup = props => {
     const classes = useStyles();
 
     const {
+        userEmail,
         sendEmailAuthCode,
     } = props;
 
@@ -41,8 +42,14 @@ const WaitingLevelup = props => {
                                 이메일 인증코드를 통해 개인정보를 입력해주세요
                             </p>
 
-                            <Link component='button' className={classes.subtitle}>
-                            이메일 인증코드 재전송을 원하시나요?
+                            <Link 
+                                component='button' 
+                                className={classes.subtitle}
+                                onClick={() => sendEmailAuthCode({
+                                    email: userEmail,
+                                })}
+                            >
+                                이메일 인증코드 재전송을 원하시나요?
                             </Link>
 
                             <h3 className={classes.content}>
@@ -60,8 +67,15 @@ const WaitingLevelup = props => {
     )
 }
 
-const mapStateToProps = (state) => ({
+
+WaitingLevelup.propTypes = {
+    props: PropTypes.object,
     sendEmailAuthCode: PropTypes.func,
+}
+
+const mapStateToProps = (state) => ({
+    userEmail: state.auth.userData ? state.auth.userData.email : undefined,
+    isChanged: state.userValidation.changed,
 });
 
 export default connect(mapStateToProps, {sendEmailAuthCode})(WaitingLevelup)

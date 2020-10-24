@@ -54,6 +54,7 @@ export const Signup= (props) => {
         alerts,
         isAuth,
         signupUser,
+        isChanged,
 //        ...rest 
     } = props;
 
@@ -138,11 +139,13 @@ export const Signup= (props) => {
             setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
         }
 
-        console.log(ok);
-        
+        if(ok){
+            signupUser(inputs);
+        }
     }
 
-    if(isAuth) return <Redirect to = '/' />
+    if(isAuth) return <Redirect to = '/' />;
+    if(isChanged) return <Redirect to = '/waitinglevelup' />;
 
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
@@ -309,11 +312,13 @@ Signup.propTypes = {
     signupUser: PropTypes.func,
     alerts: PropTypes.array,
     isAuth: PropTypes.bool,
+    isChanged: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
     isAuth: state.auth.auth,
+    isChanged: state.userValidation.changed,
 })
 
 export default connect(mapStateToProps, {setAlertMsg, signupUser})(Signup)

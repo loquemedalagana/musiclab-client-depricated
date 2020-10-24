@@ -43,6 +43,8 @@ export const InputEmailForSocialUsers = (props) => {
     }, 700);
     const classes = useStyles();
     const { 
+        isChanged,
+        emailRegister,
         setAlertMsg,
         alerts,
         isRegisteredEmail,
@@ -88,11 +90,14 @@ export const InputEmailForSocialUsers = (props) => {
             ok=false;
             setAlertMsg('유의사항을 읽으신 후 체크해주세요', 'error');
         }
-        console.log(ok);
         
+        if(ok){
+            emailRegister(inputs);
+        }
     }
 
     if(isRegisteredEmail || isNotLoggedin) return <Redirect to = "/" />
+    if(isChanged) return <Redirect to = '/waitinglevelup' />
 
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
@@ -179,15 +184,18 @@ export const InputEmailForSocialUsers = (props) => {
 InputEmailForSocialUsers.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
+    emailRegister: PropTypes.func,
     isRegisteredEmail: PropTypes.bool,
     isNotLoggedin: PropTypes.bool,
+    isChanged: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
     isNotLoggedin: !state.auth.auth,
     isRegisteredEmail: state.auth.userData && state.auth.userData.email,
+    isChanged: state.userValidation.changed,
 })
 
 
-export default connect(mapStateToProps, {setAlertMsg})(InputEmailForSocialUsers)
+export default connect(mapStateToProps, {setAlertMsg, emailRegister})(InputEmailForSocialUsers)

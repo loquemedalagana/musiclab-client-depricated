@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import api from '../api';
-import {setAlertMsg} from './alert';
+import { setAlertMsg } from './alert';
 import { fetchUser } from './auth';
 
 //expired 여부 기록하기
@@ -36,7 +36,10 @@ const slice = createSlice({
 export const {
     signupSuccess,
     signupFail,
-
+    sendAuthCodeSuccess,
+    sendAuthCodeFail,
+    levelupSucess,
+    levelupFail
 } = slice.actions;
 
 export default slice.reducer;
@@ -47,19 +50,23 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
         const {email} = dataToSubmit;
         const response = await api.get(`/users/register/${email}`);
         console.log(response.data); //success message
+        sendAuthCodeSuccess();
+        setAlertMsg(response.data.message, 'success');
+
     } catch (err) {
         const errors = err.response.data.errors;
         if (errors) {
             errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
         }
-
+        sendAuthCodeFail();
     }
 }
 
 export const signupUser = dataToSubmit => async dispatch => {
     try {
-        await api.post(`/users/register`, dataToSubmit);
+        const response = await api.post(`/users/register`, dataToSubmit);
         dispatch(signupSuccess());
+        setAlertMsg(response.data.message, 'success');
         dispatch(fetchUser());
     } catch (err) {
         const errors = err.response.data.errors;
@@ -72,8 +79,9 @@ export const signupUser = dataToSubmit => async dispatch => {
 
 export const emailRegister = dataToSubmit => async dispatch => {
     try {
-        await api.patch(`/users/register/email`, dataToSubmit);
+        const response = await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
+        setAlertMsg(response.data.message, 'success');
         dispatch(fetchUser());
     } catch (err) {
         const errors = err.response.data.errors;
