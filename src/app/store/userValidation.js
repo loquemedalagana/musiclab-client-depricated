@@ -64,14 +64,15 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
 
 export const signupUser = dataToSubmit => async dispatch => {
     try {
-        const response = await api.post(`/users/register`, dataToSubmit);
+        const {email} = dataToSubmit;
+        await api.post(`/users/register`, dataToSubmit);
         dispatch(signupSuccess());
-        setAlertMsg(response.data.message, 'success');
-        dispatch(fetchUser());
+        dispatch(email);
     } catch (err) {
+        console.log(err.response.data.errors);
         const errors = err.response.data.errors;
         if (errors) {
-            errors.forEach(error => (dispatch(setAlertMsg(error.message.message, 'error'))));
+            errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
         }
         dispatch(signupFail());
     }
