@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import api from '../api';
 import { setAlertMsg } from './alert';
-//import { fetchUser } from './auth';
+import { fetchUser } from './auth';
 
 //expired 여부 기록하기
 const slice = createSlice({
@@ -67,9 +67,9 @@ export const signupUser = dataToSubmit => async dispatch => {
         const {email} = dataToSubmit;
         await api.post(`/users/register`, dataToSubmit);
         dispatch(signupSuccess());
-        dispatch(sendEmailAuthCode(email));
+        return dispatch(fetchUser());
     } catch (err) {
-        console.log(err.response.data.errors);
+        //console.log(err.response.data.errors);
         const errors = err.response.data.errors;
         if (errors) {
             errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
@@ -83,7 +83,6 @@ export const emailRegister = dataToSubmit => async dispatch => {
         const {email} = dataToSubmit;
         await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
-        dispatch(sendEmailAuthCode(email));
     } catch (err) {
         const errors = err.response.data.errors;
         if (errors) {

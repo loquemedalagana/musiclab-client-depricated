@@ -145,7 +145,7 @@ export const Signup= (props) => {
     }
 
     if(isAuth) return <Redirect to = '/' />;
-    if(isChanged) return <Redirect to = '/waitinglevelup' />;
+    if(isChanged) return <Redirect to = '/' />;
 
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
