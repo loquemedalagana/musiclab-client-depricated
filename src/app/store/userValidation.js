@@ -64,7 +64,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
 
 export const signupUser = dataToSubmit => async dispatch => {
     try {
-        const {email} = dataToSubmit;
+        //const {email} = dataToSubmit;
         await api.post(`/users/register`, dataToSubmit);
         dispatch(signupSuccess());
         return dispatch(fetchUser());
@@ -80,7 +80,7 @@ export const signupUser = dataToSubmit => async dispatch => {
 
 export const emailRegister = dataToSubmit => async dispatch => {
     try {
-        const {email} = dataToSubmit;
+        //const {email} = dataToSubmit;
         await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
     } catch (err) {
@@ -91,3 +91,5 @@ export const emailRegister = dataToSubmit => async dispatch => {
         dispatch(signupFail());
     }
 }
+
+//level up code
