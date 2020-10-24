@@ -16,19 +16,19 @@ const slice = createSlice({
             state.changed = true;
         },
         signupFail: (state) => {
-            state.changed = true;
+            state.changed = false;
         },
         sendAuthCodeSuccess: (state) => {
             state.changed = true;
         },
         sendAuthCodeFail: (state) => {
-            state.changed = true;
+            state.changed = false;
         },
         levelupSucess: (state) => {
             state.changed = true;
         },
         levelupFail: (state) => {
-            state.changed = true;
+            state.changed = false;
         }
     },
 });
