@@ -50,7 +50,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
         const {email} = dataToSubmit;
         const response = await api.get(`/users/register/${email}`);
         console.log(response.data); //success message
-        sendAuthCodeSuccess();
+        dispatch(sendAuthCodeSuccess());
         setAlertMsg(response.data.message, 'success');
 
     } catch (err) {
@@ -58,7 +58,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
         if (errors) {
             errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
         }
-        sendAuthCodeFail();
+        dispatch(sendAuthCodeFail());
     }
 }
 
