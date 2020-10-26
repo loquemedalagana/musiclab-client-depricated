@@ -55,7 +55,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
         const response = await api.get(`/users/register/${email}`);
         console.log(response.data); //success message
         dispatch(sendAuthCodeSuccess());
-        setAlertMsg(response.data.message, 'success');
+        dispatch(setAlertMsg(response.data.message, 'success'));
         dispatch(setInitState());
     } catch (err) {
         const errors = err.response.data.errors;
@@ -63,6 +63,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
             errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
         }
         dispatch(sendAuthCodeFail());
+        dispatch(setInitState());
     }
 }
 
@@ -84,21 +85,25 @@ export const signupUser = dataToSubmit => async dispatch => {
             errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
         }
         dispatch(signupFail());
+        dispatch(setInitState());
     }
 }
 
 export const emailRegister = dataToSubmit => async dispatch => {
     try {
-        //const {email} = dataToSubmit;
-        await api.patch(`/users/register/email`, dataToSubmit);
+        const {email} = dataToSubmit;
+        const response = await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
-        dispatch(setInitState());
+        if(response.data.success) dispatch(sendEmailAuthCode(email));
+        //dispatch(setAlertMsg(response.data.message, 'success')); //비동기로 인한 에러
+        //dispatch(setInitState());
     } catch (err) {
         const errors = err.response.data.errors;
         if (errors) {
             errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
         }
         dispatch(signupFail());
+        dispatch(setInitState());
     }
 }
 
