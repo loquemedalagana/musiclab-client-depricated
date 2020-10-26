@@ -79,7 +79,6 @@ export const signupUser = dataToSubmit => async dispatch => {
         dispatch(setAlertMsg(response.data.message, 'success'));
         dispatch(setInitState());
     } catch (err) {
-        //console.log(err.response.data.errors);
         const errors = err.response.data.errors;
         if (errors) {
             errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
@@ -95,8 +94,7 @@ export const emailRegister = dataToSubmit => async dispatch => {
         const response = await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
         if(response.data.success) dispatch(sendEmailAuthCode({email}));
-        //dispatch(setAlertMsg(response.data.message, 'success')); //비동기로 인한 에러가 아닌 오타..
-        //dispatch(setInitState());
+        else throw Error('failed response!');
     } catch (err) {
         const errors = err.response.data.errors;
         if (errors) {
