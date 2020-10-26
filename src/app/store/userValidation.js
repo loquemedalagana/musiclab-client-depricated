@@ -94,8 +94,8 @@ export const emailRegister = dataToSubmit => async dispatch => {
         const {email} = dataToSubmit;
         const response = await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
-        if(response.data.success) dispatch(sendEmailAuthCode(email));
-        //dispatch(setAlertMsg(response.data.message, 'success')); //비동기로 인한 에러
+        if(response.data.success) dispatch(sendEmailAuthCode({email}));
+        //dispatch(setAlertMsg(response.data.message, 'success')); //비동기로 인한 에러가 아닌 오타..
         //dispatch(setInitState());
     } catch (err) {
         const errors = err.response.data.errors;
