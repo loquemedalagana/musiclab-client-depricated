@@ -29,11 +29,15 @@ const slice = createSlice({
         },
         levelupFail: (state) => {
             state.changed = false;
+        },
+        setInitState: state => {
+            state.changed = false;
         }
     },
 });
 
 export const {
+    setInitState,
     signupSuccess,
     signupFail,
     sendAuthCodeSuccess,
@@ -52,7 +56,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
         console.log(response.data); //success message
         dispatch(sendAuthCodeSuccess());
         setAlertMsg(response.data.message, 'success');
-
+        dispatch(setInitState());
     } catch (err) {
         const errors = err.response.data.errors;
         if (errors) {
@@ -72,6 +76,7 @@ export const signupUser = dataToSubmit => async dispatch => {
             password
         }));
         dispatch(setAlertMsg(response.data.message, 'success'));
+        dispatch(setInitState());
     } catch (err) {
         //console.log(err.response.data.errors);
         const errors = err.response.data.errors;
@@ -87,6 +92,7 @@ export const emailRegister = dataToSubmit => async dispatch => {
         //const {email} = dataToSubmit;
         await api.patch(`/users/register/email`, dataToSubmit);
         dispatch(signupSuccess());
+        dispatch(setInitState());
     } catch (err) {
         const errors = err.response.data.errors;
         if (errors) {

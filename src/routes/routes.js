@@ -16,6 +16,7 @@ import Profile from '../views/Profile/Profile';
 
 import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
 import NotFound from '../views/Pages/NotFound';
+import ServerError from '../views/Pages/ServerError';
 
 import ToastAlert from '../components/ToastAlerts/ToastAlerts';
 
@@ -37,6 +38,7 @@ export default props => (
             <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
             <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
 
+            <Route exact path = '/servererror' component = {ServerError} />
             <Route component = {NotFound} />
         </Switch>
     </>

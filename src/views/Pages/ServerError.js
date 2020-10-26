@@ -12,7 +12,7 @@ import styles from '../../assets/jss/material-kit-react/views/ErrorPageStyle';
 
 const useStyles = makeStyles(styles);
 
-function NotFound() {
+function ServerError() {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
@@ -25,8 +25,8 @@ function NotFound() {
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={6} lg={5} >
                         <div className={clsx(classes[cardAnimaton], classes.brand)}>
-                            <h1 className={classes.title}>404 Not Found</h1>
-                            <h2 className={classes.title}>존재하지 않는 페이지입니다.</h2>
+                            <h1 className={classes.title}>Server Error</h1>
+
                             <h3 className={classes.subtitle}>
                                 Music Sseolprise by Inhyuk
                             </h3>
@@ -42,4 +42,4 @@ function NotFound() {
     )
 }
 
-export default NotFound
+export default ServerError

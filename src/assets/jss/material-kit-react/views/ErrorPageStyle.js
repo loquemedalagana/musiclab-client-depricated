@@ -1,5 +1,5 @@
 import { container } from '../../material-kit-react';
-import customInputStyle from '../../material-kit-react/components/customInputStyle';
+import customInputStyle from '../components/customInputStyle';
 import customCheckboxRadioSwitch from "../components/customCheckboxRadioSwitch.js";
 
 export default {
