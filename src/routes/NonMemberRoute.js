@@ -8,6 +8,7 @@ import Loading from '../components/Loading/LinearLoading';
 const NonMemberRoute = ({
     component: Component,
     user,
+    isChanged,
     ...rest
 }) => (
     <Route

@@ -8,6 +8,7 @@ import Loading from '../components/Loading/LinearLoading';
 const NonMemberRoute = ({
     component: Component,
     user,
+    isChanged,
     ...rest
 }) => (
     <Route
@@ -17,7 +18,7 @@ const NonMemberRoute = ({
                 <Loading />
             ) : user.auth ? (
                 (user.userData.snsId && !user.userData.email && user.userData.points < 0) ?
-                <Component {...props} /> : (user.userData.points < 0 ?
+                (isChanged ? <Redirect to = '/' /> : <Component {...props} />) : (user.userData.points < 0 ?
                     <Redirect to = '/waitinglevelup' />
                     : <Redirect to = '/' />
                 )

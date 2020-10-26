@@ -31,11 +31,13 @@ const MemberRoute = ({
 
 
 MemberRoute.propTypes = {
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
+    isChanged: PropTypes.bool,
 };
 
 const mapStateToProps = state => ({
     user: state.auth,
+    isChanged: state.userValidation.changed
 });
 
 export default connect(mapStateToProps)(MemberRoute);

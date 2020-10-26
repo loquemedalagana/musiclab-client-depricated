@@ -8,6 +8,7 @@ import Loading from '../components/Loading/LinearLoading';
 const IsNotLoggedInRoute = ({
     component: Component,
     user,
+    isChanged,
     ...rest
 }) => (
     <Route
@@ -15,7 +16,7 @@ const IsNotLoggedInRoute = ({
         render={props =>
             user.loading ? (
                 <Loading />
-            ) : !user.auth ? (
+            ) : !user.auth ? ( isChanged ? <Redirect to = '/' /> : 
                 <Component {...props} />
                 ) : (
                     (user.userData.snsId && !user.userData.email && user.userData.points < 0) ? 
