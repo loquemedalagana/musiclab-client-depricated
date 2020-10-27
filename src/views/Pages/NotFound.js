@@ -5,6 +5,7 @@ import {
     Footer,
     GridContainer,
     GridItem,
+    Card,
 } from '../../components/components';
 
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
@@ -24,7 +25,7 @@ function NotFound() {
             <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={6} lg={5} >
-                        <div className={clsx(classes[cardAnimaton], classes.brand)}>
+                        <Card plain className={clsx(classes[cardAnimaton], classes.brand)}>
                             <h1 className={classes.title}>404 Not Found</h1>
                             <h2 className={classes.title}>존재하지 않는 페이지입니다.</h2>
                             <h3 className={classes.subtitle}>
@@ -33,7 +34,7 @@ function NotFound() {
                             <h3 className={classes.subtitle}>
                                 원조 자작돌, 야다 전인혁의 뮤직 썰!프라이즈
                             </h3>
-                        </div>
+                        </Card>
                     </GridItem>
                 </GridContainer>
             </div>

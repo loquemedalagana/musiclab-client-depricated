@@ -8,6 +8,7 @@ import GridItem from "./Grid/GridItem.js";
 import Button from "./CustomButtons/Button.js";
 
 import Card from "./Card/Card.js";
+import CardNavigation from "./Card/CardNavigation";
 import CardBody from "./Card/CardBody.js";
 import CardHeader from "./Card/CardHeader.js";
 import CardFooter from "./Card/CardFooter.js";
@@ -43,7 +44,7 @@ import Clearfix from './Clearfix/Clearfix';
 
 export {
     Header, HeaderLinks, Footer, GridContainer,
-    GridItem, Button, Card, CardBody, CardHeader, CardFooter,
+    GridItem, Button, Card, CardBody, CardHeader, CardFooter, CardNavigation,
     CustomInput, CustomSelectInput, CustomDropdown, Parallax, NavPills, Pagination,
     CustomLinearProgress, CustomTabs, InfoArea, DateTimePicker,
     DangerText, InfoText, MutedText, PrimaryText, QuoteText,

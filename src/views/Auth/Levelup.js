@@ -352,6 +352,7 @@ export const Levelup = (props) => {
                             success = {descriptionSuccess}
                             error = {descriptionErr}
                             inputProps={{
+                                rows: '4',
                                 type: "text",
                                 multiline: true,
                                 name: "description",
