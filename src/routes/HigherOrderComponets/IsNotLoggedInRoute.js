@@ -3,11 +3,12 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Loading from '../components/Loading/LinearLoading';
+import Loading from '../../components/Loading/LinearLoading';
 
-const MemberRoute = ({
+const IsNotLoggedInRoute = ({
     component: Component,
     user,
+    isChanged,
     ...rest
 }) => (
     <Route
@@ -15,22 +16,19 @@ const MemberRoute = ({
         render={props =>
             user.loading ? (
                 <Loading />
-            ) : user.auth ? (
-                user.userData.points >= 0 ? 
-                <Component {...props} /> :
-                    ((user.userData.snsId && !user.userData.email) ? 
-                        <Redirect to = '/emailregister' /> :
-                        <Redirect to = '/waitinglevelup' />
-                    )
+            ) : !user.auth ? ( isChanged ? <Redirect to = '/' /> : 
+                <Component {...props} />
                 ) : (
-                <Redirect to = '/login' />
+                    (user.userData.snsId && !user.userData.email && user.userData.points < 0) ? 
+                    <Redirect to = '/emailregister' /> : 
+                    <Redirect to = '/' />
             )
         }
     />
 );
 
 
-MemberRoute.propTypes = {
+IsNotLoggedInRoute.propTypes = {
     user: PropTypes.object.isRequired,
     isChanged: PropTypes.bool,
 };
@@ -40,4 +38,4 @@ const mapStateToProps = state => ({
     isChanged: state.userValidation.changed
 });
 
-export default connect(mapStateToProps)(MemberRoute);
+export default connect(mapStateToProps)(IsNotLoggedInRoute);

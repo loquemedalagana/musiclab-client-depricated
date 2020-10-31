@@ -66,6 +66,8 @@ export const Levelup = (props) => {
     console.log(query);
     console.log(Object.keys(query).length === 0);
 
+    //load user's info
+
     const [isChecked, setIsChecked] = useState(false);
     const [inputs, setInputs] = useState({
         givenName: '',

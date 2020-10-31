@@ -1,10 +1,10 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 
-import IsNotLoggedInRoute from './IsNotLoggedInRoute'
-import MemberRoute from './MemberRoute';
-import NonMemberRoute from './NonMemberRoute';
-import NonMemberRouteWithoutEmail from './NonMemberWithoutEmail';
+import IsNotLoggedInRoute from './HigherOrderComponets/IsNotLoggedInRoute'
+import MemberRoute from './HigherOrderComponets/MemberRoute';
+import NonMemberRoute from './HigherOrderComponets/NonMemberRoute';
+import NonMemberRouteWithoutEmail from './HigherOrderComponets/NonMemberWithoutEmail';
 
 import Login from '../views/Auth/Login';
 import Signup from '../views/Auth/Signup';

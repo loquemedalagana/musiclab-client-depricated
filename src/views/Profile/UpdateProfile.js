@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
 
-import { 
-    Stepper,
-} from "@material-ui/core";
+//import {  Stepper,} from "@material-ui/core";
 
 import {
     Footer,
@@ -30,7 +28,7 @@ const UpdateProfile = props => {
         setCardAnimation("");
     }, 800);
     const classes = useStyles();
-    const [activeStep, setActiveStep] = useState(0);
+    //const [activeStep, setActiveStep] = useState(0);
 
 
     return (

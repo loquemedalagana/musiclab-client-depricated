@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Loading from '../components/Loading/LinearLoading';
+import Loading from '../../components/Loading/LinearLoading';
 
 const AdminRoute = ({
     component: Component,
