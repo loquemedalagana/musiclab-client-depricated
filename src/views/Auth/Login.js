@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
+import classNames from "classnames";
 
 import {InputAdornment, FormHelperText, Link} from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
@@ -167,18 +168,27 @@ export const Login = (props) => {
                             {message}
                             </FormHelperText>
                         ))}
+                        <div className={classNames({
+                            justifyContent: 'right'
+                        })}> 
+                            <Link 
+                            onClick={event => {
+                                event.preventDefault();
+                                return setFindPasswordOpen(true);
+                            }}
+                            component = 'button'
+                            className={classes.link}
+                            color='textPrimary'
+                            classes={{
+                                root: classNames({
+                                    textAlign: 'right'
+                                })
+                            }}
+                            >
+                                Did you forget password?
+                            </Link>    
+                        </div>
 
-                        <Link 
-                        onClick={event => {
-                            event.preventDefault();
-                            return setFindPasswordOpen(true);
-                        }}
-                        component = 'button'
-                        className={classes.formControlWithText}
-                        color='textPrimary'
-                        >
-                            Did you forget password?
-                        </Link>
                     </CardBody>
 
 

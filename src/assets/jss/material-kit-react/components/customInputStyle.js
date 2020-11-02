@@ -73,6 +73,15 @@ const customInputStyle = {
       color: "#495057"
     }
   },
+  link: {
+    fontFamily: 'Poor Story',
+    margin: "0 0 17px 0",
+    position: "relative",
+    "& svg,& .fab,& .far,& .fal,& .fas,& .material-icons": {
+      color: "#495057"
+    },
+    textAlign: 'center'
+  },
   input: {
     color: "#495057",
     height: "unset",
