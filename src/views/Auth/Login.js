@@ -23,6 +23,7 @@ import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/backgrou
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
 import Loading from '../../components/Loading/LinearLoading';
+import FindPassword from '../Modals/FindPassword';
 import {loginUser} from '../../app/store/auth';
 import {setAlertMsg} from '../../app/store/alert';
 
@@ -53,6 +54,8 @@ export const Login = (props) => {
 
     const [emailErr, setEmailErr] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
+
+    const [findPasswordOpen, setFindPasswordOpen] = useState(false);
 
     const { email, password } = inputs;
 
@@ -94,6 +97,10 @@ export const Login = (props) => {
 
     return (
         <>
+        <FindPassword 
+            open={findPasswordOpen}
+            onClose={() => setFindPasswordOpen(false)}
+        />
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
@@ -162,6 +169,10 @@ export const Login = (props) => {
                         ))}
 
                         <Link 
+                        onClick={event => {
+                            event.preventDefault();
+                            return setFindPasswordOpen(true);
+                        }}
                         component = 'button'
                         className={classes.formControlWithText}
                         color='textPrimary'
