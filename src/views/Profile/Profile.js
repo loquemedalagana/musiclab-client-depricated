@@ -26,7 +26,7 @@ import {
 //    CircularLoading,
 } from '../../components/components';
 
-import NotFound from '../Pages/NotFound';
+import NotFound from '../Error/NotFound';
 
 import defaultImg from '../../assets/images/dolphin_profile.png';
 

@@ -24,10 +24,10 @@ const slice = createSlice({
         sendAuthCodeFail: (state) => {
             state.changed = false;
         },
-        levelupSucess: (state) => {
+        changedUserInfoSucess: (state) => {
             state.changed = true;
         },
-        levelupFail: (state) => {
+        changedUserInfoFail: (state) => {
             state.changed = false;
         },
         setInitState: state => {
@@ -42,13 +42,13 @@ export const {
     signupFail,
     sendAuthCodeSuccess,
     sendAuthCodeFail,
-    levelupSucess,
-    levelupFail
+    changedUserInfoSucess,
+    changedUserInfoFail
 } = slice.actions;
 
 export default slice.reducer;
 
-// 임시용 /users/register/emailauth?email=${email}
+// actions
 export const sendEmailAuthCode = dataToSubmit => async dispatch => {
     try {
         const {email} = dataToSubmit;
@@ -105,4 +105,10 @@ export const emailRegister = dataToSubmit => async dispatch => {
     }
 }
 
-//level up code
+//find password
+
+//reset password
+
+//levelup
+
+//update info

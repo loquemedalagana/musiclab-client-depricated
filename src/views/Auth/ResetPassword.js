@@ -1,12 +1,15 @@
+//for social users
+//put email for auth
 import React, {useState} from 'react';
-import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
 
-import {InputAdornment, FormHelperText, Link} from "@material-ui/core";
-import Email from "@material-ui/icons/Email";
+import {
+    InputAdornment, 
+    FormHelperText
+} from "@material-ui/core";
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import {
@@ -14,6 +17,7 @@ import {
     GridContainer,
     GridItem,
     Card,
+    CardHeader,
     Button,
     CardBody,
     CustomInput,
@@ -21,18 +25,18 @@ import {
 } from '../../components/components';
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
-
-import Loading from '../../components/Loading/LinearLoading';
-import {loginUser} from '../../app/store/auth';
 import {setAlertMsg} from '../../app/store/alert';
 
-import SocialLogin from './SocialLogin';
+import {
+    checkSpace,
+    //checkSpecialChar
+} from '../../utils/checkStringPatterns';
 
 const useStyles = makeStyles(styles);
 
-//https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
+const inputhelper = `비밀번호는 반드시 8자 이상으로 입력해주세요.`
 
-export const Login = (props) => {
+export const ResetPassword = (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
         setCardAnimation("");
@@ -41,20 +45,19 @@ export const Login = (props) => {
     const { 
         setAlertMsg,
         alerts,
-        isAuth,
-        loginUser,
-        loading
     } = props;
 
     const [inputs, setInputs] = useState({
-        email: '',
         password: '',
+        confirmPassword: '',
     });
 
-    const [emailErr, setEmailErr] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
 
-    const { email, password } = inputs;
+    const {
+        password,
+        confirmPassword,
+    } = inputs;
 
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
@@ -64,77 +67,52 @@ export const Login = (props) => {
         })
     }
 
+    
     const onSubmitHandler = event => {
         event.preventDefault();
         let ok = true;
-        if(!email) {
-            ok=false;
-            setAlertMsg('이메일을 입력해주세요', 'error', 'email');
-            setEmailErr(true);
-        }
-        else {
-            setEmailErr(false);
-        }
-        if(!password){
+
+        if(!password || !confirmPassword){
             ok=false;
             setAlertMsg('비밀번호를 입력해주세요', 'error', 'password');
             setPasswordErr(true);
-        }
-        else {
+        } else if(password && password !== confirmPassword && confirmPassword){
+            ok=false;
+            setAlertMsg('비밀번호와 비밀번호 확인은 같아야합니다.', 'error', 'password');
+            setPasswordErr(true);
+        } else if (checkSpace(password) || checkSpace(confirmPassword)){
+            ok=false;
+            setAlertMsg('비밀번호에 공백이 들어갈 수 없습니다.', 'error', 'password');
+            setPasswordErr(true);
+        } else if (password.length < 8){
+            ok=false;
+            setAlertMsg('비밀번호는 최소 8자 이상이어야 합니다.', 'error', 'password');
+            setPasswordErr(true);
+        } else {
             setPasswordErr(false);
         }
-
-        if(ok) {
-            loginUser({ email, password });
+        
+        if(ok){
+            //reset password
         }
     }
 
-    if(loading) return <Loading />
-    if(isAuth) return <Redirect to = '/' />
-
     return (
-        <>
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
             <div className={classes.container}>
             <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
                 <GridItem xs={12} sm={12} md={4}>
                 <Card className={classes[cardAnimaton]}>
                     <form className={classes.form}>
-                    <SocialLogin color = 'primary' classes={classes} />
-                    <p className={classes.divider}>Or Be Classical</p>
+                    <CardHeader color="primary" className={classes.cardHeader}>
+                        <h4>Please input your new password</h4>
+                    </CardHeader>
+                    <p className={classes.divider}>{inputhelper}</p>
                     <CardBody>
-                        <CustomInput
-                        labelText="Email..."
-                        id="email"
-                        error = {emailErr}
-                        formControlProps={{
-                            fullWidth: true
-                        }}
-                        inputProps={{
-                            type: "email",
-                            name: "email",
-                            value: email,
-                            onChange: onInputHandler,
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <Email className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            )
-                        }}
-                        />
-                        {alerts.map(({message, name, id}) => (name==='email') && (
-                            <FormHelperText 
-                            key = {id}
-                            style = {{textAlign: 'right'}} 
-                            error
-                            >
-                            {message}
-                            </FormHelperText>
-                        ))}
-                        <CustomInput
+                    <CustomInput
                         labelText="Password"
                         id="pass"
-                        error={passwordErr}
+                        error={passwordErr}                      
                         formControlProps={{
                             fullWidth: true
                         }}
@@ -159,21 +137,32 @@ export const Login = (props) => {
                             >
                             {message}
                             </FormHelperText>
-                        ))}
+                        ))}                        
+                    <CustomInput
+                        labelText="Confirm Password"
+                        id="confirmpass"
+                        formControlProps={{
+                            fullWidth: true
+                        }}
+                        error={passwordErr}                     
+                        inputProps={{
+                            type: "password",
+                            name: "confirmPassword",
+                            value: confirmPassword,
+                            onChange: onInputHandler,
+                            endAdornment: (
+                            <InputAdornment position="end">
+                                <VpnKeyIcon className={classes.inputIconsColor} />
+                            </InputAdornment>
+                            ),
+                            autoComplete: "off"
+                        }}
+                        />
 
-                        <Link 
-                        component = 'button'
-                        className={classes.formControlWithText}
-                        color='textPrimary'
-                        >
-                            Did you forget password?
-                        </Link>
                     </CardBody>
-
-
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
-                        Get started
+                        Submit
                         </Button>
                     </CardFooter>
                     </form>
@@ -183,23 +172,19 @@ export const Login = (props) => {
             </div>
             <Footer whiteFont />
         </div>
-        </>
     )
 }
 
-Login.propTypes = {
+ResetPassword.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
-    alerts: PropTypes.array,
-    isAuth: PropTypes.bool,
-    loginUser: PropTypes.func,
-    loading: PropTypes.bool
+
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
-    isAuth: state.auth.auth,
-    loading: state.auth.loading
+    
 })
 
-export default connect(mapStateToProps, {setAlertMsg, loginUser})(Login)
+
+export default connect(mapStateToProps, {setAlertMsg})(ResetPassword);

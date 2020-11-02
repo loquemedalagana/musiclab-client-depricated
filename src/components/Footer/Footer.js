@@ -65,6 +65,16 @@ export default function Footer(props) {
                 Tech Blog
               </a>
             </ListItem>
+            <ListItem button 
+              className={classes.inlineBlock}
+              onClick={() => setNotAvailableOpen(true)}
+            >
+              <a
+                className={classes.block}
+              >
+                WIKI
+              </a>
+            </ListItem>
           </List>
         </div>
         <div className={classes.right}>

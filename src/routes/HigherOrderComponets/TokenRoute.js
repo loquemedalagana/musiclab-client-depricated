@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import qs from 'qs';
+
+//import Notfound from '../Pages/NotFound';
+//levelup, passwordreset page
 
 const TokenRoute = ({
     component: Component,
@@ -15,8 +19,10 @@ const TokenRoute = ({
     console.log(query);
     console.log(Object.keys(query).length === 0);
 
-    //check the token is valid?
-    //login 처리
+    //check the token is valid? with get router
+
+    //
+
 
     return ( <Route
         {...rest}

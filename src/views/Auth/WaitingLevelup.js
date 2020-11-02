@@ -45,6 +45,7 @@ const WaitingLevelup = props => {
                             <Link 
                                 component='button' 
                                 className={classes.subtitle}
+                                color='textPrimary'
                                 onClick={() => sendEmailAuthCode({
                                     email: userEmail,
                                 })}

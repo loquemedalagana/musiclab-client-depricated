@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import qs from 'qs';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,7 +12,7 @@ import {
     People, VpnKey as VpnKeyIcon, MusicNote as MusicNoteIcon, Check,
 } from "@material-ui/icons";
 
-import Notfound from '../Pages/NotFound';
+
 
 import {
     Footer,
@@ -56,17 +55,8 @@ export const Levelup = (props) => {
     const {
         setAlertMsg,
         alerts,
-        location, 
 //        ...rest 
     } = props;
-
-    const query = qs.parse(location.search, {
-        ignoreQueryPrefix: true
-    });
-    console.log(query);
-    console.log(Object.keys(query).length === 0);
-
-    //load user's info
 
     const [isChecked, setIsChecked] = useState(false);
     const [inputs, setInputs] = useState({
@@ -222,8 +212,6 @@ export const Levelup = (props) => {
 
         console.log(ok);
     }
-
-    if(Object.keys(query).length === 0) return <Notfound />;
 
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>

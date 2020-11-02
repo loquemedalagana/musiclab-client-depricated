@@ -8,6 +8,7 @@ import NonMemberRouteWithoutEmail from './HigherOrderComponets/NonMemberWithoutE
 
 import Login from '../views/Auth/Login';
 import Signup from '../views/Auth/Signup';
+import ResetPassword  from '../views/Auth/ResetPassword';
 import Levelup from '../views/Auth/Levelup';
 import WaitingLevelup from '../views/Auth/WaitingLevelup';
 import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
@@ -15,8 +16,8 @@ import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 import Profile from '../views/Profile/Profile';
 
 import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
-import NotFound from '../views/Pages/NotFound';
-import ServerError from '../views/Pages/ServerError';
+import NotFound from '../views/Error/NotFound';
+import ServerError from '../views/Error/ServerError';
 
 import ToastAlert from '../components/ToastAlerts/ToastAlerts';
 
@@ -31,6 +32,7 @@ export default props => (
         <Switch>
             <IsNotLoggedInRoute exact path = '/login' component = {Login} />
             <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
+            <Route exact path = '/resetpassword/:auth?' component = {ResetPassword} />
             <Route exact path = '/levelup/:auth?' component = {Levelup} />
             <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
             <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
