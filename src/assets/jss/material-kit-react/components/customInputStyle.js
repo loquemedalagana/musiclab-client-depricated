@@ -80,6 +80,7 @@ const customInputStyle = {
     "& svg,& .fab,& .far,& .fal,& .fas,& .material-icons": {
       color: "#495057"
     },
+    fontSize: '15px',
     textAlign: 'center'
   },
   input: {

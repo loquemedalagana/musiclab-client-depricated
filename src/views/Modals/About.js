@@ -30,7 +30,7 @@ const About = props => {
             onClose={onClose}
             TransitionComponent={Transition}
             keepMounted
-
+            fullWidth
             aria-labelledby="music-sseolprise-about"
             aria-describedby="music-sseolprise-about-detail"
         >
