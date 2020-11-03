@@ -24,6 +24,7 @@ import styles from '../../assets/jss/material-kit-react/components/modalStyle';
 
 import {checkValidEmail} from '../../utils/checkStringPatterns';
 import {setAlertMsg} from '../../app/store/alert';
+import {requestFindPassword} from '../../app/store/userValidation';
 
 const useStyles = makeStyles(styles);
 
@@ -37,6 +38,7 @@ const FindPassword = props => {
         setAlertMsg,
         open,
         onClose,
+        requestFindPassword,
     } = props;
 
     const [inputs, setInputs] = useState({
@@ -73,7 +75,7 @@ const FindPassword = props => {
             //이벤트 처리
             //창 닫기
             setEmailModalErr(false);
-            
+            requestFindPassword({email})
         }
     }
 
@@ -83,7 +85,7 @@ const FindPassword = props => {
             onClose={onClose}
             TransitionComponent={Transition}
             keepMounted
-            fullWidth
+            fullWidth={true}
             aria-labelledby="music-sseolprise-about"
             aria-describedby="music-sseolprise-about-detail"
         >
@@ -144,10 +146,11 @@ const FindPassword = props => {
 FindPassword.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
+    requestFindPassword: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(FindPassword)
+export default connect(mapStateToProps, {setAlertMsg, requestFindPassword})(FindPassword)

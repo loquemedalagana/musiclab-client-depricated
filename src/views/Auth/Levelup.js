@@ -317,7 +317,8 @@ export const Levelup = (props) => {
                                 error = {birthdayErr}
                                 labelText = "Your birthday(생년월일)"
                                 inputProps = {{
-                                    
+                                    dateFormat: true,
+                                    timeFormat: false,
                                     placeholder: 'Pick your birthday!',
                                     value: birthday,
                                     onChange: handleDateChange

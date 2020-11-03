@@ -89,7 +89,7 @@ const HeaderLinks = (props) => {
               User List
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('dashboard')} className={classes.dropdownLink}>
-              Dashboard
+              Send group mail
             </Button>,
           ]}
         />

@@ -10,7 +10,8 @@ const IsNotLoggedInRoute = ({
     user,
     isChanged,
     ...rest
-}) => (
+}) => {
+    return (
     <Route
         {...rest}
         render={props =>
@@ -25,7 +26,7 @@ const IsNotLoggedInRoute = ({
             )
         }
     />
-);
+)};
 
 
 IsNotLoggedInRoute.propTypes = {

@@ -54,8 +54,6 @@ export default function DateTimePicker(props){
         ) : null}
         <FormControl {...formControlProps} className={formControlClasses}>
             <Datetime
-            dateFormat={true}
-            timeFormat={false}
             {...inputProps}
             />
         </FormControl>

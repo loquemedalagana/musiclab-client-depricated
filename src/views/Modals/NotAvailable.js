@@ -30,7 +30,7 @@ const NotAvailable = props => {
             onClose={onClose}
             TransitionComponent={Transition}
             keepMounted
-            fullwidth
+
             aria-labelledby="music-sseolprise-about"
             aria-describedby="music-sseolprise-about-detail"
         >
