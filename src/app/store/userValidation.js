@@ -57,10 +57,7 @@ export const sendEmailAuthCode = dataToSubmit => async dispatch => {
         dispatch(setAlertMsg(response.data.message, 'success'));
         dispatch(setInitState());
     } catch (err) {
-        const errors = err.response.data.errors;
-        if (errors) {
-            errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
-        }
+        dispatch(setAlertMsg(err.response.data.message, 'error'))
         dispatch(sendAuthCodeFail());
         dispatch(setInitState());
     }
@@ -78,10 +75,7 @@ export const signupUser = dataToSubmit => async dispatch => {
         dispatch(setAlertMsg(response.data.message, 'success'));
         dispatch(setInitState());
     } catch (err) {
-        const errors = err.response.data.errors;
-        if (errors) {
-            errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
-        }
+        dispatch(setAlertMsg(err.response.data.message, 'error'))
         dispatch(signupFail());
         dispatch(setInitState());
     }
@@ -95,10 +89,7 @@ export const emailRegister = dataToSubmit => async dispatch => {
         if(response.data.success) dispatch(sendEmailAuthCode({email}));
         else throw Error('failed response!');
     } catch (err) {
-        const errors = err.response.data.errors;
-        if (errors) {
-            errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
-        }
+        dispatch(setAlertMsg(err.response.data.message, 'error'))
         dispatch(signupFail());
         dispatch(setInitState());
     }
@@ -110,10 +101,8 @@ export const requestFindPassword = dataToSubmit => async dispatch => {
         const response = await api.post(`/users/findinfo/password`, dataToSubmit);
         dispatch(setAlertMsg(response.data.message, 'success'));
     } catch (err) {
-        const errors = err.response.data.errors;
-        if (errors) {
-            errors.forEach(error => (dispatch(setAlertMsg(error.message, 'error'))));
-        }
+        //console.log(err.response.data);
+        dispatch(setAlertMsg(err.response.data.message, 'error'))
     }
 }
 

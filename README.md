@@ -5,6 +5,13 @@
     <li>Media(post)</li>
 </ul>
 
+## youtube api 연동
+https://velog.io/@hyejibaek/20.01.20-Youtube-API%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%97%B0%EB%8F%99
+
+https://velopert.com/3503
+<br/>
+<hr/>
+
 https://demos.creative-tim.com/material-kit-react/?_ga=2.243231810.1304114902.1601726800-598489630.1601178322#/
 
 https://demos.creative-tim.com/material-kit-pro-react/?_ga=2.42928613.1304114902.1601726800-598489630.1601178322#/documentation/tags-input
