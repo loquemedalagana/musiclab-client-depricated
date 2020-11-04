@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import IsNotLoggedInRoute from './HigherOrderComponets/IsNotLoggedInRoute'
 import MemberRoute from './HigherOrderComponets/MemberRoute';
 import NonMemberRoute from './HigherOrderComponets/NonMemberRoute';
+import TokenRoute from './HigherOrderComponets/TokenRoute';
 import NonMemberRouteWithoutEmail from './HigherOrderComponets/NonMemberWithoutEmail';
 
 import Login from '../views/Auth/Login';
@@ -32,8 +33,8 @@ export default props => (
         <Switch>
             <IsNotLoggedInRoute exact path = '/login' component = {Login} />
             <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
-            <Route exact path = '/resetpassword/:auth?' component = {ResetPassword} />
-            <Route exact path = '/levelup/:auth?' component = {Levelup} />
+            <TokenRoute exact path = '/resetpassword/:auth?' component = {ResetPassword} />
+            <TokenRoute exact path = '/levelup/:auth?' component = {Levelup} />
             <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
             <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
 
