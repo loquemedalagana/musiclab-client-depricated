@@ -22,20 +22,16 @@ const TokenRoute = ({
         ignoreQueryPrefix: true
     });  
     const {token, expiredtime} = query;
-    console.log(query, token, expiredtime);
+    console.log(query, token, Date.now(), expiredtime);
 
     const ENDPOINT = `/api/user/checktoken/?token=${token}&expiredtime=${expiredtime}`;
-    const {data, error} = useSWR(ENDPOINT, fetcher);
+    const isExpired = Date.now() > expiredtime;
+    const {data, error} = useSWR(isExpired ? null : ENDPOINT, isExpired ? null : fetcher);
 
-    console.log(data, error);
-
-    /*
+    console.log(data, error);   
+    console.log(isExpired ? "expired!" : null);
+    //const LoadingToken = !data && !error;
     
-    const targetUserLoading = !data && !error;
-    const thumbnail = data ? (data.userData.thumbnail ? data.userData.thumbnail : undefined) : undefined;
-
-    
-*/
 
     return ( <Route
         {...rest}
