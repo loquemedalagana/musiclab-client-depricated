@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import qs from 'qs';
+import fetcher from '../../app/fetcher';
+import useSWR from 'swr';
 
 import Loading from '../../components/Loading/LinearLoading';
 //import Notfound from '../Pages/NotFound';
@@ -22,9 +24,18 @@ const TokenRoute = ({
     const {token, expiredtime} = query;
     console.log(query, token, expiredtime);
 
-    //check the token is valid? with get router(use fetcher and swr)
+    const ENDPOINT = `/api/user/checktoken/?token=${token}&expiredtime=${expiredtime}`;
+    const {data, error} = useSWR(ENDPOINT, fetcher);
 
-    //
+    console.log(data, error);
+
+    /*
+    
+    const targetUserLoading = !data && !error;
+    const thumbnail = data ? (data.userData.thumbnail ? data.userData.thumbnail : undefined) : undefined;
+
+    
+*/
 
     return ( <Route
         {...rest}
