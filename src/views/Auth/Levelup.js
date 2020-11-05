@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
+import qs from 'qs';
 
 import {
     InputAdornment, FormHelperText,
@@ -28,8 +29,9 @@ import {
 } from '../../components/components';
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
-import {checkAgreeLevelup, descriptionHelperText} from '../../utils/texts';
-import {setAlertMsg} from '../../app/store/alert';
+import { checkAgreeLevelup, descriptionHelperText } from '../../utils/texts';
+import { setAlertMsg } from '../../app/store/alert';
+import { requestLevelup } from '../../app/store/userValidation';
 
 import {
     checkSpace,
@@ -43,9 +45,6 @@ const alignment = {
     justifyContent: 'space-between',
 }
 
-//http://localhost:3000/levelup/auth?token=djlksjdlasjlkd (example)
-//if expired, notfound 로딩
-
 export const Levelup = (props) => {
     const [cardAnimaton, setCardAnimation] = useState("cardHidden");
     setTimeout(() => {
@@ -55,6 +54,8 @@ export const Levelup = (props) => {
     const {
         setAlertMsg,
         alerts,
+        location,
+        requestLevelup,
 //        ...rest 
     } = props;
 
@@ -68,6 +69,10 @@ export const Levelup = (props) => {
         confirmPassword: '',
     });
 
+    const query = qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
+
     const {
         givenName,
         familyName,
@@ -79,6 +84,7 @@ export const Levelup = (props) => {
 
     const [gender, setGender] = useState('');
     const [birthday, setBirthday] = useState(new Date('1999-03-03')); //야다 데뷔일로 바꾸기
+
     const [birthdayChanged, setBirthdayChanged] = useState(false);
 
     const [familyNameErr, setFamilyNameErr] = useState(false);
@@ -211,7 +217,6 @@ export const Levelup = (props) => {
         }
 
         if(ok) {
-            console.log(inputs, gender, birthday);
             const {familyName, givenName} = inputs;
             const userPersonalInfo = {
                 gender,
@@ -222,7 +227,8 @@ export const Levelup = (props) => {
                 },
                 ...inputs
             }
-            console.log(userPersonalInfo);
+            console.log(userPersonalInfo, query);
+            requestLevelup(userPersonalInfo, query);
         }
     }
 
@@ -466,14 +472,15 @@ export const Levelup = (props) => {
 
 Levelup.propTypes = {
     props: PropTypes.object,
-    setAlertMsg: PropTypes.func
+    setAlertMsg: PropTypes.func,
+    requestLevelup: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({
     alerts: state.alert,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(Levelup);
+export default connect(mapStateToProps, {setAlertMsg, requestLevelup})(Levelup);
 
 /*
 리덕스 추가되면 메인페이지로 이동
