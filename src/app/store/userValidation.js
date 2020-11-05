@@ -101,12 +101,26 @@ export const requestFindPassword = dataToSubmit => async dispatch => {
         const response = await api.post(`/users/findinfo/password`, dataToSubmit);
         dispatch(setAlertMsg(response.data.message, 'success'));
     } catch (err) {
-        //console.log(err.response.data);
         dispatch(setAlertMsg(err.response.data.message, 'error'))
     }
 }
 
 //reset password
+export const resetPassword = (dataToSubmit, urlQuery) => async dispatch => {
+    const {token, expiredtime} = urlQuery;
+    console.log(dataToSubmit, urlQuery);
+    try {
+        const response = await api.patch(`/users/findinfo/resetpassword/?token=${token}&expiredtime=${expiredtime}`, dataToSubmit);
+        //state change
+        dispatch(changedUserInfoSucess());
+        dispatch(setAlertMsg(response.data.message, 'success'));
+        dispatch(setInitState());
+    } catch (err) {
+        dispatch(changedUserInfoFail());
+        dispatch(setAlertMsg(err.response.data.message, 'error'));
+        dispatch(setInitState());
+    }
+}
 
 //levelup
 

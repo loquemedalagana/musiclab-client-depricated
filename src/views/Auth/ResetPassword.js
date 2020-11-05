@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
+import qs from 'qs';
 
 import {
     InputAdornment, 
@@ -25,6 +26,7 @@ import {
 } from '../../components/components';
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
+import { resetPassword } from '../../app/store/userValidation';
 import {setAlertMsg} from '../../app/store/alert';
 
 import {
@@ -43,9 +45,17 @@ export const ResetPassword = (props) => {
     }, 700);
     const classes = useStyles();
     const { 
+        resetPassword,
         setAlertMsg,
         alerts,
+        location
     } = props;
+
+    const query = qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
+
+    console.log(query);
 
     const [inputs, setInputs] = useState({
         password: '',
@@ -94,6 +104,8 @@ export const ResetPassword = (props) => {
         
         if(ok){
             //reset password
+            console.log(inputs);
+            resetPassword(inputs, query);
         }
     }
 
@@ -178,7 +190,7 @@ export const ResetPassword = (props) => {
 ResetPassword.propTypes = {
     props: PropTypes.object,
     setAlertMsg: PropTypes.func,
-
+    resetPassword: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
@@ -187,4 +199,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps, {setAlertMsg})(ResetPassword);
+export default connect(mapStateToProps, {setAlertMsg, resetPassword})(ResetPassword);

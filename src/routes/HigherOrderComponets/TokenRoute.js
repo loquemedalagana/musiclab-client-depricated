@@ -26,7 +26,7 @@ const TokenRoute = ({
     const {data, error} = useSWR(isExpired ? null : ENDPOINT, isExpired ? null : fetcher);
 
     //console.log(data, error);   
-    console.log(isExpired ? "expired!" : null);
+    console.log(isExpired ? "expired!" : "not expired");
     
     const LoadingToken = !data && !error && !isExpired;
 
@@ -36,7 +36,9 @@ const TokenRoute = ({
             LoadingToken ? (
                 <Loading />
             ) : ( error || isExpired ? <Redirect to = '/notfound' />
-                : <Component {...props} />
+                : (isChanged ? <Redirect to = '/' /> :
+                    (data && <Component {...props} />)
+                )
             )
         }
     />
