@@ -55,7 +55,7 @@ export const ResetPassword = (props) => {
         ignoreQueryPrefix: true
     });
 
-    console.log(query);
+    //console.log(query);
 
     const [inputs, setInputs] = useState({
         password: '',
@@ -104,7 +104,6 @@ export const ResetPassword = (props) => {
         
         if(ok){
             //reset password
-            console.log(inputs);
             resetPassword(inputs, query);
         }
     }

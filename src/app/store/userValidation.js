@@ -108,7 +108,7 @@ export const requestFindPassword = dataToSubmit => async dispatch => {
 //reset password
 export const resetPassword = (dataToSubmit, urlQuery) => async dispatch => {
     const {token, expiredtime} = urlQuery;
-    console.log(dataToSubmit, urlQuery);
+    //console.log(dataToSubmit, urlQuery);
     try {
         const response = await api.patch(`/users/findinfo/resetpassword/?token=${token}&expiredtime=${expiredtime}`, dataToSubmit);
         //state change

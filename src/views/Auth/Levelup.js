@@ -210,7 +210,20 @@ export const Levelup = (props) => {
             setAlertMsg('유의사항을 읽은 후 체크해주세요', 'error');
         }
 
-        console.log(ok);
+        if(ok) {
+            console.log(inputs, gender, birthday);
+            const {familyName, givenName} = inputs;
+            const userPersonalInfo = {
+                gender,
+                birthday,
+                name: {
+                    familyName,
+                    givenName
+                },
+                ...inputs
+            }
+            console.log(userPersonalInfo);
+        }
     }
 
     return (
