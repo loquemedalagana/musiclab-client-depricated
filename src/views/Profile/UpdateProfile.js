@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
-    Face, Chat, Build
+    Face, Link, LocalOffer as Tag
 } from '@material-ui/icons'
 
 import {
@@ -21,21 +21,15 @@ import styles from '../../assets/jss/material-kit-react/views/UpdateProfileStyle
 const useStyles = makeStyles(styles);
 
 const UpdateProfile = props => {
-    const [cardAnimaton, setCardAnimation] = useState("cardHidden");
-    setTimeout(() => {
-        setCardAnimation("");
-    }, 800);
     const classes = useStyles();
-    //const [activeStep, setActiveStep] = useState(0);
-
 
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
                 <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
-                    <GridItem xs={12} sm={12} md={7} lg={6} >
+                    <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
+                        <h1>My Page</h1>
                             <CustomTabs
-                                className={clsx(classes[cardAnimaton], classes.brand)}
                                 headerColor="primary"
                                 tabs={[
                                 {
@@ -55,8 +49,8 @@ const UpdateProfile = props => {
                                     )
                                 },
                                 {
-                                    tabName: "Messages",
-                                    tabIcon: Chat,
+                                    tabName: "SNS",
+                                    tabIcon: Link,
                                     tabContent: (
                                     <p className={classes.textCenter}>
                                         I think that’s a responsibility that I have, to push
@@ -71,8 +65,8 @@ const UpdateProfile = props => {
                                     )
                                 },
                                 {
-                                    tabName: "Settings",
-                                    tabIcon: Build,
+                                    tabName: "Hashtags",
+                                    tabIcon: Tag,
                                     tabContent: (
                                     <p className={classes.textCenter}>
                                         think that’s a responsibility that I have, to push
@@ -103,8 +97,4 @@ const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(UpdateProfile)
+export default connect(mapStateToProps)(UpdateProfile)
