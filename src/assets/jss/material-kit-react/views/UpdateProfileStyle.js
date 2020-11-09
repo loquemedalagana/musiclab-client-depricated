@@ -82,6 +82,13 @@ export default {
         borderRadius: "6px",
         justifyContent: "space-between !important"
     },
+    section: {
+        background: "#EEEEEE",
+        padding: "70px 0"
+    },
+    textCenter: {
+        textAlign: "center"
+    },
     ...customCheckboxRadioSwitch,
     ...customInputStyle
 };

@@ -3,18 +3,16 @@ import { connect } from 'react-redux';
 import clsx from 'clsx';
 import { makeStyles } from "@material-ui/core/styles";
 
-//import {  Stepper,} from "@material-ui/core";
+import {
+    Face, Chat, Build
+} from '@material-ui/icons'
 
 import {
     Footer,
     GridContainer,
     GridItem,
-    Card,
-    CardNavigation,
-    CardHeader,
-    CardFooter,
-    CardBody,
-    Button,
+    CustomTabs,
+//    Button,
 } from '../../components/components';
 
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
@@ -35,38 +33,64 @@ const UpdateProfile = props => {
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
                 <div className={classes.container}>
                 <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
-                    <GridItem xs={12} sm={12} md={6} lg={5} >
-                        <Card className={clsx(classes[cardAnimaton], classes.brand)}>
-                            <CardHeader>
-                                <h1 className={classes.title}>
-                                    Edit profile
-                                </h1>
-                            </CardHeader>
-                            <CardNavigation>
-                                Navi
-                            </CardNavigation>
-                            <CardBody>
+                    <GridItem xs={12} sm={12} md={7} lg={6} >
+                            <CustomTabs
+                                className={clsx(classes[cardAnimaton], classes.brand)}
+                                headerColor="primary"
+                                tabs={[
+                                {
+                                    tabName: "Profile",
+                                    tabIcon: Face,
+                                    tabContent: (
+                                    <p className={classes.textCenter}>
+                                        I think that’s a responsibility that I have, to push
+                                        possibilities, to show people, this is the level that
+                                        things could be at. So when you get something that has
+                                        the name Kanye West on it, it’s supposed to be pushing
+                                        the furthest possibilities. I will be the leader of a
+                                        company that ends up being worth billions of dollars,
+                                        because I got the answers. I understand culture. I am
+                                        the nucleus.
+                                    </p>
+                                    )
+                                },
+                                {
+                                    tabName: "Messages",
+                                    tabIcon: Chat,
+                                    tabContent: (
+                                    <p className={classes.textCenter}>
+                                        I think that’s a responsibility that I have, to push
+                                        possibilities, to show people, this is the level that
+                                        things could be at. I will be the leader of a company
+                                        that ends up being worth billions of dollars, because I
+                                        got the answers. I understand culture. I am the nucleus.
+                                        I think that’s a responsibility that I have, to push
+                                        possibilities, to show people, this is the level that
+                                        things could be at.
+                                    </p>
+                                    )
+                                },
+                                {
+                                    tabName: "Settings",
+                                    tabIcon: Build,
+                                    tabContent: (
+                                    <p className={classes.textCenter}>
+                                        think that’s a responsibility that I have, to push
+                                        possibilities, to show people, this is the level that
+                                        things could be at. So when you get something that has
+                                        the name Kanye West on it, it’s supposed to be pushing
+                                        the furthest possibilities. I will be the leader of a
+                                        company that ends up being worth billions of dollars,
+                                        because I got the answers. I understand culture. I am
+                                        the nucleus.
+                                    </p>
+                                    )
+                                }
+                                ]}
+                            />                            
+                        
 
-                            </CardBody>
-                            <CardFooter className={classes.cardFooter}>
-                                <Button simple 
-                                    disabled
-                                    color="primary" 
-                                    size="lg" 
-                                    onClick={null}
-                                >
-                                Back
-                                </Button>
-                                <Button simple 
-                                    color="primary" 
-                                    size="lg" 
-                                    onClick={null}
-                                >
-                                Next
-                                </Button>
-                            </CardFooter>
 
-                        </Card>
                     </GridItem>
                 </GridContainer>
             </div>
