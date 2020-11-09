@@ -10,16 +10,17 @@ import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import { IconButton } from '@material-ui/core';
+import { IconButton, List, ListItem } from '@material-ui/core';
 
 // @material-ui/icons
 import {
     Camera, Palette, Favorite, Edit,
+    Home as Blog, Twitter, Facebook, Instagram, YouTube
 } from '@material-ui/icons';
 
 import {
     Footer,
-    Button,
+//    Button,
     GridContainer,
     GridItem,
     NavPills,
@@ -52,6 +53,45 @@ const useStyles = makeStyles(styles);
 //https://stackoverflow.com/questions/58924617/componentwillreceiveprops-has-been-renamed
 //test user id 5f3d26926b0ee109c1220711  5f4f674082d649d4258f2fa7   5f49fdc87a0c7a58a4f88367
 
+
+//print social props
+const PrintSocialLinks = social => {
+    if(!social) return null;
+
+    const getIcon = key => {
+        switch (key) {
+            case 'youtube':
+                return <YouTube />
+            case 'facebook':
+                return <Facebook />
+            case 'twitter':
+                return <Twitter />
+            case 'instagram':
+                return <Instagram />
+            default:
+                return <Blog />
+        }
+    }
+
+    //color primary, href -> social명
+    const data = Object.keys(social).map(key => {
+        return (<ListItem 
+            key={key} 
+            component='a' 
+            href={social[key]}
+            target="_blank"
+        >
+            {getIcon(key)}
+        </ListItem>)
+    });
+
+    //console.log(data);
+
+    return <List>
+        {data}
+    </List>
+}
+
 const Profile = (props) => {
     const classes = useStyles();
     const imageClasses = classNames(
@@ -65,7 +105,7 @@ const Profile = (props) => {
     const { 
         match,
         isAdmin,
-//        history,
+        history,
         curUserId,
     } = props;
     const targetUserId = match.params.userid;
@@ -75,7 +115,7 @@ const Profile = (props) => {
     const targetUserLoading = !data && !error;
     const thumbnail = data ? (data.userData.thumbnail ? data.userData.thumbnail : undefined) : undefined;
 
-    console.log(data, error);
+    //console.log(data, error);
 
     if(targetUserLoading) return <LinearLoading />
     if(error)  return <Redirect to = "/notfound" />;
@@ -88,57 +128,32 @@ const Profile = (props) => {
                 <GridContainer justify="center">
                 <GridItem xs={12} sm={12} md={6}>
                     <div className={classes.profile}>
-                    <div>
-                        <img src={data.userData.image ? data.userData.image : defaultImg} alt="..." className={imageClasses} />
-                    </div>
-                    <div className={classes.name}>
-                        <h3 className={classes.title}>{data.userData.displayName}
-                        <IconButton color='primary'>
-                        <Edit />
-                        </IconButton>
-                        </h3>
-                        {(isAdmin || isSame ) ? (
-                            <>
-                            <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
-                            <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
-                            </>
-                        ) : <h6>  </h6>}
-                            {
-                                //icon button sns 있으면 누르기
-                            }
+                        <div>
+                            <img src={data.userData.image ? data.userData.image : defaultImg} alt="..." className={imageClasses} />
+                        </div>
+                        <div className={classes.name}>
+                            <h3 className={classes.title}>{data.userData.displayName}
+                            {isSame ? (
+                                <IconButton color='primary' onClick={() => history.push(`/modify/profile`)}>
+                                    <Edit />
+                                </IconButton>
+                            ) : (
+                                <IconButton color='secondary' onClick={null}>
+                                    <Favorite />
+                                </IconButton>
+                            )}
+                            </h3>
+                            {(isAdmin || isSame ) ? (
+                                <>
+                                <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
+                                <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
+                                </>
+                            ) : <h6>  </h6>}
 
-                        <Button 
-                            href={data.userData.social && data.userData.social.instagram} 
-                            color={data.userData.social && data.userData.social.instagram && "primary"}
-                            justIcon className={classes.margin5}
-                        >
-                        <i className={"fab fa-instagram"} />
-                        </Button>
-                        <Button 
-                            href={data.userData.social && data.userData.social.facebook} 
-                            color={data.userData.social && data.userData.social.facebook && "primary"}
-                            target="_blank"
-                            justIcon className={classes.margin5}
-                        >
-                        <i className={"fab fa-facebook"} />
-                        </Button>
-                        <Button 
-                            href={data.userData.social && data.userData.social.youtube} 
-                            color={data.userData.social && data.userData.social.youtube && "primary"}
-                            target="_blank"
-                            justIcon className={classes.margin5}
-                        >
-                        <i className={"fab fa-youtube"} />
-                        </Button>
-                        <Button 
-                            href={data.userData.social && data.userData.social.twitter} 
-                            color={data.userData.social && data.userData.social.twitter && "primary"}
-                            target="_blank"
-                            justIcon className={classes.margin5}
-                        >
-                        <i className={"fab fa-twitter"} />
-                        </Button>
-                    </div>
+                        </div>
+                        
+                        <h5>sns links will be added</h5>
+                        {PrintSocialLinks(data.userData.social)}
                     </div>
                 </GridItem>
                 </GridContainer>
