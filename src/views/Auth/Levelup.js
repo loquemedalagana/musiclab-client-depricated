@@ -227,7 +227,7 @@ export const Levelup = (props) => {
                 },
                 ...inputs
             }
-            console.log(userPersonalInfo, query);
+            //console.log(userPersonalInfo, query);
             requestLevelup(userPersonalInfo, query);
         }
     }

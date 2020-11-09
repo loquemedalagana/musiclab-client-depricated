@@ -10,9 +10,11 @@ import PropTypes from 'prop-types';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+import { IconButton } from '@material-ui/core';
+
 // @material-ui/icons
 import {
-    Camera, Palette, Favorite,
+    Camera, Palette, Favorite, Edit,
 } from '@material-ui/icons';
 
 import {
@@ -90,13 +92,21 @@ const Profile = (props) => {
                         <img src={data.userData.image ? data.userData.image : defaultImg} alt="..." className={imageClasses} />
                     </div>
                     <div className={classes.name}>
-                        <h3 className={classes.title}>{data.userData.displayName}</h3>
+                        <h3 className={classes.title}>{data.userData.displayName}
+                        <IconButton color='primary'>
+                        <Edit />
+                        </IconButton>
+                        </h3>
                         {(isAdmin || isSame ) ? (
                             <>
                             <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
                             <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
                             </>
                         ) : <h6>  </h6>}
+                            {
+                                //icon button sns 있으면 누르기
+                            }
+
                         <Button 
                             href={data.userData.social && data.userData.social.instagram} 
                             color={data.userData.social && data.userData.social.instagram && "primary"}
