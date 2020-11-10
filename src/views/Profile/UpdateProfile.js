@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import clsx from 'clsx';
+import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
@@ -34,6 +35,7 @@ const UpdateProfile = props => {
                     <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
                         <h1>My Page</h1>
                             <CustomTabs
+                                title='Edit'
                                 headerColor="primary"
                                 tabs={[
                                 {
@@ -70,8 +72,14 @@ const UpdateProfile = props => {
     )
 }
 
+UpdateProfile.propTypes = {
+
+}
+
 const mapStateToProps = (state) => ({
     
 })
 
 export default connect(mapStateToProps)(UpdateProfile)
+
+//https://2ssue.github.io/base/react-props-match/

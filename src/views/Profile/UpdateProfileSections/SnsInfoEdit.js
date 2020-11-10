@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-export const SnsInfoEdit = () => {
+export const SnsInfoEdit = props => {
     return (
         <div>
             edit profile
@@ -18,8 +18,4 @@ const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SnsInfoEdit)
+export default connect(mapStateToProps)(SnsInfoEdit)

@@ -20,7 +20,7 @@ const useStyles = makeStyles(styles);
 
 export default function CustomTabs(props) {
   const [value, setValue] = React.useState(0);
-  console.log(value);
+  //console.log(value);
 
   const handleChange = (event, value) => {
     setValue(value);
@@ -72,10 +72,10 @@ export default function CustomTabs(props) {
         </Tabs>
       </CardHeader>
       <CardBody>
-        {tabs.map((prop, key) => {
+      {tabs.map(({tabContent}, key) => {
           if (key === value) {
-            console.log(key, value, prop)
-            return <div key={key}>{prop.tabContent}</div>;
+            console.log(key, value)
+            return <div key={key}>{tabContent}</div>;
           }
           return null;
         })}

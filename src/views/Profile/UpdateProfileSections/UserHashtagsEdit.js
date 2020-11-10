@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
-export const UserHashtagsEdit = () => {
+export const UserHashtagsEdit = props => {
     return (
         <div>
             edit hashtags
@@ -18,8 +18,5 @@ const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserHashtagsEdit)
+export default connect(mapStateToProps)(UserHashtagsEdit)
