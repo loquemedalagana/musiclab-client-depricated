@@ -18,6 +18,8 @@ import styles from "../../assets/jss/material-kit-react/components/customTabsSty
 
 const useStyles = makeStyles(styles);
 
+const TestNode = () => <div>hello world</div>
+
 export default function CustomTabs(props) {
   const [value, setValue] = React.useState(0);
   //console.log(value);

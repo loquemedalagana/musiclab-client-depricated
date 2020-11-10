@@ -42,21 +42,21 @@ const UpdateProfile = props => {
                                     tabName: "Profile",
                                     tabIcon: Face,
                                     tabContent: (
-                                    <PersonalInfoEdit />
+                                        <PersonalInfoEdit />
                                     )
                                 },
                                 {
                                     tabName: "SNS",
                                     tabIcon: Link,
                                     tabContent: (
-                                    <SnsInfoEdit />
+                                        <SnsInfoEdit />
                                     )
                                 },
                                 {
                                     tabName: "Hashtags",
                                     tabIcon: Tag,
                                     tabContent: (
-                                    <UserHashtagsEdit />
+                                        <UserHashtagsEdit />
                                     )
                                 }
                                 ]}
