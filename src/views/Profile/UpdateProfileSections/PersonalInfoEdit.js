@@ -11,7 +11,7 @@ export const PersonalInfoEdit = props => {
 }
 
 PersonalInfoEdit.propTypes = {
-    prop: PropTypes
+    userInfo: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

@@ -20,7 +20,19 @@ import styles from "../../assets/jss/material-kit-react/components/customTabsSty
 
 const useStyles = makeStyles(styles);
 
-const TestNode = () => <div>hello world</div>
+const TabPanel = props => {
+  const {children, value, index, ...rest} = props;
+
+  return (<div
+    role='tabpanel'
+    hidden={value !== index}
+    id={`scrollable-force-tabpanel-${index}`}
+    aria-labelledby={`scrollable-force-tab-${index}`}
+    {...rest}
+  >
+    {value === index && children}
+  </div>)
+}
 
 export default function CustomTabs(props) {
   const [value, setValue] = React.useState(0);
@@ -76,14 +88,13 @@ export default function CustomTabs(props) {
         </Tabs>
       </CardHeader>
       <CardBody>
-      {tabs.map(({tabContent}, key) => {
-          if (key === value) {
-            console.log(key, value)
-            return <div key={key}>{tabContent}</div>;
-          }
-          return null;
-        })}
+      {tabs.map(({tabContent}, key) => <TabPanel
+        value={value}
+        index={key}
+        key={key}
+      >{tabContent}</TabPanel>)}
       </CardBody>
+      
     </Card>
   );
 }

@@ -73,7 +73,7 @@ const UpdateProfile = props => {
 }
 
 UpdateProfile.propTypes = {
-
+    props: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

@@ -11,7 +11,7 @@ export const SnsInfoEdit = props => {
 }
 
 SnsInfoEdit.propTypes = {
-    prop: PropTypes
+    userInfo: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({

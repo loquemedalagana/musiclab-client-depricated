@@ -11,7 +11,7 @@ export const UserHashtagsEdit = props => {
 }
 
 UserHashtagsEdit.propTypes = {
-    prop: PropTypes
+    userInfo: PropTypes.object,
 }
 
 const mapStateToProps = (state) => ({
