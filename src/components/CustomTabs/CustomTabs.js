@@ -6,9 +6,11 @@ import PropTypes from "prop-types";
 
 // material-ui components
 import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Icon from "@material-ui/core/Icon";
+import {
+  Tabs,
+  Tab,
+  Icon,
+} from "@material-ui/core";
 // core components
 import Card from "../Card/Card.js";
 import CardBody from "../Card/CardBody.js";
