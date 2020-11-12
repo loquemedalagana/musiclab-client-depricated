@@ -35,28 +35,28 @@ const UpdateProfile = props => {
                     <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
                         <h1>My Page</h1>
                             <CustomTabs
-                                title='Edit'
+                                title='Edit Your'
                                 headerColor="primary"
                                 tabs={[
                                 {
                                     tabName: "Profile",
                                     tabIcon: Face,
                                     tabContent: (
-                                        <PersonalInfoEdit />
+                                        <PersonalInfoEdit classes={classes}/>
                                     )
                                 },
                                 {
                                     tabName: "SNS",
                                     tabIcon: Link,
                                     tabContent: (
-                                        <SnsInfoEdit />
+                                        <SnsInfoEdit classes={classes} />
                                     )
                                 },
                                 {
                                     tabName: "Hashtags",
                                     tabIcon: Tag,
                                     tabContent: (
-                                        <UserHashtagsEdit />
+                                        <UserHashtagsEdit classes={classes} />
                                     )
                                 }
                                 ]}

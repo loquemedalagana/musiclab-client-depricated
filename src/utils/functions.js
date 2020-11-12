@@ -1,3 +1,12 @@
+import {
+    twitterReg,
+    facebookReg,
+    instagramReg,
+    blogReg,
+    youtubeReg,
+    soundcloudReg,
+} from './variablesAndRegs.js';
+
 export const getUnreadElements = elements => {
     if(elements.length === 0) return [];
     return elements.filter(element => element.isRead === false);
@@ -23,10 +32,19 @@ export const getPrivateChannel = (curPrivateChats, fromUser, toUser) => {
 }
 
 //check is valid sns link
-
-export const checkSnsLink = link => {
-    switch(link) {
+export const checkSnsLink = (type, link) => {
+    switch(type) {
         case 'youtube':
-            return /^https?:\/\/(www\.)?youtube\.com\/(c|user|channel)\/[A-Za-z0-9_-]{1,}$/.test(link);
+            return youtubeReg.test(link);
+        case 'twitter':
+            return twitterReg.test(link);
+        case 'instagram':
+            return instagramReg.test(link);
+        case 'soundcloud':
+            return soundcloudReg.test(link);
+        case 'facebook':
+            return facebookReg.test(link);
+        default:
+            return blogReg.test(link);
     }
 }

@@ -3,12 +3,23 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 
 import {
+    VpnKey as VpnKeyIcon
+} from '@material-ui/icons';
+
+
+import {
+    InputAdornment, 
+} from "@material-ui/core";
+
+import {
+    CustomInput,
     Button,
     CircularLoading,
 } from '../../../components/components';
 
 export const PersonalInfoEdit = props => {
     const {
+        classes,
         userInfo,
         loading,
         isChanged
@@ -17,7 +28,7 @@ export const PersonalInfoEdit = props => {
     const [inputs, setInputs] = useState({
         image: '',
         newDisplayName: '',
-        oldPassWord: '',
+        password: '',
         newPassword: '',
         confirmnewPassword: '',
     });
@@ -25,7 +36,7 @@ export const PersonalInfoEdit = props => {
     const {
         image,
         newDisplayName,
-        oldPassWord,
+        password,
         newPassword,
         confirmnewPassword,
     } = inputs;
@@ -48,12 +59,32 @@ export const PersonalInfoEdit = props => {
 
     return (
         <div>
-            edit personal info
+            <CustomInput
+                labelText="your old password..."
+                id="pass"
+                error={null}                      
+                formControlProps={{
+                    fullWidth: true
+                }}
+                inputProps={{
+                    type: "password",
+                    name: "password",
+                    value: password,
+                    onChange: onInputHandler,
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <VpnKeyIcon className={classes.inputIconsColor} />
+                        </InputAdornment>
+                    ),
+                    autoComplete: "off"
+                }}
+            />
         </div>
     )
 }
 
 PersonalInfoEdit.propTypes = {
+    classes: PropTypes.object,
     userInfo: PropTypes.object,
     loading: PropTypes.bool,
     isChanged: PropTypes.bool,

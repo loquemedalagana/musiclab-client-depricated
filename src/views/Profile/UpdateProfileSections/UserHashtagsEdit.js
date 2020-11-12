@@ -9,6 +9,7 @@ import {
 
 export const UserHashtagsEdit = props => {
     const {
+        classes,
         userInfo,
         loading,
         isChanged
@@ -26,6 +27,7 @@ export const UserHashtagsEdit = props => {
 }
 
 UserHashtagsEdit.propTypes = {
+    classes: PropTypes.object,
     userInfo: PropTypes.object,
     loading: PropTypes.bool,
     isChanged: PropTypes.bool,
