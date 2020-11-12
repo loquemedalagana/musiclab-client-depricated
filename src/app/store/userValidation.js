@@ -8,8 +8,6 @@ const slice = createSlice({
     name: 'userValidation',
     initialState: {
         changed: false,
-        token: null,
-        expired: true,
     },
     reducers: {
         signupSuccess: (state) => {

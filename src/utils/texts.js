@@ -1,4 +1,4 @@
-export const appTitle = `Music SSEOLprise by Jeon Inhyuk`;
+export const appTitle = `Music SSeolprise by Jeon Inhyuk`;
 export const appShortTitle = `야다 전인혁의 뮤직 썰!프라이즈`
 export const appDescription = `#Yada #JeonInhyuk #vocal #guitar #composition`;
 
