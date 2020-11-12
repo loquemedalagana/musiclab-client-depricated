@@ -21,3 +21,12 @@ export const getPrivateChannel = (curPrivateChats, fromUser, toUser) => {
         ))
     }
 }
+
+//check is valid sns link
+
+export const checkSnsLink = link => {
+    switch(link) {
+        case 'youtube':
+            return /^https?:\/\/(www\.)?youtube\.com\/(c|user|channel)\/[A-Za-z0-9_-]{1,}$/.test(link);
+    }
+}

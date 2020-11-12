@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 
 import Close from "@material-ui/icons/Close";
-import {YadaDebutDate} from '../../utils/texts';
+import {YadaDebutDate} from '../../utils/variablesAndRegs';
 import styles from '../../assets/jss/material-kit-react/components/modalStyle';
 const useStyles = makeStyles(styles);
 

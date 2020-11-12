@@ -29,7 +29,7 @@ import {
 } from '../../components/components';
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LevelupStyle';
-import { checkAgreeLevelup, descriptionHelperText } from '../../utils/texts';
+import { checkAgreeLevelup, descriptionHelperText } from '../../utils/variablesAndRegs';
 import { setAlertMsg } from '../../app/store/alert';
 import { requestLevelup } from '../../app/store/userValidation';
 

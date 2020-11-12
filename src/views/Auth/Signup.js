@@ -31,7 +31,7 @@ import {
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/LoginSignupStyle';
 
-import {checkIsValidEmail} from '../../utils/texts';
+import {checkIsValidEmail} from '../../utils/variablesAndRegs';
 import {
     checkValidEmail,
     checkSpace,

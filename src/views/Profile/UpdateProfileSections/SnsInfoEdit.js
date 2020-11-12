@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import {
     Button,
     CircularLoading,
+    CustomInput,
 } from '../../../components/components';
 
 import {
@@ -20,6 +21,11 @@ export const SnsInfoEdit = props => {
 
     const [inputs, setInputs] = useState({
         oldPassWord: '',
+        blog: '',
+        twitter: '',
+        facebook: '',
+        instagram: '',
+        youtube: '',
     });
 
     const {

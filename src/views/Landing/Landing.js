@@ -18,7 +18,7 @@ import {
 
 import {mainParallaxStyle} from '../../assets/jss/material-kit-react/views/background';
 
-import {appDescription, appShortTitle} from '../../utils/texts';
+import {appDescription, appShortTitle} from '../../utils/variablesAndRegs';
 import styles from '../../assets/jss/material-kit-react/views/landingStyle';
 
 const useStyles = makeStyles(styles);
