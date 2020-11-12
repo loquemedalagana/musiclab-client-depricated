@@ -2,7 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+import {
+    Button,
+    CircularLoading,
+} from '../../../components/components';
+
 export const UserHashtagsEdit = props => {
+    const {
+        userInfo,
+        loading,
+        isChanged
+    } = props;
+    
+    //fetch hashtags
+
+    if(isChanged || loading) return <CircularLoading />
+
     return (
         <div>
             edit hashtags
@@ -17,7 +32,9 @@ UserHashtagsEdit.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    
+    loading: state.auth.loading,
+    userInfo: state.auth.userData,
+    isChanged: state.userValidation.changed,
 })
 
 

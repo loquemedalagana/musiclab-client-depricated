@@ -8,14 +8,17 @@ import {
     Slide,
     IconButton,
 } from '@material-ui/core';
-import Close from "@material-ui/icons/Close";
 
+import Close from "@material-ui/icons/Close";
+import {YadaDebutDate} from '../../utils/texts';
 import styles from '../../assets/jss/material-kit-react/components/modalStyle';
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
 });
+
+const lapsed = (1900 + new Date().getYear()) - YadaDebutDate.getFullYear() + 1;
 
 const About = props => {
     const classes = useStyles();
@@ -57,7 +60,7 @@ const About = props => {
                     className={classes.modalBody}
             >
                 <p>
-                    ✔ 야다 전인혁의 뮤직 썰!프라이즈
+                    ✔ 데뷔 후 {lapsed}년간 못다했던 이야기
                 </p>
             </DialogContent>
         </Dialog>

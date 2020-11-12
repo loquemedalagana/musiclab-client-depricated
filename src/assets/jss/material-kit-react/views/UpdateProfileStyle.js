@@ -76,6 +76,9 @@ export default {
         marginBottom: "0px",
         textAlign: "center"
     },
+    form: {
+        margin: "0"
+    },
     cardFooter: {
         paddingTop: "0rem",
         border: "0",

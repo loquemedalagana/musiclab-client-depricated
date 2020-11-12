@@ -73,13 +73,11 @@ const UpdateProfile = props => {
 }
 
 UpdateProfile.propTypes = {
-    props: PropTypes.object,
+    isChanged: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
-    
+    isChanged: state.userValidation.changed,
 })
 
 export default connect(mapStateToProps)(UpdateProfile)
-
-//https://2ssue.github.io/base/react-props-match/
