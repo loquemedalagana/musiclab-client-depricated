@@ -1,6 +1,8 @@
-import React, {useState} from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import {setAlertMsg} from '../../../app/store/alert';
 
 import {
     Button,
@@ -10,9 +12,6 @@ import {
 
 import {
     InputAdornment, 
-    FormControlLabel, 
-    Checkbox,
-    FormHelperText
 } from "@material-ui/core";
 
 import {
@@ -156,11 +155,16 @@ export const SnsInfoEdit = props => {
                     autoComplete: "off"
                 }}
             />
+
+            <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+                Submit
+            </Button>
         </div>
     )
 }
 
 SnsInfoEdit.propTypes = {
+    setAlertMsg: PropTypes.func,
     classes: PropTypes.object,
     userInfo: PropTypes.object,
     loading: PropTypes.bool,
@@ -173,4 +177,4 @@ const mapStateToProps = (state) => ({
     isChanged: state.userValidation.changed,
 })
 
-export default connect(mapStateToProps)(SnsInfoEdit)
+export default connect(mapStateToProps, {setAlertMsg})(SnsInfoEdit)

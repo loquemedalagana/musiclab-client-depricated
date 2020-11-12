@@ -1,6 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import {setAlertMsg} from '../../../app/store/alert';
 
 import {
     Button,
@@ -27,6 +29,7 @@ export const UserHashtagsEdit = props => {
 }
 
 UserHashtagsEdit.propTypes = {
+    setAlertMsg: PropTypes.func,
     classes: PropTypes.object,
     userInfo: PropTypes.object,
     loading: PropTypes.bool,
@@ -40,4 +43,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(UserHashtagsEdit)
+export default connect(mapStateToProps, {setAlertMsg})(UserHashtagsEdit)
