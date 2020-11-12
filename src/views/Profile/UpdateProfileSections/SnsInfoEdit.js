@@ -22,6 +22,52 @@ import {
 
 import {checkSnsLink} from '../../../utils/functions';
 
+const SocialInputs = (inputs, onInputHandler, iconClass) => {
+    const getIcon = key => {
+        switch (key) {
+            case 'youtube':
+                return <YouTube className={iconClass} />
+            case 'facebook':
+                return <Facebook className={iconClass} />
+            case 'twitter':
+                return <Twitter className={iconClass} />
+            case 'instagram':
+                return <Instagram className={iconClass} />
+            case 'soundcloud':
+                return <SoundCloud className={iconClass} />
+            default:
+                return <Blog className={iconClass} />
+        }
+    }
+
+    const data = Object.keys(inputs).map(key => {
+        if(key === 'password') return null;
+        return (            
+        <CustomInput
+            labelText={`your ${key} account...`}
+            key={key}
+            id={key}
+            error={null}
+            formControlProps={{
+                fullWidth: true
+            }}
+            inputProps={{
+                type: "text",
+                name: key,
+                value: inputs[key],
+                onChange: onInputHandler,
+                endAdornment: (
+                        <InputAdornment position="end">
+                            {getIcon(key)}
+                        </InputAdornment>
+                )
+            }}
+        />)
+    });
+
+    return data;
+}
+
 export const SnsInfoEdit = props => {
     const {
         classes,
@@ -42,12 +88,6 @@ export const SnsInfoEdit = props => {
 
     const {
         password,
-        blog,
-        twitter,
-        facebook,
-        instagram,
-        youtube,
-        soundcloud,
     } = inputs;
 
     const onInputHandler = event => {
@@ -57,140 +97,44 @@ export const SnsInfoEdit = props => {
             [name]: value
         })
     }
-    
+
     const onSubmitHandler = event => {
         event.preventDefault();
-        let ok = true;
+        const errorMessages = [];
 
-        if(twitter && !checkSnsLink('twitter', twitter)) {
-            ok=false;
-            //setalertmsg
+        const ok = () => {
+            for(const key in inputs){
+                console.log(key, inputs[key]);
+                if(inputs[key] && !checkSnsLink(key, inputs[key]) && key !== 'password') {
+                    errorMessages.push(`올바르지 않은 ${key}주소 형식입니다.`);
+                    return false;
+                }
+                else if (key === 'password' && !inputs[key]) {
+                    errorMessages.push('비밀번호를 입력해주세요.');
+                    return false;
+                }
+            }
+            return true;
         }
 
+        if(ok()){
+            console.log('finished');
+        } else {
+            console.log(errorMessages);
+        }
     }
 
+    //console.log(inputs);
+
     if(userInfo && userInfo.social){
-        console.log(JSON.stringify(userInfo.social));
+        //console.log(JSON.stringify(userInfo.social));
     }
 
     if(isChanged || loading) return <CircularLoading />
 
     return (
         <div>
-            <CustomInput
-                labelText="your facebook account..."
-                id="facebook"
-                error={null}
-                formControlProps={{
-                    fullWidth: true
-                }}
-                inputProps={{
-                    type: "text",
-                    name: "facebook",
-                    value: facebook,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                            <InputAdornment position="end">
-                                <Facebook className={classes.inputIconsColor} />
-                            </InputAdornment>
-                    )
-                }}
-            />
-            <CustomInput
-                labelText="your instagram account..."
-                id="instagram"
-                error={null}
-                formControlProps={{
-                    fullWidth: true
-                }}
-                inputProps={{
-                    type: "text",
-                    name: "instagram",
-                    value: instagram,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                            <InputAdornment position="end">
-                                <Instagram className={classes.inputIconsColor} />
-                            </InputAdornment>
-                    )
-                }}
-            />
-            <CustomInput
-                labelText="your youtube account..."
-                id="youtube"
-                error={null}
-                formControlProps={{
-                    fullWidth: true
-                }}
-                inputProps={{
-                    type: "text",
-                    name: "youtube",
-                    value: youtube,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                            <InputAdornment position="end">
-                                <YouTube className={classes.inputIconsColor} />
-                            </InputAdornment>
-                    )
-                }}
-            />
-            <CustomInput
-                labelText="your twitter account..."
-                id="twitter"
-                error={null}
-                formControlProps={{
-                    fullWidth: true
-                }}
-                inputProps={{
-                    type: "text",
-                    name: "twitter",
-                    value: twitter,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                            <InputAdornment position="end">
-                                <Twitter className={classes.inputIconsColor} />
-                            </InputAdornment>
-                    )
-                }}
-            />
-            <CustomInput
-                labelText="your soundcloud account..."
-                id="soundcloud"
-                error={null}
-                formControlProps={{
-                    fullWidth: true
-                }}
-                inputProps={{
-                    type: "text",
-                    name: "soundcloud",
-                    value: soundcloud,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                            <InputAdornment position="end">
-                                <SoundCloud className={classes.inputIconsColor} />
-                            </InputAdornment>
-                    )
-                }}
-            />
-            <CustomInput
-                labelText="your blog account..."
-                id="blog"
-                error={null}
-                formControlProps={{
-                    fullWidth: true
-                }}
-                inputProps={{
-                    type: "text",
-                    name: "blog",
-                    value: blog,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                            <InputAdornment position="end">
-                                <Blog className={classes.inputIconsColor} />
-                            </InputAdornment>
-                    )
-                }}
-            />
+            {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
 
             <CustomInput
                 labelText="your password..."

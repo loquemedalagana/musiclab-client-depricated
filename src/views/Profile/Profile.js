@@ -14,7 +14,7 @@ import { IconButton, List, ListItem } from '@material-ui/core';
 
 // @material-ui/icons
 import {
-    Camera, Palette, Favorite, Edit,
+    Camera, Palette, Favorite, Edit, Cloud as SoundCloud,
     Home as Blog, Twitter, Facebook, Instagram, YouTube
 } from '@material-ui/icons';
 
@@ -68,6 +68,8 @@ const PrintSocialLinks = social => {
                 return <Twitter />
             case 'instagram':
                 return <Instagram />
+            case 'soundcloud':
+                return <SoundCloud />
             default:
                 return <Blog />
         }
