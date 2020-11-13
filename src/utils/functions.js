@@ -48,3 +48,5 @@ export const checkSnsLink = (type, link) => {
             return blogReg.test(link);
     }
 }
+
+export const isDesktop = window.innerWidth > 959;

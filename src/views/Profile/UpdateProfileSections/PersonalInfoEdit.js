@@ -27,6 +27,8 @@ import {
 //    checkSpecialChar
 } from '../../../utils/checkStringPatterns';
 
+import {isDesktop} from '../../../utils/functions';
+
 import { descriptionHelperText } from '../../../utils/variablesAndRegs';
 const passReg = /(Password)/i;
 
@@ -77,7 +79,7 @@ const PasswordInputs = (inputs, onInputHandler, iconClass) => {
             id={key}
             error={null}
             formControlProps={{
-                fullWidth: false
+                fullWidth: isDesktop ? false : true,
             }}
             inputProps={{
                 type: 'password',

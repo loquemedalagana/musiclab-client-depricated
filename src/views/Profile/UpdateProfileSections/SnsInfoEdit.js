@@ -21,7 +21,7 @@ import {
     VpnKey as VpnKeyIcon
 } from '@material-ui/icons';
 
-import {checkSnsLink} from '../../../utils/functions';
+import {checkSnsLink, isDesktop} from '../../../utils/functions';
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
     const getIcon = key => {
@@ -145,7 +145,7 @@ export const SnsInfoEdit = props => {
                 id="pass"
                 error={null}                      
                 formControlProps={{
-                    fullWidth: false,
+                    fullWidth: isDesktop ? false : true,
                 }}
                 inputProps={{
                     type: "password",

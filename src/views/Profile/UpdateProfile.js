@@ -28,6 +28,7 @@ const useStyles = makeStyles(styles);
 const UpdateProfile = props => {
     const classes = useStyles();
 
+    //react=swippable-views should be added
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
                 <div className={classes.container}>
@@ -35,7 +36,7 @@ const UpdateProfile = props => {
                     <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
                         <h1>My Page</h1>
                             <CustomTabs
-                                title='Edit Your'
+                                title='Edit'
                                 headerColor="primary"
                                 tabs={[
                                 {
@@ -53,7 +54,7 @@ const UpdateProfile = props => {
                                     )
                                 },
                                 {
-                                    tabName: "Hashtags",
+                                    tabName: "Tags",
                                     tabIcon: Tag,
                                     tabContent: (
                                         <UserHashtagsEdit classes={classes} />
