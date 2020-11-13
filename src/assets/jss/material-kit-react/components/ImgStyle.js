@@ -1,5 +1,5 @@
 export default {
-    imgFluid: { //
+    imgFluid: { //profile
         width: '160px',
         height: "160px",
         objectFit: 'cover',
@@ -8,10 +8,10 @@ export default {
     imgRounded: {
         borderRadius: "6px !important"
     },
-    imgRoundedCircle: { //
+    imgRoundedCircle: { //profile
         borderRadius: "50% !important"
     },
-    imgRaised: { //
+    imgRaised: { //profile
         boxShadow:
             "0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
     },

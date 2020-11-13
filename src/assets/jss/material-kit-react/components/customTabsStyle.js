@@ -12,7 +12,7 @@ const customTabsStyle = {
     display: "none !important"
   },
   tabsRoot: {
-    minHeight: "unset !important"
+    minHeight: "unset !important",
   },
   tabRootButton: {
     minHeight: "unset !important",

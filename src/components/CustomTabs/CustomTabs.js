@@ -54,6 +54,7 @@ export default function CustomTabs(props) {
         <Tabs
           value={value}
           onChange={handleChange}
+          centered
           classes={{
             root: classes.tabsRoot,
             indicator: classes.displayNone

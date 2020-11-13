@@ -19,11 +19,13 @@ import {
 import PersonalInfoEdit from './UpdateProfileSections/PersonalInfoEdit';
 import SnsInfoEdit from './UpdateProfileSections/SnsInfoEdit';
 import UserHashtagsEdit from './UpdateProfileSections/UserHashtagsEdit';
-
+import {isDesktop} from '../../utils/functions';
 import {defaultBgStyle} from '../../assets/jss/material-kit-react/views/background';
 import styles from '../../assets/jss/material-kit-react/views/UpdateProfileStyle';
 
 const useStyles = makeStyles(styles);
+
+const MakeSpace = () => isDesktop ? <br /> : null;
 
 const UpdateProfile = props => {
     const classes = useStyles();
@@ -32,11 +34,10 @@ const UpdateProfile = props => {
     return (
         <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
                 <div className={classes.container}>
-                <GridContainer justify={window.innerWidth > 959 ? "space-between" : "center"}>
+                <GridContainer justify={isDesktop ? "space-between" : "center"}>
                     <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
-                        <h1>My Page</h1>
+                        <MakeSpace />
                             <CustomTabs
-                                title='Edit'
                                 headerColor="primary"
                                 tabs={[
                                 {

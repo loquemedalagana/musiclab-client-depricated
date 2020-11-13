@@ -11,6 +11,7 @@ import {
 
 import {
     InputAdornment, 
+    FormHelperText,
 } from "@material-ui/core";
 
 import {
@@ -41,29 +42,34 @@ const getIcon = (key, iconClass) => {
 const DescriptionInput = (inputs, onInputHandler, iconClass) => {
     const data = Object.keys(inputs).map(key => {
         if(passReg.test(key) || key !== 'description') return null;
-        return (            
-        <CustomInput
-            labelText={descriptionHelperText}
-            key={key}
-            id={key}
-            error={null}
-            formControlProps={{
-                fullWidth: true
-            }}
-            inputProps={{
-                rows: '4',
-                type: "text",
-                multiline: true,
-                name: key,
-                value: inputs[key],
-                onChange: onInputHandler,
-                endAdornment: (
-                        <InputAdornment position="end">
-                            {getIcon(key, iconClass)}
-                        </InputAdornment>
-                )
-            }}
-        />)
+        return (
+        <div key = {key}>            
+            <CustomInput
+                labelText={descriptionHelperText}
+                id={key}
+                error={null}
+                formControlProps={{
+                    fullWidth: true
+                }}
+                inputProps={{
+                    rows: '4',
+                    type: "text",
+                    multiline: true,
+                    name: key,
+                    value: inputs[key],
+                    onChange: onInputHandler,
+                    endAdornment: (
+                            <InputAdornment position="end">
+                                {getIcon(key, iconClass)}
+                            </InputAdornment>
+                    )
+                }}
+            />
+            <FormHelperText style = {{textAlign: 'right'}} error={inputs[key].length >= 200}>
+                {inputs[key].length >= 200 ? "자기소개는 최대 200자까지입니다." : inputs[key].length}
+            </FormHelperText>
+        </div>
+        )
     });
 
     return data;
@@ -129,7 +135,7 @@ export const PersonalInfoEdit = props => {
         const {name, value} = event.currentTarget;
         setInputs({
             ...inputs,
-            [name]: value
+            [name]: (name === 'description' && value.length > 200) ? value.substr(0, 200) : value,
         })
     }
     
@@ -141,8 +147,9 @@ export const PersonalInfoEdit = props => {
 
         }
 
-        if(description) {
-
+        if(description && description.length > 200) { //글자 오버하면 컷팅하기
+            ok = false;
+            
         }
 
         if(!password) {
