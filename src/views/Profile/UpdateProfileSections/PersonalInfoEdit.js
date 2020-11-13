@@ -175,6 +175,9 @@ export const PersonalInfoEdit = props => {
             <GridItem xs={12} sm={12} md={6}  >
                 <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
             </GridItem>
+            <GridItem xs={12} sm={12} md={6}  >
+                <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
+            </GridItem>
             <GridItem xs={12} sm={12} md={12}  >
                 {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>

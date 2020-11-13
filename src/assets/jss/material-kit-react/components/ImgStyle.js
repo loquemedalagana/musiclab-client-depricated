@@ -1,15 +1,17 @@
 export default {
-    imgFluid: {
-        maxWidth: "100%",
-        height: "auto"
+    imgFluid: { //
+        width: '160px',
+        height: "160px",
+        objectFit: 'cover',
+        overflow: "hidden",
     },
     imgRounded: {
         borderRadius: "6px !important"
     },
-    imgRoundedCircle: {
+    imgRoundedCircle: { //
         borderRadius: "50% !important"
     },
-    imgRaised: {
+    imgRaised: { //
         boxShadow:
             "0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
     },
