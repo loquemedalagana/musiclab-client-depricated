@@ -8,6 +8,8 @@ import {
     Button,
     CircularLoading,
     CustomInput,
+    GridItem,
+    CardFooter,
 } from '../../../components/components';
 
 import {
@@ -132,15 +134,18 @@ export const SnsInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <div>
-            {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
+        <>
+            <GridItem xs={12} sm={12} md={12}  >
+                {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridItem>
 
+            <CardFooter className={classes.cardFooter} >
             <CustomInput
                 labelText="your password..."
                 id="pass"
                 error={null}                      
                 formControlProps={{
-                    fullWidth: true
+                    fullWidth: false,
                 }}
                 inputProps={{
                     type: "password",
@@ -155,11 +160,11 @@ export const SnsInfoEdit = props => {
                     autoComplete: "off"
                 }}
             />
-
-            <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
-                Submit
-            </Button>
-        </div>
+                <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+                    Submit
+                </Button>
+            </CardFooter>
+        </>
     )
 }
 

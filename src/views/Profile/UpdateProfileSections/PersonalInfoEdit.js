@@ -14,17 +14,20 @@ import {
 } from "@material-ui/core";
 
 import {
+    GridItem,
     CustomInput,
     Button,
     CircularLoading,
+    CardFooter,
 } from '../../../components/components';
 
 import {
     checkSpace,
-    checkNumber,
+//    checkNumber,
 //    checkSpecialChar
 } from '../../../utils/checkStringPatterns';
 
+import { descriptionHelperText } from '../../../utils/variablesAndRegs';
 const passReg = /(Password)/i;
 
 const getIcon = (key, iconClass) => {
@@ -33,8 +36,38 @@ const getIcon = (key, iconClass) => {
     else if (key === 'description') return <MusicNote className={iconClass}/>
 }
 
-const PasswordInputs = (inputs, onInputHandler, iconClass) => {
+const DescriptionInput = (inputs, onInputHandler, iconClass) => {
+    const data = Object.keys(inputs).map(key => {
+        if(passReg.test(key) || key !== 'description') return null;
+        return (            
+        <CustomInput
+            labelText={descriptionHelperText}
+            key={key}
+            id={key}
+            error={null}
+            formControlProps={{
+                fullWidth: true
+            }}
+            inputProps={{
+                rows: '4',
+                type: "text",
+                multiline: true,
+                name: key,
+                value: inputs[key],
+                onChange: onInputHandler,
+                endAdornment: (
+                        <InputAdornment position="end">
+                            {getIcon(key, iconClass)}
+                        </InputAdornment>
+                )
+            }}
+        />)
+    });
 
+    return data;
+}
+
+const PasswordInputs = (inputs, onInputHandler, iconClass) => {
     const data = Object.keys(inputs).map(key => {
         if(!passReg.test(key)) return null;
         return (            
@@ -67,7 +100,7 @@ export const PersonalInfoEdit = props => {
     const {
         classes,
         setAlertMsg,
-        userInfo,
+//        userInfo,
         loading,
         isChanged
     } = props;
@@ -138,13 +171,24 @@ export const PersonalInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <div>
-            {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
+        <>
+            <GridItem xs={12} sm={12} md={6}  >
+                <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
+            </GridItem>
+            <GridItem xs={12} sm={12} md={12}  >
+                {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridItem>
+            <GridItem xs={12} sm={12} md={12} className={classes.passwordInputs} >
+                {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridItem>
+            
+            <CardFooter className={classes.cardFooter} >
+                <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+                    Submit
+                </Button>
+            </CardFooter>
 
-            <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
-                Submit
-            </Button>
-        </div>
+        </>
     )
 }
 

@@ -10,6 +10,12 @@ export default {
         paddingTop: "10vh",
         paddingBottom: "200px"
     },
+    profileInput: {
+        justifyContent: "space-between !important"
+    },
+    passwordInputs: {
+        justifyContent: "space-between !important"
+    },
     cardHidden: {
         opacity: "0",
         transform: "translate3d(0, -60px, 0)"

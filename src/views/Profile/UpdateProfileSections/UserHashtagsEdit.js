@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 import {setAlertMsg} from '../../../app/store/alert';
 
 import {
-    Button,
     CircularLoading,
+    GridItem,
 } from '../../../components/components';
 
 export const UserHashtagsEdit = props => {
     const {
-        classes,
-        userInfo,
+//        classes,
+//        userInfo,
         loading,
         isChanged
     } = props;
@@ -22,9 +22,9 @@ export const UserHashtagsEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <div>
+        <GridItem xs={12} sm={12} md={12}  >
             edit hashtags
-        </div>
+        </GridItem>
     )
 }
 

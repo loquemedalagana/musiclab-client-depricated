@@ -33,16 +33,16 @@ import NotFound from '../Error/NotFound';
 
 import defaultImg from '../../assets/images/dolphin_profile.png';
 
-import studio1 from "./temp/examples/studio-1.jpg";
-import studio2 from "./temp/examples/studio-2.jpg";
-import studio3 from "./temp/examples/studio-3.jpg";
-import studio4 from "./temp/examples/studio-4.jpg";
-import studio5 from "./temp/examples/studio-5.jpg";
-import work1 from "./temp/examples/olu-eletu.jpg";
-import work2 from "./temp/examples/clem-onojeghuo.jpg";
-import work3 from "./temp/examples/cynthia-del-rio.jpg";
-import work4 from "./temp/examples/mariya-georgieva.jpg";
-import work5 from "./temp/examples/clem-onojegaw.jpg";
+import studio1 from "./ProfileSections/examples/studio-1.jpg";
+import studio2 from "./ProfileSections/examples/studio-2.jpg";
+import studio3 from "./ProfileSections/examples/studio-3.jpg";
+import studio4 from "./ProfileSections/examples/studio-4.jpg";
+import studio5 from "./ProfileSections/examples/studio-5.jpg";
+import work1 from "./ProfileSections/examples/olu-eletu.jpg";
+import work2 from "./ProfileSections/examples/clem-onojeghuo.jpg";
+import work3 from "./ProfileSections/examples/cynthia-del-rio.jpg";
+import work4 from "./ProfileSections/examples/mariya-georgieva.jpg";
+import work5 from "./ProfileSections/examples/clem-onojegaw.jpg";
 
 import styles from "../../assets/jss/material-kit-react/views/ProfileStyle";
 import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/background';
