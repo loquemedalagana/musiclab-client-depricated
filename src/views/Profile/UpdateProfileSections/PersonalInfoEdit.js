@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-
+import classNames from "classnames";
 import {setAlertMsg} from '../../../app/store/alert';
 
 import {
@@ -113,6 +113,12 @@ export const PersonalInfoEdit = props => {
         isChanged
     } = props;
 
+    const imageClasses = classNames(
+        classes.imgRaised,
+        classes.imgRoundedCircle,
+        classes.imgFluid
+    );
+
     const [inputs, setInputs] = useState({
         image: '',
         displayName: '',
@@ -180,7 +186,7 @@ export const PersonalInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <>
+        <div className={classes.tabBody}>
             <GridItem xs={12} sm={12} md={6}  >
                 <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
             </GridItem>
@@ -200,7 +206,7 @@ export const PersonalInfoEdit = props => {
                 </Button>
             </CardFooter>
 
-        </>
+        </div>
     )
 }
 

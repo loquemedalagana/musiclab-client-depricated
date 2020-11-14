@@ -1,6 +1,7 @@
 import { container } from '../../material-kit-react';
 import customInputStyle from '../../material-kit-react/components/customInputStyle';
 import customCheckboxRadioSwitch from "../components/customCheckboxRadioSwitch.js";
+import imagesStyle from "../components/ImgStyle";
 
 export default {
     container: {
@@ -68,6 +69,7 @@ export default {
         maxWidth: "500px",
         margin: "10px 0 0"
     },
+    ...imagesStyle,
     cardHeader: {
         width: "auto",
         textAlign: "center",
@@ -76,6 +78,9 @@ export default {
         marginTop: "-40px",
         padding: "20px 0",
         marginBottom: "15px"
+    },
+    tabBody: {
+        
     },
     divider: {
         marginTop: "30px",

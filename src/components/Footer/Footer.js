@@ -62,7 +62,7 @@ export default function Footer(props) {
               <a
                 className={classes.block}
               >
-                Tech Blog
+                WIKI
               </a>
             </ListItem>
             <ListItem button 
@@ -72,7 +72,17 @@ export default function Footer(props) {
               <a
                 className={classes.block}
               >
-                WIKI
+                HELP
+              </a>
+            </ListItem>
+            <ListItem button 
+              className={classes.inlineBlock}
+              onClick={() => setNotAvailableOpen(true)}
+            >
+              <a
+                className={classes.block}
+              >
+                Tech Blog
               </a>
             </ListItem>
           </List>
