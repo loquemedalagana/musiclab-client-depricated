@@ -73,7 +73,7 @@ const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
                 id={key}
                 error={null}
                 formControlProps={{
-                    fullWidth: isDesktop ? false : true,
+                    fullWidth: true,
                 }}
                 inputProps={{
                     rows: '4',
@@ -246,12 +246,14 @@ export const PersonalInfoEdit = props => {
 
     return (
         <div className={classes.tabBody}>
-            <GridItem xs={12} sm={12} md={6}  >
+            <GridItem xs={12} sm={12} md={6}>
                 {ImageInput(userInfo, null, imageClasses)}
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}  >
+
+            <GridItem xs={12} sm={12} md={6}>
                 {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>
+
             <GridItem xs={12} sm={12} md={12}  >
                 {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>

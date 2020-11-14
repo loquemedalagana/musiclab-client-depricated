@@ -1,6 +1,13 @@
 ## font file
 _misc.scss 파일 수정하기
 
+<br/>
+
+## blob
+https://heropy.blog/2019/02/28/blob/
+
+<br/>
+
 ## counter slice example
 
 ``` javascript
