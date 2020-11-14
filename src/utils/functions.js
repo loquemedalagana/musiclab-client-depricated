@@ -7,6 +7,8 @@ import {
     soundcloudReg,
 } from './variablesAndRegs.js';
 
+export const isDesktop = window.innerWidth > 959;
+
 export const getUnreadElements = elements => {
     if(elements.length === 0) return [];
     return elements.filter(element => element.isRead === false);
@@ -49,4 +51,5 @@ export const checkSnsLink = (type, link) => {
     }
 }
 
-export const isDesktop = window.innerWidth > 959;
+export const camelToSpace = camelCase => camelCase.replace(/.[A-Z]/g, match => 
+    `${match[0]} ${match[1].toLowerCase()}`);

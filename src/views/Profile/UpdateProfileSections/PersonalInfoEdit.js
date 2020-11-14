@@ -28,15 +28,46 @@ import {
 //    checkSpecialChar
 } from '../../../utils/checkStringPatterns';
 
-import {isDesktop} from '../../../utils/functions';
+import {isDesktop, camelToSpace} from '../../../utils/functions';
 
 import { descriptionHelperText } from '../../../utils/variablesAndRegs';
 const passReg = /(Password)/i;
 
 const getIcon = (key, iconClass) => {
     if(passReg.test(key)) return <VpnKeyIcon className={iconClass} />;
-    else if (key === 'displayname') return <People className={iconClass}/>
+    else if (key === 'displayName') return <People className={iconClass}/>
     else if (key === 'description') return <MusicNote className={iconClass}/>
+}
+
+const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
+    const data = Object.keys(inputs).map(key => {
+        if(passReg.test(key) || key !== 'displayName') return null;
+        return (        
+            <CustomInput
+                labelText={`your new nickname...`}
+                key={key}
+                id={key}
+                error={null}
+                formControlProps={{
+                    fullWidth: isDesktop ? false : true,
+                }}
+                inputProps={{
+                    rows: '4',
+                    type: "text",
+                    name: key,
+                    value: inputs[key],
+                    onChange: onInputHandler,
+                    endAdornment: (
+                            <InputAdornment position="end">
+                                {getIcon(key, iconClass)}
+                            </InputAdornment>
+                    )
+                }}
+            />
+        )
+    });
+
+    return data;
 }
 
 const DescriptionInput = (inputs, onInputHandler, iconClass) => {
@@ -80,7 +111,7 @@ const PasswordInputs = (inputs, onInputHandler, iconClass) => {
         if(!passReg.test(key)) return null;
         return (            
         <CustomInput
-            labelText={`${key}...`}
+            labelText={`${camelToSpace(key)}...`}
             key={key}
             id={key}
             error={null}
@@ -191,7 +222,7 @@ export const PersonalInfoEdit = props => {
                 <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
             </GridItem>
             <GridItem xs={12} sm={12} md={6}  >
-                <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
+                {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>
             <GridItem xs={12} sm={12} md={12}  >
                 {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
