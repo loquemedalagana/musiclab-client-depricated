@@ -28,10 +28,12 @@ import {
     checkSpecialChar
 } from '../../../utils/checkStringPatterns';
 
+import defaultImg from '../../../assets/images/dolphin_profile.png';
 import {isDesktop, camelToSpace} from '../../../utils/functions';
-
 import { descriptionHelperText } from '../../../utils/variablesAndRegs';
+
 const passReg = /(Password)/i;
+
 
 const getIcon = (key, iconClass) => {
     if(passReg.test(key)) return <VpnKeyIcon className={iconClass} />;
@@ -39,17 +41,26 @@ const getIcon = (key, iconClass) => {
     else if (key === 'description') return <MusicNote className={iconClass}/>
 }
 
-const ImageInput = (inputs, onInputHandler, imageClasses) => {
-    const data = Object.keys(inputs).map(key => {
-        if(passReg.test(key) || key !== 'image') return null;
-        return (        
-            <div key = {key}>
-                <h2>image will be added</h2>
-            </div>
-        )
-    });
-
-    return data;
+const ImageInput = (userData, onInputHandler, imageClasses) => {
+    //original image will be added
+    const {displayName, image} = userData;
+    return (
+        <div>
+            <label htmlFor="profile-picture">
+            <img src={image ? image : defaultImg} className={imageClasses} alt={displayName} />
+            </label>
+            
+            <input 
+                type="file" 
+                id="profile-picture"
+                accept="image/jpeg, image/png"
+                onChange={onInputHandler}
+                style={{
+                    display: 'none'
+                }}
+            />
+        </div>
+    )
 }
 
 const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
@@ -152,7 +163,7 @@ export const PersonalInfoEdit = props => {
     const {
         classes,
         setAlertMsg,
-//        userInfo,
+        userInfo,
         loading,
         isChanged
     } = props;
@@ -164,8 +175,9 @@ export const PersonalInfoEdit = props => {
         classes.imgCursor,
     );
 
+    const [profileImg, setProfileImg] = useState(defaultImg);
+
     const [inputs, setInputs] = useState({
-        image: '',
         displayName: '',
         description: '',
         password: '',
@@ -174,7 +186,6 @@ export const PersonalInfoEdit = props => {
     });
 
     const {
-        image,
         displayName,
         description,
         password,
@@ -236,7 +247,7 @@ export const PersonalInfoEdit = props => {
     return (
         <div className={classes.tabBody}>
             <GridItem xs={12} sm={12} md={6}  >
-                {ImageInput(inputs, onInputHandler, imageClasses)}
+                {ImageInput(userInfo, null, imageClasses)}
             </GridItem>
             <GridItem xs={12} sm={12} md={6}  >
                 {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
@@ -272,4 +283,6 @@ const mapStateToProps = (state) => ({
     isChanged: state.userValidation.changed,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(PersonalInfoEdit)
+export default connect(mapStateToProps, {setAlertMsg})(PersonalInfoEdit);
+
+//https://github.com/loquemedalagana/dreaming-rocker-client-old-ver/blob/master/src/components/views/Users/UserInfo/ProfileImg.js
