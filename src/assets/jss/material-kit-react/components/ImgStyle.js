@@ -5,6 +5,9 @@ export default {
         objectFit: 'cover',
         overflow: "hidden",
     },
+    imgCursor:{
+        cursor: 'pointer',
+    },
     imgRounded: {
         borderRadius: "6px !important"
     },

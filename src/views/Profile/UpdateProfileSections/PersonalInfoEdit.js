@@ -24,8 +24,8 @@ import {
 
 import {
     checkSpace,
-//    checkNumber,
-//    checkSpecialChar
+    checkNumber,
+    checkSpecialChar
 } from '../../../utils/checkStringPatterns';
 
 import {isDesktop, camelToSpace} from '../../../utils/functions';
@@ -37,6 +37,19 @@ const getIcon = (key, iconClass) => {
     if(passReg.test(key)) return <VpnKeyIcon className={iconClass} />;
     else if (key === 'displayName') return <People className={iconClass}/>
     else if (key === 'description') return <MusicNote className={iconClass}/>
+}
+
+const ImageInput = (inputs, onInputHandler, imageClasses) => {
+    const data = Object.keys(inputs).map(key => {
+        if(passReg.test(key) || key !== 'image') return null;
+        return (        
+            <div key = {key}>
+                <h2>image will be added</h2>
+            </div>
+        )
+    });
+
+    return data;
 }
 
 const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
@@ -147,7 +160,8 @@ export const PersonalInfoEdit = props => {
     const imageClasses = classNames(
         classes.imgRaised,
         classes.imgRoundedCircle,
-        classes.imgFluid
+        classes.imgFluid,
+        classes.imgCursor,
     );
 
     const [inputs, setInputs] = useState({
@@ -181,7 +195,10 @@ export const PersonalInfoEdit = props => {
         let ok = true;
 
         if(displayName) {
-
+            if (checkSpecialChar(displayName) || checkNumber(displayName) || checkSpace(displayName)){
+                ok=false;
+                setAlertMsg('닉네임에 숫자, 공백, 특수문자는 들어갈 수 없습니다.', 'error', 'nickname');
+            }
         }
 
         if(description && description.length > 200) { //글자 오버하면 컷팅하기
@@ -219,7 +236,7 @@ export const PersonalInfoEdit = props => {
     return (
         <div className={classes.tabBody}>
             <GridItem xs={12} sm={12} md={6}  >
-                <h1>제발 돌아와만 주세요ㅠㅠ 언제까지 그렇게 사실겁니까?</h1>
+                {ImageInput(inputs, onInputHandler, imageClasses)}
             </GridItem>
             <GridItem xs={12} sm={12} md={6}  >
                 {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
