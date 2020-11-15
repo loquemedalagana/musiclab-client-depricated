@@ -8,6 +8,12 @@
 ## youtube api 연동
 https://velog.io/@hyejibaek/20.01.20-Youtube-API%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%97%B0%EB%8F%99
 
+https://reactjsexample.com/tag/youtube/
+
+https://developers.google.com/youtube/v3/getting-started?authuser=1
+https://developers.google.com/youtube/v3/docs/?apix=true
+https://www.youtube.com/watch?v=AMM9gikcGdY&list=UUhNtl7wRLF6x4B4fp7KCyhQ
+
 https://velopert.com/3503
 <br/>
 <hr/>

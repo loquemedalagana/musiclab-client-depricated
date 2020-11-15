@@ -83,7 +83,7 @@ export default {
         ...container,
         position: "relative",
         paddingTop: "5vh",
-        paddingBottom: "100px"
+        paddingBottom: "20px"
     },
     divider: {
         marginTop: "30px",

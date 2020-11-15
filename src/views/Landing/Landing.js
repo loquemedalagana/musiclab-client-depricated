@@ -49,7 +49,10 @@ export const Landing = (props) => {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div className={classes.container}>
+            <GridContainer>
                 {testText}
+            </GridContainer>
+                
             </div>
         </div>
         <Footer />

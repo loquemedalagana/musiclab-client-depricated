@@ -186,7 +186,7 @@ export const PersonalInfoEdit = props => {
         classes.imgCursor,
     );
 
-    const [profileImg, setProfileImg] = useState(defaultImg);
+    //const [profileImg, setProfileImg] = useState(defaultImg);
 
     const [inputs, setInputs] = useState({
         displayName: '',
