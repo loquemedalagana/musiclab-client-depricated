@@ -10,7 +10,6 @@ import {
     CircularLoading,
     CustomInput,
     GridItem,
-    CardFooter,
 } from '../../../components/components';
 
 import {
@@ -139,10 +138,13 @@ export const SnsInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <GridContainer spacing={2} className={classes.tabBody}>
-            {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
+        <div className={classes.tabBody}>
+            <GridContainer>
+                {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridContainer>
+            
 
-            <CardFooter className={classes.cardFooter} >
+            <GridContainer className={classes.cardFooter} >
                 <GridItem  xs={12} sm={12} md={6}>
                     <CustomInput
                         labelText="your password..."
@@ -170,8 +172,8 @@ export const SnsInfoEdit = props => {
                         Submit
                     </Button>
                 </GridItem>
-            </CardFooter>
-        </GridContainer>
+            </GridContainer>
+        </div>
     )
 }
 

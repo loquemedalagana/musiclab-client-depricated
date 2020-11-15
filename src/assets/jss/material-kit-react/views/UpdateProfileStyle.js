@@ -80,7 +80,10 @@ export default {
         marginBottom: "15px"
     },
     tabBody: {
+        ...container,
         position: "relative",
+        paddingTop: "5vh",
+        paddingBottom: "100px"
     },
     divider: {
         marginTop: "30px",

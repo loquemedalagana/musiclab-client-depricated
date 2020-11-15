@@ -20,7 +20,6 @@ import {
     CustomInput,
     Button,
     CircularLoading,
-    CardFooter,
 } from '../../../components/components';
 
 import {
@@ -252,26 +251,28 @@ export const PersonalInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <GridContainer className={classes.tabBody} spacing={2}>
-            <GridItem xs={12} sm={12} md={12} >
-                
-            </GridItem>
+        <div className={classes.tabBody}>
+            <GridContainer>
+                {ImageInput(userInfo, null, imageClasses)}
+                {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridContainer>
 
-            {ImageInput(userInfo, null, imageClasses)}
-            {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
+            <GridContainer>
+                {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridContainer>
 
-            {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
-
-            {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
-
+            <GridContainer>
+                {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
+            </GridContainer>
             
-            <CardFooter className={classes.cardFooter} >
+            
+            <GridContainer className={classes.cardFooter} >
                 <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                     Submit
                 </Button>
-            </CardFooter>
+            </GridContainer>
 
-        </GridContainer>
+        </div>
     )
 }
 
