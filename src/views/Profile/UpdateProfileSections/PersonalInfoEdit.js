@@ -253,7 +253,7 @@ export const PersonalInfoEdit = props => {
 
     return (
         <GridContainer className={classes.tabBody} spacing={2}>
-            <GridItem xs={12} sm={12} md={12}>
+            <GridItem xs={12} sm={12} md={12} >
                 {ImageInput(userInfo, null, imageClasses)}
                 {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>

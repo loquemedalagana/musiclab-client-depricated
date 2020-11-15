@@ -145,34 +145,33 @@ export const SnsInfoEdit = props => {
             </GridItem>
 
             <CardFooter className={classes.cardFooter} >
-            <GridItem xs={12} sm={12} md={6}>
-                <CustomInput
-                    labelText="your password..."
-                    id="pass"
-                    error={null}                      
-                    formControlProps={{
-                        fullWidth: true,
-                    }}
-                    inputProps={{
-                        type: "password",
-                        name: "password",
-                        value: password,
-                        onChange: onInputHandler,
-                        endAdornment: (
-                            <InputAdornment position="end">
-                                <VpnKeyIcon className={classes.inputIconsColor} />
-                            </InputAdornment>
-                        ),
-                        autoComplete: "off"
-                    }}
-                />
-            </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
-                <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
-                    Submit
-                </Button>
-            </GridItem>
-
+                <GridItem  xs={12} sm={12} md={6}>
+                    <CustomInput
+                        labelText="your password..."
+                        id="pass"
+                        error={null}                      
+                        formControlProps={{
+                            fullWidth: true,
+                        }}
+                        inputProps={{
+                            type: "password",
+                            name: "password",
+                            value: password,
+                            onChange: onInputHandler,
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <VpnKeyIcon className={classes.inputIconsColor} />
+                                </InputAdornment>
+                            ),
+                            autoComplete: "off"
+                        }}
+                    />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={6}>
+                    <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+                        Submit
+                    </Button>
+                </GridItem>
             </CardFooter>
         </GridContainer>
     )
