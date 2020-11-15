@@ -254,16 +254,16 @@ export const PersonalInfoEdit = props => {
     return (
         <GridContainer className={classes.tabBody} spacing={2}>
             <GridItem xs={12} sm={12} md={12} >
-                {ImageInput(userInfo, null, imageClasses)}
-                {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
+                
             </GridItem>
 
-            <GridItem xs={12} sm={12} md={12}  >
-                {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
-            </GridItem>
-            <GridItem xs={12} sm={12} md={12} className={classes.passwordInputs} >
-                {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
-            </GridItem>
+            {ImageInput(userInfo, null, imageClasses)}
+            {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
+
+            {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
+
+            {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
+
             
             <CardFooter className={classes.cardFooter} >
                 <Button simple color="primary" size="lg" onClick={onSubmitHandler}>

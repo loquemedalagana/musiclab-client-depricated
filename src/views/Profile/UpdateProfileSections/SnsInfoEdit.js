@@ -44,33 +44,33 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
 
     const data = Object.keys(inputs).map(key => {
         if(key === 'password') return null;
-        return (            
-        <CustomInput
-            labelText={`your ${key} account...`}
-            key={key}
-            id={key}
-            error={null}
-            formControlProps={{
-                fullWidth: true
-            }}
-            inputProps={{
-                type: "text",
-                name: key,
-                value: inputs[key],
-                onChange: onInputHandler,
-                endAdornment: (
-                        <InputAdornment position="end">
-                            {getIcon(key)}
-                        </InputAdornment>
-                )
-            }}
-        />)
+        return ( 
+            <GridItem key={key}>
+                <CustomInput
+                    labelText={`your ${key} account...`}
+                    
+                    id={key}
+                    error={null}
+                    formControlProps={{
+                        fullWidth: true
+                    }}
+                    inputProps={{
+                        type: "text",
+                        name: key,
+                        value: inputs[key],
+                        onChange: onInputHandler,
+                        endAdornment: (
+                                <InputAdornment position="end">
+                                    {getIcon(key)}
+                                </InputAdornment>
+                        )
+                    }}
+                /> 
+            </GridItem>)
     });
 
     return (
-        <GridItem xs={12} sm={12} md={12}>
-            {data}
-        </GridItem>
+        data
     );
 }
 
@@ -140,9 +140,7 @@ export const SnsInfoEdit = props => {
 
     return (
         <GridContainer spacing={2} className={classes.tabBody}>
-            <GridItem xs={12} sm={12} md={12}  >
-                {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
-            </GridItem>
+            {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
 
             <CardFooter className={classes.cardFooter} >
                 <GridItem  xs={12} sm={12} md={6}>
