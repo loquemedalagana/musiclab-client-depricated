@@ -18,7 +18,6 @@ import {
 
 import {
     Home as Blog, Twitter, Facebook, Instagram, YouTube, Cloud as SoundCloud,
-    VpnKey as VpnKeyIcon
 } from '@material-ui/icons';
 
 import {checkSnsLink} from '../../../utils/functions';
@@ -82,7 +81,6 @@ export const SnsInfoEdit = props => {
     } = props;
 
     const [inputs, setInputs] = useState({
-        password: '',
         blog: '',
         twitter: '',
         facebook: '',
@@ -90,10 +88,6 @@ export const SnsInfoEdit = props => {
         youtube: '',
         soundcloud: '',
     });
-
-    const {
-        password,
-    } = inputs;
 
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
@@ -144,34 +138,14 @@ export const SnsInfoEdit = props => {
             </GridContainer>
             
 
-            <GridContainer className={classes.cardFooter} >
-                <GridItem  xs={12} sm={12} md={6}>
-                    <CustomInput
-                        labelText="your password..."
-                        id="pass"
-                        error={null}                      
-                        formControlProps={{
-                            fullWidth: true,
-                        }}
-                        inputProps={{
-                            type: "password",
-                            name: "password",
-                            value: password,
-                            onChange: onInputHandler,
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <VpnKeyIcon className={classes.inputIconsColor} />
-                                </InputAdornment>
-                            ),
-                            autoComplete: "off"
-                        }}
-                    />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                    <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+            <GridContainer 
+                className={classes.cardFooter} 
+                justify='space-between'
+                direction='row-reverse'
+            >
+                <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                         Submit
-                    </Button>
-                </GridItem>
+                </Button>
             </GridContainer>
         </div>
     )

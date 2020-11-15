@@ -94,7 +94,7 @@ export default {
         margin: "0"
     },
     cardFooter: {
-        paddingTop: "0rem",
+        //paddingTop: "0rem",
         border: "0",
         borderRadius: "6px",
         justifyContent: "space-between !important"

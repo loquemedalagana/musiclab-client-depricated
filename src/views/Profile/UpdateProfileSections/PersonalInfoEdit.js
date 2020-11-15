@@ -45,7 +45,12 @@ const ImageInput = (userData, onInputHandler, imageClasses) => {
     //original image will be added
     const {displayName, image} = userData;
     return (
-        <GridItem xs={12} sm={12} md={6} style={{textAlign: 'center'}}>
+        <GridItem 
+            xs={12} sm={12} md={6} 
+            style={{
+                textAlign: 'center',
+            }}
+        >
             <label htmlFor="profile-picture">
             <img src={image ? image : defaultImg} className={imageClasses} alt={displayName} />
             </label>
@@ -109,7 +114,7 @@ const DescriptionInput = (inputs, onInputHandler, iconClass) => {
                     fullWidth: true
                 }}
                 inputProps={{
-                    rows: '4',
+                    rows: '5',
                     type: "text",
                     multiline: true,
                     name: key,
@@ -252,7 +257,10 @@ export const PersonalInfoEdit = props => {
 
     return (
         <div className={classes.tabBody}>
-            <GridContainer justify='center'
+            <GridContainer 
+                justify='center'
+                alignContent='flex-end'
+                alignItems='flex-end'
                 style={{
                     paddingBottom: "20px"
                 }}
@@ -270,7 +278,10 @@ export const PersonalInfoEdit = props => {
             </GridContainer>
             
             
-            <GridContainer className={classes.cardFooter} >
+            <GridContainer 
+                className={classes.cardFooter} 
+                direction='row-reverse'
+            >
                 <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                     Submit
                 </Button>

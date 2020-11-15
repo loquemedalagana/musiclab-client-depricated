@@ -7,8 +7,6 @@ const LoadingStyles = makeStyles( theme => ({
     root: {
         height: '100vh',
         display: 'block',
-        alignContent: 'center',
-        justifyContent: 'center',
         '& > * + *': {
             marginLeft: theme.spacing(2),
         },
@@ -30,7 +28,12 @@ const CircularLoading = () => {
     }, []);
 
     return (
-        <Grid container className = {classes.root}>
+        <Grid container 
+            className = {classes.root}
+            alignItems = 'center'
+            alignContent = 'center'
+            justify = 'center'
+        >
             <CircularProgress value={progress}/>
         </Grid>
     )
