@@ -6,12 +6,12 @@ import {setAlertMsg} from '../../../app/store/alert';
 
 import {
     CircularLoading,
-    GridItem,
+    GridContainer,
 } from '../../../components/components';
 
 export const UserHashtagsEdit = props => {
     const {
-//        classes,
+        classes,
 //        userInfo,
         loading,
         isChanged
@@ -22,9 +22,9 @@ export const UserHashtagsEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <GridItem xs={12} sm={12} md={12}  >
+        <GridContainer spacing={2} className={classes.tabBody}>
             edit hashtags
-        </GridItem>
+        </GridContainer>
     )
 }
 

@@ -15,6 +15,7 @@ import {
 } from "@material-ui/core";
 
 import {
+    GridContainer,
     GridItem,
     CustomInput,
     Button,
@@ -29,7 +30,7 @@ import {
 } from '../../../utils/checkStringPatterns';
 
 import defaultImg from '../../../assets/images/dolphin_profile.png';
-import {isDesktop, camelToSpace} from '../../../utils/functions';
+import { camelToSpace} from '../../../utils/functions';
 import { descriptionHelperText } from '../../../utils/variablesAndRegs';
 
 const passReg = /(Password)/i;
@@ -45,7 +46,7 @@ const ImageInput = (userData, onInputHandler, imageClasses) => {
     //original image will be added
     const {displayName, image} = userData;
     return (
-        <div>
+        <GridItem>
             <label htmlFor="profile-picture">
             <img src={image ? image : defaultImg} className={imageClasses} alt={displayName} />
             </label>
@@ -59,7 +60,7 @@ const ImageInput = (userData, onInputHandler, imageClasses) => {
                     display: 'none'
                 }}
             />
-        </div>
+        </GridItem>
     )
 }
 
@@ -91,14 +92,16 @@ const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
         )
     });
 
-    return data;
+    return <GridItem>
+        {data}
+    </GridItem>;
 }
 
 const DescriptionInput = (inputs, onInputHandler, iconClass) => {
     const data = Object.keys(inputs).map(key => {
         if(passReg.test(key) || key !== 'description') return null;
         return (
-        <div key = {key}>            
+        <GridItem xs={12} sm={12} md={12} key = {key}>            
             <CustomInput
                 labelText={descriptionHelperText}
                 id={key}
@@ -123,7 +126,7 @@ const DescriptionInput = (inputs, onInputHandler, iconClass) => {
             <FormHelperText style = {{textAlign: 'right'}} error={inputs[key].length >= 200}>
                 {inputs[key].length >= 200 ? "자기소개는 최대 200자까지입니다." : inputs[key].length}
             </FormHelperText>
-        </div>
+        </GridItem>
         )
     });
 
@@ -140,7 +143,7 @@ const PasswordInputs = (inputs, onInputHandler, iconClass) => {
             id={key}
             error={null}
             formControlProps={{
-                fullWidth: isDesktop ? false : true,
+                fullWidth: true,
             }}
             inputProps={{
                 type: 'password',
@@ -156,7 +159,11 @@ const PasswordInputs = (inputs, onInputHandler, iconClass) => {
         />)
     });
 
-    return data;
+    return (
+        <GridItem xs={12} sm={12} md={12}>
+            {data}
+        </GridItem>
+    );
 }
 
 export const PersonalInfoEdit = props => {
@@ -245,12 +252,9 @@ export const PersonalInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <div className={classes.tabBody}>
-            <GridItem xs={12} sm={12} md={6}>
+        <GridContainer className={classes.tabBody} spacing={2}>
+            <GridItem xs={12} sm={12} md={12}>
                 {ImageInput(userInfo, null, imageClasses)}
-            </GridItem>
-
-            <GridItem xs={12} sm={12} md={6}>
                 {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>
 
@@ -267,7 +271,7 @@ export const PersonalInfoEdit = props => {
                 </Button>
             </CardFooter>
 
-        </div>
+        </GridContainer>
     )
 }
 

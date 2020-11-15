@@ -81,7 +81,6 @@ export default {
     },
     tabBody: {
         position: "relative",
-        flexDirection: 'row',
     },
     divider: {
         marginTop: "30px",

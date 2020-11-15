@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import {setAlertMsg} from '../../../app/store/alert';
 
 import {
+    GridContainer,
     Button,
     CircularLoading,
     CustomInput,
@@ -21,7 +22,7 @@ import {
     VpnKey as VpnKeyIcon
 } from '@material-ui/icons';
 
-import {checkSnsLink, isDesktop} from '../../../utils/functions';
+import {checkSnsLink} from '../../../utils/functions';
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
     const getIcon = key => {
@@ -66,7 +67,11 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
         />)
     });
 
-    return data;
+    return (
+        <GridItem xs={12} sm={12} md={12}>
+            {data}
+        </GridItem>
+    );
 }
 
 export const SnsInfoEdit = props => {
@@ -134,37 +139,42 @@ export const SnsInfoEdit = props => {
     if(isChanged || loading) return <CircularLoading />
 
     return (
-        <>
+        <GridContainer spacing={2} className={classes.tabBody}>
             <GridItem xs={12} sm={12} md={12}  >
                 {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
             </GridItem>
 
             <CardFooter className={classes.cardFooter} >
-            <CustomInput
-                labelText="your password..."
-                id="pass"
-                error={null}                      
-                formControlProps={{
-                    fullWidth: isDesktop ? false : true,
-                }}
-                inputProps={{
-                    type: "password",
-                    name: "password",
-                    value: password,
-                    onChange: onInputHandler,
-                    endAdornment: (
-                        <InputAdornment position="end">
-                            <VpnKeyIcon className={classes.inputIconsColor} />
-                        </InputAdornment>
-                    ),
-                    autoComplete: "off"
-                }}
-            />
+            <GridItem xs={12} sm={12} md={6}>
+                <CustomInput
+                    labelText="your password..."
+                    id="pass"
+                    error={null}                      
+                    formControlProps={{
+                        fullWidth: true,
+                    }}
+                    inputProps={{
+                        type: "password",
+                        name: "password",
+                        value: password,
+                        onChange: onInputHandler,
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <VpnKeyIcon className={classes.inputIconsColor} />
+                            </InputAdornment>
+                        ),
+                        autoComplete: "off"
+                    }}
+                />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={6}>
                 <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
                     Submit
                 </Button>
+            </GridItem>
+
             </CardFooter>
-        </>
+        </GridContainer>
     )
 }
 
