@@ -23,8 +23,8 @@ import {
 } from '../../components/components';
 
 import {
-    JeonInhyukBandChannelEndPoint,
-} from '../../app/videoFetchEndpoints';
+    channelDataHashMap,
+} from './videoDataMapping';
 
 import defaultImg from '../../assets/images/dolphin_profile.png';
 
@@ -33,11 +33,7 @@ import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/ba
 
 const useStyles = makeStyles(styles);
 
-const videoDataHashMap = {
-    jihbandofficial: JeonInhyukBandChannelEndPoint,
-    musicsseolprise: null,
-
-}
+//http://localhost:3000/officialvideolist/jihbandofficial
 
 export const VideoListByChannel = props => {
     const {
@@ -59,7 +55,7 @@ export const VideoListByChannel = props => {
     console.log(channelName, query);
 
     //fetch data with get request
-    const {data, error} = useSWR(videoDataHashMap[channelName], fetcher);
+    const {data, error} = useSWR(channelDataHashMap[channelName], fetcher);
     console.log(data, error);
 
     //get data in detail
@@ -79,8 +75,8 @@ export const VideoListByChannel = props => {
     const [channelInfo] = resultChannelData;
     console.log(channelInfo)
 
-    if(!data && !error && videoDataHashMap[channelName]) return <LinearLoading />;
-    if(error || !videoDataHashMap[channelName])  return <Redirect to = "/notfound" />;
+    if(!data && !error && channelDataHashMap[channelName]) return <LinearLoading />;
+    if(error || !channelDataHashMap[channelName])  return <Redirect to = "/notfound" />;
 
     return (
         <>
