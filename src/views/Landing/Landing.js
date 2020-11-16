@@ -50,6 +50,7 @@ export const Landing = (props) => {
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div className={classes.container}>
             <GridContainer>
+                <h2>Latest videos from Jeon Inhyuk Band offcial Channel</h2>
                 {testText}
             </GridContainer>
                 

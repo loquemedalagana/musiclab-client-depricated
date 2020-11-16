@@ -120,6 +120,11 @@ const cardActions = {
     ...defaultFont,
 };
 
+const section = {
+    padding: "70px 0",
+    textAlign: "center"
+}
+
 const cardHeader = {
     margin: "-30px 15px 0",
     borderRadius: "3px",
@@ -161,6 +166,7 @@ const cardSubtitle = {
 
 export {
   //variables
+    section,
     drawerWidth,
     transition,
     container,
