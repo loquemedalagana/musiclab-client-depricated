@@ -15,6 +15,7 @@ import WaitingLevelup from '../views/Auth/WaitingLevelup';
 import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';
+import VideoList from '../views/VideoPosts/VideoPostList';
 
 import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
 import NotFound from '../views/Error/NotFound';
@@ -40,6 +41,8 @@ export default props => (
 
             <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
             <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
+
+            <Route exact path = '/videolist/:channel?' component = {VideoList} />
 
             <Route exact path = '/servererror' component = {ServerError} />
             <Route component = {NotFound} />

@@ -69,8 +69,5 @@ const mapStateToProps = (state) => ({
     
 })
 
-const mapDispatchToProps = {
-    
-}
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Landing));
+export default withRouter(connect(mapStateToProps)(Landing));

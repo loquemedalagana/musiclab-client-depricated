@@ -2,11 +2,9 @@ import { container, title } from '../../material-kit-react';
 
 import imagesStyle from "../components/ImgStyle";
 
-//video post
-
 const profilePageStyle = {
     container,
-    profile: {
+    channelProfile: {
         textAlign: "center",
         "& img": {
         maxWidth: "160px",
@@ -15,13 +13,13 @@ const profilePageStyle = {
         transform: "translate3d(0, -50%, 0)"
         }
     },
-    description: {
+    listContainer: {
         margin: "1.071rem auto 0",
         maxWidth: "600px",
         color: "#999",
         textAlign: "center !important"
     },
-    name: {
+    channelTitle: {
         marginTop: "-80px"
     },
     ...imagesStyle,
@@ -44,21 +42,6 @@ const profilePageStyle = {
         minHeight: "32px",
         textDecoration: "none"
     },
-    socials: {
-        marginTop: "0",
-        width: "100%",
-        transform: "none",
-        left: "0",
-        top: "0",
-        height: "100%",
-        lineHeight: "41px",
-        fontSize: "20px",
-        color: "#999"
-    },
-    navWrapper: {
-        margin: "20px auto 50px auto",
-        textAlign: "center"
-    }
 };
 
 export default profilePageStyle;

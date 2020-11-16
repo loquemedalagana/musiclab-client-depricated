@@ -53,7 +53,7 @@ const HeaderLinks = (props) => {
         <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
-          buttonText="View"
+          buttonText="Essays"
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
@@ -151,6 +151,7 @@ const HeaderLinks = (props) => {
           ]}
         />
       </ListItem>
+      {/* 나중에 매뉴로 보이게 */}
       <ListItem className={classes.listItem}>
         <Tooltip
           id="youtube"

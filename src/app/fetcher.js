@@ -1,5 +1,7 @@
 import axios from 'axios';
 export default async (url) => {
-    const response = await axios.get(url, {withCredentials: true});
+    const response = await axios.get(url);
     return response.data; 
 }
+
+//withcredential true?
