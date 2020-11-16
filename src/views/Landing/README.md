@@ -7,7 +7,7 @@
 
 <br/>
 
-## texts => only members can read
+## Essays => only members can read
 <ul>
     <li>New</li>
     <li>Hot</li>
