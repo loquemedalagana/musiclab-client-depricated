@@ -33,7 +33,13 @@ import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/ba
 
 const useStyles = makeStyles(styles);
 
-export const VideoPostList = props => {
+const videoDataHashMap = {
+    jihbandofficial: JeonInhyukBandChannelEndPoint,
+    musicsseolprise: null,
+
+}
+
+export const VideoListByChannel = props => {
     const {
         match,
         location,
@@ -50,18 +56,31 @@ export const VideoPostList = props => {
         classes.imgFluid
     );
     
-    //console.log(match, location);
     console.log(channelName, query);
 
     //fetch data with get request
-    const {data, error} = useSWR(JeonInhyukBandChannelEndPoint, fetcher);
+    const {data, error} = useSWR(videoDataHashMap[channelName], fetcher);
     console.log(data, error);
 
     //get data in detail
+    const resultChannelData = data ? data.items.map(item => {
+        console.log(item.snippet.title);
+        console.log(item.contentDetails);
+        return ({
+            title: item.snippet.title,
+            description: item.snippet.description,
+            contentDetail: item.contentDetails, 
+            mediumImg: item.snippet.thumbnails.medium.url,
+            highImg: item.snippet.thumbnails.high.url
+        })
+    }) : [];
 
+    //console.log(resultChannelData);
+    const [channelInfo] = resultChannelData;
+    console.log(channelInfo)
 
-    if(!data && !error) return <LinearLoading />;
-    if(error)  return <Redirect to = "/notfound" />;
+    if(!data && !error && videoDataHashMap[channelName]) return <LinearLoading />;
+    if(error || !videoDataHashMap[channelName])  return <Redirect to = "/notfound" />;
 
     return (
         <>
@@ -73,14 +92,16 @@ export const VideoPostList = props => {
                 <GridItem xs={12} sm={12} md={6}>
                     <div className={classes.channelProfile}>
                         <div>
-                            <img src={defaultImg} alt="..." className={imageClasses} />
+                            <img 
+                                src={channelInfo.mediumImg ? channelInfo.mediumImg : defaultImg} 
+                                alt="..." 
+                                className={imageClasses} 
+                            />
                         </div>
                         <div className={classes.channelTitle}>
-                            <h3>channel title will be added</h3>
-
-                        </div>
-                        
-                        <h5>channel description will be added</h5>
+                            <h3>{channelInfo.title}</h3>
+                        </div>                        
+                        <h5>{channelInfo.description}</h5>
                     </div>
                 </GridItem>
                 </GridContainer>
@@ -99,7 +120,7 @@ export const VideoPostList = props => {
     )
 }
 
-VideoPostList.propTypes = {
+VideoListByChannel.propTypes = {
     props: PropTypes.object
 }
 
@@ -108,4 +129,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(VideoPostList)
+export default connect(mapStateToProps)(VideoListByChannel)
