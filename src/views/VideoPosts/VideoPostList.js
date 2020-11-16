@@ -4,8 +4,9 @@ import fetcher from '../../app/fetcher';
 import useSWR from 'swr';
 
 import classNames from "classnames";
-import {withRouter, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import qs from 'qs';
 //import clsx from 'clsx';
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -17,7 +18,7 @@ import {
     GridContainer,
     GridItem,
     Parallax,
-//    LinearLoading,
+    LinearLoading,
 //    CircularLoading,
 } from '../../components/components';
 
@@ -25,13 +26,10 @@ import {
     JeonInhyukBandChannelEndPoint,
 } from '../../app/videoFetchEndpoints';
 
-//import NotFound from '../Error/NotFound';
-
 import defaultImg from '../../assets/images/dolphin_profile.png';
 
 import styles from "../../assets/jss/material-kit-react/views/videoListStyle";
 import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/background';
-//import { getDateKor } from '../../utils/functions';
 
 const useStyles = makeStyles(styles);
 
@@ -40,6 +38,10 @@ export const VideoPostList = props => {
         match,
         location,
     } = props;
+    const query = qs.parse(location.search, {
+        ignoreQueryPrefix: true
+    });
+    const channelName = match.params.channel;
 
     const classes = useStyles();
     const imageClasses = classNames(
@@ -48,12 +50,18 @@ export const VideoPostList = props => {
         classes.imgFluid
     );
     
-    console.log(match, location);
+    //console.log(match, location);
+    console.log(channelName, query);
 
     //fetch data with get request
-    console.log(JeonInhyukBandChannelEndPoint);
     const {data, error} = useSWR(JeonInhyukBandChannelEndPoint, fetcher);
     console.log(data, error);
+
+    //get data in detail
+
+
+    if(!data && !error) return <LinearLoading />;
+    if(error)  return <Redirect to = "/notfound" />;
 
     return (
         <>
