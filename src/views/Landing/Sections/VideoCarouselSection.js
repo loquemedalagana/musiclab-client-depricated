@@ -52,10 +52,20 @@ export const VideoCarouselSection = props => {
 
     //get result data
     const resultData = data ? data.items.map(item => {
-        console.log(item.snippet);
-        console.log(item.contentDetails);
+        //console.log(item.snippet);
+        //console.log(item.contentDetails);
+        //console.log(item.snippet.thumbnails);
+        
+        return ({
+            title: item.snippet.title,
+            channelTitle: item.snippet.channelTitle,
+            publishedAt: item.snippet.publishedAt,
+            thumbnail: item.snippet.thumbnails.high.url,
+            videoId: item.contentDetails.videoId,
+        })
     }) : [];
 
+    console.log(resultData)
 
     //error component should be made 
 
