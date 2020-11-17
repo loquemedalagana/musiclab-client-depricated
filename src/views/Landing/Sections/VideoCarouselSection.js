@@ -6,6 +6,8 @@ import useSWR from 'swr';
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "react-slick";
 
+import { Tooltip } from "@material-ui/core"
+
 import {
     GridContainer,
     GridItem,
@@ -21,13 +23,17 @@ import { getPlayListURL, JeonInhyukBandPlayListEndPoint } from '../../../app/vid
 const useStyles = makeStyles(styles);
 
 //print title
-const printTitle = type => (<GridItem>
-    <h2>{type}</h2>
-</GridItem>)
+const printTitle = type => (
+    <GridItem xs={12} sm={12} md={11}>
+        <h2>{type}</h2>
+    </GridItem>
+)
 
-const NotAvailable = () => (<GridItem>
-    <h3>준비중입니다...</h3>
-</GridItem>)
+const NotAvailable = () => (
+    <GridItem xs={12} sm={12} md={11}>
+        <h3>준비중입니다...</h3>
+    </GridItem>
+)
 
 const getPlayListId = type => {
     switch(type){
@@ -45,18 +51,18 @@ const CaroselElement = props => {
     const {
         data,
     } = props;
-
     const {
         title,
-        thumbnail
+        thumbnail,
+        videoId
     } = data;
-
-    //글자가 너무 길면 자르기
-
-    return (
-        <div>
-            <img src={thumbnail} alt={title} className="slick-image" />
-        </div>
+    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    return (        
+        <a href={videoUrl} target="_blank" rel="noopener noreferrer">
+            <Tooltip arrow title={title}>
+                <img src={thumbnail} alt={title} className="slick-image" />
+            </Tooltip>      
+        </a>
     )
 }
 
@@ -131,7 +137,7 @@ export const VideoCarouselSection = props => {
     if(!playListId)  return (
         <div className={classes.section}>
             <div className={classes.container}>
-                <GridContainer>
+                <GridContainer justify='center'>
                     {printTitle(type)}
                     <NotAvailable />                    
                 </GridContainer>
@@ -142,10 +148,9 @@ export const VideoCarouselSection = props => {
     return (
         <div className={classes.section}>
             <div className={classes.container}>
-                <GridContainer>
-                    {printTitle(type)}
-                    
-                    <GridItem>
+                <GridContainer justify='center'>
+                    {printTitle(type)}                    
+                    <GridItem xs={12} sm={12} md={11}>
                         <Card carousel>
                             <Slider {...settings}>
                             {resultData.map((item, key) => 
@@ -154,7 +159,7 @@ export const VideoCarouselSection = props => {
                             </Slider>
                         </Card>
                     </GridItem>
-
+                    {/*채널 상세 페이지*/}
                 </GridContainer>
             </div>
         </div>
