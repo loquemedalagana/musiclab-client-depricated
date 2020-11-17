@@ -10,8 +10,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import {
     GridContainer,
-    GridItem,
-    CircularLoading,
+    //GridItem,
+    //CircularLoading,
 } from '../../../components/components';
 
 import styles from "../../../assets/jss/material-kit-react/views/videoListStyle";

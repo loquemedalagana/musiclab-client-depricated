@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetcher from '../../../app/fetcher';
 import useSWR from 'swr';
+import { makeStyles } from "@material-ui/core/styles";
 
 import {
     GridContainer,
@@ -10,7 +11,10 @@ import {
     CircularLoading,
 } from '../../../components/components';
 
+import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
 import { getPlayListURL, JeonInhyukBandPlayListEndPoint } from '../../../app/videoFetchEndpoints';
+
+const useStyles = makeStyles(styles);
 
 const getPlayListId = type => {
     switch(type){
@@ -25,10 +29,11 @@ const getPlayListId = type => {
 
 //get title kor
 
-export const VideoSection = props => {
+export const VideoCarouselSection = props => {
+    const classes = useStyles();
+
     const {
         type, //jihbandoifficialchannel, musicsseolprisechannel, 
-        classes,
     } = props;
 
     const playListId = getPlayListId(type);
@@ -56,7 +61,7 @@ export const VideoSection = props => {
     )
 }
 
-VideoSection.propTypes = {
+VideoCarouselSection.propTypes = {
     props: PropTypes.object,
 }
 
@@ -65,4 +70,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(VideoSection)
+export default connect(mapStateToProps)(VideoCarouselSection)

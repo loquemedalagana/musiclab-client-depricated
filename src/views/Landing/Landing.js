@@ -14,7 +14,7 @@ import {
     GridItem,
 } from '../../components/components';
 
-import VideoSection from './Sections/VideoSection';
+import VideoCarouselSection from './Sections/VideoCarouselSection';
 
 import {mainParallaxStyle} from '../../assets/jss/material-kit-react/views/background';
 
@@ -49,9 +49,8 @@ export const Landing = (props) => {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div className={classes.container}>
-                <VideoSection 
+                <VideoCarouselSection 
                     type='Jeon Inhyuk Band Official Channel'
-                    classes={classes}
                 />
                 <GridContainer>
                     {testText}
