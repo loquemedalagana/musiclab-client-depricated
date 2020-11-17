@@ -2,13 +2,17 @@ const YoutubeApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
 const JeonInhyukBandOfficialChannel = 'UChNtl7wRLF6x4B4fp7KCyhQ';
 const JeonInhyukBandPlayListId = 'UUhNtl7wRLF6x4B4fp7KCyhQ';
 
-export const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems'
-export const YOUTUBE_CHANNEL_ITEMS_API = 'https://www.googleapis.com/youtube/v3/channels'
+const comma = '%2';
 
-export const JeonInhyukBandChannelEndPoint = `${YOUTUBE_CHANNEL_ITEMS_API}?part=snippet%2CcontentDetails&id=${JeonInhyukBandOfficialChannel}&key=${YoutubeApiKey}`;
-export const JeonInhyukBandPlayListEndPoint = `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet%2CcontentDetails&playlistId=${JeonInhyukBandPlayListId}&key=${YoutubeApiKey}`;
+export const YOUTUBE_PLAYLIST_ITEMS_API = 'https://www.googleapis.com/youtube/v3/playlistItems';
+export const YOUTUBE_CHANNEL_ITEMS_API = 'https://www.googleapis.com/youtube/v3/channels';
+export const YOUTUBE_VIDEO_ITEMS_API = 'https://www.googleapis.com/youtube/v3/videos';
+
+export const JeonInhyukBandChannelEndPoint = `${YOUTUBE_CHANNEL_ITEMS_API}?part=snippet${comma}CcontentDetails&id=${JeonInhyukBandOfficialChannel}&key=${YoutubeApiKey}`;
+export const JeonInhyukBandPlayListEndPoint = `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet${comma}CcontentDetails&playlistId=${JeonInhyukBandPlayListId}&key=${YoutubeApiKey}`;
 
 //function for search result
+export const getPlayListURL = (playlistId, maxResults) => `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet${comma}CcontentDetails&playlistId=${playlistId}&maxResults=${maxResults}&key=${YoutubeApiKey}`;
 
 //youtube video params https://developers.google.com/youtube/v3/docs/videos?hl=ko
 //youtube video channel https://developers.google.com/youtube/v3/docs/channels/list?hl=ko

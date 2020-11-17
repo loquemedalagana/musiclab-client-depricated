@@ -7,10 +7,10 @@ import classNames from "classnames";
 import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import qs from 'qs';
-//import clsx from 'clsx';
+import VideoListSection from './Sections/VideoListSection';
 
 import { makeStyles } from "@material-ui/core/styles";
-//import { List, ListItem } from '@material-ui/core';
+
 
 import {
     Footer,
@@ -102,11 +102,7 @@ export const VideoListByChannel = props => {
                 </GridItem>
                 </GridContainer>
 
-                <GridContainer className={classes.listContainer}>
-                    <p>
-                        video list will be added here
-                    </p>
-                </GridContainer>
+                <VideoListSection type='channel' info={channelInfo.contentDetail} />
 
             </div>            
         

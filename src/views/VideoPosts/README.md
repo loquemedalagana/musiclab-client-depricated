@@ -9,8 +9,8 @@
 
 ## channel list
 <ul>
-    <li>Music SSeolprise by Inhyuk / url: /officialvideolist/jihbandofficial</li>
-    <li>Jeon Inhyuk Band Official / url: /officialvideolist/musseolofficial</li>
+    <li>Music SSeolprise by Inhyuk, url: /officialvideolist/jihbandofficial</li>
+    <li>Jeon Inhyuk Band Official, url: /officialvideolist/musseolofficial</li>
 </ul>
 
 ## Search Result
