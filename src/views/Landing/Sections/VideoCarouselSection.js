@@ -27,7 +27,14 @@ const getPlayListId = type => {
     }
 }
 
-//get title kor
+//print title
+const printTitle = type => (<GridItem>
+    <h2>{type}</h2>
+</GridItem>)
+
+const NotAvailable = () => (<GridItem>
+    <h3>준비중입니다...</h3>
+</GridItem>)
 
 export const VideoCarouselSection = props => {
     const classes = useStyles();
@@ -40,7 +47,7 @@ export const VideoCarouselSection = props => {
     const ENDPOINT = getPlayListURL(playListId, 5);
 
     //get api
-    const {data, error} = useSWR(ENDPOINT, fetcher);
+    const {data, error} = useSWR(playListId ? ENDPOINT : null, fetcher);
     //console.log(data, error);
 
     //get result data
@@ -54,10 +61,27 @@ export const VideoCarouselSection = props => {
 
     if(!data && !error && playListId) return <CircularLoading />
 
+    if(!playListId)  return (
+        <div className={classes.section}>
+            <div className={classes.container}>
+                <GridContainer>
+                    {printTitle(type)}
+                    <NotAvailable />                    
+                </GridContainer>
+            </div>
+        </div>
+    );
+
     return (
-        <GridContainer>
-            <h1>{type}</h1>
-        </GridContainer>
+        <div className={classes.section}>
+            <div className={classes.container}>
+                <GridContainer>
+                    {printTitle(type)}
+                    
+
+                </GridContainer>
+            </div>
+        </div>
     )
 }
 
