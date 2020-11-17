@@ -8,6 +8,15 @@ const carouselStyle = {
     marginAuto: {
         marginLeft: "auto !important",
         marginRight: "auto !important"
+    },
+    title: {
+        color: "#393e46"
+    },
+    detail: {
+        color: "#5c6e91"
+    },
+    link: {
+        color: "#d291bc"
     }
 };
 

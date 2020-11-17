@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetcher from '../../../app/fetcher';
@@ -23,15 +24,15 @@ import { getPlayListURL, JeonInhyukBandPlayListEndPoint } from '../../../app/vid
 const useStyles = makeStyles(styles);
 
 //print title
-const printTitle = type => (
+const printTitle = (type, style) => (
     <GridItem xs={12} sm={12} md={11}>
-        <h2>{type}</h2>
+        <h2 className={style}>{type}</h2>
     </GridItem>
 )
 
-const NotAvailable = () => (
+const NotAvailable = ({className}) => (
     <GridItem xs={12} sm={12} md={11}>
-        <h3>준비중입니다...</h3>
+        <h3 className={className}>준비중입니다...</h3>
     </GridItem>
 )
 
@@ -39,6 +40,18 @@ const getPlayListId = type => {
     switch(type){
         case 'Jeon Inhyuk Band Official Channel':
             return JeonInhyukBandPlayListEndPoint;
+        case 'Music SSeolprise by Jeon Inhyuk':
+            return null; //will be added
+        default: //return search result
+            return null;
+    }
+}
+
+//return channel detail link
+const getChannelRoute = type => {
+    switch(type){
+        case 'Jeon Inhyuk Band Official Channel':
+            return '/officialvideolist/jihbandofficial';
         case 'Music SSeolprise by Jeon Inhyuk':
             return null; //will be added
         default: //return search result
@@ -128,18 +141,16 @@ export const VideoCarouselSection = props => {
         })
     }) : [];
 
-    console.log(resultData)
-
-    //error component should be made 
+    //console.log(resultData)
 
     if(!data && !error && playListId) return <CircularLoading />
 
-    if(!playListId)  return (
+    if(!playListId || error)  return (
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
-                    {printTitle(type)}
-                    <NotAvailable />                    
+                    {printTitle(type, classes.title)}
+                    <NotAvailable className={classes.detail}/>                    
                 </GridContainer>
             </div>
         </div>
@@ -149,7 +160,7 @@ export const VideoCarouselSection = props => {
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
-                    {printTitle(type)}                    
+                    {printTitle(type, classes.title)}                    
                     <GridItem xs={12} sm={12} md={11}>
                         <Card carousel>
                             <Slider {...settings}>
@@ -160,6 +171,13 @@ export const VideoCarouselSection = props => {
                         </Card>
                     </GridItem>
                     {/*채널 상세 페이지*/}
+                    <GridItem xs={12} sm={12} md={11} style={{textAlign: 'right'}}>
+                        <Link to = {getChannelRoute(type)}>
+                            <h5 className={classes.link}>
+                            view more about {type}...
+                            </h5>
+                        </Link>
+                    </GridItem>
                 </GridContainer>
             </div>
         </div>
