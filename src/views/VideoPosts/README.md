@@ -4,7 +4,8 @@
     <li>Search results from Yada Jeon Inhyuk</li>
 </ul>
 
-#### url: /oficialvideolist/jihbandofficial
+#### url example 1: /officialvideolist/jihbandofficial
+#### url example 2: /officialvideolist/musseolofficial
 
 ## channel list
 <ul>
