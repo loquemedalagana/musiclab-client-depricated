@@ -65,7 +65,7 @@ const getChannelRoute = categoryTitle => {
             return null; //will be added
         case 'Hot Videos of Inhyuk':
         case 'Latest Videos of Inhyuk':
-            return '/notfound';
+            return '/videolistbykeywords';
         default: //return search result
             return null;
     }
@@ -139,6 +139,7 @@ export const VideoCarouselSection = props => {
 
     //get api
     const {data, error} = useSWR(ENDPOINT, fetcher);
+    //console.log(ENDPOINT);
 
     //get result data
     const resultData = data ? data.items.map(item => {        

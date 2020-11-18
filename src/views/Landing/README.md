@@ -1,3 +1,10 @@
+## landing page structure - sections
+<ul>
+    <li>hot tags</li>
+    <li>videos</li>
+    <li>posts</li>
+</ul>
+
 ## landing page structure - videos
 <ul>
     <li>Music SSeolprise</li>

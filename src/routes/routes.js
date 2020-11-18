@@ -16,6 +16,7 @@ import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';
 import VideoListByChannel from '../views/VideoPosts/VideoListByChannel';
+import VideoListByKeywords from '../views/VideoPosts/VideoListBySearchKeyword';
 
 import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
 import NotFound from '../views/Error/NotFound';
@@ -43,6 +44,7 @@ export default props => (
             <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
 
             <Route exact path = '/officialvideolist/:channel?' component = {VideoListByChannel} />
+            <Route exact path = '/videolistbykeywords/:query?' component = {VideoListByKeywords} />
 
             <Route exact path = '/servererror' component = {ServerError} />
             <Route component = {NotFound} />

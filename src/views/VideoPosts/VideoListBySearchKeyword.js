@@ -5,14 +5,14 @@ https://developers.google.com/youtube/v3/docs/search/list?authuser=1
 
 import React from 'react'
 import { connect } from 'react-redux';
-import fetcher from '../../app/fetcher';
-import useSWR from 'swr';
+//import fetcher from '../../app/fetcher';
+//import useSWR from 'swr';
 
 import classNames from "classnames";
-import {Redirect} from 'react-router-dom';
+//import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import qs from 'qs';
-import VideoListSection from './Sections/VideoListSection';
+//import VideoListSection from './Sections/VideoListSection';
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -21,12 +21,8 @@ import {
     GridContainer,
     GridItem,
     Parallax,
-    LinearLoading,
+//    LinearLoading,
 } from '../../components/components';
-
-import {
-    channelDataHashMap,
-} from '../../app/videoData/getVideoData';
 
 import defaultImg from '../../assets/images/dolphin_profile.png';
 
@@ -37,13 +33,12 @@ const useStyles = makeStyles(styles);
 
 export const VideoListBySearchKeyword = props => {
     const {
-        match,
         location,
     } = props;
     const query = qs.parse(location.search, {
         ignoreQueryPrefix: true
     });
-    const channelName = match.params.channel;
+    
 
     const classes = useStyles();
     const imageClasses = classNames(
@@ -52,31 +47,10 @@ export const VideoListBySearchKeyword = props => {
         classes.imgFluid
     );
     
-    console.log(channelName, query);
+    console.log(query);
 
     //fetch data with get request
-    const {data, error} = useSWR(channelDataHashMap[channelName], fetcher);
-    console.log(data, error);
 
-    //get data in detail
-    const resultChannelData = data ? data.items.map(item => {
-        console.log(item.snippet.title);
-        console.log(item.contentDetails);
-        return ({
-            title: item.snippet.title,
-            description: item.snippet.description,
-            contentDetail: item.contentDetails, 
-            mediumImg: item.snippet.thumbnails.medium.url,
-            highImg: item.snippet.thumbnails.high.url
-        })
-    }) : [];
-
-    //console.log(resultChannelData);
-    const [channelInfo] = resultChannelData;
-    console.log(channelInfo)
-
-    if(!data && !error && channelDataHashMap[channelName]) return <LinearLoading />;
-    if(error || !channelDataHashMap[channelName])  return <Redirect to = "/notfound" />;
 
     return (
         <>
@@ -89,20 +63,20 @@ export const VideoListBySearchKeyword = props => {
                     <div className={classes.channelProfile}>
                         <div>
                             <img 
-                                src={channelInfo.mediumImg ? channelInfo.mediumImg : defaultImg} 
+                                src={defaultImg} 
                                 alt="..." 
                                 className={imageClasses} 
                             />
                         </div>
                         <div className={classes.channelTitle}>
-                            <h3>{channelInfo.title}</h3>
+                            <h3>title</h3>
                         </div>                        
-                        <h5>{channelInfo.description}</h5>
+                        <h5>descriptrion</h5>
                     </div>
                 </GridItem>
                 </GridContainer>
 
-                <VideoListSection type='channel' info={channelInfo.contentDetail} />
+                
 
             </div>            
         
