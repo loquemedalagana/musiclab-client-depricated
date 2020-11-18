@@ -52,7 +52,7 @@ export const Landing = (props) => {
                 type='Music SSeolprise by Jeon Inhyuk'
             />
             <VideoCarouselSection 
-                type='Latest Videos of Inhyuk'
+                type='Hot Videos of Inhyuk'
             />
         </div>
         <Footer />

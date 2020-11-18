@@ -1,6 +1,6 @@
 const YoutubeApiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
-const JeonInhyukBandOfficialChannel = 'UChNtl7wRLF6x4B4fp7KCyhQ';
-const JeonInhyukBandPlayListId = 'UUhNtl7wRLF6x4B4fp7KCyhQ';
+export const JeonInhyukBandOfficialChannel = 'UChNtl7wRLF6x4B4fp7KCyhQ';
+export const JeonInhyukBandPlayListId = 'UUhNtl7wRLF6x4B4fp7KCyhQ';
 
 const comma = '%2';
 

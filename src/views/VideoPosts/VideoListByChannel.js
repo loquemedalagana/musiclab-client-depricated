@@ -11,20 +11,17 @@ import VideoListSection from './Sections/VideoListSection';
 
 import { makeStyles } from "@material-ui/core/styles";
 
-
 import {
     Footer,
-//    Button,
     GridContainer,
     GridItem,
     Parallax,
     LinearLoading,
-//    CircularLoading,
 } from '../../components/components';
 
 import {
     channelDataHashMap,
-} from './videoDataMapping';
+} from '../../app/videoData/getVideoData';
 
 import defaultImg from '../../assets/images/dolphin_profile.png';
 

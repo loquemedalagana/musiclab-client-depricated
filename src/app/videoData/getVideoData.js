@@ -1,11 +1,10 @@
 import {
     JeonInhyukBandChannelEndPoint,
-} from '../../app/videoFetchEndpoints';
+} from './videoFetchEndpoints';
 
 export const channelDataHashMap = {
     jihbandofficial: JeonInhyukBandChannelEndPoint,
     musicsseolprise: null,
-
 }
 
 //mapping play list

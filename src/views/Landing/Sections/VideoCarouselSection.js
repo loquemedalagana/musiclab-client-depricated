@@ -19,7 +19,7 @@ import {
 //import {MusicNoteRounded} from '@material-ui/icons';
 
 import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
-import { getPlayListURL, JeonInhyukBandPlayListEndPoint } from '../../../app/videoFetchEndpoints';
+import { getPlayListURL, JeonInhyukBandPlayListId} from '../../../app/videoData/videoFetchEndpoints';
 
 const useStyles = makeStyles(styles);
 
@@ -39,7 +39,7 @@ const NotAvailable = ({className}) => (
 const getPlayListId = type => {
     switch(type){
         case 'Jeon Inhyuk Band Official Channel':
-            return JeonInhyukBandPlayListEndPoint;
+            return JeonInhyukBandPlayListId;
         case 'Music SSeolprise by Jeon Inhyuk':
             return null; //will be added
         default: //return search result
@@ -125,6 +125,7 @@ export const VideoCarouselSection = props => {
 
     const playListId = getPlayListId(type);
     const ENDPOINT = getPlayListURL(playListId, 6);
+    //console.log(playListId, ENDPOINT);
 
     //get api
     const {data, error} = useSWR(playListId ? ENDPOINT : null, fetcher);
