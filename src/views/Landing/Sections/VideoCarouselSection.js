@@ -1,9 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import fetcher from '../../../app/fetcher';
-import useSWR from 'swr';
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "react-slick";
 
@@ -72,6 +70,16 @@ const getChannelRoute = categoryTitle => {
     }
 }
 
+const getData = data => data ? data.items.map(item => {        
+    return ({
+        title: item.snippet.title.replace(/&#39;/g, ','),
+        channelTitle: item.snippet.channelTitle,
+        publishedAt: item.snippet.publishedAt,
+        thumbnail: item.snippet.thumbnails.high.url,
+        videoId: item.contentDetails ? item.contentDetails.videoId : item.id.videoId,
+    })
+}) : [];
+
 //carosel element component
 const CaroselElement = props => {
     const {
@@ -100,27 +108,29 @@ export const VideoCarouselSection = props => {
     } = props;
 
     const ENDPOINT = getPlayListEndpoint(categoryTitle);
+    const [resultData, setResultData] = useState([]);
+    const [error, setError] = useState(null);
 
-    //get api
-    const {data, error} = useSWR(ENDPOINT, fetcher);
-    //console.log(ENDPOINT);
+    useEffect(() => {
+        fetch(ENDPOINT, {
+            method: 'GET',
+        })
+        .then(res => res.json())
+        .then(data => {
+            const result = getData(data);
+            setResultData(result);
+        })
+        .catch(err => setError(err));
+    }, [ENDPOINT]);
 
     //get result data
-    const resultData = data ? data.items.map(item => {        
-        return ({
-            title: item.snippet.title.replace(/&#39;/g, ','),
-            channelTitle: item.snippet.channelTitle,
-            publishedAt: item.snippet.publishedAt,
-            thumbnail: item.snippet.thumbnails.high.url,
-            videoId: item.contentDetails ? item.contentDetails.videoId : item.id.videoId,
-        })
-    }) : [];
 
-    //console.log(resultData)
 
-    if(!data && !error && ENDPOINT) return <CircularLoading />
+    console.log(resultData)
 
-    if(!ENDPOINT || error)  return (
+    if(!resultData && ENDPOINT) return <CircularLoading />
+
+    if(!ENDPOINT || !resultData || error)  return (
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
