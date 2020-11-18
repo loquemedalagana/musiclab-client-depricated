@@ -5,6 +5,9 @@
     <li>Media(post)</li>
 </ul>
 
+## api key 호출
+https://www.googleapis.com/youtube/v3/search?part=snippet&q=%EC%95%BC%EB%8B%A4+%EC%A0%84%EC%9D%B8%ED%98%81&order=viewCount&maxResults=10&key=AIzaSyBI7sMVdnK6zue0XFHR2Dmb6m-mNyNlqB8
+
 ## youtube api 연동
 https://www.youtube.com/watch?v=LJoGgn3K76I
 

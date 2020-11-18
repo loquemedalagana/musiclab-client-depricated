@@ -16,6 +16,7 @@ import {
     Card,
 } from '../../../components/components';
 
+import {settings} from './carouselSetting'
 //import {MusicNoteRounded} from '@material-ui/icons';
 
 import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
@@ -95,45 +96,8 @@ const CaroselElement = props => {
 export const VideoCarouselSection = props => {
     const classes = useStyles();
     const {
-        categoryTitle, //jihbandoifficialchannel, musicsseolprisechannel, 
+        categoryTitle, 
     } = props;
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        autoplay: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-
-        responsive: [
-            {
-                breakpoint: 1260,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    
-                }
-            }
-        ]
-    }
 
     const ENDPOINT = getPlayListEndpoint(categoryTitle);
 
