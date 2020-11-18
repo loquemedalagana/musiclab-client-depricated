@@ -15,21 +15,21 @@ export const JeonInhyukBandPlayListEndPoint = `${YOUTUBE_PLAYLIST_ITEMS_API}?par
 export const getPlayListURL = (playlistId, maxResults) => `${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet${comma}CcontentDetails&playlistId=${playlistId}&maxResults=${maxResults}&key=${YoutubeApiKey}`;
 
 //search result based on keyword array
-export const getLatestVideos = (searchKeywords, maxResults) => {
+export const getLatestVideoListURL = (searchKeywords, maxResults) => {
     if(searchKeywords.length === 0){
-        
+        return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=relevance&maxResults=${maxResults}&key=${YoutubeApiKey}`
     }
     else {
-
+        return null;
     }
 }
 
-export const getHotVideos = (searchKeywords, maxResults) => {
+export const getHotVideoListURL = (searchKeywords, maxResults) => {
     if(searchKeywords.length === 0){
-
+        return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=viewCount&maxResults=${maxResults}&key=${YoutubeApiKey}`
     }
     else {
-
+        return null;
     }
 }
 

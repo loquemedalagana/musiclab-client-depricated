@@ -19,7 +19,12 @@ import {
 //import {MusicNoteRounded} from '@material-ui/icons';
 
 import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
-import { getPlayListURL, JeonInhyukBandPlayListId} from '../../../app/videoData/videoFetchEndpoints';
+import { 
+    JeonInhyukBandPlayListId,
+    getPlayListURL, 
+    getLatestVideoListURL,
+    getHotVideoListURL,
+} from '../../../app/videoData/videoFetchEndpoints';
 
 const useStyles = makeStyles(styles);
 
@@ -36,13 +41,17 @@ const NotAvailable = ({className}) => (
     </GridItem>
 )
 
-const getPlayListId = categoryTitle => {
+const getPlayListEndpoint = categoryTitle => {
     switch(categoryTitle){
         case 'Jeon Inhyuk Band Official Channel':
-            return JeonInhyukBandPlayListId;
+            return getPlayListURL(JeonInhyukBandPlayListId, 6);
         case 'Music SSeolprise by Jeon Inhyuk':
-            return null; //will be added
-        default: //return search result
+            return null;
+        case 'Hot Videos of Inhyuk':
+            return getHotVideoListURL([], 10);
+        case 'Latest Videos of Inhyuk':
+            return getLatestVideoListURL([], 10);
+        default: 
             return null;
     }
 }
@@ -54,6 +63,9 @@ const getChannelRoute = categoryTitle => {
             return '/officialvideolist/jihbandofficial';
         case 'Music SSeolprise by Jeon Inhyuk':
             return null; //will be added
+        case 'Hot Videos of Inhyuk':
+        case 'Latest Videos of Inhyuk':
+            return '/notfound';
         default: //return search result
             return null;
     }
@@ -123,30 +135,27 @@ export const VideoCarouselSection = props => {
         ]
     }
 
-    const playListId = getPlayListId(categoryTitle);
-    const ENDPOINT = getPlayListURL(playListId, 6);
-    //console.log(playListId, ENDPOINT);
+    const ENDPOINT = getPlayListEndpoint(categoryTitle);
 
     //get api
-    const {data, error} = useSWR(playListId ? ENDPOINT : null, fetcher);
-    //console.log(data, error);
+    const {data, error} = useSWR(ENDPOINT, fetcher);
 
     //get result data
     const resultData = data ? data.items.map(item => {        
         return ({
-            title: item.snippet.title,
+            title: item.snippet.title.replace(/&#39;/g, ','),
             channelTitle: item.snippet.channelTitle,
             publishedAt: item.snippet.publishedAt,
             thumbnail: item.snippet.thumbnails.high.url,
-            videoId: item.contentDetails.videoId,
+            videoId: item.contentDetails ? item.contentDetails.videoId : item.id.videoId,
         })
     }) : [];
 
     //console.log(resultData)
 
-    if(!data && !error && playListId) return <CircularLoading />
+    if(!data && !error && ENDPOINT) return <CircularLoading />
 
-    if(!playListId || error)  return (
+    if(!ENDPOINT || error)  return (
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
