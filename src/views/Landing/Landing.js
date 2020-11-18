@@ -46,14 +46,18 @@ export const Landing = (props) => {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
             <VideoCarouselSection 
-                type='Jeon Inhyuk Band Official Channel'
+                categoryTitle='Jeon Inhyuk Band Official Channel'
             />
             <VideoCarouselSection 
-                type='Music SSeolprise by Jeon Inhyuk'
+                categoryTitle='Music SSeolprise by Jeon Inhyuk'
             />
             <VideoCarouselSection 
-                type='Hot Videos of Inhyuk'
+                categoryTitle='Hot Videos of Inhyuk'
             />
+            <VideoCarouselSection 
+                categoryTitle='Latest Videos of Inhyuk'
+            />
+
         </div>
         <Footer />
         </>

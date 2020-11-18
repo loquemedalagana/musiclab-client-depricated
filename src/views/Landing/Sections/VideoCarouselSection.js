@@ -24,9 +24,9 @@ import { getPlayListURL, JeonInhyukBandPlayListId} from '../../../app/videoData/
 const useStyles = makeStyles(styles);
 
 //print title
-const printTitle = (type, style) => (
+const printTitle = (categoryTitle, style) => (
     <GridItem xs={12} sm={12} md={11}>
-        <h2 className={style}>{type}</h2>
+        <h2 className={style}>{categoryTitle}</h2>
     </GridItem>
 )
 
@@ -36,8 +36,8 @@ const NotAvailable = ({className}) => (
     </GridItem>
 )
 
-const getPlayListId = type => {
-    switch(type){
+const getPlayListId = categoryTitle => {
+    switch(categoryTitle){
         case 'Jeon Inhyuk Band Official Channel':
             return JeonInhyukBandPlayListId;
         case 'Music SSeolprise by Jeon Inhyuk':
@@ -48,8 +48,8 @@ const getPlayListId = type => {
 }
 
 //return channel detail link
-const getChannelRoute = type => {
-    switch(type){
+const getChannelRoute = categoryTitle => {
+    switch(categoryTitle){
         case 'Jeon Inhyuk Band Official Channel':
             return '/officialvideolist/jihbandofficial';
         case 'Music SSeolprise by Jeon Inhyuk':
@@ -83,7 +83,7 @@ const CaroselElement = props => {
 export const VideoCarouselSection = props => {
     const classes = useStyles();
     const {
-        type, //jihbandoifficialchannel, musicsseolprisechannel, 
+        categoryTitle, //jihbandoifficialchannel, musicsseolprisechannel, 
     } = props;
 
     const settings = {
@@ -123,7 +123,7 @@ export const VideoCarouselSection = props => {
         ]
     }
 
-    const playListId = getPlayListId(type);
+    const playListId = getPlayListId(categoryTitle);
     const ENDPOINT = getPlayListURL(playListId, 6);
     //console.log(playListId, ENDPOINT);
 
@@ -150,7 +150,7 @@ export const VideoCarouselSection = props => {
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
-                    {printTitle(type, classes.title)}
+                    {printTitle(categoryTitle, classes.title)}
                     <NotAvailable className={classes.detail}/>                    
                 </GridContainer>
             </div>
@@ -161,7 +161,7 @@ export const VideoCarouselSection = props => {
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
-                    {printTitle(type, classes.title)}                    
+                    {printTitle(categoryTitle, classes.title)}                    
                     <GridItem xs={12} sm={12} md={11}>
                         <Card carousel>
                             <Slider {...settings}>
@@ -173,9 +173,9 @@ export const VideoCarouselSection = props => {
                     </GridItem>
                     {/*채널 상세 페이지*/}
                     <GridItem xs={12} sm={12} md={11} style={{textAlign: 'right'}}>
-                        <Link to = {getChannelRoute(type)}>
+                        <Link to = {getChannelRoute(categoryTitle)}>
                             <h5 className={classes.link}>
-                            view more about {type}...
+                            view more about {categoryTitle}...
                             </h5>
                         </Link>
                     </GridItem>
