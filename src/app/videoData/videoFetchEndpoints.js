@@ -16,8 +16,9 @@ export const getPlayListURL = (playlistId, maxResults) => `${YOUTUBE_PLAYLIST_IT
 
 //search result based on keyword array
 export const getLatestVideoListURL = (searchKeywords, maxResults) => {
+    const defaultDate = '2018-01-01T00:00:00Z';
     if(searchKeywords.length === 0){
-        return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=relevance&maxResults=${maxResults}&key=${YoutubeApiKey}`
+        return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=relevance&publishedAfter=${defaultDate}&maxResults=${maxResults}&key=${YoutubeApiKey}`
     }
     else {
         return null;
