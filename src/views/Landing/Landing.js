@@ -14,7 +14,7 @@ import {
     GridItem,
 } from '../../components/components';
 
-import VideoCarouselSection from './Sections/VideoCarouselSection';
+import VideoCarouselSection from './VideoCarouselSection/VideoCarouselSection';
 
 import {mainParallaxStyle} from '../../assets/jss/material-kit-react/views/background';
 
