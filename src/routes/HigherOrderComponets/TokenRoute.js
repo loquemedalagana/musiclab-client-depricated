@@ -27,6 +27,7 @@ const TokenRoute = ({
 
     //console.log(data, error);   
     console.log(isExpired ? "expired!" : "not expired");
+    console.log(data);
     
     const LoadingToken = !data && !error && !isExpired;
 

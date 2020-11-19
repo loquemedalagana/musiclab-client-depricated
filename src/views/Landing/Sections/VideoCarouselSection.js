@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import Slider from "react-slick";
 
-import { Tooltip } from "@material-ui/core"
+import CarouselElement from './CarouselElement';
 
 import {
     GridContainer,
@@ -81,24 +80,7 @@ const getData = data => data ? data.items.map(item => {
 }) : [];
 
 //carosel element component
-const CaroselElement = props => {
-    const {
-        data,
-    } = props;
-    const {
-        title,
-        thumbnail,
-        videoId
-    } = data;
-    const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    return (        
-        <a href={videoUrl} target="_blank" rel="noopener noreferrer">
-            <Tooltip arrow title={title}>
-                <img src={thumbnail} alt={title} className="slick-image" />
-            </Tooltip>      
-        </a>
-    )
-}
+
 
 
 export const VideoCarouselSection = props => {
@@ -125,7 +107,6 @@ export const VideoCarouselSection = props => {
 
     //get result data
 
-
     console.log(resultData)
 
     if(!resultData && ENDPOINT) return <CircularLoading />
@@ -150,7 +131,7 @@ export const VideoCarouselSection = props => {
                         <Card carousel>
                             <Slider {...settings}>
                             {resultData.map((item, key) => 
-                                <CaroselElement key={key} data={item} />
+                                <CarouselElement key={key} data={item} />
                             )}
                             </Slider>
                         </Card>
@@ -173,9 +154,4 @@ VideoCarouselSection.propTypes = {
     props: PropTypes.object,
 }
 
-const mapStateToProps = (state) => ({
-    
-})
-
-
-export default connect(mapStateToProps)(VideoCarouselSection)
+export default React.memo(VideoCarouselSection)

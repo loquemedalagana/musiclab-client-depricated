@@ -1,8 +1,5 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux';
-import fetcher from '../../app/fetcher';
-import useSWR from 'swr';
-
 import classNames from "classnames";
 import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -32,6 +29,19 @@ const useStyles = makeStyles(styles);
 
 //http://localhost:3000/officialvideolist/jihbandofficial
 
+const getData = data => data ? data.items.map(item => {
+    console.log(item.snippet.title);
+    console.log(item.contentDetails);
+    console.log(item.snippet.thumbnails);
+    return ({
+        title: item.snippet.title,
+        description: item.snippet.description,
+        contentDetail: item.contentDetails, 
+        mediumImg: item.snippet.thumbnails.medium.url,
+        highImg: item.snippet.thumbnails.high.url
+    })
+}) : [];
+
 export const VideoListByChannel = props => {
     const {
         match,
@@ -41,7 +51,6 @@ export const VideoListByChannel = props => {
         ignoreQueryPrefix: true
     });
     const channelName = match.params.channel;
-
     const classes = useStyles();
     const imageClasses = classNames(
         classes.imgRaised,
@@ -52,27 +61,26 @@ export const VideoListByChannel = props => {
     console.log(channelName, query);
 
     //fetch data with get request
-    const {data, error} = useSWR(channelDataHashMap[channelName], fetcher);
-    console.log(data, error);
-
-    //get data in detail
-    const resultChannelData = data ? data.items.map(item => {
-        console.log(item.snippet.title);
-        console.log(item.contentDetails);
-        return ({
-            title: item.snippet.title,
-            description: item.snippet.description,
-            contentDetail: item.contentDetails, 
-            mediumImg: item.snippet.thumbnails.medium.url,
-            highImg: item.snippet.thumbnails.high.url
+    const ENDPOINT = channelDataHashMap[channelName];
+    const [resultChannelData, setResultChannelData] = useState([]);
+    const [error, setError] = useState(null);
+    
+    useEffect(() => {
+        console.log('in useeffect');
+        fetch(ENDPOINT, {
+            method: 'GET',
         })
-    }) : [];
+        .then(res => res.json())
+        .then(data => {
+            const result = getData(data);
+            setResultChannelData(result);
+        })
+        .catch(err => setError(err));
+    }, [ENDPOINT]);
 
-    //console.log(resultChannelData);
-    const [channelInfo] = resultChannelData;
-    console.log(channelInfo)
+    console.log(resultChannelData);
 
-    if(!data && !error && channelDataHashMap[channelName]) return <LinearLoading />;
+    if(!resultChannelData && channelDataHashMap[channelName]) return <LinearLoading />;
     if(error || !channelDataHashMap[channelName])  return <Redirect to = "/notfound" />;
 
     return (
@@ -80,27 +88,28 @@ export const VideoListByChannel = props => {
         <Parallax small filter style={smallParallaxStyle().root} />        
         <div className={classNames(classes.main, classes.mainRaised)}>
             <div className={classes.container}>
-                {/*youtube channel profile*/}
-                <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={6}>
-                    <div className={classes.channelProfile}>
-                        <div>
-                            <img 
-                                src={channelInfo.mediumImg ? channelInfo.mediumImg : defaultImg} 
-                                alt="..." 
-                                className={imageClasses} 
-                            />
-                        </div>
-                        <div className={classes.channelTitle}>
-                            <h3>{channelInfo.title}</h3>
-                        </div>                        
-                        <h5>{channelInfo.description}</h5>
+                {resultChannelData.map((channelInfo, idx) => 
+                    <div key = {idx}>
+                    <GridContainer justify="center">
+                        <GridItem xs={12} sm={12} md={6}>
+                            <div className={classes.channelProfile}>
+                                <div>
+                                    <img 
+                                        src={channelInfo.mediumImg ? channelInfo.mediumImg : defaultImg} 
+                                        alt="..." 
+                                        className={imageClasses} 
+                                    />
+                                </div>
+                                <div className={classes.channelTitle}>
+                                    <h3>{channelInfo.title}</h3>
+                                </div>                        
+                                <h5>{channelInfo.description}</h5>
+                            </div>
+                        </GridItem>
+                        </GridContainer>
+                    <VideoListSection type='channel' info={channelInfo.contentDetail} />
                     </div>
-                </GridItem>
-                </GridContainer>
-
-                <VideoListSection type='channel' info={channelInfo.contentDetail} />
-
+                )}
             </div>            
         
         </div>
@@ -118,4 +127,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(VideoListByChannel)
+export default connect(mapStateToProps)(React.memo(VideoListByChannel))
