@@ -66,7 +66,6 @@ export const VideoListByChannel = props => {
     const [error, setError] = useState(null);
     
     useEffect(() => {
-        console.log('in useeffect');
         fetch(ENDPOINT, {
             method: 'GET',
         })
