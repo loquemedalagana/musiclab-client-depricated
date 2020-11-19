@@ -1,18 +1,13 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { connect } from 'react-redux';
-import fetcher from '../../app/fetcher';
-import useSWR from 'swr';
-// nodejs library that concatenates classes
+
 import classNames from "classnames";
 import {withRouter, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
-//import clsx from 'clsx';
 
-// @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, List, ListItem } from '@material-ui/core';
 
-// @material-ui/icons
 import {
     LocalOffer as Tag, MusicVideoRounded, Favorite,
     DescriptionRounded as Post,
@@ -28,7 +23,6 @@ import {
     NavPills,
     Parallax,
     LinearLoading,
-//    CircularLoading,
 } from '../../components/components';
 
 import NotFound from '../Error/NotFound';
@@ -54,7 +48,6 @@ const useStyles = makeStyles(styles);
 
 //https://stackoverflow.com/questions/58924617/componentwillreceiveprops-has-been-renamed
 //test user id 5f3d26926b0ee109c1220711  5f4f674082d649d4258f2fa7   5f49fdc87a0c7a58a4f88367
-
 
 //print social props
 const PrintSocialLinks = social => {
@@ -110,18 +103,32 @@ const Profile = (props) => {
         match,
         isAdmin,
         history,
-        curUserId,
+        curUserId, 
     } = props;
-    const targetUserId = match.params.userid;
-    const isSame = curUserId === targetUserId;
 
-    const {data, error} = useSWR(`/api/profiles/${targetUserId}`, fetcher);
-    const targetUserLoading = !data && !error;
+    const targetUserId = match.params.userid; //useEffect 안에서 아이디가 있음.
+    const isSame = curUserId === targetUserId;
+    const ENDPOINT = `/api/profiles/${targetUserId}`;
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    
+    useEffect(() => {
+        fetch(ENDPOINT, {
+            method: 'GET',
+        })
+        .then(res => res.json())
+        .then(resultData => {
+            setData(resultData);
+        })
+        .catch(err => setError(err));
+
+    }, [ENDPOINT, match, curUserId, isAdmin]);
+
+    console.log(data, error);
+
     const thumbnail = data ? (data.userData.thumbnail ? data.userData.thumbnail : undefined) : undefined;
 
-    //console.log(data, error);
-
-    if(targetUserLoading) return <LinearLoading />
+    if(!data && !error) return <LinearLoading />
     if(error)  return <Redirect to = "/notfound" />;
 
     return !error ? (
@@ -303,4 +310,7 @@ const mapStateToProps = (state) => ({
     isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 });
 
-export default withRouter(connect(mapStateToProps)(Profile));
+export default withRouter(connect(mapStateToProps)(React.memo(Profile)));
+
+//error memo
+//https://react.vlpt.us/basic/16-useEffect.html
