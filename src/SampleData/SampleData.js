@@ -1,4 +1,4 @@
-export const sampleVideoData = [
+export const SampleVideoList = [
     {
         channelTitle: "JTBC Entertainment",
         publishedAt: "2016-01-05T14:38:37Z",
@@ -55,4 +55,8 @@ export const sampleVideoData = [
         title: "전인혁 - ㅂㅎㅇㅁㄱ",
         videoId: "2e1TfSjp07s",
     },
+]
+
+export const SampleTagList = [
+    
 ]

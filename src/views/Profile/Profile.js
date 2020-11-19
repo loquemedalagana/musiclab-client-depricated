@@ -14,7 +14,9 @@ import { IconButton, List, ListItem } from '@material-ui/core';
 
 // @material-ui/icons
 import {
-    Camera, Palette, Favorite, Edit, Cloud as SoundCloud,
+    LocalOffer as Tag, MusicVideoRounded, Favorite,
+    DescriptionRounded as Post,
+    Edit, Cloud as SoundCloud,
     Home as Blog, Twitter, Facebook, Instagram, YouTube
 } from '@material-ui/icons';
 
@@ -171,8 +173,8 @@ const Profile = (props) => {
                     color="primary"
                     tabs={[
                         {
-                        tabButton: "Studio",
-                        tabIcon: Camera,
+                        tabButton: "Tags",
+                        tabIcon: Tag,
                         tabContent: (
                             <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
@@ -203,8 +205,8 @@ const Profile = (props) => {
                         )
                         },
                         {
-                        tabButton: "Work",
-                        tabIcon: Palette,
+                        tabButton: "Liked Videos",
+                        tabIcon: MusicVideoRounded,
                         tabContent: (
                             <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
@@ -240,8 +242,8 @@ const Profile = (props) => {
                         )
                         },
                         {
-                        tabButton: "Favorite",
-                        tabIcon: Favorite,
+                        tabButton: "Written Posts",
+                        tabIcon: Post,
                         tabContent: (
                             <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={4}>
