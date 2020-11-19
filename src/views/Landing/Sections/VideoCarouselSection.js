@@ -2,18 +2,15 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from "@material-ui/core/styles";
-import Slider from "react-slick";
 
-import CarouselElement from './CarouselElement';
+import PrintVideoCarousel from './PrintVideoCarousel';
 
 import {
     GridContainer,
     GridItem,
     CircularLoading,
-    Card,
 } from '../../../components/components';
 
-import {settings} from './carouselSetting'
 //import {MusicNoteRounded} from '@material-ui/icons';
 
 import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
@@ -79,10 +76,6 @@ const getData = data => data ? data.items.map(item => {
     })
 }) : [];
 
-//carosel element component
-
-
-
 export const VideoCarouselSection = props => {
     const classes = useStyles();
     const {
@@ -127,15 +120,7 @@ export const VideoCarouselSection = props => {
             <div className={classes.container}>
                 <GridContainer justify='center'>
                     {printTitle(categoryTitle, classes.title)}                    
-                    <GridItem xs={12} sm={12} md={11}>
-                        <Card carousel>
-                            <Slider {...settings}>
-                            {resultData.map((item, key) => 
-                                <CarouselElement key={key} data={item} />
-                            )}
-                            </Slider>
-                        </Card>
-                    </GridItem>
+                    <PrintVideoCarousel resultData={resultData} />
                     {/*채널 상세 페이지*/}
                     <GridItem xs={12} sm={12} md={11} style={{textAlign: 'right'}}>
                         <Link to = {getChannelRoute(categoryTitle)}>
