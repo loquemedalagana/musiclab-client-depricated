@@ -153,9 +153,9 @@ const Profile = (props) => {
                             ) : <h6>  </h6>}
 
                         </div>
-                        
-                        <h5>sns links will be added</h5>
+                        <GridContainer justify="center">
                         {PrintSocialLinks(data.userData.social)}
+                        </GridContainer>
                     </div>
                 </GridItem>
                 </GridContainer>
