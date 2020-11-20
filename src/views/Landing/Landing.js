@@ -48,7 +48,7 @@ export const Landing = (props) => {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
-            {userData && !userLoading ? (
+            {userData && !userLoading && userData.points >= 0 ? (
                 <VideoCarouselSection 
                     categoryTitle='My List'
                     userData={userData}
