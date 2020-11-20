@@ -1,5 +1,5 @@
 export default {
-    imgFluid: { //profile
+    imgFluid: { //profile - avatar
         width: '160px',
         height: "160px",
         objectFit: 'cover',
@@ -8,17 +8,17 @@ export default {
     imgCursor:{
         cursor: 'pointer',
     },
-    imgRounded: {
+    imgRounded: { //profile - navpills
         borderRadius: "6px !important"
     },
-    imgRoundedCircle: { //profile
+    imgRoundedCircle: { //profile - avatar
         borderRadius: "50% !important"
     },
-    imgRaised: { //profile
+    imgRaised: { //profile - avatar
         boxShadow:
             "0 5px 15px -8px rgba(0, 0, 0, 0.24), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
     },
-    imgGallery: {
+    imgGallery: { //profile - navpills
         width: "100%",
         marginBottom: "2.142rem"
     },

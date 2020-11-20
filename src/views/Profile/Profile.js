@@ -175,6 +175,7 @@ const Profile = (props) => {
                         tabIcon: Tag,
                         tabContent: (
                             <UserTags
+                                userId={targetUserId}
                                 classes={classes}
                             />
                         )
@@ -184,6 +185,7 @@ const Profile = (props) => {
                         tabIcon: MusicVideoRounded,
                         tabContent: (
                             <LikedVideos 
+                                userId={targetUserId}
                                 classes={classes}
                             />
                         )
@@ -193,6 +195,7 @@ const Profile = (props) => {
                         tabIcon: Post,
                         tabContent: (
                             <UserPostList 
+                                userId={targetUserId}
                                 classes={classes}
                             />
                         )

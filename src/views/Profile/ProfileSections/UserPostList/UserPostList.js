@@ -9,15 +9,16 @@ import {
     //CircularLoading,
 } from '../../../../components/components';
 
-import studio1 from "../examples/studio-1.jpg";
-import studio3 from "../examples/studio-3.jpg";
-import work1 from "../examples/olu-eletu.jpg";
-import work2 from "../examples/clem-onojeghuo.jpg";
-import work4 from "../examples/mariya-georgieva.jpg";
+import compositionImg from '../../../../assets/images/TagImages/composition.jpg';
+import guitarImg from '../../../../assets/images/TagImages/guitar.jpg';
+import bandImg from '../../../../assets/images/TagImages/jeoninhyukband.jpg';
+import yadaImg from '../../../../assets/images/TagImages/yada.jpg';
+import vocalImg from '../../../../assets/images/TagImages/vocal.jpg';
 
 export const UserPostList = props => {
     const {
         classes,
+        //userId,
     } = props;
 
     const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
@@ -27,29 +28,29 @@ export const UserPostList = props => {
         <GridItem xs={12} sm={12} md={4}>
             <img
             alt="..."
-            src={work4}
+            src={guitarImg}
             className={thumbnailListImageClasses}
             />
             <img
             alt="..."
-            src={studio3}
+            src={vocalImg}
+            className={thumbnailListImageClasses}
+            />
+            <img
+            alt="..."
+            src={compositionImg}
             className={thumbnailListImageClasses}
             />
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
             <img
             alt="..."
-            src={work2}
+            src={bandImg}
             className={thumbnailListImageClasses}
             />
             <img
             alt="..."
-            src={work1}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={studio1}
+            src={yadaImg}
             className={thumbnailListImageClasses}
             />
         </GridItem>
@@ -59,6 +60,7 @@ export const UserPostList = props => {
 
 UserPostList.propTypes = {
     props: PropTypes.object,
+    userId: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({

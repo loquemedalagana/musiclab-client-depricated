@@ -9,50 +9,58 @@ import {
     //CircularLoading,
 } from '../../../../components/components';
 
-import studio1 from "../examples/studio-1.jpg";
-import studio2 from "../examples/studio-2.jpg";
-import studio4 from "../examples/studio-4.jpg";
-import studio5 from "../examples/studio-5.jpg";
+import compositionImg from '../../../../assets/images/TagImages/composition.jpg';
+import guitarImg from '../../../../assets/images/TagImages/guitar.jpg';
+import bandImg from '../../../../assets/images/TagImages/jeoninhyukband.jpg';
+import yadaImg from '../../../../assets/images/TagImages/yada.jpg';
+import vocalImg from '../../../../assets/images/TagImages/vocal.jpg';
 
 export const LikedVideos = props => {
     const {
         classes,
+        //userId,
     } = props;
 
     const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
     return (
         <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={4}>
-                <img
-                alt="..."
-                src={studio1}
-                className={thumbnailListImageClasses}
-                />
-                <img
-                alt="..."
-                src={studio2}
-                className={thumbnailListImageClasses}
-                />
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-                <img
-                alt="..."
-                src={studio5}
-                className={thumbnailListImageClasses}
-                />
-                <img
-                alt="..."
-                src={studio4}
-                className={thumbnailListImageClasses}
-                />
-            </GridItem>
+        <GridItem xs={12} sm={12} md={4}>
+            <img
+            alt="..."
+            src={guitarImg}
+            className={thumbnailListImageClasses}
+            />
+            <img
+            alt="..."
+            src={vocalImg}
+            className={thumbnailListImageClasses}
+            />
+            <img
+            alt="..."
+            src={compositionImg}
+            className={thumbnailListImageClasses}
+            />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={4}>
+            <img
+            alt="..."
+            src={bandImg}
+            className={thumbnailListImageClasses}
+            />
+            <img
+            alt="..."
+            src={yadaImg}
+            className={thumbnailListImageClasses}
+            />
+        </GridItem>
         </GridContainer>
     )
 }
 
 LikedVideos.propTypes = {
     props: PropTypes.object,
+    userId: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({
