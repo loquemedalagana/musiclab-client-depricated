@@ -117,7 +117,13 @@ export const VideoCarouselSection = props => {
 
     console.log(resultData)
 
-    if(!resultData && ENDPOINT && loading) return <CircularLoading />;
+    if(!resultData && ENDPOINT && loading) return (
+        <div className={classes.section}>
+            <div className={classes.container}>
+                <CircularLoading />
+            </div>
+        </div>
+    );
 
     if(!ENDPOINT)  return (
         <div className={classes.section}>
