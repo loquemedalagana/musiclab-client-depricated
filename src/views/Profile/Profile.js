@@ -25,20 +25,13 @@ import {
     LinearLoading,
 } from '../../components/components';
 
+import LikedVideos from './ProfileSections/LikedVideos/LikedVideos';
+import UserPostList from './ProfileSections/UserPostList/UserPostList';
+import UserTags from './ProfileSections/UserTags/UserTags';
+
 import NotFound from '../Error/NotFound';
 
 import defaultImg from '../../assets/images/dolphin_profile.png';
-
-import studio1 from "./ProfileSections/examples/studio-1.jpg";
-import studio2 from "./ProfileSections/examples/studio-2.jpg";
-import studio3 from "./ProfileSections/examples/studio-3.jpg";
-import studio4 from "./ProfileSections/examples/studio-4.jpg";
-import studio5 from "./ProfileSections/examples/studio-5.jpg";
-import work1 from "./ProfileSections/examples/olu-eletu.jpg";
-import work2 from "./ProfileSections/examples/clem-onojeghuo.jpg";
-import work3 from "./ProfileSections/examples/cynthia-del-rio.jpg";
-import work4 from "./ProfileSections/examples/mariya-georgieva.jpg";
-import work5 from "./ProfileSections/examples/clem-onojegaw.jpg";
 
 import styles from "../../assets/jss/material-kit-react/views/ProfileStyle";
 import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/background';
@@ -96,8 +89,6 @@ const Profile = (props) => {
         classes.imgRoundedCircle,
         classes.imgFluid
     );
-
-    const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
     const { 
         match,
@@ -183,106 +174,27 @@ const Profile = (props) => {
                         tabButton: "Tags",
                         tabIcon: Tag,
                         tabContent: (
-                            <GridContainer justify="center">
-                            <GridItem xs={12} sm={12} md={4}>
-                                <img
-                                alt="..."
-                                src={studio1}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={studio2}
-                                className={navImageClasses}
-                                />
-                            </GridItem>
-                            <GridItem xs={12} sm={12} md={4}>
-                                <img
-                                alt="..."
-                                src={studio5}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={studio4}
-                                className={navImageClasses}
-                                />
-                            </GridItem>
-                            </GridContainer>
+                            <UserTags
+                                classes={classes}
+                            />
                         )
                         },
                         {
                         tabButton: "Liked Videos",
                         tabIcon: MusicVideoRounded,
                         tabContent: (
-                            <GridContainer justify="center">
-                            <GridItem xs={12} sm={12} md={4}>
-                                <img
-                                alt="..."
-                                src={work1}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={work2}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={work3}
-                                className={navImageClasses}
-                                />
-                            </GridItem>
-                            <GridItem xs={12} sm={12} md={4}>
-                                <img
-                                alt="..."
-                                src={work4}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={work5}
-                                className={navImageClasses}
-                                />
-                            </GridItem>
-                            </GridContainer>
+                            <LikedVideos 
+                                classes={classes}
+                            />
                         )
                         },
                         {
                         tabButton: "Written Posts",
                         tabIcon: Post,
                         tabContent: (
-                            <GridContainer justify="center">
-                            <GridItem xs={12} sm={12} md={4}>
-                                <img
-                                alt="..."
-                                src={work4}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={studio3}
-                                className={navImageClasses}
-                                />
-                            </GridItem>
-                            <GridItem xs={12} sm={12} md={4}>
-                                <img
-                                alt="..."
-                                src={work2}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={work1}
-                                className={navImageClasses}
-                                />
-                                <img
-                                alt="..."
-                                src={studio1}
-                                className={navImageClasses}
-                                />
-                            </GridItem>
-                            </GridContainer>
+                            <UserPostList 
+                                classes={classes}
+                            />
                         )
                         }
                     ]}
