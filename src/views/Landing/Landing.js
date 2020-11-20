@@ -25,7 +25,10 @@ const useStyles = makeStyles(styles);
 
 export const Landing = (props) => {
     const classes = useStyles();
-    //const { ...rest } = props;
+    const {
+        userData,
+        userLoading,
+    } = props;
 
     return (
         <>
@@ -45,6 +48,13 @@ export const Landing = (props) => {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
+            {userData && !userLoading ? (
+                <VideoCarouselSection 
+                    categoryTitle='My List'
+                    userData={userData}
+                />
+            ) : null}
+
             <VideoCarouselSection 
                 categoryTitle='Jeon Inhyuk Band Official Channel'
             />
@@ -66,10 +76,13 @@ export const Landing = (props) => {
 
 Landing.propTypes = {
     props: PropTypes.object,
+    userData: PropTypes.object,
+    userLoading: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
-    
+    userData: state.auth.userData,
+    userLoading: state.auth.loading,
 })
 
 

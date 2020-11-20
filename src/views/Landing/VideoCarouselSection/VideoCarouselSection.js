@@ -11,7 +11,9 @@ import {
     CircularLoading,
 } from '../../../components/components';
 
-//import {MusicNoteRounded} from '@material-ui/icons';
+import {
+    SampleVideoList
+} from '../../../assets/SampleData/SampleData';
 
 import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
 import { 
@@ -46,6 +48,8 @@ const getPlayListEndpoint = categoryTitle => {
             return getHotVideoListURL([], 10);
         case 'Latest Videos of Inhyuk':
             return getLatestVideoListURL([], 10);
+        case 'My List':
+            return 'Not Available'; //will be changed based on redux 
         default: 
             return null;
     }
@@ -80,11 +84,18 @@ export const VideoCarouselSection = props => {
     const classes = useStyles();
     const {
         categoryTitle, 
+        userData,
     } = props;
 
+    const isMyList = categoryTitle === 'My List';
+    const channelRoute = getChannelRoute(categoryTitle);
     const ENDPOINT = getPlayListEndpoint(categoryTitle);
+
+    //if my list exists, 
+
     const [resultData, setResultData] = useState([]);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch(ENDPOINT, {
@@ -92,19 +103,23 @@ export const VideoCarouselSection = props => {
         })
         .then(res => res.json())
         .then(data => {
-            const result = getData(data);
+            const result = getData(data);            
+            setLoading(false);
             setResultData(result);
         })
-        .catch(err => setError(err));
-    }, [ENDPOINT]);
+        .catch(err => {
+            setLoading(false);
+            setError(err);
+        });
+    }, [ENDPOINT, userData]);
 
     //get result data
 
     console.log(resultData)
 
-    if(!resultData && ENDPOINT) return <CircularLoading />
+    if(!resultData && ENDPOINT && loading) return <CircularLoading />;
 
-    if(!ENDPOINT || !resultData || error)  return (
+    if(!ENDPOINT)  return (
         <div className={classes.section}>
             <div className={classes.container}>
                 <GridContainer justify='center'>
@@ -120,15 +135,34 @@ export const VideoCarouselSection = props => {
             <div className={classes.container}>
                 <GridContainer justify='center'>
                     {printTitle(categoryTitle, classes.title)}                    
-                    <PrintVideoCarousel resultData={resultData} />
+                    <PrintVideoCarousel 
+                        resultData={(resultData && !error) ? resultData
+                            : SampleVideoList
+                        }
+                    />
                     {/*채널 상세 페이지*/}
-                    <GridItem xs={12} sm={12} md={11} style={{textAlign: 'right'}}>
-                        <Link to = {getChannelRoute(categoryTitle)}>
+                    {(channelRoute && !isMyList) && (
+                        <GridItem 
+                            xs={12} sm={12} md={11} 
+                            style={{textAlign: 'right'}}
+                        >
+                            <Link to = {channelRoute}>
+                                <h5 className={classes.link}>
+                                view more about {categoryTitle}...
+                                </h5>
+                            </Link>
+                        </GridItem>
+                    )}
+                    {isMyList && (
+                        <GridItem 
+                            xs={12} sm={12} md={11} 
+                            style={{textAlign: 'right'}}
+                        >
                             <h5 className={classes.link}>
-                            view more about {categoryTitle}...
+                                go to your own play list!
                             </h5>
-                        </Link>
-                    </GridItem>
+                        </GridItem>
+                    )}
                 </GridContainer>
             </div>
         </div>
@@ -137,6 +171,7 @@ export const VideoCarouselSection = props => {
 
 VideoCarouselSection.propTypes = {
     props: PropTypes.object,
+    userData: PropTypes.object,
 }
 
 export default React.memo(VideoCarouselSection)
