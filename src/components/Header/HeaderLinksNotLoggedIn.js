@@ -35,6 +35,12 @@ const HeaderLinksNotLoggedIn = (props) => {
                 buttonIcon={VideoLibrarySharp}
                 dropdownList={[
                     <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+                    Music SSeolprise
+                    </Button>,
+                    <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+                    Jeon Inhyuk Band official
+                    </Button>,
+                    <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
                     Search videos of Yada
                     </Button>,
                 ]}

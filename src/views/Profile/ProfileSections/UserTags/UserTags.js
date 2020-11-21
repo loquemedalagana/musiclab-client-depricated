@@ -19,10 +19,21 @@ import guitarImg from '../../../../assets/images/TagImages/guitar.jpg';
 import bandImg from '../../../../assets/images/TagImages/jeoninhyukband.jpg';
 import yadaImg from '../../../../assets/images/TagImages/yada.jpg';
 import vocalImg from '../../../../assets/images/TagImages/vocal.jpg';
+import drumImg from '../../../../assets/images/TagImages/drum.jpg';
 
-const getThumbnailImage = tag => {
-    switch(tag){
+const tagImgHashmap = {
+    vocal: vocalImg,
+    drum: drumImg,
+    guitar: guitarImg,
+    jeoninhyukband: bandImg,
+    yada: yadaImg,
+    composition: compositionImg
+}
+
+const isExistThumbnailImage = tagName => {
+    switch(tagName){
         case 'vocal':
+        case 'drum':
         case 'guitar':
         case 'composition':
         case 'yada':
@@ -33,48 +44,74 @@ const getThumbnailImage = tag => {
     }
 }
 
+const PrintTag = props => {
+    const {
+        tagInfo,
+        thumbnailListImageClasses,
+        index,
+    } = props;
+
+    const {tagName} = tagInfo;
+
+    if(isExistThumbnailImage(tagName)) {
+        return (
+            <img
+            alt={tagName}
+            src={tagImgHashmap[tagName]}
+            className={thumbnailListImageClasses}
+            />
+        )
+    } else {
+        const tagColors = randomColor({luminosity: 'dark',count: 1});
+        console.log(tagColors);
+        return (
+            <div 
+            className={thumbnailListImageClasses}
+            style={{
+                background: tagColors[0],
+                minWidth: '100%',
+                minHeight: '30%',
+                overflow: 'hidden'
+            }}
+            >
+
+            </div>
+        )
+    }
+}
+
 export const UserTags = props => {
     const {
         classes,
     //    userId,
     } = props;
 
+    SampleTagList.forEach(e => console.log(e));
+
     const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
     return (
         <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={4}>
-            <img
-            alt="..."
-            src={guitarImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={vocalImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={compositionImg}
-            className={thumbnailListImageClasses}
-            />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-            <div className={thumbnailListImageClasses}>
-                
-            </div>
-            <img
-            alt="..."
-            src={bandImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={yadaImg}
-            className={thumbnailListImageClasses}
-            />
-        </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+                {SampleTagList.slice(0, Math.ceil(SampleTagList.length/2)).map((tagInfo, idx) => (
+                <PrintTag
+                    key={idx}
+                    thumbnailListImageClasses={thumbnailListImageClasses}
+                    tagInfo={tagInfo}
+                    index={idx}
+                />
+            ))}
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+                {SampleTagList.slice(Math.ceil(SampleTagList.length/2), SampleTagList.length).map((tagInfo, idx) => (
+                <PrintTag
+                    key={idx}
+                    thumbnailListImageClasses={thumbnailListImageClasses}
+                    tagInfo={tagInfo}
+                    index={idx}
+                />
+            ))}
+            </GridItem>
         </GridContainer>
     )
 }
