@@ -24,6 +24,22 @@ const HeaderLinksNotLoggedIn = (props) => {
     const classes = useStyles();
     return (
         <List className={classes.list}>
+            <ListItem className={classes.listItem}>
+                <CustomDropdown
+                noLiPadding
+                buttonText="VIDEOS"
+                buttonProps={{
+                    className: classes.navLink,
+                    color: "transparent"
+                }}
+                buttonIcon={VideoLibrarySharp}
+                dropdownList={[
+                    <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+                    Search videos of Yada
+                    </Button>,
+                ]}
+            />
+        </ListItem>
         <ListItem className={classes.listItem}>
             <Button 
                 color='transparent'

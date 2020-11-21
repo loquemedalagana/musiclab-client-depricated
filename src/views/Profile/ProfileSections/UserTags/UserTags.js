@@ -61,6 +61,9 @@ export const UserTags = props => {
             />
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
+            <div className={thumbnailListImageClasses}>
+                
+            </div>
             <img
             alt="..."
             src={bandImg}

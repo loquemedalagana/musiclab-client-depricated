@@ -55,6 +55,13 @@ export const SampleVideoList = [
         title: "전인혁 - ㅂㅎㅇㅁㄱ",
         videoId: "2e1TfSjp07s",
     },
+    {
+        channelTitle: "버블티",
+        publishedAt: "2020-06-09T17:00:51Z",
+        thumbnail: "https://i.ytimg.com/vi/CA0GICPBmf4/hqdefault.jpg",
+        title: "[Live] 야다(Yada) 슬픈 다짐 [뮤직뱅크 2003년 4월 2주]",
+        videoId: "CA0GICPBmf4"
+    }
 ]
 
 

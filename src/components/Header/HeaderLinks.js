@@ -15,6 +15,7 @@ import {
 
 // @material-ui/icons
 import { 
+  VideoLibrarySharp,
   Apps, 
   SupervisorAccount, 
   ExitToApp, 
@@ -49,6 +50,25 @@ const HeaderLinks = (props) => {
 
   return (
     <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          buttonText="VIDEOS"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={VideoLibrarySharp}
+          dropdownList={[
+            <Button color = "transparent" onClick={()=>console.log('my list')} className={classes.dropdownLink}>
+              My List
+            </Button>,
+            <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+              Search videos of Yada
+            </Button>,
+          ]}
+        />
+      </ListItem>
       {isMember && (
         <ListItem className={classes.listItem}>
         <CustomDropdown
