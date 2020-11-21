@@ -42,6 +42,13 @@ export const SampleVideoList = [
         videoId: "SaJRpu9ASxs"
     },
     {
+        channelTitle: "이재림의 카잼TV_Studio CAR JAM",
+        publishedAt: "2020-11-21T04:10:55Z",
+        thumbnail: "https://i.ytimg.com/vi/UMsZti6fpMA/hqdefault.jpg",
+        title: "볼보 S60 B5 인스크립션 2021 B&amp;W오디오 테스트 with 전인혁(야다 보컬)",
+        videoId: "UMsZti6fpMA"
+    },
+    {
         channelTitle: "YADAInhyuk",
         publishedAt: "2011-01-06T21:42:12Z",
         thumbnail: "https://i.ytimg.com/vi/uxbxUP2s26g/hqdefault.jpg",

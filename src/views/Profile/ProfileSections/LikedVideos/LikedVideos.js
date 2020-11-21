@@ -9,11 +9,30 @@ import {
     //CircularLoading,
 } from '../../../../components/components';
 
-import compositionImg from '../../../../assets/images/TagImages/composition.jpg';
-import guitarImg from '../../../../assets/images/TagImages/guitar.jpg';
-import bandImg from '../../../../assets/images/TagImages/jeoninhyukband.jpg';
-import yadaImg from '../../../../assets/images/TagImages/yada.jpg';
-import vocalImg from '../../../../assets/images/TagImages/vocal.jpg';
+import { //test code
+    SampleTagList,
+    SampleVideoList,
+} from '../../../../assets/SampleData/SampleData';
+
+const PrintVideoThumbnail = props => {
+    const {
+        videoData,
+        thumbnailListImageClasses,
+    } = props; //add hover
+
+    const {
+        thumbnail,
+        title,
+    } = videoData;
+
+    return (
+        <img
+        alt={title}
+        src={thumbnail}
+        className={thumbnailListImageClasses}
+        />
+    )
+}
 
 export const LikedVideos = props => {
     const {
@@ -23,36 +42,27 @@ export const LikedVideos = props => {
 
     const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
+    const midIdx = SampleVideoList.length/2 ? Math.floor(SampleVideoList.length/2) : SampleVideoList.length/2;
+
     return (
         <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={4}>
-            <img
-            alt="..."
-            src={guitarImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={vocalImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={compositionImg}
-            className={thumbnailListImageClasses}
-            />
+            {SampleVideoList.slice(0, midIdx).map((videoData, idx) => (
+                <PrintVideoThumbnail
+                    key={idx}
+                    thumbnailListImageClasses={thumbnailListImageClasses}
+                    videoData={videoData}                    
+                />
+            ))}
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-            <img
-            alt="..."
-            src={bandImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={yadaImg}
-            className={thumbnailListImageClasses}
-            />
+            {SampleVideoList.slice(midIdx, SampleTagList.length).map((videoData, idx) => (
+                <PrintVideoThumbnail
+                    key={idx}
+                    thumbnailListImageClasses={thumbnailListImageClasses}
+                    videoData={videoData}                    
+                />
+            ))}
         </GridItem>
         </GridContainer>
     )
