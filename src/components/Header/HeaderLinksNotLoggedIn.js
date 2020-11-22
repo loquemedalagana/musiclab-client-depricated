@@ -11,7 +11,12 @@ import {
     List, ListItem, Tooltip
 } from "@material-ui/core";
 
+import { 
+    VideoLibrarySharp,
+} from "@material-ui/icons";
+
 // core components
+import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import Button from "../CustomButtons/Button.js";
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
 const useStyles = makeStyles(styles);

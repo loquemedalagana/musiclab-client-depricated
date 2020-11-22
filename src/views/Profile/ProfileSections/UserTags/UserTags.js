@@ -21,6 +21,8 @@ import yadaImg from '../../../../assets/images/TagImages/yada.jpg';
 import vocalImg from '../../../../assets/images/TagImages/vocal.jpg';
 import drumImg from '../../../../assets/images/TagImages/drum.jpg';
 
+//https://gist.github.com/muZk/cdc402c973c2c1e3918f81c392be5c66
+
 const tagImgHashmap = {
     vocal: vocalImg,
     drum: drumImg,
