@@ -10,6 +10,9 @@ export default {
     },
     imgRounded: { //profile - navpills
         borderRadius: "6px !important",
+        '&:hover': {
+            opacity: '0.5',
+        },
     },
     imgRoundedCircle: { //profile - avatar
         borderRadius: "50% !important"

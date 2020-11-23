@@ -1,6 +1,7 @@
 import { container, title } from '../../material-kit-react';
 
 import imagesStyle from "../components/ImgStyle";
+import scrollbarStyle from '../components/scrollbarStyle';
 
 const profilePageStyle = {
     container,
@@ -23,6 +24,7 @@ const profilePageStyle = {
         marginTop: "-80px"
     },
     ...imagesStyle,
+    ...scrollbarStyle,
     main: {
         background: "#FFFFFF",
         position: "relative",
