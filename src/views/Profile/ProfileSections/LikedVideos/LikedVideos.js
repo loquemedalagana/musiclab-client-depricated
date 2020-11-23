@@ -43,9 +43,9 @@ export const LikedVideos = props => {
     const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
     const midIdx = SampleVideoList.length/2 ? Math.floor(SampleVideoList.length/2) : SampleVideoList.length/2;
-
+    console.log(classes.scrollbarLadyLips);
     return (
-        <GridContainer justify="center" >
+        <GridContainer justify="center" className={classes.scrollbarLadyLips}>
         <GridItem xs={12} sm={12} md={4}>
             {SampleVideoList.slice(0, midIdx).map((videoData, idx) => (
                 <PrintVideoThumbnail
