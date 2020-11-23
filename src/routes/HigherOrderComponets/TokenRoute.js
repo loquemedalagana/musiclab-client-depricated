@@ -21,7 +21,7 @@ const TokenRoute = ({
     });  
     const {token, expiredtime} = query;
 
-    const ENDPOINT = `/api/user/checktoken/?token=${token}&expiredtime=${expiredtime}`;
+    const ENDPOINT = `/api/users/checktoken/?token=${token}&expiredtime=${expiredtime}`;
     const isExpired = Date.now() > expiredtime;
     const {data, error} = useSWR(isExpired ? null : ENDPOINT, isExpired ? null : fetcher);
 

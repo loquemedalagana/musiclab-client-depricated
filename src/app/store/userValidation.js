@@ -130,8 +130,6 @@ export const requestLevelup = (dataToSubmit, urlQuery ) => async dispatch => {
         dispatch(changedUserInfoSucess());
         dispatch(setAlertMsg(response.data.message, 'success'));
 
-        
-
         dispatch(setInitState());
     } catch (err) {
         dispatch(changedUserInfoFail());

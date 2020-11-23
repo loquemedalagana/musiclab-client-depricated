@@ -9,7 +9,7 @@ export default {
         cursor: 'pointer',
     },
     imgRounded: { //profile - navpills
-        borderRadius: "6px !important"
+        borderRadius: "6px !important",
     },
     imgRoundedCircle: { //profile - avatar
         borderRadius: "50% !important"
