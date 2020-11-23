@@ -46,7 +46,6 @@ export const LikedVideos = props => {
     const midIdx = SampleVideoList.length/2 ? Math.floor(SampleVideoList.length/2) : SampleVideoList.length/2;
 
     return (
-        <div className="scrollbar-lady-lips">
         <GridContainer justify="center" >
         <GridItem xs={12} sm={12} md={4}>
             {SampleVideoList.slice(0, midIdx).map((videoData, idx) => (
@@ -67,7 +66,6 @@ export const LikedVideos = props => {
             ))}
         </GridItem>
         </GridContainer>
-        </div>
     )
 }
 

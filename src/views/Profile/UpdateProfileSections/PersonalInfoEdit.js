@@ -41,33 +41,6 @@ const getIcon = (key, iconClass) => {
     else if (key === 'description') return <MusicNote className={iconClass}/>
 }
 
-const ImageInput = (userData, onInputHandler, imageClasses) => {
-    //original image will be added
-    const {displayName, image} = userData;
-    return (
-        <GridItem 
-            xs={12} sm={12} md={6} 
-            style={{
-                textAlign: 'center',
-            }}
-        >
-            <label htmlFor="profile-picture">
-            <img src={image ? image : defaultImg} className={imageClasses} alt={displayName} />
-            </label>
-            
-            <input 
-                type="file" 
-                id="profile-picture"
-                accept="image/jpeg, image/png"
-                onChange={onInputHandler}
-                style={{
-                    display: 'none'
-                }}
-            />
-        </GridItem>
-    )
-}
-
 const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
     const data = Object.keys(inputs).map(key => {
         if(passReg.test(key) || key !== 'displayName') return null;
@@ -187,7 +160,7 @@ export const PersonalInfoEdit = props => {
         classes.imgCursor,
     );
 
-    //const [profileImg, setProfileImg] = useState(defaultImg);
+    const [profileImg, setProfileImg] = useState(userInfo.image ? userInfo.image : defaultImg);
 
     const [inputs, setInputs] = useState({
         displayName: '',
@@ -211,6 +184,41 @@ export const PersonalInfoEdit = props => {
             ...inputs,
             [name]: (name === 'description' && value.length > 200) ? value.substr(0, 200) : value,
         })
+    }
+
+    const onImgInputHandler = async (file) => {
+        const imgData = new FormData();
+        imgData.append("image", file);
+
+        //console.log(imgData, file);
+        const userId = userInfo._id;
+
+        const ENDPOINT = process.env.REACT_APP_SERVERURL + `/api/user/update/profile/image/?userid=${userId}`;
+        //console.log(ENDPOINT);
+
+        try {
+            const request = await fetch(ENDPOINT, {
+                method: 'PATCH',
+                body: imgData,
+            });
+
+            if(request.ok){
+                const response = await request.json();
+                //console.log(response);
+                if(response.success){
+                    setAlertMsg(response.message, 'success');
+                    setProfileImg(response.newImg);
+                }
+                else {
+                    setAlertMsg("서버 에러로 프사 변경에 실패했습니다.", 'error');
+                }
+            }
+
+        }
+        catch (err) {
+            console.log(err);
+            setAlertMsg("서버 에러로 프사 변경에 실패했습니다.", 'error');
+        }
     }
     
     const onSubmitHandler = event => {
@@ -266,7 +274,27 @@ export const PersonalInfoEdit = props => {
                     paddingBottom: "20px"
                 }}
             >
-                {ImageInput(userInfo, null, imageClasses)}
+                <GridItem 
+                    xs={12} sm={12} md={6} 
+                    style={{
+                        textAlign: 'center',
+                    }}
+                >
+                    <label htmlFor="profile-picture">
+                    <img src={profileImg} className={imageClasses} alt={displayName} />
+                    </label>
+                    
+                    <input 
+                        type="file" 
+                        name="profileImg"
+                        id="profile-picture"
+                        accept="image/jpeg, image/png"
+                        onChange={e => onImgInputHandler(e.target.files ? e.target.files[0] : profileImg)}
+                        style={{
+                            display: 'none'
+                        }}
+                    />
+                </GridItem>
                 {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
             </GridContainer>
 
