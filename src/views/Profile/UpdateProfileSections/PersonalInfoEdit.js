@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 import classNames from "classnames";
 import {setAlertMsg} from '../../../app/store/alert';
+import {updateUserProfile} from '../../../app/store/userValidation';
 
 import {
     VpnKey as VpnKeyIcon, MusicNote, People
 } from '@material-ui/icons';
-
 
 import {
     InputAdornment, 
@@ -29,7 +29,7 @@ import {
 } from '../../../utils/checkStringPatterns';
 
 import defaultImg from '../../../assets/images/dolphin_profile.png';
-import { camelToSpace} from '../../../utils/functions';
+import { camelToSpace } from '../../../utils/functions';
 import { descriptionHelperText } from '../../../utils/variablesAndRegs';
 
 const passReg = /(Password)/i;
@@ -147,6 +147,7 @@ export const PersonalInfoEdit = props => {
     const {
         classes,
         setAlertMsg,
+        updateUserProfile,
         userInfo,
         loading,
         isChanged
@@ -258,7 +259,7 @@ export const PersonalInfoEdit = props => {
         }
 
         if(ok) {
-
+            updateUserProfile(inputs);
         }
     }
 
@@ -323,6 +324,7 @@ export const PersonalInfoEdit = props => {
 PersonalInfoEdit.propTypes = {
     classes: PropTypes.object,
     setAlertMsg: PropTypes.func,
+    updateUserProfile: PropTypes.func,
     userInfo: PropTypes.object,
     loading: PropTypes.bool,
     isChanged: PropTypes.bool,
@@ -334,6 +336,6 @@ const mapStateToProps = (state) => ({
     isChanged: state.userValidation.changed,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(PersonalInfoEdit);
+export default connect(mapStateToProps, {setAlertMsg, updateUserProfile})(PersonalInfoEdit);
 
 //https://github.com/loquemedalagana/dreaming-rocker-client-old-ver/blob/master/src/components/views/Users/UserInfo/ProfileImg.js

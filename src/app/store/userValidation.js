@@ -139,3 +139,28 @@ export const requestLevelup = (dataToSubmit, urlQuery ) => async dispatch => {
 }
 
 //update info
+export const updateUserProfile = dataToSubmit => async dispatch => { //patch
+    const ENDPOINT = `/api/user/update/profile`;
+    try {
+        const response = await api.patch(ENDPOINT, dataToSubmit);
+        dispatch(changedUserInfoSucess());
+        dispatch(setAlertMsg(response.data.message, 'success'));
+    } catch (err) {
+        dispatch(changedUserInfoFail());
+        dispatch(setAlertMsg(err.response.data.message, 'error'));
+        dispatch(setInitState());
+    }
+}
+
+export const updateUserSocial = socialData => async dispatch => { //patch
+    const ENDPOINT = `/api/user/update/social`;
+    try {
+        const response = await api.patch(ENDPOINT, socialData);
+        dispatch(changedUserInfoSucess());
+        dispatch(setAlertMsg(response.data.message, 'success'));
+    } catch (err) {
+        dispatch(changedUserInfoFail());
+        dispatch(setAlertMsg(err.response.data.message, 'error'));
+        dispatch(setInitState());
+    }
+}

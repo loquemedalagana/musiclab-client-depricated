@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
+import {updateUserSocial} from '../../../app/store/userValidation';
 import {setAlertMsg} from '../../../app/store/alert';
 
 import {
@@ -74,6 +74,7 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
 
 export const SnsInfoEdit = props => {
     const {
+        updateUserSocial,
         classes,
         userInfo,
         loading,
@@ -118,6 +119,7 @@ export const SnsInfoEdit = props => {
 
         if(ok()){
             console.log('finished');
+            updateUserSocial(inputs);
         } else {
             console.log(errorMessages);
         }
@@ -153,6 +155,7 @@ export const SnsInfoEdit = props => {
 
 SnsInfoEdit.propTypes = {
     setAlertMsg: PropTypes.func,
+    updateUserSocial: PropTypes.func,
     classes: PropTypes.object,
     userInfo: PropTypes.object,
     loading: PropTypes.bool,
@@ -165,4 +168,4 @@ const mapStateToProps = (state) => ({
     isChanged: state.userValidation.changed,
 })
 
-export default connect(mapStateToProps, {setAlertMsg})(SnsInfoEdit)
+export default connect(mapStateToProps, {setAlertMsg, updateUserSocial})(SnsInfoEdit)
