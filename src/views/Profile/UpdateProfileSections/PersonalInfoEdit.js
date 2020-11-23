@@ -182,6 +182,7 @@ export const PersonalInfoEdit = props => {
     const imageClasses = classNames(
         classes.imgRaised,
         classes.imgRoundedCircle,
+        classes.imgRoundedCircleHover,
         classes.imgFluid,
         classes.imgCursor,
     );
