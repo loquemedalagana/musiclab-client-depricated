@@ -168,7 +168,7 @@ export const InputEmailForSocialUsers = (props) => {
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                         <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
-                        Get started
+                        Submit
                         </Button>
                     </CardFooter>
                     </form>

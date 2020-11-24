@@ -129,7 +129,6 @@ export const requestLevelup = (dataToSubmit, urlQuery ) => async dispatch => {
         //state change
         dispatch(changedUserInfoSucess());
         dispatch(setAlertMsg(response.data.message, 'success'));
-
         dispatch(setInitState());
     } catch (err) {
         dispatch(changedUserInfoFail());
@@ -140,11 +139,12 @@ export const requestLevelup = (dataToSubmit, urlQuery ) => async dispatch => {
 
 //update info
 export const updateUserProfile = dataToSubmit => async dispatch => { //patch
-    const ENDPOINT = `/api/user/update/profile`;
+    const ENDPOINT = `/users/update/profile`;
     try {
         const response = await api.patch(ENDPOINT, dataToSubmit);
         dispatch(changedUserInfoSucess());
         dispatch(setAlertMsg(response.data.message, 'success'));
+        dispatch(setInitState());
     } catch (err) {
         dispatch(changedUserInfoFail());
         dispatch(setAlertMsg(err.response.data.message, 'error'));
@@ -153,13 +153,15 @@ export const updateUserProfile = dataToSubmit => async dispatch => { //patch
 }
 
 export const updateUserSocial = socialData => async dispatch => { //patch
-    const ENDPOINT = `/api/user/update/social`;
+    const ENDPOINT = `/users/update/social`;
     try {
         const response = await api.patch(ENDPOINT, socialData);
         dispatch(changedUserInfoSucess());
         dispatch(setAlertMsg(response.data.message, 'success'));
+        dispatch(setInitState());
     } catch (err) {
         dispatch(changedUserInfoFail());
+        console.log(err);
         dispatch(setAlertMsg(err.response.data.message, 'error'));
         dispatch(setInitState());
     }
