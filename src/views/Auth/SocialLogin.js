@@ -1,6 +1,10 @@
 import React from 'react';
 
 import {
+    SERVERURL,
+} from '../../app/prod';
+
+import {
     IconButton, 
 } from "@material-ui/core";
 
@@ -12,7 +16,7 @@ import {
     CardHeader,
 } from '../../components/components';
 
-const SocialLoginURL = process.env.REACT_APP_SERVERURL + '/api/users';
+const SocialLoginURL = SERVERURL + '/api/users';
 const KakaoLoginURL = SocialLoginURL + '/kakao';
 const GoogleLoginURL = SocialLoginURL + '/google';
 const FacebookLoginURL = SocialLoginURL + '/facebook';

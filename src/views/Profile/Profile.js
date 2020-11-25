@@ -6,7 +6,7 @@ import {withRouter, Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { makeStyles } from "@material-ui/core/styles";
-import { IconButton, List, ListItem } from '@material-ui/core';
+import { IconButton,  Link } from '@material-ui/core';
 
 import {
     LocalOffer as Tag, MusicVideoRounded, Favorite,
@@ -43,7 +43,10 @@ const useStyles = makeStyles(styles);
 //test user id 5f3d26926b0ee109c1220711  5f4f674082d649d4258f2fa7   5f49fdc87a0c7a58a4f88367
 
 //print social props
-const PrintSocialLinks = social => {
+const PrintSocialLinks = props => {
+    const {
+        social,
+    } = props;
     if(!social) return null;
 
     const getIcon = key => {
@@ -65,21 +68,20 @@ const PrintSocialLinks = social => {
 
     //color primary, href -> social명
     const data = Object.keys(social).map(key => {
-        return (<ListItem 
+        const link = social[key].length > 0 ? social[key] : null;
+        return (<Link 
             key={key} 
             component='a' 
-            href={social[key]}
+            href={link}
             target="_blank"
         >
-            {getIcon(key)}
-        </ListItem>)
+            <IconButton>
+                {getIcon(key)}
+            </IconButton>
+        </Link>)
     });
 
-    //console.log(data);
-
-    return <List>
-        {data}
-    </List>
+    return data;
 }
 
 const Profile = (props) => {
@@ -153,8 +155,8 @@ const Profile = (props) => {
                             ) : <h6>  </h6>}
 
                         </div>
-                        <GridContainer justify="center">
-                        {PrintSocialLinks(data.userData.social)}
+                        <GridContainer justify="center" direction='row'>
+                            <PrintSocialLinks social={data.userData.social} />
                         </GridContainer>
                     </div>
                 </GridItem>

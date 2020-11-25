@@ -44,17 +44,6 @@ const profilePageStyle = {
         minHeight: "32px",
         textDecoration: "none"
     },
-    socials: {
-        marginTop: "0",
-        width: "100%",
-        transform: "none",
-        left: "0",
-        top: "0",
-        height: "100%",
-        lineHeight: "41px",
-        fontSize: "20px",
-        color: "#999"
-    },
     navWrapper: {
         margin: "20px auto 50px auto",
         textAlign: "center"
