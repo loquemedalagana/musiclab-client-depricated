@@ -12,6 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Favorite from "@material-ui/icons/Favorite";
 import About from '../../views/Modals/About';
 import NotAvailable from '../../views/Modals/NotAvailable';
+import Help from '../../views/Modals/Help';
 import styles from "../../assets/jss/material-kit-react/components/footerStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -21,6 +22,7 @@ export default function Footer(props) {
   const { whiteFont } = props;
 
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [helpOpen, setHelpOpen] = useState(false);
   const [notAvailableOpen, setNotAvailableOpen] = useState(false);
 
   const footerClasses = classNames({
@@ -40,6 +42,10 @@ export default function Footer(props) {
     <NotAvailable 
       open={notAvailableOpen}
       onClose={() => setNotAvailableOpen(false)}
+    />
+    <Help 
+      open={helpOpen}
+      onClose={() => setHelpOpen(false)}
     />
     <footer className={footerClasses}>
       <div className={classes.container}>
@@ -67,7 +73,7 @@ export default function Footer(props) {
             </ListItem>
             <ListItem button 
               className={classes.inlineBlock}
-              onClick={() => setNotAvailableOpen(true)}
+              onClick={() => setHelpOpen(true)}
             >
               <a
                 className={classes.block}
