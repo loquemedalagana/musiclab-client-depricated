@@ -133,8 +133,10 @@ export const Help = props => {
                     className={classes.modalBody}
             >
                 <p>
-                    오류 보고 신고
+                    뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로 연락주세요!
                 </p>
+                <p>담당자가 확인 후 바로 반영해드리고 답변드립니다.</p>
+                <br />
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={6}>
                         <CustomInput
