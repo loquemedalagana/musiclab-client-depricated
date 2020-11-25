@@ -164,12 +164,14 @@ export const PersonalInfoEdit = props => {
     const [profileImg, setProfileImg] = useState(userInfo.image ? userInfo.image : defaultImg);
 
     const [inputs, setInputs] = useState({
-        displayName: '',
-        description: '',
+        displayName: userInfo ? userInfo.displayName : '',
+        description: userInfo ? userInfo.description : '',
         password: '',
         newPassword: '',
         confirmNewPassword: '',
     });
+
+    //console.log(inputs);
 
     const {
         displayName,

@@ -82,12 +82,12 @@ export const SnsInfoEdit = props => {
     } = props;
 
     const [inputs, setInputs] = useState({
-        blog: '',
-        twitter: '',
-        facebook: '',
-        instagram: '',
-        youtube: '',
-        soundcloud: '',
+        blog: userInfo ? (userInfo.social ? (userInfo.social.blog ? userInfo.social.blog : '') : '') : '',
+        twitter: userInfo ? (userInfo.social ? (userInfo.social.twitter ? userInfo.social.twitter : '') : '') : '',
+        facebook: userInfo ? (userInfo.social ? (userInfo.social.facebook ? userInfo.social.facebook : '') : '') : '',
+        instagram: userInfo ? (userInfo.social ? (userInfo.social.instagram ? userInfo.social.instagram : '') : '') : '',
+        youtube: userInfo ? (userInfo.social ? (userInfo.social.youtube ? userInfo.social.youtube : '') : '') : '',
+        soundcloud: userInfo ? (userInfo.social ? (userInfo.social.soundcloud ? userInfo.social.soundcloud : '') : '') : '',
     });
 
     const onInputHandler = event => {
@@ -109,10 +109,6 @@ export const SnsInfoEdit = props => {
                     errorMessages.push(`올바르지 않은 ${key}주소 형식입니다.`);
                     return false;
                 }
-                else if (key === 'password' && !inputs[key]) {
-                    errorMessages.push('비밀번호를 입력해주세요.');
-                    return false;
-                }
             }
             return true;
         }
@@ -122,6 +118,7 @@ export const SnsInfoEdit = props => {
             updateUserSocial(inputs);
         } else {
             console.log(errorMessages);
+            errorMessages.forEach(msg => setAlertMsg(msg, 'error'));
         }
     }
 
