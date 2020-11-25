@@ -68,6 +68,20 @@ export const SampleVideoList = [
         thumbnail: "https://i.ytimg.com/vi/CA0GICPBmf4/hqdefault.jpg",
         title: "[Live] 야다(Yada) 슬픈 다짐 [뮤직뱅크 2003년 4월 2주]",
         videoId: "CA0GICPBmf4"
+    },
+    {
+        channelTitle: "현진영테레비",
+        publishedAt: "2019-12-21T11:23:06Z",
+        thumbnail: "https://i.ytimg.com/vi/Q5H8Qui2Hes/hqdefault.jpg",
+        title: "야다-전인혁 미스터투-이민규 무반주 쌩목 라이브 매불쇼(현진영데이)",
+        videoId: "Q5H8Qui2Hes"
+    },
+    {
+        channelTitle: "suntube김선희",
+        publishedAt: "2019-12-22T14:25:19Z",
+        thumbnail: "https://i.ytimg.com/vi/boymV8E7EKo/hqdefault.jpg",
+        title: ",진혼, 게스트 전인혁 플라워 2019년 20주년 콘서트",
+        videoId: "boymV8E7EKo"
     }
 ]
 

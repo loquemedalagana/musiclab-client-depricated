@@ -59,8 +59,24 @@ const About = props => {
                     id="classic-modal-slide-description"
                     className={classes.modalBody}
             >
+
                 <p>
-                    ✔ 데뷔 후 {lapsed}년간 못다했던 이야기
+                    ✔ 야다 입덕 후 덕질하기 힘드셨죠?
+                </p>
+                <p>
+                    ✔ 뮤직 썰! 프라이즈가 고민을 해결해 드립니다
+                    <span role="img">😉</span>
+                </p>
+                <p>
+                    ✔ 내가 보고 싶은 인혁 영상만 주제별로 모아
+                    <span role="img">🎞</span>
+                </p>
+                <p>
+                    ✔ 내가 커버한 곡 인혁님이 직접 피드백을
+                    <span role="img">😲</span>
+                </p>
+                <p>
+                    ✔ 데뷔 후 {lapsed}년간 못다했던 인혁님의 이야기까지!
                 </p>
             </DialogContent>
         </Dialog>
