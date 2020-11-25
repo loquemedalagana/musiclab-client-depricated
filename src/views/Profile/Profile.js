@@ -75,7 +75,7 @@ const PrintSocialLinks = props => {
             href={link}
             target="_blank"
         >
-            <IconButton>
+            <IconButton color={link ? 'primary' : 'default'}>
                 {getIcon(key)}
             </IconButton>
         </Link>)
@@ -136,12 +136,13 @@ const Profile = (props) => {
                             <img src={data.userData.image ? data.userData.image : defaultImg} alt="..." className={imageClasses} />
                         </div>
                         <div className={classes.name}>
+                            {/*관리자일 때 공식 표시*/}
                             <h3 className={classes.title}>{data.userData.displayName}
                             {isSame ? (
                                 <IconButton color='primary' onClick={() => history.push(`/modify/profile`)}>
                                     <Edit />
                                 </IconButton>
-                            ) : (
+                            ) : (                                
                                 <IconButton color='secondary' onClick={null}>
                                     <Favorite />
                                 </IconButton>

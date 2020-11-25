@@ -40,6 +40,20 @@ const modalStyle = {
     paddingLeft: "24px",
     position: "relative"
   },
+  modalDescription: {
+    color: "#999",
+    textAlign: "center"
+  },
+  textArea: {
+    marginRight: "15px",
+    marginLeft: "15px"
+  },
+  textCenter: {
+    textAlign: "center"
+  },
+  inputIconsColor: {
+    color: "#495057"
+  },
   modalFooter: {
     padding: "15px",
     textAlign: "right",

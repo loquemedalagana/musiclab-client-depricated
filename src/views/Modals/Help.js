@@ -12,11 +12,13 @@ import {
     IconButton,
     InputAdornment
 } from '@material-ui/core';
-import {Close, Email} from "@material-ui/icons";
+import {Close, Email, People} from "@material-ui/icons";
 
 import {
     Button,
     CustomInput,
+    GridContainer,
+    GridItem,
 //    CircularLoading,
 } from '../../components/components';
 
@@ -38,15 +40,22 @@ export const Help = props => {
         setAlertMsg,
         open,
         onClose,
+        userInfo,
+        userLoading
     } = props;
 
     const [inputs, setInputs] = useState({
-        email: '',
+        displayName: userInfo && !userLoading ? userInfo.displayName : '',
+        email: userInfo && !userLoading ? (userInfo.email ? userInfo.email : '' ) : '',
+        title: '',
+        content: '',
     });
 
-    const {email} = inputs;
+    const {email, displayName, content, title} = inputs;
 
     const [emailModalErr, setEmailModalErr] = useState(false);
+    const [nameModalErr, setNameModalErr] = useState(false);
+    const [contentErr, setContentErr] = useState(false);
 
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
@@ -69,12 +78,25 @@ export const Help = props => {
             setAlertMsg('올바른 형식으로 입력해주세요.', 'error');
             setEmailModalErr(true);
         }
+
+        if(!displayName) {
+            ok=false;
+            setNameModalErr(true);
+            setAlertMsg('이름을 입력해주세요', 'error');
+        }
+
+        if(content.length === 0 || title.length === 0) {
+            ok=false;
+            setContentErr(true);
+            setAlertMsg('제목, 내용 모두 입력해주세요', 'error');
+        }
         
         if(ok){
             //이벤트 처리
             //창 닫기
+            setContentErr(false);
             setEmailModalErr(false);
-
+            setNameModalErr(false);
         }
     }
 
@@ -113,25 +135,85 @@ export const Help = props => {
                 <p>
                     오류 보고 신고
                 </p>
-                <CustomInput
-                        labelText="Input your Email..."
-                        id="findemail"
-                        error = {emailModalErr}
+                <GridContainer>
+                    <GridItem xs={12} sm={12} md={6}>
+                        <CustomInput
+                        labelText="Your Name"
+                        id="name"
+                        error={nameModalErr}
                         formControlProps={{
                             fullWidth: true
                         }}
                         inputProps={{
-                            type: "email",
-                            name: "email",
-                            value: email,
-                            onChange: onInputHandler,
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <Email className={classes.inputIconsColor} />
-                            </InputAdornment>
-                            )
+                                type: "text",
+                                name: "displayName",                                
+                                value: displayName,
+                                onChange: onInputHandler,
+                                endAdornment: (
+                                <InputAdornment position="end">
+                                    <People className={classes.inputIconsColor} />
+                                </InputAdornment>
+                                )
+                            }}
+                        />
+                    </GridItem>
+                <GridItem xs={12} sm={12} md={6}>                
+                    <CustomInput
+                            labelText="Input your Email..."
+                            id="findemail"
+                            error = {emailModalErr}
+                            formControlProps={{
+                                fullWidth: true
+                            }}
+                            inputProps={{
+                                type: "email",
+                                name: "email",
+                                value: email,
+                                onChange: onInputHandler,
+                                endAdornment: (
+                                <InputAdornment position="end">
+                                    <Email className={classes.inputIconsColor} />
+                                </InputAdornment>
+                                )
+                            }}
+                    />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={12}>
+                    <CustomInput
+                        labelText="Error Message Title"
+                        id="error-message-title"
+                        error={contentErr}
+                        formControlProps={{
+                        fullWidth: true,
+                        className: classes.textArea
                         }}
-                />
+                        inputProps={{
+                            name: "title",                                
+                            value: title,
+                            onChange: onInputHandler,
+                        }}
+                    />
+                </GridItem>
+                <GridItem xs={12} sm={12} md={12}>
+                    <CustomInput
+                        labelText="Error Message"
+                        id="error-message"
+                        error={contentErr}
+                        formControlProps={{
+                        fullWidth: true,
+                        className: classes.textArea
+                        }}
+                        inputProps={{
+                            multiline: true,
+                            rows: 5,
+                            name: "content",                                
+                            value: content,
+                            onChange: onInputHandler,
+                        }}
+                    />
+                </GridItem>
+                </GridContainer>
+
             </DialogContent>
             <DialogActions>
                 <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
@@ -149,7 +231,7 @@ Help.propTypes = {
 
 const mapStateToProps = (state) => ({
     userLoading: state.auth.loading,
-    userInfo: state.auth.userInfo,
+    userInfo: state.auth.userData,
 })
 
 
