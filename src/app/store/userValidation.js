@@ -23,6 +23,7 @@ const slice = createSlice({
             state.changed = false;
         },
         changedUserInfoSucess: (state) => {
+            window.location.reload();
             state.changed = true;
         },
         changedUserInfoFail: (state) => {

@@ -162,7 +162,7 @@ export const Help = props => {
                 <GridItem xs={12} sm={12} md={6}>                
                     <CustomInput
                             labelText="Input your Email..."
-                            id="findemail"
+                            id="useremail"
                             error = {emailModalErr}
                             formControlProps={{
                                 fullWidth: true
