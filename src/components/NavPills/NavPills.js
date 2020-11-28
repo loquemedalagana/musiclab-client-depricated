@@ -75,6 +75,7 @@ export default function NavPills(props) {
         axis={direction === "rtl" ? "x-reverse" : "x"}
         index={active}
         onChangeIndex={handleChangeIndex}
+        slideClassName="scrollbar-deep-blue"
       >
         {tabs.map((prop, key) => {
           return (
