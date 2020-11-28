@@ -4,8 +4,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // react components for routing our app without refresh
-import { withRouter } from "react-router-dom";
-import { authSelector } from '../../app/store/auth';
+import { withRouter, } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -69,7 +68,7 @@ const HeaderLinks = (props) => {
             <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
               Music SSeolprise
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=> history.push('/officialvideolist/jihbandofficial')} className={classes.dropdownLink}>
               Jeon Inhyuk Band official
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
