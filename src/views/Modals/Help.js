@@ -44,7 +44,13 @@ const RadioForm = props => {
     const {
         classes,
         value,
+        name,
     } = props;
+
+    const helperText = {
+        error: '오류 보고',
+        help: '문의 사항'
+    }
 
     return (
     <div
@@ -57,10 +63,10 @@ const RadioForm = props => {
         <FormControlLabel
         control={
             <Radio
-            checked={true}
-            onChange={null}
+            checked={false}
+
             value={value}
-            name="radio button enabled"
+            name={name}
             aria-label={value}
             icon={
                 <FiberManualRecord className={classes.radioUnchecked} />
@@ -78,7 +84,7 @@ const RadioForm = props => {
             label: classes.label,
             root: classes.labelRoot
         }}
-        label={value}
+        label={helperText[value]}
         />
     </div>
 )}
@@ -96,11 +102,12 @@ export const Help = props => {
     const [inputs, setInputs] = useState({
         displayName: userInfo && !userLoading ? userInfo.displayName : '',
         email: userInfo && !userLoading ? (userInfo.email ? userInfo.email : '' ) : '',
+        helpType: null,
         title: '',
         content: '',
     });
 
-    const {email, displayName, content, title} = inputs;
+    const {email, displayName, content, title, helpType} = inputs;
 
     const [emailModalErr, setEmailModalErr] = useState(false);
     const [nameModalErr, setNameModalErr] = useState(false);
@@ -257,6 +264,7 @@ export const Help = props => {
                                     key={idx}
                                     classes={classes}
                                     value={type}
+                                    name="helpType"
                                 />
                             )}
                         </RadioGroup>
