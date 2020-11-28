@@ -1,3 +1,5 @@
+import customCheckboxRadioSwitch from "./customCheckboxRadioSwitch";
+
 const modalStyle = {
   modal: {
     borderRadius: "6px"
@@ -63,7 +65,8 @@ const modalStyle = {
   modalFooterCenter: {
     marginLeft: "auto",
     marginRight: "auto"
-  }
+  },
+  ...customCheckboxRadioSwitch,
 };
 
 export default modalStyle;

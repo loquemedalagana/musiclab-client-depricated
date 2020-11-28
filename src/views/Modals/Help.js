@@ -10,16 +10,23 @@ import {
     DialogActions,
     Slide,
     IconButton,
-    InputAdornment
+    InputAdornment,
+    RadioGroup,
+    FormControl,
+    FormLabel,
+    FormControlLabel,
+    Radio
 } from '@material-ui/core';
-import {Close, Email, People} from "@material-ui/icons";
+import {
+    Close, Email, People,
+    FiberManualRecord,
+} from "@material-ui/icons";
 
 import {
     Button,
     CustomInput,
     GridContainer,
     GridItem,
-//    CircularLoading,
 } from '../../components/components';
 
 import styles from '../../assets/jss/material-kit-react/components/modalStyle';
@@ -57,6 +64,7 @@ export const Help = props => {
     const [nameModalErr, setNameModalErr] = useState(false);
     const [contentErr, setContentErr] = useState(false);
 
+
     const onInputHandler = event => {
         const {name, value} = event.currentTarget;
         setInputs({
@@ -92,11 +100,11 @@ export const Help = props => {
         }
         
         if(ok){
-            //이벤트 처리
-            //창 닫기
             setContentErr(false);
             setEmailModalErr(false);
             setNameModalErr(false);
+
+            
         }
     }
 
@@ -129,13 +137,14 @@ export const Help = props => {
             </DialogTitle>
 
             <DialogContent
-                    id="classic-modal-slide-description"
-                    className={classes.modalBody}
+                id="classic-modal-slide-description"
+                className={classes.modalBody + " " + "scrollbar-lady-lips"}
             >
                 <p>
-                    뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로 연락주세요!
+                뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로 연락주세요!
                 </p>
                 <p>담당자가 확인 후 바로 반영해드리고 답변드립니다.</p>
+                <p>양식에 맞지 않은 내용은 전송이 되지 않습니다.</p>
                 <br />
                 <GridContainer>
                     <GridItem xs={12} sm={12} md={6}>
@@ -161,7 +170,7 @@ export const Help = props => {
                     </GridItem>
                 <GridItem xs={12} sm={12} md={6}>                
                     <CustomInput
-                            labelText="Input your Email..."
+                            labelText="Your Email"
                             id="useremail"
                             error = {emailModalErr}
                             formControlProps={{
@@ -182,8 +191,8 @@ export const Help = props => {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={12}>
                     <CustomInput
-                        labelText="Error Message Title"
-                        id="error-message-title"
+                        labelText="Message Title"
+                        id="help-message-title"
                         error={contentErr}
                         formControlProps={{
                         fullWidth: true,
@@ -196,10 +205,21 @@ export const Help = props => {
                         }}
                     />
                 </GridItem>
+                {/*양식 적기(radio button)*/}
+                <GridItem xs={12} sm={12} md={12}>
+                    <FormControl component = "fieldset">
+                        <FormLabel component = "h3">Type</FormLabel>
+                        <RadioGroup>
+                            {
+                                //요기다 양식 배열에다 담기
+                            }
+                        </RadioGroup>
+                    </FormControl>
+                </GridItem>
                 <GridItem xs={12} sm={12} md={12}>
                     <CustomInput
-                        labelText="Error Message"
-                        id="error-message"
+                        labelText="Message Content"
+                        id="help-message"
                         error={contentErr}
                         formControlProps={{
                         fullWidth: true,
