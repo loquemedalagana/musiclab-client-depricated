@@ -40,6 +40,48 @@ const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="down" ref={ref} {...props} />;
 });
 
+const RadioForm = props => {
+    const {
+        classes,
+        value,
+    } = props;
+
+    return (
+    <div
+    className={
+        classes.checkboxAndRadio +
+        " " +
+        classes.checkboxAndRadioHorizontal
+    }
+    >
+        <FormControlLabel
+        control={
+            <Radio
+            checked={true}
+            onChange={null}
+            value={value}
+            name="radio button enabled"
+            aria-label={value}
+            icon={
+                <FiberManualRecord className={classes.radioUnchecked} />
+            }
+            checkedIcon={
+                <FiberManualRecord className={classes.radioChecked} />
+            }
+            classes={{
+                checked: classes.radio,
+                root: classes.radioRoot
+            }}
+            />
+        }
+        classes={{
+            label: classes.label,
+            root: classes.labelRoot
+        }}
+        label={value}
+        />
+    </div>
+)}
 
 export const Help = props => {
     const classes = useStyles();
@@ -210,9 +252,13 @@ export const Help = props => {
                     <FormControl component = "fieldset">
                         <FormLabel component = "h3">Type</FormLabel>
                         <RadioGroup>
-                            {
-                                //요기다 양식 배열에다 담기
-                            }
+                            {['error', 'help'].map((type, idx) => 
+                                <RadioForm 
+                                    key={idx}
+                                    classes={classes}
+                                    value={type}
+                                />
+                            )}
                         </RadioGroup>
                     </FormControl>
                 </GridItem>
