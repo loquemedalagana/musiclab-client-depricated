@@ -50,7 +50,7 @@ const PrintTag = props => {
     const {
         tagInfo,
         thumbnailListImageClasses,
-        index,
+        //index,
     } = props;
 
     const {tagName} = tagInfo;

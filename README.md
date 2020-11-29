@@ -12,20 +12,25 @@
 - 인혁 관련 새 영상 나올 시 이메일로 알림옴(공식채널/일반영상 분리)
 - 기존 팬카페처럼 커뮤니티 게시판 기능 제공
 
-## Focus on next field when pressing enter React.js
-- 이 부분 배포 전 처리하기 
-
 ## 요구사항 정리
 - focus를 Yada보다 전인혁Band에 두기
 - 덕질 등 진지하지 않은(?) 용어 사용 지양
 - 복잡한 interface는 피하기!
+
+<hr/>
+
+# 오류 사항
 
 ## 모바일 렌더링 시 오류
 - 프로필에서 태그 이미지 없을 때 컬러 div가 겹쳐서 보임..(모바일)
 
 <hr/>
 
+### Focus on next field when pressing enter React.js
+- 이 부분 배포 전 처리하기 
+
 ## 이메일 관련 (배포 직전, 비디오, 알림부터 구현 하고!)
+- Radio input은 처리 완료
 - smtp 도메인 등록 후 관리자 => 회원은 설정 안 어려울 듯
 - mailtrap or emailjs 써서 회원이 관리자한테 메일 보내기(틀린 양식일 때 전송 안되게 설정)
 

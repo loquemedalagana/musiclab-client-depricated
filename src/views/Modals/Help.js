@@ -118,7 +118,7 @@ export const Help = props => {
         })
     }
 
-    console.log(inputs);
+    //console.log(inputs);
 
     const onSubmitHandler = event => {
         event.preventDefault();
@@ -185,7 +185,7 @@ export const Help = props => {
 
             <DialogContent
                 id="classic-modal-slide-description"
-                className={classes.modalBody + " " + "scrollbar-rainy-ashville"}
+                className={classes.modalBody + " scrollbar-rainy-ashville"}
             >
                 <p>
                 뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로 연락주세요!
