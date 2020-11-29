@@ -18,12 +18,14 @@ import {
 import styles from "../../../assets/jss/material-kit-react/views/videoListStyle";
 const useStyles = makeStyles(styles);
 
-const getData = data => data ? data.items.map(item => {        
+const getData = data => data ? data.items.map(item => {       
+    //console.log(item); 
     return ({
         title: item.snippet.title.replace(/&#39;/g, ','),
         channelTitle: item.snippet.channelTitle,
         publishedAt: item.snippet.publishedAt,
         thumbnail: item.snippet.thumbnails.high.url,
+        description: item.snippet.description,
         videoId: item.contentDetails ? item.contentDetails.videoId : item.id.videoId,
     })
 }) : [];
