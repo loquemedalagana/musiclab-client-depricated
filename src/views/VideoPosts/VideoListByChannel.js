@@ -106,7 +106,11 @@ export const VideoListByChannel = props => {
                             </div>
                         </GridItem>
                         </GridContainer>
-                    <VideoListSection type='channel' info={channelInfo.contentDetail} />
+                    <VideoListSection 
+                        type='channel' 
+                        videoListId={channelInfo.contentDetail.relatedPlaylists.uploads} 
+
+                    />
                     </div>
                 )}
             </div>            
