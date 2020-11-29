@@ -44,7 +44,6 @@ const RadioForm = props => {
     const {
         classes,
         value,
-        name,
     } = props;
 
     const helperText = {
@@ -63,10 +62,7 @@ const RadioForm = props => {
         <FormControlLabel
         control={
             <Radio
-            checked={false}
-
             value={value}
-            name={name}
             aria-label={value}
             icon={
                 <FiberManualRecord className={classes.radioUnchecked} />
@@ -102,12 +98,12 @@ export const Help = props => {
     const [inputs, setInputs] = useState({
         displayName: userInfo && !userLoading ? userInfo.displayName : '',
         email: userInfo && !userLoading ? (userInfo.email ? userInfo.email : '' ) : '',
-        helpType: null,
+        mailType: '',
         title: '',
         content: '',
     });
 
-    const {email, displayName, content, title, helpType} = inputs;
+    const {email, displayName, content, title, mailType} = inputs;
 
     const [emailModalErr, setEmailModalErr] = useState(false);
     const [nameModalErr, setNameModalErr] = useState(false);
@@ -121,6 +117,8 @@ export const Help = props => {
             [name]: value
         })
     }
+
+    console.log(inputs);
 
     const onSubmitHandler = event => {
         event.preventDefault();
@@ -258,13 +256,12 @@ export const Help = props => {
                 <GridItem xs={12} sm={12} md={12}>
                     <FormControl component = "fieldset">
                         <FormLabel component = "h3">Type</FormLabel>
-                        <RadioGroup>
+                        <RadioGroup name="mailType" value={mailType} onChange={onInputHandler}>
                             {['error', 'help'].map((type, idx) => 
                                 <RadioForm 
                                     key={idx}
                                     classes={classes}
                                     value={type}
-                                    name="helpType"
                                 />
                             )}
                         </RadioGroup>

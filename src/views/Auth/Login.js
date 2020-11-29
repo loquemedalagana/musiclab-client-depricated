@@ -193,7 +193,10 @@ export const Login = (props) => {
 
 
                     <CardFooter className={classes.cardFooter}>
-                        <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+                        <Button simple 
+                            color="primary" size="lg" 
+                            onClick={onSubmitHandler}
+                        >
                         Get started
                         </Button>
                     </CardFooter>
