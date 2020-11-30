@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
-//import {Redirect} from 'react-router-dom';
-//import { List, ListItem } from '@material-ui/core';
 
 import {
     GridContainer,
@@ -99,7 +97,11 @@ export const VideoListSection = props => {
 
 VideoListSection.propTypes = {
     props: PropTypes.object,
+    type: PropTypes.oneOf([
+        "channel",
 
+    ]),
+    children: PropTypes.node
 }
 
 const mapStateToProps = (state) => ({

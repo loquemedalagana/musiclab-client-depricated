@@ -41,6 +41,8 @@ import ToastAlerts from './ToastAlerts/ToastAlerts';
 import SnackbarContent from './Snackbar/SnackbarContent';
 import Clearfix from './Clearfix/Clearfix';
 
+import PostPreview from './PostPreview/PostPreview';
+
 export {
     Header, HeaderLinks, Footer, GridContainer,
     GridItem, Button, Card, CardBody, CardHeader, CardFooter, 
@@ -49,5 +51,5 @@ export {
     DangerText, InfoText, MutedText, PrimaryText, QuoteText,
     SmallText, SucessText, WarningText,
     HeaderLinksNotLoggedIn, LinearLoading, CircularLoading,
-    ToastAlerts, SnackbarContent, Clearfix,
+    ToastAlerts, SnackbarContent, Clearfix, PostPreview,
 }

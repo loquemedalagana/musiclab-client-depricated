@@ -16,29 +16,32 @@ export const getPlayListURL = (playlistId, maxResults) => `${YOUTUBE_PLAYLIST_IT
 
 //search result based on keyword array
 export const getLatestVideoListURL = (searchKeywords, maxResults) => {
-    const defaultDate = '2018-01-01T00:00:00Z';
-    if(searchKeywords.length === 0){
-        return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=relevance&publishedAfter=${defaultDate}&maxResults=${maxResults}&key=${YoutubeApiKey}`
-    }
-    else {
-        return null;
-    }
+  const defaultDate = '2018-01-01T00:00:00Z';
+  if(searchKeywords.length === 0){
+    return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=relevance&publishedAfter=${defaultDate}&maxResults=${maxResults}&key=${YoutubeApiKey}`
+  }
+  else {
+    return null;
+  }
 }
 
 export const getHotVideoListURL = (searchKeywords, maxResults) => {
-    if(searchKeywords.length === 0){
-        return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=viewCount&maxResults=${maxResults}&key=${YoutubeApiKey}`
-    }
-    else {
-        return null;
-    }
+  if(searchKeywords.length === 0){
+    return `${YOUTUBE_VIDEO_SEARCH_API}?part=snippet&q=야다+전인혁&order=viewCount&maxResults=${maxResults}&key=${YoutubeApiKey}`
+  }
+  else {
+    return null;
+  }
 }
 
-
-//youtube video search list https://developers.google.com/youtube/v3/docs/search/list?authuser=1
-//youtube video params https://developers.google.com/youtube/v3/docs/videos?hl=ko
-//youtube video channel https://developers.google.com/youtube/v3/docs/channels/list?hl=ko
-//youtube video playlist https://developers.google.com/youtube/v3/docs/playlistItems/list#request
-
-//guide https://www.freecodecamp.org/news/how-to-add-a-youtube-playlist-to-a-nextjs-react-app-with-the-youtube-api/
-//guide search result https://moonsupport.tistory.com/130
+export const getVideoDataFromPlayList = data => data ? data.items.map(item => {        
+  return ({
+    title: item.snippet.title.replace(/&#39;/g, ','),
+    channelTitle: item.snippet.channelTitle,
+    publishedAt: item.snippet.publishedAt,
+    channelId: item.snippet.channelId,
+    description: item.snippet.description,
+    thumbnail: item.snippet.thumbnails.high.url,
+    videoId: item.contentDetails ? item.contentDetails.videoId : item.id.videoId,
+  })
+}) : [];

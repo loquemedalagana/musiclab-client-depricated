@@ -70,6 +70,13 @@ export const SampleVideoList = [
         videoId: "CA0GICPBmf4"
     },
     {
+        channelTitle: "JTBC Entertainment",
+        publishedAt: "2015-08-18T13:50:25Z",
+        thumbnail: "https://i.ytimg.com/vi/r1KRX4Rhjx4/hqdefault.jpg",
+        title: "야다 전인혁 ,그대 떠나가도♪, 명품 보이스 끝까지 간다 39회",
+        videoId: "r1KRX4Rhjx4"
+    },
+    {
         channelTitle: "현진영테레비",
         publishedAt: "2019-12-21T11:23:06Z",
         thumbnail: "https://i.ytimg.com/vi/Q5H8Qui2Hes/hqdefault.jpg",
