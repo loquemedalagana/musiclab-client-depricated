@@ -62,7 +62,7 @@ export const VideoListByOfficialChannel = props => {
                         />
                       </div>
                       <div className={classes.channelTitle}>
-                        <h3>{channelInfo.title}</h3>
+                        <h3>{channelInfo.channelTitle}</h3>
                       </div>                        
                       <h5>{channelInfo.description}</h5>
                     </div>
