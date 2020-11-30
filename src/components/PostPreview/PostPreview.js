@@ -46,6 +46,7 @@ const PostPreview = props => {
 
   const mediaURL = "https://youtu.be/" + videoId;
   const authorName = type === 'post' ? authorData.displayName : authorData.channelTitle;
+  const {image} = authorData;
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -59,7 +60,7 @@ const PostPreview = props => {
         avatar={
           <Avatar
             aria-label="channel-title"
-            src="channel-thumbnail"
+            src={image}
           />
         }
         action={ //mini menu will be added
@@ -116,7 +117,6 @@ const PostPreview = props => {
 
 PostPreview.propTypes = {
   type: PropTypes.oneOf([
-    "official",
     "youtube",
     "post",
   ]),

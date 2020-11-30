@@ -15,7 +15,7 @@ import WaitingLevelup from '../views/Auth/WaitingLevelup';
 import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
 
 import Profile from '../views/Profile/Profile';
-import VideoListByChannel from '../views/VideoPosts/VideoListByChannel';
+import VideoListByOfficialChannel from '../views/VideoPosts/VideoListByOfficialChannel';
 import VideoListByKeywords from '../views/VideoPosts/VideoListBySearchKeyword';
 
 import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
@@ -30,24 +30,26 @@ import ToastAlert from '../components/ToastAlerts/ToastAlerts';
 // ~.com/levelup/?token=ABCDE
 
 export default props => (
-    <>
-        <ToastAlert />
-        <Switch>
-            <IsNotLoggedInRoute exact path = '/login' component = {Login} />
-            <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
-            <TokenRoute exact path = '/resetpassword/:auth?' component = {ResetPassword} />
-            <TokenRoute exact path = '/levelup/:auth?' component = {Levelup} />
-            <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
-            <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
+  <>
+    <ToastAlert />
+    <Switch>
+      <IsNotLoggedInRoute exact path = '/login' component = {Login} />
+      <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
 
-            <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
-            <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
+      <TokenRoute exact path = '/resetpassword/:auth?' component = {ResetPassword} />
+      <TokenRoute exact path = '/levelup/:auth?' component = {Levelup} />
 
-            <Route exact path = '/officialvideolist/:channel?' component = {VideoListByChannel} />
-            <Route exact path = '/videolistbykeywords/:query?' component = {VideoListByKeywords} />
+      <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
+      <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
 
-            <Route exact path = '/servererror' component = {ServerError} />
-            <Route component = {NotFound} />
-        </Switch>
-    </>
+      <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
+      <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
+
+      <Route exact path = '/officialvideolist/:channel' component = {VideoListByOfficialChannel} />
+      <Route exact path = '/videolistbykeywords/:query?' component = {VideoListByKeywords} />
+
+      <Route exact path = '/servererror' component = {ServerError} />
+      <Route component = {NotFound} />
+    </Switch>
+  </>
 );

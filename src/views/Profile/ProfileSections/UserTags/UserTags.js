@@ -12,7 +12,7 @@ import {
 
 import { //test code
     SampleTagList,
-} from '../../../../assets/SampleData/SampleData';
+} from '../../../../app/videoData/SampleData/SampleData';
 
 import compositionImg from '../../../../assets/images/TagImages/composition.jpg';
 import guitarImg from '../../../../assets/images/TagImages/guitar.jpg';
@@ -33,94 +33,94 @@ const tagImgHashmap = {
 }
 
 const isExistThumbnailImage = tagName => {
-    switch(tagName){
-        case 'vocal':
-        case 'drum':
-        case 'guitar':
-        case 'composition':
-        case 'yada':
-        case 'jeoninhyukband':
-            return true;
-        default:
-            return false;
-    }
+  switch(tagName){
+    case 'vocal':
+    case 'drum':
+    case 'guitar':
+    case 'composition':
+    case 'yada':
+    case 'jeoninhyukband':
+      return true;
+    default:
+      return false;
+  }
 }
 
 const PrintTag = props => {
-    const {
-        tagInfo,
-        thumbnailListImageClasses,
-        //index,
-    } = props;
+  const {
+    tagInfo,
+    thumbnailListImageClasses,
+    //index,
+  } = props;
 
-    const {tagName} = tagInfo;
+  const {tagName} = tagInfo;
 
-    if(isExistThumbnailImage(tagName)) {
-        return (
-            <img
-            alt={tagName}
-            src={tagImgHashmap[tagName]}
-            className={thumbnailListImageClasses}
-            />
-        )
-    } else {
-        const tagColors = randomColor({luminosity: 'dark',count: 1});
-        console.log(tagColors);
-        return (
-            <div 
-            className={thumbnailListImageClasses}
-            style={{
-                background: tagColors[0],
-                minWidth: '100%',
-                minHeight: '30%',
-                overflow: 'hidden'
-            }}
-            >
+  if(isExistThumbnailImage(tagName)) {
+    return (
+      <img
+        alt={tagName}
+        src={tagImgHashmap[tagName]}
+        className={thumbnailListImageClasses}
+      />
+    )
+  } else {
+      const tagColors = randomColor({luminosity: 'dark',count: 1});
+      console.log(tagColors);
+      return (
+        <div 
+          className={thumbnailListImageClasses}
+          style={{
+            background: tagColors[0],
+            minWidth: '100%',
+            minHeight: '30%',
+            overflow: 'hidden'
+          }}
+        >
 
-            </div>
-        )
+        </div>
+      )
     }
 }
 
 export const UserTags = props => {
-    const {
-        classes,
+  const {
+    classes,
     //    userId,
-    } = props;
+  } = props;
 
-    SampleTagList.forEach(e => console.log(e));
+  SampleTagList.forEach(e => console.log(e));
 
-    const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
-    return (
-        <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={4}>
-                {SampleTagList.slice(0, Math.ceil(SampleTagList.length/2)).map((tagInfo, idx) => (
-                <PrintTag
-                    key={idx}
-                    thumbnailListImageClasses={thumbnailListImageClasses}
-                    tagInfo={tagInfo}
-                    index={idx}
-                />
-            ))}
-            </GridItem>
-            <GridItem xs={12} sm={12} md={4}>
-                {SampleTagList.slice(Math.ceil(SampleTagList.length/2), SampleTagList.length).map((tagInfo, idx) => (
-                <PrintTag
-                    key={idx}
-                    thumbnailListImageClasses={thumbnailListImageClasses}
-                    tagInfo={tagInfo}
-                    index={idx}
-                />
-            ))}
-            </GridItem>
-        </GridContainer>
-    )
+  return (
+    <GridContainer justify="center">
+      <GridItem xs={12} sm={12} md={4}>
+        {SampleTagList.slice(0, Math.ceil(SampleTagList.length/2)).map((tagInfo, idx) => (
+          <PrintTag
+            key={idx}
+            thumbnailListImageClasses={thumbnailListImageClasses}
+            tagInfo={tagInfo}
+            index={idx}
+          />
+        ))}
+      </GridItem>
+      <GridItem xs={12} sm={12} md={4}>
+        {SampleTagList.slice(Math.ceil(SampleTagList.length/2), SampleTagList.length).map((tagInfo, idx) => (
+          <PrintTag
+            key={idx}
+            thumbnailListImageClasses={thumbnailListImageClasses}
+            tagInfo={tagInfo}
+            index={idx}
+          />
+        ))}
+      </GridItem>
+    </GridContainer>
+  )
 }
 
 UserTags.propTypes = {
-    props: PropTypes.object,
-    userId: PropTypes.string,
+  props: PropTypes.object,
+  userId: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({

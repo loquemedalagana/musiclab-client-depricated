@@ -4,108 +4,120 @@ import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
-    GridContainer,
-    GridItem,
-    CircularLoading,
+  GridContainer,
+  GridItem,
+  CircularLoading,
+  PostPreview,
 } from '../../../components/components';
 
 import { 
-    getPlayListURL, 
+  getPlayListURL,
+  getVideoDataFromPlayList,
 } from '../../../app/videoData/videoFetchEndpoints';
 
 import styles from "../../../assets/jss/material-kit-react/views/videoListStyle";
+
+import { 
+  officialChannelProfileData, 
+} from '../../../app/videoData/officialChannelData';
+
 const useStyles = makeStyles(styles);
 
-const getData = data => data ? data.items.map(item => {       
-    //console.log(item); 
-    return ({
-        title: item.snippet.title.replace(/&#39;/g, ','),
-        channelTitle: item.snippet.channelTitle,
-        publishedAt: item.snippet.publishedAt,
-        thumbnail: item.snippet.thumbnails.high.url,
-        description: item.snippet.description,
-        videoId: item.contentDetails ? item.contentDetails.videoId : item.id.videoId,
-    })
-}) : [];
-
 const NotAvailable = ({className}) => (
-    <GridItem xs={12} sm={12} md={11}>
-        <h3 className={className}>준비중입니다...</h3>
-    </GridItem>
+  <GridItem xs={12} sm={12} md={11}>
+    <h3 className={className}>준비중입니다...</h3>
+  </GridItem>
 )
 
 export const VideoListSection = props => {
-    const {
-        videoListId,
-        type,
-    } = props;
+  const {
+    videoListId,
+    type,
+  } = props;
 
-    const classes = useStyles();
-    const [resultData, setResultData] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
+  const classes = useStyles();
+  const [resultData, setResultData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    const ENDPOINT = type === 'channel' ? getPlayListURL(videoListId, 6) : null;
+  const ENDPOINT = type === 'channel' || 'official' ? getPlayListURL(videoListId, 4) : null;
 
-    console.log(videoListId);
+  console.log(videoListId);
+  const [channelInfo] = officialChannelProfileData.filter(({playListId}) => playListId === videoListId);
 
-    useEffect(() => {
-        fetch(ENDPOINT, {
-            method: 'GET',
-        })
-        .then(res => res.json())
-        .then(data => {
-            const result = getData(data);            
-            setLoading(false);
-            setResultData(result);
-        })
-        .catch(err => {
-            setLoading(false);
-            setError(err);
-        });
-    }, [ENDPOINT, type, videoListId]);
-
-    //get result data
-
-    console.log(resultData)
-
-    if(!resultData && ENDPOINT && loading) return (
-        <div className={classes.section}>
-            <div className={classes.container}>
-                <CircularLoading />
-            </div>
-        </div>
-    );
-
-    if(!ENDPOINT || error)  return (
-        <div className={classes.section}>
-            <div className={classes.container}>
-                <GridContainer justify='center'>
-                    <NotAvailable className={classes.detail}/>                    
-                </GridContainer>
-            </div>
-        </div>
-    );
+  useEffect(() => {
+    fetch(ENDPOINT, {
+      method: 'GET',
+    })
+    .then(res => res.json())
+    .then(data => {
+      const result = getVideoDataFromPlayList(data);            
+        setLoading(false);
+        setResultData(result);
+    })
+    .catch(err => {
+      setLoading(false);
+      setError(err);
+    });
+  }, [ENDPOINT, type, videoListId]);
 
 
-    return (
-        <GridContainer className={classes.listContainer}>
-            <h5>list will be added</h5>
+  //이 부분 손 들어감
+  console.log(resultData);
+
+  const {
+    channelTitle,
+    image
+  } = channelInfo;
+
+  if(!resultData && ENDPOINT && loading) return (
+    <div className={classes.section}>
+      <div className={classes.container}>
+        <CircularLoading />
+      </div>
+    </div>
+  );
+
+  if(!ENDPOINT || error || !channelInfo)  return (
+    <div className={classes.section}>
+      <div className={classes.container}>
+        <GridContainer justify='center'>
+          <NotAvailable className={classes.detail}/>                    
         </GridContainer>
-    )
+      </div>
+    </div>
+  );
+
+
+  return (
+    <GridContainer className={classes.listContainer}>
+      {resultData.map((data, idx) => (
+        <PostPreview 
+          key={idx}
+          type = 'youtube'
+          authorData = {{
+            channelTitle,
+            image
+          }}
+          postData = {data}
+      />
+      ))}
+    </GridContainer>
+  )
 }
 
 VideoListSection.propTypes = {
-    props: PropTypes.object,
-    type: PropTypes.oneOf([
-        "channel",
-
-    ]),
-    children: PropTypes.node
+  props: PropTypes.object,
+  type: PropTypes.oneOf([
+    "official",
+    "channel",
+    "keywords"
+  ]),
+  children: PropTypes.node
 }
 
 const mapStateToProps = (state) => ({
-    
+  
 })
 
 export default connect(mapStateToProps)(VideoListSection)

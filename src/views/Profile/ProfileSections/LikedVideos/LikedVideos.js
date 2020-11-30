@@ -13,7 +13,7 @@ import {
 import { //test code
     SampleTagList,
     SampleVideoList,
-} from '../../../../assets/SampleData/SampleData';
+} from '../../../../app/videoData/SampleData/SampleData';
 
 const PrintVideoThumbnail = props => {
     const {

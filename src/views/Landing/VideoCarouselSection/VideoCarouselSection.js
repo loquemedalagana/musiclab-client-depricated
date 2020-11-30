@@ -13,7 +13,7 @@ import {
 
 import {
   SampleVideoList
-} from '../../../assets/SampleData/SampleData';
+} from '../../../app/videoData/SampleData/SampleData';
 
 import styles from '../../../assets/jss/material-kit-react/components/carouselStyle';
 import { 
