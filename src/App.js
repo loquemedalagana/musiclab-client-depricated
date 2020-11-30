@@ -38,33 +38,33 @@ function App(props) {
   if(loading) return <LinearLoading />
 
   return (  
-      <Router>
-        <Header
-            color="transparent"
-            brand={appTitle}
-            rightLinks={auth ? 
-              <HeaderLinks
-                mobileOpen={mobileOpen}
-                setMobileOpen={setMobileOpen}
-              /> : 
-              <HeaderLinksNotLoggedIn 
-                mobileOpen={mobileOpen}
-                setMobileOpen={setMobileOpen}
-              />}
-            fixed
-            changeColorOnScroll={{
-            height: 400,
-            color: "info"
-            }}
+    <Router>
+      <Header
+        color="transparent"
+        brand={appTitle}
+        rightLinks={auth ? 
+          <HeaderLinks
             mobileOpen={mobileOpen}
             setMobileOpen={setMobileOpen}
-            {...rest}
-        />
-        <Switch>
-          <Route exact path = '/' component = {Landing} />
-          <Route component = {Routes} /> 
-        </Switch>
-      </Router>
+          /> : 
+          <HeaderLinksNotLoggedIn 
+            mobileOpen={mobileOpen}
+            setMobileOpen={setMobileOpen}
+          />}
+        fixed
+        changeColorOnScroll={{
+        height: 400,
+        color: "info"
+        }}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        {...rest}
+      />
+      <Switch>
+        <Route exact path = '/' component = {Landing} />
+        <Route component = {Routes} /> 
+      </Switch>
+    </Router>
   );
 }
 

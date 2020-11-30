@@ -50,8 +50,6 @@ const PostPreview = props => {
   //const mediaURL = `https://www.youtube.com/embed/${videoId}?feature=oembed`;
   const authorName = type === 'post' ? authorData.displayName : authorData.channelTitle;
   const {image} = authorData;
-  
-
 
   const [expanded, setExpanded] = React.useState(false);
 
