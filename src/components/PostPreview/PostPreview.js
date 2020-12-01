@@ -46,8 +46,8 @@ const PostPreview = props => {
 
   const isYoutube = type === 'youtube';
 
-  const mediaURL = "https://youtu.be/" + videoId;
-  //const mediaURL = `https://www.youtube.com/embed/${videoId}?feature=oembed`;
+  //const mediaURL = "https://youtu.be/" + videoId;
+  const mediaURL = `https://www.youtube.com/embed/${videoId}`;
   const authorName = type === 'post' ? authorData.displayName : authorData.channelTitle;
   const {image} = authorData;
 
@@ -58,7 +58,7 @@ const PostPreview = props => {
   };
 
   return (
-    <Card>
+    <Card className={classes.root}>
       <CardHeader 
         avatar={
           <Avatar

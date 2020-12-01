@@ -1,4 +1,7 @@
 export default theme => ({
+    root: {
+        width: '100%',
+    },
     media: {
         height: 0,
         paddingTop: '56.25%', // 16:9

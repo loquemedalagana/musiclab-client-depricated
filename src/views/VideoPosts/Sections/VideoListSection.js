@@ -51,7 +51,7 @@ export const VideoListSection = props => {
     })
     .then(res => res.json())
     .then(data => {
-      const result = getVideoDataFromPlayList(data);            
+      const result = getVideoDataFromPlayList(data, true);            
         setLoading(false);
         setResultData(result);
     })
@@ -90,17 +90,19 @@ export const VideoListSection = props => {
 
 
   return (
-    <GridContainer className={classes.listContainer}>
+    <GridContainer className={classes.listContainer} spacing = {2}>
       {resultData.map((data, idx) => (
-        <PostPreview 
-          key={idx}
-          type = 'youtube'
-          authorData = {{
-            channelTitle,
-            image
-          }}
-          postData = {data}
-      />
+        <GridItem xs={12} sm={12} md={6} key={idx}>
+          <PostPreview             
+            type = 'youtube'
+            authorData = {{
+              channelTitle,
+              image
+            }}
+            postData = {data}
+          />
+        </GridItem>
+
       ))}
     </GridContainer>
   )
