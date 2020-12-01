@@ -18,9 +18,9 @@ import {
   Apps, 
   SupervisorAccount, 
   ExitToApp, 
-  Forum, 
   Notifications, 
-  AccountCircle 
+  AccountCircle,
+  Language,
 } from "@material-ui/icons";
 
 import {logoutUser} from '../../app/store/auth';
@@ -142,7 +142,7 @@ const HeaderLinks = (props) => {
         <CustomDropdown
           noLiPadding
           buttonText={username}
-          badgeContent={notifications.general + notifications.chat}
+          badgeContent={notifications.length}
           buttonProps={{
             className: classes.navLink,
             color: "transparent"
@@ -158,7 +158,7 @@ const HeaderLinks = (props) => {
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('notifications')} className={classes.dropdownLink}>
               <Badge 
-                badgeContent={notifications.general} 
+                badgeContent={notifications.length} 
                 variant='dot' 
                 color="secondary"
                 anchorOrigin={{
@@ -170,19 +170,9 @@ const HeaderLinks = (props) => {
               </Badge>
               Notifications
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('private msg')} className={classes.dropdownLink}>
-              <Badge 
-                badgeContent={notifications.chat} 
-                variant='dot' 
-                color="secondary"
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-              >
-                <Forum />                
-              </Badge>
-              Private Messages              
+            <Button color = "transparent" onClick={()=>console.log('language')} className={classes.dropdownLink}>
+              <Language />
+              Language Setting              
             </Button>,
             <Button color = "transparent" onClick={()=>{
               logoutUser();
@@ -225,7 +215,7 @@ HeaderLinks.propTypes = {
   isAuth: PropTypes.bool,
   isMember: PropTypes.bool,
   isAdmin: PropTypes.bool,
-  notifications: PropTypes.object,
+  notifications: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({
@@ -234,10 +224,7 @@ const mapStateToProps = (state) => ({
   userId: state.auth.userData ? state.auth.userData._id : undefined,
   isMember: state.auth.auth === true ? (state.auth.userData && state.auth.userData.points >= 0) : false,
   isAdmin: state.auth.auth === true ? (state.auth.userData && state.auth.userData.isadmin) : false,
-  notifications: {
-    general: state.auth.userData ? state.auth.userData.notifications.length : 0,
-    chat: 4,
-  }
+  notifications: ['hello'], //다르게 불러올 것
 })
 
 

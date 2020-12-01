@@ -35,6 +35,16 @@
 
 <hr/>
 
+## float button
+### 글쓰기, 뒤로 버튼 float로 처리 (hidden 속성 사용)
+- 뒤로 가기는 왼쪽 하단, 글쓰기 버튼은 오른쪽 하단(모바일, 태블릿 에서만!)
+
+## 회원정보 설정에 국가 설정
+- https://material-ui.com/components/autocomplete/#country-select
+
+## tag로 검색 -> autocomplete 
+- https://material-ui.com/components/autocomplete/
+
 ### Focus on next field when pressing enter React.js
 - 이 부분 배포 전 처리하기 
 
