@@ -1,7 +1,6 @@
 export const showPostMenu = {
   color: "inherit",
   position: "relative",
-  padding: "0.9375rem",
   fontWeight: "400",
   fontSize: "12px",
   textTransform: "uppercase",

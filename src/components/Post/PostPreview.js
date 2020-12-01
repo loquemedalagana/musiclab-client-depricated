@@ -88,6 +88,7 @@ const PostPreview = props => {
             hoverColor='rose'
             noLiPadding
             buttonProps={{
+              justIcon: true,
               color: 'transparent',
               className: classes.showPostMenu
             }}
