@@ -84,12 +84,6 @@ const PrintSocialLinks = props => {
   return data;
 }
 
-const PrintSampleVideo = () => {
-  return (
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/TRZl3cVTwAY" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-  )
-}
-
 const Profile = (props) => {
   const classes = useStyles();
   const imageClasses = classNames(
@@ -172,7 +166,7 @@ const Profile = (props) => {
                 {data.userData.description}{" "}
               </p>
             </div>
-            <PrintSampleVideo />
+
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
                 <NavPills

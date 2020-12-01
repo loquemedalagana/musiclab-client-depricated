@@ -17,10 +17,10 @@ import qs from 'qs';
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
-    Footer,
-    GridContainer,
-    GridItem,
-    Parallax,
+  Footer,
+  GridContainer,
+  GridItem,
+  Parallax,
 //    LinearLoading,
 } from '../../components/components';
 
@@ -32,62 +32,58 @@ import { smallParallaxStyle } from '../../assets/jss/material-kit-react/views/ba
 const useStyles = makeStyles(styles);
 
 export const VideoListBySearchKeyword = props => {
-    const {
-        location,
-    } = props;
-    const query = qs.parse(location.search, {
-        ignoreQueryPrefix: true
-    });
+  const {
+    location,
+  } = props;
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true
+  });
     
 
-    const classes = useStyles();
-    const imageClasses = classNames(
-        classes.imgRaised,
-        classes.imgRoundedCircle,
-        classes.imgFluid
-    );
+  const classes = useStyles();
+  const imageClasses = classNames(
+    classes.imgRaised,
+    classes.imgRoundedCircle,
+    classes.imgFluid
+  );
     
-    console.log(query);
+  console.log(query);
 
-    //fetch data with get request
+  //fetch data with get request
 
 
-    return (
-        <>
-        <Parallax small filter style={smallParallaxStyle().root} />        
-        <div className={classNames(classes.main, classes.mainRaised)}>
-            <div className={classes.container}>
-                {/*youtube channel profile*/}
-                <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={6}>
-                    <div className={classes.channelProfile}>
-                        <div>
-                            <img 
-                                src={defaultImg} 
-                                alt="..." 
-                                className={imageClasses} 
-                            />
-                        </div>
-                        <div className={classes.channelTitle}>
-                            <h3>title</h3>
-                        </div>                        
-                        <h5>descriptrion</h5>
-                    </div>
-                </GridItem>
-                </GridContainer>
-
-                
-
-            </div>            
-        
-        </div>
-        <Footer />
-        </>
-    )
+  return (
+    <>
+      <Parallax small filter style={smallParallaxStyle().root} />        
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          {/*youtube channel profile*/}
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={6}>
+              <div className={classes.channelProfile}>
+                <div>
+                  <img 
+                    src={defaultImg} 
+                    alt="..." 
+                    className={imageClasses} 
+                  />
+                </div>
+                <div className={classes.channelTitle}>
+                  <h3>title</h3>
+                </div>                        
+                <h5>descriptrion</h5>
+              </div>
+            </GridItem>
+          </GridContainer>
+        </div>            
+      </div>
+      <Footer />
+    </>
+  )
 }
 
 VideoListBySearchKeyword.propTypes = {
-    props: PropTypes.object
+  props: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({

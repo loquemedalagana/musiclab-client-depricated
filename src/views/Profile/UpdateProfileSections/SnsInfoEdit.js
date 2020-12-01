@@ -5,46 +5,46 @@ import {updateUserSocial} from '../../../app/store/userValidation';
 import {setAlertMsg} from '../../../app/store/alert';
 
 import {
-    GridContainer,
-    Button,
-    CircularLoading,
-    CustomInput,
-    GridItem,
+  GridContainer,
+  Button,
+  CircularLoading,
+  CustomInput,
+  GridItem,
 } from '../../../components/components';
 
 import {
-    InputAdornment, 
+  InputAdornment, 
 } from "@material-ui/core";
 
 import {
-    Home as Blog, Twitter, Facebook, Instagram, YouTube, Cloud as SoundCloud,
+  Home as Blog, Twitter, Facebook, Instagram, YouTube, Cloud as SoundCloud,
 } from '@material-ui/icons';
 
 import {checkSnsLink} from '../../../utils/functions';
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
-    const getIcon = key => {
-        switch (key) {
-            case 'youtube':
-                return <YouTube className={iconClass} />
-            case 'facebook':
-                return <Facebook className={iconClass} />
-            case 'twitter':
-                return <Twitter className={iconClass} />
-            case 'instagram':
-                return <Instagram className={iconClass} />
-            case 'soundcloud':
-                return <SoundCloud className={iconClass} />
-            default:
-                return <Blog className={iconClass} />
-        }
+  const getIcon = key => {
+    switch (key) {
+      case 'youtube':
+        return <YouTube className={iconClass} />
+      case 'facebook':
+        return <Facebook className={iconClass} />
+      case 'twitter':
+        return <Twitter className={iconClass} />
+      case 'instagram':
+        return <Instagram className={iconClass} />
+      case 'soundcloud':
+        return <SoundCloud className={iconClass} />
+      default:
+        return <Blog className={iconClass} />
     }
+  }
 
-    const data = Object.keys(inputs).map(key => {
-        if(key === 'password') return null;
-        return ( 
-            <GridItem key={key}>
-                <CustomInput
+  const data = Object.keys(inputs).map(key => {
+    if(key === 'password') return null;
+    return ( 
+      <GridItem key={key}>
+        <CustomInput
                     labelText={`your ${key} account...`}
                     
                     id={key}
@@ -63,13 +63,14 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
                                 </InputAdornment>
                         )
                     }}
-                /> 
-            </GridItem>)
-    });
+        /> 
+      </GridItem>
+    )
+  });
 
-    return (
-        data
-    );
+  return (
+    data
+  );
 }
 
 export const SnsInfoEdit = props => {
@@ -151,18 +152,18 @@ export const SnsInfoEdit = props => {
 }
 
 SnsInfoEdit.propTypes = {
-    setAlertMsg: PropTypes.func,
-    updateUserSocial: PropTypes.func,
-    classes: PropTypes.object,
-    userInfo: PropTypes.object,
-    loading: PropTypes.bool,
-    isChanged: PropTypes.bool,
+  setAlertMsg: PropTypes.func,
+  updateUserSocial: PropTypes.func,
+  classes: PropTypes.object,
+  userInfo: PropTypes.object,
+  loading: PropTypes.bool,
+  isChanged: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
-    loading: state.auth.loading,
-    userInfo: state.auth.userData,
-    isChanged: state.userValidation.changed,
+  loading: state.auth.loading,
+  userInfo: state.auth.userData,
+  isChanged: state.userValidation.changed,
 })
 
 export default connect(mapStateToProps, {setAlertMsg, updateUserSocial})(SnsInfoEdit)

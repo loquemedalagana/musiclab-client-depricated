@@ -5,41 +5,41 @@ import { connect } from 'react-redux';
 import {setAlertMsg} from '../../../app/store/alert';
 
 import {
-    CircularLoading,
+  CircularLoading,
     //GridContainer,
 } from '../../../components/components';
 
 export const UserHashtagsEdit = props => {
-    const {
-        classes,
+  const {
+    classes,
 //        userInfo,
-        loading,
-        isChanged
-    } = props;
+    loading,
+    isChanged
+  } = props;
     
     //fetch hashtags
 
-    if(isChanged || loading) return <CircularLoading />
+  if(isChanged || loading) return <CircularLoading />
 
-    return (
-        <div className={classes.tabBody}>
-            edit hashtags
-        </div>
-    )
+  return (
+    <div className={classes.tabBody}>
+        edit hashtags
+    </div>
+  )
 }
 
 UserHashtagsEdit.propTypes = {
-    setAlertMsg: PropTypes.func,
-    classes: PropTypes.object,
-    userInfo: PropTypes.object,
-    loading: PropTypes.bool,
-    isChanged: PropTypes.bool,
+  setAlertMsg: PropTypes.func,
+  classes: PropTypes.object,
+  userInfo: PropTypes.object,
+  loading: PropTypes.bool,
+  isChanged: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
-    loading: state.auth.loading,
-    userInfo: state.auth.userData,
-    isChanged: state.userValidation.changed,
+  loading: state.auth.loading,
+  userInfo: state.auth.userData,
+  isChanged: state.userValidation.changed,
 })
 
 
