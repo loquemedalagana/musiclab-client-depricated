@@ -69,13 +69,13 @@ const HeaderLinks = (props) => {
               Music SSeolprise
             </Button>,
             <Button color = "transparent" onClick={()=> {
-              history.push('/officialvideolist/jihbandofficial');
+              history.push(`/officialvideolist/jihbandofficial?userId=${userId}`);
               setMobileOpen(false);
             }} className={classes.dropdownLink}>
               Jeon Inhyuk Band official
             </Button>,
             <Button color = "transparent" onClick={()=>{
-              history.push('/videolistbykeywords');
+              history.push(`/videolistbykeywords?userId=${userId}`);
               setMobileOpen(false);
             }} className={classes.dropdownLink}>
               Search videos of Yada
@@ -94,13 +94,22 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+            <Button color = "transparent" 
+              onClick={()=>console.log('new')} 
+              className={classes.dropdownLink}
+            >
               New
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('hot')} className={classes.dropdownLink}>
+            <Button color = "transparent" 
+              onClick={()=>console.log('hot')} 
+              className={classes.dropdownLink}
+            >
               Hot
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('from yada')} className={classes.dropdownLink}>
+            <Button color = "transparent" 
+              onClick={()=>console.log('from yada')} 
+              className={classes.dropdownLink}
+            >
               From Yada Jeon Inhyuk
             </Button>,
           ]}

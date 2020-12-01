@@ -1,9 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux';
+import React from 'react';
 import classNames from "classnames";
 import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import VideoListSection from './Sections/VideoListSection';
+import qs from 'qs';
 
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -38,11 +38,16 @@ export const VideoListByOfficialChannel = props => {
   );
 
   const {
+    location,
     match,
   } = props;
 
   const channelParam = match.params.channel;
   const [channelInfo] = officialChannelProfileData.filter(({routeParam}) => routeParam === channelParam);
+
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true
+  });
 
   if(!channelInfo) return <Redirect to = '/notfound' />;
 
@@ -70,7 +75,8 @@ export const VideoListByOfficialChannel = props => {
             </GridContainer>
           <VideoListSection 
             type='official'
-            videoListId={channelInfo.playListId} 
+            videoListId={channelInfo.playListId}
+            userId={query.userId}
           />
         </div>            
         
@@ -84,9 +90,5 @@ VideoListByOfficialChannel.propTypes = {
   props: PropTypes.object
 }
 
-const mapStateToProps = (state) => ({
-  
-})
 
-
-export default connect(mapStateToProps)(React.memo(VideoListByOfficialChannel))
+export default React.memo(VideoListByOfficialChannel);

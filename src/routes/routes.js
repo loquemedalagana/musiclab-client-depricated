@@ -45,7 +45,7 @@ export default props => (
       <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
       <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
 
-      <Route exact path = '/officialvideolist/:channel' component = {VideoListByOfficialChannel} />
+      <Route exact path = '/officialvideolist/:channel?' component = {VideoListByOfficialChannel} />
       <Route exact path = '/videolistbykeywords/:query?' component = {VideoListByKeywords} />
 
       <Route exact path = '/servererror' component = {ServerError} />

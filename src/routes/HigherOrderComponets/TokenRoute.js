@@ -32,16 +32,16 @@ const TokenRoute = ({
   const LoadingToken = !data && !error && !isExpired;
 
   return ( <Route
-        {...rest}
-        render={props =>
-            LoadingToken ? (
-                <Loading />
-            ) : ( error || isExpired ? <Redirect to = '/notfound' />
-                : (isChanged ? <Redirect to = '/' /> :
-                    (data && <Component {...props} />)
-                )
-            )
-        }
+    {...rest}
+    render={props =>
+      LoadingToken ? (
+        <Loading />
+      ) : ( error || isExpired ? <Redirect to = '/notfound' />
+        : (isChanged ? <Redirect to = '/' /> :
+            (data && <Component {...props} />)
+        )
+      )
+    }
   />
 )};
 

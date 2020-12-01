@@ -7,37 +7,41 @@ import Loading from '../../components/Loading/LinearLoading';
 
 const MemberRoute = ({
     component: Component,
-    user,
+		isLoading,
+		userData,
+		isChanged,
     ...rest
 }) => (
-    <Route
-        {...rest}
-        render={props =>
-            user.loading ? (
-                <Loading />
-            ) : user.auth ? (
-                user.userData.points >= 0 ? 
-                <Component {...props} /> :
-                    ((user.userData.snsId && !user.userData.email) ? 
-                        <Redirect to = '/emailregister' /> :
-                        <Redirect to = '/waitinglevelup' />
-                    )
-                ) : (
-                <Redirect to = '/login' />
+  <Route
+    {...rest}
+    render={props =>
+      isLoading ? (
+        <Loading />
+      ) : userData ? (
+          userData.points >= 0 ? 
+          <Component {...props} /> :
+            ((userData.snsId && !userData.email) ? 
+              <Redirect to = '/emailregister' /> :
+              <Redirect to = '/waitinglevelup' />
             )
-        }
-    />
+          ) : (
+        <Redirect to = '/login' />
+      )
+    }
+  />
 );
 
 
 MemberRoute.propTypes = {
-    user: PropTypes.object.isRequired,
-    isChanged: PropTypes.bool,
+  userData: PropTypes.object,
+  isLoading: PropTypes.bool,
+  isChanged: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
-    user: state.auth,
-    isChanged: state.userValidation.changed
+  userData: state.auth.userData,
+  isLoading: state.auth.loading,
+  isChanged: state.userValidation.changed
 });
 
 export default connect(mapStateToProps)(MemberRoute);

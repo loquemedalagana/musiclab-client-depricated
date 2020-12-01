@@ -6,6 +6,9 @@
   - comment
 4. footer
 
+## card style
+- 배열에 후보수를 생성해서, math.random을 활용해서 배경 출력
+
 
 ## post view
 - 영상일 경우 썸네일 클릭 시 유튜브 페이지로 접속

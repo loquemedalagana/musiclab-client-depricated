@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
@@ -34,7 +33,7 @@ export const VideoListSection = props => {
     videoListId,
     type,
     userId,
-    isAdmin,
+    isAdmin
   } = props;
 
   const classes = useStyles();
@@ -65,6 +64,7 @@ export const VideoListSection = props => {
 
 
   //이 부분 손 들어감
+  console.log(userId);
   console.log(resultData);
 
   const {
@@ -126,9 +126,5 @@ VideoListSection.propTypes = {
   isAdmin: PropTypes.bool,
 }
 
-const mapStateToProps = (state) => ({
-  userId: state.auth.userData ? state.auth.userData._id : undefined,
-  isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
-})
 
-export default connect(mapStateToProps)(VideoListSection)
+export default VideoListSection
