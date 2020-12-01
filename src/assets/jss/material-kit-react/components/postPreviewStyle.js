@@ -18,6 +18,15 @@ export default theme => ({
     }),
   },
   expandOpen: {
-        transform: 'rotate(180deg)',
+    transform: 'rotate(180deg)',
+  },
+  authorName: {
+    color: '#5c6e91'
+  },
+  publishtedAt: {
+    color: '#93abd3'
+  },
+  postTitle: {
+    color: '#393e46'
   },
 })

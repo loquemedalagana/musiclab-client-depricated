@@ -90,7 +90,7 @@ export const VideoListSection = props => {
 
 
   return (
-    <GridContainer className={classes.listContainer} spacing = {2}>
+    <GridContainer className={classes.listContainer} spacing = {4}>
       {resultData.map((data, idx) => (
         <GridItem xs={12} sm={12} md={6} key={idx}>
           <PostPreview             

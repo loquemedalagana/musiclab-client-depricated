@@ -14,7 +14,6 @@ import {
   Collapse,
   Avatar,
   IconButton,
-  Typography
 } from '@material-ui/core';
 
 import {
@@ -74,8 +73,13 @@ const PostPreview = props => {
             <ShowPostMenuIcon />
           </IconButton>
         }
-        title={authorName}
-        subheader={publishedAt}
+        disableTypography
+        title={<h5 className={classes.authorName}>
+          {authorName}
+        </h5>}
+        subheader={<h6 className={classes.publishtedAt}>
+          {publishedAt}
+        </h6>}
       />
       <CardMedia
         className={classes.media}
@@ -84,12 +88,10 @@ const PostPreview = props => {
         onClick={viewMedia}
       />
 
-      {/*미리보기할 내용..*/}
       <CardContent>
-        
-        <Typography variant="body2" color="textSecondary" component="h3">
+        <h4 className={classes.postTitle}>
           {title}
-        </Typography>        
+        </h4>        
       </CardContent>
 
       <CardActions disableSpacing>
@@ -115,7 +117,7 @@ const PostPreview = props => {
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{description}</Typography>
+          <p>{description}</p>
         </CardContent>
       </Collapse>
     </Card>
