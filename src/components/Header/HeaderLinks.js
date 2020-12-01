@@ -68,7 +68,10 @@ const HeaderLinks = (props) => {
             <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
               Music SSeolprise
             </Button>,
-            <Button color = "transparent" onClick={()=> history.push('/officialvideolist/jihbandofficial')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=> {
+              history.push('/officialvideolist/jihbandofficial');
+              setMobileOpen(false);
+            }} className={classes.dropdownLink}>
               Jeon Inhyuk Band official
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>

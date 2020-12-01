@@ -46,8 +46,7 @@ const PostPreview = props => {
 
   const isYoutube = type === 'youtube';
 
-  //const mediaURL = "https://youtu.be/" + videoId;
-  const mediaURL = `https://www.youtube.com/embed/${videoId}`;
+  const mediaURL = "https://youtu.be/" + videoId;
   const authorName = type === 'post' ? authorData.displayName : authorData.channelTitle;
   const {image} = authorData;
 
@@ -56,6 +55,10 @@ const PostPreview = props => {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  const viewMedia = () => {
+    if(isYoutube) return window.open("about:blank").location.href = mediaURL;
+  }
 
   return (
     <Card className={classes.root}>
@@ -78,6 +81,7 @@ const PostPreview = props => {
         className={classes.media}
         image={thumbnail}
         src={mediaURL}
+        onClick={viewMedia}
       />
 
       {/*미리보기할 내용..*/}
