@@ -1,3 +1,7 @@
+import {
+  showPostMenu,
+} from './postStyle';
+
 export default theme => ({
   root: {
     width: '100%',
@@ -24,9 +28,11 @@ export default theme => ({
     color: '#5c6e91'
   },
   publishtedAt: {
-    color: '#93abd3'
+    color: '#9f5f80'
   },
   postTitle: {
     color: '#393e46'
   },
+
+  ...showPostMenu,
 })

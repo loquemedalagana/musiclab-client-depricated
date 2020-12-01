@@ -41,7 +41,8 @@ import ToastAlerts from './ToastAlerts/ToastAlerts';
 import SnackbarContent from './Snackbar/SnackbarContent';
 import Clearfix from './Clearfix/Clearfix';
 
-import PostPreview from './PostPreview/PostPreview';
+import PostPreview from './Post/PostPreview';
+import PostMenuData from './Post/PostMenuData';
 
 export {
     Header, HeaderLinks, Footer, GridContainer,
@@ -51,5 +52,5 @@ export {
     DangerText, InfoText, MutedText, PrimaryText, QuoteText,
     SmallText, SucessText, WarningText,
     HeaderLinksNotLoggedIn, LinearLoading, CircularLoading,
-    ToastAlerts, SnackbarContent, Clearfix, PostPreview,
+    ToastAlerts, SnackbarContent, Clearfix, PostPreview, PostMenuData
 }

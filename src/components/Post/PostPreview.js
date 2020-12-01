@@ -23,6 +23,11 @@ import {
   ExpandMoreRounded as ViewMoreIcon,
 } from '@material-ui/icons';
 
+import {
+  CustomDropdown,
+  PostMenuData,
+} from '../components.js'
+
 const useStyles = makeStyles(styles);
 
 //cardMedia 유튜브 주소로 가능?
@@ -33,6 +38,7 @@ const PostPreview = props => {
     type,
     authorData,
     postData,
+    curUserData,
   } = props;
 
   const {
@@ -44,6 +50,11 @@ const PostPreview = props => {
   } = postData;
 
   const isYoutube = type === 'youtube';
+  const postMenuData = PostMenuData({
+    authorData,
+    curUserData,
+    postData,
+  })
 
   const mediaURL = "https://youtu.be/" + videoId;
   const authorName = type === 'post' ? authorData.displayName : authorData.channelTitle;
@@ -59,6 +70,8 @@ const PostPreview = props => {
     if(isYoutube) return window.open("about:blank").location.href = mediaURL;
   }
 
+
+
   return (
     <Card className={classes.root}>
       <CardHeader 
@@ -69,9 +82,17 @@ const PostPreview = props => {
           />
         }
         action={ //mini menu will be added
-          <IconButton area-label="post-menu">
-            <ShowPostMenuIcon />
-          </IconButton>
+          <CustomDropdown 
+            caret = {false}
+            buttonIcon={ShowPostMenuIcon}
+            hoverColor='rose'
+            noLiPadding
+            buttonProps={{
+              color: 'transparent',
+              className: classes.showPostMenu
+            }}
+            dropdownList={postMenuData}
+          />
         }
         disableTypography
         title={<h5 className={classes.authorName}>
@@ -131,9 +152,15 @@ PostPreview.propTypes = {
   ]),
   children: PropTypes.node,
 
+  curUserData: PropTypes.shape({
+    isAdmin: PropTypes.bool,
+    userId: PropTypes.string
+  }),
+
   authorData: PropTypes.shape({
     channelTitle: PropTypes.string,
     displayName: PropTypes.string,
+    userId: PropTypes.string,
     image: PropTypes.string, //user avatar img or channel avatar img
   }),
 

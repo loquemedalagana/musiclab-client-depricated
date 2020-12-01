@@ -33,6 +33,8 @@ export const VideoListSection = props => {
   const {
     videoListId,
     type,
+    userId,
+    isAdmin,
   } = props;
 
   const classes = useStyles();
@@ -99,6 +101,10 @@ export const VideoListSection = props => {
               channelTitle,
               image
             }}
+            curUserData = {{
+              userId,
+              isAdmin
+            }}
             postData = {data}
           />
         </GridItem>
@@ -115,11 +121,14 @@ VideoListSection.propTypes = {
     "channel",
     "keywords"
   ]),
-  children: PropTypes.node
+  children: PropTypes.node,
+  userId: PropTypes.string,
+  isAdmin: PropTypes.bool,
 }
 
 const mapStateToProps = (state) => ({
-  
+  userId: state.auth.userData ? state.auth.userData._id : undefined,
+  isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 })
 
 export default connect(mapStateToProps)(VideoListSection)

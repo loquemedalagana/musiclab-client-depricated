@@ -74,7 +74,10 @@ const HeaderLinks = (props) => {
             }} className={classes.dropdownLink}>
               Jeon Inhyuk Band official
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>{
+              history.push('/videolistbykeywords');
+              setMobileOpen(false);
+            }} className={classes.dropdownLink}>
               Search videos of Yada
             </Button>,
           ]}

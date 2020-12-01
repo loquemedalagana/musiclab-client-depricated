@@ -1,3 +1,12 @@
+## post 구성
+1. preview
+2. header
+3. body (여기도 매뉴가 들어감!)
+  - media
+  - comment
+4. footer
+
+
 ## post view
 - 영상일 경우 썸네일 클릭 시 유튜브 페이지로 접속
 - 서브 매뉴
