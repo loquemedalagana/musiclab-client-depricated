@@ -45,24 +45,23 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
     return ( 
       <GridItem key={key}>
         <CustomInput
-                    labelText={`your ${key} account...`}
-                    
-                    id={key}
-                    error={null}
-                    formControlProps={{
-                        fullWidth: true
-                    }}
-                    inputProps={{
-                        type: "text",
-                        name: key,
-                        value: inputs[key],
-                        onChange: onInputHandler,
-                        endAdornment: (
-                                <InputAdornment position="end">
-                                    {getIcon(key)}
-                                </InputAdornment>
-                        )
-                    }}
+          labelText={`your ${key} account...`}
+          id={key}
+          error={null}
+          formControlProps={{
+            fullWidth: true
+          }}
+          inputProps={{
+            type: "text",
+            name: key,
+            value: inputs[key],
+            onChange: onInputHandler,
+            endAdornment: (
+              <InputAdornment position="end">
+                {getIcon(key)}
+              </InputAdornment>
+            )
+          }}
         /> 
       </GridItem>
     )
@@ -74,81 +73,81 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
 }
 
 export const SnsInfoEdit = props => {
-    const {
-        updateUserSocial,
-        classes,
-        userInfo,
-        loading,
-        isChanged
-    } = props;
+  const {
+    updateUserSocial,
+    classes,
+    userInfo,
+    loading,
+    isChanged
+  } = props;
 
-    const [inputs, setInputs] = useState({
-        blog: userInfo ? (userInfo.social ? (userInfo.social.blog ? userInfo.social.blog : '') : '') : '',
-        twitter: userInfo ? (userInfo.social ? (userInfo.social.twitter ? userInfo.social.twitter : '') : '') : '',
-        facebook: userInfo ? (userInfo.social ? (userInfo.social.facebook ? userInfo.social.facebook : '') : '') : '',
-        instagram: userInfo ? (userInfo.social ? (userInfo.social.instagram ? userInfo.social.instagram : '') : '') : '',
-        youtube: userInfo ? (userInfo.social ? (userInfo.social.youtube ? userInfo.social.youtube : '') : '') : '',
-        soundcloud: userInfo ? (userInfo.social ? (userInfo.social.soundcloud ? userInfo.social.soundcloud : '') : '') : '',
-    });
+  const [inputs, setInputs] = useState({
+    blog: userInfo ? (userInfo.social ? (userInfo.social.blog ? userInfo.social.blog : '') : '') : '',
+    twitter: userInfo ? (userInfo.social ? (userInfo.social.twitter ? userInfo.social.twitter : '') : '') : '',
+    facebook: userInfo ? (userInfo.social ? (userInfo.social.facebook ? userInfo.social.facebook : '') : '') : '',
+    instagram: userInfo ? (userInfo.social ? (userInfo.social.instagram ? userInfo.social.instagram : '') : '') : '',
+    youtube: userInfo ? (userInfo.social ? (userInfo.social.youtube ? userInfo.social.youtube : '') : '') : '',
+    soundcloud: userInfo ? (userInfo.social ? (userInfo.social.soundcloud ? userInfo.social.soundcloud : '') : '') : '',
+  });
 
-    const onInputHandler = event => {
-        const {name, value} = event.currentTarget;
-        setInputs({
-            ...inputs,
-            [name]: value
-        })
+  const onInputHandler = event => {
+    const {name, value} = event.currentTarget;
+    setInputs({
+      ...inputs,
+      [name]: value
+    })
+  }
+
+  const onSubmitHandler = event => {
+    event.preventDefault();
+    const errorMessages = [];
+
+    const ok = () => {
+      for(const key in inputs){
+          console.log(key, inputs[key]);
+          if(inputs[key] && !checkSnsLink(key, inputs[key]) && key !== 'password') {
+            errorMessages.push(`올바르지 않은 ${key}주소 형식입니다.`);
+            return false;
+          }
+      }
+      return true;
     }
 
-    const onSubmitHandler = event => {
-        event.preventDefault();
-        const errorMessages = [];
-
-        const ok = () => {
-            for(const key in inputs){
-                console.log(key, inputs[key]);
-                if(inputs[key] && !checkSnsLink(key, inputs[key]) && key !== 'password') {
-                    errorMessages.push(`올바르지 않은 ${key}주소 형식입니다.`);
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        if(ok()){
-            console.log('finished');
-            updateUserSocial(inputs);
-        } else {
-            console.log(errorMessages);
-            errorMessages.forEach(msg => setAlertMsg(msg, 'error'));
-        }
+    if(ok()){
+      console.log('finished');
+      updateUserSocial(inputs);
+    } else {
+      console.log(errorMessages);
+      errorMessages.forEach(msg => setAlertMsg(msg, 'error'));
     }
+  }
 
     //console.log(inputs);
 
-    if(userInfo && userInfo.social){
-        //console.log(JSON.stringify(userInfo.social));
-    }
+  if(userInfo && userInfo.social){
+    //console.log(JSON.stringify(userInfo.social));
+  }
 
-    if(isChanged || loading) return <CircularLoading />
+  if(isChanged || loading) return <CircularLoading />
 
-    return (
-        <div className={classes.tabBody}>
-            <GridContainer>
-                {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
-            </GridContainer>
+  return (
+    <div className={classes.tabBody}>
+      <GridContainer>
+        {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
+      </GridContainer>
             
 
-            <GridContainer 
-                className={classes.cardFooter} 
-                justify='space-between'
-                direction='row-reverse'
-            >
-                <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
-                        Submit
-                </Button>
-            </GridContainer>
-        </div>
-    )
+      <GridContainer 
+        className={classes.cardFooter} 
+        justify='space-between'
+        direction='row-reverse'
+      >
+      <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+        Submit
+      </Button>
+      </GridContainer>
+    </div>
+  )
 }
 
 SnsInfoEdit.propTypes = {

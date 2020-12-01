@@ -10,28 +10,28 @@ import Loading from '../../components/Loading/LinearLoading';
 //levelup, passwordreset page
 
 const TokenRoute = ({
-    component: Component,
-    isChanged,
-    location,
-    ...rest
+  component: Component,
+  isChanged,
+  location,
+  ...rest
 }) => {
 
-    const query = qs.parse(location.search, {
-        ignoreQueryPrefix: true
-    });  
-    const {token, expiredtime} = query;
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true
+  });  
+  const {token, expiredtime} = query;
 
-    const ENDPOINT = `/api/users/checktoken/?token=${token}&expiredtime=${expiredtime}`;
-    const isExpired = Date.now() > expiredtime;
-    const {data, error} = useSWR(isExpired ? null : ENDPOINT, isExpired ? null : fetcher);
+  const ENDPOINT = `/api/users/checktoken/?token=${token}&expiredtime=${expiredtime}`;
+  const isExpired = Date.now() > expiredtime;
+  const {data, error} = useSWR(isExpired ? null : ENDPOINT, isExpired ? null : fetcher);
 
     //console.log(data, error);   
-    console.log(isExpired ? "expired!" : "not expired");
-    console.log(data);
+  console.log(isExpired ? "expired!" : "not expired");
+  console.log(data);
     
-    const LoadingToken = !data && !error && !isExpired;
+  const LoadingToken = !data && !error && !isExpired;
 
-    return ( <Route
+  return ( <Route
         {...rest}
         render={props =>
             LoadingToken ? (
@@ -42,16 +42,15 @@ const TokenRoute = ({
                 )
             )
         }
-    />
+  />
 )};
 
 TokenRoute.propTypes = {
-    isChanged: PropTypes.bool,
+  isChanged: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
-
-    isChanged: state.userValidation.changed
+  isChanged: state.userValidation.changed
 });
 
 export default connect(mapStateToProps)(TokenRoute)

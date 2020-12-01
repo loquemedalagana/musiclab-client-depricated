@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import classNames from "classnames";
 
 import {
-    GridContainer,
-    GridItem,
+  GridContainer,
+  GridItem,
     //CircularLoading,
 } from '../../../../components/components';
 
@@ -16,51 +16,51 @@ import yadaImg from '../../../../assets/images/TagImages/yada.jpg';
 import vocalImg from '../../../../assets/images/TagImages/vocal.jpg';
 
 export const UserPostList = props => {
-    const {
-        classes,
+  const {
+    classes,
         //userId,
-    } = props;
+  } = props;
 
-    const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const thumbnailListImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
-    return (
-        <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={4}>
-            <img
-            alt="..."
-            src={guitarImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={vocalImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={compositionImg}
-            className={thumbnailListImageClasses}
-            />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-            <img
-            alt="..."
-            src={bandImg}
-            className={thumbnailListImageClasses}
-            />
-            <img
-            alt="..."
-            src={yadaImg}
-            className={thumbnailListImageClasses}
-            />
-        </GridItem>
-        </GridContainer>
-    )
+  return (
+    <GridContainer justify="center">
+      <GridItem xs={12} sm={12} md={4}>
+        <img
+          alt="..."
+          src={guitarImg}
+          className={thumbnailListImageClasses}
+        />
+        <img
+          alt="..."
+          src={vocalImg}
+          className={thumbnailListImageClasses}
+        />
+        <img
+          alt="..."
+          src={compositionImg}
+          className={thumbnailListImageClasses}
+        />
+      </GridItem>
+      <GridItem xs={12} sm={12} md={4}>
+        <img
+          alt="..."
+          src={bandImg}
+          className={thumbnailListImageClasses}
+        />
+        <img
+          alt="..."
+          src={yadaImg}
+          className={thumbnailListImageClasses}
+        />
+      </GridItem>
+    </GridContainer>
+  )
 }
 
 UserPostList.propTypes = {
-    props: PropTypes.object,
-    userId: PropTypes.string,
+  props: PropTypes.object,
+  userId: PropTypes.string,
 }
 
 const mapStateToProps = (state) => ({
