@@ -75,6 +75,9 @@ const PostPreview = props => {
   return (
     <Card className={classes.root}>
       <CardHeader 
+        classes={{
+          root: classes.cardHeader,
+        }}
         avatar={
           <Avatar
             aria-label="channel-title"
@@ -110,13 +113,21 @@ const PostPreview = props => {
         onClick={viewMedia}
       />
 
-      <CardContent>
+      <CardContent
+        classes={{
+          root: classes.cardBody,
+        }}
+      >
         <h4 className={classes.postTitle}>
           {title}
         </h4>        
       </CardContent>
 
-      <CardActions disableSpacing>
+      <CardActions disableSpacing
+        classes={{
+          root: classes.cardFooter,
+        }}
+      >
         <IconButton aria-label="add to like">
           <LikeIcon />
         </IconButton>
@@ -138,7 +149,11 @@ const PostPreview = props => {
       </CardActions>
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
+        <CardContent
+          classes={{
+            root: classes.cardFooter,
+          }}
+        >
           <p>{description}</p>
         </CardContent>
       </Collapse>

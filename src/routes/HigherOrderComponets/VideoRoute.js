@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+//token route 참고
+
 const VideoRoute = props => {
   const {
     isLoading,
