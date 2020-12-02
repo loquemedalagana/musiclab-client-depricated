@@ -6,6 +6,7 @@ import Footer from "./Footer/Footer.js";
 import GridContainer from "./Grid/GridContainer.js";
 import GridItem from "./Grid/GridItem.js";
 import Button from "./CustomButtons/Button.js";
+import FabIconButton from './FabIconButton/FabIconButton';
 
 import Card from "./Card/Card.js";
 import CardBody from "./Card/CardBody.js";
@@ -45,7 +46,7 @@ import PostPreview from './Post/PostPreview';
 import PostMenuData from './Post/PostMenuData';
 
 export {
-    Header, HeaderLinks, Footer, GridContainer,
+    Header, HeaderLinks, Footer, GridContainer, FabIconButton,
     GridItem, Button, Card, CardBody, CardHeader, CardFooter, 
     CustomInput, CustomSelectInput, CustomDropdown, Parallax, NavPills, Pagination,
     CustomLinearProgress, CustomTabs, InfoArea, DateTimePicker,

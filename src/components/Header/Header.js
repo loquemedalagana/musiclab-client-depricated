@@ -75,7 +75,7 @@ function Header(props) {
     [classes.fixed]: fixed
   });
 
-  console.log(location);
+  //console.log(location);
 
   const brandComponent = (
     <>

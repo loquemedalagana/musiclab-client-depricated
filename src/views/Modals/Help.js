@@ -42,13 +42,14 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const RadioForm = props => {
   const {
-        classes,
-        value,
+    classes,
+    value,
   } = props;
 
   const helperText = {
-        error: '오류 보고',
-        help: '문의 사항'
+    error: '오류 보고',
+    help: '문의 사항',
+    
   }
 
   return (

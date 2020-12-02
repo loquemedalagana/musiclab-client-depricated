@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Routes from './routes/routes';
 
+import Routes from './routes/routes';
 
 import {fetchUser, authSelector} from './app/store/auth';
 
