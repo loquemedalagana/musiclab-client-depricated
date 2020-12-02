@@ -56,6 +56,9 @@
 - 이 부분 배포 전 처리하기 
 
 ## 이메일 관련 (배포 직전, 비디오, 알림부터 구현 하고!)
+- selector를 이용해서 이메일 등록 안되면 클릭 안됨
+- input onchange에서 email onchange event 없애기
+
 - Radio input은 처리 완료
 - smtp 도메인 등록 후 관리자 => 회원은 설정 안 어려울 듯
 - mailtrap or emailjs 써서 회원이 관리자한테 메일 보내기(틀린 양식일 때 전송 안되게 설정)

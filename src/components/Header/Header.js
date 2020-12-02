@@ -18,7 +18,7 @@ import {
 // @material-ui/icons
 import {
   Menu,
-  ArrowBackIosSharp,
+  ArrowBackIos,
   HomeSharp
 } from '@material-ui/icons';
 
@@ -73,10 +73,24 @@ function Header(props) {
     [classes.fixed]: fixed
   });
 
-  const brandComponent = (<Button 
-    className={classes.title} onClick={() => history.push('/')}>
-    {brand}
-  </Button>);
+  const brandComponent = (
+    <>
+    <Hidden mdUp implementation="js">
+      <IconButton className={classes.title} onClick={() => history.goBack()}>
+        <ArrowBackIos />
+      </IconButton>
+      <IconButton className={classes.title} onClick={() => history.push('/')}>
+        <HomeSharp />
+      </IconButton>
+    </Hidden>
+    <Hidden smDown implementation="css">
+      <Button 
+        className={classes.title} onClick={() => history.push('/')}>
+        {brand}
+      </Button>
+    </Hidden>
+    </>
+  );
   
   return (
     <AppBar className={appBarClasses}>
