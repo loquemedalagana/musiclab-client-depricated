@@ -6,14 +6,22 @@ import PropTypes from "prop-types";
 import { withRouter } from 'react-router-dom';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Button,
+  Hidden,
+  Drawer
+} from '@material-ui/core';
+
 // @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
+import {
+  Menu,
+  ArrowBackIosSharp,
+  HomeSharp
+} from '@material-ui/icons';
+
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
 
@@ -64,7 +72,12 @@ function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
-  const brandComponent = <Button className={classes.title} onClick={() => history.push('/')}>{brand}</Button>;
+
+  const brandComponent = (<Button 
+    className={classes.title} onClick={() => history.push('/')}>
+    {brand}
+  </Button>);
+  
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>

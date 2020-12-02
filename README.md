@@ -35,15 +35,22 @@
 
 <hr/>
 
-## float button
+# 구현할 것
+
+## float button (1순위)
 ### 글쓰기, 뒤로 버튼 float로 처리 (hidden 속성 사용)
 - 뒤로 가기는 왼쪽 하단, 글쓰기 버튼은 오른쪽 하단(모바일, 태블릿 에서만!)
+- 뒤로 가기 버튼은 App.js 하단에 설정
+
+## 키워드별 영상 분류, 장바구니 (2순위) - 제일 빡셈ㅡㅡ
 
 ## 회원정보 설정에 국가 설정
 - https://material-ui.com/components/autocomplete/#country-select
 
 ## tag로 검색 -> autocomplete 
 - https://material-ui.com/components/autocomplete/
+
+## loading 부분 skeleton component 사용
 
 ### Focus on next field when pressing enter React.js
 - 이 부분 배포 전 처리하기 
@@ -52,11 +59,26 @@
 - Radio input은 처리 완료
 - smtp 도메인 등록 후 관리자 => 회원은 설정 안 어려울 듯
 - mailtrap or emailjs 써서 회원이 관리자한테 메일 보내기(틀린 양식일 때 전송 안되게 설정)
+- mailgun 알아보기
+
+## post 기능 (imgbot 학생 공짜 오퍼 이용)
+
+<br/>
+<hr/>
 
 ## 배포 후 진행할 것
+- Name.com 도메인 처리
+  - https://www.name.com/github-students
+  - 주소는 musicsseolprise.rocks 로 예정
+  - 아니면 musicsseolprise.band 
+  - musicsseolprise.net
+  - musicsseolprise.com
+
 - 전체공개 페이지 (영상 정리)는 서버사이드로 전환 -> 검색엔진 최적화
 - DM 기능 (배포 후에 넣기로 허락 완료)
 - 주제별 채팅방??
+  - customerly 사용해보기
+
 - 다국어 기능 for foreign fans, 자막 서비스
 - react native로 모바일 앱 제작
 
