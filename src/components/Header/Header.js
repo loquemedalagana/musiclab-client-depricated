@@ -19,6 +19,7 @@ import {
 import {
   Menu,
   ArrowBackIos,
+  ArrowForwardIos,
   HomeSharp
 } from '@material-ui/icons';
 
@@ -31,7 +32,8 @@ function Header(props) {
   const classes = useStyles();
   const {
     mobileOpen,
-    setMobileOpen
+    setMobileOpen,
+    location
   } = props;
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
@@ -73,11 +75,18 @@ function Header(props) {
     [classes.fixed]: fixed
   });
 
+  console.log(location);
+
   const brandComponent = (
     <>
     <Hidden mdUp implementation="js">
+    {location.pathname !== '/' && (
       <IconButton className={classes.title} onClick={() => history.goBack()}>
         <ArrowBackIos />
+      </IconButton>
+    )}
+      <IconButton className={classes.title} onClick={() => history.goForward()}>
+        <ArrowForwardIos />
       </IconButton>
       <IconButton className={classes.title} onClick={() => history.push('/')}>
         <HomeSharp />
