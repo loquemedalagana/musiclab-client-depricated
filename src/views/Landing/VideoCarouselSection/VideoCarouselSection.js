@@ -2,13 +2,12 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from "@material-ui/core/styles";
-
+import Skeleton from '@material-ui/lab/Skeleton';
 import PrintVideoCarousel from './PrintVideoCarousel';
 
 import {
   GridContainer,
   GridItem,
-  CircularLoading,
 } from '../../../components/components';
 
 import {
@@ -114,7 +113,7 @@ export const VideoCarouselSection = props => {
   if(!resultData && ENDPOINT && loading) return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <CircularLoading />
+        <Skeleton animation='wave' varient='rect' />
 			</div>
     </div>
   );

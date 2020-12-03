@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import Skeleton from '@material-ui/lab/Skeleton';
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
   GridContainer,
   GridItem,
-  CircularLoading,
   PostPreview,
 } from '../../../components/components';
 
@@ -75,7 +75,7 @@ export const VideoListSection = props => {
   if(!resultData && ENDPOINT && loading) return (
     <div className={classes.section}>
       <div className={classes.container}>
-        <CircularLoading />
+        <Skeleton animation='wave' varient='rect' />
       </div>
     </div>
   );
