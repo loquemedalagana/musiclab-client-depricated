@@ -104,24 +104,24 @@ export const SampleVideoList = [
 
 export const SampleTagList = [
   {
-        tagName: 'vocal',
+    tagName: 'vocal',
   },
   {
-        tagName: 'drum',
+    tagName: 'drum',
   },
   {
-        tagName: 'guitar',
+    tagName: 'guitar',
   },
   {
-        tagName: 'bass',
+    tagName: 'bass',
   },
   {
-        tagName: 'piano',
+    tagName: 'piano',
   },
   {
-        tagName: 'yada',
+    tagName: 'yada',
   },
   {
-        tagName: 'jeoninhyukband',
+    tagName: 'jeoninhyukband',
   },
 ]
