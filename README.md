@@ -26,9 +26,11 @@
 
 <hr/>
 
-#### 모바일에서 프사 테스트 해보장
-
 # 오류 사항
+
+## 모바일에서 프사 올릴 시 에러 뜸..
+  - 서버 콘솔에 뜨지 않는거 보니, 클라이언트단 코드 손봐야 할 듯\
+  - (참고) https://github.com/chengsmart/react-file-upload-mobile/blob/master/source/react-file-upload-mobile/index.tsx
 
 ## 프로필에서 영상 리스트가 다 출력 안됨... profile/video
 
@@ -47,6 +49,8 @@
 - 모바일에서 검색 아이콘 매뉴바 왼쪽에(투명으로)
 - 매뉴바(모바일) 알림 표시하기 (!!!)
 
+## 글쓰기, 댓글 UI 만들기
+
 
 ## 키워드별 영상 분류, 장바구니 (2순위) - 제일 빡셈ㅡㅡ
 
@@ -59,6 +63,7 @@
 ## loading 부분 skeleton component 사용
 
 ### Focus on next field when pressing enter React.js
+- 참고 페이지 https://kyounghwan01.github.io/blog/React/focus-blur/#react%EC%97%90%EC%84%9C-focus-blur-%ED%95%98%EB%8A%94%EB%B2%95
 - 이 부분 배포 전 처리하기 
 
 ## 이메일 관련 (배포 직전, 비디오, 알림부터 구현 하고!)
@@ -72,6 +77,8 @@
 - mailgun 알아보기
 
 ## post 기능 (imgbot 학생 공짜 오퍼 이용)
+
+## 댓글 입력 시 화면을 가장 밑으로 내리기
 
 <br/>
 <hr/>

@@ -23,6 +23,8 @@ import {
   HomeSharp
 } from '@material-ui/icons';
 
+import SearchIconMobile from './SearchIconMobile';
+
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
 
@@ -117,7 +119,11 @@ function Header(props) {
         <Hidden smDown implementation="css">
           {rightLinks}
         </Hidden>
+      {/*--------모바일 매뉴, 여기다 알림 뱃지 추가--------*/}
         <Hidden mdUp>
+          <SearchIconMobile 
+            color='inherit'
+          />
           <IconButton
             color="inherit"
             aria-label="open drawer"
