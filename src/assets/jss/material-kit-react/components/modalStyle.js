@@ -2,7 +2,7 @@ import customCheckboxRadioSwitch from "./customCheckboxRadioSwitch";
 
 const modalStyle = {
   modal: {
-    borderRadius: "6px"
+    borderRadius: "6px",
   },
   modalHeader: {
     borderBottom: "none",
@@ -10,11 +10,11 @@ const modalStyle = {
     paddingRight: "24px",
     paddingBottom: "0",
     paddingLeft: "24px",
-    minHeight: "16.43px"
+    minHeight: "16.43px",
   },
   modalTitle: {
     margin: "0",
-    lineHeight: "1.42857143"
+    lineHeight: "1.42857143",
   },
   modalCloseButton: {
     color: "#999999",
@@ -29,42 +29,42 @@ const modalStyle = {
     textShadow: "none",
     fontWeight: "700",
     lineHeight: "1",
-    float: "right"
+    float: "right",
   },
   modalClose: {
     width: "16px",
-    height: "16px"
+    height: "16px",
   },
   modalBody: {
     paddingTop: "24px",
     paddingRight: "24px",
     paddingBottom: "16px",
     paddingLeft: "24px",
-    position: "relative"
+    position: "relative",
   },
   modalDescription: {
     color: "#999",
-    textAlign: "center"
+    textAlign: "center",
   },
   textArea: {
     marginRight: "15px",
-    marginLeft: "15px"
+    marginLeft: "15px",
   },
   textCenter: {
-    textAlign: "center"
+    textAlign: "center",
   },
   inputIconsColor: {
-    color: "#495057"
+    color: "#495057",
   },
   modalFooter: {
     padding: "15px",
     textAlign: "right",
     paddingTop: "0",
-    margin: "0"
+    margin: "0",
   },
   modalFooterCenter: {
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
   },
   ...customCheckboxRadioSwitch,
 };

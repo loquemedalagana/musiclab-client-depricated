@@ -22,9 +22,8 @@ const tooltipsStyle = {
     wordSpacing: "normal",
     wordWrap: "normal",
     whiteSpace: "normal",
-    lineBreak: "auto"
-  }
+    lineBreak: "auto",
+  },
 };
-
 
 export default tooltipsStyle;

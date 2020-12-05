@@ -10,11 +10,12 @@ const parallaxStyle = {
     padding: "0",
     border: "0",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   filter: {
     "&:before": {
-      background: "linear-gradient(60deg, rgba(255, 142, 83, 0.3) 30%,rgba(163, 216, 244, 0.5) 80%)"
+      background:
+        "linear-gradient(60deg, rgba(255, 142, 83, 0.3) 30%,rgba(163, 216, 244, 0.5) 80%)",
     },
     "&:after,&:before": {
       position: "absolute",
@@ -24,12 +25,12 @@ const parallaxStyle = {
       display: "block",
       left: "0",
       top: "0",
-      content: "''"
-    }
+      content: "''",
+    },
   },
   small: {
-    height: "380px"
-  }
+    height: "380px",
+  },
 };
 
 export default parallaxStyle;

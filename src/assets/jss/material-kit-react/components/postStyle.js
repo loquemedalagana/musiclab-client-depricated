@@ -11,15 +11,15 @@ export const showPostMenu = {
   display: "inline-flex",
   "&:hover,&:focus": {
     color: "inherit",
-    background: "rgba(200, 200, 200, 0.2)"
+    background: "rgba(200, 200, 200, 0.2)",
   },
-}
+};
 
 export const dropdownLink = {
   "&,&:hover,&:focus": {
     color: "inherit",
     textDecoration: "none",
     display: "block",
-    padding: "10px 20px"
-  }
-}
+    padding: "10px 20px",
+  },
+};
