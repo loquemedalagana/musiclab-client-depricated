@@ -1,17 +1,17 @@
 export default {
   fixPosition: {
-    position: 'absolute',
-    zIndex: '2000',
+    position: "absolute",
+    zIndex: "2000",
   },
   left: {
-    marginLeft: '20px',
-    marginBottom: '20px',
+    marginLeft: "20px",
+    marginBottom: "20px",
   },
   right: {
-    marginRight: '20px',
-    marginBottom: '20px',
+    marginRight: "20px",
+    marginBottom: "20px",
   },
   medium: {
-    marginBottom: '20px',
-  }
-}
+    marginBottom: "20px",
+  },
+};
