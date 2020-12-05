@@ -29,7 +29,7 @@ export default function Parallax(props) {
     };
   });
   const resetTransform = () => {
-    var windowScrollTop = window.pageYOffset / 3;
+    windowScrollTop = window.pageYOffset / 3;
     setTransform("translate3d(0," + windowScrollTop + "px,0)");
   };
   const { filter, className, children, style, small } = props;
@@ -38,7 +38,7 @@ export default function Parallax(props) {
     [classes.parallax]: true,
     [classes.filter]: filter,
     [classes.small]: small,
-    [className]: className !== undefined
+    [className]: className !== undefined,
   });
 
   return (
@@ -46,7 +46,7 @@ export default function Parallax(props) {
       className={parallaxClasses}
       style={{
         ...style,
-        transform: transform
+        transform: transform,
       }}
     >
       {children}
@@ -59,5 +59,5 @@ Parallax.propTypes = {
   filter: PropTypes.bool,
   children: PropTypes.node,
   style: PropTypes.object,
-  small: PropTypes.bool
+  small: PropTypes.bool,
 };

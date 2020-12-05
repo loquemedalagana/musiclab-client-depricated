@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Parallax/Parallax.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Parallax/Parallax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/Sections/VideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/Sections/VideoListSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +17,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
     <option name="showPreview" value="true" />
   </component>
   <component name="ProjectId" id="1l9VMqNHVt0l8st2pi7MYdrJILB" />
@@ -28,7 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server-new-ver" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -51,7 +52,8 @@
       <option name="presentableId" value="Default" />
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
-      <workItem from="1607044097066" duration="3088000" />
+      <workItem from="1607044097066" duration="4325000" />
+      <workItem from="1607143196616" duration="1464000" />
     </task>
     <servers />
   </component>
@@ -68,5 +70,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
