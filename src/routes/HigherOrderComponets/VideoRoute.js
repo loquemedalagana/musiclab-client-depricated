@@ -1,15 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React from "react";
+import PropTypes from "prop-types";
+import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+
+import Loading from "../../components/Loading/LinearLoading";
 
 //token route 참고
 
-const VideoRoute = props => {
-  const {
-    isLoading,
-    userData,
-  } = props;
+const VideoRoute = (props) => {
+  const { component: Component, isLoading, userData, ...rest } = props;
 
   //우선 user상태 본다.
   //쿼리에 아무것도 없으면 바로 리턴
@@ -18,32 +17,38 @@ const VideoRoute = props => {
   return (
     <Route
       {...rest}
-      render={props =>
+      render={(props) =>
         isLoading ? (
           <Loading />
         ) : userData ? (
-              userData >= 0 ? 
-                <Component {...props} /> :
-                  ((userData.snsId && !userData.email) ? 
-                    <Redirect to = '/emailregister' /> :
-                    <Redirect to = '/waitinglevelup' />
-                  )
-                ) : (
-              <Redirect to = '/login' />
+          userData >= 0 ? (
+            <Component {...props} />
+          ) : userData.snsId && !userData.email ? (
+            <Redirect to="/emailregister" />
+          ) : (
+            <Redirect to="/waitinglevelup" />
+          )
+        ) : (
+          <Redirect to="/login" />
         )
       }
     />
-  )
-}
+  );
+};
 
 VideoRoute.propTypes = {
+  component: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.func,
+    PropTypes.node,
+  ]).isRequired,
   isLoading: PropTypes.bool,
-  userData: PropTypes.object
-}
+  userData: PropTypes.object,
+};
 
 const mapStateToProps = (state) => ({
   isLoading: state.auth.loading,
-  userData: state.auth.userData
+  userData: state.auth.userData,
 });
 
-export default connect(mapStateToProps)(VideoRoute)
+export default connect(mapStateToProps)(VideoRoute);

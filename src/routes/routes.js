@@ -29,7 +29,7 @@ import ToastAlert from "../components/ToastAlerts/ToastAlerts";
 //aaa.com/member/active?token=abcdefg1234
 // ~.com/levelup/?token=ABCDE
 
-export default (props) => (
+const Routes = (props) => (
   <>
     <ToastAlert />
     <Switch>
@@ -69,3 +69,5 @@ export default (props) => (
     </Switch>
   </>
 );
+
+export default Routes;

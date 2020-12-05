@@ -1,56 +1,63 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import qs from 'qs';
-import fetcher from '../../app/fetcher';
-import useSWR from 'swr';
+import React from "react";
+import { connect } from "react-redux";
+import { Route, Redirect } from "react-router-dom";
+import PropTypes from "prop-types";
+import qs from "qs";
+import fetcher from "../../app/fetcher";
+import useSWR from "swr";
 
-import Loading from '../../components/Loading/LinearLoading';
+import Loading from "../../components/Loading/LinearLoading";
 //levelup, passwordreset page
 
-const TokenRoute = ({
-  component: Component,
-  isChanged,
-  location,
-  ...rest
-}) => {
-
+const TokenRoute = ({ component: Component, isChanged, location, ...rest }) => {
   const query = qs.parse(location.search, {
-    ignoreQueryPrefix: true
-  });  
-  const {token, expiredtime} = query;
+    ignoreQueryPrefix: true,
+  });
+  const { token, expiredtime } = query;
 
   const ENDPOINT = `/api/users/checktoken/?token=${token}&expiredtime=${expiredtime}`;
   const isExpired = Date.now() > expiredtime;
-  const {data, error} = useSWR(isExpired ? null : ENDPOINT, isExpired ? null : fetcher);
+  const { data, error } = useSWR(
+    isExpired ? null : ENDPOINT,
+    isExpired ? null : fetcher
+  );
 
-    //console.log(data, error);   
+  //console.log(data, error);
   console.log(isExpired ? "expired!" : "not expired");
   console.log(data);
-    
+
   const LoadingToken = !data && !error && !isExpired;
 
-  return ( <Route
-    {...rest}
-    render={props =>
-      LoadingToken ? (
-        <Loading />
-      ) : ( error || isExpired ? <Redirect to = '/notfound' />
-        : (isChanged ? <Redirect to = '/' /> :
-            (data && <Component {...props} />)
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        LoadingToken ? (
+          <Loading />
+        ) : error || isExpired ? (
+          <Redirect to="/notfound" />
+        ) : isChanged ? (
+          <Redirect to="/" />
+        ) : (
+          data && <Component {...props} />
         )
-      )
-    }
-  />
-)};
+      }
+    />
+  );
+};
 
 TokenRoute.propTypes = {
+  component: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.func,
+    PropTypes.node,
+  ]).isRequired,
+  location: PropTypes.object,
   isChanged: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
-  isChanged: state.userValidation.changed
+  isChanged: state.userValidation.changed,
 });
 
-export default connect(mapStateToProps)(TokenRoute)
+export default connect(mapStateToProps)(TokenRoute);

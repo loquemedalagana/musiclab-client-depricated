@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/VideoIframe/VideoIframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoIframe/VideoIframe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/AdminRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/AdminRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/IsNotLoggedInRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/IsNotLoggedInRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/MemberRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/MemberRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberWithoutEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberWithoutEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/TokenRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/TokenRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/VideoRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/VideoRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +58,7 @@
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
       <workItem from="1607044097066" duration="4325000" />
-      <workItem from="1607143196616" duration="12655000" />
+      <workItem from="1607143196616" duration="14373000" />
     </task>
     <servers />
   </component>
