@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavPills/NavPills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavPills/NavPills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/PostMenuData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/PostMenuData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Snackbar/SnackbarContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Snackbar/SnackbarContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ToastAlerts/ToastAlerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ToastAlerts/ToastAlerts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Typography/Danger.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Typography/Danger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Typography/Info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Typography/Info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Typography/Muted.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Typography/Muted.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
       <workItem from="1607044097066" duration="4325000" />
-      <workItem from="1607143196616" duration="12068000" />
+      <workItem from="1607143196616" duration="12425000" />
     </task>
     <servers />
   </component>
