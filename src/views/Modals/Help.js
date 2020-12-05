@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -15,24 +15,21 @@ import {
   FormControl,
   FormLabel,
   FormControlLabel,
-  Radio
-} from '@material-ui/core';
-import {
-  Close, Email, People,
-  FiberManualRecord,
-} from "@material-ui/icons";
+  Radio,
+} from "@material-ui/core";
+import { Close, Email, People, FiberManualRecord } from "@material-ui/icons";
 
 import {
   Button,
   CustomInput,
   GridContainer,
   GridItem,
-} from '../../components/components';
+} from "../../components/components";
 
-import styles from '../../assets/jss/material-kit-react/components/modalStyle';
+import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
-import {checkValidEmail} from '../../utils/checkStringPatterns';
-import {setAlertMsg} from '../../app/store/alert';
+import { checkValidEmail } from "../../utils/checkStringPatterns";
+import { setAlertMsg } from "../../app/store/alert";
 
 const useStyles = makeStyles(styles);
 
@@ -40,119 +37,108 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const RadioForm = props => {
-  const {
-    classes,
-    value,
-  } = props;
+const RadioForm = (props) => {
+  const { classes, value } = props;
 
   const helperText = {
-    error: '오류 보고',
-    help: '문의 사항',
-    
-  }
+    error: "오류 보고",
+    help: "문의 사항",
+  };
 
   return (
     <div
-    className={
-      classes.checkboxAndRadio +
-        " " +
-      classes.checkboxAndRadioHorizontal
-    }
+      className={
+        classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
+      }
     >
       <FormControlLabel
         control={
           <Radio
             value={value}
             aria-label={value}
-            icon={
-                <FiberManualRecord className={classes.radioUnchecked} />
-            }
-            checkedIcon={
-                <FiberManualRecord className={classes.radioChecked} />
-            }
+            icon={<FiberManualRecord className={classes.radioUnchecked} />}
+            checkedIcon={<FiberManualRecord className={classes.radioChecked} />}
             classes={{
-                checked: classes.radio,
-                root: classes.radioRoot
+              checked: classes.radio,
+              root: classes.radioRoot,
             }}
           />
         }
         classes={{
           label: classes.label,
-          root: classes.labelRoot
+          root: classes.labelRoot,
         }}
         label={helperText[value]}
       />
     </div>
-)}
+  );
+};
 
-export const Help = props => {
+RadioForm.propTypes = {
+  classes: PropTypes.object,
+  value: PropTypes.string,
+};
+
+export const Help = (props) => {
   const classes = useStyles();
-  const {
-    setAlertMsg,
-    open,
-    onClose,
-    userInfo,
-    userLoading
-  } = props;
+  const { setAlertMsg, open, onClose, userInfo, userLoading } = props;
 
   const [inputs, setInputs] = useState({
-    displayName: userInfo && !userLoading ? userInfo.displayName : '',
-    email: userInfo && !userLoading ? (userInfo.email ? userInfo.email : '' ) : '',
-    mailType: '',
-    title: '',
-    content: '',
+    displayName: userInfo && !userLoading ? userInfo.displayName : "",
+    email:
+      userInfo && !userLoading ? (userInfo.email ? userInfo.email : "") : "",
+    mailType: "",
+    title: "",
+    content: "",
   });
 
-  const {email, displayName, content, title, mailType} = inputs;
+  const { email, displayName, content, title, mailType } = inputs;
 
   const [emailModalErr, setEmailModalErr] = useState(false);
   const [nameModalErr, setNameModalErr] = useState(false);
   const [contentErr, setContentErr] = useState(false);
 
-
-  const onInputHandler = event => {
-    const {name, value} = event.currentTarget;
+  const onInputHandler = (event) => {
+    const { name, value } = event.currentTarget;
     setInputs({
-        ...inputs,
-        [name]: value
-    })
-  }
+      ...inputs,
+      [name]: value,
+    });
+  };
 
-    //console.log(inputs);
+  //console.log(inputs);
 
-  const onSubmitHandler = event => {
+  const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    if(!email) {
-      ok=false;
-      setAlertMsg('이메일을 입력해주세요', 'error');
+    if (!email) {
+      ok = false;
+      setAlertMsg("이메일을 입력해주세요", "error");
       setEmailModalErr(true);
-    }
-    else if (!checkValidEmail(email)){
-      ok=false;
-      setAlertMsg('올바른 형식으로 입력해주세요.', 'error');
+    } else if (!checkValidEmail(email)) {
+      ok = false;
+      setAlertMsg("올바른 형식으로 입력해주세요.", "error");
       setEmailModalErr(true);
     }
 
-    if(!displayName) {
-      ok=false;
+    if (!displayName) {
+      ok = false;
       setNameModalErr(true);
-      setAlertMsg('이름을 입력해주세요', 'error');
+      setAlertMsg("이름을 입력해주세요", "error");
     }
 
-    if(content.length === 0 || title.length === 0) {
-      ok=false;
+    if (content.length === 0 || title.length === 0) {
+      ok = false;
       setContentErr(true);
-      setAlertMsg('제목, 내용 모두 입력해주세요', 'error');
+      setAlertMsg("제목, 내용 모두 입력해주세요", "error");
     }
-        
-    if(ok){
+
+    if (ok) {
       setContentErr(false);
       setEmailModalErr(false);
       setNameModalErr(false);
     }
-  }
+  };
 
   return (
     <Dialog
@@ -183,11 +169,12 @@ export const Help = props => {
       </DialogTitle>
 
       <DialogContent
-          id="classic-modal-slide-description"
-          className={classes.modalBody + " scrollbar-rainy-ashville"}
+        id="classic-modal-slide-description"
+        className={classes.modalBody + " scrollbar-rainy-ashville"}
       >
         <p>
-        뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로 연락주세요!
+          뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로
+          연락주세요!
         </p>
         <p>담당자가 확인 후 바로 반영해드리고 답변드립니다.</p>
         <p>양식에 맞지 않은 내용은 전송이 되지 않습니다.</p>
@@ -199,28 +186,28 @@ export const Help = props => {
               id="name"
               error={nameModalErr}
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
               inputProps={{
                 type: "text",
-                name: "displayName",                                
+                name: "displayName",
                 value: displayName,
                 onChange: onInputHandler,
                 endAdornment: (
                   <InputAdornment position="end">
                     <People className={classes.inputIconsColor} />
                   </InputAdornment>
-                )
-                }}
+                ),
+              }}
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={6}>                
+          <GridItem xs={12} sm={12} md={6}>
             <CustomInput
               labelText="Your Email"
               id="useremail"
-              error = {emailModalErr}
+              error={emailModalErr}
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
               inputProps={{
                 type: "email",
@@ -229,9 +216,9 @@ export const Help = props => {
                 onChange: onInputHandler,
                 endAdornment: (
                   <InputAdornment position="end">
-                      <Email className={classes.inputIconsColor} />
+                    <Email className={classes.inputIconsColor} />
                   </InputAdornment>
-                )
+                ),
               }}
             />
           </GridItem>
@@ -241,11 +228,11 @@ export const Help = props => {
               id="help-message-title"
               error={contentErr}
               formControlProps={{
-              fullWidth: true,
-              className: classes.textArea
+                fullWidth: true,
+                className: classes.textArea,
               }}
               inputProps={{
-                name: "title",                                
+                name: "title",
                 value: title,
                 onChange: onInputHandler,
               }}
@@ -253,16 +240,16 @@ export const Help = props => {
           </GridItem>
           {/*양식 적기(radio button)*/}
           <GridItem xs={12} sm={12} md={12}>
-            <FormControl component = "fieldset">
-              <FormLabel component = "h3">Type</FormLabel>
-              <RadioGroup name="mailType" value={mailType} onChange={onInputHandler}>
-                  {['error', 'help'].map((type, idx) => 
-                    <RadioForm 
-                      key={idx}
-                      classes={classes}
-                      value={type}
-                    />
-                  )}
+            <FormControl component="fieldset">
+              <FormLabel component="h3">Type</FormLabel>
+              <RadioGroup
+                name="mailType"
+                value={mailType}
+                onChange={onInputHandler}
+              >
+                {["error", "help"].map((type, idx) => (
+                  <RadioForm key={idx} classes={classes} value={type} />
+                ))}
               </RadioGroup>
             </FormControl>
           </GridItem>
@@ -272,13 +259,13 @@ export const Help = props => {
               id="help-message"
               error={contentErr}
               formControlProps={{
-              fullWidth: true,
-              className: classes.textArea
+                fullWidth: true,
+                className: classes.textArea,
               }}
               inputProps={{
                 multiline: true,
                 rows: 5,
-                name: "content",                                
+                name: "content",
                 value: content,
                 onChange: onInputHandler,
               }}
@@ -292,18 +279,20 @@ export const Help = props => {
         </Button>
       </DialogActions>
     </Dialog>
-  )
-}
+  );
+};
 
 Help.propTypes = {
-  props: PropTypes.object,
+  open: PropTypes.bool,
+  onClose: PropTypes.func,
+  userInfo: PropTypes.object,
+  userLoading: PropTypes.bool,
   setAlertMsg: PropTypes.func,
-}
+};
 
 const mapStateToProps = (state) => ({
   userLoading: state.auth.loading,
   userInfo: state.auth.userData,
-})
+});
 
-
-export default connect(mapStateToProps, {setAlertMsg})(Help)
+export default connect(mapStateToProps, { setAlertMsg })(Help);

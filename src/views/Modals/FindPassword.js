@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 //import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -11,20 +11,17 @@ import {
   DialogActions,
   Slide,
   IconButton,
-  InputAdornment
-} from '@material-ui/core';
-import {Close, Email} from "@material-ui/icons";
+  InputAdornment,
+} from "@material-ui/core";
+import { Close, Email } from "@material-ui/icons";
 
-import {
-  Button,
-  CustomInput,
-} from '../../components/components';
+import { Button, CustomInput } from "../../components/components";
 
-import styles from '../../assets/jss/material-kit-react/components/modalStyle';
+import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
-import {checkValidEmail} from '../../utils/checkStringPatterns';
-import {setAlertMsg} from '../../app/store/alert';
-import {requestFindPassword} from '../../app/store/userValidation';
+import { checkValidEmail } from "../../utils/checkStringPatterns";
+import { setAlertMsg } from "../../app/store/alert";
+import { requestFindPassword } from "../../app/store/userValidation";
 
 const useStyles = makeStyles(styles);
 
@@ -32,52 +29,46 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const FindPassword = props => {
+const FindPassword = (props) => {
   const classes = useStyles();
-  const {
-    setAlertMsg,
-    open,
-    onClose,
-    requestFindPassword,
-  } = props;
+  const { setAlertMsg, open, onClose, requestFindPassword } = props;
 
   const [inputs, setInputs] = useState({
-    email: '',
+    email: "",
   });
 
-  const {email} = inputs;
+  const { email } = inputs;
 
   const [emailModalErr, setEmailModalErr] = useState(false);
 
-  const onInputHandler = event => {
-    const {name, value} = event.currentTarget;
+  const onInputHandler = (event) => {
+    const { name, value } = event.currentTarget;
     setInputs({
       ...inputs,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  const onSubmitHandler = event => {
+  const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    if(!email) {
-      ok=false;
-      setAlertMsg('이메일을 입력해주세요', 'error');
+    if (!email) {
+      ok = false;
+      setAlertMsg("이메일을 입력해주세요", "error");
+      setEmailModalErr(true);
+    } else if (!checkValidEmail(email)) {
+      ok = false;
+      setAlertMsg("올바른 형식으로 입력해주세요.", "error");
       setEmailModalErr(true);
     }
-    else if (!checkValidEmail(email)){
-      ok=false;
-      setAlertMsg('올바른 형식으로 입력해주세요.', 'error');
-      setEmailModalErr(true);
-    }
-        
-    if(ok){
+
+    if (ok) {
       //이벤트 처리
       //창 닫기
       setEmailModalErr(false);
-      requestFindPassword({email})
+      requestFindPassword({ email });
     }
-  }
+  };
 
   return (
     <Dialog
@@ -108,18 +99,16 @@ const FindPassword = props => {
       </DialogTitle>
 
       <DialogContent
-          id="classic-modal-slide-description"
-          className={classes.modalBody}
+        id="classic-modal-slide-description"
+        className={classes.modalBody}
       >
-        <p>
-          가입하신 메일주소를 입력해주세요
-        </p>
+        <p>가입하신 메일주소를 입력해주세요</p>
         <CustomInput
           labelText="Input your Email..."
           id="findemail"
-          error = {emailModalErr}
+          error={emailModalErr}
           formControlProps={{
-            fullWidth: true
+            fullWidth: true,
           }}
           inputProps={{
             type: "email",
@@ -127,10 +116,10 @@ const FindPassword = props => {
             value: email,
             onChange: onInputHandler,
             endAdornment: (
-            <InputAdornment position="end">
-              <Email className={classes.inputIconsColor} />
-            </InputAdornment>
-            )
+              <InputAdornment position="end">
+                <Email className={classes.inputIconsColor} />
+              </InputAdornment>
+            ),
           }}
         />
       </DialogContent>
@@ -140,17 +129,20 @@ const FindPassword = props => {
         </Button>
       </DialogActions>
     </Dialog>
-  )
-}
+  );
+};
 
 FindPassword.propTypes = {
-  props: PropTypes.object,
+  open: PropTypes.bool,
+  onClose: PropTypes.func,
   setAlertMsg: PropTypes.func,
   requestFindPassword: PropTypes.func,
-}
+};
 
 const mapStateToProps = (state) => ({
   alerts: state.alert,
-})
+});
 
-export default connect(mapStateToProps, {setAlertMsg, requestFindPassword})(FindPassword)
+export default connect(mapStateToProps, { setAlertMsg, requestFindPassword })(
+  FindPassword
+);
