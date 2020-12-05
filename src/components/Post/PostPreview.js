@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import clsx from "clsx";
+import { makeStyles } from "@material-ui/core/styles";
 
-import styles from '../../assets/jss/material-kit-react/components/postPreviewStyle';
+import styles from "../../assets/jss/material-kit-react/components/postPreviewStyle";
 
 import {
   Card,
@@ -14,51 +14,38 @@ import {
   Collapse,
   Avatar,
   IconButton,
-} from '@material-ui/core';
+} from "@material-ui/core";
 
 import {
   Favorite as LikeIcon,
   QuestionAnswer as DiscussIcon,
   MoreVert as ShowPostMenuIcon,
   ExpandMoreRounded as ViewMoreIcon,
-} from '@material-ui/icons';
+} from "@material-ui/icons";
 
-import {
-  CustomDropdown,
-  PostMenuData,
-} from '../components.js'
+import { CustomDropdown, PostMenuData } from "../components.js";
 
 const useStyles = makeStyles(styles);
 
 //cardMedia 유튜브 주소로 가능?
 
-const PostPreview = props => {
+const PostPreview = (props) => {
   const classes = useStyles();
-  const {
-    type,
-    authorData,
-    postData,
-    curUserData,
-  } = props;
+  const { type, authorData, postData, curUserData } = props;
 
-  const {
-    thumbnail,
-    title,
-    publishedAt,
-    description,
-    videoId,
-  } = postData;
+  const { thumbnail, title, publishedAt, description, videoId } = postData;
 
-  const isYoutube = type === 'youtube';
+  const isYoutube = type === "youtube";
   const postMenuData = PostMenuData({
     authorData,
     curUserData,
     postData,
-  })
+  });
 
   const mediaURL = "https://youtu.be/" + videoId;
-  const authorName = type === 'post' ? authorData.displayName : authorData.channelTitle;
-  const {image} = authorData;
+  const authorName =
+    type === "post" ? authorData.displayName : authorData.channelTitle;
+  const { image } = authorData;
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -67,44 +54,34 @@ const PostPreview = props => {
   };
 
   const viewMedia = () => {
-    if(isYoutube) return window.open("about:blank").location.href = mediaURL;
-  }
-
-
+    if (isYoutube) return (window.open("about:blank").location.href = mediaURL);
+  };
 
   return (
     <Card className={classes.root}>
-      <CardHeader 
+      <CardHeader
         classes={{
           root: classes.cardHeader,
         }}
-        avatar={
-          <Avatar
-            aria-label="channel-title"
-            src={image}
-          />
-        }
-        action={ //mini menu will be added
-          <CustomDropdown 
-            caret = {false}
+        avatar={<Avatar aria-label="channel-title" src={image} />}
+        action={
+          //mini menu will be added
+          <CustomDropdown
+            caret={false}
             buttonIcon={ShowPostMenuIcon}
-            hoverColor='rose'
+            hoverColor="rose"
             noLiPadding
             buttonProps={{
               justIcon: true,
-              color: 'transparent',
-              className: classes.showPostMenu
+              color: "transparent",
+              className: classes.showPostMenu,
             }}
             dropdownList={postMenuData}
           />
         }
         disableTypography
-        title={<h5 className={classes.authorName}>
-          {authorName}
-        </h5>}
-        subheader={<h6 className={classes.publishtedAt}>
-          {publishedAt}
-        </h6>}
+        title={<h5 className={classes.authorName}>{authorName}</h5>}
+        subheader={<h6 className={classes.publishtedAt}>{publishedAt}</h6>}
       />
       <CardMedia
         className={classes.media}
@@ -118,12 +95,11 @@ const PostPreview = props => {
           root: classes.cardBody,
         }}
       >
-        <h4 className={classes.postTitle}>
-          {title}
-        </h4>        
+        <h4 className={classes.postTitle}>{title}</h4>
       </CardContent>
 
-      <CardActions disableSpacing
+      <CardActions
+        disableSpacing
         classes={{
           root: classes.cardFooter,
         }}
@@ -158,19 +134,16 @@ const PostPreview = props => {
         </CardContent>
       </Collapse>
     </Card>
-  )
-}
+  );
+};
 
 PostPreview.propTypes = {
-  type: PropTypes.oneOf([
-    "youtube",
-    "post",
-  ]),
+  type: PropTypes.oneOf(["youtube", "post"]),
   children: PropTypes.node,
 
   curUserData: PropTypes.shape({
     isAdmin: PropTypes.bool,
-    userId: PropTypes.string
+    userId: PropTypes.string,
   }),
 
   authorData: PropTypes.shape({
@@ -186,8 +159,7 @@ PostPreview.propTypes = {
     publishedAt: PropTypes.string,
     description: PropTypes.string,
     videoId: PropTypes.string,
-  })
+  }),
 };
 
-
-export default PostPreview
+export default PostPreview;

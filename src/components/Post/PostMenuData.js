@@ -1,60 +1,65 @@
-import React from 'react';
+import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import classNames from "classnames";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import {
-  Button,
-} from '../components.js';
+import { Button } from "../components.js";
 
-import {
-  dropdownLink,
-} from '../../assets/jss/material-kit-react/components/postStyle';
+import { dropdownLink } from "../../assets/jss/material-kit-react/components/postStyle";
 
-const PostMenuData = props => {
-  const {
-    isYoutube,
-    curUserData,
-    authorData,
-  } = props;
+const PostMenuData = (props) => {
+  const { isYoutube, curUserData, authorData } = props;
 
   const classes = classNames({
     [dropdownLink]: true,
   });
 
-  const isYourPost = (curUserData && authorData.userId) ? (
-    curUserData.userId === authorData.userId
-  ) : false;
+  const isYourPost =
+    curUserData && authorData.userId
+      ? curUserData.userId === authorData.userId
+      : false;
 
   const postMenuData = [
-    <Button color = "transparent" onClick={()=>console.log('view post')} className={classes.dropdownLink}>
+    <Button
+      key={uuidv4()}
+      color="transparent"
+      onClick={() => console.log("view post")}
+      className={classes.dropdownLink}
+    >
       view post
     </Button>,
   ];
 
-  if(isYoutube) {
+  if (isYoutube) {
     postMenuData.push(
-      <Button color = "transparent" 
-        onClick={()=>console.log('add in my list')} 
+      <Button
+        key={uuidv4()}
+        color="transparent"
+        onClick={() => console.log("add in my list")}
         className={classes.dropdownLink}
       >
         add in my list
       </Button>
-    )
+    );
   } else {
     //if your post or you are admin?
     //add edit and delete
-    if(isYourPost || curUserData.isAdmin) {
+    if (isYourPost || curUserData.isAdmin) {
       postMenuData.push(
-        <Button color = "transparent" 
-          onClick={()=>console.log('edit post')} 
+        <Button
+          key={uuidv4()}
+          color="transparent"
+          onClick={() => console.log("edit post")}
           className={classes.dropdownLink}
         >
           edit post
         </Button>
       );
       postMenuData.push(
-        <Button color = "transparent" 
-          onClick={()=>console.log('delete post')} 
+        <Button
+          key={uuidv4()}
+          color="transparent"
+          onClick={() => console.log("delete post")}
           className={classes.dropdownLink}
         >
           delete post
@@ -64,14 +69,14 @@ const PostMenuData = props => {
   }
 
   return postMenuData;
-}
+};
 
 PostMenuData.propTypes = {
   isYoutube: PropTypes.bool,
 
   curUserData: PropTypes.shape({
     isAdmin: PropTypes.bool,
-    userId: PropTypes.string
+    userId: PropTypes.string,
   }),
 
   authorData: PropTypes.shape({
@@ -87,9 +92,7 @@ PostMenuData.propTypes = {
     publishedAt: PropTypes.string,
     description: PropTypes.string,
     videoId: PropTypes.string,
-  })
-}
+  }),
+};
 
-
-
-export default PostMenuData
+export default PostMenuData;
