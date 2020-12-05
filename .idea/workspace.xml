@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/modalStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/modalStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/navPillsStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/navPillsStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/paginationStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/paginationStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/parallaxStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/parallaxStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/popoverStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/popoverStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Badge/Badge.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Badge/Badge.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CustomInput/CustomInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomInput/CustomInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CustomInput/CustomSelectInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomInput/CustomSelectInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CustomLinearProgress/CustomLinearProgress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomLinearProgress/CustomLinearProgress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CustomTabs/CustomTabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomTabs/CustomTabs.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
       <workItem from="1607044097066" duration="4325000" />
-      <workItem from="1607143196616" duration="7146000" />
+      <workItem from="1607143196616" duration="8690000" />
     </task>
     <servers />
   </component>

@@ -30,24 +30,24 @@ export default function CustomInput(props) {
 
   const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
+    [" " + classes.labelRootSuccess]: success && !error,
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
     [classes.underlineSuccess]: success && !error,
     [classes.underline]: true,
-    [classes.whiteUnderline]: white
+    [classes.whiteUnderline]: white,
   });
   const marginTop = classNames({
-    [inputRootCustomClasses]: inputRootCustomClasses !== undefined
+    [inputRootCustomClasses]: inputRootCustomClasses !== undefined,
   });
   const inputClasses = classNames({
     [classes.input]: true,
-    [classes.whiteInput]: white
+    [classes.whiteInput]: white,
   });
-  var formControlClasses;
+  let formControlClasses;
   if (formControlProps !== undefined) {
-    if(formHelperText !== undefined){
+    if (formHelperText !== undefined) {
       formControlClasses = classNames(
         formControlProps.className,
         classes.formControlWithText
@@ -58,47 +58,50 @@ export default function CustomInput(props) {
         classes.formControl
       );
     }
-
   } else {
-    formControlClasses = (formHelperText !== undefined) ? classes.formControlWithText : classes.formControl;
+    formControlClasses =
+      formHelperText !== undefined
+        ? classes.formControlWithText
+        : classes.formControl;
   }
   return (
     <>
-    {formHelperText !== undefined ? (
-      <InputLabel
-            className={classes.labelRoot + " " + labelClasses}
-            htmlFor={id}
-            {...labelProps}
-            >
-            {formHelperText}
-            </InputLabel>
-    ) : null}
-    <FormControl {...formControlProps} className={formControlClasses}>
-      {labelText !== undefined ? (
+      {formHelperText !== undefined ? (
         <InputLabel
           className={classes.labelRoot + " " + labelClasses}
           htmlFor={id}
           {...labelProps}
         >
-          {labelText}
+          {formHelperText}
         </InputLabel>
       ) : null}
-      <Input
-        classes={{
-          input: inputClasses,
-          root: marginTop,
-          disabled: classes.disabled,
-          underline: underlineClasses
-        }}
-        id={id}
-        {...inputProps}
-      />
-    </FormControl>
+      <FormControl {...formControlProps} className={formControlClasses}>
+        {labelText !== undefined ? (
+          <InputLabel
+            className={classes.labelRoot + " " + labelClasses}
+            htmlFor={id}
+            {...labelProps}
+          >
+            {labelText}
+          </InputLabel>
+        ) : null}
+        <Input
+          classes={{
+            input: inputClasses,
+            root: marginTop,
+            disabled: classes.disabled,
+            underline: underlineClasses,
+          }}
+          id={id}
+          {...inputProps}
+        />
+      </FormControl>
     </>
   );
 }
 
 CustomInput.propTypes = {
+  formHelperText: PropTypes.string,
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
   id: PropTypes.string,
