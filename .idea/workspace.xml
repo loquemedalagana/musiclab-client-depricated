@@ -3,14 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/basicData/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/basicData/countries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/basicData/yadaSongsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/basicData/yadaSongsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/alert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/alert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/tag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/userValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/userValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/ErrorPageStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/ErrorPageStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/LevelupStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/LevelupStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/LoginSignupStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/LoginSignupStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/PostStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/PostStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/ProfileStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/ProfileStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/UpdateProfileStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/UpdateProfileStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/WaitingLevelupStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/WaitingLevelupStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/landingStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/landingStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/landingpageSections/videoSectionStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/landingpageSections/videoSectionStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/videoListStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/videoListStyle.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +62,7 @@
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
       <workItem from="1607044097066" duration="4325000" />
-      <workItem from="1607143196616" duration="5244000" />
+      <workItem from="1607143196616" duration="5875000" />
     </task>
     <servers />
   </component>
