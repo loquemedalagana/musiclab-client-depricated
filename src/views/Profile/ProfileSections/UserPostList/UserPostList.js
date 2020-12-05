@@ -48,7 +48,7 @@ export const UserPostList = (props) => {
 UserPostList.propTypes = {
   props: PropTypes.object,
   userId: PropTypes.string,
-  classes: PropTypes.object,
+  classes: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 const mapStateToProps = (state) => ({});

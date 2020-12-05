@@ -128,7 +128,7 @@ export const UserTags = (props) => {
 UserTags.propTypes = {
   props: PropTypes.object,
   userId: PropTypes.string,
-  classes: PropTypes.object,
+  classes: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 
 const mapStateToProps = (state) => ({});

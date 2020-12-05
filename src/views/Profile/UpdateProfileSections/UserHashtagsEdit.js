@@ -1,46 +1,41 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import {setAlertMsg} from '../../../app/store/alert';
+import { setAlertMsg } from "../../../app/store/alert";
 
 import {
   CircularLoading,
-    //GridContainer,
-} from '../../../components/components';
+  //GridContainer,
+} from "../../../components/components";
 
-export const UserHashtagsEdit = props => {
+export const UserHashtagsEdit = (props) => {
   const {
     classes,
-//        userInfo,
+    //        userInfo,
     loading,
-    isChanged
+    isChanged,
   } = props;
-    
-    //fetch hashtags
 
-  if(isChanged || loading) return <CircularLoading />
+  //fetch hashtags
 
-  return (
-    <div className={classes.tabBody}>
-        edit hashtags
-    </div>
-  )
-}
+  if (isChanged || loading) return <CircularLoading />;
+
+  return <div className={classes.tabBody}>edit hashtags</div>;
+};
 
 UserHashtagsEdit.propTypes = {
   setAlertMsg: PropTypes.func,
-  classes: PropTypes.object,
+  classes: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   userInfo: PropTypes.object,
   loading: PropTypes.bool,
   isChanged: PropTypes.bool,
-}
+};
 
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
   userInfo: state.auth.userData,
   isChanged: state.userValidation.changed,
-})
+});
 
-
-export default connect(mapStateToProps, {setAlertMsg})(UserHashtagsEdit)
+export default connect(mapStateToProps, { setAlertMsg })(UserHashtagsEdit);
