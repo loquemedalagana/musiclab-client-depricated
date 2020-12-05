@@ -1,55 +1,71 @@
-import React from 'react';
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import IsNotLoggedInRoute from './HigherOrderComponets/IsNotLoggedInRoute'
-import MemberRoute from './HigherOrderComponets/MemberRoute';
-import NonMemberRoute from './HigherOrderComponets/NonMemberRoute';
-import TokenRoute from './HigherOrderComponets/TokenRoute';
-import NonMemberRouteWithoutEmail from './HigherOrderComponets/NonMemberWithoutEmail';
+import IsNotLoggedInRoute from "./HigherOrderComponets/IsNotLoggedInRoute";
+import MemberRoute from "./HigherOrderComponets/MemberRoute";
+import NonMemberRoute from "./HigherOrderComponets/NonMemberRoute";
+import TokenRoute from "./HigherOrderComponets/TokenRoute";
+import NonMemberRouteWithoutEmail from "./HigherOrderComponets/NonMemberWithoutEmail";
 
-import Login from '../views/Auth/Login';
-import Signup from '../views/Auth/Signup';
-import ResetPassword  from '../views/Auth/ResetPassword';
-import Levelup from '../views/Auth/Levelup';
-import WaitingLevelup from '../views/Auth/WaitingLevelup';
-import InputEmailForSocialUsers from '../views/Auth/InputEmailForSocialUsers';
+import Login from "../views/Auth/Login";
+import Signup from "../views/Auth/Signup";
+import ResetPassword from "../views/Auth/ResetPassword";
+import Levelup from "../views/Auth/Levelup";
+import WaitingLevelup from "../views/Auth/WaitingLevelup";
+import InputEmailForSocialUsers from "../views/Auth/InputEmailForSocialUsers";
 
-import Profile from '../views/Profile/Profile';
-import VideoListByOfficialChannel from '../views/VideoPosts/VideoListByOfficialChannel';
-import VideoListByKeywords from '../views/VideoPosts/VideoListBySearchKeyword';
+import Profile from "../views/Profile/Profile";
+import VideoListByOfficialChannel from "../views/VideoPosts/VideoListByOfficialChannel";
+import VideoListByKeywords from "../views/VideoPosts/VideoListBySearchKeyword";
 
-import UpdateProfile from '../views/Profile/UpdateProfile'; //not made yet
-import NotFound from '../views/Error/NotFound';
-import ServerError from '../views/Error/ServerError';
+import UpdateProfile from "../views/Profile/UpdateProfile"; //not made yet
+import NotFound from "../views/Error/NotFound";
+import ServerError from "../views/Error/ServerError";
 
-import ToastAlert from '../components/ToastAlerts/ToastAlerts';
+import ToastAlert from "../components/ToastAlerts/ToastAlerts";
 
 //https://velog.io/@ksh4820/ErrorNote-Warning-Cant-perform-a-React-state-update-on-an-unmounted-component.-This-is-a-no-op-but-it-indicates-a-memory-leak-in-your-application.-To-fix-cancel-all-subscriptions-and-asynchronous-tasks-in-a-useEffect-cleanup-function
 
 //aaa.com/member/active?token=abcdefg1234
 // ~.com/levelup/?token=ABCDE
 
-export default props => (
+export default (props) => (
   <>
     <ToastAlert />
     <Switch>
-      <IsNotLoggedInRoute exact path = '/login' component = {Login} />
-      <IsNotLoggedInRoute exact path = '/signup' component = {Signup} />
+      <IsNotLoggedInRoute exact path="/login" component={Login} />
+      <IsNotLoggedInRoute exact path="/signup" component={Signup} />
 
-      <TokenRoute exact path = '/resetpassword/:auth?' component = {ResetPassword} />
-      <TokenRoute exact path = '/levelup/:auth?' component = {Levelup} />
+      <TokenRoute
+        exact
+        path="/resetpassword/:auth?"
+        component={ResetPassword}
+      />
+      <TokenRoute exact path="/levelup/:auth?" component={Levelup} />
 
-      <NonMemberRoute exact path = '/waitinglevelup' component = {WaitingLevelup} />
-      <NonMemberRouteWithoutEmail exact path = '/emailregister' component = {InputEmailForSocialUsers} />
+      <NonMemberRoute exact path="/waitinglevelup" component={WaitingLevelup} />
+      <NonMemberRouteWithoutEmail
+        exact
+        path="/emailregister"
+        component={InputEmailForSocialUsers}
+      />
 
-      <MemberRoute exact path = '/profiles/:userid' component = { Profile } />
-      <MemberRoute exact path = '/modify/profile' component = { UpdateProfile } />
+      <MemberRoute exact path="/profiles/:userid" component={Profile} />
+      <MemberRoute exact path="/modify/profile" component={UpdateProfile} />
 
-      <Route exact path = '/officialvideolist/:channel?' component = {VideoListByOfficialChannel} />
-      <Route exact path = '/videolistbykeywords/:query?' component = {VideoListByKeywords} />
+      <Route
+        exact
+        path="/officialvideolist/:channel?"
+        component={VideoListByOfficialChannel}
+      />
+      <Route
+        exact
+        path="/videolistbykeywords/:query?"
+        component={VideoListByKeywords}
+      />
 
-      <Route exact path = '/servererror' component = {ServerError} />
-      <Route component = {NotFound} />
+      <Route exact path="/servererror" component={ServerError} />
+      <Route component={NotFound} />
     </Switch>
   </>
 );
