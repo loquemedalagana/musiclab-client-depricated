@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/NotAvailable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/NotAvailable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/PrintVideoCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/PrintVideoCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/carouselSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/carouselSetting.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
       <workItem from="1607044097066" duration="4325000" />
-      <workItem from="1607143196616" duration="3485000" />
+      <workItem from="1607143196616" duration="3960000" />
     </task>
     <servers />
   </component>
