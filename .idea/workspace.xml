@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/Sections/VideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/Sections/VideoListSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PostDetailPage/PostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PostDetailPage/PostDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/LikedVideos/LikedVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/ProfileSections/LikedVideos/LikedVideos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/UserPostList/UserPostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/ProfileSections/UserPostList/UserPostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/UserTags/UserTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/ProfileSections/UserTags/UserTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
       <updated>1607009248710</updated>
       <workItem from="1607009250237" duration="382000" />
       <workItem from="1607044097066" duration="4325000" />
-      <workItem from="1607143196616" duration="1857000" />
+      <workItem from="1607143196616" duration="2731000" />
     </task>
     <servers />
   </component>
