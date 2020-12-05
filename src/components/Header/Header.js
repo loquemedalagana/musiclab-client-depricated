@@ -3,7 +3,7 @@ import React from "react";
 import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -12,18 +12,18 @@ import {
   IconButton,
   Button,
   Hidden,
-  Drawer
-} from '@material-ui/core';
+  Drawer,
+} from "@material-ui/core";
 
 // @material-ui/icons
 import {
   Menu,
   ArrowBackIos,
   ArrowForwardIos,
-  HomeSharp
-} from '@material-ui/icons';
+  HomeSharp,
+} from "@material-ui/icons";
 
-import SearchIconMobile from './SearchIconMobile';
+import SearchIconMobile from "./SearchIconMobile";
 
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle.js";
@@ -32,11 +32,7 @@ const useStyles = makeStyles(styles);
 
 function Header(props) {
   const classes = useStyles();
-  const {
-    mobileOpen,
-    setMobileOpen,
-    location
-  } = props;
+  const { mobileOpen, setMobileOpen, location } = props;
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
@@ -69,40 +65,53 @@ function Header(props) {
         .classList.remove(classes[changeColorOnScroll.color]);
     }
   };
-  const { color, rightLinks, leftLinks, brand, fixed, absolute, history } = props;
+  const {
+    color,
+    rightLinks,
+    leftLinks,
+    brand,
+    fixed,
+    absolute,
+    history,
+  } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
-    [classes.fixed]: fixed
+    [classes.fixed]: fixed,
   });
 
   //console.log(location);
 
   const brandComponent = (
     <>
-    <Hidden mdUp implementation="js">
-    {location.pathname !== '/' && (
-      <IconButton className={classes.title} onClick={() => history.goBack()}>
-        <ArrowBackIos />
-      </IconButton>
-    )}
-      <IconButton className={classes.title} onClick={() => history.goForward()}>
-        <ArrowForwardIos />
-      </IconButton>
-      <IconButton className={classes.title} onClick={() => history.push('/')}>
-        <HomeSharp />
-      </IconButton>
-    </Hidden>
-    <Hidden smDown implementation="css">
-      <Button 
-        className={classes.title} onClick={() => history.push('/')}>
-        {brand}
-      </Button>
-    </Hidden>
+      <Hidden mdUp implementation="js">
+        {location.pathname !== "/" && (
+          <IconButton
+            className={classes.title}
+            onClick={() => history.goBack()}
+          >
+            <ArrowBackIos />
+          </IconButton>
+        )}
+        <IconButton
+          className={classes.title}
+          onClick={() => history.goForward()}
+        >
+          <ArrowForwardIos />
+        </IconButton>
+        <IconButton className={classes.title} onClick={() => history.push("/")}>
+          <HomeSharp />
+        </IconButton>
+      </Hidden>
+      <Hidden smDown implementation="css">
+        <Button className={classes.title} onClick={() => history.push("/")}>
+          {brand}
+        </Button>
+      </Hidden>
     </>
   );
-  
+
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
@@ -119,11 +128,9 @@ function Header(props) {
         <Hidden smDown implementation="css">
           {rightLinks}
         </Hidden>
-      {/*--------모바일 매뉴, 여기다 알림 뱃지 추가--------*/}
+        {/*--------모바일 매뉴, 여기다 알림 뱃지 추가--------*/}
         <Hidden mdUp>
-          <SearchIconMobile 
-            color='inherit'
-          />
+          <SearchIconMobile color="inherit" />
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -139,7 +146,7 @@ function Header(props) {
           anchor={"right"}
           open={mobileOpen}
           classes={{
-            paper: classes.drawerPaper
+            paper: classes.drawerPaper,
           }}
           onClose={handleDrawerToggle}
         >
@@ -154,7 +161,7 @@ function Header(props) {
 }
 
 Header.defaultProp = {
-  color: "white"
+  color: "white",
 };
 
 Header.propTypes = {
@@ -194,9 +201,10 @@ Header.propTypes = {
       "white",
       "rose",
       "dark",
-    ]).isRequired
+    ]).isRequired,
   }),
   history: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default withRouter(Header);
