@@ -20,6 +20,7 @@ import { officialChannelProfileData } from "../../../app/videoData/officialChann
 
 const useStyles = makeStyles(styles);
 
+// eslint-disable-next-line react/prop-types
 const NotAvailable = ({ className }) => (
   <GridItem xs={12} sm={12} md={11}>
     <h3 className={className}>준비중입니다...</h3>
@@ -114,6 +115,7 @@ VideoListSection.propTypes = {
   children: PropTypes.node,
   userId: PropTypes.string,
   isAdmin: PropTypes.bool,
+  videoListId: PropTypes.string,
 };
 
 export default VideoListSection;

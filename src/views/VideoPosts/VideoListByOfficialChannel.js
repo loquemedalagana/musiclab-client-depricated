@@ -83,7 +83,8 @@ export const VideoListByOfficialChannel = (props) => {
 };
 
 VideoListByOfficialChannel.propTypes = {
-  props: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
 };
 
 export default React.memo(VideoListByOfficialChannel);
