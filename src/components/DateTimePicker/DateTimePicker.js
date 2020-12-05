@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 // react component plugin for creating a beautiful datetime dropdown picker
@@ -13,65 +13,63 @@ import styles from "../../assets/jss/material-kit-react/components/customInputSt
 
 const useStyles = makeStyles(styles);
 
-export default function DateTimePicker(props){
-    const {
-        formControlProps,
-        id,
-        success,
-        error,
-        labelText,
+export default function DateTimePicker(props) {
+  const {
+    formControlProps,
+    id,
+    success,
+    error,
+    labelText,
 
-        inputProps,
-        labelProps,
-    } = props;
-    const classes = useStyles();
+    inputProps,
+    labelProps,
+  } = props;
+  const classes = useStyles();
 
-    const labelClasses = classNames({
-        [" " + classes.labelRootError]: error,
-        [" " + classes.labelRootSuccess]: success && !error
-    });
+  const labelClasses = classNames({
+    [" " + classes.labelRootError]: error,
+    [" " + classes.labelRootSuccess]: success && !error,
+  });
 
-    var formControlClasses;
-    if (formControlProps !== undefined) {
-        formControlClasses = classNames(
-            formControlProps.className,
-            classes.formControlWithText
-        );
-    } else {
-        formControlClasses = classes.formControlWithText;
-    }
-
-    return (
-        <>
-        {labelText !== undefined ? (
-            <InputLabel
-            className={classes.labelRoot + " " + labelClasses}
-            htmlFor={id}
-            {...labelProps}
-            >
-            {labelText}
-            </InputLabel>
-        ) : null}
-        <FormControl {...formControlProps} className={formControlClasses}>
-            <Datetime
-            {...inputProps}
-            />
-        </FormControl>
-        </>
+  let formControlClasses;
+  if (formControlProps !== undefined) {
+    formControlClasses = classNames(
+      formControlProps.className,
+      classes.formControlWithText
     );
+  } else {
+    formControlClasses = classes.formControlWithText;
+  }
+
+  return (
+    <>
+      {labelText !== undefined ? (
+        <InputLabel
+          className={classes.labelRoot + " " + labelClasses}
+          htmlFor={id}
+          {...labelProps}
+        >
+          {labelText}
+        </InputLabel>
+      ) : null}
+      <FormControl {...formControlProps} className={formControlClasses}>
+        <Datetime {...inputProps} />
+      </FormControl>
+    </>
+  );
 }
 
 DateTimePicker.propTypes = {
-    labelText: PropTypes.node,
-    labelProps: PropTypes.object,
-    id: PropTypes.string,
-    inputProps: PropTypes.object,
-    formControlProps: PropTypes.object,
-    inputRootCustomClasses: PropTypes.string,
-    error: PropTypes.bool,
-    success: PropTypes.bool,
-    white: PropTypes.bool,
-    onChange: PropTypes.func,
-}
+  labelText: PropTypes.node,
+  labelProps: PropTypes.object,
+  id: PropTypes.string,
+  inputProps: PropTypes.object,
+  formControlProps: PropTypes.object,
+  inputRootCustomClasses: PropTypes.string,
+  error: PropTypes.bool,
+  success: PropTypes.bool,
+  white: PropTypes.bool,
+  onChange: PropTypes.func,
+};
 
 //https://www.npmjs.com/package/react-datetime

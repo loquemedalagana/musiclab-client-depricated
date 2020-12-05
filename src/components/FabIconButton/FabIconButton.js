@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
-import { Fab } from '@material-ui/core';
+import { Fab } from "@material-ui/core";
 
 import fabButtonStyle from "../../assets/jss/material-kit-react/components/fabIconButtonStyle";
 
@@ -10,7 +10,7 @@ const makeComponentStyles = makeStyles(() => ({
   ...fabButtonStyle,
 }));
 
-const FabIconButton = props => {
+const FabIconButton = (props) => {
   const {
     children,
     color,
@@ -27,9 +27,9 @@ const FabIconButton = props => {
   const fabClasses = classNames({
     [classes.fixPosition]: fixed,
     [className]: className,
-    [classes.left]: position === 'left',
-    [classes.right]: position === 'right',
-    [classes.medium]: position === 'medium',
+    [classes.left]: position === "left",
+    [classes.right]: position === "right",
+    [classes.medium]: position === "medium",
   });
 
   return (
@@ -37,14 +37,14 @@ const FabIconButton = props => {
       className={fabClasses}
       color={color}
       disabled={disabled}
-      variant={extended ? 'extended' : 'round'}
+      variant={extended ? "extended" : "round"}
       size={size}
       area-label={label}
     >
       {children}
     </Fab>
-  )
-}
+  );
+};
 
 FabIconButton.propTypes = {
   fixed: PropTypes.bool,
@@ -56,14 +56,15 @@ FabIconButton.propTypes = {
     "danger",
     "rose",
     "white",
-    "transparent"
+    "transparent",
   ]),
   size: PropTypes.oneOf(["small", "medium", "large"]),
-  position: PropTypes.oneOf(['left', 'right', 'midium']),
+  position: PropTypes.oneOf(["left", "right", "midium"]),
   extended: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
+  label: PropTypes.string,
 };
 
 export default FabIconButton;
