@@ -153,6 +153,10 @@ export const Signup = (props) => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key !== "Enter") return;
+  };
+
   if (isAuth) return <Redirect to="/" />;
   if (isChanged) return <Redirect to="/" />;
 

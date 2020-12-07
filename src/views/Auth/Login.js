@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -47,6 +47,9 @@ export const Login = (props) => {
     password: "",
   });
 
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
   const [emailErr, setEmailErr] = useState(false);
   const [passwordErr, setPasswordErr] = useState(false);
 
@@ -64,8 +67,10 @@ export const Login = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
+
     let ok = true;
     if (!email) {
+      emailRef.current.focus();
       ok = false;
       setAlertMsg("이메일을 입력해주세요", "error", "email");
       setEmailErr(true);
@@ -73,6 +78,7 @@ export const Login = (props) => {
       setEmailErr(false);
     }
     if (!password) {
+      passwordRef.current.focus();
       ok = false;
       setAlertMsg("비밀번호를 입력해주세요", "error", "password");
       setPasswordErr(true);
@@ -81,7 +87,19 @@ export const Login = (props) => {
     }
 
     if (ok) {
+      emailRef.current.blur();
+      passwordRef.current.blur();
       loginUser({ email, password });
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key !== "Enter") return;
+    switch (e.currentTarget.name) {
+      case "email":
+        return passwordRef.current.focus();
+      default:
+        return onSubmitHandler(e);
     }
   };
 
@@ -116,7 +134,9 @@ export const Login = (props) => {
                         type: "email",
                         name: "email",
                         value: email,
+                        inputRef: emailRef,
                         onChange: onInputHandler,
+                        onKeyPress: handleKeyPress,
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
@@ -147,7 +167,9 @@ export const Login = (props) => {
                         type: "password",
                         name: "password",
                         value: password,
+                        inputRef: passwordRef,
                         onChange: onInputHandler,
+                        onKeyPress: handleKeyPress,
                         endAdornment: (
                           <InputAdornment position="end">
                             <VpnKeyIcon className={classes.inputIconsColor} />
