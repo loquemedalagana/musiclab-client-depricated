@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -13,10 +14,12 @@ import styles from "../../assets/jss/material-kit-react/views/ErrorPageStyle";
 
 const useStyles = makeStyles(styles);
 
-function NotFound() {
+const NotFound = (props) => {
+  const { history } = props;
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(() => {
     setCardAnimation("");
+    return setTimeout(() => history.push("/"), 3000);
   }, 800);
   const classes = useStyles();
 
@@ -41,6 +44,10 @@ function NotFound() {
       <Footer whiteFont />
     </div>
   );
-}
+};
+
+NotFound.propTypes = {
+  history: PropTypes.object,
+};
 
 export default NotFound;

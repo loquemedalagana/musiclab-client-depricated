@@ -56,6 +56,11 @@ export const ResetPassword = (props) => {
 
   const { password, confirmPassword } = inputs;
 
+  const inputRef = {
+    password: useRef(),
+    confirmPassword: useRef(),
+  };
+
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;
     setInputs({
@@ -98,7 +103,19 @@ export const ResetPassword = (props) => {
 
     if (ok) {
       //reset password
-      resetPassword(inputs, query);
+      return resetPassword(inputs, query);
+    }
+    inputRef.password.current.focus();
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      switch (e.target.name) {
+        case "password":
+          return inputRef.confirmPassword.current.focus();
+        default:
+          return onSubmitHandler(e);
+      }
     }
   };
 
@@ -127,7 +144,9 @@ export const ResetPassword = (props) => {
                       type: "password",
                       name: "password",
                       value: password,
+                      inputRef: inputRef.password,
                       onChange: onInputHandler,
+                      onKeyPress: handleKeyPress,
                       endAdornment: (
                         <InputAdornment position="end">
                           <VpnKeyIcon className={classes.inputIconsColor} />
@@ -159,7 +178,9 @@ export const ResetPassword = (props) => {
                       type: "password",
                       name: "confirmPassword",
                       value: confirmPassword,
+                      inputRef: inputRef.confirmPassword,
                       onChange: onInputHandler,
+                      onKeyPress: handleKeyPress,
                       endAdornment: (
                         <InputAdornment position="end">
                           <VpnKeyIcon className={classes.inputIconsColor} />
