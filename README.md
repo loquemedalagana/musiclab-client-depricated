@@ -63,10 +63,11 @@
 ## loading 부분 skeleton component 사용
 
 ### Focus on next field when pressing enter React.js
-- 참고 페이지 https://kyounghwan01.github.io/blog/React/focus-blur/#react%EC%97%90%EC%84%9C-focus-blur-%ED%95%98%EB%8A%94%EB%B2%95
-- 이 부분 배포 전 처리하기 
+- 처리 완료
 
-## 이메일 관련 (배포 직전, 비디오, 알림부터 구현 하고!)
+## 에러 stack 부분 차례대로 바꿔주기
+
+## 이메일 관련 (배포 직전, 비디오, 알림부터 구현 하고!) - 문의 부분
 - 이메일 등록된 유저만 사용 가능
 - selector를 이용해서 이메일 등록 안되면 클릭 안됨
 - input onchange에서 email onchange event 없애기

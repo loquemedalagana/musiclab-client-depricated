@@ -170,19 +170,19 @@ export const Signup = (props) => {
   };
 
   const handleKeyPress = (e) => {
-    e.preventDefault();
-    if (e.key !== "Enter") return;
-    switch (e.target.name) {
-      case "displayName":
-        return inputRef.email.current.focus();
-      case "email":
-        return inputRef.password.current.focus();
-      case "password":
-        return inputRef.confirmPassword.current.focus();
-      case "confirmPassword":
-        return inputRef.checkBox.current.focus();
-      default:
-        return onSubmitHandler(e);
+    if (e.key === "Enter") {
+      switch (e.target.name) {
+        case "displayName":
+          return inputRef.email.current.focus();
+        case "email":
+          return inputRef.password.current.focus();
+        case "password":
+          return inputRef.confirmPassword.current.focus();
+        case "confirmPassword":
+          return inputRef.checkBox.current.focus();
+        default:
+          return onSubmitHandler(e);
+      }
     }
   };
 

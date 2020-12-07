@@ -96,8 +96,7 @@ export const Login = (props) => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key !== "Enter") return;
-    return onSubmitHandler(e);
+    if (e.key === "Enter") onSubmitHandler(e);
   };
 
   if (loading) return <Loading />;

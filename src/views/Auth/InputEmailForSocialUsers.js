@@ -99,12 +99,14 @@ export const InputEmailForSocialUsers = (props) => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key !== "Enter") return;
-    switch (e.target.name) {
-      case "email":
-        return inputRef.checkBox.current.focus();
-      default:
-        return onSubmitHandler(e);
+    if (e.key === "Enter") {
+      e.preventDefault();
+      switch (e.target.name) {
+        case "email":
+          return inputRef.checkBox.current.focus();
+        default:
+          return onSubmitHandler(e);
+      }
     }
   };
 

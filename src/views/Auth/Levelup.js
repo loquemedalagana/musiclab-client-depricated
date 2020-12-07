@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
@@ -83,13 +83,23 @@ export const Levelup = (props) => {
     givenName,
     familyName,
     description,
-
     password,
     confirmPassword,
   } = inputs;
 
   const [gender, setGender] = useState("");
-  const [birthday, setBirthday] = useState(new Date("1999-03-03")); //야다 데뷔일로 바꾸기
+  const [birthday, setBirthday] = useState(new Date("1999-03-03"));
+
+  const inputRef = {
+    givenName: useRef(),
+    familyName: useRef(),
+    gender: useRef(),
+    birthday: useRef(),
+    description: useRef(),
+    password: useRef(),
+    confirmPassword: useRef(),
+    checkBox: useRef(),
+  };
 
   const [birthdayChanged, setBirthdayChanged] = useState(false);
 
@@ -118,6 +128,29 @@ export const Levelup = (props) => {
           ? value.substr(0, 200)
           : value,
     });
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      switch (e.target.name) {
+        case "familyName":
+          return inputRef.givenName.current.focus();
+        case "givenName":
+          return inputRef.gender.current.focus();
+        case "gender":
+          return inputRef.birthday.current.focus();
+        case "birthday":
+          return inputRef.description.current.focus();
+        case "description":
+          return inputRef.password.current.focus();
+        case "password":
+          return inputRef.confirmPassword.current.focus();
+        case "confirmPassword":
+          return inputRef.checkBox.current.focus();
+        default:
+          return onSubmitHandler(e);
+      }
+    }
   };
 
   const handleGenderChange = (event) => {
@@ -294,6 +327,8 @@ export const Levelup = (props) => {
                         type: "text",
                         value: familyName,
                         name: "familyName",
+                        inputRef: inputRef.familyName,
+                        onKeyPress: handleKeyPress,
                         onChange: onInputHandler,
                         endAdornment: (
                           <InputAdornment position="end">
@@ -326,6 +361,8 @@ export const Levelup = (props) => {
                         type: "text",
                         value: givenName,
                         name: "givenName",
+                        inputRef: inputRef.givenName,
+                        onKeyPress: handleKeyPress,
                         onChange: onInputHandler,
                         endAdornment: (
                           <InputAdornment position="end">
@@ -357,7 +394,10 @@ export const Levelup = (props) => {
                       }}
                       inputProps={{
                         varient: "filled",
+                        name: "gender",
                         value: gender,
+                        inputRef: inputRef.gender,
+                        onClick: handleKeyPress,
                         onChange: handleGenderChange,
                       }}
                       menuItemList={[
@@ -389,7 +429,10 @@ export const Levelup = (props) => {
                         dateFormat: true,
                         timeFormat: false,
                         placeholder: "Pick your birthday!",
+                        name: "birthday",
                         value: birthday,
+                        ref: inputRef.birthday,
+                        onClick: handleKeyPress,
                         onChange: handleDateChange,
                       }}
                     />
@@ -420,6 +463,8 @@ export const Levelup = (props) => {
                         multiline: true,
                         name: "description",
                         value: description,
+                        inputRef: inputRef.description,
+                        onKeyPress: handleKeyPress,
                         onChange: onInputHandler,
                         endAdornment: (
                           <InputAdornment position="end">
@@ -454,7 +499,9 @@ export const Levelup = (props) => {
                         type: "password",
                         name: "password",
                         value: password,
+                        inputRef: inputRef.password,
                         onChange: onInputHandler,
+                        onKeyPress: handleKeyPress,
                         endAdornment: (
                           <InputAdornment position="end">
                             <VpnKeyIcon className={classes.inputIconsColor} />
@@ -487,7 +534,9 @@ export const Levelup = (props) => {
                         type: "password",
                         name: "confirmPassword",
                         value: confirmPassword,
+                        inputRef: inputRef.confirmPassword,
                         onChange: onInputHandler,
+                        onKeyPress: handleKeyPress,
                         endAdornment: (
                           <InputAdornment position="end">
                             <VpnKeyIcon className={classes.inputIconsColor} />
@@ -502,6 +551,8 @@ export const Levelup = (props) => {
                           <Checkbox
                             tabIndex={-1}
                             value={isChecked}
+                            inputRef={inputRef.checkBox}
+                            onKeyPress={handleKeyPress}
                             onClick={() =>
                               isChecked
                                 ? setIsChecked(false)
