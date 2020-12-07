@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 //import { Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -38,6 +38,7 @@ const FindPassword = (props) => {
   });
 
   const { email } = inputs;
+  const findPasswordEmailRef = useRef();
 
   const [emailModalErr, setEmailModalErr] = useState(false);
 
@@ -67,7 +68,12 @@ const FindPassword = (props) => {
       //창 닫기
       setEmailModalErr(false);
       requestFindPassword({ email });
+      onClose();
     }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") return onSubmitHandler(e);
   };
 
   return (
@@ -114,6 +120,8 @@ const FindPassword = (props) => {
             type: "email",
             name: "email",
             value: email,
+            inputRef: findPasswordEmailRef,
+            onKeyPress: handleKeyPress,
             onChange: onInputHandler,
             endAdornment: (
               <InputAdornment position="end">

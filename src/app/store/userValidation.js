@@ -167,7 +167,6 @@ export const updateUserSocial = (socialData) => async (dispatch) => {
   const ENDPOINT = `/users/update/social`;
   try {
     const response = await api.patch(ENDPOINT, socialData);
-    console.log(response);
     dispatch(changedUserInfoSucess());
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());

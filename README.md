@@ -63,7 +63,8 @@
 ## loading 부분 skeleton component 사용
 
 ### Focus on next field when pressing enter React.js
-- 처리 완료
+- 처리 완료(회원가입, 로그인, 등업), 비번찾기모달, 비번바꾸는페이지까지
+- 정보수정(역모듈화 하기), 모달이메일엔 아직 못함
 
 ## 에러 stack 부분 차례대로 바꿔주기
 
