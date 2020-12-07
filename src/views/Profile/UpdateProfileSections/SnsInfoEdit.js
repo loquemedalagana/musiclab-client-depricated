@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { updateUserSocial } from "../../../app/store/userValidation";
@@ -72,7 +72,14 @@ const SocialInputs = (inputs, onInputHandler, iconClass) => {
 };
 
 export const SnsInfoEdit = (props) => {
-  const { updateUserSocial, classes, userInfo, loading, isChanged } = props;
+  const {
+    setAlertMsg,
+    updateUserSocial,
+    classes,
+    userInfo,
+    loading,
+    isChanged,
+  } = props;
 
   const [inputs, setInputs] = useState({
     blog: userInfo
@@ -130,10 +137,11 @@ export const SnsInfoEdit = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const errorMessages = [];
+    let isChanged = false;
 
     const ok = () => {
       for (const key in inputs) {
-        console.log(key, inputs[key]);
+        if (inputs[key].length > 0) isChanged = true;
         if (
           inputs[key] &&
           !checkSnsLink(key, inputs[key]) &&
@@ -147,12 +155,13 @@ export const SnsInfoEdit = (props) => {
     };
 
     if (ok()) {
-      console.log("finished");
-      updateUserSocial(inputs);
-    } else {
-      console.log(errorMessages);
-      errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
+      return isChanged
+        ? updateUserSocial(inputs)
+        : setAlertMsg("sns정보가 입력되지 않았습니다.", "error");
     }
+
+    console.log(errorMessages);
+    errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
   };
 
   //console.log(inputs);
