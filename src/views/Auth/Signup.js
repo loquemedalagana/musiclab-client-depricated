@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -71,6 +71,13 @@ export const Signup = (props) => {
   const [passwordErr, setPasswordErr] = useState(false);
 
   const { email, displayName, password, confirmPassword } = inputs;
+  const inputRef = {
+    email: useRef(),
+    displayName: useRef(),
+    password: useRef(),
+    confirmPassword: useRef(),
+    checkBox: useRef(),
+  };
 
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;
@@ -155,6 +162,14 @@ export const Signup = (props) => {
 
   const handleKeyPress = (e) => {
     if (e.key !== "Enter") return;
+    switch (e.currentTarget.name) {
+      case "displayName":
+      case "email":
+      case "password":
+      case "confirmPassword":
+      default:
+        return onSubmitHandler(e);
+    }
   };
 
   if (isAuth) return <Redirect to="/" />;

@@ -47,8 +47,10 @@ export const Login = (props) => {
     password: "",
   });
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const inputRef = {
+    email: useRef(),
+    password: useRef(),
+  };
 
   const [emailErr, setEmailErr] = useState(false);
   const [passwordErr, setPasswordErr] = useState(false);
@@ -70,7 +72,7 @@ export const Login = (props) => {
 
     let ok = true;
     if (!email) {
-      emailRef.current.focus();
+      inputRef.email.current.focus();
       ok = false;
       setAlertMsg("이메일을 입력해주세요", "error", "email");
       setEmailErr(true);
@@ -78,7 +80,7 @@ export const Login = (props) => {
       setEmailErr(false);
     }
     if (!password) {
-      passwordRef.current.focus();
+      inputRef.password.current.focus();
       ok = false;
       setAlertMsg("비밀번호를 입력해주세요", "error", "password");
       setPasswordErr(true);
@@ -87,20 +89,15 @@ export const Login = (props) => {
     }
 
     if (ok) {
-      emailRef.current.blur();
-      passwordRef.current.blur();
+      inputRef.email.current.blur();
+      inputRef.password.current.blur();
       loginUser({ email, password });
     }
   };
 
   const handleKeyPress = (e) => {
     if (e.key !== "Enter") return;
-    switch (e.currentTarget.name) {
-      case "email":
-        return passwordRef.current.focus();
-      default:
-        return onSubmitHandler(e);
-    }
+    return onSubmitHandler(e);
   };
 
   if (loading) return <Loading />;
@@ -134,7 +131,7 @@ export const Login = (props) => {
                         type: "email",
                         name: "email",
                         value: email,
-                        inputRef: emailRef,
+                        inputRef: inputRef.email,
                         onChange: onInputHandler,
                         onKeyPress: handleKeyPress,
                         endAdornment: (
@@ -167,7 +164,7 @@ export const Login = (props) => {
                         type: "password",
                         name: "password",
                         value: password,
-                        inputRef: passwordRef,
+                        inputRef: inputRef.password,
                         onChange: onInputHandler,
                         onKeyPress: handleKeyPress,
                         endAdornment: (
