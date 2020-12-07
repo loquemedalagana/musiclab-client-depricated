@@ -170,6 +170,7 @@ export const Signup = (props) => {
   };
 
   const handleKeyPress = (e) => {
+    e.preventDefault();
     if (e.key !== "Enter") return;
     switch (e.target.name) {
       case "displayName":
@@ -340,6 +341,7 @@ export const Signup = (props) => {
                           onClick={() =>
                             isChecked ? setIsChecked(false) : setIsChecked(true)
                           }
+                          onKeyPress={handleKeyPress}
                           checkedIcon={
                             <Check className={classes.checkedIcon} />
                           }

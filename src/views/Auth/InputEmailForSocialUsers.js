@@ -1,6 +1,4 @@
-//for social users
-//put email for auth
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -54,6 +52,12 @@ export const InputEmailForSocialUsers = (props) => {
   const [inputs, setInputs] = useState({
     email: "",
   });
+
+  const inputRef = {
+    email: useRef(),
+    checkBox: useRef(),
+  };
+
   const [emailErr, setEmailErr] = useState(false);
   const [emailSuccess, setEmailSuccess] = useState(false);
 
@@ -94,6 +98,16 @@ export const InputEmailForSocialUsers = (props) => {
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key !== "Enter") return;
+    switch (e.target.name) {
+      case "email":
+        return inputRef.checkBox.current.focus();
+      default:
+        return onSubmitHandler(e);
+    }
+  };
+
   if (isRegisteredEmail || isNotLoggedin) return <Redirect to="/" />;
   if (isChanged) return <Redirect to="/waitinglevelup" />;
 
@@ -123,6 +137,8 @@ export const InputEmailForSocialUsers = (props) => {
                       type: "email",
                       name: "email",
                       value: email,
+                      inputRef: inputRef.email,
+                      onKeyPress: handleKeyPress,
                       onChange: onInputHandler,
                       endAdornment: (
                         <InputAdornment position="end">
@@ -155,6 +171,8 @@ export const InputEmailForSocialUsers = (props) => {
                         <Checkbox
                           tabIndex={-1}
                           value={isChecked}
+                          inputRef={inputRef.checkBox}
+                          onKeyPress={handleKeyPress}
                           onClick={() =>
                             isChecked ? setIsChecked(false) : setIsChecked(true)
                           }
