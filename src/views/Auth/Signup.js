@@ -91,10 +91,12 @@ export const Signup = (props) => {
     event.preventDefault();
     let ok = true;
     if (!email) {
+      inputRef.email.current.focus();
       ok = false;
       setAlertMsg("이메일을 입력해주세요", "error", "email");
       setEmailErr(true);
     } else if (!checkValidEmail(email)) {
+      inputRef.email.current.focus();
       ok = false;
       setAlertMsg("올바른 형식으로 입력해주세요.", "error", "email");
       setEmailErr(true);
@@ -103,6 +105,7 @@ export const Signup = (props) => {
     }
 
     if (!displayName) {
+      inputRef.displayName.current.focus();
       ok = false;
       setAlertMsg("닉네임을 입력해주세요", "error", "nickname");
       setNicknameErr(true);
@@ -111,6 +114,7 @@ export const Signup = (props) => {
       checkNumber(displayName) ||
       checkSpace(displayName)
     ) {
+      inputRef.displayName.current.focus();
       ok = false;
       setAlertMsg(
         "닉네임에 숫자, 공백, 특수문자는 들어갈 수 없습니다.",
@@ -123,6 +127,7 @@ export const Signup = (props) => {
     }
 
     if (!password || !confirmPassword) {
+      inputRef.password.current.focus();
       ok = false;
       setAlertMsg("비밀번호를 입력해주세요", "error", "password");
       setPasswordErr(true);
@@ -133,12 +138,15 @@ export const Signup = (props) => {
         "error",
         "password"
       );
+      inputRef.password.current.focus();
       setPasswordErr(true);
     } else if (checkSpace(password) || checkSpace(confirmPassword)) {
+      inputRef.password.current.focus();
       ok = false;
       setAlertMsg("비밀번호에 공백이 들어갈 수 없습니다.", "error", "password");
       setPasswordErr(true);
     } else if (password.length < 8) {
+      inputRef.password.current.focus();
       ok = false;
       setAlertMsg(
         "비밀번호는 최소 8자 이상이어야 합니다.",
@@ -151,6 +159,7 @@ export const Signup = (props) => {
     }
 
     if (!isChecked) {
+      inputRef.checkBox.current.focus();
       ok = false;
       setAlertMsg("유의사항을 읽으신 후 체크해주세요", "error");
     }
@@ -162,11 +171,15 @@ export const Signup = (props) => {
 
   const handleKeyPress = (e) => {
     if (e.key !== "Enter") return;
-    switch (e.currentTarget.name) {
+    switch (e.target.name) {
       case "displayName":
+        return inputRef.email.current.focus();
       case "email":
+        return inputRef.password.current.focus();
       case "password":
+        return inputRef.confirmPassword.current.focus();
       case "confirmPassword":
+        return inputRef.checkBox.current.focus();
       default:
         return onSubmitHandler(e);
     }
@@ -198,6 +211,8 @@ export const Signup = (props) => {
                       type: "text",
                       name: "displayName",
                       value: displayName,
+                      inputRef: inputRef.displayName,
+                      onKeyPress: handleKeyPress,
                       onChange: onInputHandler,
                       endAdornment: (
                         <InputAdornment position="end">
@@ -230,6 +245,8 @@ export const Signup = (props) => {
                       type: "email",
                       name: "email",
                       value: email,
+                      inputRef: inputRef.email,
+                      onKeyPress: handleKeyPress,
                       onChange: onInputHandler,
                       endAdornment: (
                         <InputAdornment position="end">
@@ -261,7 +278,9 @@ export const Signup = (props) => {
                       type: "password",
                       name: "password",
                       value: password,
+                      inputRef: inputRef.password,
                       onChange: onInputHandler,
+                      onKeyPress: handleKeyPress,
                       endAdornment: (
                         <InputAdornment position="end">
                           <VpnKeyIcon className={classes.inputIconsColor} />
@@ -293,7 +312,9 @@ export const Signup = (props) => {
                       type: "password",
                       name: "confirmPassword",
                       value: confirmPassword,
+                      inputRef: inputRef.confirmPassword,
                       onChange: onInputHandler,
+                      onKeyPress: handleKeyPress,
                       endAdornment: (
                         <InputAdornment position="end">
                           <VpnKeyIcon className={classes.inputIconsColor} />
@@ -315,6 +336,7 @@ export const Signup = (props) => {
                         <Checkbox
                           tabIndex={-1}
                           value={isChecked}
+                          inputRef={inputRef.checkBox}
                           onClick={() =>
                             isChecked ? setIsChecked(false) : setIsChecked(true)
                           }
