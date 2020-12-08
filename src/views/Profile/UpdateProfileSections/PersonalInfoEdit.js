@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classNames from "classnames";
 import { setAlertMsg } from "../../../app/store/alert";
-import { updateUserProfile } from "../../../app/store/userValidation";
+import { updateUserProfile } from "../../../app/store/userValidationAndUpdate";
 
 import { VpnKey as VpnKeyIcon, MusicNote, People } from "@material-ui/icons";
 
@@ -185,6 +185,14 @@ export const PersonalInfoEdit = (props) => {
     newPassword,
     confirmNewPassword,
   } = inputs;
+
+  const inputRef = {
+    displayName: useRef(),
+    description: useRef(),
+    password: useRef(),
+    newPassword: useRef(),
+    confirmNewPassword: useRef(),
+  };
 
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;

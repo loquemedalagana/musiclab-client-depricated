@@ -21,7 +21,7 @@ import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
 import { checkValidEmail } from "../../utils/checkStringPatterns";
 import { setAlertMsg } from "../../app/store/alert";
-import { requestFindPassword } from "../../app/store/userValidation";
+import { requestFindPassword } from "../../app/store/userValidationAndUpdate";
 
 const useStyles = makeStyles(styles);
 

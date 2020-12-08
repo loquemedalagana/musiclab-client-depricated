@@ -16,7 +16,7 @@ import People from "@material-ui/icons/People";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import Check from "@material-ui/icons/Check";
 
-import { signupUser } from "../../app/store/userValidation";
+import { signupUser } from "../../app/store/userValidationAndUpdate";
 
 import {
   Footer,

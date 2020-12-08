@@ -37,7 +37,7 @@ import {
   descriptionHelperText,
 } from "../../utils/variablesAndRegs";
 import { setAlertMsg } from "../../app/store/alert";
-import { requestLevelup } from "../../app/store/userValidation";
+import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
 import {
   checkSpace,

@@ -7,7 +7,7 @@ import { Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Footer, GridContainer, GridItem } from "../../components/components";
 
-import { sendEmailAuthCode } from "../../app/store/userValidation";
+import { sendEmailAuthCode } from "../../app/store/userValidationAndUpdate";
 //import {setAlertMsg} from '../../app/store/alert';
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";

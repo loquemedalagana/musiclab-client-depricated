@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/store/video.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Post/PostListPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/userValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/userValidationAndUpdate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Error/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/WaitingLevelup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PostDetailPage/PostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Post/PostDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +65,8 @@
       <workItem from="1607044097066" duration="4325000" />
       <workItem from="1607143196616" duration="16392000" />
       <workItem from="1607223371925" duration="6720000" />
-      <workItem from="1607300169272" duration="18714000" />
+      <workItem from="1607300169272" duration="22506000" />
+      <workItem from="1607388365394" duration="1708000" />
     </task>
     <servers />
   </component>
