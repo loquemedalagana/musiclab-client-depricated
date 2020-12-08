@@ -390,7 +390,7 @@ Signup.propTypes = {
 const mapStateToProps = (state) => ({
   alerts: state.alert,
   isAuth: state.auth.auth,
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, signupUser })(Signup);

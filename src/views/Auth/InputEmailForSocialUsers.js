@@ -227,7 +227,7 @@ const mapStateToProps = (state) => ({
   alerts: state.alert,
   isNotLoggedin: !state.auth.auth,
   isRegisteredEmail: state.auth.userData && state.auth.userData.email,
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, emailRegister })(

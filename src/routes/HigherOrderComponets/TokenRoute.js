@@ -57,7 +57,7 @@ TokenRoute.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps)(TokenRoute);

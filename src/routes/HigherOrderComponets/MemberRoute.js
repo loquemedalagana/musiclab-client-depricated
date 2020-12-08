@@ -46,7 +46,7 @@ MemberRoute.propTypes = {
 const mapStateToProps = (state) => ({
   userData: state.auth.userData,
   isLoading: state.auth.loading,
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps)(MemberRoute);

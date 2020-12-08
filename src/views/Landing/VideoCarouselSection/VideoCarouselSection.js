@@ -7,7 +7,7 @@ import PrintVideoCarousel from "./PrintVideoCarousel";
 
 import { GridContainer, GridItem } from "../../../components/components";
 
-import { SampleVideoList } from "../../../app/videoData/SampleData/SampleData";
+import { SampleVideoList } from "../../../app/videoData/SampleData/SampleVideoData";
 
 import styles from "../../../assets/jss/material-kit-react/components/carouselStyle";
 import {

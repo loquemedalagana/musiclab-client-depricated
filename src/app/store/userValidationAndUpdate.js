@@ -5,7 +5,7 @@ import { loginUser } from "./auth";
 
 //expired 여부 기록하기
 const slice = createSlice({
-  name: "userValidation",
+  name: "userValidationAndUpdate",
   initialState: {
     changed: false,
   },

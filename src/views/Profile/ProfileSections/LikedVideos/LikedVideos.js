@@ -14,7 +14,7 @@ import {
   //test code
   SampleTagList,
   SampleVideoList,
-} from "../../../../app/videoData/SampleData/SampleData";
+} from "../../../../app/videoData/SampleData/SampleVideoData";
 
 const PrintVideoThumbnail = (props) => {
   const { videoData, thumbnailListImageClasses } = props; //add hover

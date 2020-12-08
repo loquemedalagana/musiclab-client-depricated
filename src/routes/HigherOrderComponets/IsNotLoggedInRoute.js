@@ -47,7 +47,7 @@ IsNotLoggedInRoute.propTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.auth,
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps)(IsNotLoggedInRoute);

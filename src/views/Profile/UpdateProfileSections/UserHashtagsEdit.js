@@ -35,7 +35,7 @@ UserHashtagsEdit.propTypes = {
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
   userInfo: state.auth.userData,
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg })(UserHashtagsEdit);

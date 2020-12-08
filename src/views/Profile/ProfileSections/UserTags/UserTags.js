@@ -13,7 +13,7 @@ import {
 import {
   //test code
   SampleTagList,
-} from "../../../../app/videoData/SampleData/SampleData";
+} from "../../../../app/videoData/SampleData/SampleVideoData";
 
 import compositionImg from "../../../../assets/images/TagImages/composition.jpg";
 import guitarImg from "../../../../assets/images/TagImages/guitar.jpg";

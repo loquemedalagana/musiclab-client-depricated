@@ -71,7 +71,7 @@ WaitingLevelup.propTypes = {
 
 const mapStateToProps = (state) => ({
   userEmail: state.auth.userData ? state.auth.userData.email : undefined,
-  isChanged: state.userValidation.changed,
+  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps, { sendEmailAuthCode })(WaitingLevelup);
