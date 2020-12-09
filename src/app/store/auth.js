@@ -60,7 +60,7 @@ export default slice.reducer;
 export const fetchUser = () => async (dispatch) => {
   dispatch(loadUser());
   try {
-    const response = await api.get(`/users/auth`);
+    const response = await api.get(`/users/load`);
     dispatch(loadUserSuccess(response.data));
   } catch (err) {
     dispatch(loadUserFail());
@@ -76,6 +76,7 @@ export const loginUser = (dataToSubmit) => async (dispatch) => {
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {
+      //edit
       errors.forEach((error) =>
         dispatch(setAlertMsg(error.message.message, "error"))
       );
