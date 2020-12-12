@@ -16,7 +16,7 @@ import {
   //  Footer,
 } from "./components/components";
 
-import { appTitle } from "./utils/variablesAndRegs";
+import { appTitle } from "./app/helperTexts/appTitle";
 
 function App(props) {
   //load and store user state

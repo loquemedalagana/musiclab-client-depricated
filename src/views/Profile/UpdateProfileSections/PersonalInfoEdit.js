@@ -21,11 +21,11 @@ import {
   checkSpace,
   checkNumber,
   checkSpecialChar,
-} from "../../../utils/checkStringPatterns";
+} from "../../../app/inputValidation/checkStringPatterns";
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 import { camelToSpace } from "../../../utils/functions";
-import { descriptionHelperText } from "../../../utils/variablesAndRegs";
+import { descriptionHelperText } from "../../../app/inputValidation/variablesAndRegs";
 
 const passReg = /(Password)/i;
 

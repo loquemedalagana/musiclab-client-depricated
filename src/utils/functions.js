@@ -5,7 +5,7 @@ import {
   blogReg,
   youtubeReg,
   soundcloudReg,
-} from "./variablesAndRegs.js";
+} from "../app/inputValidation/variablesAndRegs";
 
 export const isDesktop = window.innerWidth > 959;
 
@@ -24,19 +24,6 @@ export const getDateKor = (dateformat) => {
     5,
     7
   )}월 ${dateformat.substring(8, 10)}일`;
-};
-
-export const getPrivateChannel = (curPrivateChats, fromUser, toUser) => {
-  if (curPrivateChats.length === 0) return [];
-  else {
-    return curPrivateChats.filter(
-      (channel) =>
-        (channel.members[0].user === fromUser._id &&
-          channel.members[1].user === toUser._id) ||
-        (channel.members[1].user === fromUser._id &&
-          channel.members[0].user === toUser._id)
-    );
-  }
 };
 
 //check is valid sns link

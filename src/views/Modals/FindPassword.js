@@ -19,7 +19,7 @@ import { Button, CustomInput } from "../../components/components";
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
-import { checkValidEmail } from "../../utils/checkStringPatterns";
+import { checkValidEmail } from "../../app/inputValidation/checkStringPatterns";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestFindPassword } from "../../app/store/userValidationAndUpdate";
 

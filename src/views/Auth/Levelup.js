@@ -35,7 +35,7 @@ import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
 import {
   checkAgreeLevelup,
   descriptionHelperText,
-} from "../../utils/variablesAndRegs";
+} from "../../app/inputValidation/variablesAndRegs";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
@@ -43,7 +43,7 @@ import {
   checkSpace,
   checkNumber,
   checkSpecialChar,
-} from "../../utils/checkStringPatterns";
+} from "../../app/inputValidation/checkStringPatterns";
 
 const useStyles = makeStyles(styles);
 

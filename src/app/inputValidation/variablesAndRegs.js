@@ -1,7 +1,3 @@
-export const appTitle = `Music SSeolprise by Jeon Inhyuk`;
-export const appShortTitle = `야다 전인혁의 뮤직 썰!프라이즈`;
-export const appDescription = `#Yada #JeonInhyuk #vocal #guitar #composition`;
-
 export const checkIsValidEmail = `입력하신 이메일 주소로 인증코드가 갑니다. 정확히 입력하셨는지 다시한번 확인해주세요.`;
 
 export const levelupHelperText =
@@ -11,8 +7,6 @@ export const checkAgreeLevelup =
 
 export const descriptionHelperText =
   "야다 노래 중 가장 좋아하는 곡과 이유를 간단한 자기소개와 함께 200자 이내로 적어주세요";
-
-export const YadaDebutDate = new Date("1999/03/03");
 
 export const youtubeReg = /^https?:\/\/(www\.)?youtube\.com\/(c|user|channel)\/[A-Za-z0-9_-]{1,}$/;
 export const twitterReg = /^https:\/\/twitter\.com\/[a-zA-Z0-9_]{1,15}$/;

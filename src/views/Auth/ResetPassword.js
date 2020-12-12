@@ -27,7 +27,7 @@ import { setAlertMsg } from "../../app/store/alert";
 import {
   checkSpace,
   //checkSpecialChar
-} from "../../utils/checkStringPatterns";
+} from "../../app/inputValidation/checkStringPatterns";
 
 const useStyles = makeStyles(styles);
 
