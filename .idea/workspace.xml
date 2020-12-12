@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/inputResult.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/checkStringPatterns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/checkStringPatterns.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/userDescriptionValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/userDescriptionValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/variablesAndRegs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/messages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/functions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,7 @@
       <workItem from="1607300169272" duration="22506000" />
       <workItem from="1607388365394" duration="11979000" />
       <workItem from="1607477795226" duration="4257000" />
-      <workItem from="1607757034379" duration="5017000" />
+      <workItem from="1607757034379" duration="7242000" />
     </task>
     <servers />
   </component>

@@ -32,12 +32,10 @@ import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/backgr
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
+import DisplayNameValidation from "../../app/inputValidation/user/displayNameValidation";
+import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
+
 import { checkIsValidEmail } from "../../app/inputValidation/messages";
-import {
-  checkSpace,
-  checkNumber,
-  checkSpecialChar,
-} from "../../app/inputValidation/checkStringPatterns";
 import { setAlertMsg } from "../../app/store/alert";
 import SocialLogin from "./SocialLogin";
 
@@ -93,6 +91,15 @@ export const Signup = (props) => {
     const emailInputCheck = new EmailValidation(email);
     const emailInputValidationResult = emailInputCheck.getResult();
 
+    const displayNameInputCheck = new DisplayNameValidation(displayName);
+    const displayNameValidationResult = displayNameInputCheck.getResult();
+
+    const passwordInputCheck = new PasswordValidation(
+      password,
+      confirmPassword
+    );
+    const passwordInputValidationResult = passwordInputCheck.getResult();
+
     if (!emailInputValidationResult.ok) {
       ok = false;
       inputRef.email.current.focus();
@@ -102,55 +109,19 @@ export const Signup = (props) => {
       setEmailErr(false);
     }
 
-    if (!displayName) {
+    if (!displayNameValidationResult.ok) {
       inputRef.displayName.current.focus();
       ok = false;
-      setAlertMsg("닉네임을 입력해주세요", "error", "nickname");
-      setNicknameErr(true);
-    } else if (
-      checkSpecialChar(displayName) ||
-      checkNumber(displayName) ||
-      checkSpace(displayName)
-    ) {
-      inputRef.displayName.current.focus();
-      ok = false;
-      setAlertMsg(
-        "닉네임에 숫자, 공백, 특수문자는 들어갈 수 없습니다.",
-        "error",
-        "nickname"
-      );
+      setAlertMsg(displayNameValidationResult.message, "error", "nickname");
       setNicknameErr(true);
     } else {
       setNicknameErr(false);
     }
 
-    if (!password || !confirmPassword) {
+    if (!passwordInputValidationResult.ok) {
       inputRef.password.current.focus();
       ok = false;
-      setAlertMsg("비밀번호를 입력해주세요", "error", "password");
-      setPasswordErr(true);
-    } else if (password && password !== confirmPassword && confirmPassword) {
-      ok = false;
-      setAlertMsg(
-        "비밀번호와 비밀번호 확인은 같아야합니다.",
-        "error",
-        "password"
-      );
-      inputRef.password.current.focus();
-      setPasswordErr(true);
-    } else if (checkSpace(password) || checkSpace(confirmPassword)) {
-      inputRef.password.current.focus();
-      ok = false;
-      setAlertMsg("비밀번호에 공백이 들어갈 수 없습니다.", "error", "password");
-      setPasswordErr(true);
-    } else if (password.length < 8) {
-      inputRef.password.current.focus();
-      ok = false;
-      setAlertMsg(
-        "비밀번호는 최소 8자 이상이어야 합니다.",
-        "error",
-        "password"
-      );
+      setAlertMsg(passwordInputValidationResult.message, "error", "password");
       setPasswordErr(true);
     } else {
       setPasswordErr(false);

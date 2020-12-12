@@ -24,10 +24,7 @@ import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import { resetPassword } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
 
-import {
-  checkSpace,
-  //checkSpecialChar
-} from "../../app/inputValidation/checkStringPatterns";
+import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
 
 const useStyles = makeStyles(styles);
 
@@ -72,30 +69,16 @@ export const ResetPassword = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
+    const passwordInputCheck = new PasswordValidation(
+      password,
+      confirmPassword
+    );
+    const passwordInputValidationResult = passwordInputCheck.getResult();
 
-    if (!password || !confirmPassword) {
+    if (!passwordInputValidationResult.ok) {
+      inputRef.password.current.focus();
       ok = false;
-      setAlertMsg("비밀번호를 입력해주세요", "error", "password");
-      setPasswordErr(true);
-    } else if (password && password !== confirmPassword && confirmPassword) {
-      ok = false;
-      setAlertMsg(
-        "비밀번호와 비밀번호 확인은 같아야합니다.",
-        "error",
-        "password"
-      );
-      setPasswordErr(true);
-    } else if (checkSpace(password) || checkSpace(confirmPassword)) {
-      ok = false;
-      setAlertMsg("비밀번호에 공백이 들어갈 수 없습니다.", "error", "password");
-      setPasswordErr(true);
-    } else if (password.length < 8) {
-      ok = false;
-      setAlertMsg(
-        "비밀번호는 최소 8자 이상이어야 합니다.",
-        "error",
-        "password"
-      );
+      setAlertMsg(passwordInputValidationResult.message, "error", "password");
       setPasswordErr(true);
     } else {
       setPasswordErr(false);

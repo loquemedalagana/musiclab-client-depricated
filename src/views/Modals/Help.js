@@ -28,7 +28,8 @@ import {
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
-import { checkValidEmail } from "../../app/inputValidation/checkStringPatterns";
+import EmailValidation from "../../app/inputValidation/user/emailValidation";
+
 import { setAlertMsg } from "../../app/store/alert";
 
 const useStyles = makeStyles(styles);
@@ -111,14 +112,15 @@ export const Help = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    if (!email) {
+    const emailInputCheck = new EmailValidation(email);
+    const emailInputValidationResult = emailInputCheck.getResult();
+
+    if (!emailInputValidationResult.ok) {
       ok = false;
-      setAlertMsg("이메일을 입력해주세요", "error");
+      setAlertMsg(emailInputValidationResult.message, "error", "email");
       setEmailModalErr(true);
-    } else if (!checkValidEmail(email)) {
-      ok = false;
-      setAlertMsg("올바른 형식으로 입력해주세요.", "error");
-      setEmailModalErr(true);
+    } else {
+      setEmailModalErr(false);
     }
 
     if (!displayName) {
