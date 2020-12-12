@@ -26,8 +26,8 @@ import {
 } from "../../components/components";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
-import { checkIsValidEmail } from "../../utils/variablesAndRegs";
-import { checkValidEmail } from "../../utils/checkStringPatterns";
+import { checkIsValidEmail } from "../../app/inputValidation/variablesAndRegs";
+import { checkValidEmail } from "../../app/inputValidation/checkStringPatterns";
 import { emailRegister } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
 const useStyles = makeStyles(styles);

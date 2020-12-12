@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/user/userDescriptionValidation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/checkStringPatterns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/checkStringPatterns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/variablesAndRegs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/variablesAndRegs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +35,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/inputValidation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -45,6 +49,11 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\inputValidation" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -60,7 +69,8 @@
       <workItem from="1607223371925" duration="6720000" />
       <workItem from="1607300169272" duration="22506000" />
       <workItem from="1607388365394" duration="11979000" />
-      <workItem from="1607477795226" duration="1705000" />
+      <workItem from="1607477795226" duration="4257000" />
+      <workItem from="1607757034379" duration="808000" />
     </task>
     <servers />
   </component>
