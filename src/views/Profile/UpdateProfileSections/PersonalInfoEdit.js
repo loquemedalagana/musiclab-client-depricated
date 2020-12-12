@@ -25,7 +25,7 @@ import {
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 import { camelToSpace } from "../../../utils/functions";
-import { descriptionHelperText } from "../../../app/inputValidation/variablesAndRegs";
+import { descriptionHelperText } from "../../../app/inputValidation/messages";
 
 const passReg = /(Password)/i;
 

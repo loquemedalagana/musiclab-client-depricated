@@ -5,7 +5,7 @@ import {
   blogReg,
   youtubeReg,
   soundcloudReg,
-} from "../app/inputValidation/variablesAndRegs";
+} from "../app/inputValidation/messages";
 
 export const isDesktop = window.innerWidth > 959;
 

@@ -31,9 +31,9 @@ import {
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
-import { checkIsValidEmail } from "../../app/inputValidation/variablesAndRegs";
+import EmailValidation from "../../app/inputValidation/user/emailValidation";
+import { checkIsValidEmail } from "../../app/inputValidation/messages";
 import {
-  checkValidEmail,
   checkSpace,
   checkNumber,
   checkSpecialChar,
@@ -90,15 +90,13 @@ export const Signup = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    if (!email) {
-      inputRef.email.current.focus();
+    const emailInputCheck = new EmailValidation(email);
+    const emailInputValidationResult = emailInputCheck.getResult();
+
+    if (!emailInputValidationResult.ok) {
       ok = false;
-      setAlertMsg("이메일을 입력해주세요", "error", "email");
-      setEmailErr(true);
-    } else if (!checkValidEmail(email)) {
       inputRef.email.current.focus();
-      ok = false;
-      setAlertMsg("올바른 형식으로 입력해주세요.", "error", "email");
+      setAlertMsg(emailInputValidationResult.message, "error", "email");
       setEmailErr(true);
     } else {
       setEmailErr(false);

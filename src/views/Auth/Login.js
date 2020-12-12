@@ -22,7 +22,6 @@ import {
 } from "../../components/components";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
-
 import Loading from "../../components/Loading/LinearLoading";
 import FindPassword from "../Modals/FindPassword";
 import { loginUser } from "../../app/store/auth";
@@ -69,16 +68,20 @@ export const Login = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-
     let ok = true;
     if (!email) {
       inputRef.email.current.focus();
       ok = false;
-      setAlertMsg("이메일을 입력해주세요", "error", "email");
+      setAlertMsg(
+        "이메일을 입력해주세요(please input your email)",
+        "error",
+        "email"
+      );
       setEmailErr(true);
     } else {
       setEmailErr(false);
     }
+
     if (!password) {
       inputRef.password.current.focus();
       ok = false;

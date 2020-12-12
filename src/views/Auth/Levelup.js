@@ -35,7 +35,7 @@ import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
 import {
   checkAgreeLevelup,
   descriptionHelperText,
-} from "../../app/inputValidation/variablesAndRegs";
+} from "../../app/inputValidation/messages";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
