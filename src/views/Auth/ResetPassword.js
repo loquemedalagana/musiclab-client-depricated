@@ -23,7 +23,7 @@ import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/backgr
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import { resetPassword } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
-import { PASSWORD_HELPER } from "../../app/helperTexts/alertMessages/auth";
+import { PASSWORD_HELPER } from "../../app/helperTexts/auth/authAlertMessages";
 
 import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
 

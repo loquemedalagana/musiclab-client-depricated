@@ -32,10 +32,11 @@ import {
 } from "../../components/components";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
+import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
 import {
   checkAgreeLevelup,
   descriptionHelperText,
-} from "../../app/inputValidation/messages";
+} from "../../app/helperTexts/auth/helperTexts";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
@@ -191,7 +192,7 @@ export const Levelup = (props) => {
 
     if (!isChecked) {
       ok = false;
-      setAlertMsg("유의사항을 읽은 후 체크해주세요", "error");
+      setAlertMsg(PLEASE_READ_RULES, "error");
     }
 
     if (ok) {

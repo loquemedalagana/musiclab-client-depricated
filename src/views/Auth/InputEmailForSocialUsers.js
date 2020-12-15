@@ -27,10 +27,10 @@ import {
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
-import { checkIsValidEmail } from "../../app/inputValidation/messages";
+import { checkIsValidEmail } from "../../app/helperTexts/auth/helperTexts";
 import { emailRegister } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
-import { PLEASE_READ_RULES } from "../../app/helperTexts/alertMessages/auth";
+import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
 

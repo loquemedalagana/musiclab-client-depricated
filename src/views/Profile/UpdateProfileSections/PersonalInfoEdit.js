@@ -19,7 +19,7 @@ import {
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 import { camelToSpace } from "../../../app/utils/functions";
-import { descriptionHelperText } from "../../../app/inputValidation/messages";
+import { descriptionHelperText } from "../../../app/helperTexts/auth/helperTexts";
 
 const passReg = /(Password)/i;
 

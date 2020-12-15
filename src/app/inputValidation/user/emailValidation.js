@@ -2,7 +2,7 @@ import inputResult from "../inputResult";
 import {
   EMAIL_NULL_ERROR,
   EMAIL_INVALID_ERROR,
-} from "../../helperTexts/alertMessages/auth";
+} from "../../helperTexts/auth/authAlertMessages";
 
 export default class EmailValidation {
   constructor({ email }) {

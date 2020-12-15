@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/routes/params/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/params/post.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/params/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/helperTexts/auth/regex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/fetcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/fetcher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/userValidationAndUpdate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/userValidationAndUpdate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/TokenRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/TokenRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/constants/routeParams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/helperTexts/alertMessages/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/helperTexts/auth/authAlertMessages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/helperTexts/auth/helperTexts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/helperTexts/auth" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -65,6 +61,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\helperTexts\auth" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\api" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\inputValidation" />
@@ -88,7 +85,7 @@
       <workItem from="1607757034379" duration="7900000" />
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
-      <workItem from="1607992743143" duration="14499000" />
+      <workItem from="1607992743143" duration="15991000" />
     </task>
     <servers />
   </component>
