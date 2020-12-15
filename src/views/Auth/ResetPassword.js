@@ -23,12 +23,11 @@ import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/backgr
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import { resetPassword } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
+import { PASSWORD_HELPER } from "../../app/helperTexts/alertMessages/auth";
 
 import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
 
 const useStyles = makeStyles(styles);
-
-const inputhelper = `비밀번호는 반드시 8자 이상으로 입력해주세요.`;
 
 export const ResetPassword = (props) => {
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
@@ -69,10 +68,10 @@ export const ResetPassword = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    const passwordInputCheck = new PasswordValidation(
+    const passwordInputCheck = new PasswordValidation({
       password,
-      confirmPassword
-    );
+      confirmPassword,
+    });
     const passwordInputValidationResult = passwordInputCheck.getResult();
 
     if (!passwordInputValidationResult.ok) {
@@ -114,7 +113,7 @@ export const ResetPassword = (props) => {
                 <CardHeader color="primary" className={classes.cardHeader}>
                   <h4>Please input your new password</h4>
                 </CardHeader>
-                <p className={classes.divider}>{inputhelper}</p>
+                <p className={classes.divider}>{PASSWORD_HELPER}</p>
                 <CardBody>
                   <CustomInput
                     labelText="Password"

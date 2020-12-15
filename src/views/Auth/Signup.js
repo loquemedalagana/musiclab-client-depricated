@@ -34,6 +34,7 @@ import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
 import DisplayNameValidation from "../../app/inputValidation/user/displayNameValidation";
 import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
+import { PLEASE_READ_RULES } from "../../app/helperTexts/alertMessages/auth";
 
 import { checkIsValidEmail } from "../../app/inputValidation/messages";
 import { setAlertMsg } from "../../app/store/alert";
@@ -88,16 +89,16 @@ export const Signup = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    const emailInputCheck = new EmailValidation(email);
+    const emailInputCheck = new EmailValidation({ email });
     const emailInputValidationResult = emailInputCheck.getResult();
 
-    const displayNameInputCheck = new DisplayNameValidation(displayName);
+    const displayNameInputCheck = new DisplayNameValidation({ displayName });
     const displayNameValidationResult = displayNameInputCheck.getResult();
 
-    const passwordInputCheck = new PasswordValidation(
+    const passwordInputCheck = new PasswordValidation({
       password,
-      confirmPassword
-    );
+      confirmPassword,
+    });
     const passwordInputValidationResult = passwordInputCheck.getResult();
 
     if (!emailInputValidationResult.ok) {
@@ -130,7 +131,7 @@ export const Signup = (props) => {
     if (!isChecked) {
       inputRef.checkBox.current.focus();
       ok = false;
-      setAlertMsg("유의사항을 읽으신 후 체크해주세요", "error");
+      setAlertMsg(PLEASE_READ_RULES, "error");
     }
 
     if (ok) {

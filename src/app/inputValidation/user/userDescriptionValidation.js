@@ -1,8 +1,8 @@
 import inputResult from "../inputResult";
 
 export default class UserDescriptionValidation {
-  constructor(input) {
-    this.userDescription = input;
+  constructor({ description }) {
+    this.userDescription = description;
   }
 
   getResult() {

@@ -24,9 +24,6 @@ import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/ba
 
 const useStyles = makeStyles(styles);
 
-//http://localhost:3000/officialvideolist/jihbandofficial
-//나중에 서버사이드로 넘길 예정
-
 export const VideoListByOfficialChannel = (props) => {
   const classes = useStyles();
   const imageClasses = classNames(

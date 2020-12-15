@@ -30,6 +30,8 @@ import EmailValidation from "../../app/inputValidation/user/emailValidation";
 import { checkIsValidEmail } from "../../app/inputValidation/messages";
 import { emailRegister } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
+import { PLEASE_READ_RULES } from "../../app/helperTexts/alertMessages/auth";
+
 const useStyles = makeStyles(styles);
 
 const inputhelper = `반드시 유효한 메일주소를 입력해주세요.`;
@@ -76,7 +78,7 @@ export const InputEmailForSocialUsers = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    const emailInputCheck = new EmailValidation(email);
+    const emailInputCheck = new EmailValidation({ email });
     const emailInputValidationResult = emailInputCheck.getResult();
 
     if (!emailInputValidationResult.ok) {
@@ -91,7 +93,7 @@ export const InputEmailForSocialUsers = (props) => {
 
     if (!isChecked) {
       ok = false;
-      setAlertMsg("유의사항을 읽으신 후 체크해주세요", "error");
+      setAlertMsg(PLEASE_READ_RULES, "error");
     }
 
     if (ok) {

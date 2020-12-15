@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import Close from "@material-ui/icons/Close";
 
+import { appTitle, appShortTitle } from "../../app/helperTexts/appTitle";
+
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 const useStyles = makeStyles(styles);
 
@@ -45,8 +47,8 @@ const NotAvailable = (props) => {
         >
           <Close className={classes.modalClose} />
         </IconButton>
-        <h3 className={classes.modalTitle}>Music SSeolprise by Jeon Inhyuk</h3>
-        <h5 className={classes.modalTitle}>야다 전인혁의 뮤직 썰!프라이즈</h5>
+        <h3 className={classes.modalTitle}>{appTitle}</h3>
+        <h5 className={classes.modalTitle}>{appShortTitle}</h5>
       </DialogTitle>
 
       <DialogContent

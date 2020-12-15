@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinksTest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/constants/routeParams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/sampleProfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/helperTexts/alertMessages/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/user/levelupValidation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Post/PostListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/userDescriptionValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/userDescriptionValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/socket_events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/NotAvailable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/NotAvailable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +80,7 @@
       <workItem from="1607757034379" duration="7900000" />
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
-      <workItem from="1607992743143" duration="5691000" />
+      <workItem from="1607992743143" duration="10441000" />
     </task>
     <servers />
   </component>

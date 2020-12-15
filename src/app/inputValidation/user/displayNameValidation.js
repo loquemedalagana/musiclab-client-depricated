@@ -1,11 +1,11 @@
 import inputResult from "../inputResult";
 
 export default class DisplayNameValidation {
-  constructor(input) {
-    this.haveSpace = /\s+/g.test(input);
-    this.isEmptyInput = input.length === 0;
-    this.haveNumber = /[0-9]/.test(input);
-    this.haveSpecialChar = /[~!@#$%^&*()_+|<>?:{}]/.test(input);
+  constructor({ displayName }) {
+    this.haveSpace = /\s+/g.test(displayName);
+    this.isEmptyInput = displayName.length === 0;
+    this.haveNumber = /[0-9]/.test(displayName);
+    this.haveSpecialChar = /[~!@#$%^&*()_+|<>?:{}]/.test(displayName);
   }
 
   getResult() {

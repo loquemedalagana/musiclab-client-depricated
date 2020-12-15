@@ -28,10 +28,12 @@ import { loginUser } from "../../app/store/auth";
 import { setAlertMsg } from "../../app/store/alert";
 
 import SocialLogin from "./SocialLogin";
+import {
+  EMAIL_NULL_ERROR,
+  PASSWORD_NULL_ERROR,
+} from "../../app/helperTexts/alertMessages/auth";
 
 const useStyles = makeStyles(styles);
-
-//https://www.softkraft.co/how-to-setup-slices-with-redux-toolkit/
 
 export const Login = (props) => {
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
@@ -72,11 +74,7 @@ export const Login = (props) => {
     if (!email) {
       inputRef.email.current.focus();
       ok = false;
-      setAlertMsg(
-        "이메일을 입력해주세요(please input your email)",
-        "error",
-        "email"
-      );
+      setAlertMsg(EMAIL_NULL_ERROR, "error", "email");
       setEmailErr(true);
     } else {
       setEmailErr(false);
@@ -85,7 +83,7 @@ export const Login = (props) => {
     if (!password) {
       inputRef.password.current.focus();
       ok = false;
-      setAlertMsg("비밀번호를 입력해주세요", "error", "password");
+      setAlertMsg(PASSWORD_NULL_ERROR, "error", "password");
       setPasswordErr(true);
     } else {
       setPasswordErr(false);

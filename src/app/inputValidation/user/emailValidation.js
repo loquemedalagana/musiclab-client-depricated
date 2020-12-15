@@ -1,17 +1,20 @@
 import inputResult from "../inputResult";
+import {
+  EMAIL_NULL_ERROR,
+  EMAIL_INVALID_ERROR,
+} from "../../helperTexts/alertMessages/auth";
 
 export default class EmailValidation {
-  constructor(input) {
-    this.isEmptyInput = input.length === 0;
+  constructor({ email }) {
+    this.isEmptyInput = { email }.length === 0;
     this.isValid = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/.test(
-      input
+      email
     );
   }
 
   getResult() {
-    if (this.isEmptyInput) return inputResult(false, "이메일을 입력해주세요.");
-    if (!this.isValid)
-      return inputResult(false, "유효하지 않은 메일주소입니다.");
+    if (this.isEmptyInput) return inputResult(false, EMAIL_NULL_ERROR);
+    if (!this.isValid) return inputResult(false, EMAIL_INVALID_ERROR);
     return inputResult(true);
   }
 }

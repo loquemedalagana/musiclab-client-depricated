@@ -4,7 +4,7 @@ import { MIN_PASSWORD_LENGTH } from "../constants";
 //배포 전에는 알파벳 반드시 포함으로 하기
 
 export default class PasswordValidation {
-  constructor(password, confirmPassword) {
+  constructor({ password, confirmPassword }) {
     //가입일 때? 로그인 할 땐 다름..
     this.haveSpace = /\s+/g.test(password);
     this.isEmptyInput = password.length === 0 || confirmPassword.length === 0;

@@ -112,7 +112,7 @@ export const Help = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    const emailInputCheck = new EmailValidation(email);
+    const emailInputCheck = new EmailValidation({ email });
     const emailInputValidationResult = emailInputCheck.getResult();
 
     if (!emailInputValidationResult.ok) {
