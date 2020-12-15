@@ -24,9 +24,40 @@ import ServerError from "../views/Error/ServerError";
 
 import ToastAlert from "../components/ToastAlerts/ToastAlerts";
 
-//aaa.com/member/active?token=abcdefg1234
-// ~.com/levelup/?token=ABCDE
+const TestRoutes = () => (
+  <>
+    <ToastAlert />
+    <Switch>
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
 
+      <Route exact path="/resetpassword/:auth?" component={ResetPassword} />
+      <Route exact path="/levelup/:auth?" component={Levelup} />
+
+      <Route exact path="/waitinglevelup" component={WaitingLevelup} />
+      <Route exact path="/emailregister" component={InputEmailForSocialUsers} />
+
+      <Route exact path="/profiles/:userid" component={Profile} />
+      <Route exact path="/modify/profile" component={UpdateProfile} />
+
+      <Route
+        exact
+        path="/officialvideolist/:channel?"
+        component={VideoListByOfficialChannel}
+      />
+      <Route
+        exact
+        path="/videolistbykeywords/:query?"
+        component={VideoListByKeywords}
+      />
+
+      <Route exact path="/servererror" component={ServerError} />
+      <Route component={NotFound} />
+    </Switch>
+  </>
+);
+
+// 본 개발 데이터
 const Routes = () => (
   <>
     <ToastAlert />
@@ -68,4 +99,6 @@ const Routes = () => (
   </>
 );
 
-export default Routes;
+//export default Routes;
+
+export default TestRoutes;

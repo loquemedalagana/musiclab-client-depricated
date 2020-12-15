@@ -46,10 +46,6 @@ import { getDateKor } from "../../utils/functions";
 
 const useStyles = makeStyles(styles);
 
-//https://stackoverflow.com/questions/58924617/componentwillreceiveprops-has-been-renamed
-//test user id 5f3d26926b0ee109c1220711  5f4f674082d649d4258f2fa7   5f49fdc87a0c7a58a4f88367
-
-//print social props
 const PrintSocialLinks = (props) => {
   const { social } = props;
   if (!social) return null;
@@ -86,6 +82,7 @@ const PrintSocialLinks = (props) => {
   return data;
 };
 
+//일단 데이터 지우고 다시하기 (ajax는 나중에 하면 되니까)
 const Profile = (props) => {
   const classes = useStyles();
   const imageClasses = classNames(
@@ -237,6 +234,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default withRouter(connect(mapStateToProps)(React.memo(Profile)));
-
-//error memo
-//https://react.vlpt.us/basic/16-useEffect.html

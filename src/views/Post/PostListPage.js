@@ -20,8 +20,6 @@ const PostListPage = (props) => {
 
 const mapStateToProps = (state) => ({
   alerts: state.alert,
-  isAuth: state.auth.auth,
-  isChanged: state.userValidationAndUpdate.changed,
 });
 
 export default connect(mapStateToProps)(PostListPage);
