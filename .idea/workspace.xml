@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/checkStringPatterns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/checkStringPatterns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/displayNameValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/emailValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/user/passwordValidation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/FindPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Post/PostListPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/inputValidation" />
+    <property name="last_opened_file_path" value="$USER_HOME$/woowacourse/javascript-subway-map-precourse" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -70,7 +64,10 @@
       <workItem from="1607300169272" duration="22506000" />
       <workItem from="1607388365394" duration="11979000" />
       <workItem from="1607477795226" duration="4257000" />
-      <workItem from="1607757034379" duration="7242000" />
+      <workItem from="1607757034379" duration="7900000" />
+      <workItem from="1607819761014" duration="602000" />
+      <workItem from="1607905109175" duration="601000" />
+      <workItem from="1607992743143" duration="1059000" />
     </task>
     <servers />
   </component>

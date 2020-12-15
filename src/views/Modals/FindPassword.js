@@ -67,8 +67,6 @@ const FindPassword = (props) => {
     }
 
     if (ok) {
-      //이벤트 처리
-      //창 닫기
       setEmailModalErr(false);
       requestFindPassword({ email });
       onClose();
