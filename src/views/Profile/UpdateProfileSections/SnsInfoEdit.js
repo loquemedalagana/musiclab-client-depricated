@@ -23,7 +23,7 @@ import {
   Cloud as SoundCloud,
 } from "@material-ui/icons";
 
-import { checkSnsLink } from "../../../utils/functions";
+import { checkSnsLink } from "../../../app/utils/functions";
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
   const getIcon = (key) => {

@@ -42,7 +42,7 @@ import defaultImg from "../../assets/images/dolphin_profile.png";
 
 import styles from "../../assets/jss/material-kit-react/views/ProfileStyle";
 import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/background";
-import { getDateKor } from "../../utils/functions";
+import { getDateKor } from "../../app/utils/functions";
 
 const useStyles = makeStyles(styles);
 

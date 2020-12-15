@@ -17,14 +17,8 @@ import {
   CircularLoading,
 } from "../../../components/components";
 
-import {
-  checkSpace,
-  checkNumber,
-  checkSpecialChar,
-} from "../../../app/inputValidation/checkStringPatterns";
-
 import defaultImg from "../../../assets/images/dolphin_profile.png";
-import { camelToSpace } from "../../../utils/functions";
+import { camelToSpace } from "../../../app/utils/functions";
 import { descriptionHelperText } from "../../../app/inputValidation/messages";
 
 const passReg = /(Password)/i;
@@ -244,55 +238,16 @@ export const PersonalInfoEdit = (props) => {
     let ok = true;
 
     if (displayName) {
-      if (
-        checkSpecialChar(displayName) ||
-        checkNumber(displayName) ||
-        checkSpace(displayName)
-      ) {
-        ok = false;
-        setAlertMsg(
-          "닉네임에 숫자, 공백, 특수문자는 들어갈 수 없습니다.",
-          "error",
-          "nickname"
-        );
-      }
     }
 
     if (description && description.length > 200) {
-      //글자 오버하면 컷팅하기
       ok = false;
     }
 
     if (!password) {
-      ok = false;
-      setAlertMsg("기존 비밀번호를 입력해주세요.", "error", "password");
     }
 
     if (newPassword) {
-      if (newPassword !== confirmNewPassword) {
-        ok = false;
-        setAlertMsg(
-          "비밀번호와 비밀번호 확인은 같아야합니다.",
-          "error",
-          "password"
-        );
-      } else {
-        if (checkSpace(newPassword) || checkSpace(confirmNewPassword)) {
-          ok = false;
-          setAlertMsg(
-            "비밀번호에 공백이 들어갈 수 없습니다.",
-            "error",
-            "password"
-          );
-        } else if (newPassword.length < 8) {
-          ok = false;
-          setAlertMsg(
-            "비밀번호는 최소 8자 이상이어야 합니다.",
-            "error",
-            "password"
-          );
-        }
-      }
     }
 
     if (ok) {

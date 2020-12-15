@@ -17,7 +17,7 @@ import {
 import PersonalInfoEdit from "./UpdateProfileSections/PersonalInfoEdit";
 import SnsInfoEdit from "./UpdateProfileSections/SnsInfoEdit";
 import UserHashtagsEdit from "./UpdateProfileSections/UserHashtagsEdit";
-import { isDesktop } from "../../utils/functions";
+import { isDesktop } from "../../app/utils/functions";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/UpdateProfileStyle";
 

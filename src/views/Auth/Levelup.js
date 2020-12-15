@@ -39,12 +39,6 @@ import {
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
-import {
-  checkSpace,
-  checkNumber,
-  checkSpecialChar,
-} from "../../app/inputValidation/checkStringPatterns";
-
 const useStyles = makeStyles(styles);
 
 const alignment = {
@@ -108,16 +102,14 @@ export const Levelup = (props) => {
   const [givenNameErr, setGivenNameErr] = useState(false);
   const [givenNameSuccess, setGivenNameSuccess] = useState(false);
 
-  const [birthdayErr, setBirthdayErr] = useState(false);
-
-  const [genderErr, setGenderErr] = useState(false);
-  const [genderSuccess, setGenderSuccess] = useState(false);
-
   const [descriptionErr, setDescriptionErr] = useState(false);
   const [descriptionSuccess, setDescriptionSuccess] = useState(false);
-
   const [passwordErr, setPasswordErr] = useState(false);
   const [passwordSuccess, setPasswordSuccess] = useState(false);
+
+  const [birthdayErr, setBirthdayErr] = useState(false);
+  const [genderErr, setGenderErr] = useState(false);
+  const [genderSuccess, setGenderSuccess] = useState(false);
 
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;
@@ -169,56 +161,14 @@ export const Levelup = (props) => {
     event.preventDefault();
     let ok = true;
     if (!givenName) {
-      ok = false;
-      setAlertMsg("이름을 입력해주세요", "error", "givenname");
-      setGivenNameErr(true);
-      setGivenNameSuccess(false);
-    } else if (
-      checkSpace(givenName) ||
-      checkNumber(givenName) ||
-      checkSpecialChar(givenName)
-    ) {
-      ok = false;
-      setAlertMsg(
-        "이름에 공백, 숫자, 특수문자가 들어갈 수 없습니다.",
-        "error",
-        "givenname"
-      );
-      setGivenNameErr(true);
-      setGivenNameSuccess(false);
-    } else {
-      setGivenNameErr(false);
-      setGivenNameSuccess(true);
     }
 
     if (!familyName) {
-      ok = false;
-      setAlertMsg("성을 입력해주세요", "error", "familyname");
-      setFamilyNameErr(true);
-      setFamilyNameSuccess(false);
-    } else if (
-      checkSpace(familyName) ||
-      checkNumber(familyName) ||
-      checkSpecialChar(familyName)
-    ) {
-      ok = false;
-      setAlertMsg(
-        "성에 공백, 숫자, 특수문자가 들어갈 수 없습니다.",
-        "error",
-        "familyname"
-      );
-      setFamilyNameErr(true);
-      setFamilyNameSuccess(false);
-    } else {
-      setFamilyNameErr(false);
-      setFamilyNameSuccess(true);
     }
 
     if (!gender) {
       ok = false;
       setAlertMsg("성별을 입력해주세요", "error", "gender");
-      setGenderErr(true);
-      setGenderSuccess(false);
     }
 
     if (!birthdayChanged) {
@@ -234,50 +184,9 @@ export const Levelup = (props) => {
         "error",
         "description"
       );
-      setDescriptionErr(true);
-      setDescriptionSuccess(false);
-    } else if (description.length > 200) {
-      ok = false;
-      //            setAlertMsg('자기소개는 200자를 넘어가면 안됩니다.', 'error', 'description');
-      setDescriptionErr(true);
-      setDescriptionSuccess(false);
-    } else {
-      setDescriptionErr(false);
-      setDescriptionSuccess(true);
     }
 
-    //if you are local user
     if (!password || !confirmPassword) {
-      ok = false;
-      setAlertMsg("비밀번호를 입력해주세요", "error", "password");
-      setPasswordErr(true);
-      setPasswordSuccess(false);
-    } else if (password && password !== confirmPassword && confirmPassword) {
-      ok = false;
-      setAlertMsg(
-        "비밀번호와 비밀번호 확인은 같아야합니다.",
-        "error",
-        "password"
-      );
-      setPasswordErr(true);
-      setPasswordSuccess(false);
-    } else if (checkSpace(password) || checkSpace(confirmPassword)) {
-      ok = false;
-      setAlertMsg("비밀번호에 공백이 들어갈 수 없습니다.", "error", "password");
-      setPasswordErr(true);
-      setPasswordSuccess(false);
-    } else if (password.length < 8) {
-      ok = false;
-      setAlertMsg(
-        "비밀번호는 최소 8자 이상이어야 합니다.",
-        "error",
-        "password"
-      );
-      setPasswordErr(true);
-      setPasswordSuccess(false);
-    } else {
-      setPasswordErr(false);
-      setPasswordSuccess(true);
     }
 
     if (!isChecked) {

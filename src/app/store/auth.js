@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import api from "../api";
+import api from "../api/api";
 import { setAlertMsg } from "./alert";
 
 const slice = createSlice({

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import qs from "qs";
-import fetcher from "../../app/fetcher";
+import fetcher from "../../app/api/fetcher";
 import useSWR from "swr";
 
 import Loading from "../../components/Loading/LinearLoading";
