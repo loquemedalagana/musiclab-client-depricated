@@ -3,16 +3,13 @@ import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
-
+import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 import Check from "@material-ui/icons/Check";
 
 import { signupUser } from "../../../app/store/userValidationAndUpdate";
 
 import {
-  Footer,
-  GridContainer,
   GridItem,
   Card,
   Button,
@@ -23,7 +20,6 @@ import EmailInput from "../../SubComponents/EmailInput";
 import PasswordInput from "../../SubComponents/PasswordInput";
 import NameInput from "../../SubComponents/NameInput";
 
-import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
 import EmailValidation from "../../../app/inputValidation/user/emailValidation";
@@ -154,98 +150,88 @@ export const Signup = (props) => {
   if (isChanged) return <Redirect to="/" />;
 
   return (
-    <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
-      <div className={classes.container}>
-        <GridContainer
-          justify={window.innerWidth > 959 ? "space-between" : "center"}
-        >
-          <GridItem xs={12} sm={12} md={5} lg={4}>
-            <Card className={classes[cardAnimaton]}>
-              <form className={classes.form}>
-                <SocialLogin color="primary" classes={classes} />
-                <p className={classes.divider}>Or Be Classical</p>
-                <CardBody>
-                  <NameInput
-                    nameType="displayName"
-                    error={nicknameErr}
-                    value={displayName}
-                    inputRef={inputRef.displayName}
-                    onKeyPress={handleKeyPress}
-                    onChange={onInputHandler}
-                  />
-                  <EmailInput
-                    error={emailErr}
-                    value={email}
-                    inputRef={inputRef.email}
-                    onKeyPress={handleKeyPress}
-                    onChange={onInputHandler}
-                  />
-                  <PasswordInput
-                    error={passwordErr}
-                    value={password}
-                    inputRef={inputRef.password}
-                    onChange={onInputHandler}
-                    onKeyPress={handleKeyPress}
-                  />
-                  <PasswordInput
-                    error={passwordErr}
-                    isConfirm={true}
-                    value={confirmPassword}
-                    inputRef={inputRef.confirmPassword}
-                    onChange={onInputHandler}
-                    onKeyPress={handleKeyPress}
-                  />
-                  <div
-                    className={
-                      classes.checkboxAndRadio +
-                      " " +
-                      classes.checkboxAndRadioHorizontal
-                    }
-                  >
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          tabIndex={-1}
-                          value={isChecked}
-                          inputRef={inputRef.checkBox}
-                          onClick={() =>
-                            isChecked ? setIsChecked(false) : setIsChecked(true)
-                          }
-                          onKeyPress={handleKeyPress}
-                          checkedIcon={
-                            <Check className={classes.checkedIcon} />
-                          }
-                          icon={<Check className={classes.uncheckedIcon} />}
-                          classes={{
-                            checked: classes.checked,
-                            root: classes.checkRoot,
-                          }}
-                        />
+    <NoParallaxLayout>
+      <GridItem xs={12} sm={12} md={5} lg={4}>
+        <Card className={classes[cardAnimaton]}>
+          <form className={classes.form}>
+            <SocialLogin color="primary" classes={classes} />
+            <p className={classes.divider}>Or Be Classical</p>
+            <CardBody>
+              <NameInput
+                nameType="displayName"
+                error={nicknameErr}
+                value={displayName}
+                inputRef={inputRef.displayName}
+                onKeyPress={handleKeyPress}
+                onChange={onInputHandler}
+              />
+              <EmailInput
+                error={emailErr}
+                value={email}
+                inputRef={inputRef.email}
+                onKeyPress={handleKeyPress}
+                onChange={onInputHandler}
+              />
+              <PasswordInput
+                error={passwordErr}
+                value={password}
+                inputRef={inputRef.password}
+                onChange={onInputHandler}
+                onKeyPress={handleKeyPress}
+              />
+              <PasswordInput
+                error={passwordErr}
+                isConfirm={true}
+                value={confirmPassword}
+                inputRef={inputRef.confirmPassword}
+                onChange={onInputHandler}
+                onKeyPress={handleKeyPress}
+              />
+              <div
+                className={
+                  classes.checkboxAndRadio +
+                  " " +
+                  classes.checkboxAndRadioHorizontal
+                }
+              >
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      tabIndex={-1}
+                      value={isChecked}
+                      inputRef={inputRef.checkBox}
+                      onClick={() =>
+                        isChecked ? setIsChecked(false) : setIsChecked(true)
                       }
-                      className={classes.formControl}
-                      classes={{ label: classes.label }}
-                      label={CHECK_VALID_EMAIL}
+                      onKeyPress={handleKeyPress}
+                      checkedIcon={<Check className={classes.checkedIcon} />}
+                      icon={<Check className={classes.uncheckedIcon} />}
+                      classes={{
+                        checked: classes.checked,
+                        root: classes.checkRoot,
+                      }}
                     />
-                  </div>
-                </CardBody>
-
-                <CardFooter className={classes.cardFooter}>
-                  <Button
-                    simple
-                    color="primary"
-                    size="lg"
-                    onClick={onSubmitHandler}
-                  >
-                    Join us
-                  </Button>
-                </CardFooter>
-              </form>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </div>
-      <Footer whiteFont />
-    </div>
+                  }
+                  className={classes.formControl}
+                  classes={{ label: classes.label }}
+                  label={CHECK_VALID_EMAIL}
+                />
+              </div>
+            </CardBody>
+            <CardFooter className={classes.cardFooter}>
+              <Button
+                simple
+                color="primary"
+                size="lg"
+                onClick={onSubmitHandler}
+              >
+                Join us
+              </Button>
+            </CardFooter>
+          </form>
+        </Card>
+      </GridItem>
+    </NoParallaxLayout>
   );
 };
 

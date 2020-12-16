@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/smallParallaxLayoutStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="16495000" />
+      <workItem from="1608077073905" duration="17543000" />
     </task>
     <servers />
   </component>

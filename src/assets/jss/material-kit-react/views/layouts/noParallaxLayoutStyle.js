@@ -5,10 +5,15 @@ export default {
     ...container,
     zIndex: "2",
     position: "relative",
-    paddingTop: "20vh",
     color:
       "linear-gradient(to bottom, rgba(255, 255, 255) 45%, rgba(255, 255, 255, .5)), linear-gradient(to right,  rgba(255, 163, 208, .3), transparent), linear-gradient(to left, rgba(0, 255, 255, .3) 45%, transparent)",
     paddingBottom: "200px",
+  },
+  smallCardContainer: {
+    paddingTop: "20vh",
+  },
+  bigCardContainer: {
+    paddingTop: "10vh",
   },
   pageHeader: {
     minHeight: "100vh",

@@ -2,15 +2,14 @@ import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import qs from "qs";
 
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 import { Check } from "@material-ui/icons";
 
+import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+
 import {
-  Footer,
-  GridContainer,
   GridItem,
   Card,
   Button,
@@ -24,7 +23,6 @@ import PasswordInput from "../../SubComponents/PasswordInput";
 import GenderInput from "../../SubComponents/GenderInput";
 import BirthdayInput from "../../SubComponents/BirthdayInput";
 
-import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../../assets/jss/material-kit-react/views/LevelupStyle";
 import {
   GENDER_NULL_ERROR,
@@ -200,122 +198,111 @@ export const Levelup = (props) => {
   };
 
   return (
-    <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
-      <div className={classes.container}>
-        <GridContainer
-          justify={window.innerWidth > 959 ? "space-between" : "center"}
-        >
-          <GridItem xs={12} sm={12} md={6} lg={5}>
-            <Card className={classes[cardAnimaton]}>
-              <form className={classes.form}>
-                <p className={classes.divider}>
-                  실명과 생년월일은 운영진들한테만 공개됩니다.
-                </p>
-                <CardBody className={alignment}>
-                  <GridItem xs={12} sm={12} md={12}>
-                    <NameInput
-                      nameType="familyName"
-                      value={familyName}
-                      inputRef={inputRef.familyName}
-                      onChange={onInputHandler}
-                      onKeyPress={handleKeyPress}
-                      error={familyNameErr}
-                    />
-                    <NameInput
-                      nameType="givenName"
-                      value={givenName}
-                      inputRef={inputRef.givenName}
-                      onChange={onInputHandler}
-                      onKeyPress={handleKeyPress}
-                      error={givenNameErr}
-                    />
-                    <GenderInput
-                      success={genderSuccess}
-                      error={genderErr}
-                      value={gender}
-                      inputRef={inputRef.gender}
-                      onClick={handleKeyPress}
-                      onChange={handleGenderChange}
-                    />
-                    <br /> <br />
-                    <BirthdayInput
-                      success={birthdayChanged}
-                      error={birthdayErr}
-                      value={birthday}
-                      inputRef={inputRef.birthday}
-                      onClick={handleKeyPress}
-                      onChange={handleDateChange}
-                    />
-                    <br /> <br />
-                    <DescriptionInput
-                      error={descriptionErr}
-                      value={description}
-                      inputRef={inputRef.description}
-                      onKeyPress={handleKeyPress}
-                      onChange={onInputHandler}
-                    />
-                    <PasswordInput
-                      error={passwordErr}
-                      value={password}
-                      inputRef={inputRef.password}
-                      onChange={onInputHandler}
-                      onKeyPress={handleKeyPress}
-                    />
-                    <PasswordInput
-                      isConfirm={true}
-                      error={passwordErr}
-                      value={confirmPassword}
-                      inputRef={inputRef.confirmPassword}
-                      onChange={onInputHandler}
-                      onKeyPress={handleKeyPress}
-                    />
-                    <div className={classes.checkboxAndRadio}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            tabIndex={-1}
-                            value={isChecked}
-                            inputRef={inputRef.checkBox}
-                            onKeyPress={handleKeyPress}
-                            onClick={() =>
-                              isChecked
-                                ? setIsChecked(false)
-                                : setIsChecked(true)
-                            }
-                            checkedIcon={
-                              <Check className={classes.checkedIcon} />
-                            }
-                            icon={<Check className={classes.uncheckedIcon} />}
-                            classes={{
-                              checked: classes.checked,
-                              root: classes.checkRoot,
-                            }}
-                          />
+    <NoParallaxLayout isBigCard={true}>
+      <GridItem xs={12} sm={12} md={6} lg={5}>
+        <Card className={classes[cardAnimaton]}>
+          <form className={classes.form}>
+            <p className={classes.divider}>
+              실명과 생년월일은 운영진들한테만 공개됩니다.
+            </p>
+            <CardBody className={alignment}>
+              <GridItem xs={12} sm={12} md={12}>
+                <NameInput
+                  nameType="familyName"
+                  value={familyName}
+                  inputRef={inputRef.familyName}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                  error={familyNameErr}
+                />
+                <NameInput
+                  nameType="givenName"
+                  value={givenName}
+                  inputRef={inputRef.givenName}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                  error={givenNameErr}
+                />
+                <GenderInput
+                  success={genderSuccess}
+                  error={genderErr}
+                  value={gender}
+                  inputRef={inputRef.gender}
+                  onClick={handleKeyPress}
+                  onChange={handleGenderChange}
+                />
+                <br /> <br />
+                <BirthdayInput
+                  success={birthdayChanged}
+                  error={birthdayErr}
+                  value={birthday}
+                  inputRef={inputRef.birthday}
+                  onClick={handleKeyPress}
+                  onChange={handleDateChange}
+                />
+                <br /> <br />
+                <DescriptionInput
+                  error={descriptionErr}
+                  value={description}
+                  inputRef={inputRef.description}
+                  onKeyPress={handleKeyPress}
+                  onChange={onInputHandler}
+                />
+                <PasswordInput
+                  error={passwordErr}
+                  value={password}
+                  inputRef={inputRef.password}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                />
+                <PasswordInput
+                  isConfirm={true}
+                  error={passwordErr}
+                  value={confirmPassword}
+                  inputRef={inputRef.confirmPassword}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                />
+                <div className={classes.checkboxAndRadio}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        tabIndex={-1}
+                        value={isChecked}
+                        inputRef={inputRef.checkBox}
+                        onKeyPress={handleKeyPress}
+                        onClick={() =>
+                          isChecked ? setIsChecked(false) : setIsChecked(true)
                         }
-                        className={classes.formControl}
-                        classes={{ label: classes.label }}
-                        label={CHECK_VALID_INFO}
+                        checkedIcon={<Check className={classes.checkedIcon} />}
+                        icon={<Check className={classes.uncheckedIcon} />}
+                        classes={{
+                          checked: classes.checked,
+                          root: classes.checkRoot,
+                        }}
                       />
-                    </div>
-                  </GridItem>
-                </CardBody>
-                <CardFooter className={classes.cardFooter}>
-                  <Button
-                    simple
-                    color="primary"
-                    size="lg"
-                    onClick={onSubmitHandler}
-                  >
-                    Submit
-                  </Button>
-                </CardFooter>
-              </form>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </div>
-      <Footer whiteFont />
-    </div>
+                    }
+                    className={classes.formControl}
+                    classes={{ label: classes.label }}
+                    label={CHECK_VALID_INFO}
+                  />
+                </div>
+              </GridItem>
+            </CardBody>
+            <CardFooter className={classes.cardFooter}>
+              <Button
+                simple
+                color="primary"
+                size="lg"
+                onClick={onSubmitHandler}
+              >
+                Submit
+              </Button>
+            </CardFooter>
+          </form>
+        </Card>
+      </GridItem>
+    </NoParallaxLayout>
   );
 };
 
