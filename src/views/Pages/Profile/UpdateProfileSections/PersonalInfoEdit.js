@@ -7,7 +7,7 @@ import { updateUserProfile } from "../../../../app/store/userValidationAndUpdate
 
 import { VpnKey as VpnKeyIcon, MusicNote, People } from "@material-ui/icons";
 
-import { InputAdornment, FormHelperText } from "@material-ui/core";
+import { InputAdornment } from "@material-ui/core";
 
 import {
   GridContainer,
@@ -17,132 +17,12 @@ import {
   CircularLoading,
 } from "../../../../components/components";
 
+import NameInput from "../../../SubComponents/NameInput";
+import DescriptionInput from "../../../SubComponents/DescriptionInput";
+import PasswordInput from "../../../SubComponents/PasswordInput";
+
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
-import { camelToSpace } from "../../../../app/utils/functions";
-import {
-  DESCRIPTION_OVER_ERROR,
-  PROFILE_PHOTO_SERVER_ERROR,
-} from "../../../../app/helper/auth/authAlertMessages";
-import { DESCRIPTION_HELP } from "../../../../app/helper/auth/helperTexts";
-
-const passReg = /(Password)/i;
-
-const getIcon = (key, iconClass) => {
-  if (passReg.test(key)) return <VpnKeyIcon className={iconClass} />;
-  else if (key === "displayName") return <People className={iconClass} />;
-  else if (key === "description") return <MusicNote className={iconClass} />;
-};
-
-const DisplayNameInput = (inputs, onInputHandler, iconClass) => {
-  const data = Object.keys(inputs).map((key) => {
-    if (passReg.test(key) || key !== "displayName") return null;
-    return (
-      <CustomInput
-        labelText={`your new nickname...`}
-        key={key}
-        id={key}
-        error={null}
-        formControlProps={{
-          fullWidth: true,
-        }}
-        inputProps={{
-          rows: "4",
-          type: "text",
-          name: key,
-          value: inputs[key],
-          onChange: onInputHandler,
-          endAdornment: (
-            <InputAdornment position="end">
-              {getIcon(key, iconClass)}
-            </InputAdornment>
-          ),
-        }}
-      />
-    );
-  });
-
-  return (
-    <GridItem xs={12} sm={12} md={6}>
-      {data}
-    </GridItem>
-  );
-};
-
-const DescriptionInput = (inputs, onInputHandler, iconClass) => {
-  const data = Object.keys(inputs).map((key) => {
-    if (passReg.test(key) || key !== "description") return null;
-
-    return (
-      <GridItem xs={12} sm={12} md={12} key={key}>
-        <CustomInput
-          labelText={DESCRIPTION_HELP}
-          id={key}
-          error={null}
-          formControlProps={{
-            fullWidth: true,
-          }}
-          inputProps={{
-            rows: "5",
-            type: "text",
-            multiline: true,
-            name: key,
-            value: inputs[key],
-            onChange: onInputHandler,
-            endAdornment: (
-              <InputAdornment position="end">
-                {getIcon(key, iconClass)}
-              </InputAdornment>
-            ),
-          }}
-        />
-        <FormHelperText
-          style={{ textAlign: "right" }}
-          error={inputs[key].length >= 200}
-        >
-          {inputs[key].length >= 200
-            ? DESCRIPTION_OVER_ERROR
-            : inputs[key].length}
-        </FormHelperText>
-      </GridItem>
-    );
-  });
-
-  return data;
-};
-
-const PasswordInputs = (inputs, onInputHandler, iconClass) => {
-  const data = Object.keys(inputs).map((key) => {
-    if (!passReg.test(key)) return null;
-    return (
-      <CustomInput
-        labelText={`${camelToSpace(key)}...`}
-        key={key}
-        id={key}
-        error={null}
-        formControlProps={{
-          fullWidth: true,
-        }}
-        inputProps={{
-          type: "password",
-          name: key,
-          value: inputs[key],
-          onChange: onInputHandler,
-          endAdornment: (
-            <InputAdornment position="end">
-              {getIcon(key, iconClass)}
-            </InputAdornment>
-          ),
-        }}
-      />
-    );
-  });
-
-  return (
-    <GridItem xs={12} sm={12} md={12}>
-      {data}
-    </GridItem>
-  );
-};
+import { PROFILE_PHOTO_SERVER_ERROR } from "../../../../app/helper/auth/authAlertMessages";
 
 export const PersonalInfoEdit = (props) => {
   const {
@@ -296,15 +176,56 @@ export const PersonalInfoEdit = (props) => {
             }}
           />
         </GridItem>
-        {DisplayNameInput(inputs, onInputHandler, classes.inputIconsColor)}
+        <GridItem xs={12} sm={12} md={6}>
+          <NameInput
+            nameType="displayName"
+            value={displayName}
+            onChange={onInputHandler}
+            inputRef={inputRef.displayName}
+            onKeyPress={null}
+          />
+        </GridItem>
       </GridContainer>
 
       <GridContainer>
-        {DescriptionInput(inputs, onInputHandler, classes.inputIconsColor)}
+        <GridItem xs={12} sm={12} md={12}>
+          <DescriptionInput
+            value={description}
+            onChange={onInputHandler}
+            inputRef={inputRef.description}
+            onKeyPress={null}
+          />
+        </GridItem>
       </GridContainer>
 
       <GridContainer>
-        {PasswordInputs(inputs, onInputHandler, classes.inputIconsColor)}
+        {[
+          { name: "password", value: password, isCurrentPassword: true },
+          { name: "newPassword", value: newPassword, isNewPassword: true },
+          {
+            name: "confirmNewPassword",
+            value: confirmNewPassword,
+            isNewPassword: true,
+            isConfirm: true,
+          },
+        ].map(
+          (
+            { name, value, isCurrentPassword, isNewPassword, isConfirm },
+            key
+          ) => (
+            <GridItem xs={12} sm={12} md={12} key={key}>
+              <PasswordInput
+                value={value}
+                isCurrentPassword={isCurrentPassword}
+                isNewPassword={isNewPassword}
+                isConfirm={isConfirm}
+                inputRef={inputRef[name]}
+                onChange={onInputHandler}
+                onKeyPress={null}
+              />
+            </GridItem>
+          )
+        )}
       </GridContainer>
 
       <GridContainer className={classes.cardFooter} direction="row-reverse">
