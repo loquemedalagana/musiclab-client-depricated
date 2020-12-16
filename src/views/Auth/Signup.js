@@ -5,12 +5,7 @@ import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
-import {
-  InputAdornment,
-  FormControlLabel,
-  Checkbox,
-  FormHelperText,
-} from "@material-ui/core";
+import { InputAdornment, FormControlLabel, Checkbox } from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
@@ -50,7 +45,6 @@ export const Signup = (props) => {
   const classes = useStyles();
   const {
     setAlertMsg,
-    alerts,
     isAuth,
     signupUser,
     isChanged,
@@ -192,18 +186,6 @@ export const Signup = (props) => {
                       ),
                     }}
                   />
-                  {alerts.map(
-                    ({ message, name, id }) =>
-                      name === "nickname" && (
-                        <FormHelperText
-                          key={id}
-                          style={{ textAlign: "right" }}
-                          error
-                        >
-                          {message}
-                        </FormHelperText>
-                      )
-                  )}
 
                   <CustomInput
                     labelText="Email..."
@@ -226,18 +208,7 @@ export const Signup = (props) => {
                       ),
                     }}
                   />
-                  {alerts.map(
-                    ({ message, name, id }) =>
-                      name === "email" && (
-                        <FormHelperText
-                          key={id}
-                          style={{ textAlign: "right" }}
-                          error
-                        >
-                          {message}
-                        </FormHelperText>
-                      )
-                  )}
+
                   <CustomInput
                     labelText="Password"
                     id="pass"
@@ -260,18 +231,7 @@ export const Signup = (props) => {
                       autoComplete: "off",
                     }}
                   />
-                  {alerts.map(
-                    ({ message, name, id }) =>
-                      name === "password" && (
-                        <FormHelperText
-                          key={id}
-                          style={{ textAlign: "right" }}
-                          error
-                        >
-                          {message}
-                        </FormHelperText>
-                      )
-                  )}
+
                   <CustomInput
                     labelText="Confirm Password"
                     id="confirmpass"

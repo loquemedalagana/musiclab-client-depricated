@@ -5,13 +5,8 @@ import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
-import {
-  InputAdornment,
-  FormControlLabel,
-  Checkbox,
-  FormHelperText,
-} from "@material-ui/core";
-import { Email, Check } from "@material-ui/icons";
+import { FormControlLabel, Checkbox, FormHelperText } from "@material-ui/core";
+import { Check } from "@material-ui/icons";
 
 import {
   Footer,
@@ -21,9 +16,11 @@ import {
   CardHeader,
   Button,
   CardBody,
-  CustomInput,
   CardFooter,
 } from "../../components/components";
+
+import EmailInput from "./subComponents/EmailInput";
+
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
@@ -62,7 +59,6 @@ export const InputEmailForSocialUsers = (props) => {
   };
 
   const [emailErr, setEmailErr] = useState(false);
-  const [emailSuccess, setEmailSuccess] = useState(false);
 
   const [isChecked, setIsChecked] = useState(false);
 
@@ -87,7 +83,6 @@ export const InputEmailForSocialUsers = (props) => {
       inputRef.email.current.focus();
       setAlertMsg(emailInputValidationResult.message, "error", "email");
       setEmailErr(true);
-      setEmailSuccess(false);
     } else {
       setEmailErr(false);
     }
@@ -114,7 +109,7 @@ export const InputEmailForSocialUsers = (props) => {
     }
   };
 
-  if (isRegisteredEmail || isNotLoggedin) return <Redirect to="/" />;
+  //if (isRegisteredEmail || isNotLoggedin) return <Redirect to="/" />;
   if (isChanged) return <Redirect to="/waitinglevelup" />;
 
   return (
@@ -131,27 +126,12 @@ export const InputEmailForSocialUsers = (props) => {
                 </CardHeader>
                 <p className={classes.divider}>{INPUT_VALID_EMAIL}</p>
                 <CardBody>
-                  <CustomInput
-                    labelText="Email..."
-                    id="email"
+                  <EmailInput
+                    value={email}
+                    inputRef={inputRef.email}
+                    onChange={onInputHandler}
+                    onKeyPress={handleKeyPress}
                     error={emailErr}
-                    success={emailSuccess}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      type: "email",
-                      name: "email",
-                      value: email,
-                      inputRef: inputRef.email,
-                      onKeyPress: handleKeyPress,
-                      onChange: onInputHandler,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <Email className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                    }}
                   />
                   {alerts.map(
                     ({ message, name, id }) =>

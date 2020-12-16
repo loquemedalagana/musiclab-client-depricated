@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import classNames from "classnames";
 
-import { InputAdornment, FormHelperText, Link } from "@material-ui/core";
+import { InputAdornment, Link } from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
@@ -20,6 +20,9 @@ import {
   CustomInput,
   CardFooter,
 } from "../../components/components";
+
+import EmailInput from "./subComponents/EmailInput";
+
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import Loading from "../../components/Loading/LinearLoading";
@@ -41,7 +44,7 @@ export const Login = (props) => {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
-  const { setAlertMsg, alerts, isAuth, loginUser, loading } = props;
+  const { setAlertMsg, isAuth, loginUser, loading } = props;
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -120,39 +123,13 @@ export const Login = (props) => {
                   <SocialLogin color="primary" classes={classes} />
                   <p className={classes.divider}>Or Be Classical</p>
                   <CardBody>
-                    <CustomInput
-                      labelText="Email..."
-                      id="email"
+                    <EmailInput
+                      value={email}
                       error={emailErr}
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "email",
-                        name: "email",
-                        value: email,
-                        inputRef: inputRef.email,
-                        onChange: onInputHandler,
-                        onKeyPress: handleKeyPress,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <Email className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                      }}
+                      inputRef={inputRef.email}
+                      onChange={onInputHandler}
+                      onKeyPress={handleKeyPress}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "email" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
                     <CustomInput
                       labelText="Password"
                       id="pass"
@@ -175,18 +152,6 @@ export const Login = (props) => {
                         autoComplete: "off",
                       }}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "password" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
                     <div
                       className={classNames({
                         justifyContent: "right",
