@@ -17,15 +17,13 @@ import {
 import PersonalInfoEdit from "./UpdateProfileSections/PersonalInfoEdit";
 import SnsInfoEdit from "./UpdateProfileSections/SnsInfoEdit";
 import UserHashtagsEdit from "./UpdateProfileSections/UserHashtagsEdit";
-import { isDesktop } from "../../app/utils/functions";
+import { isDesktop, MakeSpace } from "../../app/helper/responsiveUI/uiManagers";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/UpdateProfileStyle";
 
 const useStyles = makeStyles(styles);
 
-const MakeSpace = () => (isDesktop ? <br /> : null);
-
-const UpdateProfile = (props) => {
+const UpdateProfile = () => {
   const classes = useStyles();
 
   //react=swippable-views should be added

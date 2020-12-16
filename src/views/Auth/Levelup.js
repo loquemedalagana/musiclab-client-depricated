@@ -32,11 +32,17 @@ import {
 } from "../../components/components";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
-import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
+import {
+  GENDER_NULL_ERROR,
+  BIRTHDAY_NULL_ERROR,
+  DESCRIPTION_NULL_ERROR,
+  DESCRIPTION_OVER_ERROR,
+  PLEASE_READ_RULES,
+} from "../../app/helper/auth/authAlertMessages";
 import {
   CHECK_VALID_INFO,
   DESCRIPTION_HELP,
-} from "../../app/helperTexts/auth/helperTexts";
+} from "../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
@@ -169,22 +175,18 @@ export const Levelup = (props) => {
 
     if (!gender) {
       ok = false;
-      setAlertMsg("성별을 입력해주세요", "error", "gender");
+      setAlertMsg(GENDER_NULL_ERROR, "error", "gender");
     }
 
     if (!birthdayChanged) {
       ok = false;
       setBirthdayErr(true);
-      setAlertMsg("생년월일을 입력해주세요", "error", "birthday");
+      setAlertMsg(BIRTHDAY_NULL_ERROR, "error", "birthday");
     }
 
     if (!description) {
       ok = false;
-      setAlertMsg(
-        "야다 노래 중 가장 좋아하는 곡에 대해 설명해주세요",
-        "error",
-        "description"
-      );
+      setAlertMsg(DESCRIPTION_NULL_ERROR, "error", "description");
     }
 
     if (!password || !confirmPassword) {
@@ -394,7 +396,7 @@ export const Levelup = (props) => {
                       }
                     >
                       {description.length >= 200
-                        ? "자기소개는 최대 200자까지입니다."
+                        ? DESCRIPTION_OVER_ERROR
                         : description.length}
                     </FormHelperText>
                     <CustomInput
@@ -519,8 +521,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { setAlertMsg, requestLevelup })(
   Levelup
 );
-
-/*
-리덕스 추가되면 메인페이지로 이동
-
-*/

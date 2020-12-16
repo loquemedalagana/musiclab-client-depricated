@@ -23,7 +23,8 @@ import {
   Cloud as SoundCloud,
 } from "@material-ui/icons";
 
-import { checkSnsLink } from "../../../app/utils/functions";
+import { SOCIAL_NULL_ERROR } from "../../../app/helper/auth/authAlertMessages";
+import { checkSnsLink } from "../../../app/helper/auth/util";
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
   const getIcon = (key) => {
@@ -157,7 +158,7 @@ export const SnsInfoEdit = (props) => {
     if (ok()) {
       return isChanged
         ? updateUserSocial(inputs)
-        : setAlertMsg("sns정보가 입력되지 않았습니다.", "error");
+        : setAlertMsg(SOCIAL_NULL_ERROR, "error");
     }
 
     console.log(errorMessages);

@@ -30,10 +30,10 @@ import EmailValidation from "../../app/inputValidation/user/emailValidation";
 import {
   CHECK_VALID_EMAIL,
   INPUT_VALID_EMAIL,
-} from "../../app/helperTexts/auth/helperTexts";
+} from "../../app/helper/auth/helperTexts";
 import { emailRegister } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
-import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
+import { PLEASE_READ_RULES } from "../../app/helper/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
 

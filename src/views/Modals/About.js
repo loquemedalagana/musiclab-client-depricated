@@ -16,7 +16,7 @@ import {
   YadaDebutDate,
   appTitle,
   appShortTitle,
-} from "../../app/helperTexts/appTitle";
+} from "../../app/helper/appTitle";
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 const useStyles = makeStyles(styles);
 

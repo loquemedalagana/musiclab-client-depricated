@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import Close from "@material-ui/icons/Close";
 
-import { appTitle, appShortTitle } from "../../app/helperTexts/appTitle";
+import { appTitle, appShortTitle } from "../../app/helper/appTitle";
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 const useStyles = makeStyles(styles);

@@ -31,7 +31,7 @@ import SocialLogin from "./SocialLogin";
 import {
   EMAIL_NULL_ERROR,
   PASSWORD_NULL_ERROR,
-} from "../../app/helperTexts/auth/authAlertMessages";
+} from "../../app/helper/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
 

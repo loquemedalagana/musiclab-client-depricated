@@ -19,7 +19,11 @@ import {
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 import { camelToSpace } from "../../../app/utils/functions";
-import { DESCRIPTION_HELP } from "../../../app/helperTexts/auth/helperTexts";
+import {
+  DESCRIPTION_OVER_ERROR,
+  PROFILE_PHOTO_SERVER_ERROR,
+} from "../../../app/helper/auth/authAlertMessages";
+import { DESCRIPTION_HELP } from "../../../app/helper/auth/helperTexts";
 
 const passReg = /(Password)/i;
 
@@ -96,7 +100,7 @@ const DescriptionInput = (inputs, onInputHandler, iconClass) => {
           error={inputs[key].length >= 200}
         >
           {inputs[key].length >= 200
-            ? "자기소개는 최대 200자까지입니다."
+            ? DESCRIPTION_OVER_ERROR
             : inputs[key].length}
         </FormHelperText>
       </GridItem>
@@ -224,12 +228,12 @@ export const PersonalInfoEdit = (props) => {
           setAlertMsg(response.message, "success");
           setProfileImg(response.newImg);
         } else {
-          setAlertMsg("서버 에러로 프사 변경에 실패했습니다.", "error");
+          setAlertMsg(PROFILE_PHOTO_SERVER_ERROR, "error");
         }
       }
     } catch (err) {
       console.log(err);
-      setAlertMsg("서버 에러로 프사 변경에 실패했습니다.", "error");
+      setAlertMsg(PROFILE_PHOTO_SERVER_ERROR, "error");
     }
   };
 
@@ -330,5 +334,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { setAlertMsg, updateUserProfile })(
   PersonalInfoEdit
 );
-
-//https://github.com/loquemedalagana/dreaming-rocker-client-old-ver/blob/master/src/components/views/Users/UserInfo/ProfileImg.js

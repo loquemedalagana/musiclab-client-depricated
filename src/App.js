@@ -17,7 +17,7 @@ import {
   //  Footer,
 } from "./components/components";
 
-import { appTitle } from "./app/helperTexts/appTitle";
+import { appTitle } from "./app/helper/appTitle";
 
 const AppTest = (props) => {
   const { ...rest } = props;
