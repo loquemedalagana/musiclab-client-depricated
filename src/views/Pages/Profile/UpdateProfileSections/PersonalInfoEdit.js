@@ -163,7 +163,7 @@ export const PersonalInfoEdit = (props) => {
   );
 
   const [profileImg, setProfileImg] = useState(
-    userInfo.image ? userInfo.image : defaultImg
+    userInfo ? (userInfo.image ? userInfo.image : defaultImg) : defaultImg
   );
 
   const [inputs, setInputs] = useState({
