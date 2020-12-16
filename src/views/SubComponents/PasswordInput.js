@@ -9,10 +9,14 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(styles);
 
 const getId = (props) => {
-  const { isModal, isConfirm } = props;
+  const { isModal, isConfirm, isNewPassword } = props;
   if (isModal) {
+    if (isNewPassword)
+      return isConfirm ? "modal-confirm-new-password" : "modal-new-password";
     return isConfirm ? "modal-confirm-password" : "modal-password";
   } else {
+    if (isNewPassword)
+      return isConfirm ? "confirm-new-password" : "new-password";
     return isConfirm ? "confirm-password" : "password";
   }
 };
@@ -25,6 +29,15 @@ const getLabelText = (props) => {
     return isConfirm ? "Confirm New Password" : "New Password";
   } else {
     return isConfirm ? "Confirm Password" : "Password";
+  }
+};
+
+const getName = (props) => {
+  const { isNewPassword, isConfirm } = props;
+  if (isNewPassword) {
+    return isConfirm ? "confirmNewPassword" : "newPassword";
+  } else {
+    return isConfirm ? "confirmPassword" : "password";
   }
 };
 
@@ -46,7 +59,7 @@ const PasswordInput = (props) => {
   return (
     <CustomInput
       labelText={getLabelText({ isConfirm, isNewPassword, isCurrentPassword })}
-      id={getId({ isConfirm, isModal })}
+      id={getId({ isConfirm, isModal, isNewPassword })}
       success={success}
       error={error}
       formControlProps={{
@@ -54,7 +67,7 @@ const PasswordInput = (props) => {
       }}
       inputProps={{
         type: "password",
-        name: isConfirm ? "confirmPassword" : "password",
+        name: getName({ isNewPassword, isConfirm }),
         value,
         inputRef,
         onChange,

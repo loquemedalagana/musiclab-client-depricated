@@ -142,7 +142,8 @@ export const Signup = (props) => {
     }
 
     if (ok) {
-      signupUser(inputs);
+      console.log(inputs);
+      //signupUser(inputs);
     }
   };
 
