@@ -23,7 +23,7 @@ import {
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../assets/jss/material-kit-react/views/pages/profilePageStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
 
 const useStyles = makeStyles(styles);
 

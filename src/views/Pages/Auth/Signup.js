@@ -20,7 +20,7 @@ import EmailInput from "../../SubComponents/EmailInput";
 import PasswordInput from "../../SubComponents/PasswordInput";
 import NameInput from "../../SubComponents/NameInput";
 
-import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/LoginSignupStyle";
 
 import EmailValidation from "../../../app/inputValidation/user/emailValidation";
 import DisplayNameValidation from "../../../app/inputValidation/user/displayNameValidation";

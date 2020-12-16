@@ -1,6 +1,6 @@
-import { container } from "../../material-kit-react";
-import customCheckboxRadioSwitch from "../components/customCheckboxRadioSwitch.js";
-import customInputStyle from "../../material-kit-react/components/customInputStyle";
+import { container } from "../../../../material-kit-react";
+import customCheckboxRadioSwitch from "../../../components/customCheckboxRadioSwitch.js";
+import customInputStyle from "../../../components/customInputStyle";
 
 const LoginSignupStyle = {
   container: {

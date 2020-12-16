@@ -16,7 +16,7 @@ import PersonalInfoEdit from "./UpdateProfileSections/PersonalInfoEdit";
 import SnsInfoEdit from "./UpdateProfileSections/SnsInfoEdit";
 import UserHashtagsEdit from "./UpdateProfileSections/UserHashtagsEdit";
 import { MakeSpace } from "../../../app/helper/responsiveUI/uiManagers";
-import styles from "../../../assets/jss/material-kit-react/views/UpdateProfileStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/UpdateProfileStyle";
 
 const useStyles = makeStyles(styles);
 

@@ -23,7 +23,7 @@ import PasswordInput from "../../SubComponents/PasswordInput";
 import GenderInput from "../../SubComponents/GenderInput";
 import BirthdayInput from "../../SubComponents/BirthdayInput";
 
-import styles from "../../../assets/jss/material-kit-react/views/LevelupStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/LevelupStyle";
 import {
   GENDER_NULL_ERROR,
   BIRTHDAY_NULL_ERROR,

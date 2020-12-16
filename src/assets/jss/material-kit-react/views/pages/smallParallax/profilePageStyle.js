@@ -1,7 +1,7 @@
-import { container, title } from "../../../material-kit-react";
+import { container, title } from "../../../../material-kit-react";
 
-import imagesStyle from "../../components/ImgStyle";
-import scrollbarStyle from "../../components/scrollbarStyle";
+import imagesStyle from "../../../components/ImgStyle";
+import scrollbarStyle from "../../../components/scrollbarStyle";
 
 const profilePageStyle = {
   container,

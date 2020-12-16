@@ -23,12 +23,10 @@ import {
 } from "@material-ui/icons";
 
 import {
-  Footer,
   //    Button,
   GridContainer,
   GridItem,
   NavPills,
-  Parallax,
   LinearLoading,
 } from "../../../components/components";
 
@@ -42,8 +40,7 @@ import NotFound from "../Error/NotFound";
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../assets/jss/material-kit-react/views/pages/profilePageStyle";
-import { smallParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
 import { getDateKor } from "../../../app/utils/functions";
 
 const useStyles = makeStyles(styles);

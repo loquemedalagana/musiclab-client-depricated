@@ -12,7 +12,7 @@ import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 import { sendEmailAuthCode } from "../../../app/store/userValidationAndUpdate";
 //import {setAlertMsg} from '../../app/store/alert';
 
-import styles from "../../../assets/jss/material-kit-react/views/WaitingLevelupStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/WaitingLevelupStyle";
 
 const useStyles = makeStyles(styles);
 

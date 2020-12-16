@@ -8,20 +8,16 @@ import qs from "qs";
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
-  Footer,
   GridContainer,
   GridItem,
-  Parallax,
   //LinearLoading,
 } from "../../../components/components";
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 
 import { officialChannelProfileData } from "../../../app/videoData/officialChannelData";
-
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../assets/jss/material-kit-react/views/pages/profilePageStyle";
-import { smallParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
 
 const useStyles = makeStyles(styles);
 
