@@ -17,7 +17,7 @@ import {
   FormControlLabel,
   Radio,
 } from "@material-ui/core";
-import { Close, Email, People, FiberManualRecord } from "@material-ui/icons";
+import { Close, People, FiberManualRecord } from "@material-ui/icons";
 
 import {
   Button,
@@ -26,6 +26,7 @@ import {
   GridItem,
 } from "../../components/components";
 import EmailInput from "../Auth/subComponents/EmailInput";
+import NameInput from "../Auth/subComponents/NameInput";
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
@@ -184,24 +185,12 @@ export const Help = (props) => {
         <br />
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
-            <CustomInput
-              labelText="Your Name"
-              id="name"
+            <NameInput
+              isModal={true}
+              nameType="displayName"
               error={nameModalErr}
-              formControlProps={{
-                fullWidth: true,
-              }}
-              inputProps={{
-                type: "text",
-                name: "displayName",
-                value: displayName,
-                onChange: onInputHandler,
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <People className={classes.inputIconsColor} />
-                  </InputAdornment>
-                ),
-              }}
+              value={displayName}
+              onChange={onInputHandler}
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>

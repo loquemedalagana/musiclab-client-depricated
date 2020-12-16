@@ -5,8 +5,7 @@ import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
-import { InputAdornment, FormControlLabel, Checkbox } from "@material-ui/core";
-import People from "@material-ui/icons/People";
+import { FormControlLabel, Checkbox } from "@material-ui/core";
 import Check from "@material-ui/icons/Check";
 
 import { signupUser } from "../../app/store/userValidationAndUpdate";
@@ -23,6 +22,7 @@ import {
 } from "../../components/components";
 import EmailInput from "./subComponents/EmailInput";
 import PasswordInput from "./subComponents/PasswordInput";
+import NameInput from "./subComponents/NameInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
@@ -166,28 +166,14 @@ export const Signup = (props) => {
                 <SocialLogin color="primary" classes={classes} />
                 <p className={classes.divider}>Or Be Classical</p>
                 <CardBody>
-                  <CustomInput
-                    labelText="Your nickname..."
-                    id="displayname"
+                  <NameInput
+                    nameType="displayName"
                     error={nicknameErr}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      type: "text",
-                      name: "displayName",
-                      value: displayName,
-                      inputRef: inputRef.displayName,
-                      onKeyPress: handleKeyPress,
-                      onChange: onInputHandler,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <People className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                    }}
+                    value={displayName}
+                    inputRef={inputRef.displayName}
+                    onKeyPress={handleKeyPress}
+                    onChange={onInputHandler}
                   />
-
                   <EmailInput
                     error={emailErr}
                     value={email}
@@ -210,7 +196,6 @@ export const Signup = (props) => {
                     onChange={onInputHandler}
                     onKeyPress={handleKeyPress}
                   />
-
                   <div
                     className={
                       classes.checkboxAndRadio +
