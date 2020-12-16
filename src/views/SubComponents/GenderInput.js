@@ -1,5 +1,5 @@
 import React from "react";
-import { CustomSelectInput } from "../../../components/components";
+import { CustomSelectInput } from "../../components/components";
 import PropTypes from "prop-types";
 
 const GenderInput = (props) => {

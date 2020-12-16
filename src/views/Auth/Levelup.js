@@ -18,11 +18,11 @@ import {
   CardFooter,
 } from "../../components/components";
 
-import NameInput from "./SubComponents/NameInput";
-import DescriptionInput from "./SubComponents/DescriptionInput";
-import PasswordInput from "./SubComponents/PasswordInput";
-import GenderInput from "./SubComponents/GenderInput";
-import BirthdayInput from "./SubComponents/BirthdayInput";
+import NameInput from "../SubComponents/NameInput";
+import DescriptionInput from "../SubComponents/DescriptionInput";
+import PasswordInput from "../SubComponents/PasswordInput";
+import GenderInput from "../SubComponents/GenderInput";
+import BirthdayInput from "../SubComponents/BirthdayInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";

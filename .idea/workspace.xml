@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/BirthdayInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/SocialInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/BirthdayInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/DescriptionInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/DescriptionInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/EmailInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/EmailInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/GenderInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/GenderInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/NameInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/NameInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/SubComponents/PasswordInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/BirthdayInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/BirthdayInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/DescriptionInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/DescriptionInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/EmailInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/EmailInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/GenderInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/GenderInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/NameInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/NameInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/PasswordInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/SocialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/subComponents/subComponents.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +86,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="13393000" />
+      <workItem from="1608077073905" duration="13559000" />
     </task>
     <servers />
   </component>

@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { InputAdornment } from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import { makeStyles } from "@material-ui/core/styles";
-import { CustomInput } from "../../../components/components";
-import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import { CustomInput } from "../../components/components";
+import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
 const useStyles = makeStyles(styles);
 

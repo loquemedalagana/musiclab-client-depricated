@@ -18,8 +18,8 @@ import {
   CardFooter,
 } from "../../components/components";
 
-import EmailInput from "./SubComponents/EmailInput";
-import PasswordInput from "./SubComponents/PasswordInput";
+import EmailInput from "../SubComponents/EmailInput";
+import PasswordInput from "../SubComponents/PasswordInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";

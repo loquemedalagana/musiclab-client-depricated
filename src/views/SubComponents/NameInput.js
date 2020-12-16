@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import { makeStyles } from "@material-ui/core/styles";
-import { CustomInput } from "../../../components/components";
+import { CustomInput } from "../../components/components";
 import { InputAdornment } from "@material-ui/core";
 import People from "@material-ui/icons/People";
 

@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import { makeStyles } from "@material-ui/core/styles";
-import { CustomInput } from "../../../components/components";
-import { DESCRIPTION_HELP } from "../../../app/helper/auth/helperTexts";
+import { CustomInput } from "../../components/components";
+import { DESCRIPTION_HELP } from "../../app/helper/auth/helperTexts";
 import { FormHelperText, InputAdornment } from "@material-ui/core";
 import { MusicNote as MusicNoteIcon } from "@material-ui/icons";
-import { DESCRIPTION_OVER_ERROR } from "../../../app/helper/auth/authAlertMessages";
+import { DESCRIPTION_OVER_ERROR } from "../../app/helper/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
 

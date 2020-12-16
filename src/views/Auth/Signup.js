@@ -19,9 +19,9 @@ import {
   CardBody,
   CardFooter,
 } from "../../components/components";
-import EmailInput from "./SubComponents/EmailInput";
-import PasswordInput from "./SubComponents/PasswordInput";
-import NameInput from "./SubComponents/NameInput";
+import EmailInput from "../SubComponents/EmailInput";
+import PasswordInput from "../SubComponents/PasswordInput";
+import NameInput from "../SubComponents/NameInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
