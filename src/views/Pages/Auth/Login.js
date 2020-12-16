@@ -21,6 +21,8 @@ import {
 import EmailInput from "../../SubComponents/EmailInput";
 import PasswordInput from "../../SubComponents/PasswordInput";
 
+import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+
 import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import Loading from "../../../components/Loading/LinearLoading";
@@ -110,72 +112,65 @@ export const Login = (props) => {
         open={findPasswordOpen}
         onClose={() => setFindPasswordOpen(false)}
       />
-      <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
-        <div className={classes.container}>
-          <GridContainer
-            justify={window.innerWidth > 959 ? "space-between" : "center"}
-          >
-            <GridItem xs={12} sm={12} md={4}>
-              <Card className={classes[cardAnimaton]}>
-                <form className={classes.form}>
-                  <SocialLogin color="primary" classes={classes} />
-                  <p className={classes.divider}>Or Be Classical</p>
-                  <CardBody>
-                    <EmailInput
-                      value={email}
-                      error={emailErr}
-                      inputRef={inputRef.email}
-                      onChange={onInputHandler}
-                      onKeyPress={handleKeyPress}
-                    />
-                    <PasswordInput
-                      error={passwordErr}
-                      value={password}
-                      inputRef={inputRef.password}
-                      onChange={onInputHandler}
-                      onKeyPress={handleKeyPress}
-                    />
-                    <div
-                      className={classNames({
-                        justifyContent: "right",
-                      })}
-                    >
-                      <Link
-                        onClick={(event) => {
-                          event.preventDefault();
-                          return setFindPasswordOpen(true);
-                        }}
-                        component="button"
-                        className={classes.link}
-                        color="textPrimary"
-                        classes={{
-                          root: classNames({
-                            textAlign: "right",
-                          }),
-                        }}
-                      >
-                        Did you forget password?
-                      </Link>
-                    </div>
-                  </CardBody>
+      <NoParallaxLayout>
+        <GridItem xs={12} sm={12} md={4}>
+          <Card className={classes[cardAnimaton]}>
+            <form className={classes.form}>
+              <SocialLogin color="primary" classes={classes} />
+              <p className={classes.divider}>Or Be Classical</p>
+              <CardBody>
+                <EmailInput
+                  value={email}
+                  error={emailErr}
+                  inputRef={inputRef.email}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                />
+                <PasswordInput
+                  error={passwordErr}
+                  value={password}
+                  inputRef={inputRef.password}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                />
+                <div
+                  className={classNames({
+                    justifyContent: "right",
+                  })}
+                >
+                  <Link
+                    onClick={(event) => {
+                      event.preventDefault();
+                      return setFindPasswordOpen(true);
+                    }}
+                    component="button"
+                    className={classes.link}
+                    color="textPrimary"
+                    classes={{
+                      root: classNames({
+                        textAlign: "right",
+                      }),
+                    }}
+                  >
+                    Did you forget password?
+                  </Link>
+                </div>
+              </CardBody>
 
-                  <CardFooter className={classes.cardFooter}>
-                    <Button
-                      simple
-                      color="primary"
-                      size="lg"
-                      onClick={onSubmitHandler}
-                    >
-                      Get started
-                    </Button>
-                  </CardFooter>
-                </form>
-              </Card>
-            </GridItem>
-          </GridContainer>
-        </div>
-        <Footer whiteFont />
-      </div>
+              <CardFooter className={classes.cardFooter}>
+                <Button
+                  simple
+                  color="primary"
+                  size="lg"
+                  onClick={onSubmitHandler}
+                >
+                  Get started
+                </Button>
+              </CardFooter>
+            </form>
+          </Card>
+        </GridItem>
+      </NoParallaxLayout>
     </>
   );
 };
