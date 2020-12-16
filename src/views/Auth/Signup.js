@@ -36,7 +36,7 @@ import DisplayNameValidation from "../../app/inputValidation/user/displayNameVal
 import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
 import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
 
-import { checkIsValidEmail } from "../../app/helperTexts/auth/helperTexts";
+import { CHECK_VALID_EMAIL } from "../../app/helperTexts/auth/helperTexts";
 import { setAlertMsg } from "../../app/store/alert";
 import SocialLogin from "./SocialLogin";
 
@@ -324,7 +324,7 @@ export const Signup = (props) => {
                       }
                       className={classes.formControl}
                       classes={{ label: classes.label }}
-                      label={checkIsValidEmail}
+                      label={CHECK_VALID_EMAIL}
                     />
                   </div>
                 </CardBody>

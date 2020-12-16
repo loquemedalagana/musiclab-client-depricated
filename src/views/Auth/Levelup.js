@@ -34,8 +34,8 @@ import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/backgr
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
 import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
 import {
-  checkAgreeLevelup,
-  descriptionHelperText,
+  CHECK_VALID_INFO,
+  DESCRIPTION_HELP,
 } from "../../app/helperTexts/auth/helperTexts";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
@@ -360,7 +360,7 @@ export const Levelup = (props) => {
                     )}
                     <br /> <br />
                     <CustomInput
-                      formHelperText={descriptionHelperText}
+                      formHelperText={DESCRIPTION_HELP}
                       id="description"
                       formControlProps={{
                         fullWidth: true,
@@ -480,7 +480,7 @@ export const Levelup = (props) => {
                         }
                         className={classes.formControl}
                         classes={{ label: classes.label }}
-                        label={checkAgreeLevelup}
+                        label={CHECK_VALID_INFO}
                       />
                     </div>
                   </GridItem>

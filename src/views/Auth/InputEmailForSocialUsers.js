@@ -27,14 +27,15 @@ import {
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
-import { checkIsValidEmail } from "../../app/helperTexts/auth/helperTexts";
+import {
+  CHECK_VALID_EMAIL,
+  INPUT_VALID_EMAIL,
+} from "../../app/helperTexts/auth/helperTexts";
 import { emailRegister } from "../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../app/store/alert";
 import { PLEASE_READ_RULES } from "../../app/helperTexts/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
-
-const inputhelper = `반드시 유효한 메일주소를 입력해주세요.`;
 
 export const InputEmailForSocialUsers = (props) => {
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
@@ -128,7 +129,7 @@ export const InputEmailForSocialUsers = (props) => {
                 <CardHeader color="primary" className={classes.cardHeader}>
                   <h4>Please input your email</h4>
                 </CardHeader>
-                <p className={classes.divider}>{inputhelper}</p>
+                <p className={classes.divider}>{INPUT_VALID_EMAIL}</p>
                 <CardBody>
                   <CustomInput
                     labelText="Email..."
@@ -193,7 +194,7 @@ export const InputEmailForSocialUsers = (props) => {
                       }
                       className={classes.formControl}
                       classes={{ label: classes.label }}
-                      label={checkIsValidEmail}
+                      label={CHECK_VALID_EMAIL}
                     />
                   </div>
                 </CardBody>

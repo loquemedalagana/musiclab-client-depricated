@@ -19,7 +19,7 @@ import {
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 import { camelToSpace } from "../../../app/utils/functions";
-import { descriptionHelperText } from "../../../app/helperTexts/auth/helperTexts";
+import { DESCRIPTION_HELP } from "../../../app/helperTexts/auth/helperTexts";
 
 const passReg = /(Password)/i;
 
@@ -71,7 +71,7 @@ const DescriptionInput = (inputs, onInputHandler, iconClass) => {
     return (
       <GridItem xs={12} sm={12} md={12} key={key}>
         <CustomInput
-          labelText={descriptionHelperText}
+          labelText={DESCRIPTION_HELP}
           id={key}
           error={null}
           formControlProps={{
