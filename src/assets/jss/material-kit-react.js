@@ -146,6 +146,11 @@ const title = {
   fontFamily: "Single Day",
 };
 
+const brand = {
+  color: "#1a1a2e",
+  textAlign: "left",
+};
+
 const cardTitle = {
   ...title,
   marginTop: ".625rem",
@@ -198,4 +203,5 @@ export {
   cardTitle,
   cardLink,
   cardSubtitle,
+  brand,
 };

@@ -4,7 +4,7 @@ import { InputAdornment } from "@material-ui/core";
 import Email from "@material-ui/icons/Email";
 import { makeStyles } from "@material-ui/core/styles";
 import { CustomInput } from "../../components/components";
-import styles from "../../assets/jss/material-kit-react/views/pages/noParallax/LoginSignupStyle";
+import styles from "../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 
 const useStyles = makeStyles(styles);
 

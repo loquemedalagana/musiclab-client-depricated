@@ -1,7 +1,7 @@
 import customCheckboxRadioSwitch from "../../../components/customCheckboxRadioSwitch.js";
 import customInputStyle from "../../../components/customInputStyle";
 
-const LoginSignupStyle = {
+const AuthGeneralStyle = {
   cardHidden: {
     opacity: "0",
     transform: "translate3d(0, -60px, 0)",
@@ -52,4 +52,4 @@ const LoginSignupStyle = {
   ...customInputStyle,
 };
 
-export default LoginSignupStyle;
+export default AuthGeneralStyle;

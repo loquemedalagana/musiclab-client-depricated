@@ -24,7 +24,7 @@ import PasswordInput from "../../SubComponents/PasswordInput";
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 
 import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/LoginSignupStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import Loading from "../../../components/Loading/LinearLoading";
 import FindPassword from "../../Modals/FindPassword";
 import { loginUser } from "../../../app/store/auth";

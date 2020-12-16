@@ -1,6 +1,3 @@
-import customInputStyle from "../../../components/customInputStyle";
-import customCheckboxRadioSwitch from "../../../components/customCheckboxRadioSwitch.js";
-
 export default {
   cardHidden: {
     opacity: "0",
@@ -28,6 +25,4 @@ export default {
     maxWidth: "500px",
     margin: "10px 0 0",
   },
-  ...customCheckboxRadioSwitch,
-  ...customInputStyle,
 };
