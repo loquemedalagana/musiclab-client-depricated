@@ -16,7 +16,7 @@ import {
 
 import VideoCarouselSection from "./VideoCarouselSection/VideoCarouselSection";
 
-import { mainParallaxStyle } from "../../assets/jss/material-kit-react/views/background";
+import { mainParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
 
 import { appDescription, appShortTitle } from "../../app/helper/appTitle";
 import styles from "../../assets/jss/material-kit-react/views/landingStyle";

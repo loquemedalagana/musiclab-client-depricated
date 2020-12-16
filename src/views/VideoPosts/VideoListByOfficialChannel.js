@@ -20,7 +20,7 @@ import { officialChannelProfileData } from "../../app/videoData/officialChannelD
 import defaultImg from "../../assets/images/dolphin_profile.png";
 
 import styles from "../../assets/jss/material-kit-react/views/videoListStyle";
-import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/background";
+import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
 
 const useStyles = makeStyles(styles);
 

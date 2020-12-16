@@ -21,7 +21,7 @@ import {
 
 import EmailInput from "../SubComponents/EmailInput";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
+import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
 import {

@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loading/LinearLoading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading/LinearLoading.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/BirthdayInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/BirthdayInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/DescriptionInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/DescriptionInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/EmailInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/EmailInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/GenderInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/GenderInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/NameInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/NameInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/PasswordInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/SubComponents/SocialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/WaitingLevelup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Error/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Error/ServerError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Post/PostListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListBySearchKeyword.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -60,11 +64,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\layouts" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Auth\SubComponents" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Profile\subComponents" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\helperTexts\auth" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,7 +90,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="13559000" />
+      <workItem from="1608077073905" duration="13835000" />
     </task>
     <servers />
   </component>

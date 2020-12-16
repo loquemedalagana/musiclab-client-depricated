@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CustomLinearProgress from "../CustomLinearProgress/CustomLinearProgress";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
+import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
 const useStyles = makeStyles(styles);

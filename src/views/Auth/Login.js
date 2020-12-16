@@ -21,7 +21,7 @@ import {
 import EmailInput from "../SubComponents/EmailInput";
 import PasswordInput from "../SubComponents/PasswordInput";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
+import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import Loading from "../../components/Loading/LinearLoading";
 import FindPassword from "../Modals/FindPassword";

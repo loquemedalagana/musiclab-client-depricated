@@ -9,7 +9,7 @@ import {
   Card,
 } from "../../components/components";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
+import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../assets/jss/material-kit-react/views/ErrorPageStyle";
 
 const useStyles = makeStyles(styles);
