@@ -14,12 +14,13 @@ import {
   Parallax,
   //LinearLoading,
 } from "../../../components/components";
+import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 
 import { officialChannelProfileData } from "../../../app/videoData/officialChannelData";
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../assets/jss/material-kit-react/views/videoListStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/profilePageStyle";
 import { smallParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 
 const useStyles = makeStyles(styles);
@@ -46,36 +47,30 @@ export const VideoListByOfficialChannel = (props) => {
   if (!channelInfo) return <Redirect to="/notfound" />;
 
   return (
-    <>
-      <Parallax small filter style={smallParallaxStyle().root} />
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={6}>
-              <div className={classes.channelProfile}>
-                <div>
-                  <img
-                    src={channelInfo.image ? channelInfo.image : defaultImg}
-                    alt="..."
-                    className={imageClasses}
-                  />
-                </div>
-                <div className={classes.channelTitle}>
-                  <h3>{channelInfo.channelTitle}</h3>
-                </div>
-                <h5>{channelInfo.description}</h5>
-              </div>
-            </GridItem>
-          </GridContainer>
-          <VideoListSection
-            type="official"
-            videoListId={channelInfo.playListId}
-            userId={query.userId}
-          />
-        </div>
-      </div>
-      <Footer />
-    </>
+    <SmallParallaxLayout>
+      <GridContainer justify="center">
+        <GridItem xs={12} sm={12} md={6}>
+          <div className={classes.profile}>
+            <div>
+              <img
+                src={channelInfo.image ? channelInfo.image : defaultImg}
+                alt="..."
+                className={imageClasses}
+              />
+            </div>
+            <div className={classes.channelTitle}>
+              <h3>{channelInfo.channelTitle}</h3>
+            </div>
+            <h5>{channelInfo.description}</h5>
+          </div>
+        </GridItem>
+      </GridContainer>
+      <VideoListSection
+        type="official"
+        videoListId={channelInfo.playListId}
+        userId={query.userId}
+      />
+    </SmallParallaxLayout>
   );
 };
 

@@ -3,10 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/PostStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/ProfileStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/profilePageStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/landingStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/smallParallaxLayoutStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/smallParallaxLayoutStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/videoListStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/previewListStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Post/PostListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/subComponents/socialInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +45,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../design/designBoilarplate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -53,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\pages" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Pages" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\layouts" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Auth\SubComponents" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Profile\subComponents" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -79,7 +88,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="21336000" />
+      <workItem from="1608077073905" duration="26607000" />
     </task>
     <servers />
   </component>
@@ -105,11 +114,6 @@
           <url>file://$PROJECT_DIR$/src/views/Modals/Help.js</url>
           <line>174</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/routes/routes.js</url>
-          <line>61</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

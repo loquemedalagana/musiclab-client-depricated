@@ -32,6 +32,8 @@ import {
   LinearLoading,
 } from "../../../components/components";
 
+import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
+
 import LikedVideos from "./ProfileSections/LikedVideos/LikedVideos";
 import UserPostList from "./ProfileSections/UserPostList/UserPostList";
 import UserTags from "./ProfileSections/UserTags/UserTags";
@@ -40,7 +42,7 @@ import NotFound from "../Error/NotFound";
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../assets/jss/material-kit-react/views/ProfileStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/profilePageStyle";
 import { smallParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 import { getDateKor } from "../../../app/utils/functions";
 
@@ -122,99 +124,86 @@ const Profile = (props) => {
   if (error) return <Redirect to="/notfound" />;
 
   return !error ? (
-    <>
-      <Parallax
-        small
-        filter
-        style={
-          thumbnail
-            ? smallParallaxStyle(thumbnail).root
-            : smallParallaxStyle().root
-        }
-      />
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={6}>
-              <div className={classes.profile}>
-                <div>
-                  <img
-                    src={data.userData.image ? data.userData.image : defaultImg}
-                    alt="..."
-                    className={imageClasses}
-                  />
-                </div>
-                <div className={classes.name}>
-                  {/*관리자일 때 공식 표시*/}
-                  <h3 className={classes.title}>
-                    {data.userData.displayName}
-                    {isSame ? (
-                      <IconButton
-                        color="primary"
-                        onClick={() => history.push(`/modify/profile`)}
-                      >
-                        <Edit />
-                      </IconButton>
-                    ) : (
-                      <IconButton color="secondary" onClick={null}>
-                        <Favorite />
-                      </IconButton>
-                    )}
-                  </h3>
-                  {isAdmin || isSame ? (
-                    <>
-                      <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
-                      <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
-                    </>
-                  ) : (
-                    <h6> </h6>
-                  )}
-                </div>
-                <GridContainer justify="center" direction="row">
-                  <PrintSocialLinks social={data.userData.social} />
-                </GridContainer>
-              </div>
-            </GridItem>
-          </GridContainer>
-          <div className={classes.description}>
-            <p>{data.userData.description} </p>
-          </div>
-
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
-              <NavPills
-                alignCenter
-                color="primary"
-                tabs={[
-                  {
-                    tabButton: "Tags",
-                    tabIcon: Tag,
-                    tabContent: (
-                      <UserTags userId={targetUserId} classes={classes} />
-                    ),
-                  },
-                  {
-                    tabButton: "Liked Videos",
-                    tabIcon: MusicVideoRounded,
-                    tabContent: (
-                      <LikedVideos userId={targetUserId} classes={classes} />
-                    ),
-                  },
-                  {
-                    tabButton: "Written Posts",
-                    tabIcon: Post,
-                    tabContent: (
-                      <UserPostList userId={targetUserId} classes={classes} />
-                    ),
-                  },
-                ]}
+    <SmallParallaxLayout thumbnail={thumbnail}>
+      <GridContainer justify="center">
+        <GridItem xs={12} sm={12} md={6}>
+          <div className={classes.profile}>
+            <div>
+              <img
+                src={data.userData.image ? data.userData.image : defaultImg}
+                alt="..."
+                className={imageClasses}
               />
-            </GridItem>
-          </GridContainer>
-        </div>
+            </div>
+            <div className={classes.name}>
+              {/*관리자일 때 공식 표시*/}
+              <h3 className={classes.title}>
+                {data.userData.displayName}
+                {isSame ? (
+                  <IconButton
+                    color="primary"
+                    onClick={() => history.push(`/modify/profile`)}
+                  >
+                    <Edit />
+                  </IconButton>
+                ) : (
+                  <IconButton color="secondary" onClick={null}>
+                    <Favorite />
+                  </IconButton>
+                )}
+              </h3>
+              {isAdmin || isSame ? (
+                <>
+                  <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
+                  <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
+                </>
+              ) : (
+                <h6> </h6>
+              )}
+            </div>
+            <GridContainer justify="center" direction="row">
+              <PrintSocialLinks social={data.userData.social} />
+            </GridContainer>
+          </div>
+        </GridItem>
+      </GridContainer>
+
+      <div className={classes.description}>
+        <p>{data.userData.description} </p>
       </div>
-      <Footer />
-    </>
+
+      <GridContainer justify="center">
+        <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
+          <NavPills
+            alignCenter
+            color="primary"
+            tabs={[
+              {
+                tabButton: "Tags",
+                tabIcon: Tag,
+                tabContent: (
+                  <UserTags userId={targetUserId} classes={classes} />
+                ),
+              },
+              {
+                tabButton: "Liked Videos",
+                tabIcon: MusicVideoRounded,
+                tabContent: (
+                  <LikedVideos userId={targetUserId} classes={classes} />
+                ),
+              },
+              {
+                tabButton: "Written Posts",
+                tabIcon: Post,
+                tabContent: (
+                  <UserPostList userId={targetUserId} classes={classes} />
+                ),
+              },
+            ]}
+          />
+        </GridItem>
+      </GridContainer>
+    </SmallParallaxLayout>
   ) : (
     <NotFound />
   );

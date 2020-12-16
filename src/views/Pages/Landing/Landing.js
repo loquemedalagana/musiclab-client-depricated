@@ -1,32 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
-import clsx from "clsx";
-import classNames from "classnames";
 import { connect } from "react-redux";
 
-import { makeStyles } from "@material-ui/core/styles";
-
-import {
-  Footer,
-  Parallax,
-  GridContainer,
-  GridItem,
-} from "../../../components/components";
-
 import MediumParallaxLayout from "../../Layouts/MediumParallaxLayout";
-
 import VideoCarouselSection from "./VideoCarouselSection/VideoCarouselSection";
-
-import { mainParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
-
-import { appDescription, appShortTitle } from "../../../app/helper/appTitle";
-import styles from "../../../assets/jss/material-kit-react/views/landingStyle";
-
-const useStyles = makeStyles(styles);
+//import { appDescription, appShortTitle } from "../../../app/helper/appTitle";
 
 export const Landing = (props) => {
-  const classes = useStyles();
   const { userData, userLoading } = props;
 
   return (
