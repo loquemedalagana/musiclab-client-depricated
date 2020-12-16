@@ -14,6 +14,8 @@ import {
   GridItem,
 } from "../../../components/components";
 
+import MediumParallaxLayout from "../../Layouts/MediumParallaxLayout";
+
 import VideoCarouselSection from "./VideoCarouselSection/VideoCarouselSection";
 
 import { mainParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
@@ -28,32 +30,16 @@ export const Landing = (props) => {
   const { userData, userLoading } = props;
 
   return (
-    <>
-      <Parallax className={mainParallaxStyle().root}>
-        <div className={clsx(classes.container)}>
-          <GridContainer type="parallax">
-            <GridItem xs={12} sm={12} md={6}>
-              <div className={classes.brand}>
-                <h1 className={classes.title}>{appShortTitle}</h1>
-                <h3 className={classes.subtitle}>{appDescription}</h3>
-              </div>
-            </GridItem>
-          </GridContainer>
-        </div>
-      </Parallax>
+    <MediumParallaxLayout>
+      {userData && !userLoading && userData.points >= 0 ? (
+        <VideoCarouselSection categoryTitle="My List" userData={userData} />
+      ) : null}
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        {userData && !userLoading && userData.points >= 0 ? (
-          <VideoCarouselSection categoryTitle="My List" userData={userData} />
-        ) : null}
-
-        <VideoCarouselSection categoryTitle="Jeon Inhyuk Band Official Channel" />
-        <VideoCarouselSection categoryTitle="Music SSeolprise by Jeon Inhyuk" />
-        <VideoCarouselSection categoryTitle="Hot Videos of Inhyuk" />
-        <VideoCarouselSection categoryTitle="Latest Videos of Inhyuk" />
-      </div>
-      <Footer />
-    </>
+      <VideoCarouselSection categoryTitle="Jeon Inhyuk Band Official Channel" />
+      <VideoCarouselSection categoryTitle="Music SSeolprise by Jeon Inhyuk" />
+      <VideoCarouselSection categoryTitle="Hot Videos of Inhyuk" />
+      <VideoCarouselSection categoryTitle="Latest Videos of Inhyuk" />
+    </MediumParallaxLayout>
   );
 };
 

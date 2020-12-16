@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +36,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../design/designBoilarplate" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -81,7 +79,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="19781000" />
+      <workItem from="1608077073905" duration="21336000" />
     </task>
     <servers />
   </component>
