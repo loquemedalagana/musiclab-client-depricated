@@ -19,7 +19,7 @@ import {
   CardFooter,
 } from "../../components/components";
 
-import EmailInput from "./subComponents/EmailInput";
+import EmailInput from "./SubComponents/EmailInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";

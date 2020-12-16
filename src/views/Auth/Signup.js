@@ -17,12 +17,11 @@ import {
   Card,
   Button,
   CardBody,
-  CustomInput,
   CardFooter,
 } from "../../components/components";
-import EmailInput from "./subComponents/EmailInput";
-import PasswordInput from "./subComponents/PasswordInput";
-import NameInput from "./subComponents/NameInput";
+import EmailInput from "./SubComponents/EmailInput";
+import PasswordInput from "./SubComponents/PasswordInput";
+import NameInput from "./SubComponents/NameInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";

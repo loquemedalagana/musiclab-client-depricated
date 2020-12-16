@@ -16,14 +16,13 @@ import {
   Button,
   CardBody,
   CardFooter,
-  DateTimePicker,
-  CustomSelectInput,
 } from "../../components/components";
 
-import NameInput from "./subComponents/NameInput";
-import DescriptionInput from "./subComponents/DescriptionInput";
-import PasswordInput from "./subComponents/PasswordInput";
-import GenderInput from "./subComponents/GenderInput";
+import NameInput from "./SubComponents/NameInput";
+import DescriptionInput from "./SubComponents/DescriptionInput";
+import PasswordInput from "./SubComponents/PasswordInput";
+import GenderInput from "./SubComponents/GenderInput";
+import BirthdayInput from "./SubComponents/BirthdayInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
@@ -194,12 +193,11 @@ export const Levelup = (props) => {
         },
         ...inputs,
       };
+      console.log(userPersonalInfo);
       //console.log(userPersonalInfo, query);
-      requestLevelup(userPersonalInfo, query);
+      // requestLevelup(userPersonalInfo, query);
     }
   };
-
-  console.log(birthday);
 
   return (
     <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
@@ -240,23 +238,13 @@ export const Levelup = (props) => {
                       onChange={handleGenderChange}
                     />
                     <br /> <br />
-                    <DateTimePicker
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
+                    <BirthdayInput
                       success={birthdayChanged}
                       error={birthdayErr}
-                      labelText="Your birthday(생년월일)"
-                      inputProps={{
-                        dateFormat: true,
-                        timeFormat: false,
-                        placeholder: "Pick your birthday!",
-                        name: "birthday",
-                        value: birthday,
-                        ref: inputRef.birthday,
-                        onClick: handleKeyPress,
-                        onChange: handleDateChange,
-                      }}
+                      value={birthday}
+                      inputRef={inputRef.birthday}
+                      onClick={handleKeyPress}
+                      onChange={handleDateChange}
                     />
                     <br /> <br />
                     <DescriptionInput
