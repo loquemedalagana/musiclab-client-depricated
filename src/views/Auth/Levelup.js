@@ -5,18 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import qs from "qs";
 
-import {
-  InputAdornment,
-  FormHelperText,
-  FormControlLabel,
-  Checkbox,
-} from "@material-ui/core";
-import {
-  People,
-  VpnKey as VpnKeyIcon,
-  MusicNote as MusicNoteIcon,
-  Check,
-} from "@material-ui/icons";
+import { FormControlLabel, Checkbox } from "@material-ui/core";
+import { Check } from "@material-ui/icons";
 
 import {
   Footer,
@@ -25,7 +15,6 @@ import {
   Card,
   Button,
   CardBody,
-  CustomInput,
   CardFooter,
   DateTimePicker,
   CustomSelectInput,
@@ -40,13 +29,9 @@ import {
   GENDER_NULL_ERROR,
   BIRTHDAY_NULL_ERROR,
   DESCRIPTION_NULL_ERROR,
-  DESCRIPTION_OVER_ERROR,
   PLEASE_READ_RULES,
 } from "../../app/helper/auth/authAlertMessages";
-import {
-  CHECK_VALID_INFO,
-  DESCRIPTION_HELP,
-} from "../../app/helper/auth/helperTexts";
+import { CHECK_VALID_INFO } from "../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../app/store/alert";
 import { requestLevelup } from "../../app/store/userValidationAndUpdate";
 
@@ -64,7 +49,6 @@ export const Levelup = (props) => {
   const classes = useStyles();
   const {
     setAlertMsg,
-    alerts,
     location,
     requestLevelup,
     //        ...rest
@@ -109,14 +93,10 @@ export const Levelup = (props) => {
   const [birthdayChanged, setBirthdayChanged] = useState(false);
 
   const [familyNameErr, setFamilyNameErr] = useState(false);
-  const [familyNameSuccess, setFamilyNameSuccess] = useState(false);
   const [givenNameErr, setGivenNameErr] = useState(false);
-  const [givenNameSuccess, setGivenNameSuccess] = useState(false);
 
   const [descriptionErr, setDescriptionErr] = useState(false);
-  const [descriptionSuccess, setDescriptionSuccess] = useState(false);
   const [passwordErr, setPasswordErr] = useState(false);
-  const [passwordSuccess, setPasswordSuccess] = useState(false);
 
   const [birthdayErr, setBirthdayErr] = useState(false);
   const [genderErr, setGenderErr] = useState(false);
@@ -269,18 +249,6 @@ export const Levelup = (props) => {
                         { key: 2, value: "female", label: "Female(여성)" },
                       ]}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "gender" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
                     <br /> <br />
                     <DateTimePicker
                       formControlProps={{
@@ -308,63 +276,20 @@ export const Levelup = (props) => {
                       onKeyPress={handleKeyPress}
                       onChange={onInputHandler}
                     />
-                    <CustomInput
-                      labelText="Password"
-                      id="pass"
+                    <PasswordInput
                       error={passwordErr}
-                      success={passwordSuccess}
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "password",
-                        name: "password",
-                        value: password,
-                        inputRef: inputRef.password,
-                        onChange: onInputHandler,
-                        onKeyPress: handleKeyPress,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <VpnKeyIcon className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                        autoComplete: "off",
-                      }}
+                      value={password}
+                      inputRef={inputRef.password}
+                      onChange={onInputHandler}
+                      onKeyPress={handleKeyPress}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "password" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
-                    <CustomInput
-                      labelText="Confirm Password"
-                      id="confirmpass"
-                      error={passwordErr}
-                      success={passwordSuccess}
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "password",
-                        name: "confirmPassword",
-                        value: confirmPassword,
-                        inputRef: inputRef.confirmPassword,
-                        onChange: onInputHandler,
-                        onKeyPress: handleKeyPress,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <VpnKeyIcon className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                        autoComplete: "off",
-                      }}
+                    <PasswordInput
+                      isConfirm={true}
+                      error={password}
+                      value={confirmPassword}
+                      inputRef={inputRef.confirmPassword}
+                      onChange={onInputHandler}
+                      onKeyPress={handleKeyPress}
                     />
                     <div className={classes.checkboxAndRadio}>
                       <FormControlLabel

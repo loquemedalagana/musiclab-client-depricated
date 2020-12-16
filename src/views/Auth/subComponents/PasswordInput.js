@@ -24,7 +24,7 @@ const getLabelText = (props) => {
   if (isNewPassword) {
     return isConfirm ? "Confirm New Password" : "New Password";
   } else {
-    return isConfirm ? "New Password" : "Password";
+    return isConfirm ? "Confirm Password" : "Password";
   }
 };
 

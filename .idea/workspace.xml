@@ -4,8 +4,7 @@
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/DescriptionInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/subComponents/DescriptionInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Auth/subComponents/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/subComponents/PasswordInput.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Profile/subComponents" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sleact" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,7 +77,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="10138000" />
+      <workItem from="1608077073905" duration="10774000" />
     </task>
     <servers />
   </component>
