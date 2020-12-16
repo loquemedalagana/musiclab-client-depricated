@@ -10,14 +10,13 @@ import {
   DialogActions,
   Slide,
   IconButton,
-  InputAdornment,
   RadioGroup,
   FormControl,
   FormLabel,
   FormControlLabel,
   Radio,
 } from "@material-ui/core";
-import { Close, People, FiberManualRecord } from "@material-ui/icons";
+import { Close, FiberManualRecord } from "@material-ui/icons";
 
 import {
   Button,

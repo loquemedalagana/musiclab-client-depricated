@@ -30,6 +30,10 @@ import {
   DateTimePicker,
   CustomSelectInput,
 } from "../../components/components";
+import NameInput from "./subComponents/NameInput";
+import DescriptionInput from "./subComponents/DescriptionInput";
+import PasswordInput from "./subComponents/PasswordInput";
+
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
 import {
@@ -227,74 +231,22 @@ export const Levelup = (props) => {
                 </p>
                 <CardBody className={alignment}>
                   <GridItem xs={12} sm={12} md={12}>
-                    <CustomInput
-                      labelText="Family name(성)"
-                      id="last"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      success={familyNameSuccess}
+                    <NameInput
+                      nameType="familyName"
+                      value={familyName}
+                      inputRef={inputRef.familyName}
+                      onChange={onInputHandler}
+                      onKeyPress={handleKeyPress}
                       error={familyNameErr}
-                      inputProps={{
-                        type: "text",
-                        value: familyName,
-                        name: "familyName",
-                        inputRef: inputRef.familyName,
-                        onKeyPress: handleKeyPress,
-                        onChange: onInputHandler,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <People className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                      }}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "familyname" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
-                    <CustomInput
-                      labelText="Given name(이름)"
-                      id="first"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      success={givenNameSuccess}
+                    <NameInput
+                      nameType="givenName"
+                      value={givenName}
+                      inputRef={inputRef.givenName}
+                      onChange={onInputHandler}
+                      onKeyPress={handleKeyPress}
                       error={givenNameErr}
-                      inputProps={{
-                        type: "text",
-                        value: givenName,
-                        name: "givenName",
-                        inputRef: inputRef.givenName,
-                        onKeyPress: handleKeyPress,
-                        onChange: onInputHandler,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <People className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                      }}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "givenname" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
                     <CustomSelectInput
                       labelText="Gender(성별)"
                       labelId="select-gender"
@@ -348,57 +300,14 @@ export const Levelup = (props) => {
                         onChange: handleDateChange,
                       }}
                     />
-                    {alerts.map(
-                      ({ message, name, id }) =>
-                        name === "birthday" && (
-                          <FormHelperText
-                            key={id}
-                            style={{ textAlign: "right" }}
-                            error
-                          >
-                            {message}
-                          </FormHelperText>
-                        )
-                    )}
                     <br /> <br />
-                    <CustomInput
-                      formHelperText={DESCRIPTION_HELP}
-                      id="description"
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      success={descriptionSuccess}
+                    <DescriptionInput
                       error={descriptionErr}
-                      inputProps={{
-                        rows: "4",
-                        type: "text",
-                        multiline: true,
-                        name: "description",
-                        value: description,
-                        inputRef: inputRef.description,
-                        onKeyPress: handleKeyPress,
-                        onChange: onInputHandler,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <MusicNoteIcon
-                              className={classes.inputIconsColor}
-                            />
-                          </InputAdornment>
-                        ),
-                      }}
+                      value={description}
+                      inputRef={inputRef.description}
+                      onKeyPress={handleKeyPress}
+                      onChange={onInputHandler}
                     />
-                    <FormHelperText
-                      style={{ textAlign: "right" }}
-                      error={
-                        description.length >= 200 || descriptionErr
-                          ? true
-                          : false
-                      }
-                    >
-                      {description.length >= 200
-                        ? DESCRIPTION_OVER_ERROR
-                        : description.length}
-                    </FormHelperText>
                     <CustomInput
                       labelText="Password"
                       id="pass"
