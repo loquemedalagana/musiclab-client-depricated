@@ -30,7 +30,7 @@ import {
   NavPills,
   Parallax,
   LinearLoading,
-} from "../../components/components";
+} from "../../../components/components";
 
 import LikedVideos from "./ProfileSections/LikedVideos/LikedVideos";
 import UserPostList from "./ProfileSections/UserPostList/UserPostList";
@@ -38,11 +38,11 @@ import UserTags from "./ProfileSections/UserTags/UserTags";
 
 import NotFound from "../Error/NotFound";
 
-import defaultImg from "../../assets/images/dolphin_profile.png";
+import defaultImg from "../../../assets/images/dolphin_profile.png";
 
-import styles from "../../assets/jss/material-kit-react/views/ProfileStyle";
-import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import { getDateKor } from "../../app/utils/functions";
+import styles from "../../../assets/jss/material-kit-react/views/ProfileStyle";
+import { smallParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import { getDateKor } from "../../../app/utils/functions";
 
 const useStyles = makeStyles(styles);
 

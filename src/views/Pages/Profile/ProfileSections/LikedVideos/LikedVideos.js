@@ -8,13 +8,13 @@ import {
   GridContainer,
   GridItem,
   //CircularLoading,
-} from "../../../../components/components";
+} from "../../../../../components/components";
 
 import {
   //test code
   SampleTagList,
   SampleVideoList,
-} from "../../../../app/videoData/SampleData/SampleVideoData";
+} from "../../../../../app/videoData/SampleData/SampleVideoData";
 
 const PrintVideoThumbnail = (props) => {
   const { videoData, thumbnailListImageClasses } = props; //add hover

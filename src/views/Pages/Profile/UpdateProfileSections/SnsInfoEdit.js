@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateUserSocial } from "../../../app/store/userValidationAndUpdate";
-import { setAlertMsg } from "../../../app/store/alert";
+import { updateUserSocial } from "../../../../app/store/userValidationAndUpdate";
+import { setAlertMsg } from "../../../../app/store/alert";
 
 import {
   GridContainer,
@@ -10,7 +10,7 @@ import {
   CircularLoading,
   CustomInput,
   GridItem,
-} from "../../../components/components";
+} from "../../../../components/components";
 
 import { InputAdornment } from "@material-ui/core";
 
@@ -23,8 +23,8 @@ import {
   Cloud as SoundCloud,
 } from "@material-ui/icons";
 
-import { SOCIAL_NULL_ERROR } from "../../../app/helper/auth/authAlertMessages";
-import { checkSnsLink } from "../../../app/helper/auth/util";
+import { SOCIAL_NULL_ERROR } from "../../../../app/helper/auth/authAlertMessages";
+import { checkSnsLink } from "../../../../app/helper/auth/util";
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
   const getIcon = (key) => {

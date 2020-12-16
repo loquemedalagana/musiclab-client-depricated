@@ -6,7 +6,7 @@ import Routes from "./routes/routes";
 
 import { fetchUser, authSelector } from "./app/store/auth";
 
-import Landing from "./views/Landing/Landing";
+import Landing from "./views/Pages/Landing/Landing";
 import LinearLoading from "./components/Loading/LinearLoading";
 
 import {

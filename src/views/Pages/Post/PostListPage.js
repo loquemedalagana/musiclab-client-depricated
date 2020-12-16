@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import { Footer, Parallax } from "../../components/components";
+import { smallParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import { Footer, Parallax } from "../../../components/components";
 
 PostListPage.propTypes = {
   location: PropTypes.object,

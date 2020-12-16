@@ -7,10 +7,10 @@ import {
   GridContainer,
   GridItem,
   Card,
-} from "../../components/components";
+} from "../../../components/components";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/ErrorPageStyle";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/ErrorPageStyle";
 
 const useStyles = makeStyles(styles);
 

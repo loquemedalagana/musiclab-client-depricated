@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import { Footer, GridContainer, GridItem } from "../../components/components";
+import {
+  Footer,
+  GridContainer,
+  GridItem,
+} from "../../../components/components";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/ErrorPageStyle";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/ErrorPageStyle";
 
 const useStyles = makeStyles(styles);
 

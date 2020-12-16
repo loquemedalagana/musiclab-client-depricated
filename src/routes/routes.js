@@ -14,13 +14,13 @@ import Levelup from "../views/Auth/Levelup";
 import WaitingLevelup from "../views/Auth/WaitingLevelup";
 import InputEmailForSocialUsers from "../views/Auth/InputEmailForSocialUsers";
 
-import Profile from "../views/Profile/Profile";
+import Profile from "../views/Pages/Profile/Profile";
 import VideoListByOfficialChannel from "../views/VideoPosts/VideoListByOfficialChannel";
 import VideoListByKeywords from "../views/VideoPosts/VideoListBySearchKeyword";
 
-import UpdateProfile from "../views/Profile/UpdateProfile"; //not made yet
-import NotFound from "../views/Error/NotFound";
-import ServerError from "../views/Error/ServerError";
+import UpdateProfile from "../views/Pages/Profile/UpdateProfile"; //not made yet
+import NotFound from "../views/Pages/Error/NotFound";
+import ServerError from "../views/Pages/Error/ServerError";
 
 import ToastAlert from "../components/ToastAlerts/ToastAlerts";
 

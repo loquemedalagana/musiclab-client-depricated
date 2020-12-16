@@ -12,14 +12,14 @@ import {
   Parallax,
   GridContainer,
   GridItem,
-} from "../../components/components";
+} from "../../../components/components";
 
 import VideoCarouselSection from "./VideoCarouselSection/VideoCarouselSection";
 
-import { mainParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
+import { mainParallaxStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 
-import { appDescription, appShortTitle } from "../../app/helper/appTitle";
-import styles from "../../assets/jss/material-kit-react/views/landingStyle";
+import { appDescription, appShortTitle } from "../../../app/helper/appTitle";
+import styles from "../../../assets/jss/material-kit-react/views/landingStyle";
 
 const useStyles = makeStyles(styles);
 

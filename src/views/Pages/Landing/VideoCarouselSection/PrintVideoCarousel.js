@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Tooltip } from "@material-ui/core";
 import Slider from "react-slick";
 
-import { GridItem, Card } from "../../../components/components";
+import { GridItem, Card } from "../../../../components/components";
 
 import { settings } from "./carouselSetting";
 

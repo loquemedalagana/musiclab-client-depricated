@@ -5,18 +5,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Skeleton from "@material-ui/lab/Skeleton";
 import PrintVideoCarousel from "./PrintVideoCarousel";
 
-import { GridContainer, GridItem } from "../../../components/components";
+import { GridContainer, GridItem } from "../../../../components/components";
 
-import { SampleVideoList } from "../../../app/videoData/SampleData/SampleVideoData";
+import { SampleVideoList } from "../../../../app/videoData/SampleData/SampleVideoData";
 
-import styles from "../../../assets/jss/material-kit-react/components/carouselStyle";
+import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 import {
   getVideoDataFromPlayList,
   JeonInhyukBandPlayListId,
   getPlayListURL,
   getLatestVideoListURL,
   getHotVideoListURL,
-} from "../../../app/videoData/videoFetchEndpoints";
+} from "../../../../app/videoData/videoFetchEndpoints";
 
 const useStyles = makeStyles(styles);
 

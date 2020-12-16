@@ -2,22 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/background.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts/background.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loading/LinearLoading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading/LinearLoading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/InputEmailForSocialUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Levelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/ResetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Auth/WaitingLevelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Error/NotFound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Error/ServerError.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Landing/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Post/PostListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/VideoPosts/VideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/VideoPosts/VideoListBySearchKeyword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/PrintVideoCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/PrintVideoCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Landing/VideoCarouselSection/carouselSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/carouselSetting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Post/PostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Post/PostDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Post/PostListPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/LikedVideos/LikedVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/LikedVideos/LikedVideos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/UserPostList/UserPostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/UserPostList/UserPostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/ProfileSections/UserTags/UserTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/UserTags/UserTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/UpdateProfileSections/UserHashtagsEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/UserHashtagsEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Profile/subComponents/socialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/subComponents/socialInput.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -64,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Pages" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\layouts" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Auth\SubComponents" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Profile\subComponents" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\helperTexts\auth" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -90,7 +96,7 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="13835000" />
+      <workItem from="1608077073905" duration="14759000" />
     </task>
     <servers />
   </component>

@@ -7,13 +7,13 @@ import {
   GridContainer,
   GridItem,
   //CircularLoading,
-} from "../../../../components/components";
+} from "../../../../../components/components";
 
-import compositionImg from "../../../../assets/images/TagImages/composition.jpg";
-import guitarImg from "../../../../assets/images/TagImages/guitar.jpg";
-import bandImg from "../../../../assets/images/TagImages/jeoninhyukband.jpg";
-import yadaImg from "../../../../assets/images/TagImages/yada.jpg";
-import vocalImg from "../../../../assets/images/TagImages/vocal.jpg";
+import compositionImg from "../../../../../assets/images/TagImages/composition.jpg";
+import guitarImg from "../../../../../assets/images/TagImages/guitar.jpg";
+import bandImg from "../../../../../assets/images/TagImages/jeoninhyukband.jpg";
+import yadaImg from "../../../../../assets/images/TagImages/yada.jpg";
+import vocalImg from "../../../../../assets/images/TagImages/vocal.jpg";
 
 export const UserPostList = (props) => {
   const {

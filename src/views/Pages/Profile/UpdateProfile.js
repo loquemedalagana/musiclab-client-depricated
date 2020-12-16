@@ -12,14 +12,17 @@ import {
   GridItem,
   CustomTabs,
   //    Button,
-} from "../../components/components";
+} from "../../../components/components";
 
 import PersonalInfoEdit from "./UpdateProfileSections/PersonalInfoEdit";
 import SnsInfoEdit from "./UpdateProfileSections/SnsInfoEdit";
 import UserHashtagsEdit from "./UpdateProfileSections/UserHashtagsEdit";
-import { isDesktop, MakeSpace } from "../../app/helper/responsiveUI/uiManagers";
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/UpdateProfileStyle";
+import {
+  isDesktop,
+  MakeSpace,
+} from "../../../app/helper/responsiveUI/uiManagers";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/UpdateProfileStyle";
 
 const useStyles = makeStyles(styles);
 

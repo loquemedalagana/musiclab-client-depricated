@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classNames from "classnames";
-import { setAlertMsg } from "../../../app/store/alert";
-import { updateUserProfile } from "../../../app/store/userValidationAndUpdate";
+import { setAlertMsg } from "../../../../app/store/alert";
+import { updateUserProfile } from "../../../../app/store/userValidationAndUpdate";
 
 import { VpnKey as VpnKeyIcon, MusicNote, People } from "@material-ui/icons";
 
@@ -15,15 +15,15 @@ import {
   CustomInput,
   Button,
   CircularLoading,
-} from "../../../components/components";
+} from "../../../../components/components";
 
-import defaultImg from "../../../assets/images/dolphin_profile.png";
-import { camelToSpace } from "../../../app/utils/functions";
+import defaultImg from "../../../../assets/images/dolphin_profile.png";
+import { camelToSpace } from "../../../../app/utils/functions";
 import {
   DESCRIPTION_OVER_ERROR,
   PROFILE_PHOTO_SERVER_ERROR,
-} from "../../../app/helper/auth/authAlertMessages";
-import { DESCRIPTION_HELP } from "../../../app/helper/auth/helperTexts";
+} from "../../../../app/helper/auth/authAlertMessages";
+import { DESCRIPTION_HELP } from "../../../../app/helper/auth/helperTexts";
 
 const passReg = /(Password)/i;
 
