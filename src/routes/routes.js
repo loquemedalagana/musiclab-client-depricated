@@ -7,12 +7,12 @@ import NonMemberRoute from "./HigherOrderComponets/NonMemberRoute";
 import TokenRoute from "./HigherOrderComponets/TokenRoute";
 import NonMemberRouteWithoutEmail from "./HigherOrderComponets/NonMemberWithoutEmail";
 
-import Login from "../views/Auth/Login";
-import Signup from "../views/Auth/Signup";
-import ResetPassword from "../views/Auth/ResetPassword";
-import Levelup from "../views/Auth/Levelup";
-import WaitingLevelup from "../views/Auth/WaitingLevelup";
-import InputEmailForSocialUsers from "../views/Auth/InputEmailForSocialUsers";
+import Login from "../views/Pages/Auth/Login";
+import Signup from "../views/Pages/Auth/Signup";
+import ResetPassword from "../views/Pages/Auth/ResetPassword";
+import Levelup from "../views/Pages/Auth/Levelup";
+import WaitingLevelup from "../views/Pages/Auth/WaitingLevelup";
+import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUsers";
 
 import Profile from "../views/Pages/Profile/Profile";
 import VideoListByOfficialChannel from "../views/Pages/VideoPosts/VideoListByOfficialChannel";

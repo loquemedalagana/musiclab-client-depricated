@@ -18,14 +18,14 @@ import {
   CardBody,
   CustomInput,
   CardFooter,
-} from "../../components/components";
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
-import { resetPassword } from "../../app/store/userValidationAndUpdate";
-import { setAlertMsg } from "../../app/store/alert";
-import { PASSWORD_HELPER } from "../../app/helper/auth/authAlertMessages";
+} from "../../../components/components";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import { resetPassword } from "../../../app/store/userValidationAndUpdate";
+import { setAlertMsg } from "../../../app/store/alert";
+import { PASSWORD_HELPER } from "../../../app/helper/auth/authAlertMessages";
 
-import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
+import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
 
 const useStyles = makeStyles(styles);
 

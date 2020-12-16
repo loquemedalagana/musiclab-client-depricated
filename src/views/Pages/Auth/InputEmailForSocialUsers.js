@@ -17,20 +17,20 @@ import {
   Button,
   CardBody,
   CardFooter,
-} from "../../components/components";
+} from "../../../components/components";
 
-import EmailInput from "../SubComponents/EmailInput";
+import EmailInput from "../../SubComponents/EmailInput";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
-import EmailValidation from "../../app/inputValidation/user/emailValidation";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import EmailValidation from "../../../app/inputValidation/user/emailValidation";
 import {
   CHECK_VALID_EMAIL,
   INPUT_VALID_EMAIL,
-} from "../../app/helper/auth/helperTexts";
-import { emailRegister } from "../../app/store/userValidationAndUpdate";
-import { setAlertMsg } from "../../app/store/alert";
-import { PLEASE_READ_RULES } from "../../app/helper/auth/authAlertMessages";
+} from "../../../app/helper/auth/helperTexts";
+import { emailRegister } from "../../../app/store/userValidationAndUpdate";
+import { setAlertMsg } from "../../../app/store/alert";
+import { PLEASE_READ_RULES } from "../../../app/helper/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
 

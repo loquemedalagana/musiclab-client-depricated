@@ -16,23 +16,23 @@ import {
   Button,
   CardBody,
   CardFooter,
-} from "../../components/components";
+} from "../../../components/components";
 
-import EmailInput from "../SubComponents/EmailInput";
-import PasswordInput from "../SubComponents/PasswordInput";
+import EmailInput from "../../SubComponents/EmailInput";
+import PasswordInput from "../../SubComponents/PasswordInput";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
-import Loading from "../../components/Loading/LinearLoading";
-import FindPassword from "../Modals/FindPassword";
-import { loginUser } from "../../app/store/auth";
-import { setAlertMsg } from "../../app/store/alert";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import Loading from "../../../components/Loading/LinearLoading";
+import FindPassword from "../../Modals/FindPassword";
+import { loginUser } from "../../../app/store/auth";
+import { setAlertMsg } from "../../../app/store/alert";
 
 import SocialLogin from "./SocialLogin";
 import {
   EMAIL_NULL_ERROR,
   PASSWORD_NULL_ERROR,
-} from "../../app/helper/auth/authAlertMessages";
+} from "../../../app/helper/auth/authAlertMessages";
 
 const useStyles = makeStyles(styles);
 

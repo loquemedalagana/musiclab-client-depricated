@@ -8,7 +8,7 @@ import clsx from "clsx";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 import Check from "@material-ui/icons/Check";
 
-import { signupUser } from "../../app/store/userValidationAndUpdate";
+import { signupUser } from "../../../app/store/userValidationAndUpdate";
 
 import {
   Footer,
@@ -18,21 +18,21 @@ import {
   Button,
   CardBody,
   CardFooter,
-} from "../../components/components";
-import EmailInput from "../SubComponents/EmailInput";
-import PasswordInput from "../SubComponents/PasswordInput";
-import NameInput from "../SubComponents/NameInput";
+} from "../../../components/components";
+import EmailInput from "../../SubComponents/EmailInput";
+import PasswordInput from "../../SubComponents/PasswordInput";
+import NameInput from "../../SubComponents/NameInput";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
-import EmailValidation from "../../app/inputValidation/user/emailValidation";
-import DisplayNameValidation from "../../app/inputValidation/user/displayNameValidation";
-import PasswordValidation from "../../app/inputValidation/user/passwordValidation";
-import { PLEASE_READ_RULES } from "../../app/helper/auth/authAlertMessages";
+import EmailValidation from "../../../app/inputValidation/user/emailValidation";
+import DisplayNameValidation from "../../../app/inputValidation/user/displayNameValidation";
+import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
+import { PLEASE_READ_RULES } from "../../../app/helper/auth/authAlertMessages";
 
-import { CHECK_VALID_EMAIL } from "../../app/helper/auth/helperTexts";
-import { setAlertMsg } from "../../app/store/alert";
+import { CHECK_VALID_EMAIL } from "../../../app/helper/auth/helperTexts";
+import { setAlertMsg } from "../../../app/store/alert";
 import SocialLogin from "./SocialLogin";
 
 const useStyles = makeStyles(styles);

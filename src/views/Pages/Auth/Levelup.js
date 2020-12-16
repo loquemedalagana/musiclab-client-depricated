@@ -16,25 +16,25 @@ import {
   Button,
   CardBody,
   CardFooter,
-} from "../../components/components";
+} from "../../../components/components";
 
-import NameInput from "../SubComponents/NameInput";
-import DescriptionInput from "../SubComponents/DescriptionInput";
-import PasswordInput from "../SubComponents/PasswordInput";
-import GenderInput from "../SubComponents/GenderInput";
-import BirthdayInput from "../SubComponents/BirthdayInput";
+import NameInput from "../../SubComponents/NameInput";
+import DescriptionInput from "../../SubComponents/DescriptionInput";
+import PasswordInput from "../../SubComponents/PasswordInput";
+import GenderInput from "../../SubComponents/GenderInput";
+import BirthdayInput from "../../SubComponents/BirthdayInput";
 
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
+import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../../../assets/jss/material-kit-react/views/LevelupStyle";
 import {
   GENDER_NULL_ERROR,
   BIRTHDAY_NULL_ERROR,
   DESCRIPTION_NULL_ERROR,
   PLEASE_READ_RULES,
-} from "../../app/helper/auth/authAlertMessages";
-import { CHECK_VALID_INFO } from "../../app/helper/auth/helperTexts";
-import { setAlertMsg } from "../../app/store/alert";
-import { requestLevelup } from "../../app/store/userValidationAndUpdate";
+} from "../../../app/helper/auth/authAlertMessages";
+import { CHECK_VALID_INFO } from "../../../app/helper/auth/helperTexts";
+import { setAlertMsg } from "../../../app/store/alert";
+import { requestLevelup } from "../../../app/store/userValidationAndUpdate";
 
 const useStyles = makeStyles(styles);
 

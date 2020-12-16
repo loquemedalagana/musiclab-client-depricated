@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { SERVERURL } from "../../app/prod";
+import { SERVERURL } from "../../../app/prod";
 
 import { IconButton } from "@material-ui/core";
 
@@ -9,9 +9,9 @@ import {
   FacebookIcon,
   KakaoIcon,
   GoogleIcon,
-} from "../../assets/customIcons/SocialIcons/SocialIcons";
+} from "../../../assets/customIcons/SocialIcons/SocialIcons";
 
-import { CardHeader } from "../../components/components";
+import { CardHeader } from "../../../components/components";
 
 const SocialLoginURL = SERVERURL + "/api/users";
 const KakaoLoginURL = SocialLoginURL + "/kakao";
