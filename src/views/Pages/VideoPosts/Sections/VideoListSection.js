@@ -7,16 +7,16 @@ import {
   GridContainer,
   GridItem,
   PostPreview,
-} from "../../../components/components";
+} from "../../../../components/components";
 
 import {
   getPlayListURL,
   getVideoDataFromPlayList,
-} from "../../../app/videoData/videoFetchEndpoints";
+} from "../../../../app/videoData/videoFetchEndpoints";
 
-import styles from "../../../assets/jss/material-kit-react/views/videoListStyle";
+import styles from "../../../../assets/jss/material-kit-react/views/videoListStyle";
 
-import { officialChannelProfileData } from "../../../app/videoData/officialChannelData";
+import { officialChannelProfileData } from "../../../../app/videoData/officialChannelData";
 
 const useStyles = makeStyles(styles);
 

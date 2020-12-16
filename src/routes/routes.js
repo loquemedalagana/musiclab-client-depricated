@@ -15,8 +15,8 @@ import WaitingLevelup from "../views/Auth/WaitingLevelup";
 import InputEmailForSocialUsers from "../views/Auth/InputEmailForSocialUsers";
 
 import Profile from "../views/Pages/Profile/Profile";
-import VideoListByOfficialChannel from "../views/VideoPosts/VideoListByOfficialChannel";
-import VideoListByKeywords from "../views/VideoPosts/VideoListBySearchKeyword";
+import VideoListByOfficialChannel from "../views/Pages/VideoPosts/VideoListByOfficialChannel";
+import VideoListByKeywords from "../views/Pages/VideoPosts/VideoListBySearchKeyword";
 
 import UpdateProfile from "../views/Pages/Profile/UpdateProfile"; //not made yet
 import NotFound from "../views/Pages/Error/NotFound";
