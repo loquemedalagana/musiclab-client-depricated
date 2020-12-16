@@ -19,7 +19,7 @@ const NotFound = (props) => {
   const classes = useStyles();
 
   return (
-    <NoParallaxLayout>
+    <NoParallaxLayout isBigCard={true}>
       <GridItem xs={12} sm={12} md={6} lg={5}>
         <Card plain className={clsx(classes[cardAnimaton], classes.brand)}>
           <h1 className={classes.title}>404 Not Found</h1>

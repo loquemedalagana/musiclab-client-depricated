@@ -2,30 +2,25 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
 import qs from "qs";
-
-import { InputAdornment, FormHelperText } from "@material-ui/core";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 
 import {
-  Footer,
-  GridContainer,
   GridItem,
   Card,
   CardHeader,
   Button,
   CardBody,
-  CustomInput,
   CardFooter,
 } from "../../../components/components";
-import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
+
 import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
 import { resetPassword } from "../../../app/store/userValidationAndUpdate";
 import { setAlertMsg } from "../../../app/store/alert";
 import { PASSWORD_HELPER } from "../../../app/helper/auth/authAlertMessages";
 
 import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
+import PasswordInput from "../../SubComponents/PasswordInput";
 
 const useStyles = makeStyles(styles);
 
@@ -35,7 +30,7 @@ export const ResetPassword = (props) => {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
-  const { resetPassword, setAlertMsg, alerts, location } = props;
+  const { resetPassword, setAlertMsg, location } = props;
 
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
@@ -102,93 +97,45 @@ export const ResetPassword = (props) => {
   };
 
   return (
-    <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
-      <div className={classes.container}>
-        <GridContainer
-          justify={window.innerWidth > 959 ? "space-between" : "center"}
-        >
-          <GridItem xs={12} sm={12} md={4}>
-            <Card className={classes[cardAnimaton]}>
-              <form className={classes.form}>
-                <CardHeader color="primary" className={classes.cardHeader}>
-                  <h4>Please input your new password</h4>
-                </CardHeader>
-                <p className={classes.divider}>{PASSWORD_HELPER}</p>
-                <CardBody>
-                  <CustomInput
-                    labelText="Password"
-                    id="pass"
-                    error={passwordErr}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      type: "password",
-                      name: "password",
-                      value: password,
-                      inputRef: inputRef.password,
-                      onChange: onInputHandler,
-                      onKeyPress: handleKeyPress,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <VpnKeyIcon className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                      autoComplete: "off",
-                    }}
-                  />
-                  {alerts.map(
-                    ({ message, name, id }) =>
-                      name === "password" && (
-                        <FormHelperText
-                          key={id}
-                          style={{ textAlign: "right" }}
-                          error
-                        >
-                          {message}
-                        </FormHelperText>
-                      )
-                  )}
-                  <CustomInput
-                    labelText="Confirm Password"
-                    id="confirmpass"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    error={passwordErr}
-                    inputProps={{
-                      type: "password",
-                      name: "confirmPassword",
-                      value: confirmPassword,
-                      inputRef: inputRef.confirmPassword,
-                      onChange: onInputHandler,
-                      onKeyPress: handleKeyPress,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <VpnKeyIcon className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                      autoComplete: "off",
-                    }}
-                  />
-                </CardBody>
-                <CardFooter className={classes.cardFooter}>
-                  <Button
-                    simple
-                    color="primary"
-                    size="lg"
-                    onClick={onSubmitHandler}
-                  >
-                    Submit
-                  </Button>
-                </CardFooter>
-              </form>
-            </Card>
-          </GridItem>
-        </GridContainer>
-      </div>
-      <Footer whiteFont />
-    </div>
+    <NoParallaxLayout>
+      <GridItem xs={12} sm={12} md={4}>
+        <Card className={classes[cardAnimaton]}>
+          <form className={classes.form}>
+            <CardHeader color="primary" className={classes.cardHeader}>
+              <h4>Please input your new password</h4>
+            </CardHeader>
+            <p className={classes.divider}>{PASSWORD_HELPER}</p>
+            <CardBody>
+              <PasswordInput
+                error={passwordErr}
+                value={password}
+                inputRef={inputRef.password}
+                onChange={onInputHandler}
+                onKeyPress={handleKeyPress}
+              />
+              <PasswordInput
+                error={passwordErr}
+                isConfirm={true}
+                value={confirmPassword}
+                inputRef={inputRef.confirmPassword}
+                onChange={onInputHandler}
+                onKeyPress={handleKeyPress}
+              />
+            </CardBody>
+            <CardFooter className={classes.cardFooter}>
+              <Button
+                simple
+                color="primary"
+                size="lg"
+                onClick={onSubmitHandler}
+              >
+                Submit
+              </Button>
+            </CardFooter>
+          </form>
+        </Card>
+      </GridItem>
+    </NoParallaxLayout>
   );
 };
 

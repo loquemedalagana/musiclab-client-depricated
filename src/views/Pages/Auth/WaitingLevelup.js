@@ -5,16 +5,13 @@ import clsx from "clsx";
 import { connect } from "react-redux";
 import { Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Footer,
-  GridContainer,
-  GridItem,
-} from "../../../components/components";
+import { GridItem } from "../../../components/components";
+
+import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 
 import { sendEmailAuthCode } from "../../../app/store/userValidationAndUpdate";
 //import {setAlertMsg} from '../../app/store/alert';
 
-import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../../assets/jss/material-kit-react/views/WaitingLevelupStyle";
 
 const useStyles = makeStyles(styles);
@@ -29,41 +26,34 @@ const WaitingLevelup = (props) => {
   const { userEmail, sendEmailAuthCode } = props;
 
   return (
-    <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
-      <div className={classes.container}>
-        <GridContainer
-          justify={window.innerWidth > 959 ? "space-between" : "center"}
-        >
-          <GridItem xs={12} sm={12} md={6} lg={5}>
-            <div className={clsx(classes[cardAnimaton], classes.brand)}>
-              <h1 className={classes.title}>레벨업 대기중...</h1>
-              <p className={classes.content}>
-                이메일 인증코드를 통해 개인정보를 입력해주세요
-              </p>
+    <NoParallaxLayout isBigCard={true}>
+      <GridItem xs={12} sm={12} md={6} lg={5}>
+        <div className={clsx(classes[cardAnimaton], classes.brand)}>
+          <h1 className={classes.title}>레벨업 대기중...</h1>
+          <p className={classes.content}>
+            이메일 인증코드를 통해 개인정보를 입력해주세요
+          </p>
 
-              <Link
-                component="button"
-                className={classes.subtitle}
-                color="textPrimary"
-                onClick={() =>
-                  sendEmailAuthCode({
-                    email: userEmail,
-                  })
-                }
-              >
-                이메일 인증코드 재전송을 원하시나요?
-              </Link>
+          <Link
+            component="button"
+            className={classes.subtitle}
+            color="textPrimary"
+            onClick={() =>
+              sendEmailAuthCode({
+                email: userEmail,
+              })
+            }
+          >
+            이메일 인증코드 재전송을 원하시나요?
+          </Link>
 
-              <h3 className={classes.content}>Music Sseolprise by Inhyuk</h3>
-              <h3 className={classes.content}>
-                원조 자작돌, 야다 전인혁의 뮤직 썰!프라이즈
-              </h3>
-            </div>
-          </GridItem>
-        </GridContainer>
-      </div>
-      <Footer whiteFont />
-    </div>
+          <h3 className={classes.content}>Music Sseolprise by Inhyuk</h3>
+          <h3 className={classes.content}>
+            원조 자작돌, 야다 전인혁의 뮤직 썰!프라이즈
+          </h3>
+        </div>
+      </GridItem>
+    </NoParallaxLayout>
   );
 };
 
