@@ -10,11 +10,19 @@ const useStyles = makeStyles(styles);
 
 const EmailInput = (props) => {
   const classes = useStyles();
-  const { success, error, value, inputRef, onChange, onKeyPress } = props;
+  const {
+    success,
+    error,
+    value,
+    inputRef,
+    onChange,
+    onKeyPress,
+    isModal,
+  } = props;
   return (
     <CustomInput
       labelText="Email..."
-      id="email"
+      id={isModal ? "modal-email" : "email"}
       error={error}
       success={success}
       formControlProps={{
@@ -44,6 +52,7 @@ EmailInput.propTypes = {
   inputRef: PropTypes.object,
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
+  isModal: PropTypes.bool,
 };
 
 export default EmailInput;

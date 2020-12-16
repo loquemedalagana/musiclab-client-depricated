@@ -25,6 +25,7 @@ import {
   GridContainer,
   GridItem,
 } from "../../components/components";
+import EmailInput from "../Auth/subComponents/EmailInput";
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 
@@ -204,24 +205,11 @@ export const Help = (props) => {
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <CustomInput
-              labelText="Your Email"
-              id="useremail"
+            <EmailInput
+              isModal={true}
               error={emailModalErr}
-              formControlProps={{
-                fullWidth: true,
-              }}
-              inputProps={{
-                type: "email",
-                name: "email",
-                value: email,
-                onChange: onInputHandler,
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <Email className={classes.inputIconsColor} />
-                  </InputAdornment>
-                ),
-              }}
+              value={email}
+              onChange={onInputHandler}
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={12}>

@@ -23,6 +23,8 @@ import {
   CustomInput,
   CardFooter,
 } from "../../components/components";
+import EmailInput from "./subComponents/EmailInput";
+
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
 
@@ -187,26 +189,12 @@ export const Signup = (props) => {
                     }}
                   />
 
-                  <CustomInput
-                    labelText="Email..."
-                    id="email"
+                  <EmailInput
                     error={emailErr}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      type: "email",
-                      name: "email",
-                      value: email,
-                      inputRef: inputRef.email,
-                      onKeyPress: handleKeyPress,
-                      onChange: onInputHandler,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <Email className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                    }}
+                    value={email}
+                    inputRef={inputRef.email}
+                    onKeyPress={handleKeyPress}
+                    onChange={onInputHandler}
                   />
 
                   <CustomInput
