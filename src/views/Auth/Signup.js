@@ -6,9 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 
 import { InputAdornment, FormControlLabel, Checkbox } from "@material-ui/core";
-import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import Check from "@material-ui/icons/Check";
 
 import { signupUser } from "../../app/store/userValidationAndUpdate";
@@ -24,6 +22,7 @@ import {
   CardFooter,
 } from "../../components/components";
 import EmailInput from "./subComponents/EmailInput";
+import PasswordInput from "./subComponents/PasswordInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
@@ -196,51 +195,20 @@ export const Signup = (props) => {
                     onKeyPress={handleKeyPress}
                     onChange={onInputHandler}
                   />
-
-                  <CustomInput
-                    labelText="Password"
-                    id="pass"
+                  <PasswordInput
                     error={passwordErr}
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
-                    inputProps={{
-                      type: "password",
-                      name: "password",
-                      value: password,
-                      inputRef: inputRef.password,
-                      onChange: onInputHandler,
-                      onKeyPress: handleKeyPress,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <VpnKeyIcon className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                      autoComplete: "off",
-                    }}
+                    value={password}
+                    inputRef={inputRef.password}
+                    onChange={onInputHandler}
+                    onKeyPress={handleKeyPress}
                   />
-
-                  <CustomInput
-                    labelText="Confirm Password"
-                    id="confirmpass"
-                    formControlProps={{
-                      fullWidth: true,
-                    }}
+                  <PasswordInput
                     error={passwordErr}
-                    inputProps={{
-                      type: "password",
-                      name: "confirmPassword",
-                      value: confirmPassword,
-                      inputRef: inputRef.confirmPassword,
-                      onChange: onInputHandler,
-                      onKeyPress: handleKeyPress,
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <VpnKeyIcon className={classes.inputIconsColor} />
-                        </InputAdornment>
-                      ),
-                      autoComplete: "off",
-                    }}
+                    isConfirm={true}
+                    value={confirmPassword}
+                    inputRef={inputRef.confirmPassword}
+                    onChange={onInputHandler}
+                    onKeyPress={handleKeyPress}
                   />
 
                   <div

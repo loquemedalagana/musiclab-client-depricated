@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "../../../assets/jss/material-kit-react/views/LoginSignupStyle";
-import { CardBody, CustomInput } from "../../../components/components";
+import { CustomInput } from "../../../components/components";
 import { InputAdornment } from "@material-ui/core";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { makeStyles } from "@material-ui/core/styles";
@@ -10,7 +10,6 @@ const useStyles = makeStyles(styles);
 
 const getId = (props) => {
   const { isModal, isConfirm } = props;
-
   if (isModal) {
     return isConfirm ? "modal-confirm-password" : "modal-password";
   } else {
@@ -18,10 +17,23 @@ const getId = (props) => {
   }
 };
 
+const getLabelText = (props) => {
+  const { isNewPassword, isConfirm, isCurrentPassword } = props;
+  if (isCurrentPassword) return "Current Password";
+
+  if (isNewPassword) {
+    return isConfirm ? "Confirm New Password" : "New Password";
+  } else {
+    return isConfirm ? "New Password" : "Password";
+  }
+};
+
 const PasswordInput = (props) => {
   const classes = useStyles();
   const {
     isConfirm,
+    isCurrentPassword,
+    isNewPassword,
     success,
     error,
     value,
@@ -33,7 +45,7 @@ const PasswordInput = (props) => {
 
   return (
     <CustomInput
-      labelText="Password"
+      labelText={getLabelText({ isConfirm, isNewPassword, isCurrentPassword })}
       id={getId({ isConfirm, isModal })}
       success={success}
       error={error}
@@ -42,7 +54,7 @@ const PasswordInput = (props) => {
       }}
       inputProps={{
         type: "password",
-        name: "password",
+        name: isConfirm ? "confirmPassword" : "password",
         value,
         inputRef,
         onChange,
@@ -67,6 +79,8 @@ PasswordInput.propTypes = {
   onKeyPress: PropTypes.func,
   isModal: PropTypes.bool,
   isConfirm: PropTypes.bool,
+  isNewPassword: PropTypes.bool,
+  isCurrentPassword: PropTypes.bool,
 };
 
 export default PasswordInput;
