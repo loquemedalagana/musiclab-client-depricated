@@ -83,6 +83,20 @@ export const PersonalInfoEdit = (props) => {
     });
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      switch (e.target.name) {
+        case "displayName":
+        case "description":
+          return inputRef.password.current.focus();
+        case "newPassword":
+          return inputRef.confirmNewPassword.current.focus();
+        default:
+          return onSubmitHandler(e);
+      }
+    }
+  };
+
   const onImgInputHandler = async (file) => {
     const imgData = new FormData();
     imgData.append("image", file);
@@ -121,17 +135,13 @@ export const PersonalInfoEdit = (props) => {
     event.preventDefault();
     let ok = true;
 
-    if (displayName) {
-    }
-
     if (description && description.length > 200) {
       ok = false;
     }
 
     if (!password) {
-    }
-
-    if (newPassword) {
+      ok = false;
+      setAlertMsg("기존 비밀번호를 입력해주세요.", "error");
     }
 
     if (ok) {
@@ -182,7 +192,7 @@ export const PersonalInfoEdit = (props) => {
             value={displayName}
             onChange={onInputHandler}
             inputRef={inputRef.displayName}
-            onKeyPress={null}
+            onKeyPress={handleKeyPress}
           />
         </GridItem>
       </GridContainer>
@@ -193,7 +203,7 @@ export const PersonalInfoEdit = (props) => {
             value={description}
             onChange={onInputHandler}
             inputRef={inputRef.description}
-            onKeyPress={null}
+            onKeyPress={handleKeyPress}
           />
         </GridItem>
       </GridContainer>
@@ -221,7 +231,7 @@ export const PersonalInfoEdit = (props) => {
                 isConfirm={isConfirm}
                 inputRef={inputRef[name]}
                 onChange={onInputHandler}
-                onKeyPress={null}
+                onKeyPress={handleKeyPress}
               />
             </GridItem>
           )

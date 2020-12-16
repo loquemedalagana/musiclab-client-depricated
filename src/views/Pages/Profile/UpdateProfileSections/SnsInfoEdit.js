@@ -83,48 +83,12 @@ export const SnsInfoEdit = (props) => {
   } = props;
 
   const [inputs, setInputs] = useState({
-    blog: userInfo
-      ? userInfo.social
-        ? userInfo.social.blog
-          ? userInfo.social.blog
-          : ""
-        : ""
-      : "",
-    twitter: userInfo
-      ? userInfo.social
-        ? userInfo.social.twitter
-          ? userInfo.social.twitter
-          : ""
-        : ""
-      : "",
-    facebook: userInfo
-      ? userInfo.social
-        ? userInfo.social.facebook
-          ? userInfo.social.facebook
-          : ""
-        : ""
-      : "",
-    instagram: userInfo
-      ? userInfo.social
-        ? userInfo.social.instagram
-          ? userInfo.social.instagram
-          : ""
-        : ""
-      : "",
-    youtube: userInfo
-      ? userInfo.social
-        ? userInfo.social.youtube
-          ? userInfo.social.youtube
-          : ""
-        : ""
-      : "",
-    soundcloud: userInfo
-      ? userInfo.social
-        ? userInfo.social.soundcloud
-          ? userInfo.social.soundcloud
-          : ""
-        : ""
-      : "",
+    blog: "",
+    twitter: "",
+    facebook: "",
+    instagram: "",
+    youtube: "",
+    soundcloud: "",
   });
 
   const onInputHandler = (event) => {
