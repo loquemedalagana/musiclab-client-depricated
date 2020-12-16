@@ -14,7 +14,7 @@ import {
   getVideoDataFromPlayList,
 } from "../../../../app/videoData/videoFetchEndpoints";
 
-import styles from "../../../../assets/jss/material-kit-react/views/pages/previewListStyle";
+import styles from "../../../../assets/jss/material-kit-react/views/fragments/previewListStyle";
 
 import { officialChannelProfileData } from "../../../../app/videoData/officialChannelData";
 
