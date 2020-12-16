@@ -6,9 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
 import classNames from "classnames";
 
-import { InputAdornment, Link } from "@material-ui/core";
-import Email from "@material-ui/icons/Email";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import { Link } from "@material-ui/core";
 
 import {
   Footer,
@@ -17,11 +15,11 @@ import {
   Card,
   Button,
   CardBody,
-  CustomInput,
   CardFooter,
 } from "../../components/components";
 
 import EmailInput from "./subComponents/EmailInput";
+import PasswordInput from "./subComponents/PasswordInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LoginSignupStyle";
@@ -130,27 +128,12 @@ export const Login = (props) => {
                       onChange={onInputHandler}
                       onKeyPress={handleKeyPress}
                     />
-                    <CustomInput
-                      labelText="Password"
-                      id="pass"
+                    <PasswordInput
                       error={passwordErr}
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        type: "password",
-                        name: "password",
-                        value: password,
-                        inputRef: inputRef.password,
-                        onChange: onInputHandler,
-                        onKeyPress: handleKeyPress,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <VpnKeyIcon className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                        autoComplete: "off",
-                      }}
+                      value={password}
+                      inputRef={inputRef.password}
+                      onChange={onInputHandler}
+                      onKeyPress={handleKeyPress}
                     />
                     <div
                       className={classNames({
