@@ -19,9 +19,11 @@ import {
   DateTimePicker,
   CustomSelectInput,
 } from "../../components/components";
+
 import NameInput from "./subComponents/NameInput";
 import DescriptionInput from "./subComponents/DescriptionInput";
 import PasswordInput from "./subComponents/PasswordInput";
+import GenderInput from "./subComponents/GenderInput";
 
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/background";
 import styles from "../../assets/jss/material-kit-react/views/LevelupStyle";
@@ -197,6 +199,8 @@ export const Levelup = (props) => {
     }
   };
 
+  console.log(birthday);
+
   return (
     <div className={clsx(classes.pageHeader, defaultBgStyle().root)}>
       <div className={classes.container}>
@@ -227,27 +231,13 @@ export const Levelup = (props) => {
                       onKeyPress={handleKeyPress}
                       error={givenNameErr}
                     />
-                    <CustomSelectInput
-                      labelText="Gender(성별)"
-                      labelId="select-gender"
-                      id="simple-select"
+                    <GenderInput
                       success={genderSuccess}
                       error={genderErr}
-                      formControlProps={{
-                        fullWidth: true,
-                      }}
-                      inputProps={{
-                        varient: "filled",
-                        name: "gender",
-                        value: gender,
-                        inputRef: inputRef.gender,
-                        onClick: handleKeyPress,
-                        onChange: handleGenderChange,
-                      }}
-                      menuItemList={[
-                        { key: 1, value: "male", label: "Male(남성)" },
-                        { key: 2, value: "female", label: "Female(여성)" },
-                      ]}
+                      value={gender}
+                      inputRef={inputRef.gender}
+                      onClick={handleKeyPress}
+                      onChange={handleGenderChange}
                     />
                     <br /> <br />
                     <DateTimePicker
@@ -285,7 +275,7 @@ export const Levelup = (props) => {
                     />
                     <PasswordInput
                       isConfirm={true}
-                      error={password}
+                      error={passwordErr}
                       value={confirmPassword}
                       inputRef={inputRef.confirmPassword}
                       onChange={onInputHandler}
