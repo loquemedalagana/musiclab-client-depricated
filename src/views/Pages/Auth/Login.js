@@ -30,7 +30,7 @@ import FindPassword from "../../Modals/FindPassword";
 import { loginUser } from "../../../app/store/auth";
 import { setAlertMsg } from "../../../app/store/alert";
 
-import SocialLogin from "./SocialLogin";
+import SocialLoginSection from "./Sections/SocialLoginSection";
 import {
   EMAIL_NULL_ERROR,
   PASSWORD_NULL_ERROR,
@@ -116,7 +116,7 @@ export const Login = (props) => {
         <GridItem xs={12} sm={12} md={4}>
           <Card className={classes[cardAnimaton]}>
             <form className={classes.form}>
-              <SocialLogin color="primary" classes={classes} />
+              <SocialLoginSection color="primary" classes={classes} />
               <p className={classes.divider}>Or Be Classical</p>
               <CardBody>
                 <EmailInput

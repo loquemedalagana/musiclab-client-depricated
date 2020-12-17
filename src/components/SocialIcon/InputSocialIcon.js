@@ -11,11 +11,11 @@ import {
   YouTube,
 } from "@material-ui/icons";
 
-import { SOCIAL_LIST } from "../../app/helper/auth/social";
+import { SOCIAL_NAME_LIST } from "../../app/models/user/social";
 
 const useStyles = makeStyles(styles);
 
-const SocialIcon = (props) => {
+const InputSocialIcon = (props) => {
   const classes = useStyles();
   const { snsType } = props;
 
@@ -35,8 +35,8 @@ const SocialIcon = (props) => {
   }
 };
 
-SocialIcon.propTypes = {
-  snsType: PropTypes.oneOf(SOCIAL_LIST),
+InputSocialIcon.propTypes = {
+  snsType: PropTypes.oneOf(SOCIAL_NAME_LIST),
 };
 
-export default SocialIcon;
+export default InputSocialIcon;

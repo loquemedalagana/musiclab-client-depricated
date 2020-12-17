@@ -8,69 +8,13 @@ import {
   GridContainer,
   Button,
   CircularLoading,
-  CustomInput,
   GridItem,
 } from "../../../../components/components";
 
-import { InputAdornment } from "@material-ui/core";
-
-import {
-  Home as Blog,
-  Twitter,
-  Facebook,
-  Instagram,
-  YouTube,
-  Cloud as SoundCloud,
-} from "@material-ui/icons";
+import SocialInput from "../../../SubComponents/SocialInput";
 
 import { SOCIAL_NULL_ERROR } from "../../../../app/helper/auth/authAlertMessages";
-import { checkSnsLink } from "../../../../app/helper/auth/social";
-
-const SocialInputs = (inputs, onInputHandler, iconClass) => {
-  const getIcon = (key) => {
-    switch (key) {
-      case "youtube":
-        return <YouTube className={iconClass} />;
-      case "facebook":
-        return <Facebook className={iconClass} />;
-      case "twitter":
-        return <Twitter className={iconClass} />;
-      case "instagram":
-        return <Instagram className={iconClass} />;
-      case "soundcloud":
-        return <SoundCloud className={iconClass} />;
-      default:
-        return <Blog className={iconClass} />;
-    }
-  };
-
-  const data = Object.keys(inputs).map((key) => {
-    if (key === "password") return null;
-    return (
-      <GridItem key={key}>
-        <CustomInput
-          labelText={`your ${key} account...`}
-          id={key}
-          error={null}
-          formControlProps={{
-            fullWidth: true,
-          }}
-          inputProps={{
-            type: "text",
-            name: key,
-            value: inputs[key],
-            onChange: onInputHandler,
-            endAdornment: (
-              <InputAdornment position="end">{getIcon(key)}</InputAdornment>
-            ),
-          }}
-        />
-      </GridItem>
-    );
-  });
-
-  return data;
-};
+import { checkSnsLink } from "../../../../app/inputValidation/user/snsLinkValidation";
 
 export const SnsInfoEdit = (props) => {
   const {
@@ -99,6 +43,15 @@ export const SnsInfoEdit = (props) => {
     });
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      switch (e.target.name) {
+        default:
+          return onSubmitHandler(e);
+      }
+    }
+  };
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
     const errorMessages = [];
@@ -121,15 +74,14 @@ export const SnsInfoEdit = (props) => {
 
     if (ok()) {
       return isChanged
-        ? updateUserSocial(inputs)
+        ? //  ? updateUserSocial(inputs)
+          console.log(inputs)
         : setAlertMsg(SOCIAL_NULL_ERROR, "error");
     }
 
     console.log(errorMessages);
     errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
   };
-
-  //console.log(inputs);
 
   if (userInfo && userInfo.social) {
     //console.log(JSON.stringify(userInfo.social));
@@ -140,7 +92,16 @@ export const SnsInfoEdit = (props) => {
   return (
     <div className={classes.tabBody}>
       <GridContainer>
-        {SocialInputs(inputs, onInputHandler, classes.inputIconsColor)}
+        {Object.keys(inputs).map((snsType, key) => (
+          <GridItem key={key}>
+            <SocialInput
+              snsType={snsType}
+              value={inputs[snsType]}
+              onChange={onInputHandler}
+              onKeyPress={handleKeyPress}
+            />
+          </GridItem>
+        ))}
       </GridContainer>
 
       <GridContainer

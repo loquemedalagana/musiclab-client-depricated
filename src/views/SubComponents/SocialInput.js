@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { CustomInput } from "../../components/components";
 import { InputAdornment } from "@material-ui/core";
-import SocialIcon from "../../components/SocialIcon/SocialIcon";
-import { SOCIAL_LIST } from "../../app/helper/auth/social";
+import InputSocialIcon from "../../components/SocialIcon/InputSocialIcon";
+import { SOCIAL_NAME_LIST } from "../../app/models/user/social";
 
 const SocialInput = (props) => {
   const {
@@ -19,6 +19,7 @@ const SocialInput = (props) => {
   return (
     <CustomInput
       labelText={`your ${snsType} account...`}
+      id={snsType}
       error={error}
       success={success}
       formControlProps={{
@@ -33,7 +34,7 @@ const SocialInput = (props) => {
         inputRef,
         endAdornment: (
           <InputAdornment position="end">
-            <SocialIcon snsType={snsType} />
+            <InputSocialIcon snsType={snsType} />
           </InputAdornment>
         ),
       }}
@@ -49,7 +50,7 @@ SocialInput.propTypes = {
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
   isModal: PropTypes.bool,
-  snsType: PropTypes.oneOf(SOCIAL_LIST),
+  snsType: PropTypes.oneOf(SOCIAL_NAME_LIST),
 };
 
 export default SocialInput;

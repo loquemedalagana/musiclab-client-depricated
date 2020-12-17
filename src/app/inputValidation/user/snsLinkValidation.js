@@ -5,16 +5,7 @@ import {
   soundcloudReg,
   twitterReg,
   youtubeReg,
-} from "./regex";
-
-export const SOCIAL_LIST = [
-  "youtube",
-  "twitter",
-  "instagram",
-  "soundcloud",
-  "facebook",
-  "blog",
-];
+} from "../../models/user/social";
 
 export const checkSnsLink = (type, link) => {
   switch (type) {

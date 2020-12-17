@@ -29,7 +29,7 @@ import { PLEASE_READ_RULES } from "../../../app/helper/auth/authAlertMessages";
 
 import { CHECK_VALID_EMAIL } from "../../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../../app/store/alert";
-import SocialLogin from "./SocialLogin";
+import SocialLoginSection from "./Sections/SocialLoginSection";
 
 const useStyles = makeStyles(styles);
 
@@ -155,7 +155,7 @@ export const Signup = (props) => {
       <GridItem xs={12} sm={12} md={5} lg={4}>
         <Card className={classes[cardAnimaton]}>
           <form className={classes.form}>
-            <SocialLogin color="primary" classes={classes} />
+            <SocialLoginSection color="primary" classes={classes} />
             <p className={classes.divider}>Or Be Classical</p>
             <CardBody>
               <NameInput

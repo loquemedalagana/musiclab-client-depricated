@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { SERVERURL } from "../../../app/prod";
+import { SERVERURL } from "../../../../app/prod";
 
 import { IconButton } from "@material-ui/core";
 
@@ -9,16 +9,16 @@ import {
   FacebookIcon,
   KakaoIcon,
   GoogleIcon,
-} from "../../../assets/customIcons/SocialIcons/SocialIcons";
+} from "../../../../assets/customIcons/SocialIcons/SocialIcons";
 
-import { CardHeader } from "../../../components/components";
+import { CardHeader } from "../../../../components/components";
 
 const SocialLoginURL = SERVERURL + "/api/users";
 const KakaoLoginURL = SocialLoginURL + "/kakao";
 const GoogleLoginURL = SocialLoginURL + "/google";
 const FacebookLoginURL = SocialLoginURL + "/facebook";
 
-const SocialLogin = (props) => {
+const SocialLoginSection = (props) => {
   const { color, classes } = props;
 
   const GoogleLogin = () => {
@@ -49,9 +49,9 @@ const SocialLogin = (props) => {
   );
 };
 
-SocialLogin.propTypes = {
+SocialLoginSection.propTypes = {
   color: PropTypes.string,
   classes: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
-export default SocialLogin;
+export default SocialLoginSection;
