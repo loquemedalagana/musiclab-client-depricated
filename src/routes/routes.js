@@ -70,7 +70,7 @@ const TestRoutes = () => (
       />
       <Route
         exact
-        path={`${VIDEO_SEARCH_ROUTE}/:keywords?`}
+        path={`${VIDEO_SEARCH_ROUTE}/:search?`}
         component={VideoListBySearchKeyword}
       />
 

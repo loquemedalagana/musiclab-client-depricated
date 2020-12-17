@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/landing/VideoPageLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/landing/VideoPageLink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
       <workItem from="1608077073905" duration="40792000" />
-      <workItem from="1608160671276" duration="19519000" />
+      <workItem from="1608160671276" duration="20298000" />
     </task>
     <servers />
   </component>
