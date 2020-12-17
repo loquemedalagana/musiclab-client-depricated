@@ -46,6 +46,8 @@ import Clearfix from "./Clearfix/Clearfix";
 import PostPreview from "./Post/PostPreview";
 import PostMenuData from "./Post/PostMenuData";
 
+import SocialIcon from "./SocialIcon/SocialIcon";
+
 export {
   Header,
   HeaderLinks,
@@ -85,4 +87,5 @@ export {
   Clearfix,
   PostPreview,
   PostMenuData,
+  SocialIcon,
 };

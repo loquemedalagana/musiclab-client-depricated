@@ -24,7 +24,7 @@ import {
 } from "@material-ui/icons";
 
 import { SOCIAL_NULL_ERROR } from "../../../../app/helper/auth/authAlertMessages";
-import { checkSnsLink } from "../../../../app/helper/auth/util";
+import { checkSnsLink } from "../../../../app/helper/auth/social";
 
 const SocialInputs = (inputs, onInputHandler, iconClass) => {
   const getIcon = (key) => {

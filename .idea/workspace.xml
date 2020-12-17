@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/socialIconStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SocialIcon/SocialIcon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/PasswordInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/helper/auth/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/helper/auth/social.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/fragments" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,7 +82,8 @@
       <workItem from="1607819761014" duration="602000" />
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
-      <workItem from="1608077073905" duration="39818000" />
+      <workItem from="1608077073905" duration="40792000" />
+      <workItem from="1608160671276" duration="3407000" />
     </task>
     <servers />
   </component>

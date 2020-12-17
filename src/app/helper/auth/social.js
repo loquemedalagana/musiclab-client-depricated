@@ -7,6 +7,15 @@ import {
   youtubeReg,
 } from "./regex";
 
+export const SOCIAL_LIST = [
+  "youtube",
+  "twitter",
+  "instagram",
+  "soundcloud",
+  "facebook",
+  "blog",
+];
+
 export const checkSnsLink = (type, link) => {
   switch (type) {
     case "youtube":
