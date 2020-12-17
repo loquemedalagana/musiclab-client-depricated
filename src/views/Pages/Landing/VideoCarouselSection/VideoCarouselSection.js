@@ -11,6 +11,7 @@ import NotAvailable from "../../../SubComponents/landing/NotAvailable";
 
 // page subcomponents
 import LandingPageVideoTitle from "../../../SubComponents/landing/LandingPageVideoTitle";
+import VideoPageLink from "../../../SubComponents/landing/VideoPageLink";
 
 // route constants
 import { NOT_AVAILABLE_ROUTE } from "../../../../routes/params/error";
@@ -117,13 +118,11 @@ export const VideoCarouselSection = (props) => {
           />
           {/*채널 상세 페이지*/}
           {channelRoute && !isMyList && (
-            <GridItem xs={12} sm={12} md={11} style={{ textAlign: "right" }}>
-              <Link to={channelRoute}>
-                <h5 className={classes.link}>
-                  view more about {videoCategoryTitle}...
-                </h5>
-              </Link>
-            </GridItem>
+            <VideoPageLink routeLink={channelRoute}>
+              <h5 className={classes.link}>
+                view more about {videoCategoryTitle}...
+              </h5>
+            </VideoPageLink>
           )}
           {isMyList && (
             <GridItem xs={12} sm={12} md={11} style={{ textAlign: "right" }}>
