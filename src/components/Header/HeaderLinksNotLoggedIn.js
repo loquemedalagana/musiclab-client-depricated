@@ -19,6 +19,11 @@ import {
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import Button from "../CustomButtons/Button.js";
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
+
+// route constants
+import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
+import {SIGNUP_ROUTE, LOGIN_ROUTE} from "../../routes/params/auth";
+
 const useStyles = makeStyles(styles);
 
 const HeaderLinksNotLoggedIn = (props) => {
@@ -64,7 +69,7 @@ const HeaderLinksNotLoggedIn = (props) => {
           color='transparent'
           className={classes.navLink}
           onClick={() => {
-            history.push('/login');
+            history.push(LOGIN_ROUTE);
             setMobileOpen(false);
           }}
         >
@@ -76,7 +81,7 @@ const HeaderLinksNotLoggedIn = (props) => {
           color='transparent'
           className={classes.navLink}
           onClick={() => {
-            history.push('/signup');
+            history.push(SIGNUP_ROUTE);
             setMobileOpen(false);
           }}
         >
@@ -92,7 +97,7 @@ const HeaderLinksNotLoggedIn = (props) => {
         >
           <Button
             color="transparent"
-            href="https://www.youtube.com/channel/UChNtl7wRLF6x4B4fp7KCyhQ"
+            href={jihbandOfficialYoutubeLink}
             target="_blank"
             className={classes.navLink}
           >

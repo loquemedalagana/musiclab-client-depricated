@@ -18,8 +18,8 @@ import {
   CardFooter,
 } from "../../../components/components";
 
-import EmailInput from "../../SubComponents/EmailInput";
-import PasswordInput from "../../SubComponents/PasswordInput";
+import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
+import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 

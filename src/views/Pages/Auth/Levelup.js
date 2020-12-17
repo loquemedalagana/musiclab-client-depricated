@@ -17,11 +17,11 @@ import {
   CardFooter,
 } from "../../../components/components";
 
-import NameInput from "../../SubComponents/NameInput";
-import DescriptionInput from "../../SubComponents/DescriptionInput";
-import PasswordInput from "../../SubComponents/PasswordInput";
-import GenderInput from "../../SubComponents/GenderInput";
-import BirthdayInput from "../../SubComponents/BirthdayInput";
+import NameInput from "../../SubComponents/authAndProfile/NameInput";
+import DescriptionInput from "../../SubComponents/authAndProfile/DescriptionInput";
+import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
+import GenderInput from "../../SubComponents/authAndProfile/GenderInput";
+import BirthdayInput from "../../SubComponents/authAndProfile/BirthdayInput";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import {

@@ -1,40 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CustomInput } from "../../components/components";
 import { InputAdornment } from "@material-ui/core";
-import InputSocialIcon from "../../components/SocialIcon/InputSocialIcon";
-import { SOCIAL_NAME_LIST } from "../../app/models/user/social";
+import Email from "@material-ui/icons/Email";
+import { makeStyles } from "@material-ui/core/styles";
+import { CustomInput } from "../../../components/components";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 
-const SocialInput = (props) => {
+const useStyles = makeStyles(styles);
+
+const EmailInput = (props) => {
+  const classes = useStyles();
   const {
-    snsType,
     success,
     error,
     value,
     inputRef,
     onChange,
     onKeyPress,
+    isModal,
   } = props;
-
   return (
     <CustomInput
-      labelText={`your ${snsType} account...`}
-      id={snsType}
+      labelText="Email..."
+      id={isModal ? "modal-email" : "email"}
       error={error}
       success={success}
       formControlProps={{
         fullWidth: true,
       }}
       inputProps={{
-        type: "text",
-        name: snsType,
+        type: "email",
+        name: "email",
         value,
+        inputRef,
         onChange,
         onKeyPress,
-        inputRef,
         endAdornment: (
           <InputAdornment position="end">
-            <InputSocialIcon snsType={snsType} />
+            <Email className={classes.inputIconsColor} />
           </InputAdornment>
         ),
       }}
@@ -42,7 +45,7 @@ const SocialInput = (props) => {
   );
 };
 
-SocialInput.propTypes = {
+EmailInput.propTypes = {
   success: PropTypes.bool,
   error: PropTypes.bool,
   value: PropTypes.string,
@@ -50,7 +53,6 @@ SocialInput.propTypes = {
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
   isModal: PropTypes.bool,
-  snsType: PropTypes.oneOf(SOCIAL_NAME_LIST),
 };
 
-export default SocialInput;
+export default EmailInput;

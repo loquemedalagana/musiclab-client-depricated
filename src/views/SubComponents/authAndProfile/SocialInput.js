@@ -1,43 +1,40 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { CustomInput } from "../../../components/components";
 import { InputAdornment } from "@material-ui/core";
-import Email from "@material-ui/icons/Email";
-import { makeStyles } from "@material-ui/core/styles";
-import { CustomInput } from "../../components/components";
-import styles from "../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
+import InputSocialIcon from "../../../components/SocialIcon/InputSocialIcon";
+import { SOCIAL_NAME_LIST } from "../../../app/models/user/social";
 
-const useStyles = makeStyles(styles);
-
-const EmailInput = (props) => {
-  const classes = useStyles();
+const SocialInput = (props) => {
   const {
+    snsType,
     success,
     error,
     value,
     inputRef,
     onChange,
     onKeyPress,
-    isModal,
   } = props;
+
   return (
     <CustomInput
-      labelText="Email..."
-      id={isModal ? "modal-email" : "email"}
+      labelText={`your ${snsType} account...`}
+      id={snsType}
       error={error}
       success={success}
       formControlProps={{
         fullWidth: true,
       }}
       inputProps={{
-        type: "email",
-        name: "email",
+        type: "text",
+        name: snsType,
         value,
-        inputRef,
         onChange,
         onKeyPress,
+        inputRef,
         endAdornment: (
           <InputAdornment position="end">
-            <Email className={classes.inputIconsColor} />
+            <InputSocialIcon snsType={snsType} />
           </InputAdornment>
         ),
       }}
@@ -45,7 +42,7 @@ const EmailInput = (props) => {
   );
 };
 
-EmailInput.propTypes = {
+SocialInput.propTypes = {
   success: PropTypes.bool,
   error: PropTypes.bool,
   value: PropTypes.string,
@@ -53,6 +50,7 @@ EmailInput.propTypes = {
   onChange: PropTypes.func,
   onKeyPress: PropTypes.func,
   isModal: PropTypes.bool,
+  snsType: PropTypes.oneOf(SOCIAL_NAME_LIST),
 };
 
-export default EmailInput;
+export default SocialInput;

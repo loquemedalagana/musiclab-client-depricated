@@ -5,9 +5,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import Skeleton from "@material-ui/lab/Skeleton";
 import PrintVideoCarousel from "./PrintVideoCarousel";
 
+// custom components
 import { GridContainer, GridItem } from "../../../../components/components";
+import NotAvailable from "../../../SubComponents/landing/NotAvailable";
 
-import { SampleVideoList } from "../../../../app/videoData/SampleData/SampleVideoData";
+// page subcomponents
+import LandingPageVideoTitle from "../../../SubComponents/landing/LandingPageVideoTitle";
+
+// route constants
+import { NOT_FOUND_ROUTE } from "../../../../routes/params/error";
+
+import { SampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 import {
@@ -16,26 +24,16 @@ import {
   getPlayListURL,
   getLatestVideoListURL,
   getHotVideoListURL,
-} from "../../../../app/videoData/videoFetchEndpoints";
+} from "../../../../app/api/video/youtubeFetchEndpoints";
 
 const useStyles = makeStyles(styles);
 
 //print title
-const printTitle = (categoryTitle, style) => (
+const printTitle = ({ categoryTitle, style }) => (
   <GridItem xs={12} sm={12} md={11}>
     <h2 className={style}>{categoryTitle}</h2>
   </GridItem>
 );
-
-const NotAvailable = ({ className }) => (
-  <GridItem xs={12} sm={12} md={11}>
-    <h3 className={className}>준비중입니다...</h3>
-  </GridItem>
-);
-
-NotAvailable.propTypes = {
-  className: PropTypes.string,
-};
 
 const getPlayListEndpoint = (categoryTitle) => {
   switch (categoryTitle) {
@@ -48,36 +46,19 @@ const getPlayListEndpoint = (categoryTitle) => {
     case "Latest Videos of Inhyuk":
       return getLatestVideoListURL([], 10);
     case "My List":
-      return "Not Available"; //will be changed based on redux
+      return "Not Available";
     default:
-      return null;
-  }
-};
-
-//return channel detail link
-const getChannelRoute = (categoryTitle) => {
-  switch (categoryTitle) {
-    case "Jeon Inhyuk Band Official Channel":
-      return "/officialvideolist/jihbandofficial";
-    case "Music SSeolprise by Jeon Inhyuk":
-      return null; //will be added
-
-    case "Hot Videos of Inhyuk":
-    case "Latest Videos of Inhyuk":
-      return "/videolistbykeywords";
-    default:
-      //return search result
       return null;
   }
 };
 
 export const VideoCarouselSection = (props) => {
   const classes = useStyles();
-  const { categoryTitle, userData } = props;
+  const { videoCategoryTitle, userData } = props;
 
-  const isMyList = categoryTitle === "My List";
-  const channelRoute = getChannelRoute(categoryTitle);
-  const ENDPOINT = getPlayListEndpoint(categoryTitle);
+  const isMyList = videoCategoryTitle === "My List";
+  const channelRoute = NOT_FOUND_ROUTE;
+  const ENDPOINT = getPlayListEndpoint(videoCategoryTitle);
 
   //if my list exists,
 
@@ -119,7 +100,10 @@ export const VideoCarouselSection = (props) => {
       <div className={classes.section}>
         <div className={classes.container}>
           <GridContainer justify="center">
-            {printTitle(categoryTitle, classes.title)}
+            <LandingPageVideoTitle
+              landingPageVideoCategoryTitle={videoCategoryTitle}
+              className={classes.title}
+            />
             <NotAvailable className={classes.detail} />
           </GridContainer>
         </div>
@@ -130,7 +114,10 @@ export const VideoCarouselSection = (props) => {
     <div className={classes.section}>
       <div className={classes.container}>
         <GridContainer justify="center">
-          {printTitle(categoryTitle, classes.title)}
+          <LandingPageVideoTitle
+            landingPageVideoCategoryTitle={videoCategoryTitle}
+            className={classes.title}
+          />
           <PrintVideoCarousel
             resultData={resultData && !error ? resultData : SampleVideoList}
           />
@@ -139,7 +126,7 @@ export const VideoCarouselSection = (props) => {
             <GridItem xs={12} sm={12} md={11} style={{ textAlign: "right" }}>
               <Link to={channelRoute}>
                 <h5 className={classes.link}>
-                  view more about {categoryTitle}...
+                  view more about {videoCategoryTitle}...
                 </h5>
               </Link>
             </GridItem>
@@ -157,7 +144,7 @@ export const VideoCarouselSection = (props) => {
 
 VideoCarouselSection.propTypes = {
   userData: PropTypes.object,
-  categoryTitle: PropTypes.string,
+  videoCategoryTitle: PropTypes.string,
 };
 
 export default React.memo(VideoCarouselSection);

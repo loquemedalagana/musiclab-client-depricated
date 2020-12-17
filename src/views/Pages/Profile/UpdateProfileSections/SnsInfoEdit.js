@@ -11,7 +11,7 @@ import {
   GridItem,
 } from "../../../../components/components";
 
-import SocialInput from "../../../SubComponents/SocialInput";
+import SocialInput from "../../../SubComponents/authAndProfile/SocialInput";
 
 import { SOCIAL_NULL_ERROR } from "../../../../app/helper/auth/authAlertMessages";
 import { checkSnsLink } from "../../../../app/inputValidation/user/snsLinkValidation";

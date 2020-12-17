@@ -29,6 +29,10 @@ import {logoutUser} from '../../app/store/auth';
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
 import Button from "../CustomButtons/Button.js";
 import styles from "../../assets/jss/material-kit-react/components/headerLinksStyle.js";
+
+// route constants
+import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
+
 const useStyles = makeStyles(styles);
 
 const HeaderLinks = (props) => {
@@ -194,7 +198,7 @@ const HeaderLinks = (props) => {
         >
           <Button
             color="transparent"
-            href="https://www.youtube.com/channel/UChNtl7wRLF6x4B4fp7KCyhQ"
+            href={jihbandOfficialYoutubeLink}
             target="_blank"
             className={classes.navLink}
           >

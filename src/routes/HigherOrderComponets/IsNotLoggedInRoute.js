@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { EMAIL_REGISTER_ROUTE } from "../params/auth";
 import Loading from "../../components/Loading/LinearLoading";
 
 const IsNotLoggedInRoute = ({
@@ -26,7 +27,7 @@ const IsNotLoggedInRoute = ({
         ) : user.userData.snsId &&
           !user.userData.email &&
           user.userData.points < 0 ? (
-          <Redirect to="/emailregister" />
+          <Redirect to={EMAIL_REGISTER_ROUTE} />
         ) : (
           <Redirect to="/" />
         )

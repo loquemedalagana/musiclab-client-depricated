@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { EMAIL_REGISTER_ROUTE, LOGIN_ROUTE } from "../params/auth";
 import Loading from "../../components/Loading/LinearLoading";
 
 const NonMemberRoute = ({ component: Component, user, isChanged, ...rest }) => (
@@ -14,7 +15,7 @@ const NonMemberRoute = ({ component: Component, user, isChanged, ...rest }) => (
       ) : user.auth ? (
         user.userData.points < 0 ? (
           user.userData.snsId && !user.userData.email ? (
-            <Redirect to="/emailregister" />
+            <Redirect to={EMAIL_REGISTER_ROUTE} />
           ) : (
             <Component {...props} />
           )
@@ -22,7 +23,7 @@ const NonMemberRoute = ({ component: Component, user, isChanged, ...rest }) => (
           <Redirect to="/" />
         )
       ) : (
-        <Redirect to="/login" />
+        <Redirect to={LOGIN_ROUTE} />
       )
     }
   />

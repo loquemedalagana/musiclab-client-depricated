@@ -20,7 +20,7 @@ import { setAlertMsg } from "../../../app/store/alert";
 import { PASSWORD_HELPER } from "../../../app/helper/auth/authAlertMessages";
 
 import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
-import PasswordInput from "../../SubComponents/PasswordInput";
+import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 
 const useStyles = makeStyles(styles);
 

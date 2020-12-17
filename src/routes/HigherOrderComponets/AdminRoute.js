@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { LOGIN_ROUTE } from "../params/auth";
 import Loading from "../../components/Loading/LinearLoading";
 
 const AdminRoute = ({ component: Component, user, ...rest }) => (
@@ -18,7 +19,7 @@ const AdminRoute = ({ component: Component, user, ...rest }) => (
           <Redirect to="/" />
         )
       ) : (
-        <Redirect to="/login" />
+        <Redirect to={LOGIN_ROUTE} />
       )
     }
   />

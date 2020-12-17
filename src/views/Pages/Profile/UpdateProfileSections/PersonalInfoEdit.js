@@ -17,9 +17,9 @@ import {
   CircularLoading,
 } from "../../../../components/components";
 
-import NameInput from "../../../SubComponents/NameInput";
-import DescriptionInput from "../../../SubComponents/DescriptionInput";
-import PasswordInput from "../../../SubComponents/PasswordInput";
+import NameInput from "../../../SubComponents/authAndProfile/NameInput";
+import DescriptionInput from "../../../SubComponents/authAndProfile/DescriptionInput";
+import PasswordInput from "../../../SubComponents/authAndProfile/PasswordInput";
 
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
 import { PROFILE_PHOTO_SERVER_ERROR } from "../../../../app/helper/auth/authAlertMessages";

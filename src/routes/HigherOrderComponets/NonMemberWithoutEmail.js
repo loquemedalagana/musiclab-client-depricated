@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import { WAITING_LEVELUP_ROUTE, LOGIN_ROUTE } from "../params/auth";
 import Loading from "../../components/Loading/LinearLoading";
 
 const NonMemberRoute = ({ component: Component, user, isChanged, ...rest }) => (
@@ -21,12 +22,12 @@ const NonMemberRoute = ({ component: Component, user, isChanged, ...rest }) => (
             <Component {...props} />
           )
         ) : user.userData.points < 0 ? (
-          <Redirect to="/waitinglevelup" />
+          <Redirect to={WAITING_LEVELUP_ROUTE} />
         ) : (
           <Redirect to="/" />
         )
       ) : (
-        <Redirect to="/login" />
+        <Redirect to={LOGIN_ROUTE} />
       )
     }
   />

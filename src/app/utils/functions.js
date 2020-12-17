@@ -3,13 +3,6 @@ export const getUnreadElementsLength = (elements) => {
   return elements.filter((element) => element.isRead === false).length;
 };
 
-export const getDateKor = (dateformat) => {
-  return `${dateformat.substring(0, 4)}년 ${dateformat.substring(
-    5,
-    7
-  )}월 ${dateformat.substring(8, 10)}일`;
-};
-
 export const camelToSpace = (camelCase) =>
   camelCase.replace(
     /.[A-Z]/g,

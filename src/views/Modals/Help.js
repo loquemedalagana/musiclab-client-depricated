@@ -24,8 +24,8 @@ import {
   GridContainer,
   GridItem,
 } from "../../components/components";
-import EmailInput from "../SubComponents/EmailInput";
-import NameInput from "../SubComponents/NameInput";
+import EmailInput from "../SubComponents/authAndProfile/EmailInput";
+import NameInput from "../SubComponents/authAndProfile/NameInput";
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 

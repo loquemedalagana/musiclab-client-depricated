@@ -6,8 +6,9 @@ import qs from "qs";
 import fetcher from "../../app/api/fetcher";
 import useSWR from "swr";
 
+import { NOT_FOUND_ROUTE } from "../params/error";
+
 import Loading from "../../components/Loading/LinearLoading";
-//levelup, passwordreset page
 
 const TokenRoute = ({ component: Component, isChanged, location, ...rest }) => {
   const query = qs.parse(location.search, {
@@ -35,7 +36,7 @@ const TokenRoute = ({ component: Component, isChanged, location, ...rest }) => {
         LoadingToken ? (
           <Loading />
         ) : error || isExpired ? (
-          <Redirect to="/notfound" />
+          <Redirect to={NOT_FOUND_ROUTE} />
         ) : isChanged ? (
           <Redirect to="/" />
         ) : (

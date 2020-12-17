@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DateTimePicker } from "../../components/components";
+import { DateTimePicker } from "../../../components/components";
 
 const BirthdayInput = (props) => {
   const { success, error, value, inputRef, onChange, onClick, isModal } = props;

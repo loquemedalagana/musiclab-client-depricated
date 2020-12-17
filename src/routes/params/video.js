@@ -1,1 +1,2 @@
-//라우트를 텍스트 형태로 리턴하는 객체
+export const VIDEO_ROUTE = "/video";
+export const VIDEO_SEARCH_ROUTE = "";

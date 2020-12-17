@@ -14,7 +14,7 @@ import {
 } from "../../../components/components";
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 
-import { officialChannelProfileData } from "../../../app/videoData/officialChannelData";
+import { officialChannelProfileData } from "../../../app/data/yada/officialChannelData";
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";

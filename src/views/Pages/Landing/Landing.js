@@ -7,19 +7,15 @@ import MediumParallaxLayout from "../../Layouts/MediumParallaxLayout";
 import VideoCarouselSection from "./VideoCarouselSection/VideoCarouselSection";
 //import { appDescription, appShortTitle } from "../../../app/helper/appTitle";
 
-export const Landing = (props) => {
-  const { userData, userLoading } = props;
+export const Landing = () => {
+  //const { userData, userLoading } = props;
 
   return (
     <MediumParallaxLayout>
-      {userData && !userLoading && userData.points >= 0 ? (
-        <VideoCarouselSection categoryTitle="My List" userData={userData} />
-      ) : null}
-
-      <VideoCarouselSection categoryTitle="Jeon Inhyuk Band Official Channel" />
-      <VideoCarouselSection categoryTitle="Music SSeolprise by Jeon Inhyuk" />
-      <VideoCarouselSection categoryTitle="Hot Videos of Inhyuk" />
-      <VideoCarouselSection categoryTitle="Latest Videos of Inhyuk" />
+      <VideoCarouselSection videoCategoryTitle="Jeon Inhyuk Band Official Channel" />
+      <VideoCarouselSection videoCategoryTitle="Music SSeolprise by Jeon Inhyuk" />
+      <VideoCarouselSection videoCategoryTitle="Hot Videos of Inhyuk" />
+      <VideoCarouselSection videoCategoryTitle="Latest Videos of Inhyuk" />
     </MediumParallaxLayout>
   );
 };

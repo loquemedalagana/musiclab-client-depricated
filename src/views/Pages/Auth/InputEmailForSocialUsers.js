@@ -17,7 +17,7 @@ import {
   CardFooter,
 } from "../../../components/components";
 
-import EmailInput from "../../SubComponents/EmailInput";
+import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import EmailValidation from "../../../app/inputValidation/user/emailValidation";

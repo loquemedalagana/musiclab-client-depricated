@@ -41,7 +41,7 @@ import NotFound from "../Error/NotFound";
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
-import { getDateKor } from "../../../app/utils/functions";
+import { getDateKor } from "../../../app/models/common/getDate";
 
 const useStyles = makeStyles(styles);
 

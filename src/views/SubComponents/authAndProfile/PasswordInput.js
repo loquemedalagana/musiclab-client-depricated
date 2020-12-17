@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
-import { CustomInput } from "../../components/components";
+import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
+import { CustomInput } from "../../../components/components";
 import { InputAdornment } from "@material-ui/core";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { makeStyles } from "@material-ui/core/styles";

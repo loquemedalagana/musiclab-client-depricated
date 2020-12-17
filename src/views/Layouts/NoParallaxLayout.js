@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { Footer, GridContainer } from "../../components/components";
 import styles from "../../assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import { isDesktop } from "../../app/helper/responsiveUI/uiManagers";
+import { isDesktop } from "../../app/helper/viewControllers/uiManagers";
 
 const useStyles = makeStyles(styles);
 

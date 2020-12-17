@@ -2,20 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/inputValidation/user/snsLinkValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/models/user/social.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SocialIcon/SocialIconButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/models/common/getDate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/params/error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/SubComponents/landing/LandingPageVideoTitle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/SubComponents/landing/NotAvailable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/SubComponents/landing/VideoPageLink.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/auth/regex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/helper/auth/social.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SocialIcon/SocialIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SocialIcon/InputSocialIcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/basicData/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/basicData/countries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/auth/countries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/basicData/yadaSongsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/yada/yadaSongsList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/helper/responsiveUI/uiManagers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/helper/viewControllers/uiManagers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/utils/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/REAEME.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/video/REAEME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/SampleData/SampleVideoData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/yada/InhyukSampleVideoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/SampleData/sampleSnsLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/yada/yadaSocialLinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/SampleJsonFiles/VideoListOfJeonInhyukBand.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/SampleJsonFiles/VideoListOfJeonInhyukBand.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/SampleJsonFiles/jihbandchannel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/SampleJsonFiles/jihbandchannel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/SampleJsonFiles/너에게로또다시.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/SampleJsonFiles/너에게로또다시.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/officialChannelData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/yada/officialChannelData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/videoData/videoFetchEndpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/video/youtubeFetchEndpoints.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinksTest.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/AdminRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/AdminRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/IsNotLoggedInRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/IsNotLoggedInRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/MemberRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/MemberRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberWithoutEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberWithoutEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/TokenRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/TokenRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/Help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/SocialLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Sections/SocialLoginSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/LikedVideos/LikedVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/LikedVideos/LikedVideos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/UserTags/UserTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/UserTags/UserTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByOfficialChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByOfficialChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/BirthdayInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/BirthdayInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/DescriptionInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/DescriptionInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/EmailInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/EmailInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/GenderInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/GenderInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/NameInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/NameInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/PasswordInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/SocialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/SocialInput.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +89,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Pages/Auth/Sections" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/SubComponents/authAndProfile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -63,13 +107,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Pages\Auth\Sections" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\models\user" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\fragments" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\pages\noParallax" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\assets\jss\material-kit-react\views\pages\smallParallax" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\SubComponents\authAndProfile" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\data\yada" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\api\video" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\data" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\data\auth" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\models\common\getDate.js" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\inputValidation\user\snsLinkValidation.js" />
     </key>
   </component>
@@ -93,7 +138,7 @@
       <workItem from="1607905109175" duration="601000" />
       <workItem from="1607992743143" duration="16756000" />
       <workItem from="1608077073905" duration="40792000" />
-      <workItem from="1608160671276" duration="7622000" />
+      <workItem from="1608160671276" duration="13448000" />
     </task>
     <servers />
   </component>

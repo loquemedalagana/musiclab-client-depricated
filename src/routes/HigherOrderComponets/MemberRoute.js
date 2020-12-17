@@ -3,6 +3,11 @@ import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
+import {
+  EMAIL_REGISTER_ROUTE,
+  WAITING_LEVELUP_ROUTE,
+  LOGIN_ROUTE,
+} from "../params/auth";
 import Loading from "../../components/Loading/LinearLoading";
 
 const MemberRoute = ({
@@ -21,12 +26,12 @@ const MemberRoute = ({
         userData.points >= 0 ? (
           <Component {...props} />
         ) : userData.snsId && !userData.email ? (
-          <Redirect to="/emailregister" />
+          <Redirect to={EMAIL_REGISTER_ROUTE} />
         ) : (
-          <Redirect to="/waitinglevelup" />
+          <Redirect to={WAITING_LEVELUP_ROUTE} />
         )
       ) : (
-        <Redirect to="/login" />
+        <Redirect to={LOGIN_ROUTE} />
       )
     }
   />
