@@ -23,6 +23,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 // route constants
 import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
 import {SIGNUP_ROUTE, LOGIN_ROUTE} from "../../routes/params/auth";
+import {VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/video";
 
 const useStyles = makeStyles(styles);
 
@@ -49,14 +50,14 @@ const HeaderLinksNotLoggedIn = (props) => {
               </Button>,
               <Button color = "transparent" 
               onClick={()=> {
-                history.push('/officialvideolist/jihbandofficial');
+                history.push(JIHBAND_YOUTUBE_PROFILE_ROUTE);
                 setMobileOpen(false);
               }}
               className={classes.dropdownLink}>
                 Jeon Inhyuk Band official
               </Button>,
               <Button color = "transparent" onClick={()=>{
-                history.push('/videolistbykeywords');
+                history.push(VIDEO_SEARCH_ROUTE);
                 setMobileOpen(false);
               }} className={classes.dropdownLink}>
                 Search videos of Yada

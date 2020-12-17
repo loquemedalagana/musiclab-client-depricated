@@ -12,7 +12,7 @@ import {
 import {
   getPlayListURL,
   getVideoDataFromPlayList,
-} from "../../../../app/api/video/youtubeFetchEndpoints";
+} from "../../../../app/api/video/youtube/youtubeFetchEndpoints";
 
 import styles from "../../../../assets/jss/material-kit-react/views/fragments/previewListStyle";
 

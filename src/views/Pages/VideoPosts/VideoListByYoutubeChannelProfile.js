@@ -21,7 +21,7 @@ import styles from "../../../assets/jss/material-kit-react/views/pages/smallPara
 
 const useStyles = makeStyles(styles);
 
-export const VideoListByOfficialChannel = (props) => {
+export const VideoListByYoutubeChannelProfile = (props) => {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -31,9 +31,11 @@ export const VideoListByOfficialChannel = (props) => {
 
   const { location, match } = props;
 
-  const channelParam = match.params.channel;
+  const { channel } = match.params;
+
+  // channel이란 매개변수로 들어온 데이터가, 공식 채널에 존재하면 거기에 맞는 목록 출력해줌
   const [channelInfo] = officialChannelProfileData.filter(
-    ({ routeParam }) => routeParam === channelParam
+    ({ routeParam }) => routeParam === channel
   );
 
   const query = qs.parse(location.search, {
@@ -70,9 +72,9 @@ export const VideoListByOfficialChannel = (props) => {
   );
 };
 
-VideoListByOfficialChannel.propTypes = {
+VideoListByYoutubeChannelProfile.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
 };
 
-export default React.memo(VideoListByOfficialChannel);
+export default React.memo(VideoListByYoutubeChannelProfile);

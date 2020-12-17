@@ -17,7 +17,7 @@ import WaitingLevelup from "../views/Pages/Auth/WaitingLevelup";
 import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUsers";
 
 import Profile from "../views/Pages/Profile/Profile";
-import VideoListByOfficialChannel from "../views/Pages/VideoPosts/VideoListByOfficialChannel";
+import VideoListByYoutubeChannelProfile from "../views/Pages/VideoPosts/VideoListByYoutubeChannelProfile";
 import VideoListByKeywords from "../views/Pages/VideoPosts/VideoListBySearchKeyword";
 import UpdateProfile from "../views/Pages/Profile/UpdateProfile";
 
@@ -37,7 +37,7 @@ import {
   LEVELUP_ROUTE,
   RESET_PASSWORD_ROUTE,
 } from "./params/auth";
-
+import { VIDEO_ROUTE, VIDEO_SEARCH_ROUTE } from "./params/video";
 import { SERVER_ERROR_ROUTE } from "./params/error";
 
 const TestRoutes = () => (
@@ -62,12 +62,12 @@ const TestRoutes = () => (
 
       <Route
         exact
-        path="/officialvideolist/:channel?"
-        component={VideoListByOfficialChannel}
+        path={`${VIDEO_ROUTE}/:channel?`}
+        component={VideoListByYoutubeChannelProfile}
       />
       <Route
         exact
-        path="/videolistbykeywords/:query?"
+        path={`${VIDEO_SEARCH_ROUTE}/:query?`}
         component={VideoListByKeywords}
       />
 
@@ -105,7 +105,7 @@ const Routes = () => (
       <Route
         exact
         path="/officialvideolist/:channel?"
-        component={VideoListByOfficialChannel}
+        component={VideoListByYoutubeChannelProfile}
       />
       <Route
         exact

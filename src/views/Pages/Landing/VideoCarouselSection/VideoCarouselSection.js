@@ -18,38 +18,22 @@ import { NOT_FOUND_ROUTE } from "../../../../routes/params/error";
 import { SampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
+import { getVideoDataFromPlayList } from "../../../../app/api/video/youtube/youtubeFetchEndpoints";
+
 import {
-  getVideoDataFromPlayList,
-  JeonInhyukBandPlayListId,
-  getPlayListURL,
-  getLatestVideoListURL,
-  getHotVideoListURL,
-} from "../../../../app/api/video/youtubeFetchEndpoints";
+  JIHBAND_OFFICIAL_LIST,
+  HOT_VIDEO_LIST,
+  LATEST_VIDEO_LIST,
+} from "../../../../app/api/video/landingPageCarousel";
 
 const useStyles = makeStyles(styles);
 
-//print title
-const printTitle = ({ categoryTitle, style }) => (
-  <GridItem xs={12} sm={12} md={11}>
-    <h2 className={style}>{categoryTitle}</h2>
-  </GridItem>
-);
-
-const getPlayListEndpoint = (categoryTitle) => {
-  switch (categoryTitle) {
-    case "Jeon Inhyuk Band Official Channel":
-      return getPlayListURL(JeonInhyukBandPlayListId, 6);
-    case "Music SSeolprise by Jeon Inhyuk":
-      return null;
-    case "Hot Videos of Inhyuk":
-      return getHotVideoListURL([], 10);
-    case "Latest Videos of Inhyuk":
-      return getLatestVideoListURL([], 10);
-    case "My List":
-      return "Not Available";
-    default:
-      return null;
-  }
+const playList = {
+  "Jeon Inhyuk Band Official Channel": JIHBAND_OFFICIAL_LIST,
+  "Music SSeolprise by Jeon Inhyuk": null,
+  "Hot Videos of Inhyuk": HOT_VIDEO_LIST,
+  "Latest Videos of Inhyuk": LATEST_VIDEO_LIST,
+  "My List": null,
 };
 
 export const VideoCarouselSection = (props) => {
@@ -58,7 +42,7 @@ export const VideoCarouselSection = (props) => {
 
   const isMyList = videoCategoryTitle === "My List";
   const channelRoute = NOT_FOUND_ROUTE;
-  const ENDPOINT = getPlayListEndpoint(videoCategoryTitle);
+  const ENDPOINT = playList[videoCategoryTitle];
 
   //if my list exists,
 
@@ -81,8 +65,6 @@ export const VideoCarouselSection = (props) => {
         setError(err);
       });
   }, [ENDPOINT, userData]);
-
-  //get result data
 
   console.log(resultData);
 
