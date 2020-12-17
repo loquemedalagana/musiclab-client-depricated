@@ -18,7 +18,7 @@ import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUse
 
 import Profile from "../views/Pages/Profile/Profile";
 import VideoListByYoutubeChannelProfile from "../views/Pages/VideoPosts/VideoListByYoutubeChannelProfile";
-import VideoListByKeywords from "../views/Pages/VideoPosts/VideoListBySearchKeyword";
+import VideoListBySearchKeyword from "../views/Pages/VideoPosts/VideoListBySearchKeyword";
 import UpdateProfile from "../views/Pages/Profile/UpdateProfile";
 
 // 에러 페이지 컴포넌트
@@ -37,7 +37,10 @@ import {
   LEVELUP_ROUTE,
   RESET_PASSWORD_ROUTE,
 } from "./params/auth";
-import { VIDEO_ROUTE, VIDEO_SEARCH_ROUTE } from "./params/video";
+import {
+  VIDEO_CHANNEL_PROFILE_ROUTE,
+  VIDEO_SEARCH_ROUTE,
+} from "./params/video";
 import { SERVER_ERROR_ROUTE } from "./params/error";
 
 const TestRoutes = () => (
@@ -62,13 +65,13 @@ const TestRoutes = () => (
 
       <Route
         exact
-        path={`${VIDEO_ROUTE}/:channel?`}
+        path={`${VIDEO_CHANNEL_PROFILE_ROUTE}/:channel`}
         component={VideoListByYoutubeChannelProfile}
       />
       <Route
         exact
-        path={`${VIDEO_SEARCH_ROUTE}/:query?`}
-        component={VideoListByKeywords}
+        path={`${VIDEO_SEARCH_ROUTE}/:keywords?`}
+        component={VideoListBySearchKeyword}
       />
 
       <Route exact path={SERVER_ERROR_ROUTE} component={ServerError} />
@@ -110,7 +113,7 @@ const Routes = () => (
       <Route
         exact
         path="/videolistbykeywords/:query?"
-        component={VideoListByKeywords}
+        component={VideoListBySearchKeyword}
       />
 
       <Route exact path="/servererror" component={ServerError} />

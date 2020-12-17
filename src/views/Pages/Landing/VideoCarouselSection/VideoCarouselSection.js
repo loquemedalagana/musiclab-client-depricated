@@ -13,13 +13,17 @@ import NotAvailable from "../../../SubComponents/landing/NotAvailable";
 import LandingPageVideoTitle from "../../../SubComponents/landing/LandingPageVideoTitle";
 
 // route constants
-import { NOT_FOUND_ROUTE } from "../../../../routes/params/error";
-
+import { NOT_AVAILABLE_ROUTE } from "../../../../routes/params/error";
+import {
+  JIHBAND_YOUTUBE_PROFILE_ROUTE,
+  VIDEO_SEARCH_ROUTE,
+} from "../../../../routes/params/video";
 import { SampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 import { getVideoDataFromPlayList } from "../../../../app/api/video/youtube/youtubeFetchEndpoints";
 
+// video list fetched data
 import {
   JIHBAND_OFFICIAL_LIST,
   HOT_VIDEO_LIST,
@@ -33,7 +37,15 @@ const playList = {
   "Music SSeolprise by Jeon Inhyuk": null,
   "Hot Videos of Inhyuk": HOT_VIDEO_LIST,
   "Latest Videos of Inhyuk": LATEST_VIDEO_LIST,
-  "My List": null,
+  "My List": null, //나중에 내 비디오 리스트 가져오는 함수 넣기 getMyVideoList (서버랑 연동)
+};
+
+const channelProfileLink = {
+  "Jeon Inhyuk Band Official Channel": JIHBAND_YOUTUBE_PROFILE_ROUTE,
+  "Music SSeolprise by Jeon Inhyuk": NOT_AVAILABLE_ROUTE,
+  "Hot Videos of Inhyuk": VIDEO_SEARCH_ROUTE,
+  "Latest Videos of Inhyuk": VIDEO_SEARCH_ROUTE,
+  "My List": NOT_AVAILABLE_ROUTE,
 };
 
 export const VideoCarouselSection = (props) => {
@@ -41,7 +53,7 @@ export const VideoCarouselSection = (props) => {
   const { videoCategoryTitle, userData } = props;
 
   const isMyList = videoCategoryTitle === "My List";
-  const channelRoute = NOT_FOUND_ROUTE;
+  const channelRoute = channelProfileLink[videoCategoryTitle];
   const ENDPOINT = playList[videoCategoryTitle];
 
   //if my list exists,

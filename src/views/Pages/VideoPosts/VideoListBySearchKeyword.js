@@ -28,11 +28,11 @@ import styles from "../../../assets/jss/material-kit-react/views/pages/smallPara
 const useStyles = makeStyles(styles);
 
 export const VideoListBySearchKeyword = (props) => {
-  const { location } = props;
+  const { location, match } = props;
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
-
+  console.log(location, match);
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -65,6 +65,7 @@ export const VideoListBySearchKeyword = (props) => {
 
 VideoListBySearchKeyword.propTypes = {
   location: PropTypes.object,
+  match: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({});
