@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/navPillsStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/navPillsStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavPills/NavPills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavPills/NavPills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/SelectMenuSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/SelectMenuSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListSection/RenderEmptyList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListSection/EmptyContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/mockingData/videos/jsonString/videoListOfJeonInhyukBand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/mockingData/videos/jsonString/videoListOfJeonInhyukBand.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +89,7 @@
       <workItem from="1608252050793" duration="1872000" />
       <workItem from="1608254382139" duration="160000" />
       <workItem from="1608254588843" duration="2756000" />
-      <workItem from="1608258754907" duration="22317000" />
+      <workItem from="1608258754907" duration="25892000" />
     </task>
     <servers />
   </component>

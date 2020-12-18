@@ -32,11 +32,6 @@
   - 서버 콘솔에 뜨지 않는거 보니, 클라이언트단 코드 손봐야 할 듯\
   - (참고) https://github.com/chengsmart/react-file-upload-mobile/blob/master/source/react-file-upload-mobile/index.tsx
 
-## 프로필에서 영상 리스트가 다 출력 안됨... profile/video
-
-## 모바일 렌더링 시 오류
-- 프로필에서 태그 이미지 없을 때 컬러 div가 겹쳐서 보임..(모바일)
-
 <hr/>
 
 # 구현할 것
@@ -53,7 +48,9 @@
 
 ## 자동 로그인 구현 (local storage 사용)
 
-## 키워드별 영상 분류, 장바구니 (2순위) - 제일 빡셈ㅡㅡ
+## 키워드별 영상 분류, 장바구니 
+
+## 영상 등록하기 버튼 클릭
 
 ## 회원정보 설정에 국가 설정
 - https://material-ui.com/components/autocomplete/#country-select
