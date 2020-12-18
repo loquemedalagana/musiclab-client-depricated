@@ -1,4 +1,4 @@
-export const InhyukSampleVideoList = [
+export default [
   {
     channelTitle: "JTBC Entertainment",
     publishedAt: "2016-01-05T14:38:37Z",
@@ -114,29 +114,5 @@ export const InhyukSampleVideoList = [
     title: "[2017 DnF LIVE CONCERT] 전인혁 - Man's Road",
     channelId: "UC7gy0ee1jeNO11HievGQJzA",
     videoId: "vzX3g7XcnOc",
-  },
-];
-
-export const SampleTagList = [
-  {
-    tagName: "vocal",
-  },
-  {
-    tagName: "drum",
-  },
-  {
-    tagName: "guitar",
-  },
-  {
-    tagName: "bass",
-  },
-  {
-    tagName: "piano",
-  },
-  {
-    tagName: "yada",
-  },
-  {
-    tagName: "jeoninhyukband",
   },
 ];

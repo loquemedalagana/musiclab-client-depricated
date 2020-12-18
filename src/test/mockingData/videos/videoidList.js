@@ -1,4 +1,4 @@
-import { InhyukSampleVideoList } from "../../../app/data/yada/InhyukSampleVideoList";
+import InhyukSampleVideoList from "../../../app/data/yada/InhyukSampleVideoList";
 
 const updatedVideoIds = [
   "Qid9GeGB5eE",

@@ -10,10 +10,8 @@ import {
   //CircularLoading,
 } from "../../../../../../components/components";
 
-import {
-  //test code
-  SampleTagList,
-} from "../../../../../../app/data/yada/InhyukSampleVideoList";
+// test code for ui development
+import SampleTagList from "../../../../../../test/mockingData/tags/sampleTagList";
 
 import compositionImg from "../../../../../../assets/images/TagImages/composition.jpg";
 import guitarImg from "../../../../../../assets/images/TagImages/guitar.jpg";

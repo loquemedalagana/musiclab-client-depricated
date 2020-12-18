@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { InhyukSampleVideoList } from "../data/yada/InhyukSampleVideoList";
+import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 //import api from "../api";
 //import { setAlertMsg } from "./alert";
 

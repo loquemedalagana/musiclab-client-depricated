@@ -13,7 +13,7 @@ import defaultImg from "../../../../assets/images/dolphin_profile.png";
 // video data 불러오는거!
 import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
 import { officialChannelProfileData } from "../../../../app/data/yada/officialChannelData";
-import { InhyukSampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
+import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
 
 // jss style
 import styles from "../../../../assets/jss/material-kit-react/views/fragments/previewListStyle";

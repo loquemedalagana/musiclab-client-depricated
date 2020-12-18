@@ -22,7 +22,7 @@ import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/video";
 import { NOT_FOUND_ROUTE } from "../../../routes/params/error";
 
 // video list
-import { InhyukSampleVideoList } from "../../../app/data/yada/InhyukSampleVideoList";
+import InhyukSampleVideoList from "../../../app/data/yada/InhyukSampleVideoList";
 import videoListOfJeonInhyukBand from "../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
 import videoIdList from "../../../test/mockingData/videos/videoidList";
 

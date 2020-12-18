@@ -10,11 +10,10 @@ import {
   //CircularLoading,
 } from "../../../../../../components/components";
 
-import {
-  //test code
-  SampleTagList,
-  InhyukSampleVideoList,
-} from "../../../../../../app/data/yada/InhyukSampleVideoList";
+// sample code for ui development
+import InhyukSampleVideoList from "../../../../../../app/data/yada/InhyukSampleVideoList";
+
+import SampleTagList from "../../../../../../test/mockingData/tags/sampleTagList";
 
 const PrintVideoThumbnail = (props) => {
   const { videoData, thumbnailListImageClasses } = props; //add hover

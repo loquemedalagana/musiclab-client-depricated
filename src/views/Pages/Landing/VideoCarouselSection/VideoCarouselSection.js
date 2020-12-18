@@ -18,7 +18,7 @@ import {
   JIHBAND_YOUTUBE_PROFILE_ROUTE,
   VIDEO_SEARCH_ROUTE,
 } from "../../../../routes/params/video";
-import { InhyukSampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
+import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 
