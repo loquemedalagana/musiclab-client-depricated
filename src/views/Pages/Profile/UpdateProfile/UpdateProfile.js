@@ -27,13 +27,18 @@ const UpdateProfile = (props) => {
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
-  console.log(location, query);
+
+  // url: profile?edit=personalinfo
+  const subMenuItems = { personalinfo: 0, social: 1, tags: 2 };
+  const { edit } = query;
+
   return (
     <NoParallaxLayout isBigCard={true}>
       <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
         <MakeSpace />
         <CustomTabs
           headerColor="primary"
+          tabIndex={edit ? subMenuItems[edit] : 0}
           tabs={[
             {
               tabName: "Profile",

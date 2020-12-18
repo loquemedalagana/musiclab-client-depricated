@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/data/jsonFiles/searchResultSample.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/CoverVideosSearch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/InhyukVideosSearchByKeywords.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/SelectMenuSection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListSection/RenderEmptyList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/data/yada/InhyukSampleVideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/yada/InhyukSampleVideoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CustomTabs/CustomTabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomTabs/CustomTabs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/params/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/params/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/mockingData/videos/videoidList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/mockingData/videos/videoidList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/LikedVideos/LikedVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/LikedVideos/LikedVideos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListSection/ViewVideoListSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByYoutubeChannelProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByYoutubeChannelProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/SelectMenuSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/TabMenuSection/SelectMenuSection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +91,7 @@
       <workItem from="1608252050793" duration="1872000" />
       <workItem from="1608254382139" duration="160000" />
       <workItem from="1608254588843" duration="2756000" />
-      <workItem from="1608258754907" duration="15689000" />
+      <workItem from="1608258754907" duration="17900000" />
     </task>
     <servers />
   </component>

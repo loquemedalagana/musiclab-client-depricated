@@ -4,5 +4,8 @@ export const MY_PROFILE_ROUTE = VIEW_PROFILE_ROUTE + "/my"; //userID 대신 나�
 // 정보 수정 (프로필, 비디오 관리, 언어 설정"
 export const EDIT_ROUTE = "/modify";
 export const EDIT_PROFILE_ROUTE = EDIT_ROUTE + "/profile";
+export const EDIT_TAGS_ROUTE = EDIT_PROFILE_ROUTE + "?edit=tags";
+export const EDIT_SOCIAL_ROUTE = EDIT_PROFILE_ROUTE + "?edit=social";
+
 export const EDIT_MY_VIDEO_LIST_ROUTE = EDIT_ROUTE + "/my-videolist";
 export const CONFIGURE_LANGUAGE_ROUTE = EDIT_ROUTE + "/language-options";

@@ -39,8 +39,8 @@ TabPanel.propTypes = {
 };
 
 export default function CustomTabs(props) {
-  const [value, setValue] = React.useState(0);
-  console.log(value);
+  const { tabIndex } = props;
+  const [value, setValue] = React.useState(tabIndex);
 
   const handleChange = (event, value) => {
     setValue(value);
@@ -113,6 +113,7 @@ CustomTabs.propTypes = {
     "rose",
   ]),
   title: PropTypes.string,
+  tabIndex: PropTypes.number,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
       tabName: PropTypes.string.isRequired,
