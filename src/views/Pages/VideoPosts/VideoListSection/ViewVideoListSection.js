@@ -8,27 +8,40 @@ import {
   PostPreview,
 } from "../../../../components/components";
 
+import defaultImg from "../../../../assets/images/dolphin_profile.png";
+
 // video data 불러오는거!
 import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
 import { officialChannelProfileData } from "../../../../app/data/yada/officialChannelData";
+import { InhyukSampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
 
 // jss style
 import styles from "../../../../assets/jss/material-kit-react/views/fragments/previewListStyle";
 import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
 const useStyles = makeStyles(styles);
 
-export const VideoListSection = (props) => {
+export const ViewVideoListSection = (props) => {
   const classes = useStyles();
   const { videoListId, type, userId, isAdmin } = props;
   const [channelInfo] = officialChannelProfileData.filter(
     ({ playListId }) => playListId === videoListId
   );
 
-  const { channelTitle, image } = channelInfo;
-  const resultData = getVideoDataListFromPlayList(
-    JSON.parse(videoListOfJeonInhyukBand),
-    true
-  );
+  const { channelTitle, image } = channelInfo
+    ? channelInfo
+    : { channelTitle: undefined, image: defaultImg };
+
+  // 백앤드에서 쿼리를 때린 후 데이터 불러온다.
+  const resultData =
+    type === "official"
+      ? getVideoDataListFromPlayList(
+          JSON.parse(videoListOfJeonInhyukBand),
+          true
+        )
+      : InhyukSampleVideoList;
+
+  // 채널 info가 없을 때는 회원 프로필 혹은 일반 데이터로 하기
+  console.log(resultData);
 
   return (
     <GridContainer className={classes.listContainer} spacing={4}>
@@ -37,7 +50,8 @@ export const VideoListSection = (props) => {
           <PostPreview
             type="youtube"
             authorData={{
-              channelTitle,
+              channelTitle:
+                channelTitle === undefined ? data.channelTitle : channelTitle,
               image,
             }}
             curUserData={{
@@ -52,7 +66,7 @@ export const VideoListSection = (props) => {
   );
 };
 
-VideoListSection.propTypes = {
+ViewVideoListSection.propTypes = {
   props: PropTypes.object,
   type: PropTypes.oneOf(["official", "channel", "keywords"]),
   children: PropTypes.node,
@@ -61,4 +75,4 @@ VideoListSection.propTypes = {
   videoListId: PropTypes.string,
 };
 
-export default VideoListSection;
+export default ViewVideoListSection;

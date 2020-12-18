@@ -3,27 +3,6 @@ import imagesStyle from "../../../components/ImgStyle";
 
 export default {
   container,
-  profile: {
-    textAlign: "center",
-    "& img": {
-      maxWidth: "160px",
-      width: "100%",
-      margin: "0 auto",
-      transform: "translate3d(0, -50%, 0)",
-    },
-  },
-  description: {
-    margin: "1.071rem auto 0",
-    maxWidth: "600px",
-    color: "#999",
-    textAlign: "center !important",
-  },
-  name: {
-    marginTop: "-80px",
-  },
-  channelTitle: {
-    marginTop: "-80px",
-  },
   ...imagesStyle,
   title: {
     ...title,
@@ -36,5 +15,9 @@ export default {
   navWrapper: {
     margin: "20px auto 50px auto",
     textAlign: "center",
+  },
+  emptyContainer: {
+    height: "100vh",
+    alignContent: "center",
   },
 };

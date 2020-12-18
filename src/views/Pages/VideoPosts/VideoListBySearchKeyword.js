@@ -1,18 +1,9 @@
-/**
-keyword별로 검색해서 나오는 결과들 반환
-https://developers.google.com/youtube/v3/docs/search/list?authuser=1
- */
-
 import React from "react";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import qs from "qs";
-
-//import VideoListSection from './Sections/VideoListSection';
-import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
-
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
@@ -21,49 +12,52 @@ import {
   //    LinearLoading,
 } from "../../../components/components";
 
-import defaultImg from "../../../assets/images/dolphin_profile.png";
+// sub components
+import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
+import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
+import RenderEmptyList from "./VideoListSection/RenderEmptyList";
 
+// route
+import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/video";
+import { NOT_FOUND_ROUTE } from "../../../routes/params/error";
+
+// video list
+import { InhyukSampleVideoList } from "../../../app/data/yada/InhyukSampleVideoList";
 import videoListOfJeonInhyukBand from "../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
 import videoIdList from "../../../test/mockingData/videos/videoidList";
-import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle";
 
+// page style
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle";
 const useStyles = makeStyles(styles);
 
 export const VideoListBySearchKeyword = (props) => {
+  const classes = useStyles();
   const { location, match } = props;
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   console.log(location, match);
-  const classes = useStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
+  console.log(query);
 
   console.log(query);
   const { items } = JSON.parse(videoListOfJeonInhyukBand);
   console.log(items);
   console.log(videoIdList);
+  console.log(InhyukSampleVideoList);
 
-  //fetch data with get request
+  if (match.params.search !== "search" && match.params.search !== undefined)
+    return <Redirect to={JIHBAND_YOUTUBE_PROFILE_ROUTE} />;
 
   return (
     <SmallParallaxLayout>
       <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={6}>
-          <div className={classes.profile}>
-            <div>
-              <img src={defaultImg} alt="..." className={imageClasses} />
-            </div>
-            <div className={classes.channelTitle}>
-              <h3>title</h3>
-            </div>
-            <h5>descriptrion</h5>
-          </div>
-        </GridItem>
+        <h2>탭 매뉴 선택(사슬, 커버)</h2>
       </GridContainer>
+
+      {/* 요 부분은 쿼리에 따라 다르게 출력됨*/}
+      <RenderEmptyList>
+        <h1>업데이트 예정</h1>
+      </RenderEmptyList>
     </SmallParallaxLayout>
   );
 };

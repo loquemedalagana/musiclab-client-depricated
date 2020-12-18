@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
-import VideoListSection from "./Sections/VideoListSection";
+import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import qs from "qs";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -63,7 +63,7 @@ export const VideoListByYoutubeChannelProfile = (props) => {
           </div>
         </GridItem>
       </GridContainer>
-      <VideoListSection
+      <ViewVideoListSection
         type="official"
         videoListId={channelInfo.playListId}
         userId={query.userId}

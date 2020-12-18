@@ -40,7 +40,7 @@ TabPanel.propTypes = {
 
 export default function CustomTabs(props) {
   const [value, setValue] = React.useState(0);
-  //console.log(value);
+  console.log(value);
 
   const handleChange = (event, value) => {
     setValue(value);

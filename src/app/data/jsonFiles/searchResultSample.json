@@ -1,0 +1,658 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "vmsQxSqJONaJFccSlScIFVHVKFM",
+  "nextPageToken": "CBQQAA",
+  "regionCode": "KR",
+  "pageInfo": {
+    "totalResults": 6968,
+    "resultsPerPage": 20
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ZPQ1o1s_IWf_wHJCvYax8R6xSFg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "auqUW6nGZQ0"
+      },
+      "snippet": {
+        "publishedAt": "2020-09-28T11:00:00Z",
+        "channelId": "UCy1fruN1Tl636SMmyp4x48g",
+        "title": "[야다를 만나다] 레전드 보컬 전인혁 훈남 근황 .. &#39;이미 슬픈사랑&#39; 한 소절 불러주셨습니다",
+        "description": "1999년에 혜성처럼 등장해 2004년 해체된 그룹 야다. 활동기간은 5년으로, 길지 않지만 '이미 슬픈 사랑', '진혼', '슬픈 다짐' 등 명곡을 남겼습니다. 언제 들어도 함께 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/auqUW6nGZQ0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/auqUW6nGZQ0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/auqUW6nGZQ0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "근황올림픽",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-09-28T11:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "yTUUzom0SvSFXEvI6K6ZAktZ7W0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "AMM9gikcGdY"
+      },
+      "snippet": {
+        "publishedAt": "2020-11-15T12:00:02Z",
+        "channelId": "UChNtl7wRLF6x4B4fp7KCyhQ",
+        "title": "[전인혁band] 야다 전인혁의 다시부르기 - 변진섭 ‘너에게로 또 다시’",
+        "description": "고화질 , 이어폰으로 감상 부탁드립니다. 안녕하세요. 이번엔 연주한 곡은 변진섭 선배님의 명곡 '너에게로 또 다시'를 연주해봤습니다. 전인혁BAND 인스타그램 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/AMM9gikcGdY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/AMM9gikcGdY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/AMM9gikcGdY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "전인혁밴드 Jeon In Hyuk Band",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-11-15T12:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "PgLk1Ll0X3Ff15kdguNlqF4W7mU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lv4gaXD8Vwk"
+      },
+      "snippet": {
+        "publishedAt": "2020-07-16T16:08:33Z",
+        "channelId": "UCMUiP0kJa3_bob519B27UJw",
+        "title": "전인혁(야다) 고음, 라이브 모음",
+        "description": "야다 #전인혁 #샤우팅.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lv4gaXD8Vwk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lv4gaXD8Vwk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lv4gaXD8Vwk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "야다덕후",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-07-16T16:08:33Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "txX0v91gno2nt2nrH1upeT5fJVI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mtn7POTYit0"
+      },
+      "snippet": {
+        "publishedAt": "2017-08-13T06:36:27Z",
+        "channelId": "UC6lLxL59ryCS5kV8_NZ_J-Q",
+        "title": "전인혁 인하대 후문 버스킹 영상 - &#39;이미 슬픈 사랑&#39;",
+        "description": "야다의 메인 보컬이었던 전인혁의 인하대 후문 버스킹 영상입니다. 갑작스런 공연이지만 많이 찾아주신 팬분들께 감사드립니다.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mtn7POTYit0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mtn7POTYit0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mtn7POTYit0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "TBE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-08-13T06:36:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "BDayfOINvn4KclQgswpQPBpMIas",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "boymV8E7EKo"
+      },
+      "snippet": {
+        "publishedAt": "2019-12-22T14:25:19Z",
+        "channelId": "UCRnJ3AnkRAA9R5KHgFQJGHg",
+        "title": "&#39;진혼&#39; 게스트 전인혁 플라워 2019년 20주년 콘서트",
+        "description": "'진혼' 게스트 전인혁 플라워 2019년 20주년 콘서트.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/boymV8E7EKo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/boymV8E7EKo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/boymV8E7EKo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "suntube김선희",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-12-22T14:25:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "WWWrDoVBH69kmzSwZTbyLWuqkCA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1UaHx_FlWLc"
+      },
+      "snippet": {
+        "publishedAt": "2017-09-29T01:06:47Z",
+        "channelId": "UCIrHNiaTcttjP431m-2HmSA",
+        "title": "노래방 대통령 야다(전인혁)의 복면가왕 출연! Here I Stand For You",
+        "description": "원곡도 너무 좋은 이 노래를 다른 사람도 아닌 야다의 전인혁이 불러준다면..? 학창시절 노래방에서 항상 빼놓을 수 없었던 야다의 노래들이 쭈욱 떠오르네요. 여전한 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1UaHx_FlWLc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1UaHx_FlWLc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1UaHx_FlWLc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "음악자동재생",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-09-29T01:06:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "pfogDWFxtuxSVAxWef0-geieE84",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VMp1D0zzbAw"
+      },
+      "snippet": {
+        "publishedAt": "2017-08-13T09:49:31Z",
+        "channelId": "UCiBr0bK06imaMbLc8sAEz0A",
+        "title": "[King of masked singer] 복면가왕 - &#39;flamingo&#39; 3round - Here, I Stand For You 20170813",
+        "description": "'flamingo' 3round - Here, I Stand For You ▷ Playlist for THIS episodes → https://www.youtube.com/playlist?list=PLtqYizcPqxZT888yJMOTcx8Dws5E9eWMp ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VMp1D0zzbAw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VMp1D0zzbAw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VMp1D0zzbAw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MBCentertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-08-13T09:49:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "1A2pLTjwR9CdNjq-FCcglbs-sUE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "rS5O8SHVYBM"
+      },
+      "snippet": {
+        "publishedAt": "2017-11-25T16:13:36Z",
+        "channelId": "UCcd__-Y3T0wTAS5dGbzX5Kg",
+        "title": "야다(전인혁) - 이미 슬픈 사랑",
+        "description": "Tommy Kim Recording Show 현대카드 언더스테이지.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/rS5O8SHVYBM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/rS5O8SHVYBM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/rS5O8SHVYBM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "김십장 TV",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-11-25T16:13:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Y-cHbx7khPVzVml8YtUkCfsOb6Q",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "t1iMkAcPSoA"
+      },
+      "snippet": {
+        "publishedAt": "2017-08-13T06:43:33Z",
+        "channelId": "UC6lLxL59ryCS5kV8_NZ_J-Q",
+        "title": "전인혁 인하대 후문 버스킹 영상 - 팬과 함께 부르는 &#39;진혼&#39;",
+        "description": "야다의 메인보컬 전인혁의 인하대 후문 버스킹 영상입니다. 갑작스런 공연에도 많이 모여주신 팬분들께 감사드립니다. 오래된 팬과 가수가 함께 노래하는 모습 참 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/t1iMkAcPSoA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/t1iMkAcPSoA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/t1iMkAcPSoA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "TBE",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-08-13T06:43:33Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9pHmhZaDXNmPDZHGVi0JvZQka7I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "wtTvZH3Q7js"
+      },
+      "snippet": {
+        "publishedAt": "2019-10-06T01:00:02Z",
+        "channelId": "UChNtl7wRLF6x4B4fp7KCyhQ",
+        "title": "[전인혁BAND]김종서- ‘대답 없는 너’ Cover by 전인혁BAND",
+        "description": "고화질 , 이어폰으로 감상 부탁드립니다. 안녕하세요. 이번엔 연주한 곡은 김종서 선배님의 명곡 '대답 없는 너'를 연주해봤습니다. 환절기에 감기 조심하고요, 즐겁게 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/wtTvZH3Q7js/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/wtTvZH3Q7js/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/wtTvZH3Q7js/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "전인혁밴드 Jeon In Hyuk Band",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-10-06T01:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wcu-taUKrohz1oUo52NTEWnMnu4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PtwUZgZqJj4"
+      },
+      "snippet": {
+        "publishedAt": "2019-11-04T03:00:04Z",
+        "channelId": "UC271vX3c3kYZsgpz7-zPBoA",
+        "title": "야다 - 진혼(2001년 04월 28일)",
+        "description": "야다 - 진혼(2001년 04월 28일) 이소라의 프로포즈 playlist A https://www.youtube.com/watch?v=EYwa6pYrPT0&list=PLogGic18HWgpy0rKpFMzVtdJsL_qCjjb1 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PtwUZgZqJj4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PtwUZgZqJj4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PtwUZgZqJj4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "KBS Entertain: 깔깔티비",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-11-04T03:00:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qGXWvpVu2ebi3yCIUwkuu00Vrug",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "kpc9vYrFB7s"
+      },
+      "snippet": {
+        "publishedAt": "2017-03-22T00:27:44Z",
+        "channelId": "UC0MMq1Whr1aODbFeeKCjjJQ",
+        "title": "야다 (전인혁) - 이미 슬픈사랑 kpop 韓國歌謠",
+        "description": "야다 (전인혁) - 이미 슬픈사랑 kpop 韓國歌謠 널 볼 수 있어 행복했었지 그대가 날 위해 있어준 시간만큼 너의 부모님께 전해들었지 나 아닌 사람과 결혼하게 된 걸 너 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kpc9vYrFB7s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kpc9vYrFB7s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kpc9vYrFB7s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Nareusha Jeong",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-03-22T00:27:44Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Sor6DjYF7MKfqaa8B9bipz9pHDU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "oTMOgxqEeOk"
+      },
+      "snippet": {
+        "publishedAt": "2020-01-04T22:03:38Z",
+        "channelId": "UCzku1px97p3HQCQT8lbArhg",
+        "title": "[ Sad Music The Live ] 야다 전인혁 - 이미 슬픈 사랑 LIVE (가사)",
+        "description": "지친 마음 쉬어가세요.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/oTMOgxqEeOk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/oTMOgxqEeOk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/oTMOgxqEeOk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "새드 뮤직SAD MUSIC",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-01-04T22:03:38Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "UmBH_5GIGMgWY_tqW9MkK3WzZtY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "hEQM0FLbyZ8"
+      },
+      "snippet": {
+        "publishedAt": "2017-08-13T09:49:31Z",
+        "channelId": "UCiBr0bK06imaMbLc8sAEz0A",
+        "title": "[King of masked singer] 복면가왕 - &#39;flamingo&#39; Identity 20170813",
+        "description": "'flamingo' Identity ▷ Playlist for THIS episodes → https://www.youtube.com/playlist?list=PLtqYizcPqxZT888yJMOTcx8Dws5E9eWMp ▷ More 'Mask King' clips ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/hEQM0FLbyZ8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/hEQM0FLbyZ8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/hEQM0FLbyZ8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MBCentertainment",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-08-13T09:49:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "f6JhB4kpURfZdd1DZQTGkObYWQI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "sZKQqcF7I14"
+      },
+      "snippet": {
+        "publishedAt": "2018-02-14T15:00:09Z",
+        "channelId": "UC0NtPcgcuwbEi0RDK9PPX8g",
+        "title": "야다 전인혁 - 사랑을 외치다 (엠씨더맥스)",
+        "description": "출처 - 싸이월드.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/sZKQqcF7I14/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/sZKQqcF7I14/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/sZKQqcF7I14/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "햄찌이수",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-02-14T15:00:09Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "kHlF215zbkeKd-lSDvViFBYRqEI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1WIhKTfBnRQ"
+      },
+      "snippet": {
+        "publishedAt": "2020-01-13T09:54:45Z",
+        "channelId": "UCzku1px97p3HQCQT8lbArhg",
+        "title": "[ Sad Music The Live ] 야다 전인혁 - 진혼 라이브 (가사)",
+        "description": "지친 마음 쉬어가세요.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1WIhKTfBnRQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1WIhKTfBnRQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1WIhKTfBnRQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "새드 뮤직SAD MUSIC",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-01-13T09:54:45Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "fhXW2jMMrz1vAxmQAuw4Fvi82hI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "z2hIifoNmTw"
+      },
+      "snippet": {
+        "publishedAt": "2020-04-14T07:52:55Z",
+        "channelId": "UC3IJypTXiOYdbMOeN8Jb3tA",
+        "title": "[20190727] 플라워(FLWOWER)_여기까진가요 with 전인혁 / 20주년 THANK YOU CONCERT 서울앵콜",
+        "description": "[20190727] 플라워(FLWOWER)_여기까진가요 with 전인혁 20주년 THANK YOU CONCERT 서울앵콜 - 플라워 4집 플라워 4th - 전해성 작곡 전해성 작사 전해성 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/z2hIifoNmTw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/z2hIifoNmTw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/z2hIifoNmTw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "플라워 [Flower Official]",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-04-14T07:52:55Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "_KAc28cwo986Rnt4QJ3DzNgFCbA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Qid9GeGB5eE"
+      },
+      "snippet": {
+        "publishedAt": "2020-04-03T08:15:41Z",
+        "channelId": "UCPYu_RCQ9uFzGoB9BJi16kg",
+        "title": "[Live] 야다(Yada) 이미 슬픈 사랑 [인기가요 1999년 8월 1주]",
+        "description": "SBS INKIGAYO LIVE 야다 이미 슬픈 사랑 라이브 코노가고싶다..ㅠ #락발라드 #노래방명곡 #슈가맨2 #온라인탑골공원.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Qid9GeGB5eE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Qid9GeGB5eE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Qid9GeGB5eE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "버블티",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-04-03T08:15:41Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "IgGXUrAFopx73O0-4X8sU8Ipz0w",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "pc5vcjNmdiI"
+      },
+      "snippet": {
+        "publishedAt": "2018-12-29T18:56:59Z",
+        "channelId": "UCP03-Z2OAJ5ljj4e4UOTZPQ",
+        "title": "전인혁(야다) - 이미슬픈사랑 무반주 (희귀)",
+        "description": "이혁재 씨랑 같이 나온 것은 본 적 있어도 , 이 영상 본 사람은 거의 없을 것이라 생각이 듭니다 ㅎㅎ.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/pc5vcjNmdiI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/pc5vcjNmdiI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/pc5vcjNmdiI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "진호",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-12-29T18:56:59Z"
+      }
+    }
+  ]
+}

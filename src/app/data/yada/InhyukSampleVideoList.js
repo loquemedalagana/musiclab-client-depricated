@@ -1,9 +1,10 @@
-export const SampleVideoList = [
+export const InhyukSampleVideoList = [
   {
     channelTitle: "JTBC Entertainment",
     publishedAt: "2016-01-05T14:38:37Z",
     thumbnail: "https://i.ytimg.com/vi/pTer_gdmQfQ/hqdefault.jpg",
     title: "[희열팀] 슈가송 야다 ,이미 슬픈 사랑,♪ 슈가맨 12회",
+    description: "",
     videoId: "pTer_gdmQfQ",
   },
   {
@@ -12,6 +13,7 @@ export const SampleVideoList = [
     thumbnail: "https://i.ytimg.com/vi/auqUW6nGZQ0/hqdefault.jpg",
     title:
       "[야다를 만나다] 레전드 보컬 전인혁 훈남 근황 .. ,이미 슬픈사랑, 한 소절 불러주셨습니다",
+    description: "",
     videoId: "auqUW6nGZQ0",
   },
   {
@@ -19,6 +21,7 @@ export const SampleVideoList = [
     publishedAt: "2017-08-13T06:43:33Z",
     thumbnail: "https://i.ytimg.com/vi/t1iMkAcPSoA/hqdefault.jpg",
     title: "전인혁 인하대 후문 버스킹 영상 - 팬과 함께 부르는 ,진혼,",
+    description: "",
     videoId: "t1iMkAcPSoA",
   },
   {
@@ -26,6 +29,7 @@ export const SampleVideoList = [
     publishedAt: "2020-07-16T16:08:33Z",
     thumbnail: "https://i.ytimg.com/vi/lv4gaXD8Vwk/hqdefault.jpg",
     title: "전인혁(야다) 고음, 라이브 모음",
+    description: "",
     videoId: "lv4gaXD8Vwk",
   },
   {
@@ -33,6 +37,7 @@ export const SampleVideoList = [
     publishedAt: "2017-08-13T06:36:27Z",
     thumbnail: "https://i.ytimg.com/vi/mtn7POTYit0/hqdefault.jpg",
     title: "전인혁 인하대 후문 버스킹 영상 - ,이미 슬픈 사랑,",
+    description: "",
     videoId: "mtn7POTYit0",
   },
   {
@@ -40,6 +45,7 @@ export const SampleVideoList = [
     publishedAt: "2014-05-07T07:47:39Z",
     thumbnail: "https://i.ytimg.com/vi/SaJRpu9ASxs/hqdefault.jpg",
     title: "야다 전인혁 샤우팅 모음",
+    description: "",
     videoId: "SaJRpu9ASxs",
   },
   {
@@ -48,6 +54,7 @@ export const SampleVideoList = [
     thumbnail: "https://i.ytimg.com/vi/UMsZti6fpMA/hqdefault.jpg",
     title:
       "볼보 S60 B5 인스크립션 2021 B&amp;W오디오 테스트 with 전인혁(야다 보컬)",
+    description: "",
     videoId: "UMsZti6fpMA",
   },
   {
@@ -55,6 +62,7 @@ export const SampleVideoList = [
     publishedAt: "2011-01-06T21:42:12Z",
     thumbnail: "https://i.ytimg.com/vi/uxbxUP2s26g/hqdefault.jpg",
     title: "YADA - Love to Sorrow (Live) - 사랑이 슬픔에게 - 야다",
+    description: "",
     videoId: "uxbxUP2s26g",
   },
   {
@@ -62,6 +70,7 @@ export const SampleVideoList = [
     publishedAt: "2015-01-24T12:09:24Z",
     thumbnail: "https://i.ytimg.com/vi/2e1TfSjp07s/hqdefault.jpg",
     title: "전인혁 - ㅂㅎㅇㅁㄱ",
+    description: "",
     videoId: "2e1TfSjp07s",
   },
   {
@@ -69,6 +78,7 @@ export const SampleVideoList = [
     publishedAt: "2020-06-09T17:00:51Z",
     thumbnail: "https://i.ytimg.com/vi/CA0GICPBmf4/hqdefault.jpg",
     title: "[Live] 야다(Yada) 슬픈 다짐 [뮤직뱅크 2003년 4월 2주]",
+    description: "",
     videoId: "CA0GICPBmf4",
   },
   {
@@ -76,6 +86,7 @@ export const SampleVideoList = [
     publishedAt: "2015-08-18T13:50:25Z",
     thumbnail: "https://i.ytimg.com/vi/r1KRX4Rhjx4/hqdefault.jpg",
     title: "야다 전인혁 ,그대 떠나가도♪, 명품 보이스 끝까지 간다 39회",
+    description: "",
     videoId: "r1KRX4Rhjx4",
   },
   {
@@ -83,6 +94,7 @@ export const SampleVideoList = [
     publishedAt: "2019-12-21T11:23:06Z",
     thumbnail: "https://i.ytimg.com/vi/Q5H8Qui2Hes/hqdefault.jpg",
     title: "야다-전인혁 미스터투-이민규 무반주 쌩목 라이브 매불쇼(현진영데이)",
+    description: "",
     videoId: "Q5H8Qui2Hes",
   },
   {
@@ -90,6 +102,7 @@ export const SampleVideoList = [
     publishedAt: "2019-12-22T14:25:19Z",
     thumbnail: "https://i.ytimg.com/vi/boymV8E7EKo/hqdefault.jpg",
     title: ",진혼, 게스트 전인혁 플라워 2019년 20주년 콘서트",
+    description: "",
     videoId: "boymV8E7EKo",
   },
   {

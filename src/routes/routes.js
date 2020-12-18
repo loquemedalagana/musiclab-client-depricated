@@ -37,7 +37,7 @@ import {
   LEVELUP_ROUTE,
   RESET_PASSWORD_ROUTE,
 } from "./params/auth";
-import { VIEW_PROFILE_ROUTE } from "./params/profile";
+import { VIEW_PROFILE_ROUTE, EDIT_PROFILE_ROUTE } from "./params/profile";
 import {
   VIDEO_CHANNEL_PROFILE_ROUTE,
   VIDEO_SEARCH_ROUTE,
@@ -62,7 +62,7 @@ const TestRoutes = () => (
       />
 
       <Route exact path={`${VIEW_PROFILE_ROUTE}/:userid`} component={Profile} />
-      <Route exact path="/modify/profile" component={UpdateProfile} />
+      <Route exact path={`${EDIT_PROFILE_ROUTE}`} component={UpdateProfile} />
 
       <Route
         exact

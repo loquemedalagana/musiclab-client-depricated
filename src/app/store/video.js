@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { SampleVideoList } from "../data/yada/InhyukSampleVideoList";
+import { InhyukSampleVideoList } from "../data/yada/InhyukSampleVideoList";
 //import api from "../api";
 //import { setAlertMsg } from "./alert";
 
@@ -8,7 +8,7 @@ const slice = createSlice({
   name: "video",
   initialState: {
     changed: false,
-    myVideoList: SampleVideoList,
+    myVideoList: InhyukSampleVideoList,
   },
   reducers: {
     setInitState: (state) => {

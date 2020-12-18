@@ -13,7 +13,7 @@ import {
 import {
   //test code
   SampleTagList,
-  SampleVideoList,
+  InhyukSampleVideoList,
 } from "../../../../../../app/data/yada/InhyukSampleVideoList";
 
 const PrintVideoThumbnail = (props) => {
@@ -43,14 +43,14 @@ export const LikedVideos = (props) => {
   );
 
   const midIdx =
-    SampleVideoList.length / 2
-      ? Math.floor(SampleVideoList.length / 2)
-      : SampleVideoList.length / 2;
+    InhyukSampleVideoList.length / 2
+      ? Math.floor(InhyukSampleVideoList.length / 2)
+      : InhyukSampleVideoList.length / 2;
 
   return (
     <GridContainer justify="center">
       <GridItem xs={12} sm={12} md={4}>
-        {SampleVideoList.slice(0, midIdx).map((videoData, idx) => (
+        {InhyukSampleVideoList.slice(0, midIdx).map((videoData, idx) => (
           <PrintVideoThumbnail
             key={idx}
             thumbnailListImageClasses={thumbnailListImageClasses}
@@ -59,7 +59,7 @@ export const LikedVideos = (props) => {
         ))}
       </GridItem>
       <GridItem xs={12} sm={12} md={4}>
-        {SampleVideoList.slice(midIdx, SampleTagList.length).map(
+        {InhyukSampleVideoList.slice(midIdx, SampleTagList.length).map(
           (videoData, idx) => (
             <PrintVideoThumbnail
               key={idx}

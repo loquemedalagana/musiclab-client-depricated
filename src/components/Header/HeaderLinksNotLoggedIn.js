@@ -60,7 +60,7 @@ const HeaderLinksNotLoggedIn = (props) => {
                 history.push(VIDEO_SEARCH_ROUTE);
                 setMobileOpen(false);
               }} className={classes.dropdownLink}>
-                Search videos of Yada
+                Search videos
               </Button>,
             ]}
         />

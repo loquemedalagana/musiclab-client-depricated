@@ -18,7 +18,7 @@ import {
   JIHBAND_YOUTUBE_PROFILE_ROUTE,
   VIDEO_SEARCH_ROUTE,
 } from "../../../../routes/params/video";
-import { SampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
+import { InhyukSampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 
@@ -114,7 +114,9 @@ export const VideoCarouselSection = (props) => {
             className={classes.title}
           />
           <PrintVideoCarousel
-            resultData={resultData && !error ? resultData : SampleVideoList}
+            resultData={
+              resultData && !error ? resultData : InhyukSampleVideoList
+            }
           />
           {/*채널 상세 페이지*/}
           {channelRoute && !isMyList && (

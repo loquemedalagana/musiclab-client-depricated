@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
+import qs from "qs";
 
 import { Face, Link, LocalOffer as Tag } from "@material-ui/icons";
 import NoParallaxLayout from "../../../Layouts/NoParallaxLayout";
@@ -20,9 +21,13 @@ import styles from "../../../../assets/jss/material-kit-react/views/pages/noPara
 
 const useStyles = makeStyles(styles);
 
-const UpdateProfile = () => {
+const UpdateProfile = (props) => {
   const classes = useStyles();
-  //react=swippable-views should be added
+  const { location } = props;
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true,
+  });
+  console.log(location, query);
   return (
     <NoParallaxLayout isBigCard={true}>
       <GridItem xs={12} sm={12} md={7} lg={6} className={classes.brand}>
@@ -54,6 +59,7 @@ const UpdateProfile = () => {
 
 UpdateProfile.propTypes = {
   isChanged: PropTypes.bool,
+  location: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({

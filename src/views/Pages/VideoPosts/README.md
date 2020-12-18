@@ -1,17 +1,8 @@
 ## video list page
-<ul>
-    <li>get official channel</li>
-    <li>Search results from Yada Jeon Inhyuk</li>
-</ul>
-
-#### url example 1: /officialvideolist/jihbandofficial
-#### url example 2: /officialvideolist/musseolofficial
-
-## channel list
-<ul>
-    <li>Music SSeolprise by Inhyuk, url: /officialvideolist/jihbandofficial</li>
-    <li>Jeon Inhyuk Band Official, url: /officialvideolist/musseolofficial</li>
-</ul>
+1. 공식 영상 (따로 매뉴로 분류)
+2. 일반 영상
+    - 사슬이 영상 (모두 열람 가능, 댓글은 회원만)
+    - 커버 영상 (피드백은 멤버들만 열람 가능)
 
 ## Search Result
 <pre>
