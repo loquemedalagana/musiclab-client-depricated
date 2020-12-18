@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Skeleton from "@material-ui/lab/Skeleton";
@@ -22,7 +21,6 @@ import {
 import { SampleVideoList } from "../../../../app/data/yada/InhyukSampleVideoList";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
-import { getVideoDataFromPlayList } from "../../../../app/api/video/youtube/youtubeFetchEndpoints";
 
 // video list fetched data
 import {
@@ -30,6 +28,7 @@ import {
   HOT_VIDEO_LIST,
   LATEST_VIDEO_LIST,
 } from "../../../../app/api/video/landingPageCarousel";
+import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
 
 const useStyles = makeStyles(styles);
 
@@ -69,7 +68,8 @@ export const VideoCarouselSection = (props) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const result = getVideoDataFromPlayList(data);
+        console.log("original data ", data);
+        const result = getVideoDataListFromPlayList(data);
         setLoading(false);
         setResultData(result);
       })

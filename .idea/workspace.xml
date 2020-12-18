@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/profile/sampleProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/videos/jsonString/singleVideoJsonSample.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/videos/jsonString/videoListOfJeonInhyukBand.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/videos/sampleAllVideoList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/videos/sampleChannelVideoList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/mockingData/videos/videoIdArray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/utils/video/youtubeDataProcessing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/data/SampleJsonFiles/VideoListOfJeonInhyukBand.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/jsonFiles/VideoListOfJeonInhyukBand.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/data/SampleJsonFiles/jihbandchannel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/jsonFiles/jihbandchannel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/data/SampleJsonFiles/너에게로또다시.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/data/jsonFiles/너에게로또다시.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/params/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/mockingData/sampleProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/LikedVideos/LikedVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/LikedVideos/LikedVideos.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/UserPostList/UserPostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/UserPostList/UserPostList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ProfileSections/UserTags/UserTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/UserTags/UserTags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfileSections/UserHashtagsEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/UserHashtagsEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/video/youtube/youtubeFetchEndpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/video/youtube/youtubeFetchEndpoints.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/mockingData/videos/videoIdArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/mockingData/videos/videoidList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/Sections/VideoListSection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListBySearchKeyword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByYoutubeChannelProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/VideoPosts/VideoListByYoutubeChannelProfile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/mockingData/videos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/utils/video/youtubeDataProcessing.js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -81,6 +63,7 @@
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\api\video\youtube" />
     </key>
     <key name="es6.move.members.recent.items">
+      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\utils\video\youtubeDataProcessing.js" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\models\common\getDate.js" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\inputValidation\user\snsLinkValidation.js" />
     </key>
@@ -110,7 +93,7 @@
       <workItem from="1608252050793" duration="1872000" />
       <workItem from="1608254382139" duration="160000" />
       <workItem from="1608254588843" duration="2756000" />
-      <workItem from="1608258754907" duration="4694000" />
+      <workItem from="1608258754907" duration="7135000" />
     </task>
     <servers />
   </component>

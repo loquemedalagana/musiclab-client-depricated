@@ -24,7 +24,7 @@ import {
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
 import videoListOfJeonInhyukBand from "../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
-import videoIdArray from "../../../test/mockingData/videos/videoIdArray";
+import videoIdList from "../../../test/mockingData/videos/videoidList";
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle";
 
 const useStyles = makeStyles(styles);
@@ -45,7 +45,7 @@ export const VideoListBySearchKeyword = (props) => {
   console.log(query);
   const { items } = JSON.parse(videoListOfJeonInhyukBand);
   console.log(items);
-  console.log(videoIdArray);
+  console.log(videoIdList);
 
   //fetch data with get request
 
