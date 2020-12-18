@@ -17,7 +17,7 @@ export default {
     textAlign: "center",
   },
   emptyContainer: {
-    height: "100vh",
+    minHeight: "50vh",
     alignContent: "center",
   },
 };

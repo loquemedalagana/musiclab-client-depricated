@@ -7,6 +7,8 @@ import {
   dangerColor,
 } from "../../material-kit-react.js";
 
+import imagesStyle from "./ImgStyle";
+
 const navPillsStyle = (theme) => ({
   root: {
     marginTop: "20px",
@@ -27,6 +29,7 @@ const navPillsStyle = (theme) => ({
       flexWrap: "wrap",
     },
   },
+  ...imagesStyle,
   displayNone: {
     display: "none !important",
   },

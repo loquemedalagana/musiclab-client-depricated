@@ -1,21 +1,20 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import classNames from "classnames";
 import PropTypes from "prop-types";
 import qs from "qs";
 import { makeStyles } from "@material-ui/core/styles";
 
 import {
   GridContainer,
-  GridItem,
   //    LinearLoading,
 } from "../../../components/components";
 
 // sub components
 import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
-import RenderEmptyList from "./VideoListSection/RenderEmptyList";
+import SelectMenuSection from "./TabMenuSection/SelectMenuSection";
+import EmptyContainer from "./VideoListSection/EmptyContainer";
 
 // route
 import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/video";
@@ -51,13 +50,13 @@ export const VideoListBySearchKeyword = (props) => {
   return (
     <SmallParallaxLayout>
       <GridContainer justify="center">
-        <h2>탭 매뉴 선택(사슬, 커버)</h2>
+        <SelectMenuSection />
       </GridContainer>
 
       {/* 요 부분은 쿼리에 따라 다르게 출력됨*/}
-      <RenderEmptyList>
+      <EmptyContainer className={classes.emptyContainer}>
         <h1>업데이트 예정</h1>
-      </RenderEmptyList>
+      </EmptyContainer>
     </SmallParallaxLayout>
   );
 };

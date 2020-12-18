@@ -4,8 +4,6 @@ import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 
-import { Dashboard, Schedule, List } from "@material-ui/icons";
-
 import {
   GridItem,
   NavPills,
@@ -20,7 +18,6 @@ const SelectMenuSection = (props) => {
         tabs={[
           {
             tabButton: "Dashboard",
-            tabIcon: Dashboard,
             tabContent: (
               <span>
                 <p>
@@ -47,7 +44,6 @@ const SelectMenuSection = (props) => {
           },
           {
             tabButton: "Schedule",
-            tabIcon: Schedule,
             tabContent: (
               <span>
                 <p>
@@ -69,7 +65,6 @@ const SelectMenuSection = (props) => {
           },
           {
             tabButton: "Tasks",
-            tabIcon: List,
             tabContent: (
               <span>
                 <p>
