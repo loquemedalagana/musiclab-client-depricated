@@ -4,19 +4,19 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { Face, Link, LocalOffer as Tag } from "@material-ui/icons";
-import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../../../Layouts/NoParallaxLayout";
 
 import {
   GridItem,
   CustomTabs,
   //    Button,
-} from "../../../components/components";
+} from "../../../../components/components";
 
 import PersonalInfoEdit from "./UpdateProfileSections/PersonalInfoEdit";
 import SnsInfoEdit from "./UpdateProfileSections/SnsInfoEdit";
 import UserHashtagsEdit from "./UpdateProfileSections/UserHashtagsEdit";
-import { MakeSpace } from "../../../app/helper/viewControllers/uiManagers";
-import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/UpdateProfileStyle";
+import { MakeSpace } from "../../../../app/helper/viewControllers/uiManagers";
+import styles from "../../../../assets/jss/material-kit-react/views/pages/noParallax/UpdateProfileStyle";
 
 const useStyles = makeStyles(styles);
 

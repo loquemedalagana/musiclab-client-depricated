@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import classNames from "classnames";
 import { withRouter, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
-
+// material ui
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Link } from "@material-ui/core";
 
@@ -21,27 +21,30 @@ import {
   Instagram,
   YouTube,
 } from "@material-ui/icons";
-
+// custom component
 import {
   //    Button,
   GridContainer,
   GridItem,
   NavPills,
   LinearLoading,
-} from "../../../components/components";
+} from "../../../../components/components";
 
-import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
-
+// fragment components
+import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
 import LikedVideos from "./ProfileSections/LikedVideos/LikedVideos";
 import UserPostList from "./ProfileSections/UserPostList/UserPostList";
 import UserTags from "./ProfileSections/UserTags/UserTags";
+import NotFound from "../../Error/NotFound";
 
-import NotFound from "../Error/NotFound";
+// route constants
+import { EDIT_PROFILE_ROUTE } from "../../../../routes/params/profile";
 
-import defaultImg from "../../../assets/images/dolphin_profile.png";
+// image
+import defaultImg from "../../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
-import { getDateKor } from "../../../app/models/common/getDate";
+import styles from "../../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
+import { getDateKor } from "../../../../app/models/common/getDate";
 
 const useStyles = makeStyles(styles);
 
@@ -92,9 +95,12 @@ const Profile = (props) => {
 
   const { match, isAdmin, history, curUserId } = props;
 
+  // 나중에 백앤드랑 연결 후 바꿀 것!
   const targetUserId = match.params.userid; //useEffect 안에서 아이디가 있음.
-  const isSame = curUserId === targetUserId;
-  const ENDPOINT = `/api/profiles/${targetUserId}`;
+  const isSame = curUserId === "my";
+  const ENDPOINT = `/api/profiles/${
+    targetUserId === "my" ? curUserId : targetUserId
+  }`;
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -136,16 +142,12 @@ const Profile = (props) => {
               {/*관리자일 때 공식 표시*/}
               <h3 className={classes.title}>
                 {data.userData.displayName}
-                {isSame ? (
+                {isSame && (
                   <IconButton
                     color="primary"
-                    onClick={() => history.push(`/modify/profile`)}
+                    onClick={() => history.push(EDIT_PROFILE_ROUTE)}
                   >
                     <Edit />
-                  </IconButton>
-                ) : (
-                  <IconButton color="secondary" onClick={null}>
-                    <Favorite />
                   </IconButton>
                 )}
               </h3>

@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateUserSocial } from "../../../../app/store/userValidationAndUpdate";
-import { setAlertMsg } from "../../../../app/store/alert";
+import { updateUserSocial } from "../../../../../app/store/userValidationAndUpdate";
+import { setAlertMsg } from "../../../../../app/store/alert";
 
 import {
   GridContainer,
   Button,
   CircularLoading,
   GridItem,
-} from "../../../../components/components";
+} from "../../../../../components/components";
 
-import SocialInput from "../../../SubComponents/authAndProfile/SocialInput";
+import SocialInput from "../../../../SubComponents/authAndProfile/SocialInput";
 
-import { SOCIAL_NULL_ERROR } from "../../../../app/helper/auth/authAlertMessages";
-import { checkSnsLink } from "../../../../app/inputValidation/user/snsLinkValidation";
+import { SOCIAL_NULL_ERROR } from "../../../../../app/helper/auth/authAlertMessages";
+import { checkSnsLink } from "../../../../../app/inputValidation/user/snsLinkValidation";
 
 export const SnsInfoEdit = (props) => {
   const {

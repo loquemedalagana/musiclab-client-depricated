@@ -33,6 +33,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 // route constants
 import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
 import {VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/video";
+import {MY_PROFILE_ROUTE} from "../../routes/params/profile";
 
 const useStyles = makeStyles(styles);
 
@@ -155,7 +156,7 @@ const HeaderLinks = (props) => {
           buttonIcon={AccountCircle}
           dropdownList={[
             <Button color = "transparent" onClick={()=> {
-              history.push(`/profiles/${userId}`);
+              history.push(MY_PROFILE_ROUTE);
               setMobileOpen(false);
             }} className={classes.dropdownLink}>
               <AccountCircle/>

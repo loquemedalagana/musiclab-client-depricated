@@ -16,10 +16,10 @@ import Levelup from "../views/Pages/Auth/Levelup";
 import WaitingLevelup from "../views/Pages/Auth/WaitingLevelup";
 import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUsers";
 
-import Profile from "../views/Pages/Profile/Profile";
+import Profile from "../views/Pages/Profile/ViewProfile/Profile";
 import VideoListByYoutubeChannelProfile from "../views/Pages/VideoPosts/VideoListByYoutubeChannelProfile";
 import VideoListBySearchKeyword from "../views/Pages/VideoPosts/VideoListBySearchKeyword";
-import UpdateProfile from "../views/Pages/Profile/UpdateProfile";
+import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
 
 // 에러 페이지 컴포넌트
 import NotFound from "../views/Pages/Error/NotFound";
@@ -37,6 +37,7 @@ import {
   LEVELUP_ROUTE,
   RESET_PASSWORD_ROUTE,
 } from "./params/auth";
+import { VIEW_PROFILE_ROUTE } from "./params/profile";
 import {
   VIDEO_CHANNEL_PROFILE_ROUTE,
   VIDEO_SEARCH_ROUTE,
@@ -60,7 +61,7 @@ const TestRoutes = () => (
         component={InputEmailForSocialUsers}
       />
 
-      <Route exact path="/profiles/:userid" component={Profile} />
+      <Route exact path={`${VIEW_PROFILE_ROUTE}/:userid`} component={Profile} />
       <Route exact path="/modify/profile" component={UpdateProfile} />
 
       <Route

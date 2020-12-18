@@ -7,8 +7,6 @@ import qs from "qs";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-import VideoListBySearchKeyword from "./VideoListBySearchKeyword";
-
 import {
   GridContainer,
   GridItem,
@@ -44,7 +42,6 @@ export const VideoListByYoutubeChannelProfile = (props) => {
     ignoreQueryPrefix: true,
   });
 
-  //if (channel === "any") return <VideoListBySearchKeyword />;
   if (!channelInfo) return <Redirect to="/notfound" />;
 
   return (

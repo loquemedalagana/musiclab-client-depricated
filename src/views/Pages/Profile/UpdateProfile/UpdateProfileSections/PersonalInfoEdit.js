@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classNames from "classnames";
-import { setAlertMsg } from "../../../../app/store/alert";
-import { updateUserProfile } from "../../../../app/store/userValidationAndUpdate";
+import { setAlertMsg } from "../../../../../app/store/alert";
+import { updateUserProfile } from "../../../../../app/store/userValidationAndUpdate";
 
 import { VpnKey as VpnKeyIcon, MusicNote, People } from "@material-ui/icons";
 
@@ -15,14 +15,14 @@ import {
   CustomInput,
   Button,
   CircularLoading,
-} from "../../../../components/components";
+} from "../../../../../components/components";
 
-import NameInput from "../../../SubComponents/authAndProfile/NameInput";
-import DescriptionInput from "../../../SubComponents/authAndProfile/DescriptionInput";
-import PasswordInput from "../../../SubComponents/authAndProfile/PasswordInput";
+import NameInput from "../../../../SubComponents/authAndProfile/NameInput";
+import DescriptionInput from "../../../../SubComponents/authAndProfile/DescriptionInput";
+import PasswordInput from "../../../../SubComponents/authAndProfile/PasswordInput";
 
-import defaultImg from "../../../../assets/images/dolphin_profile.png";
-import { PROFILE_PHOTO_SERVER_ERROR } from "../../../../app/helper/auth/authAlertMessages";
+import defaultImg from "../../../../../assets/images/dolphin_profile.png";
+import { PROFILE_PHOTO_SERVER_ERROR } from "../../../../../app/helper/auth/authAlertMessages";
 
 export const PersonalInfoEdit = (props) => {
   const {
