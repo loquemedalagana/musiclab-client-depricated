@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { GridContainer } from "../../../../components/components";
 
 const EmptyContainer = (props) => {
-  const { children, className } = props;
+  const { children, className, ...rest } = props;
   return (
-    <GridContainer justify="center" className={className}>
+    <GridContainer justify="center" className={className} {...rest}>
       {children}
     </GridContainer>
   );

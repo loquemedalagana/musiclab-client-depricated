@@ -1,7 +1,7 @@
 {
   "name": "music-lab-client",
   "version": "0.1.0",
-  "keywords": ["band", "rock", "vocal", "yada", "JeonInhyuk"],
+  "keywords": ["band", "rock", "vocal", "yada", "JeonInhyuk", "guitar", "JeonInhyukBand"],
   "author": "Jeon Inhyuk",
   "private": true,
   "dependencies": {

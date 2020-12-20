@@ -38,7 +38,6 @@
 
 ## float button (1순위)
 ### 글쓰기, 뒤로 버튼 float로 처리 (hidden 속성 사용)
-- 뒤로 가기 버튼은 appbar에 설정 (완료)
 - 글쓰기 버튼은 오른쪽 하단에 (Create Icon 사용)
   - https://material-ui.com/components/speed-dial/ 이용하기
 - 모바일에서 검색 아이콘 매뉴바 왼쪽에(투명으로)
@@ -50,10 +49,13 @@
 
 ## 키워드별 영상 분류, 장바구니 
 
-## 영상 등록하기 버튼 클릭
+## 영상 등록하기 버튼 클릭 (우측 하단에 매뉴로)
+  - 클릭 시 커버 영상, 사슬 영상 선택
 
 ## 회원정보 설정에 국가 설정
 - https://material-ui.com/components/autocomplete/#country-select
+- https://www.zerocho.com/category/JavaScript/post/573b321aa54b5e8427432946
+- !! 윈도우 객체로 언어 찾기 !!
 
 ## tag로 검색 -> autocomplete 
 - https://material-ui.com/components/autocomplete/

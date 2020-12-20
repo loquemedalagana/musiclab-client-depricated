@@ -31,12 +31,13 @@ const useStyles = makeStyles(styles);
 
 export const VideoListBySearchKeyword = (props) => {
   const classes = useStyles();
-  const { location, match } = props;
+  const { location, match, document } = props;
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   console.log(location, match);
   console.log(query);
+  console.log(document);
 
   console.log(query);
   const { items } = JSON.parse(videoListOfJeonInhyukBand);
