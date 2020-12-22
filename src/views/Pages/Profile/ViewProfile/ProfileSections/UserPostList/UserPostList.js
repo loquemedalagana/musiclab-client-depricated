@@ -47,7 +47,7 @@ export const UserPostList = (props) => {
 
 UserPostList.propTypes = {
   props: PropTypes.object,
-  userId: PropTypes.string,
+  userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   classes: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 };
 

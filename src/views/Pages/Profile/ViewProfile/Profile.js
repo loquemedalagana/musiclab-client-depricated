@@ -212,12 +212,12 @@ Profile.propTypes = {
   props: PropTypes.object,
   match: PropTypes.object,
   history: PropTypes.object,
-  curUserId: PropTypes.string,
+  curUserId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   isAdmin: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
-  curUserId: state.auth.userData ? state.auth.userData._id : undefined,
+  curUserId: state.auth.userData ? state.auth.userData.id : undefined,
   isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 });
 

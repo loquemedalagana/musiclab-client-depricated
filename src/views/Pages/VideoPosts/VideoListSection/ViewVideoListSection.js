@@ -70,7 +70,7 @@ ViewVideoListSection.propTypes = {
   props: PropTypes.object,
   type: PropTypes.oneOf(["official", "channel", "keywords"]),
   children: PropTypes.node,
-  userId: PropTypes.string,
+  userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   isAdmin: PropTypes.bool,
   videoListId: PropTypes.string,
 };

@@ -194,7 +194,7 @@ HeaderLinks.propTypes = {
   history: PropTypes.object,
   logoutUser: PropTypes.func,
   username: PropTypes.string,
-  userId: PropTypes.string,
+  userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   isAuth: PropTypes.bool,
   isMember: PropTypes.bool,
   notifications: PropTypes.array,

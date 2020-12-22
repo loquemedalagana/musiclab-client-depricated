@@ -82,7 +82,7 @@ export const loginUser = (dataToSubmit) => async (dispatch) => {
 //logout user
 export const logoutUser = () => async (dispatch) => {
   const response = await api.get(`/users/logout`);
-  dispatch(setAlertMsg(response.data.message, "success"));
+  dispatch(setAlertMsg(response.data, "success"));
   dispatch(logout());
   dispatch(fetchUser());
 };

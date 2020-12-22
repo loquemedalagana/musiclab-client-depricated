@@ -76,13 +76,13 @@ PostMenuData.propTypes = {
 
   curUserData: PropTypes.shape({
     isAdmin: PropTypes.bool,
-    userId: PropTypes.string,
+    userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
 
   authorData: PropTypes.shape({
     channelTitle: PropTypes.string,
     displayName: PropTypes.string,
-    userId: PropTypes.string,
+    userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     image: PropTypes.string, //user avatar img or channel avatar img
   }),
 

@@ -74,7 +74,7 @@ export const LikedVideos = (props) => {
 
 LikedVideos.propTypes = {
   classes: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  userId: PropTypes.string,
+  userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   thumbnailListImageClasses: PropTypes.string,
 };
 

@@ -102,7 +102,7 @@ export const PersonalInfoEdit = (props) => {
     imgData.append("image", file);
 
     //console.log(imgData, file);
-    const userId = userInfo._id;
+    const userId = userInfo.id;
 
     const ENDPOINT =
       process.env.REACT_APP_SERVERURL +
@@ -259,7 +259,7 @@ PersonalInfoEdit.propTypes = {
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
   userInfo: state.auth.userData,
-  isChanged: state.userValidationAndUpdate.changed,
+  isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, updateUserProfile })(
