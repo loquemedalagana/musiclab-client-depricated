@@ -53,10 +53,10 @@ const Routes = () => (
 
       <TokenRoute
         exact
-        path={`${RESET_PASSWORD_ROUTE}`}
+        path={`${RESET_PASSWORD_ROUTE}/:token?`}
         component={ResetPassword}
       />
-      <TokenRoute exact path={`${LEVELUP_ROUTE}`} component={Levelup} />
+      <TokenRoute exact path={`${LEVELUP_ROUTE}/:token?`} component={Levelup} />
 
       <NonMemberRoute
         exact

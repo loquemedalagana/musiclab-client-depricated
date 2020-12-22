@@ -39,8 +39,10 @@ const TokenRoute = ({ component: Component, isChanged, location, ...rest }) => {
           <Redirect to={NOT_FOUND_ROUTE} />
         ) : isChanged ? (
           <Redirect to="/" />
+        ) : data ? (
+          <Component {...props} />
         ) : (
-          data && <Component {...props} />
+          <Redirect to="/" />
         )
       }
     />
