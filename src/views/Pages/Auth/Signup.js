@@ -7,7 +7,7 @@ import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
 import Check from "@material-ui/icons/Check";
 
-import { signupUser } from "../../../app/store/userValidationAndUpdate";
+import { signupUser } from "../../../app/store/userControl";
 
 import {
   GridItem,
@@ -143,7 +143,7 @@ export const Signup = (props) => {
 
     if (ok) {
       console.log(inputs);
-      //signupUser(inputs);
+      signupUser(inputs);
     }
   };
 
@@ -247,7 +247,7 @@ Signup.propTypes = {
 const mapStateToProps = (state) => ({
   alerts: state.alert,
   isAuth: state.auth.auth,
-  isChanged: state.userValidationAndUpdate.changed,
+  isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, signupUser })(Signup);

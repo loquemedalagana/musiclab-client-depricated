@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateUserSocial } from "../../../../../app/store/userValidationAndUpdate";
+import { updateUserSocial } from "../../../../../app/store/userControl";
 import { setAlertMsg } from "../../../../../app/store/alert";
 
 import {

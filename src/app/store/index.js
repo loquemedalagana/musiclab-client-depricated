@@ -2,7 +2,7 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import alert from "./alert";
 import auth from "./auth";
 import tag from "./tag";
-import userValidationAndUpdate from "./userValidationAndUpdate";
+import userControl from "./userControl";
 import video from "./video";
 
 //회원가입, 레벨업은 상의 후에
@@ -11,7 +11,7 @@ const reducer = combineReducers({
   alert,
   auth,
   tag,
-  userValidationAndUpdate: userValidationAndUpdate,
+  userControl,
   video,
 });
 

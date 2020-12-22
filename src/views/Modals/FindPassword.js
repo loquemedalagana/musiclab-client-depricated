@@ -22,7 +22,7 @@ import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 import EmailValidation from "../../app/inputValidation/user/emailValidation";
 
 import { setAlertMsg } from "../../app/store/alert";
-import { requestFindPassword } from "../../app/store/userValidationAndUpdate";
+import { requestFindPassword } from "../../app/store/userControl";
 
 const useStyles = makeStyles(styles);
 

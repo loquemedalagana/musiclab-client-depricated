@@ -32,7 +32,7 @@ import {
 } from "../../../app/helper/auth/authAlertMessages";
 import { CHECK_VALID_INFO } from "../../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../../app/store/alert";
-import { requestLevelup } from "../../../app/store/userValidationAndUpdate";
+import { requestLevelup } from "../../../app/store/userControl";
 
 const useStyles = makeStyles(styles);
 
@@ -181,19 +181,14 @@ export const Levelup = (props) => {
     }
 
     if (ok) {
-      const { familyName, givenName } = inputs;
       const userPersonalInfo = {
         gender,
         birthday,
-        name: {
-          familyName,
-          givenName,
-        },
         ...inputs,
       };
       console.log(userPersonalInfo);
       //console.log(userPersonalInfo, query);
-      // requestLevelup(userPersonalInfo, query);
+      requestLevelup(userPersonalInfo, query);
     }
   };
 
@@ -315,6 +310,7 @@ Levelup.propTypes = {
 
 const mapStateToProps = (state) => ({
   alerts: state.alert,
+  isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, requestLevelup })(

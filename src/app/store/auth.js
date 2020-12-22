@@ -62,7 +62,7 @@ export const fetchUser = () => async (dispatch) => {
   try {
     const response = await api.get(`/users/load`);
     dispatch(loadUserSuccess(response.data));
-  } catch (err) {
+  } catch (error) {
     dispatch(loadUserFail());
   }
 };
@@ -73,14 +73,8 @@ export const loginUser = (dataToSubmit) => async (dispatch) => {
     await api.post(`/users/login`, dataToSubmit);
     dispatch(loginSuccess());
     dispatch(fetchUser());
-  } catch (err) {
-    const errors = err.response.data.errors;
-    if (errors) {
-      //edit
-      errors.forEach((error) =>
-        dispatch(setAlertMsg(error.message.message, "error"))
-      );
-    }
+  } catch (error) {
+    console.log(error.response.data);
     dispatch(loginFail());
   }
 };

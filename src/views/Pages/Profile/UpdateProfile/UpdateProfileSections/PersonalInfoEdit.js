@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classNames from "classnames";
 import { setAlertMsg } from "../../../../../app/store/alert";
-import { updateUserProfile } from "../../../../../app/store/userValidationAndUpdate";
+import { updateUserProfile } from "../../../../../app/store/userControl";
 
 import { VpnKey as VpnKeyIcon, MusicNote, People } from "@material-ui/icons";
 

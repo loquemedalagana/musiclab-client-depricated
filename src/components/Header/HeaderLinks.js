@@ -13,12 +13,12 @@ import {
 } from "@material-ui/core";
 
 // @material-ui/icons
-import { 
+import {
   VideoLibrarySharp,
-  Apps, 
-  SupervisorAccount, 
-  ExitToApp, 
-  Notifications, 
+  Apps,
+  SupervisorAccount,
+  ExitToApp,
+  Notifications,
   AccountCircle,
   Language,
 } from "@material-ui/icons";
@@ -44,10 +44,8 @@ const HeaderLinks = (props) => {
     logoutUser,
     username,
     isAuth,
-    isAdmin,
     isMember,
     history,
-    userId,
     notifications,
   } = props;
 
@@ -100,20 +98,20 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={Apps}
           dropdownList={[
-            <Button color = "transparent" 
-              onClick={()=>console.log('new')} 
+            <Button color = "transparent"
+              onClick={()=>console.log('new')}
               className={classes.dropdownLink}
             >
               New
             </Button>,
-            <Button color = "transparent" 
-              onClick={()=>console.log('hot')} 
+            <Button color = "transparent"
+              onClick={()=>console.log('hot')}
               className={classes.dropdownLink}
             >
               Hot
             </Button>,
-            <Button color = "transparent" 
-              onClick={()=>console.log('from yada')} 
+            <Button color = "transparent"
+              onClick={()=>console.log('from yada')}
               className={classes.dropdownLink}
             >
               From Yada Jeon Inhyuk
@@ -123,27 +121,6 @@ const HeaderLinks = (props) => {
       </ListItem>
       )}
 
-      { isAdmin && (
-        <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="Admin"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={SupervisorAccount}
-          dropdownList={[
-            <Button color = "transparent" onClick={()=>console.log('user list')} className={classes.dropdownLink}>
-              User List
-            </Button>,
-            <Button color = "transparent" onClick={()=>console.log('dashboard')} className={classes.dropdownLink}>
-              Send group mail
-            </Button>,
-          ]}
-        />
-        </ListItem>
-      )}
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
@@ -163,9 +140,9 @@ const HeaderLinks = (props) => {
               My Profile
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('notifications')} className={classes.dropdownLink}>
-              <Badge 
-                badgeContent={notifications.length} 
-                variant='dot' 
+              <Badge
+                badgeContent={notifications.length}
+                variant='dot'
                 color="secondary"
                 anchorOrigin={{
                   vertical: 'top',
@@ -178,14 +155,14 @@ const HeaderLinks = (props) => {
             </Button>,
             <Button color = "transparent" onClick={()=>console.log('language')} className={classes.dropdownLink}>
               <Language />
-              Language Setting              
+              Language Setting
             </Button>,
             <Button color = "transparent" onClick={()=>{
               logoutUser();
               return <Redirect to = '/' />;
             }} className={classes.dropdownLink}>
               <ExitToApp />
-              Logout              
+              Logout
             </Button>
           ]}
         />
@@ -220,16 +197,14 @@ HeaderLinks.propTypes = {
   userId: PropTypes.string,
   isAuth: PropTypes.bool,
   isMember: PropTypes.bool,
-  isAdmin: PropTypes.bool,
   notifications: PropTypes.array,
 }
 
 const mapStateToProps = (state) => ({
   isAuth: state.auth.auth,
   username: state.auth.userData ? state.auth.userData.displayName : undefined,
-  userId: state.auth.userData ? state.auth.userData._id : undefined,
+  userId: state.auth.userData ? state.auth.userData.id : undefined,
   isMember: state.auth.auth === true ? (state.auth.userData && state.auth.userData.points >= 0) : false,
-  isAdmin: state.auth.auth === true ? (state.auth.userData && state.auth.userData.isadmin) : false,
   notifications: ['hello'], //다르게 불러올 것
 })
 

@@ -5,7 +5,7 @@ import { loginUser } from "./auth";
 
 //expired 여부 기록하기
 const slice = createSlice({
-  name: "userValidationAndUpdate",
+  name: "userControl",
   initialState: {
     changed: false,
   },
@@ -55,8 +55,8 @@ export const sendEmailAuthCode = (dataToSubmit) => async (dispatch) => {
     dispatch(sendAuthCodeSuccess());
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());
-  } catch (err) {
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+  } catch (error) {
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(sendAuthCodeFail());
     dispatch(setInitState());
   }
@@ -73,10 +73,12 @@ export const signupUser = (dataToSubmit) => async (dispatch) => {
         password,
       })
     );
+    console.log(response.data);
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());
-  } catch (err) {
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+  } catch (error) {
+    console.log(error.response.data);
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(signupFail());
     dispatch(setInitState());
   }
@@ -84,13 +86,12 @@ export const signupUser = (dataToSubmit) => async (dispatch) => {
 
 export const emailRegister = (dataToSubmit) => async (dispatch) => {
   try {
-    const { email } = dataToSubmit;
     const response = await api.patch(`/users/register/email`, dataToSubmit);
     dispatch(signupSuccess());
-    if (response.data.success) dispatch(sendEmailAuthCode({ email }));
-    else throw Error("failed response!");
-  } catch (err) {
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+    console.log(response.data);
+    dispatch(setInitState());
+  } catch (error) {
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(signupFail());
     dispatch(setInitState());
   }
@@ -101,8 +102,8 @@ export const requestFindPassword = (dataToSubmit) => async (dispatch) => {
   try {
     const response = await api.post(`/users/findinfo/password`, dataToSubmit);
     dispatch(setAlertMsg(response.data.message, "success"));
-  } catch (err) {
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+  } catch (error) {
+    dispatch(setAlertMsg(error.response.data.message, "error"));
   }
 };
 
@@ -119,9 +120,9 @@ export const resetPassword = (dataToSubmit, urlQuery) => async (dispatch) => {
     dispatch(changedUserInfoSucess());
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());
-  } catch (err) {
+  } catch (error) {
     dispatch(changedUserInfoFail());
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(setInitState());
   }
 };
@@ -139,9 +140,9 @@ export const requestLevelup = (dataToSubmit, urlQuery) => async (dispatch) => {
     dispatch(changedUserInfoSucess());
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());
-  } catch (err) {
+  } catch (error) {
     dispatch(changedUserInfoFail());
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(setInitState());
   }
 };
@@ -155,9 +156,9 @@ export const updateUserProfile = (dataToSubmit) => async (dispatch) => {
     dispatch(changedUserInfoSucess());
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());
-  } catch (err) {
+  } catch (error) {
     dispatch(changedUserInfoFail());
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(setInitState());
   }
 };
@@ -170,10 +171,10 @@ export const updateUserSocial = (socialData) => async (dispatch) => {
     dispatch(changedUserInfoSucess());
     dispatch(setAlertMsg(response.data.message, "success"));
     dispatch(setInitState());
-  } catch (err) {
+  } catch (error) {
     dispatch(changedUserInfoFail());
-    console.log(err);
-    dispatch(setAlertMsg(err.response.data.message, "error"));
+    console.log(error);
+    dispatch(setAlertMsg(error.response.data.message, "error"));
     dispatch(setInitState());
   }
 };

@@ -25,7 +25,7 @@ import {
   CHECK_VALID_EMAIL,
   INPUT_VALID_EMAIL,
 } from "../../../app/helper/auth/helperTexts";
-import { emailRegister } from "../../../app/store/userValidationAndUpdate";
+import { emailRegister } from "../../../app/store/userControl";
 import { setAlertMsg } from "../../../app/store/alert";
 import { PLEASE_READ_RULES } from "../../../app/helper/auth/authAlertMessages";
 
@@ -106,7 +106,7 @@ export const InputEmailForSocialUsers = (props) => {
     }
   };
 
-  //if (isRegisteredEmail || isNotLoggedin) return <Redirect to="/" />;
+  if (isRegisteredEmail || isNotLoggedin) return <Redirect to="/" />;
   if (isChanged) return <Redirect to="/waitinglevelup" />;
 
   return (
@@ -199,7 +199,7 @@ const mapStateToProps = (state) => ({
   alerts: state.alert,
   isNotLoggedin: !state.auth.auth,
   isRegisteredEmail: state.auth.userData && state.auth.userData.email,
-  isChanged: state.userValidationAndUpdate.changed,
+  isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, emailRegister })(

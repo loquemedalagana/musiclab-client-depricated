@@ -9,7 +9,7 @@ import { GridItem } from "../../../components/components";
 
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 
-import { sendEmailAuthCode } from "../../../app/store/userValidationAndUpdate";
+import { sendEmailAuthCode } from "../../../app/store/userControl";
 //import {setAlertMsg} from '../../app/store/alert';
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/WaitingLevelupStyle";
@@ -65,7 +65,7 @@ WaitingLevelup.propTypes = {
 
 const mapStateToProps = (state) => ({
   userEmail: state.auth.userData ? state.auth.userData.email : undefined,
-  isChanged: state.userValidationAndUpdate.changed,
+  isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps, { sendEmailAuthCode })(WaitingLevelup);

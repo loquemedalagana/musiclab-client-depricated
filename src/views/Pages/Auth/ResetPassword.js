@@ -15,7 +15,7 @@ import {
 } from "../../../components/components";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
-import { resetPassword } from "../../../app/store/userValidationAndUpdate";
+import { resetPassword } from "../../../app/store/userControl";
 import { setAlertMsg } from "../../../app/store/alert";
 import { PASSWORD_HELPER } from "../../../app/helper/auth/authAlertMessages";
 
