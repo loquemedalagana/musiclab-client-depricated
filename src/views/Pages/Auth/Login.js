@@ -3,14 +3,8 @@ import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
-import classNames from "classnames";
-
-import { Link } from "@material-ui/core";
 
 import {
-  Footer,
-  GridContainer,
   GridItem,
   Card,
   Button,
@@ -20,10 +14,9 @@ import {
 
 import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
 import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
-
+import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 
-import { defaultBgStyle } from "../../../assets/jss/material-kit-react/views/layouts/background";
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import Loading from "../../../components/Loading/LinearLoading";
 import FindPassword from "../../Modals/FindPassword";
@@ -62,6 +55,11 @@ export const Login = (props) => {
   const [findPasswordOpen, setFindPasswordOpen] = useState(false);
 
   const { email, password } = inputs;
+
+  const handleModalOpen = (event) => {
+    event.preventDefault();
+    return setFindPasswordOpen(true);
+  };
 
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;
@@ -133,28 +131,9 @@ export const Login = (props) => {
                   onChange={onInputHandler}
                   onKeyPress={handleKeyPress}
                 />
-                <div
-                  className={classNames({
-                    justifyContent: "right",
-                  })}
-                >
-                  <Link
-                    onClick={(event) => {
-                      event.preventDefault();
-                      return setFindPasswordOpen(true);
-                    }}
-                    component="button"
-                    className={classes.link}
-                    color="textPrimary"
-                    classes={{
-                      root: classNames({
-                        textAlign: "right",
-                      }),
-                    }}
-                  >
-                    Did you forget password?
-                  </Link>
-                </div>
+                <ModalOpenHelperText onClick={handleModalOpen}>
+                  Did you forget password?
+                </ModalOpenHelperText>
               </CardBody>
 
               <CardFooter className={classes.cardFooter}>

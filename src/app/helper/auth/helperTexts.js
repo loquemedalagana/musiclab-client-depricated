@@ -1,4 +1,4 @@
-export const CHECK_VALID_EMAIL = `입력하신 이메일 주소로 인증코드가 갑니다. 정확히 입력하셨는지 다시한번 확인해주세요.`;
+export const CHECK_AGREEMENT_HELPER = `여기를 클릭하셔서 개인정보 처리방침을 읽으시고 동의해주세요.`;
 
 export const levelupHelperText =
   "필수정보를 반드시 입력하셔야 활동이 가능합니다.";

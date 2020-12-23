@@ -18,6 +18,9 @@ const AuthGeneralStyle = {
     padding: "20px 0",
     marginBottom: "15px",
   },
+  bigCardBody: {
+    justifyContent: "space-between",
+  },
   socialIcons: {
     maxWidth: "24px",
     marginTop: "0",

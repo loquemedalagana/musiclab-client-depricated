@@ -81,7 +81,7 @@ const customInputStyle = {
       color: "#495057",
     },
     fontSize: "15px",
-    textAlign: "center",
+    textAlign: "left",
   },
   input: {
     color: "#495057",

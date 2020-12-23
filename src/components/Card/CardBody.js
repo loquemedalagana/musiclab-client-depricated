@@ -27,6 +27,6 @@ export default function CardBody(props) {
 }
 
 CardBody.propTypes = {
-  className: PropTypes.object,
+  className: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   children: PropTypes.node,
 };

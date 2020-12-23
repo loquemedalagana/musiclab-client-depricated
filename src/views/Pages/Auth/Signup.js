@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
-import { FormControlLabel, Checkbox } from "@material-ui/core";
-import Check from "@material-ui/icons/Check";
 
 import { signupUser } from "../../../app/store/userControl";
 
@@ -19,6 +17,8 @@ import {
 import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
 import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 import NameInput from "../../SubComponents/authAndProfile/NameInput";
+import CollectingPersonalInformationAggrement from "../../Modals/CollectingPersonalInformationAggrement";
+import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 
@@ -27,7 +27,7 @@ import DisplayNameValidation from "../../../app/inputValidation/user/displayName
 import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
 import { PLEASE_READ_RULES } from "../../../app/helper/auth/authAlertMessages";
 
-import { CHECK_VALID_EMAIL } from "../../../app/helper/auth/helperTexts";
+import { CHECK_AGREEMENT_HELPER } from "../../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../../app/store/alert";
 import SocialLoginSection from "./Sections/SocialLoginSection";
 
@@ -47,7 +47,14 @@ export const Signup = (props) => {
     //        ...rest
   } = props;
 
+  const [viewAgreement, setViewAgreement] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+
+  const handleModalOpen = (event) => {
+    event.preventDefault();
+    return setViewAgreement(true);
+  };
+
   const [inputs, setInputs] = useState({
     email: "",
     displayName: "",
@@ -86,7 +93,6 @@ export const Signup = (props) => {
         case "password":
           return inputRef.confirmPassword.current.focus();
         case "confirmPassword":
-          return inputRef.checkBox.current.focus();
         default:
           return onSubmitHandler(e);
       }
@@ -136,7 +142,6 @@ export const Signup = (props) => {
     }
 
     if (!isChecked) {
-      inputRef.checkBox.current.focus();
       ok = false;
       setAlertMsg(PLEASE_READ_RULES, "error");
     }
@@ -151,88 +156,71 @@ export const Signup = (props) => {
   if (isChanged) return <Redirect to="/" />;
 
   return (
-    <NoParallaxLayout>
-      <GridItem xs={12} sm={12} md={5} lg={4}>
-        <Card className={classes[cardAnimaton]}>
-          <form className={classes.form}>
-            <SocialLoginSection color="primary" classes={classes} />
-            <p className={classes.divider}>Or Be Classical</p>
-            <CardBody>
-              <NameInput
-                nameType="displayName"
-                error={nicknameErr}
-                value={displayName}
-                inputRef={inputRef.displayName}
-                onKeyPress={handleKeyPress}
-                onChange={onInputHandler}
-              />
-              <EmailInput
-                error={emailErr}
-                value={email}
-                inputRef={inputRef.email}
-                onKeyPress={handleKeyPress}
-                onChange={onInputHandler}
-              />
-              <PasswordInput
-                error={passwordErr}
-                value={password}
-                inputRef={inputRef.password}
-                onChange={onInputHandler}
-                onKeyPress={handleKeyPress}
-              />
-              <PasswordInput
-                error={passwordErr}
-                isConfirm={true}
-                value={confirmPassword}
-                inputRef={inputRef.confirmPassword}
-                onChange={onInputHandler}
-                onKeyPress={handleKeyPress}
-              />
-              <div
-                className={
-                  classes.checkboxAndRadio +
-                  " " +
-                  classes.checkboxAndRadioHorizontal
-                }
-              >
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      tabIndex={-1}
-                      value={isChecked}
-                      inputRef={inputRef.checkBox}
-                      onClick={() =>
-                        isChecked ? setIsChecked(false) : setIsChecked(true)
-                      }
-                      onKeyPress={handleKeyPress}
-                      checkedIcon={<Check className={classes.checkedIcon} />}
-                      icon={<Check className={classes.uncheckedIcon} />}
-                      classes={{
-                        checked: classes.checked,
-                        root: classes.checkRoot,
-                      }}
-                    />
-                  }
-                  className={classes.formControl}
-                  classes={{ label: classes.label }}
-                  label={CHECK_VALID_EMAIL}
+    <>
+      <CollectingPersonalInformationAggrement
+        open={viewAgreement}
+        onClose={() => setViewAgreement(false)}
+        setCheckedAgreement={setIsChecked}
+      />
+      <NoParallaxLayout>
+        <GridItem xs={12} sm={12} md={5} lg={4}>
+          <Card className={classes[cardAnimaton]}>
+            <form className={classes.form}>
+              <SocialLoginSection color="primary" classes={classes} />
+              <p className={classes.divider}>Or Be Classical</p>
+              <CardBody>
+                <NameInput
+                  nameType="displayName"
+                  error={nicknameErr}
+                  value={displayName}
+                  inputRef={inputRef.displayName}
+                  onKeyPress={handleKeyPress}
+                  onChange={onInputHandler}
                 />
-              </div>
-            </CardBody>
-            <CardFooter className={classes.cardFooter}>
-              <Button
-                simple
-                color="primary"
-                size="lg"
-                onClick={onSubmitHandler}
-              >
-                Join us
-              </Button>
-            </CardFooter>
-          </form>
-        </Card>
-      </GridItem>
-    </NoParallaxLayout>
+                <EmailInput
+                  error={emailErr}
+                  value={email}
+                  inputRef={inputRef.email}
+                  onKeyPress={handleKeyPress}
+                  onChange={onInputHandler}
+                />
+                <PasswordInput
+                  error={passwordErr}
+                  value={password}
+                  inputRef={inputRef.password}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                />
+                <PasswordInput
+                  error={passwordErr}
+                  isConfirm={true}
+                  value={confirmPassword}
+                  inputRef={inputRef.confirmPassword}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                />
+                <br />
+                <br />
+                <ModalOpenHelperText onClick={handleModalOpen}>
+                  {CHECK_AGREEMENT_HELPER}
+                </ModalOpenHelperText>
+              </CardBody>
+
+              <CardFooter className={classes.cardFooter}>
+                <Button
+                  simple
+                  color="primary"
+                  size="lg"
+                  onClick={onSubmitHandler}
+                >
+                  Join us
+                </Button>
+              </CardFooter>
+            </form>
+          </Card>
+        </GridItem>
+      </NoParallaxLayout>
+    </>
   );
 };
 

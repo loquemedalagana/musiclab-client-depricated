@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import { EMAIL_REGISTER_ROUTE, LOGIN_ROUTE } from "../params/auth";
 import Loading from "../../components/Loading/LinearLoading";
 
+// 리팩토링 필요
+
 const NonMemberRoute = ({ component: Component, user, isChanged, ...rest }) => (
   <Route
     {...rest}

@@ -152,6 +152,9 @@ export const Help = (props) => {
       fullWidth={true}
       aria-labelledby="music-sseolprise-about"
       aria-describedby="music-sseolprise-about-detail"
+      classes={{
+        paper: "scrollbar-rainy-ashville",
+      }}
     >
       <DialogTitle
         id="music-sseolprise-about-title"

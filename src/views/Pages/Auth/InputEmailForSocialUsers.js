@@ -3,10 +3,7 @@ import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-
-import { FormControlLabel, Checkbox, FormHelperText } from "@material-ui/core";
-import { Check } from "@material-ui/icons";
-
+import { FormHelperText } from "@material-ui/core";
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 import {
   GridItem,
@@ -18,11 +15,13 @@ import {
 } from "../../../components/components";
 
 import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
+import CollectingPersonalInformationAggrement from "../../Modals/CollectingPersonalInformationAggrement";
+import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import EmailValidation from "../../../app/inputValidation/user/emailValidation";
 import {
-  CHECK_VALID_EMAIL,
+  CHECK_AGREEMENT_HELPER,
   INPUT_VALID_EMAIL,
 } from "../../../app/helper/auth/helperTexts";
 import { emailRegister } from "../../../app/store/userControl";
@@ -46,19 +45,23 @@ export const InputEmailForSocialUsers = (props) => {
     isNotLoggedin,
   } = props;
 
+  const [viewAgreement, setViewAgreement] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleModalOpen = (event) => {
+    event.preventDefault();
+    return setViewAgreement(true);
+  };
+
   const [inputs, setInputs] = useState({
     email: "",
   });
-
   const inputRef = {
     email: useRef(),
     checkBox: useRef(),
   };
 
   const [emailErr, setEmailErr] = useState(false);
-
-  const [isChecked, setIsChecked] = useState(false);
-
   const { email } = inputs;
 
   const onInputHandler = (event) => {
@@ -99,7 +102,6 @@ export const InputEmailForSocialUsers = (props) => {
       e.preventDefault();
       switch (e.target.name) {
         case "email":
-          return inputRef.checkBox.current.focus();
         default:
           return onSubmitHandler(e);
       }
@@ -110,79 +112,59 @@ export const InputEmailForSocialUsers = (props) => {
   if (isChanged) return <Redirect to="/waitinglevelup" />;
 
   return (
-    <NoParallaxLayout>
-      <GridItem xs={12} sm={12} md={4}>
-        <Card className={classes[cardAnimaton]}>
-          <form className={classes.form}>
-            <CardHeader color="primary" className={classes.cardHeader}>
-              <h4>Please input your email</h4>
-            </CardHeader>
-            <p className={classes.divider}>{INPUT_VALID_EMAIL}</p>
-            <CardBody>
-              <EmailInput
-                value={email}
-                inputRef={inputRef.email}
-                onChange={onInputHandler}
-                onKeyPress={handleKeyPress}
-                error={emailErr}
-              />
-              {alerts.map(
-                ({ message, name, id }) =>
-                  name === "email" && (
-                    <FormHelperText
-                      key={id}
-                      style={{ textAlign: "right" }}
-                      error
-                    >
-                      {message}
-                    </FormHelperText>
-                  )
-              )}
-              <div
-                className={
-                  classes.checkboxAndRadio +
-                  " " +
-                  classes.checkboxAndRadioHorizontal
-                }
-              >
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      tabIndex={-1}
-                      value={isChecked}
-                      inputRef={inputRef.checkBox}
-                      onKeyPress={handleKeyPress}
-                      onClick={() =>
-                        isChecked ? setIsChecked(false) : setIsChecked(true)
-                      }
-                      checkedIcon={<Check className={classes.checkedIcon} />}
-                      icon={<Check className={classes.uncheckedIcon} />}
-                      classes={{
-                        checked: classes.checked,
-                        root: classes.checkRoot,
-                      }}
-                    />
-                  }
-                  className={classes.formControl}
-                  classes={{ label: classes.label }}
-                  label={CHECK_VALID_EMAIL}
+    <>
+      <CollectingPersonalInformationAggrement
+        open={viewAgreement}
+        onClose={() => setViewAgreement(false)}
+        setCheckedAgreement={setIsChecked}
+      />
+      <NoParallaxLayout>
+        <GridItem xs={12} sm={12} md={4}>
+          <Card className={classes[cardAnimaton]}>
+            <form className={classes.form}>
+              <CardHeader color="primary" className={classes.cardHeader}>
+                <h4>Please input your email</h4>
+              </CardHeader>
+              <p className={classes.divider}>{INPUT_VALID_EMAIL}</p>
+              <CardBody>
+                <EmailInput
+                  value={email}
+                  inputRef={inputRef.email}
+                  onChange={onInputHandler}
+                  onKeyPress={handleKeyPress}
+                  error={emailErr}
                 />
-              </div>
-            </CardBody>
-            <CardFooter className={classes.cardFooter}>
-              <Button
-                simple
-                color="primary"
-                size="lg"
-                onClick={onSubmitHandler}
-              >
-                Submit
-              </Button>
-            </CardFooter>
-          </form>
-        </Card>
-      </GridItem>
-    </NoParallaxLayout>
+                {alerts.map(
+                  ({ message, name, id }) =>
+                    name === "email" && (
+                      <FormHelperText
+                        key={id}
+                        style={{ textAlign: "right" }}
+                        error
+                      >
+                        {message}
+                      </FormHelperText>
+                    )
+                )}
+                <ModalOpenHelperText onClick={handleModalOpen}>
+                  {CHECK_AGREEMENT_HELPER}
+                </ModalOpenHelperText>
+              </CardBody>
+              <CardFooter className={classes.cardFooter}>
+                <Button
+                  simple
+                  color="primary"
+                  size="lg"
+                  onClick={onSubmitHandler}
+                >
+                  Submit
+                </Button>
+              </CardFooter>
+            </form>
+          </Card>
+        </GridItem>
+      </NoParallaxLayout>
+    </>
   );
 };
 
