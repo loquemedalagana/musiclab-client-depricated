@@ -61,6 +61,11 @@ export const Login = (props) => {
     return setFindPasswordOpen(true);
   };
 
+  const handleModalNotOpen = (event) => {
+    event.preventDefault();
+    return setFindPasswordOpen(false);
+  };
+
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;
     setInputs({
@@ -98,7 +103,17 @@ export const Login = (props) => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") onSubmitHandler(e);
+    if (e.key === "Enter") {
+      switch (e.target.name) {
+        case "email":
+          handleModalNotOpen(e);
+          return inputRef.password.current.focus();
+        case "password":
+          return handleModalOpen(e);
+        default:
+          return onSubmitHandler(e);
+      }
+    }
   };
 
   if (loading) return <Loading />;

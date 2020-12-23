@@ -65,6 +65,11 @@ export const Levelup = (props) => {
     return setViewAgreement(true);
   };
 
+  const handleModalNotOpen = (event) => {
+    event.preventDefault();
+    return setViewAgreement(false);
+  };
+
   const [inputs, setInputs] = useState({
     givenName: "",
     familyName: "",
@@ -129,19 +134,24 @@ export const Levelup = (props) => {
     if (e.key === "Enter") {
       switch (e.target.name) {
         case "familyName":
+          handleModalNotOpen(e);
           return inputRef.givenName.current.focus();
         case "givenName":
+          handleModalNotOpen(e);
           return inputRef.gender.current.focus();
         case "gender":
+          handleModalNotOpen(e);
           return inputRef.birthday.current.focus();
         case "birthday":
+          handleModalNotOpen(e);
           return inputRef.description.current.focus();
         case "description":
+          handleModalNotOpen(e);
           return inputRef.password.current.focus();
         case "password":
+          handleModalNotOpen(e);
           return inputRef.confirmPassword.current.focus();
         case "confirmPassword":
-          return inputRef.checkBox.current.focus();
         default:
           return onSubmitHandler(e);
       }

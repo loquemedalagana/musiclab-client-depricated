@@ -86,7 +86,7 @@ export const signupUser = (dataToSubmit) => async (dispatch) => {
 
 export const emailRegister = (dataToSubmit) => async (dispatch) => {
   try {
-    const response = await api.patch(`/users/register/email`, dataToSubmit);
+    const response = await api.post(`/users/register/email`, dataToSubmit);
     dispatch(signupSuccess());
     console.log(response.data);
     dispatch(setInitState());

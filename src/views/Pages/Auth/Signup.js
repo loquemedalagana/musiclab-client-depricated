@@ -56,6 +56,11 @@ export const Signup = (props) => {
     return setViewAgreement(true);
   };
 
+  const handleModalNotOpen = (event) => {
+    event.preventDefault();
+    return setViewAgreement(false);
+  };
+
   const [inputs, setInputs] = useState({
     email: "",
     displayName: "",
@@ -88,10 +93,13 @@ export const Signup = (props) => {
     if (e.key === "Enter") {
       switch (e.target.name) {
         case "displayName":
+          handleModalNotOpen(e);
           return inputRef.email.current.focus();
         case "email":
+          handleModalNotOpen(e);
           return inputRef.password.current.focus();
         case "password":
+          handleModalNotOpen(e);
           return inputRef.confirmPassword.current.focus();
         case "confirmPassword":
           return setViewAgreement(true);
