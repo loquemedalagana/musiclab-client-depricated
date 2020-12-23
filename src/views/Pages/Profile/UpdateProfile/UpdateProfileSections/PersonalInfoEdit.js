@@ -21,6 +21,9 @@ import NameInput from "../../../../SubComponents/authAndProfile/NameInput";
 import DescriptionInput from "../../../../SubComponents/authAndProfile/DescriptionInput";
 import PasswordInput from "../../../../SubComponents/authAndProfile/PasswordInput";
 
+import NameValidation from "../../../../../app/inputValidation/user/NameValidation";
+import PasswordValidation from "../../../../../app/inputValidation/user/passwordValidation";
+
 import defaultImg from "../../../../../assets/images/dolphin_profile.png";
 import { PROFILE_PHOTO_SERVER_ERROR } from "../../../../../app/helper/auth/authAlertMessages";
 
@@ -134,6 +137,8 @@ export const PersonalInfoEdit = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
+
+    // validation 체크
 
     if (description && description.length > 200) {
       ok = false;

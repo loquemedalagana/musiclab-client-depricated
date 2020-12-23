@@ -47,6 +47,7 @@ export const InputEmailForSocialUsers = (props) => {
 
   const [viewAgreement, setViewAgreement] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [checkedAgree, setCheckAgree] = useState(CHECK_AGREEMENT_HELPER);
 
   const handleModalOpen = (event) => {
     event.preventDefault();
@@ -102,6 +103,7 @@ export const InputEmailForSocialUsers = (props) => {
       e.preventDefault();
       switch (e.target.name) {
         case "email":
+          return setViewAgreement(true);
         default:
           return onSubmitHandler(e);
       }
@@ -117,6 +119,7 @@ export const InputEmailForSocialUsers = (props) => {
         open={viewAgreement}
         onClose={() => setViewAgreement(false)}
         setCheckedAgreement={setIsChecked}
+        setChangeHelperText={setCheckAgree}
       />
       <NoParallaxLayout>
         <GridItem xs={12} sm={12} md={4}>
@@ -146,9 +149,11 @@ export const InputEmailForSocialUsers = (props) => {
                       </FormHelperText>
                     )
                 )}
-                <ModalOpenHelperText onClick={handleModalOpen}>
-                  {CHECK_AGREEMENT_HELPER}
-                </ModalOpenHelperText>
+                <ModalOpenHelperText
+                  onClick={handleModalOpen}
+                  innerText={checkedAgree}
+                  isChecked={isChecked}
+                />
               </CardBody>
               <CardFooter className={classes.cardFooter}>
                 <Button

@@ -9,7 +9,7 @@ import styles from "../../../assets/jss/material-kit-react/views/pages/noParalla
 const useStyles = makeStyles(styles);
 const ModalOpenHelperText = (props) => {
   const classes = useStyles();
-  const { onClick, children, ...rest } = props;
+  const { onClick, innerText } = props;
 
   return (
     <div
@@ -17,7 +17,6 @@ const ModalOpenHelperText = (props) => {
         justifyContent: "right",
         textAlign: "right",
       })}
-      {...rest}
     >
       <Link
         onClick={onClick}
@@ -30,15 +29,16 @@ const ModalOpenHelperText = (props) => {
           }),
         }}
       >
-        {children}
+        {innerText}
       </Link>
     </div>
   );
 };
 
 ModalOpenHelperText.propTypes = {
-  children: PropTypes.node,
+  innerText: PropTypes.string,
   onClick: PropTypes.func,
+  isChecked: PropTypes.bool,
 };
 
 export default ModalOpenHelperText;

@@ -131,9 +131,10 @@ export const Login = (props) => {
                   onChange={onInputHandler}
                   onKeyPress={handleKeyPress}
                 />
-                <ModalOpenHelperText onClick={handleModalOpen}>
-                  Did you forget password?
-                </ModalOpenHelperText>
+                <ModalOpenHelperText
+                  onClick={handleModalOpen}
+                  innerText={`Did you forget password?`}
+                />
               </CardBody>
 
               <CardFooter className={classes.cardFooter}>

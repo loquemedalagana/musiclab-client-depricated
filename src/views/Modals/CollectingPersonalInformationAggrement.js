@@ -16,6 +16,7 @@ import Button from "../../components/CustomButtons/Button";
 
 import Close from "@material-ui/icons/Close";
 import CollectingPersonalInformationAggrementText from "../../app/helper/CollectingPersonalInformationAggrement/CollectingPersonalInformationAggrementText";
+import { CHECK_AGREEMENT_HELPER } from "../../app/helper/auth/helperTexts";
 
 import styles from "../../assets/jss/material-kit-react/components/modalStyle";
 import { GridItem } from "../../components/components";
@@ -27,15 +28,23 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const CollectingPersonalInformationAgreement = (props) => {
   const classes = useStyles();
-  const { open, onClose, setCheckedAgreement } = props;
+  const {
+    open,
+    onClose,
+    setCheckedAgreement,
+    setChangeHelperText,
+    ...rest
+  } = props;
 
   const handleCheckAgree = () => {
     setCheckedAgreement(true);
+    setChangeHelperText(CHECK_AGREEMENT_HELPER + " (동의함)");
     onClose();
   };
 
   const handleCheckDisagree = () => {
     setCheckedAgreement(false);
+    setChangeHelperText(CHECK_AGREEMENT_HELPER + " (동의안함)");
     onClose();
   };
 
@@ -51,6 +60,7 @@ const CollectingPersonalInformationAgreement = (props) => {
       classes={{
         paper: "scrollbar-rainy-ashville",
       }}
+      {...rest}
     >
       <DialogTitle
         id="music-sseolprise-about-title"
@@ -104,6 +114,7 @@ CollectingPersonalInformationAgreement.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
   setCheckedAgreement: PropTypes.func,
+  setChangeHelperText: PropTypes.func,
 };
 
 export default CollectingPersonalInformationAgreement;

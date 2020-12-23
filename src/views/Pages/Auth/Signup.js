@@ -23,7 +23,7 @@ import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHel
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 
 import EmailValidation from "../../../app/inputValidation/user/emailValidation";
-import DisplayNameValidation from "../../../app/inputValidation/user/displayNameValidation";
+import NameValidation from "../../../app/inputValidation/user/NameValidation";
 import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
 import { PLEASE_READ_RULES } from "../../../app/helper/auth/authAlertMessages";
 
@@ -49,6 +49,7 @@ export const Signup = (props) => {
 
   const [viewAgreement, setViewAgreement] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [checkedAgree, setCheckAgree] = useState(CHECK_AGREEMENT_HELPER);
 
   const handleModalOpen = (event) => {
     event.preventDefault();
@@ -72,7 +73,7 @@ export const Signup = (props) => {
     displayName: useRef(),
     password: useRef(),
     confirmPassword: useRef(),
-    checkBox: useRef(),
+    checkAgreement: useRef(),
   };
 
   const onInputHandler = (event) => {
@@ -93,6 +94,7 @@ export const Signup = (props) => {
         case "password":
           return inputRef.confirmPassword.current.focus();
         case "confirmPassword":
+          return setViewAgreement(true);
         default:
           return onSubmitHandler(e);
       }
@@ -105,7 +107,9 @@ export const Signup = (props) => {
     const emailInputCheck = new EmailValidation({ email });
     const emailInputValidationResult = emailInputCheck.getResult();
 
-    const displayNameInputCheck = new DisplayNameValidation({ displayName });
+    const displayNameInputCheck = new NameValidation({
+      name: displayName,
+    });
     const displayNameValidationResult = displayNameInputCheck.getResult();
 
     const passwordInputCheck = new PasswordValidation({
@@ -161,6 +165,7 @@ export const Signup = (props) => {
         open={viewAgreement}
         onClose={() => setViewAgreement(false)}
         setCheckedAgreement={setIsChecked}
+        setChangeHelperText={setCheckAgree}
       />
       <NoParallaxLayout>
         <GridItem xs={12} sm={12} md={5} lg={4}>
@@ -201,9 +206,11 @@ export const Signup = (props) => {
                 />
                 <br />
                 <br />
-                <ModalOpenHelperText onClick={handleModalOpen}>
-                  {CHECK_AGREEMENT_HELPER}
-                </ModalOpenHelperText>
+                <ModalOpenHelperText
+                  onClick={handleModalOpen}
+                  innerText={checkedAgree}
+                  isChecked={isChecked}
+                />
               </CardBody>
 
               <CardFooter className={classes.cardFooter}>

@@ -23,6 +23,7 @@ import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 import GenderInput from "../../SubComponents/authAndProfile/GenderInput";
 import BirthdayInput from "../../SubComponents/authAndProfile/BirthdayInput";
 import CollectingPersonalInformationAggrement from "../../Modals/CollectingPersonalInformationAggrement";
+import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import {
@@ -31,9 +32,14 @@ import {
   DESCRIPTION_NULL_ERROR,
   PLEASE_READ_RULES,
 } from "../../../app/helper/auth/authAlertMessages";
-import { CHECK_VALID_INFO } from "../../../app/helper/auth/helperTexts";
+import {
+  CHECK_VALID_INFO,
+  CHECK_AGREEMENT_HELPER,
+} from "../../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../../app/store/alert";
 import { requestLevelup } from "../../../app/store/userControl";
+import LevelupValidation from "../../../app/inputValidation/user/levelupValidation";
+import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
 
 const useStyles = makeStyles(styles);
 
@@ -50,7 +56,15 @@ export const Levelup = (props) => {
     //        ...rest
   } = props;
 
+  const [viewAgreement, setViewAgreement] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [checkedAgree, setCheckAgree] = useState(CHECK_AGREEMENT_HELPER);
+
+  const handleModalOpen = (event) => {
+    event.preventDefault();
+    return setViewAgreement(true);
+  };
+
   const [inputs, setInputs] = useState({
     givenName: "",
     familyName: "",
@@ -86,16 +100,16 @@ export const Levelup = (props) => {
     checkBox: useRef(),
   };
 
-  const [viewAgreement, setViewAgreement] = useState(false);
+  const passwordInputCheck = new PasswordValidation({
+    password,
+    confirmPassword,
+  });
+  const levelupInputCheck = new LevelupValidation({ givenName, familyName });
+  const passwordInputValidationResult = passwordInputCheck.getResult();
 
   const [birthdayChanged, setBirthdayChanged] = useState(false);
-
-  const [familyNameErr, setFamilyNameErr] = useState(false);
-  const [givenNameErr, setGivenNameErr] = useState(false);
-
   const [descriptionErr, setDescriptionErr] = useState(false);
   const [passwordErr, setPasswordErr] = useState(false);
-
   const [birthdayErr, setBirthdayErr] = useState(false);
   const [genderErr, setGenderErr] = useState(false);
   const [genderSuccess, setGenderSuccess] = useState(false);
@@ -149,10 +163,20 @@ export const Levelup = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    if (!givenName) {
+    if (!levelupInputCheck.familyNameValidation.getResult().ok) {
+      ok = false;
+      setAlertMsg(
+        levelupInputCheck.familyNameValidation.getResult().message,
+        "error"
+      );
     }
 
-    if (!familyName) {
+    if (!levelupInputCheck.givenNameValidation.getResult().ok) {
+      ok = false;
+      setAlertMsg(
+        levelupInputCheck.givenNameValidation.getResult().message,
+        "error"
+      );
     }
 
     if (!gender) {
@@ -168,10 +192,17 @@ export const Levelup = (props) => {
 
     if (!description) {
       ok = false;
+      setDescriptionErr(true);
       setAlertMsg(DESCRIPTION_NULL_ERROR, "error", "description");
     }
 
-    if (!password || !confirmPassword) {
+    if (!passwordInputValidationResult.ok) {
+      ok = false;
+      inputRef.password.current.focus();
+      setAlertMsg(passwordInputValidationResult.message, "error", "password");
+      setPasswordErr(true);
+    } else {
+      setPasswordErr(false);
     }
 
     if (!isChecked) {
@@ -196,6 +227,8 @@ export const Levelup = (props) => {
       <CollectingPersonalInformationAggrement
         open={viewAgreement}
         onClose={() => setViewAgreement(false)}
+        setCheckedAgreement={setIsChecked}
+        setChangeHelperText={setCheckAgree}
       />
       <NoParallaxLayout isBigCard={true}>
         <GridItem xs={12} sm={12} md={6} lg={5}>
@@ -212,7 +245,6 @@ export const Levelup = (props) => {
                     inputRef={inputRef.familyName}
                     onChange={onInputHandler}
                     onKeyPress={handleKeyPress}
-                    error={familyNameErr}
                   />
                   <NameInput
                     nameType="givenName"
@@ -220,7 +252,6 @@ export const Levelup = (props) => {
                     inputRef={inputRef.givenName}
                     onChange={onInputHandler}
                     onKeyPress={handleKeyPress}
-                    error={givenNameErr}
                   />
                   <GenderInput
                     success={genderSuccess}
@@ -262,32 +293,13 @@ export const Levelup = (props) => {
                     onChange={onInputHandler}
                     onKeyPress={handleKeyPress}
                   />
-                  <div className={classes.checkboxAndRadio}>
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          tabIndex={-1}
-                          value={isChecked}
-                          inputRef={inputRef.checkBox}
-                          onKeyPress={handleKeyPress}
-                          onClick={() =>
-                            isChecked ? setIsChecked(false) : setIsChecked(true)
-                          }
-                          checkedIcon={
-                            <Check className={classes.checkedIcon} />
-                          }
-                          icon={<Check className={classes.uncheckedIcon} />}
-                          classes={{
-                            checked: classes.checked,
-                            root: classes.checkRoot,
-                          }}
-                        />
-                      }
-                      className={classes.formControl}
-                      classes={{ label: classes.label }}
-                      label={CHECK_VALID_INFO}
-                    />
-                  </div>
+                  <br />
+                  <br />
+                  <ModalOpenHelperText
+                    onClick={handleModalOpen}
+                    innerText={checkedAgree}
+                    isChecked={isChecked}
+                  />
                 </GridItem>
               </CardBody>
               <CardFooter className={classes.cardFooter}>
