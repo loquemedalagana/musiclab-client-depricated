@@ -76,9 +76,9 @@ export const SnsInfoEdit = (props) => {
 
     if (ok()) {
       return isChanged
-        ? //  ? updateUserSocial(inputs)
-          console.log(inputs)
-        : setAlertMsg(SOCIAL_NULL_ERROR, "error");
+        ? updateUserSocial(inputs)
+        : //console.log(inputs)
+          setAlertMsg(SOCIAL_NULL_ERROR, "error");
     }
 
     console.log(errorMessages);
