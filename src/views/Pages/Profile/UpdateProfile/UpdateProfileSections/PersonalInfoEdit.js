@@ -5,14 +5,9 @@ import classNames from "classnames";
 import { setAlertMsg } from "../../../../../app/store/alert";
 import { updateUserProfile } from "../../../../../app/store/userControl";
 
-import { VpnKey as VpnKeyIcon, MusicNote, People } from "@material-ui/icons";
-
-import { InputAdornment } from "@material-ui/core";
-
 import {
   GridContainer,
   GridItem,
-  CustomInput,
   Button,
   CircularLoading,
 } from "../../../../../components/components";
@@ -137,11 +132,24 @@ export const PersonalInfoEdit = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-
-    // validation 체크
+    const displayNameCheck = new NameValidation({ name: displayName });
+    const newPasswordValidation = new PasswordValidation({
+      password: newPassword,
+      confirmPassword: confirmNewPassword,
+    });
 
     if (description && description.length > 200) {
       ok = false;
+    }
+
+    if (!displayNameCheck.getResult().ok) {
+      ok = false;
+      setAlertMsg(displayNameCheck.getResult().message, "error");
+    }
+
+    if (newPassword && !newPasswordValidation.getResult().ok) {
+      ok = false;
+      setAlertMsg(newPasswordValidation.getResult().message, "error");
     }
 
     if (!password) {

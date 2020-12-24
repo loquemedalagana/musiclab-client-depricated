@@ -68,7 +68,7 @@ UpdateProfile.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  isChanged: state.userValidationAndUpdate.changed,
+  isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps)(UpdateProfile);
