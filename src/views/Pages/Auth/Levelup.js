@@ -152,6 +152,7 @@ export const Levelup = (props) => {
           handleModalNotOpen(e);
           return inputRef.confirmPassword.current.focus();
         case "confirmPassword":
+          return handleModalOpen(e);
         default:
           return onSubmitHandler(e);
       }

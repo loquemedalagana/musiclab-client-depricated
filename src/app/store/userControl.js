@@ -134,7 +134,7 @@ export const requestLevelup = (dataToSubmit, urlQuery) => async (dispatch) => {
   const { token, expiredtime } = urlQuery;
   //console.log(dataToSubmit, urlQuery);
   try {
-    const response = await api.patch(
+    const response = await api.post(
       `/users/register/levelup/?token=${token}&expiredtime=${expiredtime}`,
       dataToSubmit
     );

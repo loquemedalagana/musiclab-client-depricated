@@ -102,7 +102,7 @@ export const Signup = (props) => {
           handleModalNotOpen(e);
           return inputRef.confirmPassword.current.focus();
         case "confirmPassword":
-          return setViewAgreement(true);
+          return handleModalOpen(e);
         default:
           return onSubmitHandler(e);
       }

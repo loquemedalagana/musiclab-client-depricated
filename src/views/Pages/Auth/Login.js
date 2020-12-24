@@ -109,8 +109,8 @@ export const Login = (props) => {
           handleModalNotOpen(e);
           return inputRef.password.current.focus();
         case "password":
-          return handleModalOpen(e);
         default:
+          handleModalNotOpen(e);
           return onSubmitHandler(e);
       }
     }

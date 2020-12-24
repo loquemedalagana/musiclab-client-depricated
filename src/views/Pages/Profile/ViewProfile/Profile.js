@@ -11,7 +11,6 @@ import { IconButton, Link } from "@material-ui/core";
 import {
   LocalOffer as Tag,
   MusicVideoRounded,
-  Favorite,
   DescriptionRounded as Post,
   Edit,
   Cloud as SoundCloud,
@@ -118,8 +117,8 @@ const Profile = (props) => {
   console.log(data, error);
 
   const thumbnail = data
-    ? data.userData.thumbnail
-      ? data.userData.thumbnail
+    ? data.userData.thumbnailImage
+      ? data.userData.thumbnailImage
       : undefined
     : undefined;
 
@@ -133,7 +132,11 @@ const Profile = (props) => {
           <div className={classes.profile}>
             <div>
               <img
-                src={data.userData.image ? data.userData.image : defaultImg}
+                src={
+                  data.userData.profileImage
+                    ? data.userData.profileImage
+                    : defaultImg
+                }
                 alt="..."
                 className={imageClasses}
               />
@@ -153,15 +156,15 @@ const Profile = (props) => {
               </h3>
               {isAdmin || isSame ? (
                 <>
-                  <h6>{`${data.userData.name.familyName}${data.userData.name.givenName}`}</h6>
-                  <h6>{`${getDateKor(data.userData.birthday)}생`}</h6>
+                  <h6>{`${data.PrivateInfo.familyName}${data.PrivateInfo.givenName}`}</h6>
+                  <h6>{`${getDateKor(data.PrivateInfo.birthday)}생`}</h6>
                 </>
               ) : (
                 <h6> </h6>
               )}
             </div>
             <GridContainer justify="center" direction="row">
-              <PrintSocialLinks social={data.userData.social} />
+              <PrintSocialLinks social={data.Social} />
             </GridContainer>
           </div>
         </GridItem>

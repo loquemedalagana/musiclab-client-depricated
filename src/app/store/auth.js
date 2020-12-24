@@ -75,6 +75,7 @@ export const loginUser = (dataToSubmit) => async (dispatch) => {
     dispatch(fetchUser());
   } catch (error) {
     console.log(error.response.data);
+    dispatch(setAlertMsg(error.response.data, "error"));
     dispatch(loginFail());
   }
 };
