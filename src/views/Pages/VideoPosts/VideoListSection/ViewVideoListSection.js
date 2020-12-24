@@ -31,7 +31,7 @@ export const ViewVideoListSection = (props) => {
     ? channelInfo
     : { channelTitle: undefined, image: defaultImg };
 
-  // 백앤드에서 쿼리를 때린 후 데이터 불러온다.
+  // 리덕스 기준으로 데이터를 불러온다.
   const resultData =
     type === "official"
       ? getVideoDataListFromPlayList(
@@ -40,7 +40,6 @@ export const ViewVideoListSection = (props) => {
         )
       : InhyukSampleVideoList;
 
-  // 채널 info가 없을 때는 회원 프로필 혹은 일반 데이터로 하기
   console.log(resultData);
 
   return (

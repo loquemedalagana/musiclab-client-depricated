@@ -22,3 +22,12 @@ export const { setInitState } = slice.actions;
 export default slice.reducer;
 
 //actions
+// 1. 회원 영상
+
+// 2. 공식 채널 영상
+
+// 3. 베스트 영상 (사슬)
+
+// 4. 베스트 영상 (커버)
+
+// 5. 영상 등록하기 (유튜브 영상)

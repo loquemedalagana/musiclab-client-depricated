@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import qs from "qs";
 
-import { FormControlLabel, Checkbox } from "@material-ui/core";
-import { Check } from "@material-ui/icons";
-
 import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 
 import {
@@ -32,10 +29,7 @@ import {
   DESCRIPTION_NULL_ERROR,
   PLEASE_READ_RULES,
 } from "../../../app/helper/auth/authAlertMessages";
-import {
-  CHECK_VALID_INFO,
-  CHECK_AGREEMENT_HELPER,
-} from "../../../app/helper/auth/helperTexts";
+import { CHECK_AGREEMENT_HELPER } from "../../../app/helper/auth/helperTexts";
 import { setAlertMsg } from "../../../app/store/alert";
 import { requestLevelup } from "../../../app/store/userControl";
 import LevelupValidation from "../../../app/inputValidation/user/levelupValidation";

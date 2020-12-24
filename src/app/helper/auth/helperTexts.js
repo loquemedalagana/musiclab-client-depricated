@@ -1,7 +1,5 @@
 export const CHECK_AGREEMENT_HELPER = `여기를 클릭하셔서 개인정보 처리방침을 읽으시고 동의해주세요.`;
 
-export const levelupHelperText =
-  "필수정보를 반드시 입력하셔야 활동이 가능합니다.";
 export const CHECK_VALID_INFO =
   "입력하신 정보에 허위사실이 발견될 시 강퇴처리 됩니다.";
 

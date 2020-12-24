@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import Skeleton from "@material-ui/lab/Skeleton";
 import PrintVideoCarousel from "./PrintVideoCarousel";
 
 // custom components
 import { GridContainer, GridItem } from "../../../../components/components";
-import NotAvailable from "../../../SubComponents/landing/NotAvailable";
 
 // page subcomponents
 import LandingPageVideoTitle from "../../../SubComponents/landing/LandingPageVideoTitle";
@@ -23,23 +21,9 @@ import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonS
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 
-// video list fetched data
-import {
-  JIHBAND_OFFICIAL_LIST,
-  HOT_VIDEO_LIST,
-  LATEST_VIDEO_LIST,
-} from "../../../../app/api/video/landingPageCarousel";
 import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
 
 const useStyles = makeStyles(styles);
-
-const playList = {
-  "Jeon Inhyuk Band Official Channel": JIHBAND_OFFICIAL_LIST,
-  "Music SSeolprise by Jeon Inhyuk": null,
-  "Hot Videos of Inhyuk": HOT_VIDEO_LIST,
-  "Latest Videos of Inhyuk": LATEST_VIDEO_LIST,
-  "My List": null, //나중에 내 비디오 리스트 가져오는 함수 넣기 getMyVideoList (서버랑 연동)
-};
 
 const channelProfileLink = {
   "Jeon Inhyuk Band Official Channel": JIHBAND_YOUTUBE_PROFILE_ROUTE,
@@ -55,14 +39,6 @@ export const VideoCarouselSection = (props) => {
 
   const isMyList = videoCategoryTitle === "My List";
   const channelRoute = channelProfileLink[videoCategoryTitle];
-  //const ENDPOINT = playList[videoCategoryTitle];
-  const ENDPOINT = "hello world!";
-
-  //if my list exists,
-
-  const [resultData, setResultData] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   const videoList =
     videoCategoryTitle === "Jeon Inhyuk Band Official Channel"
@@ -72,49 +48,8 @@ export const VideoCarouselSection = (props) => {
         )
       : InhyukSampleVideoList;
 
-  // 유튜브 서버로부터 fetching (배포 시에는 안함 할당량 땜시ㅡㅡ)
-  useEffect(() => {
-    fetch(ENDPOINT, {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("original data ", data);
-        const result = getVideoDataListFromPlayList(data);
-        setLoading(false);
-        setResultData(result);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(err);
-      });
-  }, [ENDPOINT, userData]);
-
-  console.log(resultData);
-
-  if (!resultData && ENDPOINT && loading)
-    return (
-      <div className={classes.section}>
-        <div className={classes.container}>
-          <Skeleton animation="wave" varient="rect" />
-        </div>
-      </div>
-    );
-
-  if (!ENDPOINT)
-    return (
-      <div className={classes.section}>
-        <div className={classes.container}>
-          <GridContainer justify="center">
-            <LandingPageVideoTitle
-              landingPageVideoCategoryTitle={videoCategoryTitle}
-              className={classes.title}
-            />
-            <NotAvailable className={classes.detail} />
-          </GridContainer>
-        </div>
-      </div>
-    );
+  // 리덕스로 유저가 저장한 유튜브 영상 불러오기
+  console.log(userData);
 
   return (
     <div className={classes.section}>
@@ -124,9 +59,7 @@ export const VideoCarouselSection = (props) => {
             landingPageVideoCategoryTitle={videoCategoryTitle}
             className={classes.title}
           />
-          <PrintVideoCarousel
-            resultData={resultData && !error ? resultData : videoList}
-          />
+          <PrintVideoCarousel resultData={videoList} />
           {/*채널 상세 페이지*/}
           {channelRoute && !isMyList && (
             <VideoPageLink routeLink={channelRoute}>
