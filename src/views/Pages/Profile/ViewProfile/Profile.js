@@ -96,7 +96,7 @@ const Profile = (props) => {
 
   // 나중에 백앤드랑 연결 후 바꿀 것!
   const targetUserId = match.params.userid; //useEffect 안에서 아이디가 있음.
-  const isSame = curUserId === "my";
+  const isSame = targetUserId === "my";
   const ENDPOINT = `/api/profiles/${
     targetUserId === "my" ? curUserId : targetUserId
   }`;
@@ -114,11 +114,12 @@ const Profile = (props) => {
       .catch((err) => setError(err));
   }, [ENDPOINT, match, curUserId]);
 
-  console.log(data, error);
+  console.log(data);
+  console.log(data ? data.PrivateInfo : null);
 
   const thumbnail = data
-    ? data.userData.thumbnailImage
-      ? data.userData.thumbnailImage
+    ? data.thumbnailImage
+      ? data.thumbnailImage
       : undefined
     : undefined;
 
@@ -132,11 +133,7 @@ const Profile = (props) => {
           <div className={classes.profile}>
             <div>
               <img
-                src={
-                  data.userData.profileImage
-                    ? data.userData.profileImage
-                    : defaultImg
-                }
+                src={data.profileImage ? data.profileImage : defaultImg}
                 alt="..."
                 className={imageClasses}
               />
@@ -144,7 +141,7 @@ const Profile = (props) => {
             <div className={classes.name}>
               {/*관리자일 때 공식 표시*/}
               <h3 className={classes.title}>
-                {data.userData.displayName}
+                {data.displayName}
                 {isSame && (
                   <IconButton
                     color="primary"
@@ -171,7 +168,7 @@ const Profile = (props) => {
       </GridContainer>
 
       <div className={classes.description}>
-        <p>{data.userData.description} </p>
+        <p>{data.description} </p>
       </div>
 
       <GridContainer justify="center">
