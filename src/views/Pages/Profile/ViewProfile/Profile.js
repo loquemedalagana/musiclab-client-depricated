@@ -92,7 +92,7 @@ const Profile = (props) => {
     classes.imgFluid
   );
 
-  const { match, isAdmin, history, curUserId } = props;
+  const { match, history, curUserId } = props;
 
   // 나중에 백앤드랑 연결 후 바꿀 것!
   const targetUserId = match.params.userid; //useEffect 안에서 아이디가 있음.
@@ -112,7 +112,7 @@ const Profile = (props) => {
         setData(resultData);
       })
       .catch((err) => setError(err));
-  }, [ENDPOINT, match, curUserId, isAdmin]);
+  }, [ENDPOINT, match, curUserId]);
 
   console.log(data, error);
 
@@ -154,7 +154,7 @@ const Profile = (props) => {
                   </IconButton>
                 )}
               </h3>
-              {isAdmin || isSame ? (
+              {isSame ? (
                 <>
                   <h6>{`${data.PrivateInfo.familyName}${data.PrivateInfo.givenName}`}</h6>
                   <h6>{`${getDateKor(data.PrivateInfo.birthday)}생`}</h6>
@@ -221,7 +221,7 @@ Profile.propTypes = {
 
 const mapStateToProps = (state) => ({
   curUserId: state.auth.userData ? state.auth.userData.id : undefined,
-  isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
+  //isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 });
 
 export default withRouter(connect(mapStateToProps)(React.memo(Profile)));

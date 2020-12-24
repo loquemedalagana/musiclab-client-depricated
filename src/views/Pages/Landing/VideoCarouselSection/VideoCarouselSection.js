@@ -19,6 +19,7 @@ import {
   VIDEO_SEARCH_ROUTE,
 } from "../../../../routes/params/video";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
+import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 
@@ -54,7 +55,8 @@ export const VideoCarouselSection = (props) => {
 
   const isMyList = videoCategoryTitle === "My List";
   const channelRoute = channelProfileLink[videoCategoryTitle];
-  const ENDPOINT = playList[videoCategoryTitle];
+  //const ENDPOINT = playList[videoCategoryTitle];
+  const ENDPOINT = "hello world!";
 
   //if my list exists,
 
@@ -62,6 +64,15 @@ export const VideoCarouselSection = (props) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const videoList =
+    videoCategoryTitle === "Jeon Inhyuk Band Official Channel"
+      ? getVideoDataListFromPlayList(
+          JSON.parse(videoListOfJeonInhyukBand),
+          true
+        )
+      : InhyukSampleVideoList;
+
+  // 유튜브 서버로부터 fetching (배포 시에는 안함 할당량 땜시ㅡㅡ)
   useEffect(() => {
     fetch(ENDPOINT, {
       method: "GET",
@@ -114,9 +125,7 @@ export const VideoCarouselSection = (props) => {
             className={classes.title}
           />
           <PrintVideoCarousel
-            resultData={
-              resultData && !error ? resultData : InhyukSampleVideoList
-            }
+            resultData={resultData && !error ? resultData : videoList}
           />
           {/*채널 상세 페이지*/}
           {channelRoute && !isMyList && (

@@ -88,7 +88,7 @@ export const emailRegister = (dataToSubmit) => async (dispatch) => {
   try {
     const response = await api.post(`/users/register/email`, dataToSubmit);
     dispatch(signupSuccess());
-    console.log(response.data);
+    dispatch(setAlertMsg(response.data, "success"));
     dispatch(setInitState());
   } catch (error) {
     dispatch(setAlertMsg(error.response.data, "error"));

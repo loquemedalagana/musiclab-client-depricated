@@ -5,7 +5,7 @@ import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 
 //expired 여부 기록하기
 const slice = createSlice({
-  name: "video",
+  name: "youtubeVideo",
   initialState: {
     changed: false,
     myVideoList: InhyukSampleVideoList,
