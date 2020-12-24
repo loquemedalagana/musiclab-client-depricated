@@ -100,7 +100,7 @@ const Profile = (props) => {
   const ENDPOINT = `/api/profiles/${
     targetUserId === "my" ? curUserId : targetUserId
   }`;
-  const [data, setData] = useState(null);
+  const [targetUserData, setTargetUserData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -109,21 +109,21 @@ const Profile = (props) => {
     })
       .then((res) => res.json())
       .then((resultData) => {
-        setData(resultData);
+        setTargetUserData(resultData);
       })
       .catch((err) => setError(err));
   }, [ENDPOINT, match, curUserId]);
 
-  console.log(data);
-  console.log(data ? data.PrivateInfo : null);
+  console.log(targetUserData);
+  console.log(targetUserData ? targetUserData.PrivateInfo : null);
 
-  const thumbnail = data
-    ? data.thumbnailImage
-      ? data.thumbnailImage
+  const thumbnail = targetUserData
+    ? targetUserData.thumbnailImage
+      ? targetUserData.thumbnailImage
       : undefined
     : undefined;
 
-  if (!data && !error) return <LinearLoading />;
+  if (!targetUserData && !error) return <LinearLoading />;
   if (error) return <Redirect to="/notfound" />;
 
   return !error ? (
@@ -133,7 +133,11 @@ const Profile = (props) => {
           <div className={classes.profile}>
             <div>
               <img
-                src={data.profileImage ? data.profileImage : defaultImg}
+                src={
+                  targetUserData.profileImage
+                    ? targetUserData.profileImage
+                    : defaultImg
+                }
                 alt="..."
                 className={imageClasses}
               />
@@ -141,7 +145,7 @@ const Profile = (props) => {
             <div className={classes.name}>
               {/*관리자일 때 공식 표시*/}
               <h3 className={classes.title}>
-                {data.displayName}
+                {targetUserData.displayName}
                 {isSame && (
                   <IconButton
                     color="primary"
@@ -153,22 +157,24 @@ const Profile = (props) => {
               </h3>
               {isSame ? (
                 <>
-                  <h6>{`${data.PrivateInfo.familyName}${data.PrivateInfo.givenName}`}</h6>
-                  <h6>{`${getDateKor(data.PrivateInfo.birthday)}생`}</h6>
+                  <h6>{`${targetUserData.PrivateInfo.familyName}${targetUserData.PrivateInfo.givenName}`}</h6>
+                  <h6>{`${getDateKor(
+                    targetUserData.PrivateInfo.birthday
+                  )}생`}</h6>
                 </>
               ) : (
                 <h6> </h6>
               )}
             </div>
             <GridContainer justify="center" direction="row">
-              <PrintSocialLinks social={data.Social} />
+              <PrintSocialLinks social={targetUserData.Social} />
             </GridContainer>
           </div>
         </GridItem>
       </GridContainer>
 
       <div className={classes.description}>
-        <p>{data.description} </p>
+        <p>{targetUserData.description} </p>
       </div>
 
       <GridContainer justify="center">

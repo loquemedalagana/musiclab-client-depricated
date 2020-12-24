@@ -59,7 +59,9 @@ export const SnsInfoEdit = (props) => {
 
     const ok = () => {
       for (const key in inputs) {
+        if (inputs[key] === null) continue;
         if (inputs[key].length > 0) isChanged = true;
+        if (inputs[key].length === 0) inputs[key] = null;
         if (
           inputs[key] &&
           !checkSnsLink(key, inputs[key]) &&
@@ -84,7 +86,7 @@ export const SnsInfoEdit = (props) => {
   };
 
   if (userInfo && userInfo.social) {
-    //console.log(JSON.stringify(userInfo.social));
+    console.log(JSON.stringify(userInfo.social));
   }
 
   if (isChanged || loading) return <CircularLoading />;
