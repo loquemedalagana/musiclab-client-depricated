@@ -3,7 +3,8 @@ import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 //import api from "../api";
 //import { setAlertMsg } from "./alert";
 
-//expired 여부 기록하기
+// 0. 내 영상 불러오기
+
 const slice = createSlice({
   name: "youtubeVideo",
   initialState: {

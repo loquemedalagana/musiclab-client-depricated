@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
 import { connect, useSelector, useDispatch } from "react-redux";
 import {
@@ -21,49 +21,26 @@ import { checkSnsLink } from "../../../../../app/inputValidation/user/snsLinkVal
 
 export const SnsInfoEdit = (props) => {
   const { setAlertMsg, updateUserSocial, classes, loading, isChanged } = props;
-  const dispatch = useDispatch();
   const { userSocialInfo, userSocialInfoLoading } = useSelector(
     (state) => state.userControl
   );
 
+  const [inputs, setInputs] = useState({
+    blog: "",
+    twitter: "",
+    facebook: "",
+    instagram: "",
+    youtube: "",
+    soundcloud: "",
+  });
+
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUserSocialData());
-  }, [dispatch]);
-
-  console.log(userSocialInfo, userSocialInfoLoading);
-
-  const [inputs, setInputs] = useState({
-    blog: userSocialInfo
-      ? userSocialInfo.blog
-        ? userSocialInfo.blog
-        : ""
-      : "",
-    twitter: userSocialInfo
-      ? userSocialInfo.twitter
-        ? userSocialInfo.twitter
-        : ""
-      : "",
-    facebook: userSocialInfo
-      ? userSocialInfo.facebook
-        ? userSocialInfo.facebook
-        : ""
-      : "",
-    instagram: userSocialInfo
-      ? userSocialInfo.instagram
-        ? userSocialInfo.instagram
-        : ""
-      : "",
-    youtube: userSocialInfo
-      ? userSocialInfo.youtube
-        ? userSocialInfo.youtube
-        : ""
-      : "",
-    soundcloud: userSocialInfo
-      ? userSocialInfo.soundcloud
-        ? userSocialInfo.soundcloud
-        : ""
-      : "",
-  });
+  }, []);
+  useMemo(() => (userSocialInfo ? setInputs(userSocialInfo) : null), [
+    userSocialInfo,
+  ]);
 
   const onInputHandler = (event) => {
     const { name, value } = event.currentTarget;
@@ -115,7 +92,8 @@ export const SnsInfoEdit = (props) => {
     errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
   };
 
-  if (isChanged || loading) return <CircularLoading />;
+  if (isChanged || loading || userSocialInfoLoading || !userSocialInfo)
+    return <CircularLoading />;
 
   return (
     <div className={classes.tabBody}>
@@ -156,11 +134,11 @@ SnsInfoEdit.propTypes = {
 
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
-  userSocialInfo: state.auth.userSocialData,
+  userSocialInfo: state.userControl.userSocialData,
   isChanged: state.userControl.changed,
 });
 
 export default connect(mapStateToProps, {
   setAlertMsg,
   updateUserSocial,
-})(SnsInfoEdit);
+})(React.memo(SnsInfoEdit));

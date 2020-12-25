@@ -7,7 +7,11 @@ export const fetchUserSocialData = createAsyncThunk(
   "userControl/fetchUserSocialData",
   async () => {
     const response = await api.get(`/users/update/social`);
-    return response.data;
+    let userSocialData = {};
+    for (const key in response.data) {
+      userSocialData[key] = response.data[key] ? response.data[key] : "";
+    }
+    return userSocialData;
   }
 );
 
