@@ -17,8 +17,8 @@ import WaitingLevelup from "../views/Pages/Auth/WaitingLevelup";
 import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUsers";
 
 import Profile from "../views/Pages/Profile/ViewProfile/Profile";
-import VideoListByYoutubeChannelProfile from "../views/Pages/VideoPosts/VideoListByYoutubeChannelProfile";
-import VideoListBySearchKeyword from "../views/Pages/VideoPosts/VideoListBySearchKeyword";
+import YoutubeVideoListByChannelProfile from "../views/Pages/YoutubeVideoPosts/YoutubeVideoListByChannelProfile";
+import YoutubeVideoListBySearchKeyword from "../views/Pages/YoutubeVideoPosts/YoutubeVideoListBySearchKeyword";
 import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
 
 // 에러 페이지 컴포넌트
@@ -39,8 +39,9 @@ import {
 } from "./params/auth";
 import { VIEW_PROFILE_ROUTE, EDIT_PROFILE_ROUTE } from "./params/profile";
 import {
-  VIDEO_CHANNEL_PROFILE_ROUTE,
-  VIDEO_SEARCH_ROUTE,
+  YOUTUBE_CHANNEL_PROFILE_ROUTE,
+  YOUTUBE_VIDEO_SEARCH_ROUTE,
+  MY_YOUTUBE_VIDEO_LIST,
 } from "./params/video";
 import { SERVER_ERROR_ROUTE } from "./params/error";
 
@@ -82,13 +83,13 @@ const Routes = () => (
 
       <Route
         exact
-        path={`${VIDEO_CHANNEL_PROFILE_ROUTE}/:channel`}
-        component={VideoListByYoutubeChannelProfile}
+        path={`${YOUTUBE_CHANNEL_PROFILE_ROUTE}/:channel`}
+        component={YoutubeVideoListByChannelProfile}
       />
       <Route
         exact
-        path={`${VIDEO_SEARCH_ROUTE}/:search?`}
-        component={VideoListBySearchKeyword}
+        path={`${YOUTUBE_VIDEO_SEARCH_ROUTE}/:search?`}
+        component={YoutubeVideoListBySearchKeyword}
       />
 
       <Route exact path={SERVER_ERROR_ROUTE} component={ServerError} />

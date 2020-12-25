@@ -1,8 +1,11 @@
-export const VIDEO_ROUTE = "/video";
-export const VIDEO_SEARCH_ROUTE = VIDEO_ROUTE;
-export const VIDEO_CHANNEL_PROFILE_ROUTE = VIDEO_ROUTE + "/channel";
+export const YOUTUBE_VIDEO_ROUTE = "/youtubevideo";
+export const YOUTUBE_VIDEO_SEARCH_ROUTE = YOUTUBE_VIDEO_ROUTE;
+export const YOUTUBE_CHANNEL_PROFILE_ROUTE = YOUTUBE_VIDEO_ROUTE + "/channel";
 export const JIHBAND_YOUTUBE_PROFILE_ROUTE =
-  VIDEO_CHANNEL_PROFILE_ROUTE + "/jihbandofficial";
+  YOUTUBE_CHANNEL_PROFILE_ROUTE + "/jihbandofficial";
+
+export const YOUTUBE_VIDEO_LIST = YOUTUBE_VIDEO_ROUTE + "/list";
+export const MY_YOUTUBE_VIDEO_LIST = YOUTUBE_VIDEO_LIST + "/my";
 
 // 커버 영상 예시 /video/search?type=cover
 // 인혁 영상 예시 /video/search?type=inhyuk

@@ -29,7 +29,7 @@ import videoIdList from "../../../test/mockingData/videos/videoidList";
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle";
 const useStyles = makeStyles(styles);
 
-export const VideoListBySearchKeyword = (props) => {
+export const YoutubeVideoListBySearchKeyword = (props) => {
   const classes = useStyles();
   const { location, match, document } = props;
   const query = qs.parse(location.search, {
@@ -62,11 +62,11 @@ export const VideoListBySearchKeyword = (props) => {
   );
 };
 
-VideoListBySearchKeyword.propTypes = {
+YoutubeVideoListBySearchKeyword.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({});
 
-export default connect(mapStateToProps)(VideoListBySearchKeyword);
+export default connect(mapStateToProps)(YoutubeVideoListBySearchKeyword);

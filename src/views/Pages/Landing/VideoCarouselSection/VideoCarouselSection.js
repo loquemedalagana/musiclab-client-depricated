@@ -14,7 +14,7 @@ import VideoPageLink from "../../../SubComponents/landing/VideoPageLink";
 import { NOT_AVAILABLE_ROUTE } from "../../../../routes/params/error";
 import {
   JIHBAND_YOUTUBE_PROFILE_ROUTE,
-  VIDEO_SEARCH_ROUTE,
+  YOUTUBE_VIDEO_SEARCH_ROUTE,
 } from "../../../../routes/params/video";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
 import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
@@ -28,8 +28,8 @@ const useStyles = makeStyles(styles);
 const channelProfileLink = {
   "Jeon Inhyuk Band Official Channel": JIHBAND_YOUTUBE_PROFILE_ROUTE,
   "Music SSeolprise by Jeon Inhyuk": NOT_AVAILABLE_ROUTE,
-  "Hot Videos of Inhyuk": VIDEO_SEARCH_ROUTE,
-  "Latest Videos of Inhyuk": VIDEO_SEARCH_ROUTE,
+  "Hot Videos of Inhyuk": YOUTUBE_VIDEO_SEARCH_ROUTE,
+  "Latest Videos of Inhyuk": YOUTUBE_VIDEO_SEARCH_ROUTE,
   "My List": NOT_AVAILABLE_ROUTE,
 };
 

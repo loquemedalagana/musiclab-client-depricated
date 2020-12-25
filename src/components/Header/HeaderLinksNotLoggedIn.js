@@ -11,7 +11,7 @@ import {
   List, ListItem, Tooltip
 } from "@material-ui/core";
 
-import { 
+import {
   VideoLibrarySharp,
 } from "@material-ui/icons";
 
@@ -23,7 +23,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 // route constants
 import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
 import {SIGNUP_ROUTE, LOGIN_ROUTE} from "../../routes/params/auth";
-import {VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/video";
+import {YOUTUBE_VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/video";
 
 const useStyles = makeStyles(styles);
 
@@ -48,7 +48,7 @@ const HeaderLinksNotLoggedIn = (props) => {
               <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
                 Music SSeolprise
               </Button>,
-              <Button color = "transparent" 
+              <Button color = "transparent"
               onClick={()=> {
                 history.push(JIHBAND_YOUTUBE_PROFILE_ROUTE);
                 setMobileOpen(false);
@@ -57,7 +57,7 @@ const HeaderLinksNotLoggedIn = (props) => {
                 Jeon Inhyuk Band official
               </Button>,
               <Button color = "transparent" onClick={()=>{
-                history.push(VIDEO_SEARCH_ROUTE);
+                history.push(YOUTUBE_VIDEO_SEARCH_ROUTE);
                 setMobileOpen(false);
               }} className={classes.dropdownLink}>
                 Search videos
@@ -66,7 +66,7 @@ const HeaderLinksNotLoggedIn = (props) => {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button 
+        <Button
           color='transparent'
           className={classes.navLink}
           onClick={() => {
@@ -78,7 +78,7 @@ const HeaderLinksNotLoggedIn = (props) => {
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button 
+        <Button
           color='transparent'
           className={classes.navLink}
           onClick={() => {
@@ -105,7 +105,7 @@ const HeaderLinksNotLoggedIn = (props) => {
             <i className={classes.socialIcons + " fab fa-youtube"} />
           </Button>
         </Tooltip>
-      </ListItem>        
+      </ListItem>
     </List>
   );
 }

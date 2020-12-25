@@ -70,7 +70,7 @@ const PrintSocialLinks = (props) => {
 
   //color primary, href -> social명
   const data = Object.keys(social).map((key) => {
-    const link = social[key].length > 0 ? social[key] : null;
+    const link = social[key] ? social[key] : null;
     return (
       <Link key={key} component="a" href={link} target="_blank">
         <IconButton color={link ? "primary" : "default"}>
@@ -114,8 +114,8 @@ const Profile = (props) => {
       .catch((err) => setError(err));
   }, [ENDPOINT, match, curUserId]);
 
-  console.log(targetUserData);
-  console.log(targetUserData ? targetUserData.PrivateInfo : null);
+  //console.log(targetUserData);
+  //console.log(targetUserData ? targetUserData.PrivateInfo : null);
 
   const thumbnail = targetUserData
     ? targetUserData.thumbnailImage

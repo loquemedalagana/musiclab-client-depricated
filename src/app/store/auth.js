@@ -9,6 +9,7 @@ const slice = createSlice({
       username: "Jeon Inhyuk",
       description: "music sseolprise",
     },
+    userSocialData: null,
     auth: false,
     loading: true,
     socketId: null,
@@ -26,6 +27,19 @@ const slice = createSlice({
       state.userData = null;
       state.loading = false;
       state.auth = false;
+    },
+    loadUserSocialInfo: (state) => {
+      state.loading = true;
+    },
+    loadUserSocialInfoSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.userSocialData = payload;
+      state.auth = true;
+    },
+    loadUserSocialInfoFail: (state) => {
+      state.loading = false;
+      state.userSocialData = undefined;
+      state.auth = true;
     },
     loginSuccess: (state) => {
       state.loading = true;
@@ -47,6 +61,9 @@ export const {
   loadUser,
   loadUserSuccess,
   loadUserFail,
+  loadUserSocialInfo,
+  loadUserSocialInfoSuccess,
+  loadUserSocialInfoFail,
   loginSuccess,
   loginFail,
   logout,
@@ -87,5 +104,16 @@ export const logoutUser = () => async (dispatch) => {
   dispatch(fetchUser());
 };
 
-//update profile and tags
+// load social info
+export const fetchUserSocialData = () => async (dispatch) => {
+  dispatch(loadUserSocialInfo());
+  try {
+    const response = await api.get(`/users/load/social`);
+    dispatch(loadUserSocialInfoSuccess(response.data));
+  } catch (error) {
+    dispatch(setAlertMsg(error.response.data, "error"));
+    dispatch(loadUserSocialInfoFail());
+  }
+};
+
 //https://medium.com/dev-genius/async-api-fetching-with-redux-toolkit-2020-8623ff9da267

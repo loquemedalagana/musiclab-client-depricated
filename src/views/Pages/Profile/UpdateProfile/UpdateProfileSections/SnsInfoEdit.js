@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+import { fetchUserSocialData } from "../../../../../app/store/auth";
 import { updateUserSocial } from "../../../../../app/store/userControl";
 import { setAlertMsg } from "../../../../../app/store/alert";
 
@@ -18,21 +19,46 @@ import { checkSnsLink } from "../../../../../app/inputValidation/user/snsLinkVal
 
 export const SnsInfoEdit = (props) => {
   const {
+    fetchUserSocialData,
     setAlertMsg,
     updateUserSocial,
     classes,
-    userInfo,
+    userSocialInfo,
     loading,
     isChanged,
   } = props;
 
   const [inputs, setInputs] = useState({
-    blog: "",
-    twitter: "",
-    facebook: "",
-    instagram: "",
-    youtube: "",
-    soundcloud: "",
+    blog: userSocialInfo
+      ? userSocialInfo.blog
+        ? userSocialInfo.blog
+        : ""
+      : "",
+    twitter: userSocialInfo
+      ? userSocialInfo.twitter
+        ? userSocialInfo.twitter
+        : ""
+      : "",
+    facebook: userSocialInfo
+      ? userSocialInfo.facebook
+        ? userSocialInfo.facebook
+        : ""
+      : "",
+    instagram: userSocialInfo
+      ? userSocialInfo.instagram
+        ? userSocialInfo.instagram
+        : ""
+      : "",
+    youtube: userSocialInfo
+      ? userSocialInfo.youtube
+        ? userSocialInfo.youtube
+        : ""
+      : "",
+    soundcloud: userSocialInfo
+      ? userSocialInfo.soundcloud
+        ? userSocialInfo.soundcloud
+        : ""
+      : "",
   });
 
   const onInputHandler = (event) => {
@@ -85,9 +111,11 @@ export const SnsInfoEdit = (props) => {
     errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
   };
 
-  if (userInfo && userInfo.social) {
-    console.log(JSON.stringify(userInfo.social));
-  }
+  // useEffect(() => {
+  //   fetchUserSocialData();
+  // }, [loading]);
+
+  console.log(userSocialInfo);
 
   if (isChanged || loading) return <CircularLoading />;
 
@@ -120,20 +148,23 @@ export const SnsInfoEdit = (props) => {
 };
 
 SnsInfoEdit.propTypes = {
+  fetchUserSocialData: PropTypes.func,
   setAlertMsg: PropTypes.func,
   updateUserSocial: PropTypes.func,
   classes: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-  userInfo: PropTypes.object,
+  userSocialInfo: PropTypes.object,
   loading: PropTypes.bool,
   isChanged: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
   loading: state.auth.loading,
-  userInfo: state.auth.userData,
+  userSocialInfo: state.auth.userSocialData,
   isChanged: state.userControl.changed,
 });
 
-export default connect(mapStateToProps, { setAlertMsg, updateUserSocial })(
-  SnsInfoEdit
-);
+export default connect(mapStateToProps, {
+  fetchUserSocialData,
+  setAlertMsg,
+  updateUserSocial,
+})(SnsInfoEdit);

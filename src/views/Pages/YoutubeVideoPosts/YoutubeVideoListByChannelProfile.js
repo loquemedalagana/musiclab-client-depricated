@@ -21,7 +21,7 @@ import styles from "../../../assets/jss/material-kit-react/views/pages/smallPara
 
 const useStyles = makeStyles(styles);
 
-export const VideoListByYoutubeChannelProfile = (props) => {
+export const YoutubeVideoListByChannelProfile = (props) => {
   const classes = useStyles();
   const imageClasses = classNames(
     classes.imgRaised,
@@ -72,9 +72,9 @@ export const VideoListByYoutubeChannelProfile = (props) => {
   );
 };
 
-VideoListByYoutubeChannelProfile.propTypes = {
+YoutubeVideoListByChannelProfile.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
 };
 
-export default React.memo(VideoListByYoutubeChannelProfile);
+export default React.memo(YoutubeVideoListByChannelProfile);

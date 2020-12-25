@@ -163,6 +163,7 @@ export const updateUserProfile = (dataToSubmit) => async (dispatch) => {
   }
 };
 
+// update user socialinfo
 export const updateUserSocial = (socialData) => async (dispatch) => {
   //patch
   const ENDPOINT = `/users/update/social`;
