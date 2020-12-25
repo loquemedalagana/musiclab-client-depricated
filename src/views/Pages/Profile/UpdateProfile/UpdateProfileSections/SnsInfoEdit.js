@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { updateUserSocial } from "../../../../../app/store/userControl";
+import { connect, useSelector, useDispatch } from "react-redux";
+import {
+  updateUserSocial,
+  fetchUserSocialData,
+} from "../../../../../app/store/userControl";
 import { setAlertMsg } from "../../../../../app/store/alert";
 
 import {
@@ -18,8 +21,16 @@ import { checkSnsLink } from "../../../../../app/inputValidation/user/snsLinkVal
 
 export const SnsInfoEdit = (props) => {
   const { setAlertMsg, updateUserSocial, classes, loading, isChanged } = props;
+  const dispatch = useDispatch();
+  const { userSocialInfo, userSocialInfoLoading } = useSelector(
+    (state) => state.userControl
+  );
 
-  const userSocialInfo = {};
+  useEffect(() => {
+    dispatch(fetchUserSocialData());
+  }, [dispatch]);
+
+  console.log(userSocialInfo, userSocialInfoLoading);
 
   const [inputs, setInputs] = useState({
     blog: userSocialInfo
@@ -103,8 +114,6 @@ export const SnsInfoEdit = (props) => {
     console.log(errorMessages);
     errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
   };
-
-  console.log(userSocialInfo);
 
   if (isChanged || loading) return <CircularLoading />;
 

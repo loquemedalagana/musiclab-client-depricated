@@ -1,13 +1,22 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
 import { loginUser } from "./auth";
 
-//expired 여부 기록하기
+export const fetchUserSocialData = createAsyncThunk(
+  "userControl/fetchUserSocialData",
+  async () => {
+    const response = await api.get(`/users/update/social`);
+    return response.data;
+  }
+);
+
 const slice = createSlice({
   name: "userControl",
   initialState: {
     changed: false,
+    userSocialInfo: null,
+    userSocialInfoLoading: true,
   },
   reducers: {
     signupSuccess: (state) => {
@@ -31,6 +40,19 @@ const slice = createSlice({
     },
     setInitState: (state) => {
       state.changed = false;
+    },
+  },
+  extraReducers: {
+    [fetchUserSocialData.pending]: (state) => {
+      state.userSocialInfoLoading = true;
+    },
+    [fetchUserSocialData.fulfilled]: (state, { payload }) => {
+      state.userSocialInfo = payload;
+      state.userSocialInfoLoading = false;
+    },
+    [fetchUserSocialData.rejected]: (state) => {
+      state.userSocialInfo = {};
+      state.userSocialInfoLoading = false;
     },
   },
 });
