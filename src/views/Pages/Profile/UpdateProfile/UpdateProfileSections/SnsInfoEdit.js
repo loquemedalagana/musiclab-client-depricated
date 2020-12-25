@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { connect, useDispatch } from "react-redux";
-import { fetchUserSocialData } from "../../../../../app/store/auth";
+import { connect } from "react-redux";
 import { updateUserSocial } from "../../../../../app/store/userControl";
 import { setAlertMsg } from "../../../../../app/store/alert";
 
@@ -18,15 +17,9 @@ import { SOCIAL_NULL_ERROR } from "../../../../../app/helper/auth/authAlertMessa
 import { checkSnsLink } from "../../../../../app/inputValidation/user/snsLinkValidation";
 
 export const SnsInfoEdit = (props) => {
-  const {
-    fetchUserSocialData,
-    setAlertMsg,
-    updateUserSocial,
-    classes,
-    userSocialInfo,
-    loading,
-    isChanged,
-  } = props;
+  const { setAlertMsg, updateUserSocial, classes, loading, isChanged } = props;
+
+  const userSocialInfo = {};
 
   const [inputs, setInputs] = useState({
     blog: userSocialInfo
@@ -111,10 +104,6 @@ export const SnsInfoEdit = (props) => {
     errorMessages.forEach((msg) => setAlertMsg(msg, "error"));
   };
 
-  // useEffect(() => {
-  //   fetchUserSocialData();
-  // }, [loading]);
-
   console.log(userSocialInfo);
 
   if (isChanged || loading) return <CircularLoading />;
@@ -148,7 +137,6 @@ export const SnsInfoEdit = (props) => {
 };
 
 SnsInfoEdit.propTypes = {
-  fetchUserSocialData: PropTypes.func,
   setAlertMsg: PropTypes.func,
   updateUserSocial: PropTypes.func,
   classes: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
@@ -164,7 +152,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, {
-  fetchUserSocialData,
   setAlertMsg,
   updateUserSocial,
 })(SnsInfoEdit);
