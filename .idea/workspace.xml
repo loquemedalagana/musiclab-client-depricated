@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/store/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Pages/YoutubeVideoPosts/MyYoutubeVideoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/userControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/userControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/youtubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/youtubeVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +106,7 @@
       <workItem from="1608601915406" duration="18831000" />
       <workItem from="1608682957028" duration="18313000" />
       <workItem from="1608771118033" duration="20657000" />
-      <workItem from="1608862596112" duration="16053000" />
+      <workItem from="1608862596112" duration="21289000" />
     </task>
     <servers />
   </component>

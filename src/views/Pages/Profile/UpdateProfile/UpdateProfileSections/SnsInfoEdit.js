@@ -37,7 +37,7 @@ export const SnsInfoEdit = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUserSocialData());
-  }, []);
+  }, [dispatch]);
   useMemo(() => (userSocialInfo ? setInputs(userSocialInfo) : null), [
     userSocialInfo,
   ]);

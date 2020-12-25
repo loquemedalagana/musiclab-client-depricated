@@ -8,7 +8,7 @@ import NonMemberRoute from "./HigherOrderComponets/NonMemberRoute";
 import TokenRoute from "./HigherOrderComponets/TokenRoute";
 import NonMemberRouteWithoutEmail from "./HigherOrderComponets/NonMemberWithoutEmail";
 
-// 페이지 컴포넌트
+// auth 컴포넌트
 import Login from "../views/Pages/Auth/Login";
 import Signup from "../views/Pages/Auth/Signup";
 import ResetPassword from "../views/Pages/Auth/ResetPassword";
@@ -16,10 +16,16 @@ import Levelup from "../views/Pages/Auth/Levelup";
 import WaitingLevelup from "../views/Pages/Auth/WaitingLevelup";
 import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUsers";
 
+// 프로필 컴포넌트
 import Profile from "../views/Pages/Profile/ViewProfile/Profile";
+import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
+
+// 유튜브 컴포넌트
 import YoutubeVideoListByChannelProfile from "../views/Pages/YoutubeVideoPosts/YoutubeVideoListByChannelProfile";
 import YoutubeVideoListBySearchKeyword from "../views/Pages/YoutubeVideoPosts/YoutubeVideoListBySearchKeyword";
-import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
+import MyYoutubeVideoList from "../views/Pages/YoutubeVideoPosts/MyYoutubeVideoList";
+
+// 포스트 컴포넌트
 
 // 에러 페이지 컴포넌트
 import NotFound from "../views/Pages/Error/NotFound";
@@ -79,6 +85,12 @@ const Routes = () => (
         exact
         path={`${EDIT_PROFILE_ROUTE}`}
         component={UpdateProfile}
+      />
+
+      <MemberRoute
+        exact
+        path={MY_YOUTUBE_VIDEO_LIST}
+        component={MyYoutubeVideoList}
       />
 
       <Route

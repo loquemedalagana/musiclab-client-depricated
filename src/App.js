@@ -26,13 +26,15 @@ const App = (props) => {
 
   const dispatch = useDispatch();
   const state = useSelector(authSelector);
-  const { loading, auth } = state;
+  const { loading, auth } = state; // auth state
+
+  // 나중에 여기다가 유튜브 데이터 fetching하자
 
   useEffect(() => {
     dispatch(fetchUser());
   }, [dispatch]);
 
-  if (loading) return <LinearLoading />;
+  if (loading) return <LinearLoading />; // 나중에 내 데이터 불러올때도 포함
 
   return (
     <Router>

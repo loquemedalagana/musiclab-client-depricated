@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-
+import React, { useEffect } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { withRouter, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 // material ui
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Link } from "@material-ui/core";
-
 import {
   LocalOffer as Tag,
   MusicVideoRounded,
@@ -20,6 +18,10 @@ import {
   Instagram,
   YouTube,
 } from "@material-ui/icons";
+
+// action function
+import { fetchTargetUserData } from "../../../../app/store/profile";
+
 // custom component
 import {
   //    Button,
@@ -83,7 +85,6 @@ const PrintSocialLinks = (props) => {
   return data;
 };
 
-//일단 데이터 지우고 다시하기 (ajax는 나중에 하면 되니까)
 const Profile = (props) => {
   const classes = useStyles();
   const imageClasses = classNames(
@@ -91,31 +92,21 @@ const Profile = (props) => {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
-
   const { match, history, curUserId } = props;
+  const targetUserId =
+    match.params.userid === "my" ? curUserId : match.params.userid;
+  const isSame = targetUserId === curUserId;
 
-  // 나중에 백앤드랑 연결 후 바꿀 것!
-  const targetUserId = match.params.userid; //useEffect 안에서 아이디가 있음.
-  const isSame = targetUserId === "my";
-  const ENDPOINT = `/api/profiles/${
-    targetUserId === "my" ? curUserId : targetUserId
-  }`;
-  const [targetUserData, setTargetUserData] = useState(null);
-  const [error, setError] = useState(null);
+  const {
+    targetUserData,
+    targetUserDataNotFound,
+    targetUserDataLoading,
+  } = useSelector((state) => state.profile);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(ENDPOINT, {
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((resultData) => {
-        setTargetUserData(resultData);
-      })
-      .catch((err) => setError(err));
-  }, [ENDPOINT, match, curUserId]);
-
-  //console.log(targetUserData);
-  //console.log(targetUserData ? targetUserData.PrivateInfo : null);
+    dispatch(fetchTargetUserData(targetUserId));
+  }, [dispatch]);
 
   const thumbnail = targetUserData
     ? targetUserData.thumbnailImage
@@ -123,10 +114,10 @@ const Profile = (props) => {
       : undefined
     : undefined;
 
-  if (!targetUserData && !error) return <LinearLoading />;
-  if (error) return <Redirect to="/notfound" />;
+  if (targetUserDataLoading) return <LinearLoading />;
+  if (targetUserDataNotFound) return <Redirect to="/notfound" />;
 
-  return !error ? (
+  return !targetUserDataNotFound ? (
     <SmallParallaxLayout thumbnail={thumbnail}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={6}>

@@ -7,11 +7,12 @@ import MediumParallaxLayout from "../../Layouts/MediumParallaxLayout";
 import VideoCarouselSection from "./VideoCarouselSection/VideoCarouselSection";
 //import { appDescription, appShortTitle } from "../../../app/helper/appTitle";
 
-export const Landing = () => {
-  //const { userData, userLoading } = props;
+export const Landing = (props) => {
+  const { userData } = props;
 
   return (
     <MediumParallaxLayout>
+      {userData && <VideoCarouselSection videoCategoryTitle="My List" />}
       <VideoCarouselSection videoCategoryTitle="Jeon Inhyuk Band Official Channel" />
       <VideoCarouselSection videoCategoryTitle="Music SSeolprise by Jeon Inhyuk" />
       <VideoCarouselSection videoCategoryTitle="Hot Videos of Inhyuk" />

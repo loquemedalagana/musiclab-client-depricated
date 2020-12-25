@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import PrintVideoCarousel from "./PrintVideoCarousel";
@@ -15,6 +16,7 @@ import { NOT_AVAILABLE_ROUTE } from "../../../../routes/params/error";
 import {
   JIHBAND_YOUTUBE_PROFILE_ROUTE,
   YOUTUBE_VIDEO_SEARCH_ROUTE,
+  MY_YOUTUBE_VIDEO_LIST,
 } from "../../../../routes/params/video";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
 import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
@@ -25,31 +27,36 @@ import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtub
 
 const useStyles = makeStyles(styles);
 
-const channelProfileLink = {
+const getVideoListRoute = {
   "Jeon Inhyuk Band Official Channel": JIHBAND_YOUTUBE_PROFILE_ROUTE,
   "Music SSeolprise by Jeon Inhyuk": NOT_AVAILABLE_ROUTE,
   "Hot Videos of Inhyuk": YOUTUBE_VIDEO_SEARCH_ROUTE,
   "Latest Videos of Inhyuk": YOUTUBE_VIDEO_SEARCH_ROUTE,
-  "My List": NOT_AVAILABLE_ROUTE,
+  "My List": MY_YOUTUBE_VIDEO_LIST,
 };
 
 export const VideoCarouselSection = (props) => {
   const classes = useStyles();
-  const { videoCategoryTitle, userData } = props;
+  const { videoCategoryTitle, myYoutubeVideoList } = props;
 
   const isMyList = videoCategoryTitle === "My List";
-  const channelRoute = channelProfileLink[videoCategoryTitle];
+  const videoListRoute = getVideoListRoute[videoCategoryTitle];
 
-  const videoList =
-    videoCategoryTitle === "Jeon Inhyuk Band Official Channel"
-      ? getVideoDataListFromPlayList(
+  const getVideoListForCarousel = () => {
+    switch (videoCategoryTitle) {
+      case "Jeon Inhyuk Band Official Channel":
+        return getVideoDataListFromPlayList(
           JSON.parse(videoListOfJeonInhyukBand),
           true
-        )
-      : InhyukSampleVideoList;
+        );
+      case "My List":
+        return myYoutubeVideoList;
+      default:
+        return InhyukSampleVideoList;
+    }
+  };
 
-  // 리덕스로 유저가 저장한 유튜브 영상 불러오기
-  console.log(userData);
+  const videoList = getVideoListForCarousel();
 
   return (
     <div className={classes.section}>
@@ -61,17 +68,16 @@ export const VideoCarouselSection = (props) => {
           />
           <PrintVideoCarousel resultData={videoList} />
           {/*채널 상세 페이지*/}
-          {channelRoute && !isMyList && (
-            <VideoPageLink routeLink={channelRoute}>
-              <h5 className={classes.link}>
-                view more about {videoCategoryTitle}...
-              </h5>
+          {videoListRoute && (
+            <VideoPageLink routeLink={videoListRoute}>
+              {!isMyList ? (
+                <h5 className={classes.link}>
+                  view more about {videoCategoryTitle}...
+                </h5>
+              ) : (
+                <h5 className={classes.link}>go to your own play list!</h5>
+              )}
             </VideoPageLink>
-          )}
-          {isMyList && (
-            <GridItem xs={12} sm={12} md={11} style={{ textAlign: "right" }}>
-              <h5 className={classes.link}>go to your own play list!</h5>
-            </GridItem>
           )}
         </GridContainer>
       </div>
@@ -82,6 +88,11 @@ export const VideoCarouselSection = (props) => {
 VideoCarouselSection.propTypes = {
   userData: PropTypes.object,
   videoCategoryTitle: PropTypes.string,
+  myYoutubeVideoList: PropTypes.array,
 };
 
-export default React.memo(VideoCarouselSection);
+const mapStateToProps = (state) => ({
+  myYoutubeVideoList: state.youtubeVideo.myYoutubeVideoList,
+});
+
+export default React.memo(connect(mapStateToProps)(VideoCarouselSection));

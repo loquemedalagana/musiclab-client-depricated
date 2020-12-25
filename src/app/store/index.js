@@ -1,6 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import alert from "./alert";
 import auth from "./auth";
+import profile from "./profile";
 import tag from "./tag";
 import userControl from "./userControl";
 import youtubeVideo from "./youtubeVideo";
@@ -11,6 +12,7 @@ const reducer = combineReducers({
   alert,
   auth,
   tag,
+  profile,
   userControl,
   youtubeVideo,
 });
