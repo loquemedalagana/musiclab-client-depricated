@@ -106,7 +106,7 @@ const Profile = (props) => {
 
   useEffect(() => {
     dispatch(fetchTargetUserData(targetUserId));
-  }, [dispatch]);
+  }, [dispatch, targetUserId]);
 
   const thumbnail = targetUserData
     ? targetUserData.thumbnailImage

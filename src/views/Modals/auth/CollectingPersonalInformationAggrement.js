@@ -11,15 +11,15 @@ import {
   IconButton,
 } from "@material-ui/core";
 
-import GridContainer from "../../components/Grid/GridContainer";
-import Button from "../../components/CustomButtons/Button";
+import GridContainer from "../../../components/Grid/GridContainer";
+import Button from "../../../components/CustomButtons/Button";
 
 import Close from "@material-ui/icons/Close";
-import CollectingPersonalInformationAggrementText from "../../app/helper/CollectingPersonalInformationAggrement/CollectingPersonalInformationAggrementText";
-import { CHECK_AGREEMENT_HELPER } from "../../app/helper/auth/helperTexts";
+import CollectingPersonalInformationAggrementText from "../../../app/helper/CollectingPersonalInformationAggrement/CollectingPersonalInformationAggrementText";
+import { CHECK_AGREEMENT_HELPER } from "../../../app/helper/auth/helperTexts";
 
-import styles from "../../assets/jss/material-kit-react/components/modalStyle";
-import { GridItem } from "../../components/components";
+import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
+import { GridItem } from "../../../components/components";
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {

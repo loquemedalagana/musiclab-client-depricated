@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import PrintVideoCarousel from "./PrintVideoCarousel";
 
 // custom components
-import { GridContainer, GridItem } from "../../../../components/components";
+import { GridContainer } from "../../../../components/components";
 
 // page subcomponents
 import LandingPageVideoTitle from "../../../SubComponents/landing/LandingPageVideoTitle";
@@ -48,7 +48,7 @@ export const VideoCarouselSection = (props) => {
         return getVideoDataListFromPlayList(
           JSON.parse(videoListOfJeonInhyukBand),
           true
-        );
+        ).slice(0, 6);
       case "My List":
         return myYoutubeVideoList;
       default:

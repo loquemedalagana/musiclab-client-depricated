@@ -15,14 +15,14 @@ import {
 } from "@material-ui/core";
 import { Close, Email } from "@material-ui/icons";
 
-import { Button, CustomInput } from "../../components/components";
+import { Button, CustomInput } from "../../../components/components";
 
-import styles from "../../assets/jss/material-kit-react/components/modalStyle";
+import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 
-import EmailValidation from "../../app/inputValidation/user/emailValidation";
+import EmailValidation from "../../../app/inputValidation/user/emailValidation";
 
-import { setAlertMsg } from "../../app/store/alert";
-import { requestFindPassword } from "../../app/store/userControl";
+import { setAlertMsg } from "../../../app/store/alert";
+import { requestFindPassword } from "../../../app/store/userControl";
 
 const useStyles = makeStyles(styles);
 

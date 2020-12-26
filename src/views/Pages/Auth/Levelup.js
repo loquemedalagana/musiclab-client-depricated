@@ -19,7 +19,7 @@ import DescriptionInput from "../../SubComponents/authAndProfile/DescriptionInpu
 import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 import GenderInput from "../../SubComponents/authAndProfile/GenderInput";
 import BirthdayInput from "../../SubComponents/authAndProfile/BirthdayInput";
-import CollectingPersonalInformationAggrement from "../../Modals/CollectingPersonalInformationAggrement";
+import CollectingPersonalInformationAggrement from "../../Modals/auth/CollectingPersonalInformationAggrement";
 import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";

@@ -16,8 +16,8 @@ import {
   YadaDebutDate,
   appTitle,
   appShortTitle,
-} from "../../app/helper/appTitle";
-import styles from "../../assets/jss/material-kit-react/components/modalStyle";
+} from "../../../app/helper/appTitle";
+import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {

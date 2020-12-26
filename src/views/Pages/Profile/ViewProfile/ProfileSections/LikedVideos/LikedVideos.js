@@ -31,10 +31,7 @@ PrintVideoThumbnail.propTypes = {
 };
 
 export const LikedVideos = (props) => {
-  const {
-    classes,
-    //userId,
-  } = props;
+  const { classes, userId } = props;
 
   const thumbnailListImageClasses = classNames(
     classes.imgRounded,
@@ -45,6 +42,8 @@ export const LikedVideos = (props) => {
     InhyukSampleVideoList.length / 2
       ? Math.floor(InhyukSampleVideoList.length / 2)
       : InhyukSampleVideoList.length / 2;
+
+  console.log(userId); // 내 영상이면 리덕스에서 가져오기
 
   return (
     <GridContainer justify="center">

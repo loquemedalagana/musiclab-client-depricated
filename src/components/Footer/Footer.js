@@ -10,9 +10,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
-import About from '../../views/Modals/About';
-import NotAvailable from '../../views/Modals/NotAvailable';
-import Help from '../../views/Modals/Help';
+import About from '../../views/Modals/common/About';
+import NotAvailable from '../../views/Modals/common/NotAvailable';
+import Help from '../../views/Modals/common/Help';
 import styles from "../../assets/jss/material-kit-react/components/footerStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -35,15 +35,15 @@ export default function Footer(props) {
   });
   return (
     <>
-    <About 
+    <About
       open={aboutOpen}
       onClose={() => setAboutOpen(false)}
     />
-    <NotAvailable 
+    <NotAvailable
       open={notAvailableOpen}
       onClose={() => setNotAvailableOpen(false)}
     />
-    <Help 
+    <Help
       open={helpOpen}
       onClose={() => setHelpOpen(false)}
     />
@@ -51,8 +51,8 @@ export default function Footer(props) {
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
-            <ListItem button 
-              className={classes.inlineBlock} 
+            <ListItem button
+              className={classes.inlineBlock}
               onClick={() => setAboutOpen(true)}
             >
               <a
@@ -61,7 +61,7 @@ export default function Footer(props) {
                 About
               </a>
             </ListItem>
-            <ListItem button 
+            <ListItem button
               className={classes.inlineBlock}
               onClick={() => setNotAvailableOpen(true)}
             >
@@ -71,7 +71,7 @@ export default function Footer(props) {
                 WIKI
               </a>
             </ListItem>
-            <ListItem button 
+            <ListItem button
               className={classes.inlineBlock}
               onClick={() => setHelpOpen(true)}
             >
@@ -81,7 +81,7 @@ export default function Footer(props) {
                 HELP
               </a>
             </ListItem>
-            <ListItem button 
+            <ListItem button
               className={classes.inlineBlock}
               onClick={() => setNotAvailableOpen(true)}
             >

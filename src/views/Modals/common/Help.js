@@ -23,15 +23,15 @@ import {
   CustomInput,
   GridContainer,
   GridItem,
-} from "../../components/components";
-import EmailInput from "../SubComponents/authAndProfile/EmailInput";
-import NameInput from "../SubComponents/authAndProfile/NameInput";
+} from "../../../components/components";
+import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
+import NameInput from "../../SubComponents/authAndProfile/NameInput";
 
-import styles from "../../assets/jss/material-kit-react/components/modalStyle";
+import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 
-import EmailValidation from "../../app/inputValidation/user/emailValidation";
+import EmailValidation from "../../../app/inputValidation/user/emailValidation";
 
-import { setAlertMsg } from "../../app/store/alert";
+import { setAlertMsg } from "../../../app/store/alert";
 
 const useStyles = makeStyles(styles);
 

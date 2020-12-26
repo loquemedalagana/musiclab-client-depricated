@@ -17,7 +17,7 @@ import {
 import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
 import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 import NameInput from "../../SubComponents/authAndProfile/NameInput";
-import CollectingPersonalInformationAggrement from "../../Modals/CollectingPersonalInformationAggrement";
+import CollectingPersonalInformationAggrement from "../../Modals/auth/CollectingPersonalInformationAggrement";
 import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";

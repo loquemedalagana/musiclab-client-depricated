@@ -65,7 +65,7 @@ export const YoutubeVideoListByChannelProfile = (props) => {
       </GridContainer>
       <ViewVideoListSection
         type="official"
-        videoListId={channelInfo.playListId}
+        channelId={channelInfo.channelId}
         userId={query.userId}
       />
     </SmallParallaxLayout>

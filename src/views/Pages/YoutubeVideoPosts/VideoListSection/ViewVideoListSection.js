@@ -22,9 +22,10 @@ const useStyles = makeStyles(styles);
 
 export const ViewVideoListSection = (props) => {
   const classes = useStyles();
-  const { videoListId, type, userId, isAdmin } = props;
+  const { channelId, type, userId, isAdmin } = props;
+
   const [channelInfo] = officialChannelProfileData.filter(
-    ({ playListId }) => playListId === videoListId
+    (data) => data.channelId === channelId
   );
 
   const { channelTitle, image } = channelInfo
@@ -71,7 +72,7 @@ ViewVideoListSection.propTypes = {
   children: PropTypes.node,
   userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   isAdmin: PropTypes.bool,
-  videoListId: PropTypes.string,
+  channelId: PropTypes.string,
 };
 
 export default ViewVideoListSection;
