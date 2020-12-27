@@ -27,23 +27,21 @@ export const YoutubeVideoListByChannelProfile = (props) => {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
-
   const { location, match } = props;
-
   const { channelparams } = match.params;
+  const query = qs.parse(location.search, {
+    ignoreQueryPrefix: true,
+  });
+  const { category } = query;
 
-  // 이 부분 바꾸기
+  console.log(category, channelparams);
+
+  // 이 부분 바꾸기 (리덕스로)
   const [channelInfo] = officialChannelProfileData.filter(
     ({ routeParam }) => routeParam === channelparams
   );
 
-  const query = qs.parse(location.search, {
-    ignoreQueryPrefix: true,
-  });
-
-  console.log(query, channelparams, location, match);
-
-  if (!channelInfo) return <Redirect to="/notfound" />;
+  if (!channelparams || !category) return <Redirect to="/notfound" />;
 
   return (
     <SmallParallaxLayout>
