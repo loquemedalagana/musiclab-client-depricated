@@ -11,10 +11,11 @@ import {
 } from "../../../components/components";
 
 // sub components
-import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 import SelectMenuSection from "./TabMenuSection/SelectMenuSection";
 import EmptyContainer from "./VideoListSection/EmptyContainer";
+import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
+import FooterMenu from "../../Navigations/FooterMenu";
 
 // route
 import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/youtube";
@@ -31,13 +32,12 @@ const useStyles = makeStyles(styles);
 
 export const YoutubeVideoListBySearchKeyword = (props) => {
   const classes = useStyles();
-  const { location, match, document } = props;
+  const { location, match } = props;
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   console.log(location, match);
   console.log(query);
-  console.log(document);
 
   console.log(query);
   const { items } = JSON.parse(videoListOfJeonInhyukBand);
@@ -49,16 +49,19 @@ export const YoutubeVideoListBySearchKeyword = (props) => {
     return <Redirect to={JIHBAND_YOUTUBE_PROFILE_ROUTE} />;
 
   return (
-    <SmallParallaxLayout>
-      <GridContainer justify="center">
-        <SelectMenuSection />
-      </GridContainer>
+    <>
+      <FooterMenu />
+      <SmallParallaxLayout>
+        <GridContainer justify="center">
+          <SelectMenuSection />
+        </GridContainer>
 
-      {/* 요 부분은 쿼리에 따라 다르게 출력됨*/}
-      <EmptyContainer className={classes.emptyContainer}>
-        <h1>업데이트 예정</h1>
-      </EmptyContainer>
-    </SmallParallaxLayout>
+        {/* 요 부분은 쿼리에 따라 다르게 출력됨*/}
+        <EmptyContainer className={classes.emptyContainer}>
+          <h1>업데이트 예정</h1>
+        </EmptyContainer>
+      </SmallParallaxLayout>
+    </>
   );
 };
 
