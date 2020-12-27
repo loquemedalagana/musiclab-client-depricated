@@ -7,6 +7,7 @@ export default (theme) => ({
     borderRadius: "3px",
     padding: "0.625rem 0",
     marginBottom: "20px",
+    height: "100vh",
     width: "100%",
     transition: "all 150ms ease 0s",
     alignItems: "center",
@@ -25,7 +26,7 @@ export default (theme) => ({
   },
   speedDial: {
     position: "absolute",
-    bottom: theme.spacing(2),
-    right: theme.spacing(2),
+    bottom: theme.spacing(3),
+    right: theme.spacing(3),
   },
 });

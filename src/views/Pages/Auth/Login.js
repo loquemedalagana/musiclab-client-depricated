@@ -181,8 +181,8 @@ Login.propTypes = {
 
 const mapStateToProps = (state) => ({
   alerts: state.alert,
-  isAuth: state.auth.auth,
-  loading: state.auth.loading,
+  isAuth: state.user.auth,
+  loading: state.user.loading,
 });
 
 export default connect(mapStateToProps, { setAlertMsg, loginUser })(Login);

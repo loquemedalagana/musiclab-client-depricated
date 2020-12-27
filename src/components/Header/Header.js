@@ -17,7 +17,7 @@ import {
 
 // @material-ui/icons
 import {
-  Menu,
+  QueueMusic as Menu,
   ArrowBackIos,
   ArrowForwardIos,
   HomeSharp,
