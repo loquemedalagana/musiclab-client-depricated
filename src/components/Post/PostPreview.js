@@ -45,7 +45,7 @@ const PostPreview = (props) => {
   const mediaURL = "https://youtu.be/" + videoId;
   const authorName =
     type === "post" ? authorData.displayName : authorData.channelTitle;
-  const { image } = authorData;
+  const { profileImage } = authorData;
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -63,7 +63,7 @@ const PostPreview = (props) => {
         classes={{
           root: classes.cardHeader,
         }}
-        avatar={<Avatar aria-label="channel-title" src={image} />}
+        avatar={<Avatar aria-label="channel-title" src={profileImage} />}
         action={
           //mini menu will be added
           <CustomDropdown
@@ -150,7 +150,7 @@ PostPreview.propTypes = {
     channelTitle: PropTypes.string,
     displayName: PropTypes.string,
     userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    image: PropTypes.string, //user avatar img or channel avatar img
+    profileImage: PropTypes.string, //user avatar img or channel avatar img
   }),
 
   postData: PropTypes.shape({

@@ -30,7 +30,7 @@ const MyYoutubeVideoList = (props) => {
       : undefined
     : undefined;
 
-  const { myYoutubeVideoList } = useSelector((state) => state.auth);
+  const { myYoutubeVideoList } = useSelector((state) => state.user);
 
   console.log(myYoutubeVideoList);
 

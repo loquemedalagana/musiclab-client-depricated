@@ -23,14 +23,15 @@ export const ViewVideoListSection = (props) => {
   const classes = useStyles();
   const { channelInfo, type, userId, isAdmin } = props;
 
-  // 채널 영상 info 미리 들고오기
-  const { channelTitle, image } = channelInfo
+  // 채널 영상 info 미리 들고오기 (타이틀, 이미지)
+  // 채널 카테고리일 때는 해당 채널 이미지, 그게 아니면 디폴트 이미지
+  const { channelTitle, profileImage } = channelInfo
     ? channelInfo
-    : { channelTitle: undefined, image: defaultImg };
+    : { channelTitle: undefined, profileImage: defaultImg };
 
   // 리덕스 기준으로 데이터를 불러온다.
   const resultData =
-    type === "official"
+    type === "channel"
       ? getVideoDataListFromPlayList(
           JSON.parse(videoListOfJeonInhyukBand),
           true
@@ -48,7 +49,7 @@ export const ViewVideoListSection = (props) => {
             authorData={{
               channelTitle:
                 channelTitle === undefined ? data.channelTitle : channelTitle,
-              image,
+              profileImage,
             }}
             curUserData={{
               userId,
@@ -63,12 +64,15 @@ export const ViewVideoListSection = (props) => {
 };
 
 ViewVideoListSection.propTypes = {
-  props: PropTypes.object,
-  type: PropTypes.oneOf(["official", "channel", "keywords"]),
+  type: PropTypes.oneOf(["channel", "mylist", "searchresult"]),
+  category: PropTypes.oneOf(["official", "fan", "musician", "etc"]),
   children: PropTypes.node,
   userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   isAdmin: PropTypes.bool,
-  channelInfo: PropTypes.object,
+  channelInfo: PropTypes.shape({
+    profileImage: PropTypes.string,
+    channelTitle: PropTypes.string,
+  }),
 };
 
 export default ViewVideoListSection;

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
@@ -7,7 +8,6 @@ import qs from "qs";
 
 // redux fetch
 import { fetchChannelProfile } from "../../../app/store/youtube";
-import { officialChannelProfileData } from "../../../app/data/yada/officialChannelData";
 
 // ui components
 import { Skeleton } from "@material-ui/lab";
@@ -34,14 +34,22 @@ export const YoutubeVideoListByChannelProfile = (props) => {
   });
   const { category } = query;
 
-  console.log(category, channelparams);
-
-  // 이 부분 바꾸기 (리덕스로)
-  const [channelInfo] = officialChannelProfileData.filter(
-    ({ routeParam }) => routeParam === channelparams
+  const dispatch = useDispatch();
+  const { channelProfile, channelProfileLoading } = useSelector(
+    (state) => state.youtube
   );
 
+  useEffect(() => {
+    dispatch(fetchChannelProfile({ channelparams, category }));
+  }, [dispatch, channelparams, category]);
+
+  console.log(channelProfile, channelProfileLoading);
+
   if (!channelparams || !category) return <Redirect to="/notfound" />;
+  // 로딩 false, 데이터 없으면 not found로 이동
+  if (!channelProfileLoading && !channelProfile) {
+    return <Redirect to="/notfound" />;
+  }
 
   return (
     <SmallParallaxLayout>
@@ -49,24 +57,54 @@ export const YoutubeVideoListByChannelProfile = (props) => {
         <GridItem xs={12} sm={12} md={6}>
           <div className={classes.profile}>
             <div>
-              <img
-                src={channelInfo.image ? channelInfo.image : defaultImg}
-                alt="..."
-                className={imageClasses}
-              />
+              {channelProfileLoading ? (
+                <Skeleton
+                  variant="circle"
+                  animation="wave"
+                  className={imageClasses}
+                />
+              ) : (
+                <img
+                  src={
+                    channelProfile.thumbnails
+                      ? channelProfile.thumbnails.medium.url
+                      : defaultImg
+                  }
+                  alt="..."
+                  className={imageClasses}
+                />
+              )}
             </div>
             <div className={classes.channelTitle}>
-              <h3>{channelInfo.channelTitle}</h3>
+              {channelProfileLoading ? (
+                <Skeleton variant="text" animation="wave" />
+              ) : (
+                <h3>{channelProfile.title}</h3>
+              )}
             </div>
-            <h5>{channelInfo.description}</h5>
+            {channelProfileLoading ? (
+              <Skeleton variant="rect" animation="wave" />
+            ) : (
+              <h5>{channelProfile.description}</h5>
+            )}
           </div>
         </GridItem>
       </GridContainer>
-      <ViewVideoListSection
-        type="official"
-        channelId={channelInfo.channelId}
-        userId={query.userId}
-      />
+      {channelProfileLoading ? (
+        <Skeleton variant="rect" animation="wave" />
+      ) : (
+        <ViewVideoListSection
+          type="channel"
+          category={category}
+          channelInfo={{
+            channelTitle: channelProfile.title,
+            profileImage: channelProfile.thumbnails
+              ? channelProfile.thumbnails.medium.url
+              : defaultImg,
+          }}
+          userId={query.userId}
+        />
+      )}
     </SmallParallaxLayout>
   );
 };

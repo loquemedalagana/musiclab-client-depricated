@@ -10,12 +10,12 @@ const officialChannelIdList = {
 export const fetchChannelProfile = createAsyncThunk(
   "youtube/fetchChannelProfile",
   async (channelInfo) => {
-    const { category, channelParams } = channelInfo;
+    const { category, channelparams } = channelInfo;
     const channelId =
       category === "official"
-        ? officialChannelIdList[channelParams]
-        : channelParams;
-    const ENDPOINT = `/youtube/channel/${channelId}`;
+        ? officialChannelIdList[channelparams]
+        : channelparams;
+    const ENDPOINT = `/youtube/channels/${channelId}?category=${category}`;
     const response = await api.get(ENDPOINT);
     return response.data;
   }
@@ -26,10 +26,11 @@ export const fetchChannelProfile = createAsyncThunk(
 const slice = createSlice({
   name: "youtube",
   initialState: {
-    channelInfoLoading: true,
-    channelInfo: null,
+    channelProfileLoading: true,
+    channelProfile: null,
     videoListLoading: true,
     videoList: [],
+    message: null,
   },
   reducers: {
     addYoutubeVideoSuccess: (state, { payload }) => {
@@ -38,6 +39,20 @@ const slice = createSlice({
     },
     addYoutubeVideoFail: (state) => {
       console.log(state);
+    },
+  },
+  extraReducers: {
+    [fetchChannelProfile.pending]: (state) => {
+      state.channelProfileLoading = true;
+    },
+    [fetchChannelProfile.fulfilled]: (state, { payload }) => {
+      state.channelProfileLoading = false;
+      state.channelProfile = payload;
+    },
+    [fetchChannelProfile.rejected]: (state, { payload }) => {
+      console.log(payload);
+      state.channelProfileLoading = false;
+      state.channelProfile = null;
     },
   },
 });
