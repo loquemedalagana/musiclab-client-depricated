@@ -216,7 +216,6 @@ Profile.propTypes = {
 
 const mapStateToProps = (state) => ({
   curUserId: state.user.userData ? state.user.userData.id : undefined,
-  //isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 });
 
 export default withRouter(connect(mapStateToProps)(React.memo(Profile)));

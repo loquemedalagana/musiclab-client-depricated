@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import qs from "qs";
 
-import { makeStyles } from "@material-ui/core/styles";
+// redux fetch
+import { fetchChannelProfile } from "../../../app/store/youtube";
+import { officialChannelProfileData } from "../../../app/data/yada/officialChannelData";
 
-import {
-  GridContainer,
-  GridItem,
-  //LinearLoading,
-} from "../../../components/components";
+// ui components
+import { Skeleton } from "@material-ui/lab";
+import { makeStyles } from "@material-ui/core/styles";
+import { GridContainer, GridItem } from "../../../components/components";
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 
-import { officialChannelProfileData } from "../../../app/data/yada/officialChannelData";
+// jss components
 import defaultImg from "../../../assets/images/dolphin_profile.png";
-
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
-
 const useStyles = makeStyles(styles);
 
 export const YoutubeVideoListByChannelProfile = (props) => {
@@ -31,16 +30,18 @@ export const YoutubeVideoListByChannelProfile = (props) => {
 
   const { location, match } = props;
 
-  const { channel } = match.params;
+  const { channelparams } = match.params;
 
-  // channel이란 매개변수로 들어온 데이터가, 공식 채널에 존재하면 거기에 맞는 목록 출력해줌
+  // 이 부분 바꾸기
   const [channelInfo] = officialChannelProfileData.filter(
-    ({ routeParam }) => routeParam === channel
+    ({ routeParam }) => routeParam === channelparams
   );
 
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
+
+  console.log(query, channelparams, location, match);
 
   if (!channelInfo) return <Redirect to="/notfound" />;
 

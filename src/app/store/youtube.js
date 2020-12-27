@@ -26,8 +26,9 @@ export const fetchChannelProfile = createAsyncThunk(
 const slice = createSlice({
   name: "youtube",
   initialState: {
-    changed: false,
+    channelProfileLoading: true,
     channelProfile: null,
+    videoListLoading: true,
     videoList: [],
   },
   reducers: {
