@@ -18,11 +18,11 @@ export default (theme) => ({
   },
   absolute: {
     position: "absolute",
-    zIndex: "1200",
+    zIndex: "1099",
   },
   fixed: {
     position: "fixed",
-    zIndex: "1200",
+    zIndex: "1099",
   },
   speedDial: {
     position: "absolute",

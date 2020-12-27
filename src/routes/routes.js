@@ -30,6 +30,7 @@ import MyYoutubeVideoList from "../views/Pages/YoutubeVideoPosts/MyYoutubeVideoL
 // 에러 페이지 컴포넌트
 import NotFound from "../views/Pages/Error/NotFound";
 import ServerError from "../views/Pages/Error/ServerError";
+import NotAvailablePage from "../views/Pages/Error/NotAvailablePage";
 
 // 알람 컴포넌트
 import ToastAlert from "../components/ToastAlerts/ToastAlerts";
@@ -49,7 +50,7 @@ import {
   YOUTUBE_VIDEO_SEARCH_ROUTE,
   MY_YOUTUBE_VIDEO_LIST,
 } from "./params/youtube";
-import { SERVER_ERROR_ROUTE } from "./params/error";
+import { SERVER_ERROR_ROUTE, NOT_AVAILABLE_ROUTE } from "./params/error";
 
 const Routes = () => (
   <>
@@ -105,6 +106,7 @@ const Routes = () => (
       />
 
       <Route exact path={SERVER_ERROR_ROUTE} component={ServerError} />
+      <Route exact path={NOT_AVAILABLE_ROUTE} component={NotAvailablePage} />
       <Route component={NotFound} />
     </Switch>
   </>

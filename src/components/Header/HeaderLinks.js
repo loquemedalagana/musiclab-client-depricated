@@ -32,8 +32,9 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 
 // route constants
 import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
-import {YOUTUBE_VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/youtube";
+import {YOUTUBE_VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE, MY_YOUTUBE_VIDEO_LIST} from "../../routes/params/youtube";
 import {MY_PROFILE_ROUTE} from "../../routes/params/profile";
+import {NOT_AVAILABLE_ROUTE} from "../../routes/params/error";
 
 const useStyles = makeStyles(styles);
 
@@ -63,13 +64,10 @@ const HeaderLinks = (props) => {
           }}
           buttonIcon={VideoLibrarySharp}
           dropdownList={[
-            <Button color = "transparent" onClick={()=>console.log('my list')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>history.push(MY_YOUTUBE_VIDEO_LIST)} className={classes.dropdownLink}>
               My List
             </Button>,
-            <Button color = "transparent" onClick={()=>console.log('my list')} className={classes.dropdownLink}>
-              Members' cover videos
-            </Button>,
-            <Button color = "transparent" onClick={()=>console.log('new')} className={classes.dropdownLink}>
+            <Button color = "transparent" onClick={()=>history.push(NOT_AVAILABLE_ROUTE)} className={classes.dropdownLink}>
               Music SSeolprise
             </Button>,
             <Button color = "transparent" onClick={()=> {
@@ -99,19 +97,19 @@ const HeaderLinks = (props) => {
           buttonIcon={Apps}
           dropdownList={[
             <Button color = "transparent"
-              onClick={()=>console.log('new')}
+              onClick={()=>history.push(NOT_AVAILABLE_ROUTE)}
               className={classes.dropdownLink}
             >
               New
             </Button>,
             <Button color = "transparent"
-              onClick={()=>console.log('hot')}
+              onClick={()=>history.push(NOT_AVAILABLE_ROUTE)}
               className={classes.dropdownLink}
             >
               Hot
             </Button>,
             <Button color = "transparent"
-              onClick={()=>console.log('from yada')}
+              onClick={()=>history.push(NOT_AVAILABLE_ROUTE)}
               className={classes.dropdownLink}
             >
               From Yada Jeon Inhyuk
