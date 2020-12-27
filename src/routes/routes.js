@@ -48,7 +48,7 @@ import {
   YOUTUBE_CHANNEL_PROFILE_ROUTE,
   YOUTUBE_VIDEO_SEARCH_ROUTE,
   MY_YOUTUBE_VIDEO_LIST,
-} from "./params/video";
+} from "./params/youtube";
 import { SERVER_ERROR_ROUTE } from "./params/error";
 
 const Routes = () => (

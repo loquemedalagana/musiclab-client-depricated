@@ -17,7 +17,7 @@ import SelectMenuSection from "./TabMenuSection/SelectMenuSection";
 import EmptyContainer from "./VideoListSection/EmptyContainer";
 
 // route
-import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/video";
+import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/youtube";
 import { NOT_FOUND_ROUTE } from "../../../routes/params/error";
 
 // video list

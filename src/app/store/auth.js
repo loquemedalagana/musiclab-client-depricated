@@ -3,6 +3,8 @@ import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
 
+// fetch my video list
+
 const slice = createSlice({
   name: "auth",
   initialState: {
@@ -10,10 +12,10 @@ const slice = createSlice({
       username: "Jeon Inhyuk",
       description: "music sseolprise",
     },
-    myYoutubeVideoList: InhyukSampleVideoList,
-    myVideoListLoading: true,
     auth: false,
     loading: true,
+    myYoutubeVideoList: InhyukSampleVideoList,
+    myVideoListLoading: true,
   },
   reducers: {
     loadUser: (state) => {

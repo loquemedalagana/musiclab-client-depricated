@@ -17,7 +17,7 @@ import {
   JIHBAND_YOUTUBE_PROFILE_ROUTE,
   YOUTUBE_VIDEO_SEARCH_ROUTE,
   MY_YOUTUBE_VIDEO_LIST,
-} from "../../../../routes/params/video";
+} from "../../../../routes/params/youtube";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
 import videoListOfJeonInhyukBand from "./videoData/videoListOfJeonInhyukBand";
 

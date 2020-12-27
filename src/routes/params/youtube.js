@@ -1,4 +1,4 @@
-export const YOUTUBE_VIDEO_ROUTE = "/youtubevideo";
+export const YOUTUBE_VIDEO_ROUTE = "/youtube";
 export const YOUTUBE_VIDEO_SEARCH_ROUTE = YOUTUBE_VIDEO_ROUTE;
 export const YOUTUBE_CHANNEL_PROFILE_ROUTE = YOUTUBE_VIDEO_ROUTE + "/channel";
 

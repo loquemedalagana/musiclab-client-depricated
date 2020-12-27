@@ -32,7 +32,7 @@ import styles from "../../assets/jss/material-kit-react/components/headerLinksSt
 
 // route constants
 import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
-import {YOUTUBE_VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/video";
+import {YOUTUBE_VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE} from "../../routes/params/youtube";
 import {MY_PROFILE_ROUTE} from "../../routes/params/profile";
 
 const useStyles = makeStyles(styles);

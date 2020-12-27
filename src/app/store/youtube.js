@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
 
@@ -16,7 +15,7 @@ export const fetchChannelProfile = createAsyncThunk(
 // 2. 채널 영상 불러오기 (조건에 따라)
 
 const slice = createSlice({
-  name: "youtubeVideo",
+  name: "youtube",
   initialState: {
     changed: false,
     channelProfile: null,

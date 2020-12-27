@@ -4,17 +4,17 @@ import auth from "./auth";
 import profile from "./profile";
 import tag from "./tag";
 import userControl from "./userControl";
-import youtubeVideo from "./youtubeVideo";
+import youtube from "./youtube";
 
 //회원가입, 레벨업은 상의 후에
 
 const reducer = combineReducers({
   alert,
   auth,
-  tag,
-  profile,
   userControl,
-  youtubeVideo,
+  profile,
+  youtube,
+  tag,
 });
 
 //https://velog.io/@ohgoodkim/-%EC%97%90%EB%9F%AC%EB%85%B8%ED%8A%B8-Cant-perform-a-React-state-update-on-an-unmounted-component
