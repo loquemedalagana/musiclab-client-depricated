@@ -37,6 +37,7 @@ const PostPreview = (props) => {
 
   const isYoutube = type === "youtube";
   const postMenuData = PostMenuData({
+    isYoutube: type === "youtube",
     authorData,
     curUserData,
     postData,

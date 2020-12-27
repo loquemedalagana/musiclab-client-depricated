@@ -26,7 +26,7 @@ const PostMenuData = (props) => {
       onClick={() => console.log("view post")}
       className={classes.dropdownLink}
     >
-      view post
+      {`view ${isYoutube ? "video" : "post"}`}
     </Button>,
   ];
 
@@ -38,7 +38,7 @@ const PostMenuData = (props) => {
         onClick={() => console.log("add in my list")}
         className={classes.dropdownLink}
       >
-        add in my list
+        add to my list
       </Button>
     );
   } else {
