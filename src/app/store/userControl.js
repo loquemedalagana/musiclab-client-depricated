@@ -7,7 +7,14 @@ export const fetchUserSocialData = createAsyncThunk(
   "userControl/fetchUserSocialData",
   async () => {
     const response = await api.get(`/users/update/social`);
-    let userSocialData = {};
+    let userSocialData = {
+      blog: "",
+      twitter: "",
+      facebook: "",
+      instagram: "",
+      youtube: "",
+      soundcloud: "",
+    };
     for (const key in response.data) {
       userSocialData[key] = response.data[key] ? response.data[key] : "";
     }
@@ -55,7 +62,14 @@ const slice = createSlice({
       state.userSocialInfoLoading = false;
     },
     [fetchUserSocialData.rejected]: (state) => {
-      state.userSocialInfo = {};
+      state.userSocialInfo = {
+        blog: "",
+        twitter: "",
+        facebook: "",
+        instagram: "",
+        youtube: "",
+        soundcloud: "",
+      };
       state.userSocialInfoLoading = false;
     },
   },

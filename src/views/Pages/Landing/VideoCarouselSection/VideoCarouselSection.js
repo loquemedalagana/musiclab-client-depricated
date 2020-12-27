@@ -19,7 +19,7 @@ import {
   MY_YOUTUBE_VIDEO_LIST,
 } from "../../../../routes/params/video";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
-import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
+import videoListOfJeonInhyukBand from "./videoData/videoListOfJeonInhyukBand";
 
 import styles from "../../../../assets/jss/material-kit-react/components/carouselStyle";
 

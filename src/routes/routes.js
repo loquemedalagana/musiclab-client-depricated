@@ -95,7 +95,7 @@ const Routes = () => (
 
       <Route
         exact
-        path={`${YOUTUBE_CHANNEL_PROFILE_ROUTE}/:channel`}
+        path={`${YOUTUBE_CHANNEL_PROFILE_ROUTE}/:channel?`}
         component={YoutubeVideoListByChannelProfile}
       />
       <Route

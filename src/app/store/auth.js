@@ -10,10 +10,8 @@ const slice = createSlice({
       description: "music sseolprise",
     },
     userSocialDataLoading: true,
-    userSocialData: null,
     auth: false,
     loading: true,
-    socketId: null,
   },
   reducers: {
     loadUser: (state) => {

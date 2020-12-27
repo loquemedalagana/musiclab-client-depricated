@@ -11,23 +11,19 @@ import {
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
 
 // video data 불러오는거!
-import videoListOfJeonInhyukBand from "../../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
-import { officialChannelProfileData } from "../../../../app/data/yada/officialChannelData";
+import videoListOfJeonInhyukBand from "../../Landing/VideoCarouselSection/videoData/videoListOfJeonInhyukBand";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
+import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
 
 // jss style
 import styles from "../../../../assets/jss/material-kit-react/views/fragments/previewListStyle";
-import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
 const useStyles = makeStyles(styles);
 
 export const ViewVideoListSection = (props) => {
   const classes = useStyles();
-  const { channelId, type, userId, isAdmin } = props;
+  const { channelInfo, type, userId, isAdmin } = props;
 
-  const [channelInfo] = officialChannelProfileData.filter(
-    (data) => data.channelId === channelId
-  );
-
+  // 채널 영상 info 미리 들고오기
   const { channelTitle, image } = channelInfo
     ? channelInfo
     : { channelTitle: undefined, image: defaultImg };
@@ -72,7 +68,7 @@ ViewVideoListSection.propTypes = {
   children: PropTypes.node,
   userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   isAdmin: PropTypes.bool,
-  channelId: PropTypes.string,
+  channelInfo: PropTypes.object,
 };
 
 export default ViewVideoListSection;

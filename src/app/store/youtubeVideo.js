@@ -1,18 +1,27 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
 
 // 0. 내 영상 불러오기 (App.js에도 추가하기)
 
-// 1. 채널 영상 불러오기 (조건에 따라)
+// 1. 채널 프로필 불러오기
+export const fetchChannelProfile = createAsyncThunk(
+  "youtubevideo/fetchChannelProfile",
+  async (channelId) => {
+    // 채널 프로필 불러오기
+  }
+);
+
+// 2. 채널 영상 불러오기 (조건에 따라)
 
 const slice = createSlice({
   name: "youtubeVideo",
   initialState: {
     changed: false,
     myYoutubeVideoList: InhyukSampleVideoList,
-    curChannelTitle: "Jeon Inhyuk Band Official Channel",
+    curChannelProfile: null,
+    curVideoList: [],
   },
   reducers: {
     addYoutubeVideoSuccess: (state, { payload }) => {

@@ -6,6 +6,7 @@ import {
   fetchUserSocialData,
 } from "../../../../../app/store/userControl";
 import { setAlertMsg } from "../../../../../app/store/alert";
+import { Skeleton } from "@material-ui/lab";
 
 import {
   GridContainer,
@@ -93,7 +94,7 @@ export const SnsInfoEdit = (props) => {
   };
 
   if (isChanged || loading || userSocialInfoLoading || !userSocialInfo)
-    return <CircularLoading />;
+    return <Skeleton animation="wave" />;
 
   return (
     <div className={classes.tabBody}>

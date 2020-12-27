@@ -22,7 +22,7 @@ import { NOT_FOUND_ROUTE } from "../../../routes/params/error";
 
 // video list
 import InhyukSampleVideoList from "../../../app/data/yada/InhyukSampleVideoList";
-import videoListOfJeonInhyukBand from "../../../test/mockingData/videos/jsonString/videoListOfJeonInhyukBand";
+import videoListOfJeonInhyukBand from "../Landing/VideoCarouselSection/videoData/videoListOfJeonInhyukBand";
 import videoIdList from "../../../test/mockingData/videos/videoidList";
 
 // page style
