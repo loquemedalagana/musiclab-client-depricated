@@ -5,11 +5,12 @@ import classNames from "classnames";
 import { setAlertMsg } from "../../../../../app/store/alert";
 import { updateUserProfile } from "../../../../../app/store/userControl";
 
+import { Skeleton } from "@material-ui/lab";
+
 import {
   GridContainer,
   GridItem,
   Button,
-  CircularLoading,
 } from "../../../../../components/components";
 
 import NameInput from "../../../../SubComponents/authAndProfile/NameInput";
@@ -162,7 +163,7 @@ export const PersonalInfoEdit = (props) => {
     }
   };
 
-  if (isChanged || loading) return <CircularLoading />;
+  if (isChanged || loading) return <Skeleton animation="wave" />;
 
   return (
     <div className={classes.tabBody}>

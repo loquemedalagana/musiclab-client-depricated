@@ -19,9 +19,8 @@ const slice = createSlice({
   name: "youtubeVideo",
   initialState: {
     changed: false,
-    myYoutubeVideoList: InhyukSampleVideoList,
-    curChannelProfile: null,
-    curVideoList: [],
+    channelProfile: null,
+    videoList: [],
   },
   reducers: {
     addYoutubeVideoSuccess: (state, { payload }) => {

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
 
@@ -9,7 +10,8 @@ const slice = createSlice({
       username: "Jeon Inhyuk",
       description: "music sseolprise",
     },
-    userSocialDataLoading: true,
+    myYoutubeVideoList: InhyukSampleVideoList,
+    myVideoListLoading: true,
     auth: false,
     loading: true,
   },
