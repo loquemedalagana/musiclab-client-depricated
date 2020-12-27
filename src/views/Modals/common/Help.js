@@ -272,8 +272,8 @@ Help.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  userLoading: state.auth.loading,
-  userInfo: state.auth.userData,
+  userLoading: state.user.loading,
+  userInfo: state.user.userData,
 });
 
 export default connect(mapStateToProps, { setAlertMsg })(Help);

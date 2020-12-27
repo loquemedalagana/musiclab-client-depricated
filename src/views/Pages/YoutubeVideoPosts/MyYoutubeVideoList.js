@@ -66,7 +66,7 @@ MyYoutubeVideoList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  curUserData: state.auth.userData ? state.auth.userData : undefined,
+  curUserData: state.user.userData ? state.user.userData : undefined,
 });
 
 export default connect(mapStateToProps)(MyYoutubeVideoList);

@@ -74,7 +74,9 @@ const PrintTag = (props) => {
           minHeight: "30%",
           overflow: "hidden",
         }}
-      ></div>
+      >
+        <h2>{tagName}</h2>
+      </div>
     );
   }
 };

@@ -92,7 +92,7 @@ VideoCarouselSection.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  myYoutubeVideoList: state.auth.myYoutubeVideoList,
+  myYoutubeVideoList: state.user.myYoutubeVideoList,
 });
 
 export default React.memo(connect(mapStateToProps)(VideoCarouselSection));

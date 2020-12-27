@@ -64,7 +64,7 @@ WaitingLevelup.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  userEmail: state.auth.userData ? state.auth.userData.email : undefined,
+  userEmail: state.user.userData ? state.user.userData.email : undefined,
   isChanged: state.userControl.changed,
 });
 

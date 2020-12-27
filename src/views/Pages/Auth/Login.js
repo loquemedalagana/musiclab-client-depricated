@@ -20,7 +20,7 @@ import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import Loading from "../../../components/Loading/LinearLoading";
 import FindPassword from "../../Modals/auth/FindPassword";
-import { loginUser } from "../../../app/store/auth";
+import { loginUser } from "../../../app/store/user";
 import { setAlertMsg } from "../../../app/store/alert";
 
 import SocialLoginSection from "./Sections/SocialLoginSection";

@@ -23,7 +23,7 @@ import {
   Language,
 } from "@material-ui/icons";
 
-import {logoutUser} from '../../app/store/auth';
+import {logoutUser} from '../../app/store/user';
 
 // core components
 import CustomDropdown from "../CustomDropdown/CustomDropdown.js";
@@ -201,10 +201,10 @@ HeaderLinks.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  isAuth: state.auth.auth,
-  username: state.auth.userData ? state.auth.userData.displayName : undefined,
-  userId: state.auth.userData ? state.auth.userData.id : undefined,
-  isMember: state.auth.auth === true ? (state.auth.userData && state.auth.userData.points >= 0) : false,
+  isAuth: state.user.auth,
+  username: state.user.userData ? state.user.userData.displayName : undefined,
+  userId: state.user.userData ? state.user.userData.id : undefined,
+  isMember: state.user.auth === true ? (state.user.userData && state.user.userData.points >= 0) : false,
   notifications: ['hello'], //다르게 불러올 것
 })
 

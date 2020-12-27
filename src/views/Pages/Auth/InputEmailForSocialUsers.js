@@ -184,8 +184,8 @@ InputEmailForSocialUsers.propTypes = {
 
 const mapStateToProps = (state) => ({
   alerts: state.alert,
-  isNotLoggedin: !state.auth.auth,
-  isRegisteredEmail: state.auth.userData && state.auth.userData.email,
+  isNotLoggedin: !state.user.auth,
+  isRegisteredEmail: state.user.userData && state.user.userData.email,
   isChanged: state.userControl.changed,
 });
 

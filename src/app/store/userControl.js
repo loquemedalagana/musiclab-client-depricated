@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
-import { loginUser } from "./auth";
+import { loginUser } from "./user";
 
 export const fetchUserSocialData = createAsyncThunk(
   "userControl/fetchUserSocialData",

@@ -33,8 +33,8 @@ UserHashtagsEdit.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.auth.loading,
-  userInfo: state.auth.userData,
+  loading: state.user.loading,
+  userInfo: state.user.userData,
   isChanged: state.userControl.changed,
 });
 

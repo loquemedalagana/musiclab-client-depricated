@@ -3,15 +3,30 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store/youtubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/youtube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/userControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/userControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/youtube.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/params/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/youtube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/AdminRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/AdminRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/IsNotLoggedInRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/IsNotLoggedInRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/MemberRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/MemberRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberWithoutEmail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HigherOrderComponets/NonMemberWithoutEmail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/common/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/common/Help.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/YoutubeVideoPosts/YoutubeVideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/YoutubeVideoPosts/YoutubeVideoListBySearchKeyword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/UserHashtagsEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/UserHashtagsEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/UserTags/UserTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/UserTags/UserTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/YoutubeVideoPosts/MyYoutubeVideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/YoutubeVideoPosts/MyYoutubeVideoList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +123,7 @@
       <workItem from="1608862596112" duration="23059000" />
       <workItem from="1608949572000" duration="1487000" />
       <workItem from="1608961347789" duration="10756000" />
-      <workItem from="1609031990792" duration="10094000" />
+      <workItem from="1609031990792" duration="11965000" />
     </task>
     <servers />
   </component>

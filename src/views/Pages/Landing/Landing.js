@@ -27,8 +27,8 @@ Landing.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  userData: state.auth.userData,
-  userLoading: state.auth.loading,
+  userData: state.user.userData,
+  userLoading: state.user.loading,
 });
 
 export default withRouter(connect(mapStateToProps)(Landing));

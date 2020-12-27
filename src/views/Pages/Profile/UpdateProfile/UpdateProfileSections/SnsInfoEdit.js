@@ -133,7 +133,7 @@ SnsInfoEdit.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.auth.loading,
+  loading: state.user.loading,
   userSocialInfo: state.userControl.userSocialData,
   isChanged: state.userControl.changed,
 });

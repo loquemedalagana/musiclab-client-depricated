@@ -6,7 +6,7 @@ import { setAlertMsg } from "./alert";
 // fetch my video list
 
 const slice = createSlice({
-  name: "auth",
+  name: "user",
   initialState: {
     userData: {
       username: "Jeon Inhyuk",
@@ -55,8 +55,6 @@ export const {
   loginFail,
   logout,
 } = slice.actions;
-
-export const authSelector = (state) => state.auth;
 
 export default slice.reducer;
 

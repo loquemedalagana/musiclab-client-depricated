@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Routes from "./routes/routes";
 
-import { fetchUser, authSelector } from "./app/store/auth";
+import { fetchUser } from "./app/store/user";
 
 import Landing from "./views/Pages/Landing/Landing";
 import LinearLoading from "./components/Loading/LinearLoading";
@@ -25,8 +25,7 @@ const App = (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const dispatch = useDispatch();
-  const state = useSelector(authSelector);
-  const { loading, auth } = state; // auth state
+  const { loading, auth } = useSelector((state) => state.user); // auth state
 
   // 나중에 여기다가 유튜브 데이터 fetching하자
 

@@ -42,7 +42,7 @@ NonMemberRoute.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  user: state.auth,
+  user: state.user,
   isChanged: state.userControl.changed,
 });
 

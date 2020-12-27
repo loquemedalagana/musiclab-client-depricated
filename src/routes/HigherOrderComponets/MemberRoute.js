@@ -49,8 +49,8 @@ MemberRoute.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  userData: state.auth.userData,
-  isLoading: state.auth.loading,
+  userData: state.user.userData,
+  isLoading: state.user.loading,
   isChanged: state.userControl.changed,
 });
 

@@ -249,7 +249,7 @@ Signup.propTypes = {
 
 const mapStateToProps = (state) => ({
   alerts: state.alert,
-  isAuth: state.auth.auth,
+  isAuth: state.user.auth,
   isChanged: state.userControl.changed,
 });
 

@@ -215,7 +215,7 @@ Profile.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  curUserId: state.auth.userData ? state.auth.userData.id : undefined,
+  curUserId: state.user.userData ? state.user.userData.id : undefined,
   //isAdmin: state.auth.userData ? state.auth.userData.isAdmin : false,
 });
 
