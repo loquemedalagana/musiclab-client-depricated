@@ -8,7 +8,7 @@ import { dropdownLink } from "../../assets/jss/material-kit-react/components/pos
 import { GET_YOUTUBE_VIDEO_ROUTE } from "../../routes/params/youtube";
 
 const PostPreviewMenuData = (props) => {
-  const { isYoutube, curUserData, authorData, postData } = props;
+  const { isYoutube, curUserData, authorData, postData, history } = props;
 
   const classes = classNames({
     [dropdownLink]: true,
@@ -25,8 +25,8 @@ const PostPreviewMenuData = (props) => {
       color="transparent"
       onClick={() =>
         isYoutube
-          ? console.log(GET_YOUTUBE_VIDEO_ROUTE(postData.videoId))
-          : postData.id
+          ? history.push(GET_YOUTUBE_VIDEO_ROUTE(postData.videoId))
+          : console.log(postData.id)
       }
       className={classes.dropdownLink}
     >
@@ -75,7 +75,7 @@ const PostPreviewMenuData = (props) => {
 
 PostPreviewMenuData.propTypes = {
   isYoutube: PropTypes.bool,
-
+  history: PropTypes.object,
   curUserData: PropTypes.object,
 
   authorData: PropTypes.shape({

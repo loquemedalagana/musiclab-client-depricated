@@ -21,6 +21,7 @@ const smallParallaxPageStyle = {
     textAlign: "center !important",
   },
   name: {
+    // 글쓴이 이름(post에서)
     marginTop: "-80px",
   },
   channelTitle: {

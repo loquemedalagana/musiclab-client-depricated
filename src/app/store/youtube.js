@@ -45,7 +45,6 @@ export const fetchYoutubeVideoData = createAsyncThunk(
     const response = await api.get(ENDPOINT);
     const isOfficial =
       response.data.channelId === officialChannelIdList["jihbandofficial"];
-
     return isOfficial
       ? {
           ...response.data,

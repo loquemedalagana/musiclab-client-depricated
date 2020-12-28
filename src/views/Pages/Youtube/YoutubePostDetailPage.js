@@ -30,7 +30,9 @@ const YoutubePostDetailPage = (props) => {
   const imageClasses = classNames(
     classes.imgRaised,
     classes.imgRoundedCircle,
-    classes.imgFluid
+    classes.imgFluid,
+    classes.imgCursor,
+    classes.imgRoundedCircleHover
   );
   const { match } = props;
   const { videoId } = match.params;
@@ -83,18 +85,43 @@ const YoutubePostDetailPage = (props) => {
                   />
                 )}
               </div>
-              <div className={classes.channelTitle}>
+              <div className={classes.name}>
                 {loadYoutubeVideoDataLoading ? (
-                  <Skeleton variant="text" animation="wave" />
+                  <Skeleton
+                    variant="text"
+                    animation="wave"
+                    className={classes.title}
+                  />
                 ) : (
-                  <h3>{youtubeVideoData.channelTitle}</h3>
+                  <h3>{youtubeVideoData.title}</h3>
                 )}
               </div>
+              {loadYoutubeVideoDataLoading ? (
+                <Skeleton
+                  variant="rect"
+                  animation="wave"
+                  className={classes.description}
+                />
+              ) : (
+                <div className={classes.description}>
+                  <p>{youtubeVideoData.description}</p>
+                </div>
+              )}
             </div>
           </GridItem>
         </GridContainer>
-        <YoutubeVideoIframe videoId={youtubeVideoData.videoId} />
+        {loadYoutubeVideoDataLoading ? (
+          <GridContainer>
+            <Skeleton variant="rect" animation="wave" />
+          </GridContainer>
+        ) : (
+          <YoutubeVideoIframe videoId={youtubeVideoData.videoId} />
+        )}
+
         {/*댓글 로딩하는 페이지*/}
+        <GridContainer justify="center" id="discuss">
+          <h3>여기다 댓글 창 로딩할 예정(별도 컴포넌트)</h3>
+        </GridContainer>
       </SmallParallaxLayout>
       <FooterMenu />
     </>

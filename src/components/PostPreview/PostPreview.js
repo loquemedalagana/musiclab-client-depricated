@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -31,7 +32,7 @@ const useStyles = makeStyles(styles);
 
 const PostPreview = (props) => {
   const classes = useStyles();
-  const { type, authorData, postData, curUserData } = props;
+  const { type, authorData, postData, curUserData, history } = props;
 
   const { thumbnail, title, publishedAt, description, videoId } = postData;
 
@@ -41,6 +42,7 @@ const PostPreview = (props) => {
     authorData,
     curUserData,
     postData,
+    history,
   });
 
   const mediaURL = "https://youtu.be/" + videoId;
@@ -139,6 +141,7 @@ const PostPreview = (props) => {
 };
 
 PostPreview.propTypes = {
+  history: PropTypes.object,
   type: PropTypes.oneOf(["youtube", "post"]),
   children: PropTypes.node,
 
@@ -160,4 +163,4 @@ PostPreview.propTypes = {
   }),
 };
 
-export default PostPreview;
+export default withRouter(PostPreview);

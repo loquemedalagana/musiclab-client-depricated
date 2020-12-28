@@ -20,6 +20,9 @@ export default {
     //profile - avatar
     borderRadius: "50% !important",
   },
+  imgBackground: {
+    backgroundColor: "white",
+  },
   imgRoundedCircleHover: {
     "&:hover": {
       opacity: "0.6",

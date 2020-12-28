@@ -4,8 +4,11 @@
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/youtube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VideoIframe/VideoIframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VideoIframe/VideoIframe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/ImgStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/ImgStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostPreview/PostPreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostPreview/PostPreview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostPreview/PostPreviewMenuData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostPreview/PostPreviewMenuData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/SubComponents/youtube/YoutubeVideoIframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/SubComponents/youtube/YoutubeVideoIframe.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +107,7 @@
       <workItem from="1608949572000" duration="1487000" />
       <workItem from="1608961347789" duration="10756000" />
       <workItem from="1609031990792" duration="29289000" />
-      <workItem from="1609120290136" duration="15224000" />
+      <workItem from="1609120290136" duration="17897000" />
     </task>
     <servers />
   </component>
