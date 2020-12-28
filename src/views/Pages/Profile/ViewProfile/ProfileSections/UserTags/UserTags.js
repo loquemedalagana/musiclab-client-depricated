@@ -11,7 +11,7 @@ import {
 } from "../../../../../../components/components";
 
 // test code for ui development
-import SampleTagList from "../../../../../../test/mockingData/tags/sampleTagList";
+import SampleTagList from "../../../../../../test/dummyData/tags/sampleTagList";
 
 import compositionImg from "../../../../../../assets/images/TagImages/composition.jpg";
 import guitarImg from "../../../../../../assets/images/TagImages/guitar.jpg";

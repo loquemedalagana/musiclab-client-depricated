@@ -1,9 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import InhyukSampleVideoList from "../data/yada/InhyukSampleVideoList";
 import api from "../api/api";
 import { setAlertMsg } from "./alert";
 
 // fetch my video list
+export const fetchMyVideoList = createAsyncThunk(
+  "user/fetchMyVideoList",
+  async (curUserInfo) => {
+    const { id } = curUserInfo;
+    const ENDPOINT = `/youtube/uservideolist/${id}`;
+    const response = await api.get(ENDPOINT);
+    return response.data;
+  }
+);
 
 const slice = createSlice({
   name: "user",
@@ -44,6 +53,11 @@ const slice = createSlice({
       state.userData = null;
       state.socketId = null;
     },
+  },
+  extraReducers: {
+    [fetchMyVideoList.pending]: (state) => {},
+    [fetchMyVideoList.fulfilled]: (state, { payload }) => {},
+    [fetchMyVideoList.rejected]: (state, { payload }) => {},
   },
 });
 

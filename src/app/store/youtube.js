@@ -6,6 +6,11 @@ const officialChannelIdList = {
   jihbandofficial: "UChNtl7wRLF6x4B4fp7KCyhQ",
 };
 
+const officialChannelProfileImage = {
+  jihbandofficial:
+    "https://yt3.ggpht.com/ytc/AAUvwniV3e0j1NQbR2l1RW5C01DNjglP_gjnHuPz8JHM=s800-c-k-c0x00ffffff-no-rj",
+};
+
 // 1. 채널 프로필 불러오기
 export const fetchChannelProfile = createAsyncThunk(
   "youtube/fetchChannelProfile",
@@ -22,17 +27,54 @@ export const fetchChannelProfile = createAsyncThunk(
 );
 
 // 2. 채널 영상 불러오기 (조건에 따라)
+export const fetchChannelVideoList = createAsyncThunk(
+  "youtube/fetchChannelVideoList",
+  async (channelInfo) => {
+    const { channelId } = channelInfo;
+    const ENDPOINT = `/youtube/channels/${channelId}/list`;
+    const response = await api.get(ENDPOINT);
+    return response.data;
+  }
+);
 
-// 3.
+// 3. 개별 영상 가져오기
+export const fetchYoutubeVideoData = createAsyncThunk(
+  "youtube/fetchYoutubeVideoData",
+  async ({ videoId }) => {
+    const ENDPOINT = `/youtube/videos/${videoId}`;
+    const response = await api.get(ENDPOINT);
+    const isOfficial =
+      response.data.channelId === officialChannelIdList["jihbandofficial"];
+
+    return isOfficial
+      ? {
+          ...response.data,
+          profileImage: officialChannelProfileImage["jihbandofficial"],
+        }
+      : response.data;
+  }
+);
 
 const slice = createSlice({
   name: "youtube",
   initialState: {
-    channelProfileLoading: true,
+    channelProfileLoading: false,
     channelProfile: null,
-    videoListLoading: true,
+    loadVideoListLoading: false,
+    loadVideoListDone: false,
+    loadVideoListError: null,
     videoList: [],
-    message: null,
+    addYoutubeVideoLoading: false,
+    addYoutubeVideoDone: false,
+    addYoutubeVideoError: null,
+    loadYoutubeVideoDataLoading: false,
+    loadYoutubeVideoDataDone: false,
+    loadYoutubeVideoDataError: null,
+    youtubeVideoData: null,
+
+    loadYoutubeVideoCommentsLoading: false,
+    loadYoutubeVideoCommentsDone: false,
+    youtubeVideoComments: [],
   },
   reducers: {
     addYoutubeVideoSuccess: (state, { payload }) => {
@@ -55,6 +97,32 @@ const slice = createSlice({
       console.log(payload);
       state.channelProfileLoading = false;
       state.channelProfile = null;
+    },
+    [fetchChannelVideoList.pending]: (state) => {
+      state.loadVideoListLoading = true;
+    },
+    [fetchChannelVideoList.fulfilled]: (state, { payload }) => {
+      state.loadVideoListLoading = false;
+      state.loadVideoListDone = true;
+      state.videoList = [...payload]; // 무한 스크롤에서 바꾸기
+    },
+    [fetchChannelVideoList.rejected]: (state, { payload }) => {
+      state.loadVideoListLoading = false;
+      state.loadVideoListDone = false;
+      state.loadVideoListError = payload;
+    },
+    [fetchYoutubeVideoData.pending]: (state) => {
+      state.loadYoutubeVideoDataLoading = true;
+    },
+    [fetchYoutubeVideoData.fulfilled]: (state, { payload }) => {
+      state.loadYoutubeVideoDataLoading = false;
+      state.loadYoutubeVideoDataDone = true;
+      state.youtubeVideoData = payload;
+    },
+    [fetchYoutubeVideoData.rejected]: (state, { payload }) => {
+      state.loadYoutubeVideoDataLoading = false;
+      state.loadYoutubeVideoDataDone = false;
+      state.loadYoutubeVideoDataError = payload;
     },
   },
 });

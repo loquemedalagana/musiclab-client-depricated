@@ -4,11 +4,11 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 import { Button } from "../components.js";
-
 import { dropdownLink } from "../../assets/jss/material-kit-react/components/postStyle";
+import { GET_YOUTUBE_VIDEO_ROUTE } from "../../routes/params/youtube";
 
 const PostPreviewMenuData = (props) => {
-  const { isYoutube, curUserData, authorData } = props;
+  const { isYoutube, curUserData, authorData, postData } = props;
 
   const classes = classNames({
     [dropdownLink]: true,
@@ -23,7 +23,11 @@ const PostPreviewMenuData = (props) => {
     <Button
       key={uuidv4()}
       color="transparent"
-      onClick={() => console.log("view post")}
+      onClick={() =>
+        isYoutube
+          ? console.log(GET_YOUTUBE_VIDEO_ROUTE(postData.videoId))
+          : postData.id
+      }
       className={classes.dropdownLink}
     >
       {`view ${isYoutube ? "video" : "post"}`}
@@ -87,6 +91,7 @@ PostPreviewMenuData.propTypes = {
     publishedAt: PropTypes.string,
     description: PropTypes.string,
     videoId: PropTypes.string,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   }),
 };
 

@@ -24,13 +24,12 @@ export const ViewVideoListSection = (props) => {
   const classes = useStyles();
   const { channelInfo, type, curUserData } = props;
 
-  // 채널 영상 info 미리 들고오기 (타이틀, 이미지)
-  // 채널 카테고리일 때는 해당 채널 이미지, 그게 아니면 디폴트 이미지
   const { channelTitle, profileImage } = channelInfo
     ? channelInfo
     : { channelTitle: undefined, profileImage: defaultImg };
 
-  // 리덕스 기준으로 데이터를 불러온다.
+  console.log(channelInfo);
+
   const resultData =
     type === "channel"
       ? getVideoDataListFromPlayList(
@@ -69,6 +68,7 @@ ViewVideoListSection.propTypes = {
   channelInfo: PropTypes.shape({
     profileImage: PropTypes.string,
     channelTitle: PropTypes.string,
+    channelId: PropTypes.string,
   }),
 };
 

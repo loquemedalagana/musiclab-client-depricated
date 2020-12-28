@@ -13,7 +13,7 @@ import {
 // sample code for ui development
 import InhyukSampleVideoList from "../../../../../../app/data/yada/InhyukSampleVideoList";
 
-import SampleTagList from "../../../../../../test/mockingData/tags/sampleTagList";
+import SampleTagList from "../../../../../../test/dummyData/tags/sampleTagList";
 
 const PrintVideoThumbnail = (props) => {
   const { videoData, thumbnailListImageClasses } = props; //add hover

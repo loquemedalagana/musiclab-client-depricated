@@ -101,6 +101,7 @@ export const YoutubeVideoListByChannelProfile = (props) => {
             profileImage: channelProfile.thumbnails
               ? channelProfile.thumbnails.medium.url
               : defaultImg,
+            channelId: channelProfile.channelId,
           }}
           userId={query.userId}
         />
