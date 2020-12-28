@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector, connect } from "react-redux";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -21,7 +22,7 @@ const useStyles = makeStyles(styles);
 
 export const ViewVideoListSection = (props) => {
   const classes = useStyles();
-  const { channelInfo, type, userId, isAdmin } = props;
+  const { channelInfo, type, curUserData } = props;
 
   // 채널 영상 info 미리 들고오기 (타이틀, 이미지)
   // 채널 카테고리일 때는 해당 채널 이미지, 그게 아니면 디폴트 이미지
@@ -51,10 +52,7 @@ export const ViewVideoListSection = (props) => {
                 channelTitle === undefined ? data.channelTitle : channelTitle,
               profileImage,
             }}
-            curUserData={{
-              userId,
-              isAdmin,
-            }}
+            curUserData={curUserData}
             postData={data}
           />
         </GridItem>
@@ -67,12 +65,15 @@ ViewVideoListSection.propTypes = {
   type: PropTypes.oneOf(["channel", "mylist", "searchresult"]),
   category: PropTypes.oneOf(["official", "fan", "musician", "etc"]),
   children: PropTypes.node,
-  userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  isAdmin: PropTypes.bool,
+  curUserData: PropTypes.object,
   channelInfo: PropTypes.shape({
     profileImage: PropTypes.string,
     channelTitle: PropTypes.string,
   }),
 };
 
-export default ViewVideoListSection;
+const mapStateToProps = (state) => ({
+  curUserData: state.user.userData ? state.user.userData : null,
+});
+
+export default connect(mapStateToProps)(ViewVideoListSection);

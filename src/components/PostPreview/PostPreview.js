@@ -23,7 +23,7 @@ import {
   ExpandMoreRounded as ViewMoreIcon,
 } from "@material-ui/icons";
 
-import { CustomDropdown, PostMenuData } from "../components.js";
+import { CustomDropdown, PostPreviewMenuData } from "../components.js";
 
 const useStyles = makeStyles(styles);
 
@@ -36,7 +36,7 @@ const PostPreview = (props) => {
   const { thumbnail, title, publishedAt, description, videoId } = postData;
 
   const isYoutube = type === "youtube";
-  const postMenuData = PostMenuData({
+  const postMenuData = PostPreviewMenuData({
     isYoutube: type === "youtube",
     authorData,
     curUserData,
@@ -142,10 +142,7 @@ PostPreview.propTypes = {
   type: PropTypes.oneOf(["youtube", "post"]),
   children: PropTypes.node,
 
-  curUserData: PropTypes.shape({
-    isAdmin: PropTypes.bool,
-    userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  }),
+  curUserData: PropTypes.object,
 
   authorData: PropTypes.shape({
     channelTitle: PropTypes.string,

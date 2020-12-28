@@ -7,7 +7,7 @@ import { Button } from "../components.js";
 
 import { dropdownLink } from "../../assets/jss/material-kit-react/components/postStyle";
 
-const PostMenuData = (props) => {
+const PostPreviewMenuData = (props) => {
   const { isYoutube, curUserData, authorData } = props;
 
   const classes = classNames({
@@ -30,7 +30,7 @@ const PostMenuData = (props) => {
     </Button>,
   ];
 
-  if (isYoutube) {
+  if (isYoutube && curUserData && curUserData.points >= 0) {
     postMenuData.push(
       <Button
         key={uuidv4()}
@@ -42,9 +42,7 @@ const PostMenuData = (props) => {
       </Button>
     );
   } else {
-    //if your post or you are admin?
-    //add edit and delete
-    if (isYourPost || curUserData.isAdmin) {
+    if (isYourPost) {
       postMenuData.push(
         <Button
           key={uuidv4()}
@@ -71,13 +69,10 @@ const PostMenuData = (props) => {
   return postMenuData;
 };
 
-PostMenuData.propTypes = {
+PostPreviewMenuData.propTypes = {
   isYoutube: PropTypes.bool,
 
-  curUserData: PropTypes.shape({
-    isAdmin: PropTypes.bool,
-    userId: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  }),
+  curUserData: PropTypes.object,
 
   authorData: PropTypes.shape({
     channelTitle: PropTypes.string,
@@ -95,4 +90,4 @@ PostMenuData.propTypes = {
   }),
 };
 
-export default PostMenuData;
+export default PostPreviewMenuData;

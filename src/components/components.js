@@ -42,8 +42,8 @@ import ToastAlerts from "./ToastAlerts/ToastAlerts";
 import SnackbarContent from "./Snackbar/SnackbarContent";
 import Clearfix from "./Clearfix/Clearfix";
 
-import PostPreview from "./Post/PostPreview";
-import PostMenuData from "./Post/PostMenuData";
+import PostPreview from "./PostPreview/PostPreview";
+import PostPreviewMenuData from "./PostPreview/PostPreviewMenuData";
 
 import InputSocialIcon from "./SocialIcon/InputSocialIcon";
 import SocialIconButton from "./SocialIcon/SocialIconButton";
@@ -85,7 +85,7 @@ export {
   SnackbarContent,
   Clearfix,
   PostPreview,
-  PostMenuData,
+  PostPreviewMenuData,
   InputSocialIcon,
   SocialIconButton,
 };

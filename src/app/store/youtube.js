@@ -23,6 +23,8 @@ export const fetchChannelProfile = createAsyncThunk(
 
 // 2. 채널 영상 불러오기 (조건에 따라)
 
+// 3.
+
 const slice = createSlice({
   name: "youtube",
   initialState: {
