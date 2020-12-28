@@ -93,7 +93,10 @@ const YoutubePostDetailPage = (props) => {
                     className={classes.title}
                   />
                 ) : (
-                  <h3>{youtubeVideoData.title}</h3>
+                  <>
+                    <h3>{youtubeVideoData.title}</h3>
+                    <h6>{youtubeVideoData.publishedAt}</h6>
+                  </>
                 )}
               </div>
               {loadYoutubeVideoDataLoading ? (
