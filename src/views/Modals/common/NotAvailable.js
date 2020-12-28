@@ -55,7 +55,7 @@ const NotAvailable = (props) => {
       </DialogTitle>
 
       <DialogContent
-        id="classic-modal-slide-description"
+        id="not-available-modal-description"
         className={classes.modalBody}
       >
         <>

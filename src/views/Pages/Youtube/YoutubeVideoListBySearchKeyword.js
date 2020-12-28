@@ -14,12 +14,12 @@ import {
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 import SelectMenuSection from "./TabMenuSection/SelectMenuSection";
 import EmptyContainer from "./VideoListSection/EmptyContainer";
-import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
+//import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import FooterMenu from "../../Navigations/FooterMenu";
 
 // route
 import { JIHBAND_YOUTUBE_PROFILE_ROUTE } from "../../../routes/params/youtube";
-import { NOT_FOUND_ROUTE } from "../../../routes/params/error";
+//import { NOT_FOUND_ROUTE } from "../../../routes/params/error";
 
 // video list
 import InhyukSampleVideoList from "../../../app/data/yada/InhyukSampleVideoList";

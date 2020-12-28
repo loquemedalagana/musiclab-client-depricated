@@ -88,7 +88,7 @@ export default function CustomInput(props) {
         <Input
           className="scrollbar-rainy-ashville"
           classes={{
-            input: `${inputClasses} scrollbar-rainy-ashville`,
+            input: `${inputClasses} scrollbar-lady-lips`,
             root: marginTop,
             disabled: classes.disabled,
             underline: underlineClasses,

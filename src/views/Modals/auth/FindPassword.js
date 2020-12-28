@@ -109,7 +109,7 @@ const FindPassword = (props) => {
       </DialogTitle>
 
       <DialogContent
-        id="classic-modal-slide-description"
+        id="find-password-description"
         className={classes.modalBody}
       >
         <p>가입하신 메일주소를 입력해주세요</p>

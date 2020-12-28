@@ -175,7 +175,7 @@ export const Help = (props) => {
       </DialogTitle>
 
       <DialogContent
-        id="classic-modal-slide-description"
+        id="help-modal-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
       >
         <p>

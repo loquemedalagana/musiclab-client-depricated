@@ -118,7 +118,10 @@ const YoutubePostDetailPage = (props) => {
             <Skeleton variant="rect" animation="wave" />
           </GridContainer>
         ) : (
-          <YoutubeVideoIframe videoId={youtubeVideoData.videoId} />
+          <YoutubeVideoIframe
+            videoId={youtubeVideoData.videoId}
+            title={youtubeVideoData.title}
+          />
         )}
 
         {/*댓글 로딩하는 페이지*/}

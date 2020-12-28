@@ -82,7 +82,7 @@ const CollectingPersonalInformationAgreement = (props) => {
       </DialogTitle>
 
       <DialogContent
-        id="classic-modal-slide-description"
+        id="agreeement-detail"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
       >
         <GridContainer>

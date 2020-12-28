@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../api/api";
-import { setAlertMsg } from "./alert";
 
 const officialChannelIdList = {
   jihbandofficial: "UChNtl7wRLF6x4B4fp7KCyhQ",

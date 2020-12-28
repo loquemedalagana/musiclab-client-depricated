@@ -61,10 +61,7 @@ const About = (props) => {
         <h5 className={classes.modalTitle}>{appShortTitle}</h5>
       </DialogTitle>
 
-      <DialogContent
-        id="classic-modal-slide-description"
-        className={classes.modalBody}
-      >
+      <DialogContent id="about-modal-description" className={classes.modalBody}>
         <p>🎸 야다/전인혁Band 입덕 후 소통공간이 없어서 힘드셨죠?</p>
         <p>🎼 뮤직 썰! 프라이즈가 고민을 해결해 드립니다</p>
         <p>🎞 내가 보고 싶은 인혁 영상만 주제별로 모아</p>
