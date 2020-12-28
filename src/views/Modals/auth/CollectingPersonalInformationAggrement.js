@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
-
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import {
   Dialog,
   DialogTitle,
@@ -20,6 +20,7 @@ import { CHECK_AGREEMENT_HELPER } from "../../../app/helper/auth/helperTexts";
 
 import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 import { GridItem } from "../../../components/components";
+
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -27,6 +28,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const CollectingPersonalInformationAgreement = (props) => {
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
   const classes = useStyles();
   const {
     open,
@@ -55,6 +58,7 @@ const CollectingPersonalInformationAgreement = (props) => {
       TransitionComponent={Transition}
       keepMounted
       fullWidth
+      fullScreen={fullScreen}
       aria-labelledby="music-sseolprise-personalinfo-agreement"
       aria-describedby="music-sseolprise-personalinfo-agreement-detail"
       classes={{

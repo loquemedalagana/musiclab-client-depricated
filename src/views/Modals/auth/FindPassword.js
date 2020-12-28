@@ -2,8 +2,9 @@ import React, { useState, useRef } from "react";
 //import { Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
-import { makeStyles } from "@material-ui/core/styles";
+//material ui
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Dialog,
   DialogTitle,
@@ -32,6 +33,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FindPassword = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
   const { setAlertMsg, open, onClose, requestFindPassword } = props;
 
   const [inputs, setInputs] = useState({
@@ -84,6 +87,7 @@ const FindPassword = (props) => {
       TransitionComponent={Transition}
       keepMounted
       fullWidth={true}
+      fullScreen={fullScreen}
       aria-labelledby="music-sseolprise-about"
       aria-describedby="music-sseolprise-about-detail"
       classes={{

@@ -2,8 +2,9 @@ import React, { useCallback, useState, useRef } from "react";
 import { connect, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { setAlertMsg } from "../../../app/store/alert";
-
-import { makeStyles } from "@material-ui/core/styles";
+// material ui
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Dialog,
   DialogTitle,
@@ -21,6 +22,7 @@ import {
   GridItem,
   CustomInput,
 } from "../../../components/components";
+
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -31,6 +33,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const AddYoutubeVideo = (props) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
   const { setAlertMsg, open, onClose } = props;
   const [youtubeVideoURL, setYoutubeVideoURL] = useState("");
   const youtubeURLinputRef = useRef();
@@ -51,6 +55,7 @@ const AddYoutubeVideo = (props) => {
       onClose={onClose}
       TransitionComponent={Transition}
       keepMounted
+      fullScreen={fullScreen}
       fullWidth={true}
       aria-labelledby="music-sseolprise-about"
       aria-describedby="add-youtube-video"
