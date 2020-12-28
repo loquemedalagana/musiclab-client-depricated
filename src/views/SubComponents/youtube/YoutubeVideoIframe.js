@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { GridContainer } from "../../../components/components";
+import VideoIframe from "../../../components/VideoIframe/VideoIframe";
 
 const YoutubeVideoIframe = (props) => {
   const { videoId } = props;

@@ -17,7 +17,7 @@ export const fetchChannelProfile = createAsyncThunk(
   async (channelInfo) => {
     const { category, channelparams } = channelInfo;
     const channelId =
-      category === "official"
+      category === "official" || channelparams === "jihbandofficial"
         ? officialChannelIdList[channelparams]
         : channelparams;
     const ENDPOINT = `/youtube/channels/${channelId}?category=${category}`;
@@ -58,7 +58,7 @@ export const fetchYoutubeVideoData = createAsyncThunk(
 const slice = createSlice({
   name: "youtube",
   initialState: {
-    channelProfileLoading: false,
+    channelProfileLoading: true,
     channelProfile: null,
     loadVideoListLoading: false,
     loadVideoListDone: false,
@@ -66,16 +66,16 @@ const slice = createSlice({
     hasMoreList: true,
     videoList: [],
 
-    addYoutubeVideoLoading: false,
+    addYoutubeVideoLoading: true,
     addYoutubeVideoDone: false,
     addYoutubeVideoError: null,
 
-    loadYoutubeVideoDataLoading: false,
+    loadYoutubeVideoDataLoading: true,
     loadYoutubeVideoDataDone: false,
     loadYoutubeVideoDataError: null,
     youtubeVideoData: null,
 
-    loadYoutubeVideoCommentsLoading: false,
+    loadYoutubeVideoCommentsLoading: true,
     loadYoutubeVideoCommentsDone: false,
     youtubeVideoComments: [],
   },
