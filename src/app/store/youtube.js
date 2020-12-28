@@ -54,6 +54,10 @@ export const fetchYoutubeVideoData = createAsyncThunk(
   }
 );
 
+// 4. 영상 등록하기 (id 기준)
+
+// 5. 영상 등록하기 (재생목록 id 기준)
+
 const slice = createSlice({
   name: "youtube",
   initialState: {
@@ -132,18 +136,3 @@ const slice = createSlice({
 export const { addYoutubeVideoSuccess, addYoutubeVideoFail } = slice.actions;
 
 export default slice.reducer;
-
-//actions
-// 1. 영상 등록하기 (유튜브 영상) - 영상 id 기준
-export const addYoutubeVideoByVideoId = (dataToSubmit) => async (dispatch) => {
-  try {
-    const response = await api.post(`/youtube/videos/add`, dataToSubmit);
-    dispatch(setAlertMsg(response.data.message), "success"); // 새 영상, 성공 메시지 데이터로 받아오기.
-    dispatch(addYoutubeVideoSuccess());
-  } catch (error) {
-    dispatch(setAlertMsg(error.response.data, "error"));
-    dispatch(addYoutubeVideoFail());
-  }
-};
-
-// 2. 영상 등록하기 (유튜브 영상) - 재생목록 id 기준
