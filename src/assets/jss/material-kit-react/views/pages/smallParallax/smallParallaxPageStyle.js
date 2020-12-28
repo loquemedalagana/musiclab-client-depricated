@@ -3,7 +3,7 @@ import { container, title } from "../../../../material-kit-react";
 import imagesStyle from "../../../components/ImgStyle";
 import scrollbarStyle from "../../../components/scrollbarStyle";
 
-const profilePageStyle = {
+const smallParallaxPageStyle = {
   container,
   profile: {
     textAlign: "center",
@@ -40,6 +40,10 @@ const profilePageStyle = {
     margin: "20px auto 50px auto",
     textAlign: "center",
   },
+  emptyContainer: {
+    minHeight: "50vh",
+    alignContent: "center",
+  },
 };
 
-export default profilePageStyle;
+export default smallParallaxPageStyle;

@@ -27,7 +27,7 @@ import videoListOfJeonInhyukBand from "../Landing/VideoCarouselSection/videoData
 import videoIdList from "../../../test/dummyData/videos/videoidList";
 
 // page style
-import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/videoListByKeywordsStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
 const useStyles = makeStyles(styles);
 
 export const YoutubeVideoListBySearchKeyword = (props) => {

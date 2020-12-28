@@ -63,10 +63,13 @@ const slice = createSlice({
     loadVideoListLoading: false,
     loadVideoListDone: false,
     loadVideoListError: null,
+    hasMoreList: true,
     videoList: [],
+
     addYoutubeVideoLoading: false,
     addYoutubeVideoDone: false,
     addYoutubeVideoError: null,
+
     loadYoutubeVideoDataLoading: false,
     loadYoutubeVideoDataDone: false,
     loadYoutubeVideoDataError: null,

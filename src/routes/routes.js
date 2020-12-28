@@ -21,9 +21,10 @@ import Profile from "../views/Pages/Profile/ViewProfile/Profile";
 import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
 
 // 유튜브 컴포넌트
-import YoutubeVideoListByChannelProfile from "../views/Pages/YoutubeVideoPosts/YoutubeVideoListByChannelProfile";
-import YoutubeVideoListBySearchKeyword from "../views/Pages/YoutubeVideoPosts/YoutubeVideoListBySearchKeyword";
-import MyYoutubeVideoList from "../views/Pages/YoutubeVideoPosts/MyYoutubeVideoList";
+import YoutubeVideoListByChannelProfile from "../views/Pages/Youtube/YoutubeVideoListByChannelProfile";
+import YoutubeVideoListBySearchKeyword from "../views/Pages/Youtube/YoutubeVideoListBySearchKeyword";
+import MyYoutubeVideoList from "../views/Pages/Youtube/MyYoutubeVideoList";
+import YoutubePostDetailPage from "../views/Pages/Youtube/YoutubePostDetailPage.js";
 
 // 포스트 컴포넌트
 
@@ -49,6 +50,7 @@ import {
   YOUTUBE_CHANNEL_PROFILE_ROUTE,
   YOUTUBE_VIDEO_SEARCH_ROUTE,
   MY_YOUTUBE_VIDEO_LIST,
+  YOUTUBE_VIDEO_ROUTE,
 } from "./params/youtube";
 import { SERVER_ERROR_ROUTE, NOT_AVAILABLE_ROUTE } from "./params/error";
 
@@ -92,6 +94,12 @@ const Routes = () => (
         exact
         path={MY_YOUTUBE_VIDEO_LIST}
         component={MyYoutubeVideoList}
+      />
+
+      <Route
+        exact
+        path={`${YOUTUBE_VIDEO_ROUTE}/:videoId?`}
+        component={YoutubePostDetailPage}
       />
 
       <Route

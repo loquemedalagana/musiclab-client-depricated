@@ -45,7 +45,7 @@ import { EDIT_PROFILE_ROUTE } from "../../../../routes/params/profile";
 // image
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
 
-import styles from "../../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
+import styles from "../../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
 import { getDateKor } from "../../../../app/models/common/getDate";
 
 const useStyles = makeStyles(styles);

@@ -17,7 +17,7 @@ import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 
 // jss components
 import defaultImg from "../../../assets/images/dolphin_profile.png";
-import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
 const useStyles = makeStyles(styles);
 
 export const YoutubeVideoListByChannelProfile = (props) => {

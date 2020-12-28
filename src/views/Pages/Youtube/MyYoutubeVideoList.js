@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 // material ui
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/profilePageStyle";
+import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
 
 // custom component
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
