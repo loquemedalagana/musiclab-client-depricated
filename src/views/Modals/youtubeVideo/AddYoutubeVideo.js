@@ -80,7 +80,7 @@ const AddYoutubeVideo = (props) => {
     } else {
       setAlertMsg("유튜브 주소", "success");
     }
-  }, [inputs, setAlertMsg]);
+  }, [inputs, setAlertMsg, youtubeVideoURL]);
 
   const onYoutubeURLinputHandler = useCallback(
     (event) => {
@@ -133,25 +133,22 @@ const AddYoutubeVideo = (props) => {
         className={classes.modalBody + " scrollbar-rainy-ashville"}
         dividers={isMobile}
       >
-        <GridContainer justify={"center"}>
-          <p>유튜브 주소 입력</p>
-          <GridItem xs={12} sm={12} md={11}>
-            <CustomInput
-              labelText="Youtube Video URL"
-              id="new-youtube-video-url"
-              formControlProps={{
-                fullWidth: true,
-                className: classes.textArea,
-              }}
-              inputProps={{
-                name: "youtubeVideoURL",
-                value: youtubeVideoURL,
-                onChange: onYoutubeURLinputHandler,
-                inputRef: inputRef.youtubeVideoURL,
-              }}
-            />
-          </GridItem>
-        </GridContainer>
+        <GridItem xs={12} sm={12} md={11}>
+          <CustomInput
+            labelText="Youtube Video URL"
+            id="new-youtube-video-url"
+            formControlProps={{
+              fullWidth: true,
+              className: classes.textArea,
+            }}
+            inputProps={{
+              name: "youtubeVideoURL",
+              value: youtubeVideoURL,
+              onChange: onYoutubeURLinputHandler,
+              inputRef: inputRef.youtubeVideoURL,
+            }}
+          />
+        </GridItem>
       </DialogContent>
 
       <DialogActions>

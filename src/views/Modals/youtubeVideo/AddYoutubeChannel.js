@@ -135,75 +135,73 @@ export const AddYoutubeChannel = (props) => {
         <p>채널 등록 페이지입니다.</p>
         <p>담당자가 확인한 후 승인이 되면 채널 리스트에 등록됩니다.</p>
         <br />
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={11}>
-            <CustomInput
-              labelText="Your Youtube Channel URL"
-              id="add-youtube-channel-link"
-              error={channelURLModalError}
-              formControlProps={{
-                fullWidth: true,
-                className: classes.textArea,
-              }}
-              inputProps={{
-                name: "channelURL",
-                value: channelURL,
-                onChange: onInputHandler,
-                inputRef: inputRef.channelURL,
-              }}
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={12}>
-            <CustomRadioGroup
-              title={"Type"}
-              name={"channelType"}
-              value={channelType}
-              onChange={onInputHandler}
-              selectItems={[
-                { key: "fan", value: "팬 계정" },
-                { key: "musician", value: "뮤지션 계정" },
-                { key: "etc", value: "etc" },
-              ]}
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={12}>
-            <CustomInput
-              labelText="Youtube Channel Title"
-              id="channel-title"
-              error={contentErr}
-              formControlProps={{
-                fullWidth: true,
-                className: classes.textArea,
-              }}
-              inputProps={{
-                name: "title",
-                value: title,
-                onChange: onInputHandler,
-                inputRef: inputRef.title,
-              }}
-            />
-          </GridItem>
+        <GridItem xs={12} sm={12} md={11}>
+          <CustomInput
+            labelText="Your Youtube Channel URL"
+            id="add-youtube-channel-link"
+            error={channelURLModalError}
+            formControlProps={{
+              fullWidth: true,
+              className: classes.textArea,
+            }}
+            inputProps={{
+              name: "channelURL",
+              value: channelURL,
+              onChange: onInputHandler,
+              inputRef: inputRef.channelURL,
+            }}
+          />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={12}>
+          <CustomRadioGroup
+            title={"Type"}
+            name={"channelType"}
+            value={channelType}
+            onChange={onInputHandler}
+            selectItems={[
+              { key: "fan", value: "팬 계정" },
+              { key: "musician", value: "뮤지션 계정" },
+              { key: "etc", value: "etc" },
+            ]}
+          />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={12}>
+          <CustomInput
+            labelText="Youtube Channel Title"
+            id="channel-title"
+            error={contentErr}
+            formControlProps={{
+              fullWidth: true,
+              className: classes.textArea,
+            }}
+            inputProps={{
+              name: "title",
+              value: title,
+              onChange: onInputHandler,
+              inputRef: inputRef.title,
+            }}
+          />
+        </GridItem>
 
-          <GridItem xs={12} sm={12} md={12}>
-            <CustomInput
-              labelText="Message Content"
-              id="add-channel-request-message"
-              error={contentErr}
-              formControlProps={{
-                fullWidth: true,
-                className: classes.textArea,
-              }}
-              inputProps={{
-                multiline: true,
-                rows: 5,
-                name: "content",
-                value: content,
-                onChange: onInputHandler,
-                inputRef: inputRef.content,
-              }}
-            />
-          </GridItem>
-        </GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+          <CustomInput
+            labelText="Message Content"
+            id="add-channel-request-message"
+            error={contentErr}
+            formControlProps={{
+              fullWidth: true,
+              className: classes.textArea,
+            }}
+            inputProps={{
+              multiline: true,
+              rows: 5,
+              name: "content",
+              value: content,
+              onChange: onInputHandler,
+              inputRef: inputRef.content,
+            }}
+          />
+        </GridItem>
       </DialogContent>
       <DialogActions>
         <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
