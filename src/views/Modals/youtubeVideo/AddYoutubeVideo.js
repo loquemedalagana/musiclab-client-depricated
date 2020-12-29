@@ -34,7 +34,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const AddYoutubeVideo = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const { setAlertMsg, open, onClose } = props;
   const [youtubeVideoURL, setYoutubeVideoURL] = useState("");
   const youtubeURLinputRef = useRef();
@@ -55,7 +55,8 @@ const AddYoutubeVideo = (props) => {
       onClose={onClose}
       TransitionComponent={Transition}
       keepMounted
-      fullScreen={fullScreen}
+      fullScreen={isMobile}
+      scroll={"paper"}
       fullWidth={true}
       aria-labelledby="music-sseolprise-about"
       aria-describedby="add-youtube-video"
@@ -85,11 +86,9 @@ const AddYoutubeVideo = (props) => {
         id="add-new-youtube-video-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
       >
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <p>유튜브 주소 입력</p>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={12}>
+        <GridContainer justify={"center"}>
+          <p>유튜브 주소 입력</p>
+          <GridItem xs={12} sm={12} md={11}>
             <CustomInput
               labelText="Youtube Video URL"
               id="new-youtube-video-url"

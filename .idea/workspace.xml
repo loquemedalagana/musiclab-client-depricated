@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/fragments/tagContainerStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/YoutubeTagContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/modalStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/components/modalStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/youtube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/auth/CollectingPersonalInformationAggrement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/auth/CollectingPersonalInformationAggrement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/auth/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/auth/FindPassword.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/common/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/common/Help.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/TabMenuSection/CoverVideosSearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/TabMenuSection/InhyukVideosSearchByKeywords.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/TabMenuSection/SelectMenuSection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListBySearchKeyword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server-new-ver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -107,7 +116,8 @@
       <workItem from="1608949572000" duration="1487000" />
       <workItem from="1608961347789" duration="10756000" />
       <workItem from="1609031990792" duration="29289000" />
-      <workItem from="1609120290136" duration="39026000" />
+      <workItem from="1609120290136" duration="39159000" />
+      <workItem from="1609209737385" duration="6054000" />
     </task>
     <servers />
   </component>

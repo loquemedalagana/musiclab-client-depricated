@@ -34,7 +34,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const FindPassword = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const { setAlertMsg, open, onClose, requestFindPassword } = props;
 
   const [inputs, setInputs] = useState({
@@ -87,9 +87,9 @@ const FindPassword = (props) => {
       TransitionComponent={Transition}
       keepMounted
       fullWidth={true}
-      fullScreen={fullScreen}
-      aria-labelledby="music-sseolprise-about"
-      aria-describedby="music-sseolprise-about-detail"
+      fullScreen={isMobile}
+      aria-labelledby="music-sseolprise-find-password"
+      aria-describedby="music-sseolprise-find-password"
       classes={{
         paper: "scrollbar-rainy-ashville",
       }}
@@ -115,6 +115,7 @@ const FindPassword = (props) => {
       <DialogContent
         id="find-password-description"
         className={classes.modalBody}
+        dividers={isMobile}
       >
         <p>가입하신 메일주소를 입력해주세요</p>
         <CustomInput

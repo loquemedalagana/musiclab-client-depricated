@@ -29,7 +29,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const CollectingPersonalInformationAgreement = (props) => {
   const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const classes = useStyles();
   const {
     open,
@@ -57,8 +57,8 @@ const CollectingPersonalInformationAgreement = (props) => {
       onClose={onClose}
       TransitionComponent={Transition}
       keepMounted
-      fullWidth
-      fullScreen={fullScreen}
+      scroll={"paper"}
+      fullScreen={isMobile}
       aria-labelledby="music-sseolprise-personalinfo-agreement"
       aria-describedby="music-sseolprise-personalinfo-agreement-detail"
       classes={{
@@ -88,12 +88,12 @@ const CollectingPersonalInformationAgreement = (props) => {
       <DialogContent
         id="agreeement-detail"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
+        dividers={true}
       >
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={12}>
-            {CollectingPersonalInformationAggrementText["ko"]}
-          </GridItem>
-        </GridContainer>
+        {/*약관은 html iframe으로 바꾸기*/}
+        <GridItem xs={12} sm={12} md={12}>
+          {CollectingPersonalInformationAggrementText["ko"]}
+        </GridItem>
       </DialogContent>
       <DialogActions>
         <GridContainer spacing={3}>

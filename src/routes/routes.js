@@ -22,7 +22,7 @@ import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
 
 // 유튜브 컴포넌트
 import YoutubeVideoListByChannelProfile from "../views/Pages/Youtube/YoutubeVideoListByChannelProfile";
-import YoutubeVideoListBySearchKeyword from "../views/Pages/Youtube/YoutubeVideoListBySearchKeyword";
+import YoutubeVideoListBySearchKeyword from "../views/Pages/Youtube/YoutubeVideoListByTags";
 import MyYoutubeVideoList from "../views/Pages/Youtube/MyYoutubeVideoList";
 import YoutubePostDetailPage from "../views/Pages/Youtube/YoutubePostDetailPage.js";
 

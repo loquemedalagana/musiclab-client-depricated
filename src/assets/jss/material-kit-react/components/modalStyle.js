@@ -1,5 +1,14 @@
 import customCheckboxRadioSwitch from "./customCheckboxRadioSwitch";
 
+const headerBackgroundColor = [
+  "#f9f7cf",
+  "#d0e8f2",
+  "#ffdada",
+  "#e3dfc8",
+  "#fbe2e5",
+  "#ffe0f7",
+];
+
 const modalStyle = {
   modal: {
     borderRadius: "6px",
@@ -8,9 +17,10 @@ const modalStyle = {
     borderBottom: "none",
     paddingTop: "24px",
     paddingRight: "24px",
-    paddingBottom: "0",
+    paddingBottom: "20px",
     paddingLeft: "24px",
     minHeight: "16.43px",
+    backgroundColor: Math.floor(Math.random() * headerBackgroundColor.length),
   },
   modalTitle: {
     margin: "0",

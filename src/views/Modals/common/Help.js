@@ -85,7 +85,7 @@ export const Help = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const { setAlertMsg, open, onClose, userInfo, userLoading } = props;
-  const fullScreen = useMediaQuery(theme.breakpoints.down("xs"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
   const [inputs, setInputs] = useState({
     displayName: userInfo && !userLoading ? userInfo.displayName : "",
@@ -147,12 +147,13 @@ export const Help = (props) => {
 
   return (
     <Dialog
-      fullScreen={fullScreen}
+      fullScreen={isMobile}
       open={open}
       onClose={onClose}
       TransitionComponent={Transition}
       keepMounted
       fullWidth={true}
+      scroll={"paper"}
       aria-labelledby="music-sseolprise-about"
       aria-describedby="music-sseolprise-about-detail"
       classes={{
@@ -163,6 +164,9 @@ export const Help = (props) => {
         id="music-sseolprise-about-title"
         disableTypography
         className={classes.modalHeader}
+        classes={{
+          root: classes.modalHeader,
+        }}
       >
         <IconButton
           className={classes.modalCloseButton}
@@ -180,6 +184,7 @@ export const Help = (props) => {
       <DialogContent
         id="help-modal-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
+        dividers={isMobile}
       >
         <p>
           뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로

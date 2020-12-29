@@ -12,7 +12,7 @@ import {
 
 // sub components
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
-import SelectMenuSection from "./TabMenuSection/SelectMenuSection";
+import YoutubeTagContainert from "./VideoListSection/YoutubeTagContainer";
 import EmptyContainer from "./VideoListSection/EmptyContainer";
 //import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import FooterMenu from "../../Navigations/FooterMenu";
@@ -28,18 +28,18 @@ import videoIdList from "../../../test/dummyData/videos/videoidList";
 
 // page style
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
+import YoutubeTagContainer from "./VideoListSection/YoutubeTagContainer";
 const useStyles = makeStyles(styles);
 
-export const YoutubeVideoListBySearchKeyword = (props) => {
+export const YoutubeVideoListByTags = (props) => {
   const classes = useStyles();
   const { location, match } = props;
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
   });
   console.log(location, match);
-  console.log(query);
+  console.log(query); // 쿼리에 맞게 아래에 결과 띄운다.
 
-  console.log(query);
   const { items } = JSON.parse(videoListOfJeonInhyukBand);
   console.log(items);
   console.log(videoIdList);
@@ -52,11 +52,8 @@ export const YoutubeVideoListBySearchKeyword = (props) => {
     <>
       <FooterMenu />
       <SmallParallaxLayout>
-        <GridContainer justify="center">
-          <SelectMenuSection />
-        </GridContainer>
+        <YoutubeTagContainer />
 
-        {/* 요 부분은 쿼리에 따라 다르게 출력됨*/}
         <EmptyContainer className={classes.emptyContainer}>
           <h1>업데이트 예정</h1>
         </EmptyContainer>
@@ -65,11 +62,11 @@ export const YoutubeVideoListBySearchKeyword = (props) => {
   );
 };
 
-YoutubeVideoListBySearchKeyword.propTypes = {
+YoutubeVideoListByTags.propTypes = {
   location: PropTypes.object,
   match: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({});
 
-export default connect(mapStateToProps)(YoutubeVideoListBySearchKeyword);
+export default connect(mapStateToProps)(YoutubeVideoListByTags);
