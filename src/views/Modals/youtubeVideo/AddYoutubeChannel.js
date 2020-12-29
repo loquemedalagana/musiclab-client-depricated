@@ -12,14 +12,9 @@ import {
   DialogActions,
   Slide,
   IconButton,
-  RadioGroup,
-  FormControl,
-  FormLabel,
-  FormControlLabel,
-  Radio,
 } from "@material-ui/core";
-import { Close, FiberManualRecord } from "@material-ui/icons";
-
+import { Close } from "@material-ui/icons";
+import CustomRadioGroup from "../../../components/CustomRadioGroup/CustomRadioGroup";
 import {
   Button,
   CustomInput,
@@ -39,63 +34,20 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const RadioForm = (props) => {
-  const { classes, value } = props;
-
-  const helperText = {
-    fan: "팬 계정",
-    musician: "뮤지션 계정",
-  };
-
-  return (
-    <div
-      className={
-        classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
-      }
-    >
-      <FormControlLabel
-        control={
-          <Radio
-            value={value}
-            aria-label={value}
-            icon={<FiberManualRecord className={classes.radioUnchecked} />}
-            checkedIcon={<FiberManualRecord className={classes.radioChecked} />}
-            classes={{
-              checked: classes.radio,
-              root: classes.radioRoot,
-            }}
-          />
-        }
-        classes={{
-          label: classes.label,
-          root: classes.labelRoot,
-        }}
-        label={helperText[value]}
-      />
-    </div>
-  );
-};
-
-RadioForm.propTypes = {
-  classes: PropTypes.object,
-  value: PropTypes.string,
-};
-
 export const AddYoutubeChannel = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const { setAlertMsg, open, onClose, userInfo, userLoading } = props;
+  const { setAlertMsg, open, onClose } = props;
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
   const [inputs, setInputs] = useState({
-    displayName: userInfo && !userLoading ? userInfo.displayName : "",
     title: "",
     channelURL: "",
     channelType: "",
     content: "",
   });
 
-  const { channelURL, channelType, displayName, content, title } = inputs;
+  const { channelURL, channelType, content, title } = inputs;
 
   const [channelURLModalError, setChannelURLModalError] = useState(false);
   const [contentErr, setContentErr] = useState(false);
@@ -108,8 +60,6 @@ export const AddYoutubeChannel = (props) => {
     });
   };
 
-  //console.log(inputs);
-
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
@@ -118,6 +68,7 @@ export const AddYoutubeChannel = (props) => {
     if (channelURL) {
       if (!youtubeReg.test(channelURL)) {
         setChannelURLModalError(true);
+        setAlertMsg("올바르지 않은 형식입니다.", "error");
       }
     }
 
@@ -195,18 +146,17 @@ export const AddYoutubeChannel = (props) => {
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={12}>
-            <FormControl component="fieldset">
-              <FormLabel component="h3">Type</FormLabel>
-              <RadioGroup
-                name="channelType"
-                value={channelType}
-                onChange={onInputHandler}
-              >
-                {["fan", "musician"].map((type, idx) => (
-                  <RadioForm key={idx} classes={classes} value={type} />
-                ))}
-              </RadioGroup>
-            </FormControl>
+            <CustomRadioGroup
+              title={"Type"}
+              name={"channelType"}
+              value={channelType}
+              onChange={onInputHandler}
+              selectItems={[
+                { key: "fan", value: "팬 계정" },
+                { key: "musician", value: "뮤지션 계정" },
+                { key: "etc", value: "etc" },
+              ]}
+            />
           </GridItem>
           <GridItem xs={12} sm={12} md={12}>
             <CustomInput

@@ -65,7 +65,6 @@ export const Help = (props) => {
   };
 
   //console.log(inputs);
-  console.log(mailType);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
