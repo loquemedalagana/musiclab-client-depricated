@@ -85,6 +85,7 @@ const AddYoutubeVideo = (props) => {
       <DialogContent
         id="add-new-youtube-video-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
+        dividers={isMobile}
       >
         <GridContainer justify={"center"}>
           <p>유튜브 주소 입력</p>

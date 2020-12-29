@@ -1,14 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
+import qs from "qs";
 
+// styled component
+import { makeStyles } from "@material-ui/core/styles";
 import {
   GridContainer,
   GridItem,
   PostPreview,
 } from "../../../../components/components";
-
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
 
 // video data 불러오는거!
@@ -22,13 +23,18 @@ const useStyles = makeStyles(styles);
 
 export const ViewVideoListSection = (props) => {
   const classes = useStyles();
-  const { channelInfo, type, curUserData } = props;
+  const { channelInfo, type, curUserData, match } = props;
+
+  const query = qs.parse(window.location.search, {
+    ignoreQueryPrefix: true,
+  });
 
   const { channelTitle, profileImage } = channelInfo
     ? channelInfo
     : { channelTitle: undefined, profileImage: defaultImg };
 
-  console.log(channelInfo);
+  console.log(match, query);
+  console.log(type, channelInfo);
 
   const resultData =
     type === "channel"
@@ -37,8 +43,6 @@ export const ViewVideoListSection = (props) => {
           true
         )
       : InhyukSampleVideoList;
-
-  console.log(resultData);
 
   return (
     <GridContainer className={classes.listContainer} spacing={4}>
@@ -61,7 +65,7 @@ export const ViewVideoListSection = (props) => {
 };
 
 ViewVideoListSection.propTypes = {
-  type: PropTypes.oneOf(["channel", "mylist", "searchresult"]),
+  type: PropTypes.oneOf(["channel", "mylist", "searchresult"]).isRequired,
   category: PropTypes.oneOf(["official", "fan", "musician", "etc"]),
   children: PropTypes.node,
   curUserData: PropTypes.object,
@@ -70,10 +74,11 @@ ViewVideoListSection.propTypes = {
     channelTitle: PropTypes.string,
     channelId: PropTypes.string,
   }),
+  match: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   curUserData: state.user.userData ? state.user.userData : null,
 });
 
-export default connect(mapStateToProps)(ViewVideoListSection);
+export default connect(mapStateToProps)(React.memo(ViewVideoListSection));

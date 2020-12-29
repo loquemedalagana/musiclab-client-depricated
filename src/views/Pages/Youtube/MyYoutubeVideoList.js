@@ -10,7 +10,7 @@ import styles from "../../../assets/jss/material-kit-react/views/pages/smallPara
 // custom component
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 import { GridContainer, GridItem } from "../../../components/components";
-//import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
+import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 
 import defaultImg from "../../../assets/images/dolphin_profile.png";
 
@@ -23,7 +23,7 @@ const MyYoutubeVideoList = (props) => {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
-  const { curUserData } = props;
+  const { curUserData, match } = props;
   const thumbnail = curUserData
     ? curUserData.thumbnailImage
       ? curUserData.thumbnailImage
@@ -57,12 +57,14 @@ const MyYoutubeVideoList = (props) => {
           </div>
         </GridItem>
       </GridContainer>
+      <ViewVideoListSection type="mylist" category="etc" match={match} />
     </SmallParallaxLayout>
   );
 };
 
 MyYoutubeVideoList.propTypes = {
   curUserData: PropTypes.object,
+  match: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({

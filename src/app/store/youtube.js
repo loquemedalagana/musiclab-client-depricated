@@ -62,6 +62,7 @@ const slice = createSlice({
   initialState: {
     channelProfileLoading: true,
     channelProfile: null,
+
     loadVideoListLoading: false,
     loadVideoListDone: false,
     loadVideoListError: null,
@@ -98,8 +99,7 @@ const slice = createSlice({
       state.channelProfileLoading = false;
       state.channelProfile = payload;
     },
-    [fetchChannelProfile.rejected]: (state, { payload }) => {
-      console.log(payload);
+    [fetchChannelProfile.rejected]: (state) => {
       state.channelProfileLoading = false;
       state.channelProfile = null;
     },
@@ -111,10 +111,10 @@ const slice = createSlice({
       state.loadVideoListDone = true;
       state.videoList = [...payload]; // 무한 스크롤에서 바꾸기
     },
-    [fetchChannelVideoList.rejected]: (state, { payload }) => {
+    [fetchChannelVideoList.rejected]: (state, { error }) => {
       state.loadVideoListLoading = false;
       state.loadVideoListDone = false;
-      state.loadVideoListError = payload;
+      state.loadVideoListError = error.message;
     },
     [fetchYoutubeVideoData.pending]: (state) => {
       state.loadYoutubeVideoDataLoading = true;
@@ -124,10 +124,10 @@ const slice = createSlice({
       state.loadYoutubeVideoDataDone = true;
       state.youtubeVideoData = payload;
     },
-    [fetchYoutubeVideoData.rejected]: (state, { payload }) => {
+    [fetchYoutubeVideoData.rejected]: (state, { error }) => {
       state.loadYoutubeVideoDataLoading = false;
       state.loadYoutubeVideoDataDone = false;
-      state.loadYoutubeVideoDataError = payload;
+      state.loadYoutubeVideoDataError = error.message;
     },
   },
 });

@@ -103,7 +103,7 @@ export const YoutubeVideoListByChannelProfile = (props) => {
               : defaultImg,
             channelId: channelProfile.channelId,
           }}
-          userId={query.userId}
+          match={match}
         />
       )}
     </SmallParallaxLayout>

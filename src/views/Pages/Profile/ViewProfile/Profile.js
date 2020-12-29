@@ -116,9 +116,10 @@ const Profile = (props) => {
     : undefined;
 
   if (targetUserDataLoading) return <LinearLoading />;
-  if (targetUserDataNotFound) return <Redirect to="/notfound" />;
+  if (!targetUserDataLoading && !targetUserData)
+    return <Redirect to="/notfound" />;
 
-  return !targetUserDataNotFound ? (
+  return !targetUserDataNotFound && !targetUserDataLoading ? (
     <SmallParallaxLayout thumbnail={thumbnail}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={6}>

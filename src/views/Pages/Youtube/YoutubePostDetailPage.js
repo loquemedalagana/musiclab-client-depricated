@@ -60,6 +60,9 @@ const YoutubePostDetailPage = (props) => {
     loadYoutubeVideoDataLoading
   );
 
+  const videoLoading =
+    loadYoutubeVideoDataLoading && !loadYoutubeVideoDataError;
+
   return (
     <>
       <SmallParallaxLayout>
@@ -67,7 +70,7 @@ const YoutubePostDetailPage = (props) => {
           <GridItem xs={12} sm={12} md={6}>
             <div className={classes.profile}>
               <div>
-                {loadYoutubeVideoDataLoading ? (
+                {videoLoading ? (
                   <Skeleton
                     variant="circle"
                     animation="wave"
@@ -86,7 +89,7 @@ const YoutubePostDetailPage = (props) => {
                 )}
               </div>
               <div className={classes.name}>
-                {loadYoutubeVideoDataLoading ? (
+                {videoLoading ? (
                   <Skeleton
                     variant="text"
                     animation="wave"
@@ -99,7 +102,7 @@ const YoutubePostDetailPage = (props) => {
                   </>
                 )}
               </div>
-              {loadYoutubeVideoDataLoading ? (
+              {videoLoading ? (
                 <Skeleton
                   variant="rect"
                   animation="wave"
@@ -113,7 +116,7 @@ const YoutubePostDetailPage = (props) => {
             </div>
           </GridItem>
         </GridContainer>
-        {loadYoutubeVideoDataLoading ? (
+        {videoLoading ? (
           <GridContainer>
             <Skeleton variant="rect" animation="wave" />
           </GridContainer>
