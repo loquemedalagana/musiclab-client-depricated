@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -48,6 +48,13 @@ export const AddYoutubeChannel = (props) => {
   });
 
   const { channelURL, channelType, content, title } = inputs;
+
+  const inputRef = {
+    title: useRef(),
+    channelURL: useRef(),
+    channelType: useRef(),
+    content: useRef(),
+  };
 
   const [channelURLModalError, setChannelURLModalError] = useState(false);
   const [contentErr, setContentErr] = useState(false);
@@ -142,6 +149,7 @@ export const AddYoutubeChannel = (props) => {
                 name: "channelURL",
                 value: channelURL,
                 onChange: onInputHandler,
+                inputRef: inputRef.channelURL,
               }}
             />
           </GridItem>
@@ -171,6 +179,7 @@ export const AddYoutubeChannel = (props) => {
                 name: "title",
                 value: title,
                 onChange: onInputHandler,
+                inputRef: inputRef.title,
               }}
             />
           </GridItem>
@@ -190,6 +199,7 @@ export const AddYoutubeChannel = (props) => {
                 name: "content",
                 value: content,
                 onChange: onInputHandler,
+                inputRef: inputRef.content,
               }}
             />
           </GridItem>

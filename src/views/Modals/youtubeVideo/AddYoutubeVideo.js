@@ -24,31 +24,74 @@ import {
   CustomInput,
 } from "../../../components/components";
 
+import { YOUTUBE_VIDEOID_LENGTH } from "../../../app/inputValidation/constants";
+
 const useStyles = makeStyles(styles);
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-// 모바일일 때는 full width로 한다.
+const getVideoId = (youtubeURL) => {
+  // 값 반환 못하면 null 반환
+  const startShortURL = "https://youtu.be/";
+  const startLongURL = "https://www.youtube.com/watch?v=";
+
+  if (youtubeURL.substring(0, startShortURL.length) === startShortURL) {
+    return youtubeURL.substring(
+      startShortURL.length,
+      startShortURL.length + YOUTUBE_VIDEOID_LENGTH
+    );
+  } else if (youtubeURL.substring(0, startLongURL.length) === startLongURL) {
+    return youtubeURL.substring(
+      startLongURL.length,
+      startLongURL.length + YOUTUBE_VIDEOID_LENGTH
+    );
+  } else {
+    return "";
+  }
+};
 
 const AddYoutubeVideo = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  const { setAlertMsg, open, onClose, curUserLoading, curUserData } = props;
-  const [youtubeVideoURL, setYoutubeVideoURL] = useState("");
-  const youtubeURLinputRef = useRef();
+  const { setAlertMsg, open, onClose, curUserData, curUserLoading } = props;
 
-  const dispatch = useDispatch();
+  const [inputs, setInputs] = useState({
+    youtubeVideoURL: "",
+    videoType: "",
+  });
+
+  const { youtubeVideoURL } = inputs;
+  const inputRef = {
+    youtubeVideoURL: useRef(),
+    videoType: useRef(),
+  };
+
+  //const dispatch = useDispatch();
   const onSubmitHandler = useCallback(() => {
-    console.log("video added!");
-    dispatch(setAlertMsg("유튜브 주소"), "error");
-  }, [dispatch, setAlertMsg]);
+    const videoId = getVideoId(youtubeVideoURL.trim());
+    console.log(videoId);
+    console.log(inputs);
 
-  const onYoutubeURLinputHandler = useCallback((event) => {
-    setYoutubeVideoURL(event.currentTarget.value);
-  }, []);
+    if (videoId.length === 0 || videoId.length !== YOUTUBE_VIDEOID_LENGTH) {
+      setAlertMsg("올바른 양식이 아닙니다.", "error");
+    } else {
+      setAlertMsg("유튜브 주소", "success");
+    }
+  }, [inputs, setAlertMsg]);
+
+  const onYoutubeURLinputHandler = useCallback(
+    (event) => {
+      const { name, value } = event.target;
+      setInputs({
+        ...inputs,
+        [name]: value,
+      });
+    },
+    [inputs]
+  );
 
   return !curUserLoading && !curUserData ? (
     <NoAuthErrorModal open={open} onClose={onClose} />
@@ -101,10 +144,10 @@ const AddYoutubeVideo = (props) => {
                 className: classes.textArea,
               }}
               inputProps={{
-                name: "title",
+                name: "youtubeVideoURL",
                 value: youtubeVideoURL,
                 onChange: onYoutubeURLinputHandler,
-                inputRef: youtubeURLinputRef,
+                inputRef: inputRef.youtubeVideoURL,
               }}
             />
           </GridItem>
@@ -121,6 +164,7 @@ const AddYoutubeVideo = (props) => {
 };
 
 AddYoutubeVideo.propTypes = {
+  curUserLoading: PropTypes.bool,
   curUserData: PropTypes.object,
   setAlertMsg: PropTypes.func,
   open: PropTypes.bool,

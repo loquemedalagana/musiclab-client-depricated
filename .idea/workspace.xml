@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/navigations/footerMenuStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/jss/material-kit-react/views/navigations/footerMenuStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/inputValidation/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/inputValidation/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
       <workItem from="1608961347789" duration="10756000" />
       <workItem from="1609031990792" duration="29289000" />
       <workItem from="1609120290136" duration="39159000" />
-      <workItem from="1609209737385" duration="24108000" />
+      <workItem from="1609209737385" duration="27115000" />
     </task>
     <servers />
   </component>
