@@ -1,3 +1,4 @@
+/*eslint no-useless-escape: "off"*/
 import React, { useCallback, useState, useRef } from "react";
 import { connect, useDispatch } from "react-redux";
 import PropTypes from "prop-types";
@@ -12,11 +13,13 @@ import {
   DialogActions,
   Slide,
   IconButton,
+  InputAdornment,
 } from "@material-ui/core";
 import NoAuthErrorModal from "../error/NoAuthErrorModal";
+import CustomRadioGroup from "../../../components/CustomRadioGroup/CustomRadioGroup";
 
 import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
-import { Close } from "@material-ui/icons";
+import { Close, YouTube, LocalOffer, Search } from "@material-ui/icons";
 import {
   Button,
   GridContainer,
@@ -25,6 +28,7 @@ import {
 } from "../../../components/components";
 import VideoIframe from "../../../components/VideoIframe/VideoIframe";
 
+import inputResult from "../../../app/inputValidation/inputResult";
 import { YOUTUBE_VIDEOID_LENGTH } from "../../../app/inputValidation/constants";
 
 const useStyles = makeStyles(styles);
@@ -53,6 +57,38 @@ const getVideoId = (youtubeURL) => {
   }
 };
 
+// 해시태그 유효성 검사
+class CheckTagInputValidation {
+  constructor({ tag, tags }) {
+    this.haveSpace = /\s+/g.test(tag);
+    this.isEmptyInput = tag.length === 0;
+    this.isAlreadyExist = tags.includes(tag);
+    this.hasContainNumber = /[0-9]+/g.test(tag);
+    this.hasContainSpecialChar = /[\{\}\[\]\/?.,;:|\)*~`!^\+<>@\#$%&\\\=\(\'\"]/gi.test(
+      tag
+    );
+  }
+
+  getResult() {
+    if (this.isEmptyInput) return inputResult(false, "태그를 입력해주세요.");
+    if (this.haveSpace)
+      // 앞뒤 공백 자르는거도 갠춘
+      return inputResult(false, "태그에는 공백이 들어갈 수 없습니다.");
+    if (this.isAlreadyExist)
+      return inputResult(false, "이미 입력받은 태그입니다.");
+
+    // 숫자, 특수문자 X
+    if (this.hasContainNumber)
+      return inputResult(false, "숫자는 태그가 될 수 없습니다.");
+    if (this.hasContainSpecialChar)
+      return inputResult(
+        false,
+        "-,_를 제외한 특수문자는 입력받을 수 없습니다."
+      );
+    return inputResult(true);
+  }
+}
+
 const AddYoutubeVideo = (props) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -60,17 +96,33 @@ const AddYoutubeVideo = (props) => {
   const { setAlertMsg, open, onClose, curUserData, curUserLoading } = props;
 
   const [YoutubePreview, setYoutubePreview] = useState(null);
-
   const [inputs, setInputs] = useState({
     youtubeVideoURL: "",
     videoType: "",
+    tag: "",
   });
-
-  const { youtubeVideoURL } = inputs;
+  const { youtubeVideoURL, videoType, tag } = inputs;
+  const [tags, setTags] = useState([]);
   const inputRef = {
     youtubeVideoURL: useRef(),
     videoType: useRef(),
+    tag: useRef(),
   };
+
+  const onSubmitHandler = useCallback(() => {
+    console.log(inputs, tags);
+  }, [inputs, tags]);
+
+  const onInputHandler = useCallback(
+    (event) => {
+      const { name, value } = event.target;
+      setInputs({
+        ...inputs,
+        [name]: value,
+      });
+    },
+    [inputs]
+  );
 
   const handleYoutubePreview = useCallback((videoId) => {
     if (videoId.length !== YOUTUBE_VIDEOID_LENGTH) return;
@@ -83,11 +135,8 @@ const AddYoutubeVideo = (props) => {
     setYoutubePreview(null);
   }, []);
 
-  //const dispatch = useDispatch();
-  const onPreviewHandler = useCallback(() => {
+  const onYoutubePreviewHandler = useCallback(() => {
     const videoId = getVideoId(youtubeVideoURL.trim());
-    console.log(videoId);
-    console.log(inputs);
     if (videoId.length === 0 || videoId.length !== YOUTUBE_VIDEOID_LENGTH) {
       inputRef.youtubeVideoURL.current.focus();
       removeYoutubePreview();
@@ -97,7 +146,6 @@ const AddYoutubeVideo = (props) => {
       setAlertMsg("유튜브 주소", "success");
     }
   }, [
-    inputs,
     setAlertMsg,
     youtubeVideoURL,
     handleYoutubePreview,
@@ -105,26 +153,38 @@ const AddYoutubeVideo = (props) => {
     inputRef.youtubeVideoURL,
   ]);
 
-  const onYoutubeURLinputHandler = useCallback(
-    (event) => {
-      const { name, value } = event.target;
-      setInputs({
-        ...inputs,
-        [name]: value,
-      });
-    },
-    [inputs]
-  );
+  const addTagHandler = useCallback(() => {
+    const tagInputCheck = new CheckTagInputValidation({ tag, tags });
+    const { ok, message } = tagInputCheck.getResult();
+    if (!ok) {
+      setAlertMsg(message, "error");
+      return;
+    }
+    setTags([...tags, tag]);
+    console.log(tags);
+  }, [tag, tags, setAlertMsg]);
+
+  const removeTagHandler = useCallback((removedTag) => {
+    console.log(removedTag);
+  }, []);
 
   const handleKeyPress = useCallback(
     (e) => {
       if (e.key === "Enter") {
         if (e.target.name === "youtubeVideoURL") {
-          onPreviewHandler();
+          onYoutubePreviewHandler();
+        }
+        switch (e.target.name) {
+          case "youtubeVideoURL":
+            return onYoutubePreviewHandler();
+          case "tag":
+            return addTagHandler();
+          default:
+            return onSubmitHandler();
         }
       }
     },
-    [handleYoutubePreview, onPreviewHandler]
+    [onYoutubePreviewHandler, addTagHandler, onSubmitHandler]
   );
 
   return !curUserLoading && !curUserData ? (
@@ -165,34 +225,113 @@ const AddYoutubeVideo = (props) => {
       <DialogContent
         id="add-new-youtube-video-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
-        dividers={isMobile}
+        dividers={true}
       >
-        <GridItem xs={12} sm={12} md={11}>
-          <CustomInput
-            labelText="Youtube Video URL"
-            id="new-youtube-video-url"
-            formControlProps={{
-              fullWidth: true,
-              className: classes.textArea,
-            }}
-            inputProps={{
-              name: "youtubeVideoURL",
-              value: youtubeVideoURL,
-              onChange: onYoutubeURLinputHandler,
-              inputRef: inputRef.youtubeVideoURL,
-              onKeyDown: handleKeyPress,
-            }}
-          />
-        </GridItem>
+        <GridContainer
+          justify="center"
+          alignContent="flex-end"
+          alignItems="flex-end"
+        >
+          <GridItem xs={12} sm={12} md={11}>
+            <CustomInput
+              labelText="Youtube Video URL"
+              id="new-youtube-video-url"
+              formControlProps={{
+                fullWidth: true,
+                className: classes.textArea,
+              }}
+              inputProps={{
+                name: "youtubeVideoURL",
+                value: youtubeVideoURL,
+                onChange: onInputHandler,
+                inputRef: inputRef.youtubeVideoURL,
+                onKeyDown: handleKeyPress,
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <YouTube className={classes.inputIconsColor} />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </GridItem>
+          <GridItem xs={12} sm={12} md={11}>
+            <div className={classes.textArea}>
+              <Button
+                color="primary"
+                size="sm"
+                round
+                onClick={onYoutubePreviewHandler}
+              >
+                <Search className={classes.miniButtonIcon} />
+              </Button>
+            </div>
+          </GridItem>
+        </GridContainer>
+
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={11}>
             {YoutubePreview}
           </GridItem>
         </GridContainer>
+        <GridItem xs={12} sm={12} md={11}>
+          <CustomRadioGroup
+            className={classes.radioGroup}
+            title={"Type"}
+            name={"videoType"}
+            value={videoType}
+            onChange={onInputHandler}
+            selectItems={[
+              { key: "Inhyuk", value: "인혁 영상" },
+              { key: "cover", value: "커버 영상" },
+              { key: "etc", value: "etc" },
+            ]}
+          />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={11}>
+          <div className={classes.textArea}>
+            <h4>Tags</h4>
+            <h5>태그를 입력해주세요</h5>
+          </div>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={11}>
+          <CustomInput
+            labelText="Tag Name"
+            id="new-youtube-tag"
+            formControlProps={{
+              fullWidth: true,
+              className: classes.textArea,
+            }}
+            inputProps={{
+              name: "tag",
+              value: tag,
+              onChange: onInputHandler,
+              inputRef: inputRef.youtubeVideoURL,
+              onKeyDown: handleKeyPress,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <LocalOffer className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </GridItem>
+        <GridItem xs={12} sm={12} md={11}>
+          <div className={classes.textArea}>
+            <Button color="primary" size="sm" round onClick={addTagHandler}>
+              add
+            </Button>
+          </div>
+        </GridItem>
+
+        <GridItem xs={12} sm={12} md={11}>
+          <div className={classes.textArea}>
+            <h4>여기다 태그 나옴</h4>
+          </div>
+        </GridItem>
       </DialogContent>
 
       <DialogActions>
-        <Button simple color="primary" size="lg" onClick={onPreviewHandler}>
+        <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
           Submit
         </Button>
       </DialogActions>

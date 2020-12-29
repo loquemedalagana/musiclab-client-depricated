@@ -12,15 +12,11 @@ import {
   DialogActions,
   Slide,
   IconButton,
+  InputAdornment,
 } from "@material-ui/core";
-import { Close } from "@material-ui/icons";
+import { Close, YouTube, Movie } from "@material-ui/icons";
 import CustomRadioGroup from "../../../components/CustomRadioGroup/CustomRadioGroup";
-import {
-  Button,
-  CustomInput,
-  GridContainer,
-  GridItem,
-} from "../../../components/components";
+import { Button, CustomInput, GridItem } from "../../../components/components";
 
 import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 
@@ -154,6 +150,11 @@ export const AddYoutubeChannel = (props) => {
               value: channelURL,
               onChange: onInputHandler,
               inputRef: inputRef.channelURL,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <YouTube className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
             }}
           />
         </GridItem>
@@ -185,13 +186,18 @@ export const AddYoutubeChannel = (props) => {
               value: title,
               onChange: onInputHandler,
               inputRef: inputRef.title,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Movie className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
             }}
           />
         </GridItem>
 
         <GridItem xs={12} sm={12} md={11}>
           <CustomInput
-            labelText="Message Content"
+            labelText="유튜브 채널에 대해 간단하게 써주세요"
             id="add-channel-request-message"
             error={contentErr}
             formControlProps={{

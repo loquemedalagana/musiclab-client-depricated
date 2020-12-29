@@ -1,5 +1,5 @@
 import customCheckboxRadioSwitch from "./customCheckboxRadioSwitch";
-
+import customInputStyle from "./customInputStyle";
 const headerBackgroundColor = [
   "#f9f7cf",
   "#d0e8f2",
@@ -80,7 +80,13 @@ const modalStyle = {
     marginLeft: "auto",
     marginRight: "auto",
   },
+  miniButtonIcon: {
+    width: "17px",
+    height: "17px",
+    color: "#FFFFFF",
+  },
   ...customCheckboxRadioSwitch,
+  ...customInputStyle,
 };
 
 export default modalStyle;

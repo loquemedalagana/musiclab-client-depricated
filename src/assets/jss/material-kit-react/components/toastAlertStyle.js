@@ -16,7 +16,7 @@ export default {
     lineHeight: "20px",
     marginBottom: "20px",
     fontSize: "14px",
-
+    zIndex: 2000,
     borderRadius: "10px",
     maxWidth: "100%",
     minWidth: "40%",
