@@ -10,14 +10,9 @@ import {
   DialogActions,
   Slide,
   IconButton,
-  RadioGroup,
-  FormControl,
-  FormLabel,
-  FormControlLabel,
-  Radio,
 } from "@material-ui/core";
-import { Close, FiberManualRecord } from "@material-ui/icons";
-
+import { Close } from "@material-ui/icons";
+import CustomRadioGroup from "../../../components/CustomRadioGroup/CustomRadioGroup";
 import {
   Button,
   CustomInput,
@@ -39,48 +34,6 @@ const useStyles = makeStyles(styles);
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
-
-const RadioForm = (props) => {
-  const { classes, value } = props;
-
-  const helperText = {
-    error: "오류 보고",
-    help: "문의 사항",
-  };
-
-  return (
-    <div
-      className={
-        classes.checkboxAndRadio + " " + classes.checkboxAndRadioHorizontal
-      }
-    >
-      <FormControlLabel
-        control={
-          <Radio
-            value={value}
-            aria-label={value}
-            icon={<FiberManualRecord className={classes.radioUnchecked} />}
-            checkedIcon={<FiberManualRecord className={classes.radioChecked} />}
-            classes={{
-              checked: classes.radio,
-              root: classes.radioRoot,
-            }}
-          />
-        }
-        classes={{
-          label: classes.label,
-          root: classes.labelRoot,
-        }}
-        label={helperText[value]}
-      />
-    </div>
-  );
-};
-
-RadioForm.propTypes = {
-  classes: PropTypes.object,
-  value: PropTypes.string,
-};
 
 export const Help = (props) => {
   const classes = useStyles();
@@ -112,6 +65,7 @@ export const Help = (props) => {
   };
 
   //console.log(inputs);
+  console.log(mailType);
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -230,18 +184,16 @@ export const Help = (props) => {
           </GridItem>
           {/*양식 적기(radio button)*/}
           <GridItem xs={12} sm={12} md={12}>
-            <FormControl component="fieldset">
-              <FormLabel component="h3">Type</FormLabel>
-              <RadioGroup
-                name="mailType"
-                value={mailType}
-                onChange={onInputHandler}
-              >
-                {["error", "help"].map((type, idx) => (
-                  <RadioForm key={idx} classes={classes} value={type} />
-                ))}
-              </RadioGroup>
-            </FormControl>
+            <CustomRadioGroup
+              title={"Type"}
+              name={"mailType"}
+              value={mailType}
+              onChange={onInputHandler}
+              selectItems={[
+                { key: "error", value: "오류 보고" },
+                { key: "help", value: "문의 사항" },
+              ]}
+            />
           </GridItem>
           <GridItem xs={12} sm={12} md={12}>
             <CustomInput

@@ -5,7 +5,7 @@ export default (theme) => ({
     display: "flex",
     border: "0",
     borderRadius: "3px",
-    padding: "0.625rem 0",
+    padding: "0.9375rem 0",
     marginBottom: "20px",
     height: "95vh",
     width: "100%",
