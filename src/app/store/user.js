@@ -23,8 +23,12 @@ const slice = createSlice({
     },
     auth: false,
     loading: true,
-    myYoutubeVideoList: InhyukSampleVideoList,
-    myVideoListLoading: true,
+
+    loadVideoListLoading: true,
+    loadVideoListDone: false,
+    loadVideoListError: null,
+    hasMoreList: true,
+    youtubeVideoList: InhyukSampleVideoList.slice(6),
   },
   reducers: {
     loadUser: (state) => {
@@ -55,9 +59,19 @@ const slice = createSlice({
     },
   },
   extraReducers: {
-    [fetchMyVideoList.pending]: (state) => {},
-    [fetchMyVideoList.fulfilled]: (state, { payload }) => {},
-    [fetchMyVideoList.rejected]: (state, { payload }) => {},
+    [fetchMyVideoList.pending]: (state) => {
+      state.loadVideoListLoading = true;
+    },
+    [fetchMyVideoList.fulfilled]: (state, { payload }) => {
+      state.loadVideoListLoading = false;
+      state.loadVideoListDone = true;
+      state.youtubeVideoList = [...payload];
+    },
+    [fetchMyVideoList.rejected]: (state, { error }) => {
+      state.loadVideoListLoading = false;
+      state.loadVideoListDone = false;
+      state.loadVideoListError = error.message;
+    },
   },
 });
 

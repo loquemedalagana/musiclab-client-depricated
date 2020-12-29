@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 // actions
-import { setAlertMsg } from "../../../app/store/alert";
 import { fetchYoutubeVideoData } from "../../../app/store/youtube";
 
 // components
+import LinearLoading from "../../../components/Loading/LinearLoading";
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 import YoutubeVideoIframe from "../../SubComponents/youtube/YoutubeVideoIframe";
 import FooterMenu from "../../Navigations/FooterMenu";
@@ -50,7 +50,6 @@ const YoutubePostDetailPage = (props) => {
   }, [dispatch, videoId]);
 
   if (loadYoutubeVideoDataError) {
-    dispatch(setAlertMsg(loadYoutubeVideoDataError, "error"));
     return <Redirect to={NOT_FOUND_ROUTE} />;
   }
 
@@ -62,6 +61,8 @@ const YoutubePostDetailPage = (props) => {
 
   const videoLoading =
     loadYoutubeVideoDataLoading && !loadYoutubeVideoDataError;
+
+  if (loadYoutubeVideoDataLoading) return <LinearLoading />;
 
   return (
     <>

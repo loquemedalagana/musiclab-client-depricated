@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector, connect } from "react-redux";
 import PropTypes from "prop-types";
 import qs from "qs";
@@ -24,10 +24,42 @@ const useStyles = makeStyles(styles);
 export const ViewVideoListSection = (props) => {
   const classes = useStyles();
   const { channelInfo, type, curUserData, match } = props;
-
   const query = qs.parse(window.location.search, {
     ignoreQueryPrefix: true,
   });
+
+  // 스크롤바 위치 읽는 함수
+  const getScrollbarPosition = useCallback(() => {
+    const windowsScrollTop = window.pageYOffset;
+    console.log(windowsScrollTop);
+  }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", getScrollbarPosition);
+    return function cleanup() {
+      window.removeEventListener("scroll", getScrollbarPosition);
+    };
+  }, [getScrollbarPosition]);
+
+  // 영상 리스트 selector (내꺼일땐 user에서, 그 외에는 youtube selector에서)
+  const {
+    youtubeVideoList,
+    loadVideoListLoading,
+    loadVideoListDone,
+    loadVideoListError,
+  } = useSelector((state) => (type === "mylist" ? state.user : state.youtube));
+
+  // 테스트용 코드
+  console.log(
+    type,
+    youtubeVideoList,
+    loadVideoListLoading,
+    loadVideoListDone,
+    loadVideoListError
+  );
+
+  // 1. my list (내 영상 불러오는 액션)
+  // 2. 채널 리스트 (채널 영상 불러오는 액션)
+  // 3. 검색 결과 리스트 (검색 결과 불러오는 액션)
 
   const { channelTitle, profileImage } = channelInfo
     ? channelInfo
@@ -44,8 +76,14 @@ export const ViewVideoListSection = (props) => {
         )
       : InhyukSampleVideoList;
 
+  // 로딩 끝났는데 빈 배열이면 검색결과 없다는 메시지 반환
+
   return (
-    <GridContainer className={classes.listContainer} spacing={4}>
+    <GridContainer
+      className={classes.listContainer}
+      spacing={4}
+      id={"youtube-video-list"}
+    >
       {resultData.map((data, idx) => (
         <GridItem xs={12} sm={12} md={6} key={idx}>
           <PostPreview

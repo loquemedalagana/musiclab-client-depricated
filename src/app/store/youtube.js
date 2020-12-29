@@ -36,6 +36,8 @@ export const fetchChannelVideoList = createAsyncThunk(
   }
 );
 
+// 2-1. 검색 결과 불러오기
+
 // 3. 개별 영상 가져오기
 export const fetchYoutubeVideoData = createAsyncThunk(
   "youtube/fetchYoutubeVideoData",
@@ -63,11 +65,11 @@ const slice = createSlice({
     channelProfileLoading: true,
     channelProfile: null,
 
-    loadVideoListLoading: false,
+    loadVideoListLoading: true,
     loadVideoListDone: false,
     loadVideoListError: null,
     hasMoreList: true,
-    videoList: [],
+    youtubeVideoList: [],
 
     addYoutubeVideoLoading: true,
     addYoutubeVideoDone: false,
@@ -109,13 +111,16 @@ const slice = createSlice({
     [fetchChannelVideoList.fulfilled]: (state, { payload }) => {
       state.loadVideoListLoading = false;
       state.loadVideoListDone = true;
-      state.videoList = [...payload]; // 무한 스크롤에서 바꾸기
+      state.youtubeVideoList = [...payload]; // 무한 스크롤에서 바꾸기
     },
     [fetchChannelVideoList.rejected]: (state, { error }) => {
       state.loadVideoListLoading = false;
       state.loadVideoListDone = false;
       state.loadVideoListError = error.message;
     },
+
+    // 검색 결과 리턴하는 함수
+
     [fetchYoutubeVideoData.pending]: (state) => {
       state.loadYoutubeVideoDataLoading = true;
     },

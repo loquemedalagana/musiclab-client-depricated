@@ -7,7 +7,6 @@ import { makeStyles } from "@material-ui/core/styles";
 // sub components
 import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
 import YoutubeTagContainer from "./VideoListSection/YoutubeTagContainer";
-import EmptyContainer from "./VideoListSection/EmptyContainer";
 import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import FooterMenu from "../../Navigations/FooterMenu";
 
@@ -41,9 +40,6 @@ export const YoutubeVideoListByTags = (props) => {
           category={!category ? "etc" : category}
           match={match}
         />
-        <EmptyContainer className={classes.emptyContainer}>
-          <h1>업데이트 예정</h1>
-        </EmptyContainer>
       </SmallParallaxLayout>
     </>
   );

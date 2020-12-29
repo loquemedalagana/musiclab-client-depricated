@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // 내 태그 불러오기
 
+// 해당 부분은 검색 바에서 만들기
+
 const slice = createSlice({
   name: "alert",
   initialState: {

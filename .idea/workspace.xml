@@ -3,15 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store/youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store/youtube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Loading/LinearLoading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading/LinearLoading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/MyYoutubeVideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/MyYoutubeVideoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/EmptyContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/EmptyContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/ViewVideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/ViewVideoListSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/YoutubeTagContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/YoutubeTagContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +113,7 @@
       <workItem from="1608961347789" duration="10756000" />
       <workItem from="1609031990792" duration="29289000" />
       <workItem from="1609120290136" duration="39159000" />
-      <workItem from="1609209737385" duration="9870000" />
+      <workItem from="1609209737385" duration="15505000" />
     </task>
     <servers />
   </component>

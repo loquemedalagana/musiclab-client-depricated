@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { connect } from "react-redux";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
@@ -30,10 +30,6 @@ const MyYoutubeVideoList = (props) => {
       : undefined
     : undefined;
 
-  const { myYoutubeVideoList } = useSelector((state) => state.user);
-
-  console.log(myYoutubeVideoList);
-
   return (
     <SmallParallaxLayout thumbnail={thumbnail}>
       <GridContainer justify="center">
@@ -53,7 +49,6 @@ const MyYoutubeVideoList = (props) => {
             <div className={classes.channelTitle}>
               <h3>{`${curUserData.displayName}님이 즐겨보는 영상들`}</h3>
             </div>
-            <h5>자주 봅시다!!</h5>
           </div>
         </GridItem>
       </GridContainer>
