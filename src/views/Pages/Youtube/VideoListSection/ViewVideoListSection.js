@@ -10,6 +10,7 @@ import {
   GridItem,
   PostPreview,
 } from "../../../../components/components";
+import EmptyContainer from "./EmptyContainer";
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
 
 // video data 불러오는거!
@@ -31,7 +32,7 @@ export const ViewVideoListSection = (props) => {
   // 스크롤바 위치 읽는 함수
   const getScrollbarPosition = useCallback(() => {
     const windowsScrollTop = window.pageYOffset;
-    console.log(windowsScrollTop);
+    //console.log(windowsScrollTop);
   }, []);
   useEffect(() => {
     window.addEventListener("scroll", getScrollbarPosition);
@@ -77,6 +78,8 @@ export const ViewVideoListSection = (props) => {
       : InhyukSampleVideoList;
 
   // 로딩 끝났는데 빈 배열이면 검색결과 없다는 메시지 반환
+  if (!loadVideoListLoading && loadVideoListDone && youtubeVideoList === [])
+    return <EmptyContainer />;
 
   return (
     <GridContainer

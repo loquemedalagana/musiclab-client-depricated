@@ -20,7 +20,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
 });
 
-const NotAvailable = (props) => {
+const NotAvailableModal = (props) => {
   const classes = useStyles();
   const { open, onClose } = props;
 
@@ -66,9 +66,9 @@ const NotAvailable = (props) => {
   );
 };
 
-NotAvailable.propTypes = {
+NotAvailableModal.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
 };
 
-export default NotAvailable;
+export default NotAvailableModal;

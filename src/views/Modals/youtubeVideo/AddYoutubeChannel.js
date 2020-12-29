@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+
+// style components
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
@@ -24,14 +26,11 @@ import {
   GridContainer,
   GridItem,
 } from "../../../components/components";
-import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
-import NameInput from "../../SubComponents/authAndProfile/NameInput";
-import NoAuthErrorModal from "../error/NoAuthErrorModal";
 
 import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 
-import EmailValidation from "../../../app/inputValidation/user/emailValidation";
-
+// check channel url
+import { youtubeReg } from "../../../app/models/user/social";
 import { setAlertMsg } from "../../../app/store/alert";
 
 const useStyles = makeStyles(styles);
@@ -44,8 +43,8 @@ const RadioForm = (props) => {
   const { classes, value } = props;
 
   const helperText = {
-    error: "오류 보고",
-    help: "문의 사항",
+    fan: "팬 계정",
+    musician: "뮤지션 계정",
   };
 
   return (
@@ -82,7 +81,7 @@ RadioForm.propTypes = {
   value: PropTypes.string,
 };
 
-export const Help = (props) => {
+export const AddYoutubeChannel = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const { setAlertMsg, open, onClose, userInfo, userLoading } = props;
@@ -90,17 +89,15 @@ export const Help = (props) => {
 
   const [inputs, setInputs] = useState({
     displayName: userInfo && !userLoading ? userInfo.displayName : "",
-    email:
-      userInfo && !userLoading ? (userInfo.email ? userInfo.email : "") : "",
-    mailType: "",
     title: "",
+    channelURL: "",
+    channelType: "",
     content: "",
   });
 
-  const { email, displayName, content, title, mailType } = inputs;
+  const { channelURL, channelType, displayName, content, title } = inputs;
 
-  const [emailModalErr, setEmailModalErr] = useState(false);
-  const [nameModalErr, setNameModalErr] = useState(false);
+  const [channelURLModalError, setChannelURLModalError] = useState(false);
   const [contentErr, setContentErr] = useState(false);
 
   const onInputHandler = (event) => {
@@ -116,21 +113,12 @@ export const Help = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     let ok = true;
-    const emailInputCheck = new EmailValidation({ email });
-    const emailInputValidationResult = emailInputCheck.getResult();
 
-    if (!emailInputValidationResult.ok) {
-      ok = false;
-      setAlertMsg(emailInputValidationResult.message, "error", "email");
-      setEmailModalErr(true);
-    } else {
-      setEmailModalErr(false);
-    }
-
-    if (!displayName) {
-      ok = false;
-      setNameModalErr(true);
-      setAlertMsg("이름을 입력해주세요", "error");
+    // 유튜브 regex 추가
+    if (channelURL) {
+      if (!youtubeReg.test(channelURL)) {
+        setChannelURLModalError(true);
+      }
     }
 
     if (content.length === 0 || title.length === 0) {
@@ -141,12 +129,11 @@ export const Help = (props) => {
 
     if (ok) {
       setContentErr(false);
-      setEmailModalErr(false);
-      setNameModalErr(false);
+      setChannelURLModalError(false);
     }
   };
 
-  return userInfo ? (
+  return (
     <Dialog
       fullScreen={isMobile}
       open={open}
@@ -187,35 +174,44 @@ export const Help = (props) => {
         className={classes.modalBody + " scrollbar-rainy-ashville"}
         dividers={isMobile}
       >
-        <p>
-          뮤썰 이용 중에 궁금한 점이 있으시거나 예상치 못한 오류가 생기면 여기로
-          연락주세요!
-        </p>
-        <p>담당자가 확인 후 바로 반영해드리고 답변드립니다.</p>
-        <p>양식에 맞지 않은 내용은 전송이 되지 않습니다.</p>
+        <p>채널 등록 페이지입니다.</p>
+        <p>담당자가 확인한 후 승인이 되면 채널 리스트에 등록됩니다.</p>
         <br />
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
-            <NameInput
-              isModal={true}
-              nameType="displayName"
-              error={nameModalErr}
-              value={displayName}
-              onChange={onInputHandler}
-            />
-          </GridItem>
-          <GridItem xs={12} sm={12} md={6}>
-            <EmailInput
-              isModal={true}
-              error={emailModalErr}
-              value={email}
-              onChange={onInputHandler}
+          <GridItem xs={12} sm={12} md={11}>
+            <CustomInput
+              labelText="Your Youtube Channel URL"
+              id="add-youtube-channel-link"
+              error={channelURLModalError}
+              formControlProps={{
+                fullWidth: true,
+                className: classes.textArea,
+              }}
+              inputProps={{
+                name: "channelURL",
+                value: channelURL,
+                onChange: onInputHandler,
+              }}
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={12}>
+            <FormControl component="fieldset">
+              <FormLabel component="h3">Type</FormLabel>
+              <RadioGroup
+                name="channelType"
+                value={channelType}
+                onChange={onInputHandler}
+              >
+                {["fan", "musician"].map((type, idx) => (
+                  <RadioForm key={idx} classes={classes} value={type} />
+                ))}
+              </RadioGroup>
+            </FormControl>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={12}>
             <CustomInput
-              labelText="Message Title"
-              id="help-message-title"
+              labelText="Youtube Channel Title"
+              id="channel-title"
               error={contentErr}
               formControlProps={{
                 fullWidth: true,
@@ -228,25 +224,11 @@ export const Help = (props) => {
               }}
             />
           </GridItem>
-          {/*양식 적기(radio button)*/}
-          <GridItem xs={12} sm={12} md={12}>
-            <FormControl component="fieldset">
-              <FormLabel component="h3">Type</FormLabel>
-              <RadioGroup
-                name="mailType"
-                value={mailType}
-                onChange={onInputHandler}
-              >
-                {["error", "help"].map((type, idx) => (
-                  <RadioForm key={idx} classes={classes} value={type} />
-                ))}
-              </RadioGroup>
-            </FormControl>
-          </GridItem>
+
           <GridItem xs={12} sm={12} md={12}>
             <CustomInput
               labelText="Message Content"
-              id="help-message"
+              id="add-channel-request-message"
               error={contentErr}
               formControlProps={{
                 fullWidth: true,
@@ -269,12 +251,10 @@ export const Help = (props) => {
         </Button>
       </DialogActions>
     </Dialog>
-  ) : (
-    <NoAuthErrorModal open={open} onClose={onClose} />
   );
 };
 
-Help.propTypes = {
+AddYoutubeChannel.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
   userInfo: PropTypes.object,
@@ -287,4 +267,4 @@ const mapStateToProps = (state) => ({
   userInfo: state.user.userData,
 });
 
-export default connect(mapStateToProps, { setAlertMsg })(Help);
+export default connect(mapStateToProps, { setAlertMsg })(AddYoutubeChannel);

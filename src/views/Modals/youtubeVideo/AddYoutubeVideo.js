@@ -13,6 +13,7 @@ import {
   Slide,
   IconButton,
 } from "@material-ui/core";
+import NoAuthErrorModal from "../error/NoAuthErrorModal";
 
 import styles from "../../../assets/jss/material-kit-react/components/modalStyle";
 import { Close } from "@material-ui/icons";
@@ -35,7 +36,7 @@ const AddYoutubeVideo = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-  const { setAlertMsg, open, onClose } = props;
+  const { setAlertMsg, open, onClose, curUserLoading, curUserData } = props;
   const [youtubeVideoURL, setYoutubeVideoURL] = useState("");
   const youtubeURLinputRef = useRef();
 
@@ -49,7 +50,9 @@ const AddYoutubeVideo = (props) => {
     setYoutubeVideoURL(event.currentTarget.value);
   }, []);
 
-  return (
+  return !curUserLoading && !curUserData ? (
+    <NoAuthErrorModal open={open} onClose={onClose} />
+  ) : (
     <Dialog
       open={open}
       onClose={onClose}
@@ -126,6 +129,7 @@ AddYoutubeVideo.propTypes = {
 
 const mapStateToProps = (state) => ({
   curUserData: state.user.userData ? state.user.userData : undefined,
+  curUserLoading: state.user.loading,
 });
 
 export default connect(mapStateToProps, { setAlertMsg })(AddYoutubeVideo);

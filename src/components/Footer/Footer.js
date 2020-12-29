@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
 import About from '../../views/Modals/common/About';
-import NotAvailable from '../../views/Modals/common/NotAvailable';
+import NotAvailableModal from '../../views/Modals/common/NotAvailableModal';
 import Help from '../../views/Modals/common/Help';
 import styles from "../../assets/jss/material-kit-react/components/footerStyle.js";
 
@@ -39,7 +39,7 @@ export default function Footer(props) {
       open={aboutOpen}
       onClose={() => setAboutOpen(false)}
     />
-    <NotAvailable
+    <NotAvailableModal
       open={notAvailableOpen}
       onClose={() => setNotAvailableOpen(false)}
     />

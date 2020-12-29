@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classNames from "classnames";
 import { makeStyles } from "@material-ui/core/styles";
-import AddYoutubeVideo from "../Modals/youtubeVideo/AddYoutubeVideo";
+
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@material-ui/lab";
 import {
   PostAddSharp,
@@ -11,6 +11,11 @@ import {
   AddAPhotoSharp,
   YouTube,
 } from "@material-ui/icons";
+
+// menu components
+import AddYoutubeVideo from "../Modals/youtubeVideo/AddYoutubeVideo";
+import AddNewPost from "../Modals/post/AddNewPost";
+import AddYoutubeChannel from "../Modals/youtubeVideo/AddYoutubeChannel";
 
 import styles from "../../assets/jss/material-kit-react/views/navigations/footerMenuStyle";
 
@@ -39,15 +44,42 @@ const FooterMenu = (props) => {
     setYoutubeVideoOpen(false);
   };
 
+  const [addYoutubeChannelOpen, setAddYoutubeChannelOpen] = useState(false);
+  const handleAddYoutubeChannelOpen = () => {
+    setAddYoutubeChannelOpen(true);
+  };
+  const handleAddYoutubeChannelClose = () => {
+    setAddYoutubeChannelOpen(false);
+  };
+
+  const [addPostOpen, setAddPostOpen] = useState(false);
+  const handleAddPostOpen = () => {
+    setAddPostOpen(true);
+  };
+  const handleAddPostClose = () => {
+    setAddPostOpen(false);
+  };
+
   const menuItems = [
-    { icon: <PostAddSharp />, name: "새 글 작성" },
-    { icon: <AddAPhotoSharp />, name: "사진 등록" },
+    {
+      icon: <PostAddSharp />,
+      name: "새 글 작성",
+      title: "new post",
+      callback: handleAddPostOpen,
+    },
+    { icon: <AddAPhotoSharp />, name: "사진 등록", title: "new photo" },
     {
       icon: <VideoCallSharp />,
       name: "영상 등록",
       callback: handleYoutubeVideoOpen,
+      title: "add youtube video",
     },
-    { icon: <YouTube />, name: "채널 등록" },
+    {
+      icon: <YouTube />,
+      name: "채널 등록",
+      title: "add youtube channel",
+      callback: handleAddYoutubeChannelOpen,
+    },
   ];
 
   const { curUserData } = props;
@@ -57,6 +89,11 @@ const FooterMenu = (props) => {
         open={addYoutubeVideoOpen}
         onClose={handleYoutubeVideoClose}
       />
+      <AddYoutubeChannel
+        open={addYoutubeChannelOpen}
+        onClose={handleAddYoutubeChannelClose}
+      />
+      <AddNewPost open={addPostOpen} onClose={handleAddPostClose} />
       <div className={footerMenuClasses}>
         <SpeedDial
           ariaLabel={"right-bottom-navigation"}
@@ -71,9 +108,8 @@ const FooterMenu = (props) => {
               key={index}
               icon={menuItem.icon}
               tooltipTitle={menuItem.name}
-              tooltipOpen={true}
               onClick={menuItem.callback}
-              title={"add-items"}
+              title={menuItem.title}
             />
           ))}
         </SpeedDial>

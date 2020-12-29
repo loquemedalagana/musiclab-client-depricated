@@ -24,8 +24,8 @@ const slice = createSlice({
     auth: false,
     loading: true,
 
-    loadVideoListLoading: true,
-    loadVideoListDone: false,
+    loadVideoListLoading: false, // 더미라 곧 바꿀거임
+    loadVideoListDone: true, // 더미라 곧 바꿀거임
     loadVideoListError: null,
     hasMoreList: true,
     youtubeVideoList: InhyukSampleVideoList.slice(6),
