@@ -56,6 +56,10 @@ const modalStyle = {
     color: "#999",
     textAlign: "center",
   },
+  radioGroup: {
+    marginRight: "15px",
+    marginLeft: "15px",
+  },
   textArea: {
     marginRight: "15px",
     marginLeft: "15px",

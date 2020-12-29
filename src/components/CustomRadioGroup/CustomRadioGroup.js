@@ -59,9 +59,9 @@ RadioForm.propTypes = {
 };
 
 const CustomRadioGroup = (props) => {
-  const { title, onChange, value, selectItems, name } = props;
+  const { title, onChange, value, selectItems, name, ...rest } = props;
   return (
-    <FormControl component="fieldset">
+    <FormControl component="fieldset" {...rest}>
       <FormLabel component="h3">{title}</FormLabel>
       <RadioGroup name={name} value={value} onChange={onChange}>
         {selectItems.map((selectItem, idx) => (

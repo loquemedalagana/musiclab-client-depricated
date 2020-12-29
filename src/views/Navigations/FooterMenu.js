@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from "@material-ui/lab";
 import {
   PostAddSharp,
-  VideoCallSharp,
+  GroupAddRounded,
   AddAPhotoSharp,
   YouTube,
 } from "@material-ui/icons";
@@ -69,13 +69,13 @@ const FooterMenu = (props) => {
     },
     { icon: <AddAPhotoSharp />, name: "사진 등록", title: "new photo" },
     {
-      icon: <VideoCallSharp />,
+      icon: <YouTube />,
       name: "영상 등록",
       callback: handleYoutubeVideoOpen,
       title: "add youtube video",
     },
     {
-      icon: <YouTube />,
+      icon: <GroupAddRounded />,
       name: "채널 등록",
       title: "add youtube channel",
       callback: handleAddYoutubeChannelOpen,

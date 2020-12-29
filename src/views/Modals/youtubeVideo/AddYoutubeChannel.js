@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -130,10 +130,15 @@ export const AddYoutubeChannel = (props) => {
       <DialogContent
         id="help-modal-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
-        dividers={isMobile}
+        dividers={true}
       >
-        <p>채널 등록 페이지입니다.</p>
-        <p>담당자가 확인한 후 승인이 되면 채널 리스트에 등록됩니다.</p>
+        <GridItem xs={12} sm={12} md={11}>
+          <div className={classes.textArea}>
+            <p>채널 등록 페이지입니다.</p>
+            <p>담당자가 확인한 후 승인이 되면 채널 리스트에 등록됩니다.</p>
+          </div>
+        </GridItem>
+
         <br />
         <GridItem xs={12} sm={12} md={11}>
           <CustomInput
@@ -152,8 +157,9 @@ export const AddYoutubeChannel = (props) => {
             }}
           />
         </GridItem>
-        <GridItem xs={12} sm={12} md={12}>
+        <GridItem xs={12} sm={12} md={11}>
           <CustomRadioGroup
+            className={classes.radioGroup}
             title={"Type"}
             name={"channelType"}
             value={channelType}
@@ -165,7 +171,7 @@ export const AddYoutubeChannel = (props) => {
             ]}
           />
         </GridItem>
-        <GridItem xs={12} sm={12} md={12}>
+        <GridItem xs={12} sm={12} md={11}>
           <CustomInput
             labelText="Youtube Channel Title"
             id="channel-title"
@@ -183,7 +189,7 @@ export const AddYoutubeChannel = (props) => {
           />
         </GridItem>
 
-        <GridItem xs={12} sm={12} md={12}>
+        <GridItem xs={12} sm={12} md={11}>
           <CustomInput
             labelText="Message Content"
             id="add-channel-request-message"

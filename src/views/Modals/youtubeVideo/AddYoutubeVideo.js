@@ -23,6 +23,7 @@ import {
   GridItem,
   CustomInput,
 } from "../../../components/components";
+import VideoIframe from "../../../components/VideoIframe/VideoIframe";
 
 import { YOUTUBE_VIDEOID_LENGTH } from "../../../app/inputValidation/constants";
 
@@ -58,6 +59,8 @@ const AddYoutubeVideo = (props) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const { setAlertMsg, open, onClose, curUserData, curUserLoading } = props;
 
+  const [YoutubePreview, setYoutubePreview] = useState(null);
+
   const [inputs, setInputs] = useState({
     youtubeVideoURL: "",
     videoType: "",
@@ -69,18 +72,38 @@ const AddYoutubeVideo = (props) => {
     videoType: useRef(),
   };
 
+  const handleYoutubePreview = useCallback((videoId) => {
+    if (videoId.length !== YOUTUBE_VIDEOID_LENGTH) return;
+    setYoutubePreview(
+      <VideoIframe id={"youtube-preview"} videoId={videoId} title={"preview"} />
+    );
+  }, []);
+
+  const removeYoutubePreview = useCallback(() => {
+    setYoutubePreview(null);
+  }, []);
+
   //const dispatch = useDispatch();
-  const onSubmitHandler = useCallback(() => {
+  const onPreviewHandler = useCallback(() => {
     const videoId = getVideoId(youtubeVideoURL.trim());
     console.log(videoId);
     console.log(inputs);
-
     if (videoId.length === 0 || videoId.length !== YOUTUBE_VIDEOID_LENGTH) {
+      inputRef.youtubeVideoURL.current.focus();
+      removeYoutubePreview();
       setAlertMsg("올바른 양식이 아닙니다.", "error");
     } else {
+      handleYoutubePreview(videoId);
       setAlertMsg("유튜브 주소", "success");
     }
-  }, [inputs, setAlertMsg, youtubeVideoURL]);
+  }, [
+    inputs,
+    setAlertMsg,
+    youtubeVideoURL,
+    handleYoutubePreview,
+    removeYoutubePreview,
+    inputRef.youtubeVideoURL,
+  ]);
 
   const onYoutubeURLinputHandler = useCallback(
     (event) => {
@@ -91,6 +114,17 @@ const AddYoutubeVideo = (props) => {
       });
     },
     [inputs]
+  );
+
+  const handleKeyPress = useCallback(
+    (e) => {
+      if (e.key === "Enter") {
+        if (e.target.name === "youtubeVideoURL") {
+          onPreviewHandler();
+        }
+      }
+    },
+    [handleYoutubePreview, onPreviewHandler]
   );
 
   return !curUserLoading && !curUserData ? (
@@ -146,13 +180,19 @@ const AddYoutubeVideo = (props) => {
               value: youtubeVideoURL,
               onChange: onYoutubeURLinputHandler,
               inputRef: inputRef.youtubeVideoURL,
+              onKeyDown: handleKeyPress,
             }}
           />
         </GridItem>
+        <GridContainer justify="center">
+          <GridItem xs={12} sm={12} md={11}>
+            {YoutubePreview}
+          </GridItem>
+        </GridContainer>
       </DialogContent>
 
       <DialogActions>
-        <Button simple color="primary" size="lg" onClick={onSubmitHandler}>
+        <Button simple color="primary" size="lg" onClick={onPreviewHandler}>
           Submit
         </Button>
       </DialogActions>
