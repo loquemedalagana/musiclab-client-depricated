@@ -7,6 +7,7 @@ import { setAlertMsg } from "../../../app/store/alert";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
+  Hidden,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -103,6 +104,8 @@ const AddYoutubeVideo = (props) => {
   });
   const { youtubeVideoURL, videoType, tag } = inputs;
   const [tags, setTags] = useState([]);
+  const [renderTags, setRenderTags] = useState([]);
+
   const inputRef = {
     youtubeVideoURL: useRef(),
     videoType: useRef(),
@@ -161,6 +164,7 @@ const AddYoutubeVideo = (props) => {
       return;
     }
     setTags([...tags, tag]);
+    setRenderTags(tags.map((tagName, index) => <h4 key={index}>{tagName}</h4>));
     console.log(tags);
   }, [tag, tags, setAlertMsg]);
 
@@ -227,12 +231,8 @@ const AddYoutubeVideo = (props) => {
         className={classes.modalBody + " scrollbar-rainy-ashville"}
         dividers={true}
       >
-        <GridContainer
-          justify="center"
-          alignContent="flex-end"
-          alignItems="flex-end"
-        >
-          <GridItem xs={12} sm={12} md={11}>
+        <GridContainer alignContent="flex-end" alignItems="center">
+          <GridItem xs={11} sm={11} md={9}>
             <CustomInput
               labelText="Youtube Video URL"
               id="new-youtube-video-url"
@@ -254,26 +254,28 @@ const AddYoutubeVideo = (props) => {
               }}
             />
           </GridItem>
-          <GridItem xs={12} sm={12} md={11}>
-            <div className={classes.textArea}>
-              <Button
-                color="primary"
-                size="sm"
-                round
-                onClick={onYoutubePreviewHandler}
-              >
-                <Search className={classes.miniButtonIcon} />
-              </Button>
-            </div>
-          </GridItem>
+          <Hidden smDown>
+            <GridItem xs={11} sm={11} md={2}>
+              <div className={classes.textArea}>
+                <Button
+                  color="primary"
+                  size="sm"
+                  round
+                  onClick={onYoutubePreviewHandler}
+                >
+                  <Search className={classes.miniButtonIcon} />
+                </Button>
+              </div>
+            </GridItem>
+          </Hidden>
         </GridContainer>
 
         <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={11}>
+          <GridItem xs={11} sm={11} md={11}>
             {YoutubePreview}
           </GridItem>
         </GridContainer>
-        <GridItem xs={12} sm={12} md={11}>
+        <GridItem xs={11} sm={11} md={11}>
           <CustomRadioGroup
             className={classes.radioGroup}
             title={"Type"}
@@ -287,47 +289,49 @@ const AddYoutubeVideo = (props) => {
             ]}
           />
         </GridItem>
-        <GridItem xs={12} sm={12} md={11}>
-          <div className={classes.textArea}>
-            <h4>Tags</h4>
-            <h5>태그를 입력해주세요</h5>
-          </div>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={11}>
-          <CustomInput
-            labelText="Tag Name"
-            id="new-youtube-tag"
-            formControlProps={{
-              fullWidth: true,
-              className: classes.textArea,
-            }}
-            inputProps={{
-              name: "tag",
-              value: tag,
-              onChange: onInputHandler,
-              inputRef: inputRef.youtubeVideoURL,
-              onKeyDown: handleKeyPress,
-              endAdornment: (
-                <InputAdornment position="end">
-                  <LocalOffer className={classes.inputIconsColor} />
-                </InputAdornment>
-              ),
-            }}
-          />
-        </GridItem>
-        <GridItem xs={12} sm={12} md={11}>
-          <div className={classes.textArea}>
-            <Button color="primary" size="sm" round onClick={addTagHandler}>
-              add
-            </Button>
-          </div>
-        </GridItem>
 
-        <GridItem xs={12} sm={12} md={11}>
-          <div className={classes.textArea}>
-            <h4>여기다 태그 나옴</h4>
-          </div>
-        </GridItem>
+        <GridContainer alignContent="flex-end" alignItems="center">
+          <GridItem xs={11} sm={11} md={11}>
+            <div className={classes.textArea}>
+              <h4>Tags</h4>
+              <h5>태그를 입력해주세요</h5>
+            </div>
+          </GridItem>
+          <GridItem xs={11} sm={11} md={9}>
+            <CustomInput
+              labelText="Tag Name"
+              id="new-youtube-tag"
+              formControlProps={{
+                fullWidth: true,
+                className: classes.textArea,
+              }}
+              inputProps={{
+                name: "tag",
+                value: tag,
+                onChange: onInputHandler,
+                inputRef: inputRef.youtubeVideoURL,
+                onKeyDown: handleKeyPress,
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <LocalOffer className={classes.inputIconsColor} />
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </GridItem>
+          <Hidden smDown>
+            <GridItem xs={11} sm={11} md={2}>
+              <div className={classes.textArea}>
+                <Button color="primary" size="sm" round onClick={addTagHandler}>
+                  add
+                </Button>
+              </div>
+            </GridItem>
+          </Hidden>
+          <GridItem xs={11} sm={11} md={11}>
+            <div className={classes.textArea}>{renderTags}</div>
+          </GridItem>
+        </GridContainer>
       </DialogContent>
 
       <DialogActions>

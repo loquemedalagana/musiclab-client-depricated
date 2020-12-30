@@ -69,16 +69,16 @@ const FooterMenu = (props) => {
     },
     { icon: <AddAPhotoSharp />, name: "사진 등록", title: "new photo" },
     {
-      icon: <YouTube />,
-      name: "영상 등록",
-      callback: handleYoutubeVideoOpen,
-      title: "add youtube video",
-    },
-    {
       icon: <GroupAddRounded />,
       name: "채널 등록",
       title: "add youtube channel",
       callback: handleAddYoutubeChannelOpen,
+    },
+    {
+      icon: <YouTube />,
+      name: "영상 등록",
+      callback: handleYoutubeVideoOpen,
+      title: "add youtube video",
     },
   ];
 
