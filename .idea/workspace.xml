@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +107,7 @@
       <workItem from="1609120290136" duration="39159000" />
       <workItem from="1609209737385" duration="43506000" />
       <workItem from="1609260836237" duration="15000" />
-      <workItem from="1609292260200" duration="3760000" />
+      <workItem from="1609292260200" duration="4624000" />
     </task>
     <servers />
   </component>

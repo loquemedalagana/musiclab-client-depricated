@@ -105,7 +105,6 @@ const AddYoutubeVideo = (props) => {
   });
   const { youtubeVideoURL, videoType, tag } = inputs;
   const [tags, setTags] = useState([]);
-  const [renderTags, setRenderTags] = useState([]);
 
   const inputRef = {
     youtubeVideoURL: useRef(),
@@ -165,22 +164,13 @@ const AddYoutubeVideo = (props) => {
       return;
     }
     setTags([...tags, tag]);
-    setRenderTags(
-      tags.map((tagName, index) => (
-        <Chip
-          key={index}
-          size="small"
-          icon={<LocalOffer />}
-          label={tagName}
-          onDelete={removeTagHandler}
-        />
-      ))
-    );
     console.log(tags);
   }, [tag, tags, setAlertMsg]);
 
-  const removeTagHandler = useCallback((removedTag) => {
-    console.log(removedTag);
+  const removeTagHandler = useCallback((event) => {
+    console.log(event.target);
+    console.log(event.currentTarget);
+    console.log(event);
   }, []);
 
   const handleKeyPress = useCallback(
@@ -340,7 +330,17 @@ const AddYoutubeVideo = (props) => {
             </GridItem>
           </Hidden>
           <GridItem xs={11} sm={11} md={11}>
-            <div className={classes.textArea}>{renderTags}</div>
+            <div className={classes.textArea}>
+              {tags.map((tagName, index) => (
+                <Chip
+                  key={index}
+                  size="small"
+                  icon={<LocalOffer />}
+                  label={tagName}
+                  onDelete={removeTagHandler}
+                />
+              ))}
+            </div>
           </GridItem>
         </GridContainer>
       </DialogContent>
