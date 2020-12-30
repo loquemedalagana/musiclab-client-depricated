@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/params/youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/youtube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +41,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../design/designBoilarplate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="C:\Users\amaya\music-sseolprise\client-new-ver\node_modules\eslint" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\amaya\music-sseolprise\client-dev\node_modules\eslint" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
@@ -107,7 +112,9 @@
       <workItem from="1609120290136" duration="39159000" />
       <workItem from="1609209737385" duration="43506000" />
       <workItem from="1609260836237" duration="15000" />
-      <workItem from="1609292260200" duration="5029000" />
+      <workItem from="1609292260200" duration="13948000" />
+      <workItem from="1609324436034" duration="6747000" />
+      <workItem from="1609344825167" duration="1191000" />
     </task>
     <servers />
   </component>

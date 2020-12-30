@@ -12,5 +12,5 @@ export const YOUTUBE_VIDEO_ROUTE = YOUTUBE_ROUTE + "/videos"; // + id가 들어�
 export const GET_YOUTUBE_VIDEO_ROUTE = (videoId) =>
   YOUTUBE_VIDEO_ROUTE + `/${videoId}`;
 
-// 예시
+// example
 // youtube/search?title=진혼

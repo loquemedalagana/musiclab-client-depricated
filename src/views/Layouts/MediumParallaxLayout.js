@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core";
 
@@ -8,19 +9,53 @@ import {
   Footer,
   GridContainer,
   GridItem,
+  Header,
+  HeaderLinks,
+  HeaderLinksNotLoggedIn,
   Parallax,
 } from "../../components/components";
-import { appDescription, appShortTitle } from "../../app/helper/appTitle";
+import {
+  appDescription,
+  appShortTitle,
+  appTitle,
+} from "../../app/helper/appTitle";
 import classNames from "classnames";
 
 const useStyles = makeStyles(styles);
 
 const MediumParallaxLayout = (props) => {
   const classes = useStyles();
-  const { children } = props;
+  const { children, auth, ...rest } = props;
+
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
+      <Header
+        color="transparent"
+        brand={appTitle}
+        rightLinks={
+          auth ? (
+            <HeaderLinks
+              mobileOpen={mobileOpen}
+              setMobileOpen={setMobileOpen}
+            />
+          ) : (
+            <HeaderLinksNotLoggedIn
+              mobileOpen={mobileOpen}
+              setMobileOpen={setMobileOpen}
+            />
+          )
+        }
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "info",
+        }}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        {...rest}
+      />
       <Parallax className={mainParallaxStyle().root}>
         <div className={classes.container}>
           <GridContainer type="parallax">
@@ -44,6 +79,11 @@ const MediumParallaxLayout = (props) => {
 
 MediumParallaxLayout.propTypes = {
   children: PropTypes.node,
+  auth: PropTypes.bool,
 };
 
-export default MediumParallaxLayout;
+const mapStateToProps = (state) => ({
+  auth: state.user.auth,
+});
+
+export default connect(mapStateToProps)(MediumParallaxLayout);
