@@ -159,17 +159,21 @@ const AddYoutubeVideo = (props) => {
   const addTagHandler = useCallback(() => {
     const tagInputCheck = new CheckTagInputValidation({ tag, tags });
     const { ok, message } = tagInputCheck.getResult();
+    setInputs({
+      ...inputs,
+      tag: "",
+    });
     if (!ok) {
       setAlertMsg(message, "error");
       return;
     }
     setTags([...tags, tag]);
     console.log(tags);
-  }, [tag, tags, setAlertMsg]);
+  }, [tag, tags, setAlertMsg, inputs]);
 
   const removeTagHandler = useCallback((event) => {
     console.log(event.target);
-    console.log(event.currentTarget);
+    console.log(event.currentTarget.value);
     console.log(event);
   }, []);
 
