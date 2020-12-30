@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Navigations/FooterMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Navigations/FooterMenu.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server-new-ver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../design/designBoilarplate" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -108,7 +108,7 @@
       <workItem from="1609120290136" duration="39159000" />
       <workItem from="1609209737385" duration="43506000" />
       <workItem from="1609260836237" duration="15000" />
-      <workItem from="1609292260200" duration="2477000" />
+      <workItem from="1609292260200" duration="3760000" />
     </task>
     <servers />
   </component>

@@ -15,6 +15,7 @@ import {
   Slide,
   IconButton,
   InputAdornment,
+  Chip,
 } from "@material-ui/core";
 import NoAuthErrorModal from "../error/NoAuthErrorModal";
 import CustomRadioGroup from "../../../components/CustomRadioGroup/CustomRadioGroup";
@@ -164,7 +165,17 @@ const AddYoutubeVideo = (props) => {
       return;
     }
     setTags([...tags, tag]);
-    setRenderTags(tags.map((tagName, index) => <h4 key={index}>{tagName}</h4>));
+    setRenderTags(
+      tags.map((tagName, index) => (
+        <Chip
+          key={index}
+          size="small"
+          icon={<LocalOffer />}
+          label={tagName}
+          onDelete={removeTagHandler}
+        />
+      ))
+    );
     console.log(tags);
   }, [tag, tags, setAlertMsg]);
 

@@ -96,14 +96,14 @@ export const AddYoutubeChannel = (props) => {
       keepMounted
       fullWidth={true}
       scroll={"paper"}
-      aria-labelledby="music-sseolprise-about"
-      aria-describedby="music-sseolprise-about-detail"
+      aria-labelledby="music-sseolprise-add-channel"
+      aria-describedby="music-sseolprise-add-channel-detail"
       classes={{
         paper: "scrollbar-rainy-ashville",
       }}
     >
       <DialogTitle
-        id="music-sseolprise-about-title"
+        id="music-sseolprise-add-channel-title"
         disableTypography
         className={classes.modalHeader}
         classes={{
@@ -124,7 +124,7 @@ export const AddYoutubeChannel = (props) => {
       </DialogTitle>
 
       <DialogContent
-        id="help-modal-description"
+        id="add-channel-modal-description"
         className={classes.modalBody + " scrollbar-rainy-ashville"}
         dividers={true}
       >
