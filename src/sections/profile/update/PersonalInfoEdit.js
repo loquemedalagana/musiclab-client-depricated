@@ -2,8 +2,8 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classNames from "classnames";
-import { setAlertMsg } from "../../../../../app/store/alert";
-import { updateUserProfile } from "../../../../../app/store/userControl";
+import { setAlertMsg } from "../../../app/store/alert";
+import { updateUserProfile } from "../../../app/store/userControl";
 
 import { Skeleton } from "@material-ui/lab";
 
@@ -11,17 +11,17 @@ import {
   GridContainer,
   GridItem,
   Button,
-} from "../../../../../components/components";
+} from "../../../components/components";
 
-import NameInput from "../../../../../SubComponents/authAndProfile/NameInput";
-import DescriptionInput from "../../../../../SubComponents/authAndProfile/DescriptionInput";
-import PasswordInput from "../../../../../SubComponents/authAndProfile/PasswordInput";
+import NameInput from "../../../SubComponents/authAndProfile/NameInput";
+import DescriptionInput from "../../../SubComponents/authAndProfile/DescriptionInput";
+import PasswordInput from "../../../SubComponents/authAndProfile/PasswordInput";
 
-import NameValidation from "../../../../../app/inputValidation/user/NameValidation";
-import PasswordValidation from "../../../../../app/inputValidation/user/passwordValidation";
+import NameValidation from "../../../app/inputValidation/user/NameValidation";
+import PasswordValidation from "../../../app/inputValidation/user/passwordValidation";
 
-import defaultImg from "../../../../../assets/images/dolphin_profile.png";
-import { PROFILE_PHOTO_SERVER_ERROR } from "../../../../../app/helper/auth/authAlertMessages";
+import defaultImg from "../../../assets/images/dolphin_profile.png";
+import { PROFILE_PHOTO_SERVER_ERROR } from "../../../app/helper/auth/authAlertMessages";
 
 export const PersonalInfoEdit = (props) => {
   const {

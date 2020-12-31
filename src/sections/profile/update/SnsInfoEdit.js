@@ -4,20 +4,20 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import {
   updateUserSocial,
   fetchUserSocialData,
-} from "../../../../../app/store/userControl";
-import { setAlertMsg } from "../../../../../app/store/alert";
+} from "../../../app/store/userControl";
+import { setAlertMsg } from "../../../app/store/alert";
 import { Skeleton } from "@material-ui/lab";
 
 import {
   GridContainer,
   Button,
   GridItem,
-} from "../../../../../components/components";
+} from "../../../components/components";
 
-import SocialInput from "../../../../../SubComponents/authAndProfile/SocialInput";
+import SocialInput from "../../../SubComponents/authAndProfile/SocialInput";
 
-import { SOCIAL_NULL_ERROR } from "../../../../../app/helper/auth/authAlertMessages";
-import { checkSnsLink } from "../../../../../app/inputValidation/user/snsLinkValidation";
+import { SOCIAL_NULL_ERROR } from "../../../app/helper/auth/authAlertMessages";
+import { checkSnsLink } from "../../../app/inputValidation/user/snsLinkValidation";
 
 export const SnsInfoEdit = (props) => {
   const { setAlertMsg, updateUserSocial, classes, loading, isChanged } = props;

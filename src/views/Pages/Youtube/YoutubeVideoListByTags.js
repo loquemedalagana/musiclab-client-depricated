@@ -6,8 +6,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // sub components
 import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
-import YoutubeTagContainer from "./VideoListSection/YoutubeTagContainer";
-import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
+import YoutubeTagContainer from "../../../sections/youtube/YoutubeTagContainer";
+import ViewVideoListSection from "../../../sections/youtube/ViewVideoListSection";
 import FooterMenu from "../../../sections/navigations/FooterMenu";
 
 // route

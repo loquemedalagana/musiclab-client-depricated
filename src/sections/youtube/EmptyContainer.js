@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "../../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
-import { GridContainer } from "../../../../components/components";
+import styles from "../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
+import { GridContainer } from "../../components/components";
 
 const useStyles = makeStyles(styles);
 

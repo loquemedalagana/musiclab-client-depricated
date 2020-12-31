@@ -21,7 +21,7 @@ import {
 } from "@material-ui/icons";
 
 // action function
-import { fetchTargetUserData } from "../../../../app/store/profile";
+import { fetchTargetUserData } from "../../app/store/profile";
 
 // custom component
 import {
@@ -30,23 +30,23 @@ import {
   GridItem,
   NavPills,
   LinearLoading,
-} from "../../../../components/components";
+} from "../../components/components";
 
 // fragment components
-import SmallParallaxLayout from "../../../../Layouts/SmallParallaxLayout";
-import LikedVideos from "./ProfileSections/LikedVideos/LikedVideos";
-import UserPostList from "./ProfileSections/UserPostList/UserPostList";
-import UserTags from "./ProfileSections/UserTags/UserTags";
-import NotFound from "../../Error/NotFound";
+import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
+import LikedVideos from "../../sections/profile/viewUserProfile/LikedVideos/LikedVideos";
+import UserPostList from "../../sections/profile/viewUserProfile/UserPostList/UserPostList";
+import UserTags from "../../sections/profile/viewUserProfile/UserTags/UserTags";
+import NotFound from "../Error/NotFound";
 
 // route constants
-import { EDIT_PROFILE_ROUTE } from "../../../../routes/params/profile";
+import { EDIT_PROFILE_ROUTE } from "../../routes/params/profile";
 
 // image
-import defaultImg from "../../../../assets/images/dolphin_profile.png";
+import defaultImg from "../../assets/images/dolphin_profile.png";
 
-import styles from "../../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
-import { getDateKor } from "../../../../app/models/common/getDate";
+import styles from "../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
+import { getDateKor } from "../../app/models/common/getDate";
 
 const useStyles = makeStyles(styles);
 

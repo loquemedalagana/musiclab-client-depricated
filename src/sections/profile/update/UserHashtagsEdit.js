@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { setAlertMsg } from "../../../../../app/store/alert";
+import { setAlertMsg } from "../../../app/store/alert";
 
 import {
   CircularLoading,
   //GridContainer,
-} from "../../../../../components/components";
+} from "../../../components/components";
 
 export const UserHashtagsEdit = (props) => {
   const {

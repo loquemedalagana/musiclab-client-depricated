@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 // style components
 import { makeStyles } from "@material-ui/core/styles";
-import { GridContainer, GridItem } from "../../../../components/components";
-import styles from "../../../../assets/jss/material-kit-react/views/fragments/tagContainerStyle";
+import { GridContainer, GridItem } from "../../components/components";
+import styles from "../../assets/jss/material-kit-react/views/fragments/tagContainerStyle";
 
 const useStyles = makeStyles(styles);
 

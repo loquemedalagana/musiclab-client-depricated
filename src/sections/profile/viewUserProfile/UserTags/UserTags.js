@@ -8,17 +8,17 @@ import {
   GridContainer,
   GridItem,
   //CircularLoading,
-} from "../../../../../../components/components";
+} from "../../../../components/components";
 
 // test code for ui development
-import SampleTagList from "../../../../../../test/dummyData/tags/sampleTagList";
+import SampleTagList from "../../../../test/dummyData/tags/sampleTagList";
 
-import compositionImg from "../../../../../../assets/images/TagImages/composition.jpg";
-import guitarImg from "../../../../../../assets/images/TagImages/guitar.jpg";
-import bandImg from "../../../../../../assets/images/TagImages/jeoninhyukband.jpg";
-import yadaImg from "../../../../../../assets/images/TagImages/yada.jpg";
-import vocalImg from "../../../../../../assets/images/TagImages/vocal.jpg";
-import drumImg from "../../../../../../assets/images/TagImages/drum.jpg";
+import compositionImg from "../../../../assets/images/TagImages/composition.jpg";
+import guitarImg from "../../../../assets/images/TagImages/guitar.jpg";
+import bandImg from "../../../../assets/images/TagImages/jeoninhyukband.jpg";
+import yadaImg from "../../../../assets/images/TagImages/yada.jpg";
+import vocalImg from "../../../../assets/images/TagImages/vocal.jpg";
+import drumImg from "../../../../assets/images/TagImages/drum.jpg";
 
 //https://gist.github.com/muZk/cdc402c973c2c1e3918f81c392be5c66
 

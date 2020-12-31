@@ -9,17 +9,17 @@ import {
   GridContainer,
   GridItem,
   PostPreview,
-} from "../../../../components/components";
+} from "../../components/components";
 import EmptyContainer from "./EmptyContainer";
-import defaultImg from "../../../../assets/images/dolphin_profile.png";
+import defaultImg from "../../assets/images/dolphin_profile.png";
 
 // video data 불러오는거!
-import videoListOfJeonInhyukBand from "../../../../sections/landing/videoData/videoListOfJeonInhyukBand";
-import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
-import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
+import videoListOfJeonInhyukBand from "../landing/videoData/videoListOfJeonInhyukBand";
+import InhyukSampleVideoList from "../../app/data/yada/InhyukSampleVideoList";
+import { getVideoDataListFromPlayList } from "../../app/utils/video/youtubeDataProcessing";
 
 // jss style
-import styles from "../../../../assets/jss/material-kit-react/views/fragments/previewListStyle";
+import styles from "../../assets/jss/material-kit-react/views/fragments/previewListStyle";
 const useStyles = makeStyles(styles);
 
 export const ViewVideoListSection = (props) => {

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
-import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
+import ViewVideoListSection from "../../../sections/youtube/ViewVideoListSection";
 import qs from "qs";
 
 // redux fetch

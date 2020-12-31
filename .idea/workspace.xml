@@ -3,55 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/scss/core/variables/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/scss/core/variables/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/auth/CollectingPersonalInformationAggrement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/auth/CollectingPersonalInformationAggrement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/auth/FindPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/auth/FindPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/common/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/common/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/common/Help.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/common/Help.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/common/NotAvailableModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/common/NotAvailableModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/error/NoAuthErrorModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/error/NoAuthErrorModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/post/AddNewPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/post/AddNewPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/search/SearchModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/search/SearchModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeChannel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/youtubeVideo/AddYoutubeChannel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Modals/youtubeVideo/AddYoutubeVideo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/modals/youtubeVideo/AddYoutubeVideo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Navigations/FooterMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/navigations/FooterMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Agreement.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/register/InputEmailForSocialUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/register/Levelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ResetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Sections/SocialLoginSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/auth/SocialLoginSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/WaitingLevelup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/PrintVideoCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/landing/PrintVideoCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/VideoCarouselSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/landing/VideoCarouselSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/carouselSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/landing/carouselSetting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/VideoCarouselSection/videoData/videoListOfJeonInhyukBand.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/landing/videoData/videoListOfJeonInhyukBand.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Post/PostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Post/PostDetailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Post/PostListPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Post/PostListPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/PersonalInfoEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/ViewVideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/ViewVideoListSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/NotAvailablePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Error/NotAvailablePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Error/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Error/ServerError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/modify/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/PersonalInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/update/PersonalInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/SnsInfoEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/update/SnsInfoEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfileSections/UserHashtagsEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/update/UserHashtagsEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/LikedVideos/LikedVideos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/viewUserProfile/LikedVideos/LikedVideos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/viewUserProfile/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/UserPostList/UserPostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/viewUserProfile/UserPostList/UserPostList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/ProfileSections/UserTags/UserTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/profile/viewUserProfile/UserTags/UserTags.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/MyYoutubeVideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/MyYoutubeVideoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/EmptyContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/youtube/EmptyContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/ViewVideoListSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/youtube/ViewVideoListSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/VideoListSection/YoutubeTagContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/youtube/YoutubeTagContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/BirthdayInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/BirthdayInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/DescriptionInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/DescriptionInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/EmailInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/EmailInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/GenderInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/GenderInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/ModalOpenHelperText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/ModalOpenHelperText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/NameInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/NameInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/PasswordInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/PasswordInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/authAndProfile/SocialInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/authAndProfile/SocialInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/landing/LandingPageVideoTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/landing/LandingPageVideoTitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/landing/NotAvailable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/landing/NotAvailable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/landing/VideoPageLink.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/landing/VideoPageLink.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/SubComponents/youtube/YoutubeVideoIframe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubComponents/youtube/YoutubeVideoIframe.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +73,10 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\Pages" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\sections\landing" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\sections\auth" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\sections" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\Pages\profile" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\sections\profile\viewUserProfile" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\sections\profile\update" />
+      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src\sections\profile" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\utils\video\youtubeDataProcessing.js" />
@@ -158,7 +128,7 @@
       <workItem from="1609292260200" duration="13948000" />
       <workItem from="1609324436034" duration="6747000" />
       <workItem from="1609344825167" duration="4461000" />
-      <workItem from="1609378864810" duration="3253000" />
+      <workItem from="1609378864810" duration="4084000" />
     </task>
     <servers />
   </component>

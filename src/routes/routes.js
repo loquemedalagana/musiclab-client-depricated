@@ -17,8 +17,8 @@ import WaitingLevelup from "../Pages/WaitingLevelup";
 import InputEmailForSocialUsers from "../Pages/register/InputEmailForSocialUsers";
 
 // 프로필 컴포넌트
-import Profile from "../views/Pages/Profile/ViewProfile/Profile";
-import UpdateProfile from "../views/Pages/Profile/UpdateProfile/UpdateProfile";
+import Profile from "../Pages/profile/Profile";
+import UpdateProfile from "../Pages/modify/UpdateProfile";
 
 // 유튜브 컴포넌트
 import YoutubeVideoListByChannelProfile from "../views/Pages/Youtube/YoutubeVideoListByChannelProfile";
@@ -29,9 +29,9 @@ import YoutubePostDetailPage from "../views/Pages/Youtube/YoutubePostDetailPage.
 // 포스트 컴포넌트
 
 // 에러 페이지 컴포넌트
-import NotFound from "../views/Pages/Error/NotFound";
-import ServerError from "../views/Pages/Error/ServerError";
-import NotAvailablePage from "../views/Pages/Error/NotAvailablePage";
+import NotFound from "../Pages/Error/NotFound";
+import ServerError from "../Pages/Error/ServerError";
+import NotAvailablePage from "../Pages/Error/NotAvailablePage";
 
 // 알람 컴포넌트
 import ToastAlert from "../components/ToastAlerts/ToastAlerts";
