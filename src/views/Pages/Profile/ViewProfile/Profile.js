@@ -33,7 +33,7 @@ import {
 } from "../../../../components/components";
 
 // fragment components
-import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
+import SmallParallaxLayout from "../../../../Layouts/SmallParallaxLayout";
 import LikedVideos from "./ProfileSections/LikedVideos/LikedVideos";
 import UserPostList from "./ProfileSections/UserPostList/UserPostList";
 import UserTags from "./ProfileSections/UserTags/UserTags";

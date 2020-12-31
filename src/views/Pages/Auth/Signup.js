@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
-import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../../../Layouts/NoParallaxLayout";
 
 import { signupUser } from "../../../app/store/userControl";
 

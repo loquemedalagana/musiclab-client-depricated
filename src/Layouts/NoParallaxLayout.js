@@ -8,11 +8,11 @@ import {
   GridContainer,
   Header,
   HeaderLinks,
-} from "../../components/components";
-import styles from "../../assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle";
-import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import { isDesktop } from "../../app/helper/viewControllers/uiManagers";
-import { appTitle } from "../../app/helper/appTitle";
+} from "../components/components";
+import styles from "../assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle";
+import { defaultBgStyle } from "../assets/jss/material-kit-react/views/layouts/background";
+import { isDesktop } from "../app/helper/viewControllers/uiManagers";
+import { appTitle } from "../app/helper/appTitle";
 
 const useStyles = makeStyles(styles);
 

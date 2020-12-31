@@ -3,13 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/MediumParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/NoParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Layouts/SmallParallaxLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Agreement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Agreement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/InputEmailForSocialUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Levelup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/ResetPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/Signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Auth/WaitingLevelup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/NotAvailablePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/NotAvailablePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Error/ServerError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Landing/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/UpdateProfile/UpdateProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Profile/ViewProfile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/MyYoutubeVideoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/MyYoutubeVideoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubePostDetailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByChannelProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Pages/Youtube/YoutubeVideoListByTags.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -60,11 +73,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\amaya\music-sseolprise\client-dev\src" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Pages\Landing\VideoCarouselSection\videoData" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Modals\common" />
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Modals\auth" />
-      <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\views\Pages\VideoPosts\TabMenuSection" />
     </key>
     <key name="es6.move.members.recent.items">
       <recent name="C:\Users\amaya\music-sseolprise\client-new-ver\src\app\utils\video\youtubeDataProcessing.js" />
@@ -116,7 +129,7 @@
       <workItem from="1609292260200" duration="13948000" />
       <workItem from="1609324436034" duration="6747000" />
       <workItem from="1609344825167" duration="4461000" />
-      <workItem from="1609378864810" duration="2047000" />
+      <workItem from="1609378864810" duration="2550000" />
     </task>
     <servers />
   </component>

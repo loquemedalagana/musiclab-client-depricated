@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import qs from "qs";
 
-import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../../../Layouts/NoParallaxLayout";
 
 import {
   GridItem,

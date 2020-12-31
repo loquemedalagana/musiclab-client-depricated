@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "../../../assets/jss/material-kit-react/views/pages/smallParallax/smallParallaxPageStyle";
 
 // custom component
-import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
+import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
 import { GridContainer, GridItem } from "../../../components/components";
 import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 

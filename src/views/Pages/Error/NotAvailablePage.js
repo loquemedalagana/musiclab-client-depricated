@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import { GridItem, Card } from "../../../components/components";
 
-import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../../../Layouts/NoParallaxLayout";
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/ErrorPageStyle";
 
 const useStyles = makeStyles(styles);

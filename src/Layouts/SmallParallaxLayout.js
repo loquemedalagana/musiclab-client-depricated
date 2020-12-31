@@ -3,15 +3,15 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core";
 import classNames from "classnames";
 
-import { smallParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
-import styles from "../../assets/jss/material-kit-react/views/layouts/smallParallaxLayoutStyle";
+import { smallParallaxStyle } from "../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../assets/jss/material-kit-react/views/layouts/smallParallaxLayoutStyle";
 import {
   Footer,
   Header,
   HeaderLinks,
   Parallax,
-} from "../../components/components";
-import { appTitle } from "../../app/helper/appTitle";
+} from "../components/components";
+import { appTitle } from "../app/helper/appTitle";
 
 const useStyles = makeStyles(styles);
 

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core";
 
-import styles from "../../assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle";
-import { mainParallaxStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
+import styles from "../assets/jss/material-kit-react/views/layouts/mediumParallaxLayoutStyle";
+import { mainParallaxStyle } from "../assets/jss/material-kit-react/views/layouts/background";
 import {
   Footer,
   GridContainer,
@@ -11,12 +11,12 @@ import {
   Header,
   HeaderLinks,
   Parallax,
-} from "../../components/components";
+} from "../components/components";
 import {
   appDescription,
   appShortTitle,
   appTitle,
-} from "../../app/helper/appTitle";
+} from "../app/helper/appTitle";
 import classNames from "classnames";
 
 const useStyles = makeStyles(styles);

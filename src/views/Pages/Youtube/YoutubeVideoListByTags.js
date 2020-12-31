@@ -5,7 +5,7 @@ import qs from "qs";
 import { makeStyles } from "@material-ui/core/styles";
 
 // sub components
-import SmallParallaxLayout from "../../Layouts/SmallParallaxLayout";
+import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
 import YoutubeTagContainer from "./VideoListSection/YoutubeTagContainer";
 import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
 import FooterMenu from "../../Navigations/FooterMenu";

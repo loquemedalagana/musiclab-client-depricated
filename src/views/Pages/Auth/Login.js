@@ -15,7 +15,7 @@ import {
 import EmailInput from "../../SubComponents/authAndProfile/EmailInput";
 import PasswordInput from "../../SubComponents/authAndProfile/PasswordInput";
 import ModalOpenHelperText from "../../SubComponents/authAndProfile/ModalOpenHelperText";
-import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../../../Layouts/NoParallaxLayout";
 
 import styles from "../../../assets/jss/material-kit-react/views/pages/noParallax/AuthGeneralStyle";
 import Loading from "../../../components/Loading/LinearLoading";
