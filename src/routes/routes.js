@@ -9,29 +9,29 @@ import TokenRoute from "./HigherOrderComponets/TokenRoute";
 import NonMemberRouteWithoutEmail from "./HigherOrderComponets/NonMemberWithoutEmail";
 
 // auth 컴포넌트
-import Login from "../Pages/Login";
-import Signup from "../Pages/Signup";
-import ResetPassword from "../Pages/ResetPassword";
-import Levelup from "../Pages/register/Levelup";
-import WaitingLevelup from "../Pages/WaitingLevelup";
-import InputEmailForSocialUsers from "../Pages/register/InputEmailForSocialUsers";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
+import ResetPassword from "../pages/ResetPassword";
+import Levelup from "../pages/register/Levelup";
+import WaitingLevelup from "../pages/WaitingLevelup";
+import InputEmailForSocialUsers from "../pages/register/InputEmailForSocialUsers";
 
 // 프로필 컴포넌트
-import Profile from "../Pages/profile/Profile";
-import UpdateProfile from "../Pages/modify/UpdateProfile";
+import Profile from "../pages/profile/Profile";
+import UpdateProfile from "../pages/modify/UpdateProfile";
 
 // 유튜브 컴포넌트
-import YoutubeVideoListByChannelProfile from "../views/Pages/Youtube/YoutubeVideoListByChannelProfile";
-import YoutubeVideoListBySearchKeyword from "../views/Pages/Youtube/YoutubeVideoListByTags";
-import MyYoutubeVideoList from "../views/Pages/Youtube/MyYoutubeVideoList";
-import YoutubePostDetailPage from "../views/Pages/Youtube/YoutubePostDetailPage.js";
+import YoutubeVideoListByChannelProfile from "../pages/youtube/channels/YoutubeVideoListByChannelProfile";
+import YoutubeVideoListBySearchKeyword from "../pages/youtube/channels/YoutubeVideoListByTags";
+import MyYoutubeVideoList from "../pages/youtube/channels/MyYoutubeVideoList";
+import YoutubePostDetailPage from "../pages/youtube/videos/YoutubePostDetailPage.js";
 
 // 포스트 컴포넌트
 
 // 에러 페이지 컴포넌트
-import NotFound from "../Pages/Error/NotFound";
-import ServerError from "../Pages/Error/ServerError";
-import NotAvailablePage from "../Pages/Error/NotAvailablePage";
+import NotFound from "../pages/error/NotFound";
+import ServerError from "../pages/error/ServerError";
+import NotAvailablePage from "../pages/error/NotAvailablePage";
 
 // 알람 컴포넌트
 import ToastAlert from "../components/ToastAlerts/ToastAlerts";
