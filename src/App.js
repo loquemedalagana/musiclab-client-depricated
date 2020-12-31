@@ -6,7 +6,7 @@ import Routes from "./routes/routes";
 
 import { fetchUser } from "./app/store/user";
 
-import Landing from "./views/Pages/Landing/Landing";
+import Landing from "./Pages/Landing";
 import LinearLoading from "./components/Loading/LinearLoading";
 
 const App = () => {

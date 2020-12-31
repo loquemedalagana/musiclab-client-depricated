@@ -9,12 +9,12 @@ import TokenRoute from "./HigherOrderComponets/TokenRoute";
 import NonMemberRouteWithoutEmail from "./HigherOrderComponets/NonMemberWithoutEmail";
 
 // auth 컴포넌트
-import Login from "../views/Pages/Auth/Login";
-import Signup from "../views/Pages/Auth/Signup";
-import ResetPassword from "../views/Pages/Auth/ResetPassword";
-import Levelup from "../views/Pages/Auth/Levelup";
-import WaitingLevelup from "../views/Pages/Auth/WaitingLevelup";
-import InputEmailForSocialUsers from "../views/Pages/Auth/InputEmailForSocialUsers";
+import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
+import ResetPassword from "../Pages/ResetPassword";
+import Levelup from "../Pages/register/Levelup";
+import WaitingLevelup from "../Pages/WaitingLevelup";
+import InputEmailForSocialUsers from "../Pages/register/InputEmailForSocialUsers";
 
 // 프로필 컴포넌트
 import Profile from "../views/Pages/Profile/ViewProfile/Profile";

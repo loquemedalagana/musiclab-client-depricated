@@ -10,9 +10,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // @material-ui/icons
 import Favorite from "@material-ui/icons/Favorite";
-import About from '../../views/Modals/common/About';
-import NotAvailableModal from '../../views/Modals/common/NotAvailableModal';
-import Help from '../../views/Modals/common/Help';
+import About from '../../views/modals/common/About';
+import NotAvailableModal from '../../views/modals/common/NotAvailableModal';
+import Help from '../../views/modals/common/Help';
 import styles from "../../assets/jss/material-kit-react/components/footerStyle.js";
 
 const useStyles = makeStyles(styles);

@@ -8,7 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
 import YoutubeTagContainer from "./VideoListSection/YoutubeTagContainer";
 import ViewVideoListSection from "./VideoListSection/ViewVideoListSection";
-import FooterMenu from "../../Navigations/FooterMenu";
+import FooterMenu from "../../../sections/navigations/FooterMenu";
 
 // route
 import { NOT_FOUND_ROUTE } from "../../../routes/params/error";

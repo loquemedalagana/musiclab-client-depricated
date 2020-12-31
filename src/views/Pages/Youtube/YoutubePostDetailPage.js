@@ -9,8 +9,8 @@ import { fetchYoutubeVideoData } from "../../../app/store/youtube";
 // components
 import LinearLoading from "../../../components/Loading/LinearLoading";
 import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
-import YoutubeVideoIframe from "../../SubComponents/youtube/YoutubeVideoIframe";
-import FooterMenu from "../../Navigations/FooterMenu";
+import YoutubeVideoIframe from "../../../SubComponents/youtube/YoutubeVideoIframe";
+import FooterMenu from "../../../sections/navigations/FooterMenu";
 
 // route variable
 import { NOT_FOUND_ROUTE } from "../../../routes/params/error";

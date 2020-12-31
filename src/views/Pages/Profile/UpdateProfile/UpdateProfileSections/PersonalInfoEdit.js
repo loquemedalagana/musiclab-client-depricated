@@ -13,9 +13,9 @@ import {
   Button,
 } from "../../../../../components/components";
 
-import NameInput from "../../../../SubComponents/authAndProfile/NameInput";
-import DescriptionInput from "../../../../SubComponents/authAndProfile/DescriptionInput";
-import PasswordInput from "../../../../SubComponents/authAndProfile/PasswordInput";
+import NameInput from "../../../../../SubComponents/authAndProfile/NameInput";
+import DescriptionInput from "../../../../../SubComponents/authAndProfile/DescriptionInput";
+import PasswordInput from "../../../../../SubComponents/authAndProfile/PasswordInput";
 
 import NameValidation from "../../../../../app/inputValidation/user/NameValidation";
 import PasswordValidation from "../../../../../app/inputValidation/user/passwordValidation";

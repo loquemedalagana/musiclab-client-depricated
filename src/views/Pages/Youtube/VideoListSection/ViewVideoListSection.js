@@ -14,7 +14,7 @@ import EmptyContainer from "./EmptyContainer";
 import defaultImg from "../../../../assets/images/dolphin_profile.png";
 
 // video data 불러오는거!
-import videoListOfJeonInhyukBand from "../../Landing/VideoCarouselSection/videoData/videoListOfJeonInhyukBand";
+import videoListOfJeonInhyukBand from "../../../../sections/landing/videoData/videoListOfJeonInhyukBand";
 import InhyukSampleVideoList from "../../../../app/data/yada/InhyukSampleVideoList";
 import { getVideoDataListFromPlayList } from "../../../../app/utils/video/youtubeDataProcessing";
 
