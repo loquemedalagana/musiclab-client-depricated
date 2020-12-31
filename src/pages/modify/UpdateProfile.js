@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import qs from "qs";
 
 import { Face, Link, LocalOffer as Tag } from "@material-ui/icons";
-import NoParallaxLayout from "../../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../../layouts/NoParallaxLayout";
 
 import {
   GridItem,

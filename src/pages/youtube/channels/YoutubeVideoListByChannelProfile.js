@@ -13,7 +13,7 @@ import { fetchChannelProfile } from "../../../app/store/youtube";
 import { Skeleton } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core/styles";
 import { GridContainer, GridItem } from "../../../components/components";
-import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
+import SmallParallaxLayout from "../../../layouts/SmallParallaxLayout";
 
 // jss components
 import defaultImg from "../../../assets/images/dolphin_profile.png";

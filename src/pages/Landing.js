@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import MediumParallaxLayout from "../Layouts/MediumParallaxLayout";
+import MediumParallaxLayout from "../layouts/MediumParallaxLayout";
 import VideoCarouselSection from "../views/sections/landing/VideoCarouselSection";
 //import { appDescription, appShortTitle } from "../../../app/helper/appTitle";
 

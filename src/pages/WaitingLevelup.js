@@ -7,7 +7,7 @@ import { Link } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { GridItem } from "../components/components";
 
-import NoParallaxLayout from "../Layouts/NoParallaxLayout";
+import NoParallaxLayout from "../layouts/NoParallaxLayout";
 
 import { sendEmailAuthCode } from "../app/store/userControl";
 //import {setAlertMsg} from '../../app/store/alert';

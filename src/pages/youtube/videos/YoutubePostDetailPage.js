@@ -8,7 +8,7 @@ import { fetchYoutubeVideoData } from "../../../app/store/youtube";
 
 // components
 import LinearLoading from "../../../components/Loading/LinearLoading";
-import SmallParallaxLayout from "../../../Layouts/SmallParallaxLayout";
+import SmallParallaxLayout from "../../../layouts/SmallParallaxLayout";
 import YoutubeVideoIframe from "../../../views/SubComponents/youtube/YoutubeVideoIframe";
 import FooterMenu from "../../../views/sections/navigations/FooterMenu";
 
