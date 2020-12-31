@@ -1,6 +1,5 @@
 import Header from "./Header/Header.js";
 import HeaderLinks from "./Header/HeaderLinks.js";
-import HeaderLinksNotLoggedIn from "./Header/HeaderLinksNotLoggedIn";
 
 import Footer from "./Footer/Footer.js";
 import GridContainer from "./Grid/GridContainer.js";
@@ -78,7 +77,6 @@ export {
   SmallText,
   SucessText,
   WarningText,
-  HeaderLinksNotLoggedIn,
   LinearLoading,
   CircularLoading,
   ToastAlerts,

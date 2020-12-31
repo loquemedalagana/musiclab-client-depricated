@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core";
 import classNames from "classnames";
@@ -9,7 +8,6 @@ import {
   GridContainer,
   Header,
   HeaderLinks,
-  HeaderLinksNotLoggedIn,
 } from "../../components/components";
 import styles from "../../assets/jss/material-kit-react/views/layouts/noParallaxLayoutStyle";
 import { defaultBgStyle } from "../../assets/jss/material-kit-react/views/layouts/background";
@@ -20,7 +18,7 @@ const useStyles = makeStyles(styles);
 
 const NoParallaxLayout = (props) => {
   const classes = useStyles();
-  const { children, isBigCard, auth, ...rest } = props;
+  const { children, isBigCard, ...rest } = props;
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -35,17 +33,7 @@ const NoParallaxLayout = (props) => {
         color="transparent"
         brand={appTitle}
         rightLinks={
-          auth ? (
-            <HeaderLinks
-              mobileOpen={mobileOpen}
-              setMobileOpen={setMobileOpen}
-            />
-          ) : (
-            <HeaderLinksNotLoggedIn
-              mobileOpen={mobileOpen}
-              setMobileOpen={setMobileOpen}
-            />
-          )
+          <HeaderLinks mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
         }
         fixed
         changeColorOnScroll={{
@@ -70,12 +58,7 @@ const NoParallaxLayout = (props) => {
 
 NoParallaxLayout.propTypes = {
   children: PropTypes.node,
-  auth: PropTypes.bool,
   isBigCard: PropTypes.bool,
 };
 
-const mapStateToProps = (state) => ({
-  auth: state.user.auth,
-});
-
-export default connect(mapStateToProps)(NoParallaxLayout);
+export default NoParallaxLayout;

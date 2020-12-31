@@ -35,6 +35,7 @@ import {jihbandOfficialYoutubeLink} from "../../app/data/yada/yadaSocialLinks";
 import {YOUTUBE_VIDEO_SEARCH_ROUTE, JIHBAND_YOUTUBE_PROFILE_ROUTE, MY_YOUTUBE_VIDEO_LIST} from "../../routes/params/youtube";
 import {MY_PROFILE_ROUTE} from "../../routes/params/profile";
 import {NOT_AVAILABLE_ROUTE} from "../../routes/params/error";
+import {LOGIN_ROUTE, SIGNUP_ROUTE} from "../../routes/params/auth";
 
 const useStyles = makeStyles(styles);
 
@@ -49,8 +50,6 @@ const HeaderLinks = (props) => {
     history,
     notifications,
   } = props;
-
-  if(!isAuth) return <Redirect to = '/' />;
 
   return (
     <List className={classes.list}>
@@ -119,53 +118,85 @@ const HeaderLinks = (props) => {
       </ListItem>
       )}
 
-      <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText={username}
-          badgeContent={notifications.length}
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={AccountCircle}
-          dropdownList={[
-            <Button color = "transparent" onClick={()=> {
-              history.push(MY_PROFILE_ROUTE);
+      {isAuth ? (
+        <>
+        <ListItem className={classes.listItem}>
+          <CustomDropdown
+            noLiPadding
+            buttonText={username}
+            badgeContent={notifications.length}
+            buttonProps={{
+              className: classes.navLink,
+              color: "transparent"
+            }}
+            buttonIcon={AccountCircle}
+            dropdownList={[
+              <Button color = "transparent" onClick={()=> {
+                history.push(MY_PROFILE_ROUTE);
+                setMobileOpen(false);
+              }} className={classes.dropdownLink}>
+                <AccountCircle/>
+                My Profile
+              </Button>,
+              <Button color = "transparent" onClick={()=>console.log('notifications')} className={classes.dropdownLink}>
+                <Badge
+                  badgeContent={notifications.length}
+                  variant='dot'
+                  color="secondary"
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+                >
+                  <Notifications />
+                </Badge>
+                Notifications
+              </Button>,
+              <Button color = "transparent" onClick={()=>console.log('language')} className={classes.dropdownLink}>
+                <Language />
+                Language Setting
+              </Button>,
+              <Button color = "transparent" onClick={()=>{
+                logoutUser();
+                return <Redirect to = '/' />;
+              }} className={classes.dropdownLink}>
+                <ExitToApp />
+                Logout
+              </Button>
+            ]}
+          />
+        </ListItem>
+        </>
+      ) : (
+        <>
+        <ListItem className={classes.listItem}>
+          <Button
+            color='transparent'
+            className={classes.navLink}
+            onClick={() => {
+              history.push(LOGIN_ROUTE);
               setMobileOpen(false);
-            }} className={classes.dropdownLink}>
-              <AccountCircle/>
-              My Profile
-            </Button>,
-            <Button color = "transparent" onClick={()=>console.log('notifications')} className={classes.dropdownLink}>
-              <Badge
-                badgeContent={notifications.length}
-                variant='dot'
-                color="secondary"
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-              >
-                <Notifications />
-              </Badge>
-              Notifications
-            </Button>,
-            <Button color = "transparent" onClick={()=>console.log('language')} className={classes.dropdownLink}>
-              <Language />
-              Language Setting
-            </Button>,
-            <Button color = "transparent" onClick={()=>{
-              logoutUser();
-              return <Redirect to = '/' />;
-            }} className={classes.dropdownLink}>
-              <ExitToApp />
-              Logout
-            </Button>
-          ]}
-        />
-      </ListItem>
-      {/* 나중에 매뉴로 보이게 */}
+            }}
+          >
+            Login
+          </Button>
+        </ListItem>
+        <ListItem className={classes.listItem}>
+        <Button
+          color='transparent'
+          className={classes.navLink}
+          onClick={() => {
+          history.push(SIGNUP_ROUTE);
+          setMobileOpen(false);
+        }}
+        >
+          Sign up
+        </Button>
+        </ListItem>
+        </>
+      )}
+
+
       <ListItem className={classes.listItem}>
         <Tooltip
           id="youtube"

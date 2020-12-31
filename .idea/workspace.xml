@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d53ba292-d7fd-4c23-b619-971ead6c519e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/params/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/params/youtube.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/params/youtube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderLinksNotLoggedIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/components.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/MediumParallaxLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/NoParallaxLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Layouts/SmallParallaxLayout.js" afterDir="false" />
@@ -41,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -114,7 +115,8 @@
       <workItem from="1609260836237" duration="15000" />
       <workItem from="1609292260200" duration="13948000" />
       <workItem from="1609324436034" duration="6747000" />
-      <workItem from="1609344825167" duration="1191000" />
+      <workItem from="1609344825167" duration="4461000" />
+      <workItem from="1609378864810" duration="2047000" />
     </task>
     <servers />
   </component>

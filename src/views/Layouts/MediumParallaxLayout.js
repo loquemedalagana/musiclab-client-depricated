@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core";
 
@@ -11,7 +10,6 @@ import {
   GridItem,
   Header,
   HeaderLinks,
-  HeaderLinksNotLoggedIn,
   Parallax,
 } from "../../components/components";
 import {
@@ -25,7 +23,7 @@ const useStyles = makeStyles(styles);
 
 const MediumParallaxLayout = (props) => {
   const classes = useStyles();
-  const { children, auth, ...rest } = props;
+  const { children, ...rest } = props;
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -35,17 +33,7 @@ const MediumParallaxLayout = (props) => {
         color="transparent"
         brand={appTitle}
         rightLinks={
-          auth ? (
-            <HeaderLinks
-              mobileOpen={mobileOpen}
-              setMobileOpen={setMobileOpen}
-            />
-          ) : (
-            <HeaderLinksNotLoggedIn
-              mobileOpen={mobileOpen}
-              setMobileOpen={setMobileOpen}
-            />
-          )
+          <HeaderLinks mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
         }
         fixed
         changeColorOnScroll={{
@@ -79,11 +67,6 @@ const MediumParallaxLayout = (props) => {
 
 MediumParallaxLayout.propTypes = {
   children: PropTypes.node,
-  auth: PropTypes.bool,
 };
 
-const mapStateToProps = (state) => ({
-  auth: state.user.auth,
-});
-
-export default connect(mapStateToProps)(MediumParallaxLayout);
+export default MediumParallaxLayout;

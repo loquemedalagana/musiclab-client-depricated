@@ -100,6 +100,7 @@ export default function Footer(props) {
             href="https://github.com/loquemedalagana"
             className={aClasses}
             target="_blank"
+            rel={"noreferrer noopener"}
           >
             Mrs. Liberty
           </a>{" "}
